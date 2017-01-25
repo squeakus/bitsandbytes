@@ -1,0 +1,29 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="myStyle.css" />
+<head>
+
+<body>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#mybutton').click(function() {
+        $('#mycontent').text('My content has changed now!');
+        $('#mycontent').css({'color':'#FF0000' });
+      });
+    });
+  </script>
+  <div class="button">
+    <a  href="javascript:;" id="mybutton">Click me</a>
+  </div>
+  <div class="textfield" id="mycontent">Click above, to see me change</div>
+
+  <div class="button">
+    <p> mooo </p> <br>
+  </div>
+
+<body>
+
+</html>
+

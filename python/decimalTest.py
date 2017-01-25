@@ -1,0 +1,3 @@
+from decimal import Decimal
+print(Decimal(2.675))
+#Decimal('2.67499999999999982236431605997495353221893310546875')

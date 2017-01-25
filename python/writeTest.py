@@ -1,0 +1,5 @@
+testFile = open('test.txt','a')
+testFile.write("HELLO\n")
+testFile2 = open('test.txt','a')
+testFile2.write("GOODBYE\n")
+testFile2.close()

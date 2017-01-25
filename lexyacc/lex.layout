@@ -1,0 +1,13 @@
+%{
+   C declarations and includes
+%}
+   Lex macro definitions and directives
+%%
+   Lex Specification
+   in the form of pattern/action statements like this:
+   keyword    { my_c_code(yytext); }
+%%
+   C language program (the rest)
+
+
+to compile: make LDLIBS=-ll strip-html

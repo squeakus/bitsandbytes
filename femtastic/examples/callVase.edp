@@ -1,0 +1,8 @@
+load "medit"
+include "vase.idp"
+int height = 10;
+int baseCurve =1;
+int midCurve =4; 
+mesh3 vase=Vase(height,baseCurve,midCurve);
+medit("vase",vase,wait=1);
+savemesh(vase,"test.mesh");

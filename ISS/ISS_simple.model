@@ -1,0 +1,3458 @@
+model ISS
+   structure nonrotating_parts
+      parts
+         shape  integrated_truss_structure_27_octagonal_prism
+
+            polygon
+                 vertex   150  -26230  2179
+                 vertex  -150  -26230  2179
+                 vertex  -1672 -26230   780
+                 vertex  -1672 -26230  -925
+                 vertex  -150  -26230 -2200
+                 vertex   150  -26230 -2200
+                 vertex   1683 -26230  -925
+                 vertex   1683 -26230   780
+            endpolygon
+
+            polygon
+                 vertex   150  26300  2179
+                 vertex  -150  26300  2179
+                 vertex  -1672 26300   780
+                 vertex  -1672 26300  -925
+                 vertex  -150  26300 -2200
+                 vertex   150  26300 -2200
+                 vertex   1683 26300  -925
+                 vertex   1683 26300   780
+            endpolygon
+
+            polygon
+                 vertex   150  -26230  2179
+                 vertex  -150  -26230  2179
+                 vertex  -150  26300  2179
+                 vertex   150  26300  2179
+            endpolygon
+
+            polygon
+                 vertex  -150  -26230  2179
+                 vertex  -1672 -26230   780
+                 vertex  -1672 26300   780
+                 vertex  -150  26300  2179
+            endpolygon
+
+            polygon
+                 vertex  -1672 -26230   780
+                 vertex  -1672 -26230  -925
+                 vertex  -1672 26300  -925
+                 vertex  -1672 26300   780
+            endpolygon
+
+            polygon
+                 vertex  -1672 -26230  -925
+                 vertex  -150  -26230 -2200
+                 vertex  -150  26300 -2200
+                 vertex  -1672 26300  -925
+            endpolygon
+
+            polygon
+                 vertex  -150  -26230 -2200
+                 vertex   150  -26230 -2200
+                 vertex   150  26300 -2200
+                 vertex  -150  26300 -2200
+            endpolygon
+
+            polygon
+                 vertex   150  -26230 -2200
+                 vertex   1683 -26230  -925
+                 vertex   1683 26300  -925
+                 vertex   150  26300 -2200
+            endpolygon
+
+            polygon
+                 vertex   1683 -26230  -925
+                 vertex   1683 -26230   780
+                 vertex   1683 26300   780
+                 vertex   1683 26300  -925
+            endpolygon
+
+            polygon
+                 vertex   150  -26230  2179
+                 vertex   1683 -26230   780
+                 vertex   1683 26300   780
+                 vertex   150  26300  2179
+            endpolygon
+
+         endshape
+
+         shape box_0
+            polygon
+               vertex -3400 26500 -2200
+               vertex  1646 26500 -2200
+               vertex  1646 23400 -2200
+               vertex -3400 23400 -2200
+            endpolygon
+            polygon
+               vertex -3400 26500 -7200
+               vertex  1646 26500 -7200
+               vertex  1646 23400 -7200
+               vertex -3400 23400 -7200
+            endpolygon
+            polygon
+               vertex -3400 26500 -2200
+               vertex  1646 26500 -2200
+               vertex  1646 26500 -7200
+               vertex -3400 26500 -7200
+            endpolygon
+            polygon
+               vertex -3400 23400 -2200
+               vertex  1646 23400 -2200
+               vertex  1646 23400 -7200
+               vertex -3400 23400 -7200
+            endpolygon
+            polygon
+               vertex -3400 23400 -2200
+               vertex -3400 26500 -2200
+               vertex -3400 26500 -7200
+               vertex -3400 23400 -7200
+            endpolygon
+            polygon
+               vertex  1646 23400 -2200
+               vertex  1646 26500 -2200
+               vertex  1646 26500 -7200
+               vertex  1646 23400 -7200
+            endpolygon
+         endshape
+
+         shape  stalk_1
+            cylinder
+               radius 150
+               center -4436 963 -90
+               center -4436 963 -4467
+            endcylinder
+         endshape
+
+         shape fixed_horizonal_panel
+            polygon
+               vertex -29600  15198 4000
+               vertex -25700  15198 4000
+               vertex -25700 -15255 4000
+               vertex -29600 -15255 4000
+            endpolygon
+            polygon
+               vertex -29600  15198 4300
+               vertex -25700  15198 4300
+               vertex -25700 -15255 4300
+               vertex -29600 -15255 4300
+            endpolygon
+            polygon
+               vertex -29600 -15255 4300
+               vertex -25700 -15255 4300
+               vertex -25700 -15255 4000
+               vertex -29600 -15255 4000
+            endpolygon
+            polygon
+               vertex -29600  15198 4300
+               vertex -25700  15198 4300
+               vertex -25700  15198 4000
+               vertex -29600  15198 4000
+            endpolygon
+            polygon
+               vertex -29600  15198 4300
+               vertex -29600 -15255 4300
+               vertex -29600 -15255 4000
+               vertex -29600  15198 4000
+            endpolygon
+            polygon
+               vertex -25700  15198 4300
+               vertex -25700 -15255 4300
+               vertex -25700 -15255 4000
+               vertex -25700  15198 4000
+            endpolygon
+         endshape
+
+         shape  stalk_3
+            cylinder
+               radius 175
+               center -5075 -2018 -1069
+               center -4813 -4160 -3188
+            endcylinder
+         endshape
+
+         shape  stalk_4
+            cylinder
+               radius 280
+               center -4818 -4166 -3086
+               center -4818 -4166 -4585
+            endcylinder
+         endshape
+
+         shape  antenna_5
+            cylinder
+               radius 938
+               center -4438 964 -4300
+               center -4438 964 -4920
+            endcylinder
+         endshape
+
+         shape upright_cylinder_6
+            cylinder
+               radius 1296
+               center -23694 -32  9320
+               center -23694 -32 -1026
+            endcylinder
+         endshape
+
+         shape box_8
+            polygon 
+               vertex -3400 -23025 -2200
+               vertex 1680  -23025 -2200
+               vertex 1680  -26367 -2200
+               vertex -3400 -26367 -2200
+            endpolygon
+            polygon
+               vertex -3400 -23025 -7300
+               vertex 1680  -23025 -7300
+               vertex 1680  -26367 -7300
+               vertex -3400 -26367 -7300
+            endpolygon
+            polygon
+               vertex -3400 -26367 -2200
+               vertex 1680  -26367 -2200
+               vertex 1680  -26367 -7300
+               vertex -3400 -26367 -7300
+            endpolygon
+            polygon
+               vertex -3400 -23025 -2200
+               vertex 1680  -23025 -2200
+               vertex 1680  -23025 -7300
+               vertex -3400 -23025 -7300
+            endpolygon
+            polygon
+               vertex -3400 -26367 -2200
+               vertex -3400 -23025 -2200
+               vertex -3400 -23025 -7300
+               vertex -3400 -26367 -7300
+            endpolygon
+            polygon
+               vertex 1600  -26367 -2200
+               vertex 1600  -23025 -2200
+               vertex 1600  -23025 -7300
+               vertex 1600  -26367 -7300
+            endpolygon
+         endshape
+
+         shape box_8
+            polygon 
+               vertex -3300 19200 7150
+               vertex  1700 19200 7150
+               vertex  1700 22140 7150
+               vertex -3300 22140 7150
+            endpolygon
+            polygon
+               vertex -3300 19200 2200
+               vertex  1700 19200 2200
+               vertex  1700 22140 2200
+               vertex -3300 22140 2200
+            endpolygon
+            polygon
+               vertex -3300 19200 2200
+               vertex  1700 19200 2200
+               vertex  1700 19200 7150
+               vertex -3300 19200 7150
+            endpolygon
+            polygon
+               vertex -3300 22140 2200
+               vertex  1700 22149 2200
+               vertex  1700 22140 7150
+               vertex -3300 22140 7150
+            endpolygon
+            polygon
+               vertex -3300 19200 2200
+               vertex -3300 22140 2200
+               vertex -3300 22140 7150
+               vertex -3300 19200 7150
+            endpolygon
+            polygon
+               vertex  1700 19200 2200
+               vertex  1700 22140 2200
+               vertex  1700 22140 7150
+               vertex  1700 19200 7150
+            endpolygon
+         endshape
+
+         shape Columbus_Harmony_JEM_T_33
+             cylinder
+                radius 2250
+                center 10926 -12776 4855
+                center 10926 8842 4855
+             endcylinder
+             cylinder
+               radius 2250
+               center -7925 0 4855
+               center 13330 0 4855
+            endcylinder
+         endshape
+
+         shape pressurized_cyl_42
+            cylinder
+               radius 2250
+               center -35330 -125 4190
+               center -10030 -125 4190
+            endcylinder
+         endshape
+
+         shape Tranquility_34
+            cylinder
+               radius 2250
+               center -4470 -8975 4835
+               center -4470  4675 4835
+            endcylinder
+         endshape
+
+      shape box_11
+         polygon
+            vertex -3694 22375 2200
+            vertex -3694 25800 2200
+            vertex  1606 25800 2200
+            vertex  1606 22375 2200
+         endpolygon
+         polygon
+            vertex -3694 22375 5400
+            vertex -3694 25800 5400
+            vertex  1606 25800 5400
+            vertex  1606 22375 5400
+         endpolygon
+
+         polygon
+            vertex -3694 22375 5400
+            vertex -3694 22375 2200
+            vertex  1606 22375 2200
+            vertex  1606 22375 5400
+         endpolygon
+         polygon
+            vertex -3694 25800 5400
+            vertex -3694 25800 2200
+            vertex  1606 25800 2200
+            vertex  1606 25800 5400
+         endpolygon
+
+         polygon
+            vertex -3694 25800 5400
+            vertex -3694 25800 2200
+            vertex -3694 22375 2200
+            vertex -3694 22375 5400
+         endpolygon
+         polygon
+            vertex  1606 25800 5400
+            vertex  1606 25800 2200
+            vertex  1606 22375 2200
+            vertex  1606 22375 5400
+         endpolygon
+      endshape
+
+      shape box_12
+         polygon
+            vertex  1021  7600 7366
+            vertex -2212  7600 7366
+            vertex -2212  2750 7366
+            vertex  1012  2750 7366
+         endpolygon
+         polygon
+            vertex  1021  7600 4866
+            vertex -2212  7600 4866
+            vertex -2212  2750 4866
+            vertex  1012  2750 4866
+         endpolygon
+
+         polygon
+            vertex  1021  7600 4866
+            vertex -2212  7600 4866
+            vertex -2212  7600 7366
+            vertex  1012  7600 7366
+         endpolygon
+         polygon
+            vertex  1021  2750 4866
+            vertex -2212  2750 4866
+            vertex -2212  2750 7366
+            vertex  1012  2750 7366
+         endpolygon
+
+         polygon
+            vertex -2212  2750 4866
+            vertex -2212  7600 4866
+            vertex -2212  7600 7366
+            vertex -2212  2750 7366
+         endpolygon
+         polygon
+            vertex  1021  2750 4866
+            vertex  1021  7600 4866
+            vertex  1021  7600 7366
+            vertex  1012  2750 7366
+         endpolygon
+      endshape
+
+      shape cylinder_16
+         cylinder
+            radius 926
+            center -4465 4700 4863
+            center -4465 7574 4863
+         endcylinder
+      endshape
+
+      shape cylinder_17
+         cylinder
+            radius 1236
+            center 13034 0 4863
+            center 14472 0 4863
+         endcylinder
+      endshape
+
+      shape box_18
+         polygon
+            vertex  7827  -12766  7800
+            vertex  16227 -12766  7800
+            vertex  16227 -20566  7800
+            vertex  7827  -20566  7800
+         endpolygon
+         polygon
+            vertex  7827  -12766  5500
+            vertex  16227 -12766  5500
+            vertex  16227 -20566  5500
+            vertex  7827  -20566  5500
+         endpolygon
+
+         polygon
+            vertex  7827  -12766  7800
+            vertex  16227 -12766  7800
+            vertex  16227 -12766  5500
+            vertex  7827  -12766  5500
+         endpolygon
+         polygon
+            vertex  7827  -20566  7800
+            vertex  16227 -20566  7800
+            vertex  16227 -20566  5500
+            vertex  7827  -20566  5500
+         endpolygon
+
+         polygon
+            vertex  7827  -12766  5500
+            vertex  7827  -12766  7800
+            vertex  7827  -20566  7800
+            vertex  7827  -20566  5500
+         endpolygon
+         polygon
+            vertex  16277 -12766  5500
+            vertex  16277 -12766  7800
+            vertex  16277 -20566  7800
+            vertex  16277 -20566  5500
+         endpolygon
+      endshape
+
+      shape cylinder_19
+         cylinder
+            radius 797
+            center 13168 16 5550
+            center 15427 16 5550
+         endcylinder
+      endshape
+
+      shape octagon_prism_20
+         polygon
+            vertex -3883 2203  2596
+            vertex -3300 1390  2596
+            vertex -3400 -1571 2596
+            vertex -4650 -2115 2596
+            vertex -5377 -2115 2596
+            vertex -6532 -1040 2596
+            vertex -6535 956   2596
+            vertex -5381 2203  2596
+         endpolygon
+         polygon
+            vertex -3883 2203  691
+            vertex -3300 1390  691
+            vertex -3400 -1571 691
+            vertex -4650 -2115 691
+            vertex -5377 -2115 691
+            vertex -6532 -1040 691
+            vertex -6535 956   691
+            vertex -5381 2203  691
+         endpolygon
+
+         polygon
+            vertex -3883 2203  691
+            vertex -3300 1390  691
+            vertex -3300 1390  2596
+            vertex -3883 2203  2596
+         endpolygon
+         polygon
+            vertex -3300 1390  691
+            vertex -3400 -1571  691
+            vertex -3400 -1571  2596
+            vertex -3300 1390   2596
+         endpolygon
+         polygon
+            vertex -3400 -1571 691
+            vertex -4650 -2115 691
+            vertex -4650 -2115 2596
+            vertex -3400 -1571 2596
+         endpolygon
+         polygon
+            vertex -4650 -2115 691
+            vertex -5377 -2115 691
+            vertex -5377 -2115 2596
+            vertex -4650 -2115 2596
+         endpolygon
+         polygon
+            vertex -5377 -2115 691
+            vertex -6532 -1040 691
+            vertex -6532 -1040 2596
+            vertex -5377 -2115 2596
+         endpolygon
+         polygon
+            vertex -6532 -1040 691
+            vertex -6535 956   691
+            vertex -6535 956   2596
+            vertex -6532 -1040 2596
+         endpolygon
+         polygon
+            vertex -6535 956   691
+            vertex -5381 2203  691
+            vertex -5381 2203  2596
+            vertex -6535 956   2596
+         endpolygon
+         polygon
+            vertex -3883 2203  691
+            vertex -5381 2203  691
+            vertex -5381 2203  2596
+            vertex -3883 2203  2596
+         endpolygon
+      endshape
+
+      shape box_21
+         polygon
+            vertex  1611 22700 -2200
+            vertex -3300 22700 -2200
+            vertex -3300 19800 -2200
+            vertex  1611 19800 -2200
+         endpolygon
+         polygon
+            vertex  1611 22700 -5800
+            vertex -3300 22700 -5800
+            vertex -3300 19800 -5800
+            vertex  1611 19800 -5800
+         endpolygon
+         polygon
+            vertex  1611 19800  -2200
+            vertex -3300 19800  -2200
+            vertex -3300 19800  -5800
+            vertex  1611 19800  -5800
+         endpolygon
+         polygon
+            vertex  1611 22700  -2200
+            vertex -3300 22700  -2200
+            vertex -3300 22700  -5800
+            vertex  1611 22700  -5800
+         endpolygon
+         polygon
+            vertex  1611 22700  -2200
+            vertex  1611 22700  -5800
+            vertex  1611 19800  -5800
+            vertex  1611 19800  -2200
+         endpolygon
+         polygon
+            vertex -3300 22700  -2200
+            vertex -3300 22700  -5800
+            vertex -3300 19800  -5800
+            vertex -3300 19800  -2200
+         endpolygon
+
+      endshape
+
+      shape box_23
+         polygon
+            vertex -3400 -22500 2200
+            vertex 1700  -22500 2200
+            vertex 1700  -25811 2200
+            vertex -3400 -25811 2200
+         endpolygon
+         polygon
+            vertex -3400 -22500 7200
+            vertex 1700  -22500 7200
+            vertex 1700  -25811 7200
+            vertex -3400 -25811 7200
+         endpolygon
+         polygon
+            vertex -3400 -22500 2200
+            vertex 1700  -22500 2200
+            vertex 1700  -22500 7200
+            vertex -3400 -22500 7200
+         endpolygon
+         polygon
+            vertex -3400 -25811 2200
+            vertex 1700  -25811 2200
+            vertex 1700  -25811 7200
+            vertex -3400 -25811 7200
+         endpolygon
+         polygon
+            vertex -3400 -25811 2200
+            vertex -3400 -22500 2200
+            vertex -3400 -22500 7200
+            vertex -3400 -25811 7200
+         endpolygon
+         polygon
+            vertex 1700 -25811 2200
+            vertex 1700 -22500 2200
+            vertex 1700 -22500 7200
+            vertex 1700 -25811 7200
+         endpolygon
+      endshape
+
+      shape box_24
+         polygon
+            vertex -1860 -2350 5500
+            vertex 850   -2350 5500
+            vertex 850   -3399 5500
+            vertex -1860 -3399 5500
+         endpolygon
+         polygon
+            vertex -1860 -2350 4200
+            vertex 850   -2350 4200
+            vertex 850   -3399 4200
+            vertex -1860 -3399 4200
+         endpolygon
+         polygon
+            vertex -1860 -3399 4200
+            vertex 850   -3399 4200
+            vertex 850   -3399 5500
+            vertex -1860 -3399 5500
+         endpolygon
+         polygon
+            vertex -1860 -2350 4200
+            vertex 850   -2350 4200
+            vertex 850   -2350 5500
+            vertex -1860 -2350 5500
+         endpolygon
+         polygon
+            vertex 850   -3399 4200
+            vertex 850   -2350 4200
+            vertex 850   -2350 5500
+            vertex 850   -3399 5500
+         endpolygon
+         polygon
+            vertex -1860 -3399 4200
+            vertex -1860 -2350 4200
+            vertex -1860 -2350 5500
+            vertex -1860 -3399 5500
+         endpolygon
+      endshape
+
+      shape cylinder_25
+         cylinder
+            radius 949
+            center -4706 -4154 -4500
+            center -4705 -4154 -5050
+         endcylinder
+      endshape
+
+      shape cylinder_26
+         cylinder
+            radius 797
+            center -4463 -11134 5541
+            center -4463 -8734  5541
+         endcylinder
+      endshape
+
+      shape cylinder_28
+         cylinder
+            radius 1235
+            center -10255 0 4854
+            center -7576 0 4854
+         endcylinder
+      endshape
+
+      shape cylinder_32
+         cylinder
+            radius 2256
+            center 10944 -9925 4200
+            center 10944 -9925 -1000
+         endcylinder
+      endshape
+
+      shape cylinder_34
+         cylinder
+            radius 2256
+            center -4473 -8975 4858
+            center -4473  4700 4858
+         endcylinder
+      endshape
+
+      shape cylinder_36
+         cylinder
+            radius 1200
+            center -4470 -6638 8423
+            center -4470 -6638 6300
+         endcylinder
+      endshape
+
+      shape cylinder_38
+         cylinder
+            radius 1242
+            center -4458 -10179 4830
+            center -4458 -8772  4830
+         endcylinder
+      endshape
+
+
+      shape box_40
+         polygon
+            vertex 1700 -1000  1300
+            vertex 4200 -1000  1300
+            vertex 4200  7000  1300
+            vertex 1700  7000  1300
+         endpolygon
+         polygon
+            vertex 1700 -1000 -2900
+            vertex 4200 -1000 -2900
+            vertex 4200  7000 -2900
+            vertex 1700  7000 -2900
+         endpolygon
+         polygon
+            vertex 1700 -1000 -2900
+            vertex 4200 -1000 -2900
+            vertex 4200 -1000  1300
+            vertex 1700 -1000  1300
+         endpolygon
+         polygon
+            vertex 1700  7000 -2900
+            vertex 4200  7000 -2900
+            vertex 4200  7000  1300
+            vertex 1700  7000  1300
+         endpolygon
+         polygon
+            vertex 1700 -1000 -2900
+            vertex 1700  7000 -2900
+            vertex 1700  7000  1300
+            vertex 1700 -1000  1300
+         endpolygon
+         polygon
+            vertex 4200 -1000 -2900
+            vertex 4200  7000 -2900
+            vertex 4200  7000  1300
+            vertex 4200 -1000  1300
+         endpolygon
+      endshape
+
+      shape box_41
+
+         polygon
+            vertex -13078 -5400 5273
+            vertex -15639 -5400 6390
+            vertex -15639 5500 6390
+            vertex -13078 5500 5273
+         endpolygon
+
+         polygon
+            vertex -15639 -5400 6390
+            vertex -17090 -5400 2950
+            vertex -17090 5500 2950
+            vertex -15639 5500 6390
+         endpolygon
+
+         polygon
+            vertex -13078 -5400 5273
+            vertex -15639 -5400 6390
+            vertex -17090 -5400 2950
+            vertex -14530 -5400 1859
+         endpolygon
+
+         polygon
+            vertex -13078 5500 5273
+            vertex -15639 5500 6390
+            vertex -17090 5500 2950
+            vertex -14530 5500 1859
+         endpolygon
+
+         polygon
+            vertex -17090 -5400 2950
+            vertex -14530 -5400 1859
+            vertex -14530 5500 1859
+            vertex -17090 5500 2950
+         endpolygon
+
+         polygon
+            vertex -13078 -5400 5273
+            vertex -14530 -5400 1859
+            vertex -14530 5500 1859
+            vertex -13078 5500 5273
+         endpolygon
+
+      endshape
+
+      shape goofy_antenna_44
+         cylinder
+         radius 1380
+         center -11081 0 11284
+         center -11081 0 6000
+         endcylinder
+
+         polygon
+            vertex -8500  -1000   11284
+            vertex -13662 -1000   11284
+            vertex -12227 900   11284
+            vertex -10184 900   11284
+         endpolygon
+
+         polygon
+            vertex -8500   -1000  6000
+            vertex -13662 -1000  6000
+            vertex -12227 900      6000
+            vertex -10184 900     6000
+         endpolygon
+
+         polygon
+            vertex -8500  -1000   11284
+            vertex -13662 -1000   11284
+            vertex -13662 -1000  6000
+            vertex -8500   -1000  6000
+         endpolygon
+
+         polygon
+            vertex -13662 -1000   11284
+            vertex -12227 900   11284
+            vertex -12227 900      6000
+            vertex -13662 -1000  6000
+         endpolygon
+
+         polygon
+            vertex -12227 900   11284
+            vertex -10184 900   11284
+            vertex -10184 900     6000
+            vertex -12227 900      6000
+         endpolygon
+
+         polygon
+            vertex -8500  -1000   11284
+            vertex -10184 900   11284
+            vertex -10184 900     6000
+            vertex -8500   -1000  6000
+         endpolygon
+
+      endshape
+
+      shape cylinder_45
+         cylinder
+         radius 2250
+         center -4450 0 13306
+         center -4450 0 4800
+         endcylinder
+      endshape
+
+      shape box_30
+         polygon
+            vertex -3400 26500 -2200
+            vertex  1645 26500 -2200
+            vertex  1645 23400 -2200
+            vertex -3400 23400 -2200
+         endpolygon
+         polygon
+            vertex -3400 26500 -5800
+            vertex  1645 26500 -5800
+            vertex  1645 23400 -5800
+            vertex -3400 23400 -5800
+         endpolygon
+         polygon
+            vertex -3400 23400 -5800
+            vertex  1645 23400 -5800
+            vertex  1645 23400 -2200
+            vertex -3400 23400 -2200
+         endpolygon
+         polygon
+            vertex -3400 26500 -5800
+            vertex  1645 26500 -5800
+            vertex  1645 26500 -2200
+            vertex -3400 26500 -2200
+         endpolygon
+         polygon
+            vertex -3400 23400 -5800
+            vertex -3400 26500 -5800
+            vertex -3400 26500 -2200
+            vertex -3400 23400 -2200
+         endpolygon
+         polygon
+            vertex  1645 23400 -5800
+            vertex  1645 26500 -5800
+            vertex  1645 26500 -2200
+            vertex  1645 23400 -2200
+         endpolygon
+      endshape
+   endparts
+   children
+
+
+
+structure Starboard_SARJ_rotated_structure
+   parts
+      shape body_15
+         polygon
+            vertex  -871 27268  -1454
+            vertex  1396 27268  -1454
+            vertex  1396 27268  1629
+            vertex  -871 27268  1629
+         endpolygon
+         polygon
+            vertex  -871 47310  -1454
+            vertex  1396 47310  -1454
+            vertex  1396 47310  1629
+            vertex  -871 47310  1629
+         endpolygon
+
+         polygon
+            vertex  -871 27268  -1454
+            vertex  1396 27268  -1454
+            vertex  1396 47310  -1454
+            vertex  -871 47310  -1454
+         endpolygon
+         polygon
+            vertex  -871 27268  1629
+            vertex  1396 27268  1629
+            vertex  1396 47310  1629
+            vertex  -871 47310  1629
+         endpolygon
+
+         polygon
+            vertex  -871 27268  1629
+            vertex  -871 27268  -1454
+            vertex  -871 47310  -1454
+            vertex  -871 47310  1629
+         endpolygon
+         polygon
+            vertex  1396 27268  1629
+            vertex  1396 27268  -1454
+            vertex  1396 47310  -1454
+            vertex  1396 47310  1629
+         endpolygon
+      endshape
+
+      shape fin_1_15
+         polygon
+            vertex  100 27700  1629
+            vertex  100 31193  1629
+            vertex  490 31193  1629
+            vertex  490 27700  1629
+         endpolygon
+         polygon
+            vertex  100 27700  14900
+            vertex  100 31193  14900
+            vertex  490 31193  14900
+            vertex  490 27700  14900
+         endpolygon
+
+         polygon
+            vertex  100 27700  14900
+            vertex  100 27700  1629
+            vertex  490 27700  1629
+            vertex  490 27700  14900
+         endpolygon
+         polygon
+            vertex  100 31193  14900
+            vertex  100 31193  1629
+            vertex  490 31193  1629
+            vertex  490 31193  14900
+         endpolygon
+
+         polygon
+            vertex  100 27700  1629
+            vertex  100 31193  1629
+            vertex  100 31193  14900
+            vertex  100 27700  14900
+         endpolygon
+         polygon
+            vertex  490 27700  1629
+            vertex  490 31193  1629
+            vertex  490 31193  14900
+            vertex  490 27700  14900
+         endpolygon
+      endshape
+
+      shape fin_2_15
+         polygon
+            vertex  0 42711  1629
+            vertex  0 46400  1629
+            vertex  454 46400  1629
+            vertex  454 42711  1629
+         endpolygon
+         polygon
+            vertex  0 42711  14900
+            vertex  0 46400  14900
+            vertex  454 46400  14900
+            vertex  454 42711  14900
+         endpolygon
+
+         polygon
+            vertex  0 42711  14900
+            vertex  0 42711  1629
+            vertex  454 42711  1629
+            vertex  454 42711  14900
+         endpolygon
+         polygon
+            vertex  0 46400  14900
+            vertex  0 46400  1629
+            vertex  454 46400  1629
+            vertex  454 46400  14900
+         endpolygon
+
+         polygon
+            vertex  0 42711  1629
+            vertex  0 46400  1629
+            vertex  0 46400  14900
+            vertex  0 42711  14900
+         endpolygon
+         polygon
+            vertex  454 42711  1629
+            vertex  454 46400  1629
+            vertex  454 46400  14900
+            vertex  454 42711  14900
+         endpolygon
+      endshape
+     endparts
+     children
+
+
+
+
+ 
+structure SAW_1A_starboard
+   parts
+
+shape bottom_arm
+    polygon
+      vertex 3783.6794 38938.497 -437.225
+      vertex 3983.6794 38938.497 -537.225
+      vertex 3983.6793 27765.977 -537.225
+    endpolygon
+    polygon
+      vertex 3983.6793 27765.977 -537.225
+      vertex 3783.6793 27765.977 -437.225
+      vertex 3783.6794 38938.497 -437.225
+    endpolygon
+    polygon
+      vertex 3983.6794 38938.497 -97.22500000000002
+      vertex 3783.6794 38938.497 -187.22500000000002
+      vertex 3983.6793 27765.977 -97.22500000000002
+    endpolygon
+    polygon
+      vertex 3783.6793 27765.977 -187.22500000000002
+      vertex 3983.6793 27765.977 -97.22500000000002
+      vertex 3783.6794 38938.497 -187.22500000000002
+    endpolygon
+    polygon
+      vertex 3983.6794 38938.497 -537.225
+      vertex 3783.6794 38938.497 -437.225
+      vertex 3983.6794 38938.497 -97.22500000000002
+    endpolygon
+    polygon
+      vertex 3783.6794 38938.497 -187.22500000000002
+      vertex 3983.6794 38938.497 -97.22500000000002
+      vertex 3783.6794 38938.497 -437.225
+    endpolygon
+    polygon
+      vertex 3783.6793 27765.977 -437.225
+      vertex 3983.6793 27765.977 -537.225
+      vertex 3983.6793 27765.977 -97.22500000000002
+    endpolygon
+    polygon
+      vertex 3983.6793 27765.977 -97.22500000000002
+      vertex 3783.6793 27765.977 -187.22500000000002
+      vertex 3783.6793 27765.977 -437.225
+    endpolygon
+    polygon
+      vertex 3983.6793 27765.977 -537.225
+      vertex 3983.6794 38938.497 -537.225
+      vertex 3983.6794 38938.497 -97.22500000000002
+    endpolygon
+    polygon
+      vertex 3983.6794 38938.497 -97.22500000000002
+      vertex 3983.6793 27765.977 -97.22500000000002
+      vertex 3983.6793 27765.977 -537.225
+    endpolygon
+    polygon
+      vertex 3783.6794 38938.497 -437.225
+      vertex 3783.6793 27765.977 -437.225
+      vertex 3783.6794 38938.497 -187.22500000000002
+    endpolygon
+    polygon
+      vertex 3783.6793 27765.977 -187.22500000000002
+      vertex 3783.6794 38938.497 -187.22500000000002
+      vertex 3783.6793 27765.977 -437.225
+    endpolygon
+endshape
+
+shape top_arm
+    polygon
+      vertex 36501.343 38938.497 -469.04929
+      vertex 36698.679 38938.497 -397.22506
+      vertex 36698.679 27754.039000000004 -397.22506
+    endpolygon
+    polygon
+      vertex 36698.679 27754.039000000004 -397.22506
+      vertex 36501.343 27754.039000000004 -469.04929
+      vertex 36501.343 38938.497 -469.04929
+    endpolygon
+    polygon
+      vertex 36698.679 38938.497 -154.82087
+      vertex 36501.343 38938.497 -79.04929000000004
+      vertex 36698.679 27754.039000000004 -154.82087
+    endpolygon
+    polygon
+      vertex 36501.343 27754.039000000004 -79.04929000000004
+      vertex 36698.679 27754.039000000004 -154.82087
+      vertex 36501.343 38938.497 -79.04929000000004
+    endpolygon
+    polygon
+      vertex 36698.679 38938.497 -397.22506
+      vertex 36501.343 38938.497 -469.04929
+      vertex 36698.679 38938.497 -154.82087
+    endpolygon
+    polygon
+      vertex 36501.343 38938.497 -79.04929000000004
+      vertex 36698.679 38938.497 -154.82087
+      vertex 36501.343 38938.497 -469.04929
+    endpolygon
+    polygon
+      vertex 36501.343 27754.039000000004 -469.04929
+      vertex 36698.679 27754.039000000004 -397.22506
+      vertex 36698.679 27754.039000000004 -154.82087
+    endpolygon
+    polygon
+      vertex 36698.679 27754.039000000004 -154.82087
+      vertex 36501.343 27754.039000000004 -79.04929000000004
+      vertex 36501.343 27754.039000000004 -469.04929
+    endpolygon
+    polygon
+      vertex 36698.679 27754.039000000004 -397.22506
+      vertex 36698.679 38938.497 -397.22506
+      vertex 36698.679 38938.497 -154.82087
+    endpolygon
+    polygon
+      vertex 36698.679 38938.497 -154.82087
+      vertex 36698.679 27754.039000000004 -154.82087
+      vertex 36698.679 27754.039000000004 -397.22506
+    endpolygon
+    polygon
+      vertex 36501.343 38938.497 -469.04929
+      vertex 36501.343 27754.039000000004 -469.04929
+      vertex 36501.343 38938.497 -79.04929000000004
+    endpolygon
+    polygon
+      vertex 36501.343 27754.039000000004 -79.04929000000004
+      vertex 36501.343 38938.497 -79.04929000000004
+      vertex 36501.343 27754.039000000004 -469.04929
+    endpolygon
+endshape
+
+shape panel_1_strings_41/43_arm_to_arm
+    polygon
+      vertex 35742.356  27782.337 -465.0
+      vertex 35742.356  32252.337 -465.0
+      vertex  4739.6793 32252.337 -465.0
+      vertex  4739.6793 27782.337 -465.0
+    endpolygon
+endshape
+
+shape panel_2_strings_41/43_arm_to_arm
+    polygon
+      vertex 35742.679  34447.337 -465.0
+      vertex 35742.679  38917.337 -465.0
+      vertex  4739.6794 38917.337 -465.0
+      vertex  4739.6793 34447.337 -465.0
+   endpolygon
+endshape
+
+{
+    polygon
+      vertex 3983.6793 32252.337 -498.57525 
+      vertex 3983.6793 27782.337 -498.57525 
+      vertex 36503.356 27782.337 -498.57530999999994 
+      vertex 36503.356 32252.337 -498.57530999999994 
+    endpolygon
+endshape
+
+    polygon
+      vertex 36503.679 38917.337 -498.57530999999994 
+      vertex 3983.6794 38917.337  -498.57530999999994 
+      vertex 3983.6793 34447.337  -498.57530999999994 
+      vertex 36503.679 34447.337  -498.57530999999994 
+   endpolygon
+endshape
+}
+
+shape longerons
+   cylinder
+      radius 101 
+      center 4020.3  33041.0  -1210.0
+      center 36452.5 33041.0  -1210.0
+   endcylinder
+   cylinder
+      radius 101
+      center 4020.3  33803.0  -1072.0
+      center 36452.5 33803.0  -1072.0
+   endcylinder
+   cylinder
+      radius 101
+      center 4020.3  33661.0  -288.0
+      center 36452.5 33661.0  -288.0
+   endcylinder
+   cylinder
+      radius 101
+      center 4020.3  32899.0  -426.0
+      center 36452.5 32899.0  -426.0
+   endcylinder
+endshape
+
+      shape bottom_cap_8
+         cylinder 
+            radius  660
+            center 1810.0 33350.0 -750.0
+            center 4020.0 33350.0 -750.0
+         endcylinder
+      endshape
+
+      shape top_cap_8
+         cylinder 
+            radius  660
+            center 36455.0 33350.0 -750.0
+            center 36808.0 33350.0 -750.0
+         endcylinder
+      endshape
+
+shape whole_panel_1_add_FCC_widths
+    polygon
+      vertex  3983.6793 32386.087 -468.0
+      vertex  3983.6793 27633.837 -468.0
+      vertex 36494.356  27633.837 -468.0
+      vertex 36494.356  32386.087 -468.0
+    endpolygon
+endshape
+
+shape whole_panel_2_add_FCC_widths
+    polygon
+      vertex 36503.679  39065.837 -468.0
+      vertex 3983.6794  39065.837 -468.0
+      vertex  3983.6793 34313.587 -468.0
+      vertex  36503.679 34313.597 -468.0
+   endpolygon
+endshape
+
+{
+shape longerons
+    polygon
+      vertex 4020.3086 32889.939 -416.1005
+      vertex 4020.3086 33031.683 -1219.9688
+      vertex 36452.501 33031.683 -1219.9689
+      vertex 36452.501 32889.939 -416.10056
+    endpolygon
+    polygon
+      vertex 36452.501 33813.196 -1082.167
+      vertex 4020.3086 33813.196 -1082.1669
+      vertex 4020.3086 33671.453 -278.29861
+      vertex 36452.501 33671.453 -278.29866
+    endpolygon
+    polygon
+      vertex 36452.501 33671.453 -278.29866
+      vertex 4020.3086 33671.453 -278.29861
+      vertex 4020.3086 32889.939 -416.1005
+      vertex 36452.501 32889.939 -416.10056
+    endpolygon
+    polygon
+      vertex 4020.3086 33031.683 -1219.9688
+      vertex 4020.3086 33813.196 -1082.1669
+      vertex 36452.501 33813.196 -1082.167
+      vertex 36452.501 33031.683 -1219.9689
+    endpolygon
+endshape
+}
+
+
+
+endparts
+children
+endchildren
+endstructure
+
+
+
+
+
+
+ 
+structure SAW_3A_starboard
+   parts
+
+shape bottom_arm
+    polygon
+      vertex -3063.6794 27761.502999999997 1062.775
+      vertex -3263.6794 27761.502999999997 962.775
+      vertex -3263.6793 38934.023 962.775
+    endpolygon
+    polygon
+      vertex -3263.6793 38934.023 962.775
+      vertex -3063.6793 38934.023 1062.775
+      vertex -3063.6794 27761.502999999997 1062.775
+    endpolygon
+    polygon
+      vertex -3263.6794 27761.502999999997 1402.775
+      vertex -3063.6794 27761.502999999997 1312.775
+      vertex -3263.6793 38934.023 1402.775
+    endpolygon
+    polygon
+      vertex -3063.6793 38934.023 1312.775
+      vertex -3263.6793 38934.023 1402.775
+      vertex -3063.6794 27761.502999999997 1312.775
+    endpolygon
+    polygon
+      vertex -3263.6794 27761.502999999997 962.775
+      vertex -3063.6794 27761.502999999997 1062.775
+      vertex -3263.6794 27761.502999999997 1402.775
+    endpolygon
+    polygon
+      vertex -3063.6794 27761.502999999997 1312.775
+      vertex -3263.6794 27761.502999999997 1402.775
+      vertex -3063.6794 27761.502999999997 1062.775
+    endpolygon
+    polygon
+      vertex -3063.6793 38934.023 1062.775
+      vertex -3263.6793 38934.023 962.775
+      vertex -3263.6793 38934.023 1402.775
+    endpolygon
+    polygon
+      vertex -3263.6793 38934.023 1402.775
+      vertex -3063.6793 38934.023 1312.775
+      vertex -3063.6793 38934.023 1062.775
+    endpolygon
+    polygon
+      vertex -3263.6793 38934.023 962.775
+      vertex -3263.6794 27761.502999999997 962.775
+      vertex -3263.6794 27761.502999999997 1402.775
+    endpolygon
+    polygon
+      vertex -3263.6794 27761.502999999997 1402.775
+      vertex -3263.6793 38934.023 1402.775
+      vertex -3263.6793 38934.023 962.775
+    endpolygon
+    polygon
+      vertex -3063.6794 27761.502999999997 1062.775
+      vertex -3063.6793 38934.023 1062.775
+      vertex -3063.6794 27761.502999999997 1312.775
+    endpolygon
+    polygon
+      vertex -3063.6793 38934.023 1312.775
+      vertex -3063.6794 27761.502999999997 1312.775
+      vertex -3063.6793 38934.023 1062.775
+    endpolygon
+endshape
+
+shape top_arm
+    polygon
+      vertex -35781.343 27761.502999999997 1030.95071
+      vertex -35978.679 27761.502999999997 1102.77494
+      vertex -35978.679 38945.960999999996 1102.77494
+    endpolygon
+    polygon
+      vertex -35978.679 38945.960999999996 1102.77494
+      vertex -35781.343 38945.960999999996 1030.95071
+      vertex -35781.343 27761.502999999997 1030.95071
+    endpolygon
+    polygon
+      vertex -35978.679 27761.502999999997 1345.17913
+      vertex -35781.343 27761.502999999997 1420.95071
+      vertex -35978.679 38945.960999999996 1345.17913
+    endpolygon
+    polygon
+      vertex -35781.343 38945.960999999996 1420.95071
+      vertex -35978.679 38945.960999999996 1345.17913
+      vertex -35781.343 27761.502999999997 1420.95071
+    endpolygon
+    polygon
+      vertex -35978.679 27761.502999999997 1102.77494
+      vertex -35781.343 27761.502999999997 1030.95071
+      vertex -35978.679 27761.502999999997 1345.17913
+    endpolygon
+    polygon
+      vertex -35781.343 27761.502999999997 1420.95071
+      vertex -35978.679 27761.502999999997 1345.17913
+      vertex -35781.343 27761.502999999997 1030.95071
+    endpolygon
+    polygon
+      vertex -35781.343 38945.960999999996 1030.95071
+      vertex -35978.679 38945.960999999996 1102.77494
+      vertex -35978.679 38945.960999999996 1345.17913
+    endpolygon
+    polygon
+      vertex -35978.679 38945.960999999996 1345.17913
+      vertex -35781.343 38945.960999999996 1420.95071
+      vertex -35781.343 38945.960999999996 1030.95071
+    endpolygon
+    polygon
+      vertex -35978.679 38945.960999999996 1102.77494
+      vertex -35978.679 27761.502999999997 1102.77494
+      vertex -35978.679 27761.502999999997 1345.17913
+    endpolygon
+    polygon
+      vertex -35978.679 27761.502999999997 1345.17913
+      vertex -35978.679 38945.960999999996 1345.17913
+      vertex -35978.679 38945.960999999996 1102.77494
+    endpolygon
+    polygon
+      vertex -35781.343 27761.502999999997 1030.95071
+      vertex -35781.343 38945.960999999996 1030.95071
+      vertex -35781.343 27761.502999999997 1420.95071
+    endpolygon
+    polygon
+      vertex -35781.343 38945.960999999996 1420.95071
+      vertex -35781.343 27761.502999999997 1420.95071
+      vertex -35781.343 38945.960999999996 1030.95071
+    endpolygon
+endshape
+
+shape panel_1_strings_41/43_arm_to_arm
+    polygon
+      vertex -35022.356  38917.663 1035.0
+      vertex -35022.356  34447.663 1035.0
+      vertex  -4019.6793 34447.663 1035.0
+      vertex  -4019.6793 38917.663 1035.0
+    endpolygon
+endshape
+
+shape panel_2_strings_41/43_arm_to_arm
+    polygon
+      vertex -35022.679  32252.663 1035.0
+      vertex -35022.679  27782.663 1035.0
+      vertex  -4019.6794 27782.663 1035.0
+      vertex  -4019.6793 32252.663 1035.0
+   endpolygon
+endshape
+
+{
+    polygon
+      vertex -3263.6793 34447.663 1001.42475 
+      vertex -3263.6793 38917.663 1001.42475 
+      vertex -35783.356 38917.663 1001.42469 
+      vertex -35783.356 34447.663 1001.42469 
+    endpolygon
+endshape
+
+    polygon
+      vertex -35783.679 27782.663 1001.42469 
+      vertex -3263.6794 27782.663  1001.42469 
+      vertex -3263.6793 32252.663  1001.42469 
+      vertex -35783.679 32252.663  1001.42469 
+   endpolygon
+endshape
+}
+
+shape longerons
+   cylinder
+      radius 101 
+      center -3300.3  33659.0  290.0
+      center -35732.5 33659.0  290.0
+   endcylinder
+   cylinder
+      radius 101
+      center -3300.3  32897.0  428.0
+      center -35732.5 32897.0  428.0
+   endcylinder
+   cylinder
+      radius 101
+      center -3300.3  33039.0  1212.0
+      center -35732.5 33039.0  1212.0
+   endcylinder
+   cylinder
+      radius 101
+      center -3300.3  33801.0  1074.0
+      center -35732.5 33801.0  1074.0
+   endcylinder
+endshape
+
+      shape bottom_cap_8
+         cylinder 
+            radius  660
+            center -1090.0 33350.0 750.0
+            center -3300.0 33350.0 750.0
+         endcylinder
+      endshape
+
+      shape top_cap_8
+         cylinder 
+            radius  660
+            center -35735.0 33350.0 750.0
+            center -36088.0 33350.0 750.0
+         endcylinder
+      endshape
+
+shape whole_panel_1_add_FCC_widths
+    polygon
+      vertex  -3263.6793 34313.913 1032.0
+      vertex  -3263.6793 39066.163 1032.0
+      vertex -35774.356  39066.163 1032.0
+      vertex -35774.356  34313.913 1032.0
+    endpolygon
+endshape
+
+shape whole_panel_2_add_FCC_widths
+    polygon
+      vertex -35783.679  27634.163 1032.0
+      vertex -3263.6794  27634.163 1032.0
+      vertex  -3263.6793 32386.413 1032.0
+      vertex  -35783.679 32386.403 1032.0
+   endpolygon
+endshape
+
+{
+shape longerons
+    polygon
+      vertex -3300.3086 33810.061 1083.8995
+      vertex -3300.3086 33668.317 280.0311999999999
+      vertex -35732.501 33668.317 280.0310999999999
+      vertex -35732.501 33810.061 1083.8994400000001
+    endpolygon
+    polygon
+      vertex -35732.501 32886.804 417.8330000000001
+      vertex -3300.3086 32886.804 417.83310000000006
+      vertex -3300.3086 33028.547 1221.70139
+      vertex -35732.501 33028.547 1221.70134
+    endpolygon
+    polygon
+      vertex -35732.501 33028.547 1221.70134
+      vertex -3300.3086 33028.547 1221.70139
+      vertex -3300.3086 33810.061 1083.8995
+      vertex -35732.501 33810.061 1083.8994400000001
+    endpolygon
+    polygon
+      vertex -3300.3086 33668.317 280.0311999999999
+      vertex -3300.3086 32886.804 417.83310000000006
+      vertex -35732.501 32886.804 417.8330000000001
+      vertex -35732.501 33668.317 280.0310999999999
+    endpolygon
+endshape
+}
+
+
+
+endparts
+children
+endchildren
+endstructure
+
+
+
+
+
+
+ 
+structure SAW_1B_starboard
+   parts
+
+shape bottom_arm
+    polygon
+      vertex -3198.6794 42833.503 1067.775
+      vertex -3398.6794 42833.503 967.775
+      vertex -3398.6793 54006.023 967.775
+    endpolygon
+    polygon
+      vertex -3398.6793 54006.023 967.775
+      vertex -3198.6793 54006.023 1067.775
+      vertex -3198.6794 42833.503 1067.775
+    endpolygon
+    polygon
+      vertex -3398.6794 42833.503 1407.775
+      vertex -3198.6794 42833.503 1317.775
+      vertex -3398.6793 54006.023 1407.775
+    endpolygon
+    polygon
+      vertex -3198.6793 54006.023 1317.775
+      vertex -3398.6793 54006.023 1407.775
+      vertex -3198.6794 42833.503 1317.775
+    endpolygon
+    polygon
+      vertex -3398.6794 42833.503 967.775
+      vertex -3198.6794 42833.503 1067.775
+      vertex -3398.6794 42833.503 1407.775
+    endpolygon
+    polygon
+      vertex -3198.6794 42833.503 1317.775
+      vertex -3398.6794 42833.503 1407.775
+      vertex -3198.6794 42833.503 1067.775
+    endpolygon
+    polygon
+      vertex -3198.6793 54006.023 1067.775
+      vertex -3398.6793 54006.023 967.775
+      vertex -3398.6793 54006.023 1407.775
+    endpolygon
+    polygon
+      vertex -3398.6793 54006.023 1407.775
+      vertex -3198.6793 54006.023 1317.775
+      vertex -3198.6793 54006.023 1067.775
+    endpolygon
+    polygon
+      vertex -3398.6793 54006.023 967.775
+      vertex -3398.6794 42833.503 967.775
+      vertex -3398.6794 42833.503 1407.775
+    endpolygon
+    polygon
+      vertex -3398.6794 42833.503 1407.775
+      vertex -3398.6793 54006.023 1407.775
+      vertex -3398.6793 54006.023 967.775
+    endpolygon
+    polygon
+      vertex -3198.6794 42833.503 1067.775
+      vertex -3198.6793 54006.023 1067.775
+      vertex -3198.6794 42833.503 1317.775
+    endpolygon
+    polygon
+      vertex -3198.6793 54006.023 1317.775
+      vertex -3198.6794 42833.503 1317.775
+      vertex -3198.6793 54006.023 1067.775
+    endpolygon
+endshape
+
+shape top_arm
+    polygon
+      vertex -35916.343 42833.503 1035.95071
+      vertex -36113.679 42833.503 1107.77494
+      vertex -36113.679 54017.960999999996 1107.77494
+    endpolygon
+    polygon
+      vertex -36113.679 54017.960999999996 1107.77494
+      vertex -35916.343 54017.960999999996 1035.95071
+      vertex -35916.343 42833.503 1035.95071
+    endpolygon
+    polygon
+      vertex -36113.679 42833.503 1350.17913
+      vertex -35916.343 42833.503 1425.95071
+      vertex -36113.679 54017.960999999996 1350.17913
+    endpolygon
+    polygon
+      vertex -35916.343 54017.960999999996 1425.95071
+      vertex -36113.679 54017.960999999996 1350.17913
+      vertex -35916.343 42833.503 1425.95071
+    endpolygon
+    polygon
+      vertex -36113.679 42833.503 1107.77494
+      vertex -35916.343 42833.503 1035.95071
+      vertex -36113.679 42833.503 1350.17913
+    endpolygon
+    polygon
+      vertex -35916.343 42833.503 1425.95071
+      vertex -36113.679 42833.503 1350.17913
+      vertex -35916.343 42833.503 1035.95071
+    endpolygon
+    polygon
+      vertex -35916.343 54017.960999999996 1035.95071
+      vertex -36113.679 54017.960999999996 1107.77494
+      vertex -36113.679 54017.960999999996 1350.17913
+    endpolygon
+    polygon
+      vertex -36113.679 54017.960999999996 1350.17913
+      vertex -35916.343 54017.960999999996 1425.95071
+      vertex -35916.343 54017.960999999996 1035.95071
+    endpolygon
+    polygon
+      vertex -36113.679 54017.960999999996 1107.77494
+      vertex -36113.679 42833.503 1107.77494
+      vertex -36113.679 42833.503 1350.17913
+    endpolygon
+    polygon
+      vertex -36113.679 42833.503 1350.17913
+      vertex -36113.679 54017.960999999996 1350.17913
+      vertex -36113.679 54017.960999999996 1107.77494
+    endpolygon
+    polygon
+      vertex -35916.343 42833.503 1035.95071
+      vertex -35916.343 54017.960999999996 1035.95071
+      vertex -35916.343 42833.503 1425.95071
+    endpolygon
+    polygon
+      vertex -35916.343 54017.960999999996 1425.95071
+      vertex -35916.343 42833.503 1425.95071
+      vertex -35916.343 54017.960999999996 1035.95071
+    endpolygon
+endshape
+
+shape panel_1_strings_41/43_arm_to_arm
+    polygon
+      vertex -35157.356  53989.663 1040.0
+      vertex -35157.356  49519.663 1040.0
+      vertex  -4154.6793 49519.663 1040.0
+      vertex  -4154.6793 53989.663 1040.0
+    endpolygon
+endshape
+
+shape panel_2_strings_41/43_arm_to_arm
+    polygon
+      vertex -35157.679  47324.663 1040.0
+      vertex -35157.679  42854.663 1040.0
+      vertex  -4154.6794 42854.663 1040.0
+      vertex  -4154.6793 47324.663 1040.0
+   endpolygon
+endshape
+
+{
+    polygon
+      vertex -3398.6793 49519.663 1006.42475 
+      vertex -3398.6793 53989.663 1006.42475 
+      vertex -35918.356 53989.663 1006.42469 
+      vertex -35918.356 49519.663 1006.42469 
+    endpolygon
+endshape
+
+    polygon
+      vertex -35918.679 42854.663 1006.42469 
+      vertex -3398.6794 42854.663  1006.42469 
+      vertex -3398.6793 47324.663  1006.42469 
+      vertex -35918.679 47324.663  1006.42469 
+   endpolygon
+endshape
+}
+
+shape longerons
+   cylinder
+      radius 101 
+      center -3435.3  48731.0  295.0
+      center -35867.5 48731.0  295.0
+   endcylinder
+   cylinder
+      radius 101
+      center -3435.3  47969.0  433.0
+      center -35867.5 47969.0  433.0
+   endcylinder
+   cylinder
+      radius 101
+      center -3435.3  48111.0  1217.0
+      center -35867.5 48111.0  1217.0
+   endcylinder
+   cylinder
+      radius 101
+      center -3435.3  48873.0  1079.0
+      center -35867.5 48873.0  1079.0
+   endcylinder
+endshape
+
+      shape bottom_cap_8
+         cylinder 
+            radius  660
+            center -1225.0 48422.0 755.0
+            center -3435.0 48422.0 755.0
+         endcylinder
+      endshape
+
+      shape top_cap_8
+         cylinder 
+            radius  660
+            center -35870.0 48422.0 755.0
+            center -36223.0 48422.0 755.0
+         endcylinder
+      endshape
+
+shape whole_panel_1_add_FCC_widths
+    polygon
+      vertex  -3398.6793 49385.913 1037.0
+      vertex  -3398.6793 54138.163 1037.0
+      vertex -35909.356  54138.163 1037.0
+      vertex -35909.356  49385.913 1037.0
+    endpolygon
+endshape
+
+shape whole_panel_2_add_FCC_widths
+    polygon
+      vertex -35918.679  42706.163 1037.0
+      vertex -3398.6794  42706.163 1037.0
+      vertex  -3398.6793 47458.413 1037.0
+      vertex  -35918.679 47458.403 1037.0
+   endpolygon
+endshape
+
+{
+shape longerons
+    polygon
+      vertex -3435.3086 48882.061 1088.8995
+      vertex -3435.3086 48740.317 285.0311999999999
+      vertex -35867.501 48740.317 285.0310999999999
+      vertex -35867.501 48882.061 1088.8994400000001
+    endpolygon
+    polygon
+      vertex -35867.501 47958.804 422.8330000000001
+      vertex -3435.3086 47958.804 422.83310000000006
+      vertex -3435.3086 48100.547 1226.70139
+      vertex -35867.501 48100.547 1226.70134
+    endpolygon
+    polygon
+      vertex -35867.501 48100.547 1226.70134
+      vertex -3435.3086 48100.547 1226.70139
+      vertex -3435.3086 48882.061 1088.8995
+      vertex -35867.501 48882.061 1088.8994400000001
+    endpolygon
+    polygon
+      vertex -3435.3086 48740.317 285.0311999999999
+      vertex -3435.3086 47958.804 422.83310000000006
+      vertex -35867.501 47958.804 422.8330000000001
+      vertex -35867.501 48740.317 285.0310999999999
+    endpolygon
+endshape
+}
+
+
+
+endparts
+children
+endchildren
+endstructure
+
+
+
+
+
+
+ 
+structure SAW_3B_starboard
+   parts
+
+shape bottom_arm
+    polygon
+      vertex 3648.6794 54001.497 -437.225
+      vertex 3848.6794 54001.497 -537.225
+      vertex 3848.6793 42828.977 -537.225
+    endpolygon
+    polygon
+      vertex 3848.6793 42828.977 -537.225
+      vertex 3648.6793 42828.977 -437.225
+      vertex 3648.6794 54001.497 -437.225
+    endpolygon
+    polygon
+      vertex 3848.6794 54001.497 -97.22500000000002
+      vertex 3648.6794 54001.497 -187.22500000000002
+      vertex 3848.6793 42828.977 -97.22500000000002
+    endpolygon
+    polygon
+      vertex 3648.6793 42828.977 -187.22500000000002
+      vertex 3848.6793 42828.977 -97.22500000000002
+      vertex 3648.6794 54001.497 -187.22500000000002
+    endpolygon
+    polygon
+      vertex 3848.6794 54001.497 -537.225
+      vertex 3648.6794 54001.497 -437.225
+      vertex 3848.6794 54001.497 -97.22500000000002
+    endpolygon
+    polygon
+      vertex 3648.6794 54001.497 -187.22500000000002
+      vertex 3848.6794 54001.497 -97.22500000000002
+      vertex 3648.6794 54001.497 -437.225
+    endpolygon
+    polygon
+      vertex 3648.6793 42828.977 -437.225
+      vertex 3848.6793 42828.977 -537.225
+      vertex 3848.6793 42828.977 -97.22500000000002
+    endpolygon
+    polygon
+      vertex 3848.6793 42828.977 -97.22500000000002
+      vertex 3648.6793 42828.977 -187.22500000000002
+      vertex 3648.6793 42828.977 -437.225
+    endpolygon
+    polygon
+      vertex 3848.6793 42828.977 -537.225
+      vertex 3848.6794 54001.497 -537.225
+      vertex 3848.6794 54001.497 -97.22500000000002
+    endpolygon
+    polygon
+      vertex 3848.6794 54001.497 -97.22500000000002
+      vertex 3848.6793 42828.977 -97.22500000000002
+      vertex 3848.6793 42828.977 -537.225
+    endpolygon
+    polygon
+      vertex 3648.6794 54001.497 -437.225
+      vertex 3648.6793 42828.977 -437.225
+      vertex 3648.6794 54001.497 -187.22500000000002
+    endpolygon
+    polygon
+      vertex 3648.6793 42828.977 -187.22500000000002
+      vertex 3648.6794 54001.497 -187.22500000000002
+      vertex 3648.6793 42828.977 -437.225
+    endpolygon
+endshape
+
+shape top_arm
+    polygon
+      vertex 36366.343 54001.497 -469.04929
+      vertex 36563.679 54001.497 -397.22506
+      vertex 36563.679 42817.039000000004 -397.22506
+    endpolygon
+    polygon
+      vertex 36563.679 42817.039000000004 -397.22506
+      vertex 36366.343 42817.039000000004 -469.04929
+      vertex 36366.343 54001.497 -469.04929
+    endpolygon
+    polygon
+      vertex 36563.679 54001.497 -154.82087
+      vertex 36366.343 54001.497 -79.04929000000004
+      vertex 36563.679 42817.039000000004 -154.82087
+    endpolygon
+    polygon
+      vertex 36366.343 42817.039000000004 -79.04929000000004
+      vertex 36563.679 42817.039000000004 -154.82087
+      vertex 36366.343 54001.497 -79.04929000000004
+    endpolygon
+    polygon
+      vertex 36563.679 54001.497 -397.22506
+      vertex 36366.343 54001.497 -469.04929
+      vertex 36563.679 54001.497 -154.82087
+    endpolygon
+    polygon
+      vertex 36366.343 54001.497 -79.04929000000004
+      vertex 36563.679 54001.497 -154.82087
+      vertex 36366.343 54001.497 -469.04929
+    endpolygon
+    polygon
+      vertex 36366.343 42817.039000000004 -469.04929
+      vertex 36563.679 42817.039000000004 -397.22506
+      vertex 36563.679 42817.039000000004 -154.82087
+    endpolygon
+    polygon
+      vertex 36563.679 42817.039000000004 -154.82087
+      vertex 36366.343 42817.039000000004 -79.04929000000004
+      vertex 36366.343 42817.039000000004 -469.04929
+    endpolygon
+    polygon
+      vertex 36563.679 42817.039000000004 -397.22506
+      vertex 36563.679 54001.497 -397.22506
+      vertex 36563.679 54001.497 -154.82087
+    endpolygon
+    polygon
+      vertex 36563.679 54001.497 -154.82087
+      vertex 36563.679 42817.039000000004 -154.82087
+      vertex 36563.679 42817.039000000004 -397.22506
+    endpolygon
+    polygon
+      vertex 36366.343 54001.497 -469.04929
+      vertex 36366.343 42817.039000000004 -469.04929
+      vertex 36366.343 54001.497 -79.04929000000004
+    endpolygon
+    polygon
+      vertex 36366.343 42817.039000000004 -79.04929000000004
+      vertex 36366.343 54001.497 -79.04929000000004
+      vertex 36366.343 42817.039000000004 -469.04929
+    endpolygon
+endshape
+
+shape panel_1_strings_41/43_arm_to_arm
+    polygon
+      vertex 35607.356  42845.337 -465.0
+      vertex 35607.356  47315.337 -465.0
+      vertex  4604.6793 47315.337 -465.0
+      vertex  4604.6793 42845.337 -465.0
+    endpolygon
+endshape
+
+shape panel_2_strings_41/43_arm_to_arm
+    polygon
+      vertex 35607.679  49510.337 -465.0
+      vertex 35607.679  53980.337 -465.0
+      vertex  4604.6794 53980.337 -465.0
+      vertex  4604.6793 49510.337 -465.0
+   endpolygon
+endshape
+
+{
+    polygon
+      vertex 3848.6793 47315.337 -498.57525 
+      vertex 3848.6793 42845.337 -498.57525 
+      vertex 36368.356 42845.337 -498.57530999999994 
+      vertex 36368.356 47315.337 -498.57530999999994 
+    endpolygon
+endshape
+
+    polygon
+      vertex 36368.679 53980.337 -498.57530999999994 
+      vertex 3848.6794 53980.337  -498.57530999999994 
+      vertex 3848.6793 49510.337  -498.57530999999994 
+      vertex 36368.679 49510.337  -498.57530999999994 
+   endpolygon
+endshape
+}
+
+shape longerons
+   cylinder
+      radius 101 
+      center 3885.3  48104.0  -1210.0
+      center 36317.5 48104.0  -1210.0
+   endcylinder
+   cylinder
+      radius 101
+      center 3885.3  48866.0  -1072.0
+      center 36317.5 48866.0  -1072.0
+   endcylinder
+   cylinder
+      radius 101
+      center 3885.3  48724.0  -288.0
+      center 36317.5 48724.0  -288.0
+   endcylinder
+   cylinder
+      radius 101
+      center 3885.3  47962.0  -426.0
+      center 36317.5 47962.0  -426.0
+   endcylinder
+endshape
+
+      shape bottom_cap_8
+         cylinder 
+            radius  660
+            center 1675.0 48413.0 -750.0
+            center 3885.0 48413.0 -750.0
+         endcylinder
+      endshape
+
+      shape top_cap_8
+         cylinder 
+            radius  660
+            center 36320.0 48413.0 -750.0
+            center 36673.0 48413.0 -750.0
+         endcylinder
+      endshape
+
+shape whole_panel_1_add_FCC_widths
+    polygon
+      vertex  3848.6793 47449.087 -468.0
+      vertex  3848.6793 42696.837 -468.0
+      vertex 36359.356  42696.837 -468.0
+      vertex 36359.356  47449.087 -468.0
+    endpolygon
+endshape
+
+shape whole_panel_2_add_FCC_widths
+    polygon
+      vertex 36368.679  54128.837 -468.0
+      vertex 3848.6794  54128.837 -468.0
+      vertex  3848.6793 49376.587 -468.0
+      vertex  36368.679 49376.597 -468.0
+   endpolygon
+endshape
+
+{
+shape longerons
+    polygon
+      vertex 3885.3086 47952.939 -416.1005
+      vertex 3885.3086 48094.683 -1219.9688
+      vertex 36317.501 48094.683 -1219.9689
+      vertex 36317.501 47952.939 -416.10056
+    endpolygon
+    polygon
+      vertex 36317.501 48876.196 -1082.167
+      vertex 3885.3086 48876.196 -1082.1669
+      vertex 3885.3086 48734.453 -278.29861
+      vertex 36317.501 48734.453 -278.29866
+    endpolygon
+    polygon
+      vertex 36317.501 48734.453 -278.29866
+      vertex 3885.3086 48734.453 -278.29861
+      vertex 3885.3086 47952.939 -416.1005
+      vertex 36317.501 47952.939 -416.10056
+    endpolygon
+    polygon
+      vertex 3885.3086 48094.683 -1219.9688
+      vertex 3885.3086 48876.196 -1082.1669
+      vertex 36317.501 48876.196 -1082.167
+      vertex 36317.501 48094.683 -1219.9689
+    endpolygon
+endshape
+}
+
+
+
+endparts
+children
+endchildren
+endstructure
+
+
+
+
+
+
+
+
+
+      endchildren
+endstructure
+
+
+
+structure Port_SARJ_rotated_structure
+   parts 
+      shape SAW_body_22
+         polygon
+            vertex -1410 -47306 1548
+            vertex 980   -47306 1548
+            vertex 980   -27280 1548
+            vertex -1410 -27280 1548
+         endpolygon
+         polygon
+            vertex -1410 -47306 -1530
+            vertex 980   -47306 -1530
+            vertex 980   -27280 -1530
+            vertex -1410 -27280 -1530
+         endpolygon
+         polygon
+            vertex -1410 -27280 -1530
+            vertex 980   -27280 -1530
+            vertex 980   -27280 1548
+            vertex -1410 -27280 1548
+         endpolygon
+         polygon
+            vertex -1410 -47306 -1530
+            vertex 980   -47306 -1530
+            vertex 980   -47306 1548
+            vertex -1410 -47306 1548
+         endpolygon
+         polygon
+            vertex 980   -27280 -1530
+            vertex 980   -47306 -1530
+            vertex 980   -47306 1548
+            vertex 980   -27280 1548
+         endpolygon
+         polygon
+            vertex -1410 -27280 -1530
+            vertex -1410 -47306 -1530
+            vertex -1410 -47306 1548
+            vertex -1410 -27280 1548
+         endpolygon
+      endshape
+
+      shape SAW_fin_1_22
+         polygon
+            vertex -500 -46278 1548
+            vertex  -0  -46278 1548
+            vertex  -0  -42770 1548
+            vertex -500 -42770 1548
+         endpolygon
+         polygon
+            vertex -500 -46278 14900
+            vertex  -0  -46278 14900
+            vertex  -0  -42770 14900
+            vertex -500 -42770 14900
+         endpolygon
+         polygon
+            vertex -500 -42770 1548
+            vertex  -0  -42770 1548
+            vertex  -0  -42770 14900
+            vertex -500 -42770 14900
+         endpolygon
+         polygon
+            vertex -500 -46278 1548
+            vertex  -0  -46278 1548
+            vertex  -0  -46278 14900
+            vertex -500 -46278 14900
+         endpolygon
+         polygon
+            vertex  -0 -46278 1548
+            vertex  -0 -42770 1548
+            vertex  -0 -42770 14900
+            vertex  -0 -46278 14900
+         endpolygon
+         polygon
+            vertex  -500 -46278 1548
+            vertex  -500 -42770 1548
+            vertex  -500 -42770 14900
+            vertex  -500 -46278 14900
+         endpolygon
+      endshape
+
+      shape SAW_fin_2_22
+         polygon
+            vertex -500 -27700 1548
+            vertex -100 -27700 1548
+            vertex -100 -31279 1548
+            vertex -500 -31279 1548
+         endpolygon
+         polygon
+            vertex -500 -27700 14900
+            vertex -100 -27700 14900
+            vertex -100 -31279 14900
+            vertex -500 -31279 14900
+         endpolygon
+         polygon
+            vertex -500 -27700 1548
+            vertex -100 -27700 1548
+            vertex -100 -27700 14900
+            vertex -500 -27700 14900
+         endpolygon
+         polygon
+            vertex -500 -31279 1548
+            vertex -100 -31279 1548
+            vertex -100 -31279 14900
+            vertex -500 -31279 14900
+         endpolygon
+         polygon
+            vertex -100 -27700 1548
+            vertex -100 -31279 1548
+            vertex -100 -31279 14900
+            vertex -100 -27700 14900
+         endpolygon
+         polygon
+            vertex -500 -27700 1548
+            vertex -500 -31279 1548
+            vertex -500 -31279 14900
+            vertex -500 -27700 14900
+         endpolygon
+      endshape
+      endparts
+      children
+
+
+
+
+
+
+ 
+structure SAW_2A_port
+   parts
+
+shape bottom_arm
+    polygon
+      vertex -3783.6794 -38938.497 -437.225
+      vertex -3983.6794 -38938.497 -537.225
+      vertex -3983.6793 -27765.977 -537.225
+    endpolygon
+    polygon
+      vertex -3983.6793 -27765.977 -537.225
+      vertex -3783.6793 -27765.977 -437.225
+      vertex -3783.6794 -38938.497 -437.225
+    endpolygon
+    polygon
+      vertex -3983.6794 -38938.497 -97.22500000000002
+      vertex -3783.6794 -38938.497 -187.22500000000002
+      vertex -3983.6793 -27765.977 -97.22500000000002
+    endpolygon
+    polygon
+      vertex -3783.6793 -27765.977 -187.22500000000002
+      vertex -3983.6793 -27765.977 -97.22500000000002
+      vertex -3783.6794 -38938.497 -187.22500000000002
+    endpolygon
+    polygon
+      vertex -3983.6794 -38938.497 -537.225
+      vertex -3783.6794 -38938.497 -437.225
+      vertex -3983.6794 -38938.497 -97.22500000000002
+    endpolygon
+    polygon
+      vertex -3783.6794 -38938.497 -187.22500000000002
+      vertex -3983.6794 -38938.497 -97.22500000000002
+      vertex -3783.6794 -38938.497 -437.225
+    endpolygon
+    polygon
+      vertex -3783.6793 -27765.977 -437.225
+      vertex -3983.6793 -27765.977 -537.225
+      vertex -3983.6793 -27765.977 -97.22500000000002
+    endpolygon
+    polygon
+      vertex -3983.6793 -27765.977 -97.22500000000002
+      vertex -3783.6793 -27765.977 -187.22500000000002
+      vertex -3783.6793 -27765.977 -437.225
+    endpolygon
+    polygon
+      vertex -3983.6793 -27765.977 -537.225
+      vertex -3983.6794 -38938.497 -537.225
+      vertex -3983.6794 -38938.497 -97.22500000000002
+    endpolygon
+    polygon
+      vertex -3983.6794 -38938.497 -97.22500000000002
+      vertex -3983.6793 -27765.977 -97.22500000000002
+      vertex -3983.6793 -27765.977 -537.225
+    endpolygon
+    polygon
+      vertex -3783.6794 -38938.497 -437.225
+      vertex -3783.6793 -27765.977 -437.225
+      vertex -3783.6794 -38938.497 -187.22500000000002
+    endpolygon
+    polygon
+      vertex -3783.6793 -27765.977 -187.22500000000002
+      vertex -3783.6794 -38938.497 -187.22500000000002
+      vertex -3783.6793 -27765.977 -437.225
+    endpolygon
+endshape
+
+shape top_arm
+    polygon
+      vertex -36501.343 -38938.497 -469.04929
+      vertex -36698.679 -38938.497 -397.22506
+      vertex -36698.679 -27754.039 -397.22506
+    endpolygon
+    polygon
+      vertex -36698.679 -27754.039 -397.22506
+      vertex -36501.343 -27754.039 -469.04929
+      vertex -36501.343 -38938.497 -469.04929
+    endpolygon
+    polygon
+      vertex -36698.679 -38938.497 -154.82087
+      vertex -36501.343 -38938.497 -79.04929000000004
+      vertex -36698.679 -27754.039 -154.82087
+    endpolygon
+    polygon
+      vertex -36501.343 -27754.039 -79.04929000000004
+      vertex -36698.679 -27754.039 -154.82087
+      vertex -36501.343 -38938.497 -79.04929000000004
+    endpolygon
+    polygon
+      vertex -36698.679 -38938.497 -397.22506
+      vertex -36501.343 -38938.497 -469.04929
+      vertex -36698.679 -38938.497 -154.82087
+    endpolygon
+    polygon
+      vertex -36501.343 -38938.497 -79.04929000000004
+      vertex -36698.679 -38938.497 -154.82087
+      vertex -36501.343 -38938.497 -469.04929
+    endpolygon
+    polygon
+      vertex -36501.343 -27754.039 -469.04929
+      vertex -36698.679 -27754.039 -397.22506
+      vertex -36698.679 -27754.039 -154.82087
+    endpolygon
+    polygon
+      vertex -36698.679 -27754.039 -154.82087
+      vertex -36501.343 -27754.039 -79.04929000000004
+      vertex -36501.343 -27754.039 -469.04929
+    endpolygon
+    polygon
+      vertex -36698.679 -27754.039 -397.22506
+      vertex -36698.679 -38938.497 -397.22506
+      vertex -36698.679 -38938.497 -154.82087
+    endpolygon
+    polygon
+      vertex -36698.679 -38938.497 -154.82087
+      vertex -36698.679 -27754.039 -154.82087
+      vertex -36698.679 -27754.039 -397.22506
+    endpolygon
+    polygon
+      vertex -36501.343 -38938.497 -469.04929
+      vertex -36501.343 -27754.039 -469.04929
+      vertex -36501.343 -38938.497 -79.04929000000004
+    endpolygon
+    polygon
+      vertex -36501.343 -27754.039 -79.04929000000004
+      vertex -36501.343 -38938.497 -79.04929000000004
+      vertex -36501.343 -27754.039 -469.04929
+    endpolygon
+endshape
+
+shape panel_1_strings_41/43_arm_to_arm
+    polygon
+      vertex -35742.356  -27782.337 -465.0
+      vertex -35742.356  -32252.337 -465.0
+      vertex  -4739.6793 -32252.337 -465.0
+      vertex  -4739.6793 -27782.337 -465.0
+    endpolygon
+endshape
+
+shape panel_2_strings_41/43_arm_to_arm
+    polygon
+      vertex -35742.679  -34447.337 -465.0
+      vertex -35742.679  -38917.337 -465.0
+      vertex  -4739.6794 -38917.337 -465.0
+      vertex  -4739.6793 -34447.337 -465.0
+   endpolygon
+endshape
+
+{
+    polygon
+      vertex -3983.6793 -32252.337 -498.57525 
+      vertex -3983.6793 -27782.337 -498.57525 
+      vertex -36503.356 -27782.337 -498.57530999999994 
+      vertex -36503.356 -32252.337 -498.57530999999994 
+    endpolygon
+endshape
+
+    polygon
+      vertex -36503.679 -38917.337 -498.57530999999994 
+      vertex -3983.6794 -38917.337  -498.57530999999994 
+      vertex -3983.6793 -34447.337  -498.57530999999994 
+      vertex -36503.679 -34447.337  -498.57530999999994 
+   endpolygon
+endshape
+}
+
+shape longerons
+   cylinder
+      radius 101 
+      center -4020.3  -33041.0  -1210.0
+      center -36452.5 -33041.0  -1210.0
+   endcylinder
+   cylinder
+      radius 101
+      center -4020.3  -33803.0  -1072.0
+      center -36452.5 -33803.0  -1072.0
+   endcylinder
+   cylinder
+      radius 101
+      center -4020.3  -33661.0  -288.0
+      center -36452.5 -33661.0  -288.0
+   endcylinder
+   cylinder
+      radius 101
+      center -4020.3  -32899.0  -426.0
+      center -36452.5 -32899.0  -426.0
+   endcylinder
+endshape
+
+      shape bottom_cap_8
+         cylinder 
+            radius  660
+            center -1810.0 -33350.0 -750.0
+            center -4020.0 -33350.0 -750.0
+         endcylinder
+      endshape
+
+      shape top_cap_8
+         cylinder 
+            radius  660
+            center -36455.0 -33350.0 -750.0
+            center -36808.0 -33350.0 -750.0
+         endcylinder
+      endshape
+
+shape whole_panel_1_add_FCC_widths
+    polygon
+      vertex  -3983.6793 -32386.087 -468.0
+      vertex  -3983.6793 -27633.837 -468.0
+      vertex -36494.356  -27633.837 -468.0
+      vertex -36494.356  -32386.087 -468.0
+    endpolygon
+endshape
+
+shape whole_panel_2_add_FCC_widths
+    polygon
+      vertex -36503.679  -39065.837 -468.0
+      vertex -3983.6794  -39065.837 -468.0
+      vertex  -3983.6793 -34313.587 -468.0
+      vertex  -36503.679 -34313.597 -468.0
+   endpolygon
+endshape
+
+{
+shape longerons
+    polygon
+      vertex -4020.3086 -32889.939 -416.1005
+      vertex -4020.3086 -33031.683 -1219.9688
+      vertex -36452.501 -33031.683 -1219.9689
+      vertex -36452.501 -32889.939 -416.10056
+    endpolygon
+    polygon
+      vertex -36452.501 -33813.196 -1082.167
+      vertex -4020.3086 -33813.196 -1082.1669
+      vertex -4020.3086 -33671.453 -278.29861
+      vertex -36452.501 -33671.453 -278.29866
+    endpolygon
+    polygon
+      vertex -36452.501 -33671.453 -278.29866
+      vertex -4020.3086 -33671.453 -278.29861
+      vertex -4020.3086 -32889.939 -416.1005
+      vertex -36452.501 -32889.939 -416.10056
+    endpolygon
+    polygon
+      vertex -4020.3086 -33031.683 -1219.9688
+      vertex -4020.3086 -33813.196 -1082.1669
+      vertex -36452.501 -33813.196 -1082.167
+      vertex -36452.501 -33031.683 -1219.9689
+    endpolygon
+endshape
+}
+
+
+
+endparts
+children
+endchildren
+endstructure
+
+
+
+
+
+
+ 
+structure SAW_4A_port
+   parts
+
+shape bottom_arm
+    polygon
+      vertex 3063.6794 -27761.502999999997 1062.775
+      vertex 3263.6794 -27761.502999999997 962.775
+      vertex 3263.6793 -38934.023 962.775
+    endpolygon
+    polygon
+      vertex 3263.6793 -38934.023 962.775
+      vertex 3063.6793 -38934.023 1062.775
+      vertex 3063.6794 -27761.502999999997 1062.775
+    endpolygon
+    polygon
+      vertex 3263.6794 -27761.502999999997 1402.775
+      vertex 3063.6794 -27761.502999999997 1312.775
+      vertex 3263.6793 -38934.023 1402.775
+    endpolygon
+    polygon
+      vertex 3063.6793 -38934.023 1312.775
+      vertex 3263.6793 -38934.023 1402.775
+      vertex 3063.6794 -27761.502999999997 1312.775
+    endpolygon
+    polygon
+      vertex 3263.6794 -27761.502999999997 962.775
+      vertex 3063.6794 -27761.502999999997 1062.775
+      vertex 3263.6794 -27761.502999999997 1402.775
+    endpolygon
+    polygon
+      vertex 3063.6794 -27761.502999999997 1312.775
+      vertex 3263.6794 -27761.502999999997 1402.775
+      vertex 3063.6794 -27761.502999999997 1062.775
+    endpolygon
+    polygon
+      vertex 3063.6793 -38934.023 1062.775
+      vertex 3263.6793 -38934.023 962.775
+      vertex 3263.6793 -38934.023 1402.775
+    endpolygon
+    polygon
+      vertex 3263.6793 -38934.023 1402.775
+      vertex 3063.6793 -38934.023 1312.775
+      vertex 3063.6793 -38934.023 1062.775
+    endpolygon
+    polygon
+      vertex 3263.6793 -38934.023 962.775
+      vertex 3263.6794 -27761.502999999997 962.775
+      vertex 3263.6794 -27761.502999999997 1402.775
+    endpolygon
+    polygon
+      vertex 3263.6794 -27761.502999999997 1402.775
+      vertex 3263.6793 -38934.023 1402.775
+      vertex 3263.6793 -38934.023 962.775
+    endpolygon
+    polygon
+      vertex 3063.6794 -27761.502999999997 1062.775
+      vertex 3063.6793 -38934.023 1062.775
+      vertex 3063.6794 -27761.502999999997 1312.775
+    endpolygon
+    polygon
+      vertex 3063.6793 -38934.023 1312.775
+      vertex 3063.6794 -27761.502999999997 1312.775
+      vertex 3063.6793 -38934.023 1062.775
+    endpolygon
+endshape
+
+shape top_arm
+    polygon
+      vertex 35781.343 -27761.502999999997 1030.95071
+      vertex 35978.679 -27761.502999999997 1102.77494
+      vertex 35978.679 -38945.960999999996 1102.77494
+    endpolygon
+    polygon
+      vertex 35978.679 -38945.960999999996 1102.77494
+      vertex 35781.343 -38945.960999999996 1030.95071
+      vertex 35781.343 -27761.502999999997 1030.95071
+    endpolygon
+    polygon
+      vertex 35978.679 -27761.502999999997 1345.17913
+      vertex 35781.343 -27761.502999999997 1420.95071
+      vertex 35978.679 -38945.960999999996 1345.17913
+    endpolygon
+    polygon
+      vertex 35781.343 -38945.960999999996 1420.95071
+      vertex 35978.679 -38945.960999999996 1345.17913
+      vertex 35781.343 -27761.502999999997 1420.95071
+    endpolygon
+    polygon
+      vertex 35978.679 -27761.502999999997 1102.77494
+      vertex 35781.343 -27761.502999999997 1030.95071
+      vertex 35978.679 -27761.502999999997 1345.17913
+    endpolygon
+    polygon
+      vertex 35781.343 -27761.502999999997 1420.95071
+      vertex 35978.679 -27761.502999999997 1345.17913
+      vertex 35781.343 -27761.502999999997 1030.95071
+    endpolygon
+    polygon
+      vertex 35781.343 -38945.960999999996 1030.95071
+      vertex 35978.679 -38945.960999999996 1102.77494
+      vertex 35978.679 -38945.960999999996 1345.17913
+    endpolygon
+    polygon
+      vertex 35978.679 -38945.960999999996 1345.17913
+      vertex 35781.343 -38945.960999999996 1420.95071
+      vertex 35781.343 -38945.960999999996 1030.95071
+    endpolygon
+    polygon
+      vertex 35978.679 -38945.960999999996 1102.77494
+      vertex 35978.679 -27761.502999999997 1102.77494
+      vertex 35978.679 -27761.502999999997 1345.17913
+    endpolygon
+    polygon
+      vertex 35978.679 -27761.502999999997 1345.17913
+      vertex 35978.679 -38945.960999999996 1345.17913
+      vertex 35978.679 -38945.960999999996 1102.77494
+    endpolygon
+    polygon
+      vertex 35781.343 -27761.502999999997 1030.95071
+      vertex 35781.343 -38945.960999999996 1030.95071
+      vertex 35781.343 -27761.502999999997 1420.95071
+    endpolygon
+    polygon
+      vertex 35781.343 -38945.960999999996 1420.95071
+      vertex 35781.343 -27761.502999999997 1420.95071
+      vertex 35781.343 -38945.960999999996 1030.95071
+    endpolygon
+endshape
+
+shape panel_1_strings_41/43_arm_to_arm
+    polygon
+      vertex 35022.356  -38917.663 1035.0
+      vertex 35022.356  -34447.663 1035.0
+      vertex  4019.6793 -34447.663 1035.0
+      vertex  4019.6793 -38917.663 1035.0
+    endpolygon
+endshape
+
+shape panel_2_strings_41/43_arm_to_arm
+    polygon
+      vertex 35022.679  -32252.663 1035.0
+      vertex 35022.679  -27782.663 1035.0
+      vertex  4019.6794 -27782.663 1035.0
+      vertex  4019.6793 -32252.663 1035.0
+   endpolygon
+endshape
+
+{
+    polygon
+      vertex 3263.6793 -34447.663 1001.42475 
+      vertex 3263.6793 -38917.663 1001.42475 
+      vertex 35783.356 -38917.663 1001.42469 
+      vertex 35783.356 -34447.663 1001.42469 
+    endpolygon
+endshape
+
+    polygon
+      vertex 35783.679 -27782.663 1001.42469 
+      vertex 3263.6794 -27782.663  1001.42469 
+      vertex 3263.6793 -32252.663  1001.42469 
+      vertex 35783.679 -32252.663  1001.42469 
+   endpolygon
+endshape
+}
+
+shape longerons
+   cylinder
+      radius 101 
+      center 3300.3  -33659.0  290.0
+      center 35732.5 -33659.0  290.0
+   endcylinder
+   cylinder
+      radius 101
+      center 3300.3  -32897.0  428.0
+      center 35732.5 -32897.0  428.0
+   endcylinder
+   cylinder
+      radius 101
+      center 3300.3  -33039.0  1212.0
+      center 35732.5 -33039.0  1212.0
+   endcylinder
+   cylinder
+      radius 101
+      center 3300.3  -33801.0  1074.0
+      center 35732.5 -33801.0  1074.0
+   endcylinder
+endshape
+
+      shape bottom_cap_8
+         cylinder 
+            radius  660
+            center 1090.0 -33350.0 750.0
+            center 3300.0 -33350.0 750.0
+         endcylinder
+      endshape
+
+      shape top_cap_8
+         cylinder 
+            radius  660
+            center 35735.0 -33350.0 750.0
+            center 36088.0 -33350.0 750.0
+         endcylinder
+      endshape
+
+shape whole_panel_1_add_FCC_widths
+    polygon
+      vertex  3263.6793 -34313.913 1032.0
+      vertex  3263.6793 -39066.163 1032.0
+      vertex 35774.356  -39066.163 1032.0
+      vertex 35774.356  -34313.913 1032.0
+    endpolygon
+endshape
+
+shape whole_panel_2_add_FCC_widths
+    polygon
+      vertex 35783.679  -27634.163 1032.0
+      vertex 3263.6794  -27634.163 1032.0
+      vertex  3263.6793 -32386.413 1032.0
+      vertex  35783.679 -32386.403 1032.0
+   endpolygon
+endshape
+
+{
+shape longerons
+    polygon
+      vertex 3300.3086 -33810.061 1083.8995
+      vertex 3300.3086 -33668.317 280.0311999999999
+      vertex 35732.501 -33668.317 280.0310999999999
+      vertex 35732.501 -33810.061 1083.8994400000001
+    endpolygon
+    polygon
+      vertex 35732.501 -32886.804 417.8330000000001
+      vertex 3300.3086 -32886.804 417.83310000000006
+      vertex 3300.3086 -33028.547 1221.70139
+      vertex 35732.501 -33028.547 1221.70134
+    endpolygon
+    polygon
+      vertex 35732.501 -33028.547 1221.70134
+      vertex 3300.3086 -33028.547 1221.70139
+      vertex 3300.3086 -33810.061 1083.8995
+      vertex 35732.501 -33810.061 1083.8994400000001
+    endpolygon
+    polygon
+      vertex 3300.3086 -33668.317 280.0311999999999
+      vertex 3300.3086 -32886.804 417.83310000000006
+      vertex 35732.501 -32886.804 417.8330000000001
+      vertex 35732.501 -33668.317 280.0310999999999
+    endpolygon
+endshape
+}
+
+
+
+endparts
+children
+endchildren
+endstructure
+
+
+
+
+
+
+ 
+structure SAW_2B_port
+   parts
+
+shape bottom_arm
+    polygon
+      vertex 3198.6794 -42831.503 995.775
+      vertex 3398.6794 -42831.503 895.775
+      vertex 3398.6793 -54004.023 895.775
+    endpolygon
+    polygon
+      vertex 3398.6793 -54004.023 895.775
+      vertex 3198.6793 -54004.023 995.775
+      vertex 3198.6794 -42831.503 995.775
+    endpolygon
+    polygon
+      vertex 3398.6794 -42831.503 1335.775
+      vertex 3198.6794 -42831.503 1245.775
+      vertex 3398.6793 -54004.023 1335.775
+    endpolygon
+    polygon
+      vertex 3198.6793 -54004.023 1245.775
+      vertex 3398.6793 -54004.023 1335.775
+      vertex 3198.6794 -42831.503 1245.775
+    endpolygon
+    polygon
+      vertex 3398.6794 -42831.503 895.775
+      vertex 3198.6794 -42831.503 995.775
+      vertex 3398.6794 -42831.503 1335.775
+    endpolygon
+    polygon
+      vertex 3198.6794 -42831.503 1245.775
+      vertex 3398.6794 -42831.503 1335.775
+      vertex 3198.6794 -42831.503 995.775
+    endpolygon
+    polygon
+      vertex 3198.6793 -54004.023 995.775
+      vertex 3398.6793 -54004.023 895.775
+      vertex 3398.6793 -54004.023 1335.775
+    endpolygon
+    polygon
+      vertex 3398.6793 -54004.023 1335.775
+      vertex 3198.6793 -54004.023 1245.775
+      vertex 3198.6793 -54004.023 995.775
+    endpolygon
+    polygon
+      vertex 3398.6793 -54004.023 895.775
+      vertex 3398.6794 -42831.503 895.775
+      vertex 3398.6794 -42831.503 1335.775
+    endpolygon
+    polygon
+      vertex 3398.6794 -42831.503 1335.775
+      vertex 3398.6793 -54004.023 1335.775
+      vertex 3398.6793 -54004.023 895.775
+    endpolygon
+    polygon
+      vertex 3198.6794 -42831.503 995.775
+      vertex 3198.6793 -54004.023 995.775
+      vertex 3198.6794 -42831.503 1245.775
+    endpolygon
+    polygon
+      vertex 3198.6793 -54004.023 1245.775
+      vertex 3198.6794 -42831.503 1245.775
+      vertex 3198.6793 -54004.023 995.775
+    endpolygon
+endshape
+
+shape top_arm
+    polygon
+      vertex 35916.343 -42831.503 963.9507100000001
+      vertex 36113.679 -42831.503 1035.77494
+      vertex 36113.679 -54015.960999999996 1035.77494
+    endpolygon
+    polygon
+      vertex 36113.679 -54015.960999999996 1035.77494
+      vertex 35916.343 -54015.960999999996 963.9507100000001
+      vertex 35916.343 -42831.503 963.9507100000001
+    endpolygon
+    polygon
+      vertex 36113.679 -42831.503 1278.17913
+      vertex 35916.343 -42831.503 1353.95071
+      vertex 36113.679 -54015.960999999996 1278.17913
+    endpolygon
+    polygon
+      vertex 35916.343 -54015.960999999996 1353.95071
+      vertex 36113.679 -54015.960999999996 1278.17913
+      vertex 35916.343 -42831.503 1353.95071
+    endpolygon
+    polygon
+      vertex 36113.679 -42831.503 1035.77494
+      vertex 35916.343 -42831.503 963.9507100000001
+      vertex 36113.679 -42831.503 1278.17913
+    endpolygon
+    polygon
+      vertex 35916.343 -42831.503 1353.95071
+      vertex 36113.679 -42831.503 1278.17913
+      vertex 35916.343 -42831.503 963.9507100000001
+    endpolygon
+    polygon
+      vertex 35916.343 -54015.960999999996 963.9507100000001
+      vertex 36113.679 -54015.960999999996 1035.77494
+      vertex 36113.679 -54015.960999999996 1278.17913
+    endpolygon
+    polygon
+      vertex 36113.679 -54015.960999999996 1278.17913
+      vertex 35916.343 -54015.960999999996 1353.95071
+      vertex 35916.343 -54015.960999999996 963.9507100000001
+    endpolygon
+    polygon
+      vertex 36113.679 -54015.960999999996 1035.77494
+      vertex 36113.679 -42831.503 1035.77494
+      vertex 36113.679 -42831.503 1278.17913
+    endpolygon
+    polygon
+      vertex 36113.679 -42831.503 1278.17913
+      vertex 36113.679 -54015.960999999996 1278.17913
+      vertex 36113.679 -54015.960999999996 1035.77494
+    endpolygon
+    polygon
+      vertex 35916.343 -42831.503 963.9507100000001
+      vertex 35916.343 -54015.960999999996 963.9507100000001
+      vertex 35916.343 -42831.503 1353.95071
+    endpolygon
+    polygon
+      vertex 35916.343 -54015.960999999996 1353.95071
+      vertex 35916.343 -42831.503 1353.95071
+      vertex 35916.343 -54015.960999999996 963.9507100000001
+    endpolygon
+endshape
+
+shape panel_1_strings_41/43_arm_to_arm
+    polygon
+      vertex 35157.356  -53987.663 968.0
+      vertex 35157.356  -49517.663 968.0
+      vertex  4154.6793 -49517.663 968.0
+      vertex  4154.6793 -53987.663 968.0
+    endpolygon
+endshape
+
+shape panel_2_strings_41/43_arm_to_arm
+    polygon
+      vertex 35157.679  -47322.663 968.0
+      vertex 35157.679  -42852.663 968.0
+      vertex  4154.6794 -42852.663 968.0
+      vertex  4154.6793 -47322.663 968.0
+   endpolygon
+endshape
+
+{
+    polygon
+      vertex 3398.6793 -49517.663 934.42475 
+      vertex 3398.6793 -53987.663 934.42475 
+      vertex 35918.356 -53987.663 934.42469 
+      vertex 35918.356 -49517.663 934.42469 
+    endpolygon
+endshape
+
+    polygon
+      vertex 35918.679 -42852.663 934.42469 
+      vertex 3398.6794 -42852.663  934.42469 
+      vertex 3398.6793 -47322.663  934.42469 
+      vertex 35918.679 -47322.663  934.42469 
+   endpolygon
+endshape
+}
+
+shape longerons
+   cylinder
+      radius 101 
+      center 3435.3  -48729.0  223.0
+      center 35867.5 -48729.0  223.0
+   endcylinder
+   cylinder
+      radius 101
+      center 3435.3  -47967.0  361.0
+      center 35867.5 -47967.0  361.0
+   endcylinder
+   cylinder
+      radius 101
+      center 3435.3  -48109.0  1145.0
+      center 35867.5 -48109.0  1145.0
+   endcylinder
+   cylinder
+      radius 101
+      center 3435.3  -48871.0  1007.0
+      center 35867.5 -48871.0  1007.0
+   endcylinder
+endshape
+
+      shape bottom_cap_8
+         cylinder 
+            radius  660
+            center 1225.0 -48420.0 683.0
+            center 3435.0 -48420.0 683.0
+         endcylinder
+      endshape
+
+      shape top_cap_8
+         cylinder 
+            radius  660
+            center 35870.0 -48420.0 683.0
+            center 36223.0 -48420.0 683.0
+         endcylinder
+      endshape
+
+shape whole_panel_1_add_FCC_widths
+    polygon
+      vertex  3398.6793 -49383.913 965.0
+      vertex  3398.6793 -54136.163 965.0
+      vertex 35909.356  -54136.163 965.0
+      vertex 35909.356  -49383.913 965.0
+    endpolygon
+endshape
+
+shape whole_panel_2_add_FCC_widths
+    polygon
+      vertex 35918.679  -42704.163 965.0
+      vertex 3398.6794  -42704.163 965.0
+      vertex  3398.6793 -47456.413 965.0
+      vertex  35918.679 -47456.403 965.0
+   endpolygon
+endshape
+
+{
+shape longerons
+    polygon
+      vertex 3435.3086 -48880.061 1016.8995
+      vertex 3435.3086 -48738.317 213.0311999999999
+      vertex 35867.501 -48738.317 213.03109999999992
+      vertex 35867.501 -48880.061 1016.89944
+    endpolygon
+    polygon
+      vertex 35867.501 -47956.804 350.8330000000001
+      vertex 3435.3086 -47956.804 350.83310000000006
+      vertex 3435.3086 -48098.547 1154.70139
+      vertex 35867.501 -48098.547 1154.70134
+    endpolygon
+    polygon
+      vertex 35867.501 -48098.547 1154.70134
+      vertex 3435.3086 -48098.547 1154.70139
+      vertex 3435.3086 -48880.061 1016.8995
+      vertex 35867.501 -48880.061 1016.89944
+    endpolygon
+    polygon
+      vertex 3435.3086 -48738.317 213.0311999999999
+      vertex 3435.3086 -47956.804 350.83310000000006
+      vertex 35867.501 -47956.804 350.8330000000001
+      vertex 35867.501 -48738.317 213.03109999999992
+    endpolygon
+endshape
+}
+
+
+
+endparts
+children
+endchildren
+endstructure
+
+
+
+
+
+
+ 
+structure SAW_4B_port
+   parts
+
+shape bottom_arm
+    polygon
+      vertex -3648.6794 -54007.497 -504.225
+      vertex -3848.6794 -54007.497 -604.225
+      vertex -3848.6793 -42834.977 -604.225
+    endpolygon
+    polygon
+      vertex -3848.6793 -42834.977 -604.225
+      vertex -3648.6793 -42834.977 -504.225
+      vertex -3648.6794 -54007.497 -504.225
+    endpolygon
+    polygon
+      vertex -3848.6794 -54007.497 -164.22500000000002
+      vertex -3648.6794 -54007.497 -254.22500000000002
+      vertex -3848.6793 -42834.977 -164.22500000000002
+    endpolygon
+    polygon
+      vertex -3648.6793 -42834.977 -254.22500000000002
+      vertex -3848.6793 -42834.977 -164.22500000000002
+      vertex -3648.6794 -54007.497 -254.22500000000002
+    endpolygon
+    polygon
+      vertex -3848.6794 -54007.497 -604.225
+      vertex -3648.6794 -54007.497 -504.225
+      vertex -3848.6794 -54007.497 -164.22500000000002
+    endpolygon
+    polygon
+      vertex -3648.6794 -54007.497 -254.22500000000002
+      vertex -3848.6794 -54007.497 -164.22500000000002
+      vertex -3648.6794 -54007.497 -504.225
+    endpolygon
+    polygon
+      vertex -3648.6793 -42834.977 -504.225
+      vertex -3848.6793 -42834.977 -604.225
+      vertex -3848.6793 -42834.977 -164.22500000000002
+    endpolygon
+    polygon
+      vertex -3848.6793 -42834.977 -164.22500000000002
+      vertex -3648.6793 -42834.977 -254.22500000000002
+      vertex -3648.6793 -42834.977 -504.225
+    endpolygon
+    polygon
+      vertex -3848.6793 -42834.977 -604.225
+      vertex -3848.6794 -54007.497 -604.225
+      vertex -3848.6794 -54007.497 -164.22500000000002
+    endpolygon
+    polygon
+      vertex -3848.6794 -54007.497 -164.22500000000002
+      vertex -3848.6793 -42834.977 -164.22500000000002
+      vertex -3848.6793 -42834.977 -604.225
+    endpolygon
+    polygon
+      vertex -3648.6794 -54007.497 -504.225
+      vertex -3648.6793 -42834.977 -504.225
+      vertex -3648.6794 -54007.497 -254.22500000000002
+    endpolygon
+    polygon
+      vertex -3648.6793 -42834.977 -254.22500000000002
+      vertex -3648.6794 -54007.497 -254.22500000000002
+      vertex -3648.6793 -42834.977 -504.225
+    endpolygon
+endshape
+
+shape top_arm
+    polygon
+      vertex -36366.343 -54007.497 -536.0492899999999
+      vertex -36563.679 -54007.497 -464.22506
+      vertex -36563.679 -42823.039000000004 -464.22506
+    endpolygon
+    polygon
+      vertex -36563.679 -42823.039000000004 -464.22506
+      vertex -36366.343 -42823.039000000004 -536.0492899999999
+      vertex -36366.343 -54007.497 -536.0492899999999
+    endpolygon
+    polygon
+      vertex -36563.679 -54007.497 -221.82087
+      vertex -36366.343 -54007.497 -146.04929000000004
+      vertex -36563.679 -42823.039000000004 -221.82087
+    endpolygon
+    polygon
+      vertex -36366.343 -42823.039000000004 -146.04929000000004
+      vertex -36563.679 -42823.039000000004 -221.82087
+      vertex -36366.343 -54007.497 -146.04929000000004
+    endpolygon
+    polygon
+      vertex -36563.679 -54007.497 -464.22506
+      vertex -36366.343 -54007.497 -536.0492899999999
+      vertex -36563.679 -54007.497 -221.82087
+    endpolygon
+    polygon
+      vertex -36366.343 -54007.497 -146.04929000000004
+      vertex -36563.679 -54007.497 -221.82087
+      vertex -36366.343 -54007.497 -536.0492899999999
+    endpolygon
+    polygon
+      vertex -36366.343 -42823.039000000004 -536.0492899999999
+      vertex -36563.679 -42823.039000000004 -464.22506
+      vertex -36563.679 -42823.039000000004 -221.82087
+    endpolygon
+    polygon
+      vertex -36563.679 -42823.039000000004 -221.82087
+      vertex -36366.343 -42823.039000000004 -146.04929000000004
+      vertex -36366.343 -42823.039000000004 -536.0492899999999
+    endpolygon
+    polygon
+      vertex -36563.679 -42823.039000000004 -464.22506
+      vertex -36563.679 -54007.497 -464.22506
+      vertex -36563.679 -54007.497 -221.82087
+    endpolygon
+    polygon
+      vertex -36563.679 -54007.497 -221.82087
+      vertex -36563.679 -42823.039000000004 -221.82087
+      vertex -36563.679 -42823.039000000004 -464.22506
+    endpolygon
+    polygon
+      vertex -36366.343 -54007.497 -536.0492899999999
+      vertex -36366.343 -42823.039000000004 -536.0492899999999
+      vertex -36366.343 -54007.497 -146.04929000000004
+    endpolygon
+    polygon
+      vertex -36366.343 -42823.039000000004 -146.04929000000004
+      vertex -36366.343 -54007.497 -146.04929000000004
+      vertex -36366.343 -42823.039000000004 -536.0492899999999
+    endpolygon
+endshape
+
+shape panel_1_strings_41/43_arm_to_arm
+    polygon
+      vertex -35607.356  -42851.337 -532.0
+      vertex -35607.356  -47321.337 -532.0
+      vertex  -4604.6793 -47321.337 -532.0
+      vertex  -4604.6793 -42851.337 -532.0
+    endpolygon
+endshape
+
+shape panel_2_strings_41/43_arm_to_arm
+    polygon
+      vertex -35607.679  -49516.337 -532.0
+      vertex -35607.679  -53986.337 -532.0
+      vertex  -4604.6794 -53986.337 -532.0
+      vertex  -4604.6793 -49516.337 -532.0
+   endpolygon
+endshape
+
+{
+    polygon
+      vertex -3848.6793 -47321.337 -565.57525 
+      vertex -3848.6793 -42851.337 -565.57525 
+      vertex -36368.356 -42851.337 -565.57531 
+      vertex -36368.356 -47321.337 -565.57531 
+    endpolygon
+endshape
+
+    polygon
+      vertex -36368.679 -53986.337 -565.57531 
+      vertex -3848.6794 -53986.337  -565.57531 
+      vertex -3848.6793 -49516.337  -565.57531 
+      vertex -36368.679 -49516.337  -565.57531 
+   endpolygon
+endshape
+}
+
+shape longerons
+   cylinder
+      radius 101 
+      center -3885.3  -48110.0  -1277.0
+      center -36317.5 -48110.0  -1277.0
+   endcylinder
+   cylinder
+      radius 101
+      center -3885.3  -48872.0  -1139.0
+      center -36317.5 -48872.0  -1139.0
+   endcylinder
+   cylinder
+      radius 101
+      center -3885.3  -48730.0  -355.0
+      center -36317.5 -48730.0  -355.0
+   endcylinder
+   cylinder
+      radius 101
+      center -3885.3  -47968.0  -493.0
+      center -36317.5 -47968.0  -493.0
+   endcylinder
+endshape
+
+      shape bottom_cap_8
+         cylinder 
+            radius  660
+            center -1675.0 -48419.0 -817.0
+            center -3885.0 -48419.0 -817.0
+         endcylinder
+      endshape
+
+      shape top_cap_8
+         cylinder 
+            radius  660
+            center -36320.0 -48419.0 -817.0
+            center -36673.0 -48419.0 -817.0
+         endcylinder
+      endshape
+
+shape whole_panel_1_add_FCC_widths
+    polygon
+      vertex  -3848.6793 -47455.087 -535.0
+      vertex  -3848.6793 -42702.837 -535.0
+      vertex -36359.356  -42702.837 -535.0
+      vertex -36359.356  -47455.087 -535.0
+    endpolygon
+endshape
+
+shape whole_panel_2_add_FCC_widths
+    polygon
+      vertex -36368.679  -54134.837 -535.0
+      vertex -3848.6794  -54134.837 -535.0
+      vertex  -3848.6793 -49382.587 -535.0
+      vertex  -36368.679 -49382.597 -535.0
+   endpolygon
+endshape
+
+{
+shape longerons
+    polygon
+      vertex -3885.3086 -47958.939 -483.1005
+      vertex -3885.3086 -48100.683 -1286.9688
+      vertex -36317.501 -48100.683 -1286.9689
+      vertex -36317.501 -47958.939 -483.10056
+    endpolygon
+    polygon
+      vertex -36317.501 -48882.196 -1149.167
+      vertex -3885.3086 -48882.196 -1149.1669
+      vertex -3885.3086 -48740.453 -345.29861
+      vertex -36317.501 -48740.453 -345.29866
+    endpolygon
+    polygon
+      vertex -36317.501 -48740.453 -345.29866
+      vertex -3885.3086 -48740.453 -345.29861
+      vertex -3885.3086 -47958.939 -483.1005
+      vertex -36317.501 -47958.939 -483.10056
+    endpolygon
+    polygon
+      vertex -3885.3086 -48100.683 -1286.9688
+      vertex -3885.3086 -48882.196 -1149.1669
+      vertex -36317.501 -48882.196 -1149.167
+      vertex -36317.501 -48100.683 -1286.9689
+    endpolygon
+endshape
+}
+
+
+
+endparts
+children
+endchildren
+endstructure
+
+
+
+
+
+
+
+
+
+
+
+      endchildren
+endstructure { port rotating structure }
+
+
+
+   structure port_radiator { child of nonrotation parts }
+      parts
+
+      shape radiator_base_37
+         polygon
+            vertex -934 -12594 5487
+            vertex -250 -12594 5487
+            vertex -250 -16794 5487
+            vertex -934 -16794 5487
+         endpolygon
+         polygon
+            vertex -934 -12594 -5498
+            vertex -250 -12594 -5498
+            vertex -250 -16794 -5498
+            vertex -934 -16794 -5498
+         endpolygon
+         polygon
+            vertex -934 -12594 -5498
+            vertex -250 -12594 -5498
+            vertex -250 -12594 5487
+            vertex -934 -12594 5487
+         endpolygon
+         polygon
+            vertex -934 -16794 -5498
+            vertex -250 -16794 -5498
+            vertex -250 -16794 5487
+            vertex -934 -16794 5487
+         endpolygon
+         polygon
+            vertex -250 -16794 -5498
+            vertex -250 -12594 -5498
+            vertex -250 -12594 5487
+            vertex -250 -16794 5487
+         endpolygon
+         polygon
+            vertex -934 -16794 -5498
+            vertex -934 -12594 -5498
+            vertex -934 -12594 5487
+            vertex -934 -16794 5487
+         endpolygon
+      endshape
+
+      shape radiator_fin_37
+         polygon
+            vertex -23342 -14934 -5810
+            vertex -934   -14934 -5810
+            vertex -934   -14284 -5810
+            vertex -23342 -14284 -5810
+         endpolygon
+         polygon
+            vertex -23342 -14934  5764
+            vertex -934   -14934  5764
+            vertex -934   -14284  5764
+            vertex -23342 -14284  5764
+         endpolygon
+         polygon
+            vertex -23342 -14284  5764
+            vertex -934   -14284  5764
+            vertex -934   -14284 -5810
+            vertex -23342 -14284 -5810
+         endpolygon
+         polygon
+            vertex -23342 -14934  5764
+            vertex -934   -14934  5764
+            vertex -934   -14934 -5810
+            vertex -23342 -14934 -5810
+         endpolygon
+         polygon
+            vertex -23342 -14284  5764
+            vertex -23342 -14934  5764
+            vertex -23342 -14934 -5810
+            vertex -23342 -14284 -5810
+         endpolygon
+         polygon
+            vertex -934 -14284  5764
+            vertex -934 -14934  5764
+            vertex -934 -14934 -5810
+            vertex -934 -14284 -5810
+         endpolygon
+      endshape
+
+
+      endparts
+      children
+      endchildren
+   endstructure
+
+
+
+   structure starboard_radiator
+      parts
+
+      shape radiator_base_39
+         polygon
+            vertex -934 16700  5487
+            vertex -250 16700  5487
+            vertex -250 12500  5487
+            vertex -934 12500  5487
+         endpolygon
+         polygon
+            vertex -934 16700 -5498
+            vertex -250 16700 -5498
+            vertex -250 12500 -5498
+            vertex -934 12500 -5498
+         endpolygon
+         polygon
+            vertex -934 16700 -5498
+            vertex -250 16700 -5498
+            vertex -250 16700  5487
+            vertex -934 16700  5487
+         endpolygon
+         polygon
+            vertex -934 12500 -5498
+            vertex -250 12500 -5498
+            vertex -250 12500  5487
+            vertex -934 12500  5487
+         endpolygon
+         polygon
+            vertex -250 12500  5487
+            vertex -250 16700  5487
+            vertex -250 16700 -5498
+            vertex -250 12500 -5498
+         endpolygon
+         polygon
+            vertex -934 12500  5487
+            vertex -934 16700  5487
+            vertex -934 16700 -5498
+            vertex -934 12500 -5498
+         endpolygon
+      endshape
+
+      shape radiator_fin_39
+         polygon
+            vertex -23342 14360  5764
+            vertex -934   14360  5764
+            vertex -934   15010  5764
+            vertex -23342 15010  5764
+         endpolygon
+         polygon
+            vertex -23342 14360 -5810
+            vertex -934   14360 -5810
+            vertex -934   15010 -5810
+            vertex -23342 15010 -5810
+         endpolygon
+         polygon
+            vertex -23342 14360 -5810
+            vertex -934   14360 -5810
+            vertex -934   14360  5764
+            vertex -23342 14360  5764
+         endpolygon
+         polygon
+            vertex -23342 15010 -5810
+            vertex -934   15010 -5810
+            vertex -934   15010  5764
+            vertex -23342 15010  5764
+         endpolygon
+         polygon
+            vertex -23342 15010 -5810
+            vertex -23242 14360 -5810
+            vertex -23242 14360  5764
+            vertex -23342 15010  5764
+         endpolygon
+         polygon
+            vertex -934 15010 -5810
+            vertex -934 14360 -5810
+            vertex -934 14360  5764
+            vertex -934 15010  5764
+         endpolygon
+      endshape
+
+
+      endparts
+      children
+      endchildren
+   endstructure { starboard radiator }
+
+
+
+   endchildren { of nonrotating parts }
+endstructure
+endmodel

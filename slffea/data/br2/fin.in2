@@ -1,0 +1,38 @@
+How many elements do you want in horizontal?
+3
+How many elements do you want in vertical?
+7
+What is the Radius?
+10.0
+What is the Angle?
+10.0
+What is the Length?
+10.0
+What is the Thickness?
+0.25
+How many fins?
+2
+How many elements do you want in the fin vertical?
+4
+What is the Fin Thickness?
+0.15
+What is the Fin Height?
+1.0
+What type of element is this for?
+2
+Elastic Modulus (N/mm*mm)
+73.0e3
+Poisson
+0.33
+thermal conductivity W/(mm*C)
+160.0e-3
+thermal coefficient of expansion (1/C)
+23.2e-6
+film coefficient for convection (W/(mm*mm*C)
+200.0e-6
+Heat generation at nodes W/(mm*mm*mm)
+1.0
+Bulk Temperature
+30.0
+
+The above is for Aluminum, and the units are in millimeters

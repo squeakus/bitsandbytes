@@ -1,0 +1,2 @@
+/bin/tar -czf /usr/local/pem/vhosts/129311/webspace/httpdocs/backup/kilmoon-`date +%d.%m.%y`.tar.gz /usr/local/pem/vhosts/129311/webspace/httpdocs/kilmoon >> /usr/local/pem/vhosts/129311/webspace/httpdocs/backup/log.txt 2>&1
+/bin/tar -czf /usr/local/pem/vhosts/129311/webspace/httpdocs/backup/jonathan-`date +%d.%m.%y`.tar.gz /usr/local/pem/vhosts/129311/webspace/httpdocs/jonathan >> /usr/local/pem/vhosts/129311/webspace/httpdocs/backup/log.txt 2>&1

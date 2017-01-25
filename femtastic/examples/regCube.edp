@@ -1,0 +1,28 @@
+// file adaptsphere.edp
+load "msh3"
+load "tetgen"
+load "medit"
+int d1=10, d2=10; 
+int totalWidth=2, totalHeight=6; 
+int widthSections=2, heightSections=3;
+int width=totalWidth/widthSections, height=totalHeight/heightSections; 
+ 
+//mesh Th=square(1,1,[x*1,y*1],flags=1);
+mesh Th=square(2,2,[x*width,y*height],flags=0);
+plot(Th,wait=1);
+mesh temp;
+for(int w=0;w<widthSections;w++)
+{
+  cout << w << "\n";
+  Th=Th+square(d1,d2,[x*width+w,y*height],flags=1); 
+}
+
+plot(Th, wait =1);
+
+mesh3 Th1=movemesh23(Th,transfo=[x,0,y]);
+mesh3 Th2=movemesh23(Th,transfo=[x,totalWidth,y]);
+mesh3 Th3=movemesh23(Th,transfo=[totalWidth,x,y]);
+mesh3 Th4=movemesh23(Th,transfo=[0,x,y]);
+mesh3 Th5= Th1+Th2+Th3+Th4;
+medit("original",Th5);
+savemesh(Th5,"test.mesh");

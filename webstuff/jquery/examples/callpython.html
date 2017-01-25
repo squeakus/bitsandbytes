@@ -1,0 +1,45 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="myStyle.css" />
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('.button').click(function() {
+
+  console.log("hello!");
+  jQuery.ajax({
+  url: "http://0.0.0.0:8080/",
+  type: "GET",
+  data: {"name" : "joe"},
+  success: function(data) {
+  console.log(data)
+  $('#mycontent').html(data);
+  },
+  });
+
+  console.log("bye!");
+  $('#mycontent').text("MOOOOOOOO");
+  });
+  });
+</script>
+
+<div>
+<form class="form" method="post">
+<input class="button" type="submit" value="send"/>
+<form>
+</div>
+
+<div class="textfield">
+<span id="mycontent"></span>
+</div>
+
+</body>
+</html>
+
+

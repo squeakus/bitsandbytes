@@ -1,0 +1,49 @@
+   numel numnp nmat nmode  (This is for a ts7)
+     7   8   1   0
+matl no., E modulus, mass, and Area
+0    3000000   92.292e2   2.
+el no.,connectivity, matl no
+0        0    1    0
+1        1    2    0
+2        2    3    0
+3        3    4    0
+4        4    5    0
+5        5    6    0
+6        6    7    0
+node no. coordinates
+0      0.00000   0.00000   0.00000
+1     60.00000   0.00000   0.00000
+2    120.00000   0.00000   0.00000
+3    180.00000   0.00000   0.00000
+4    240.00000   0.00000   0.00000
+5    300.00000   0.00000   0.00000
+6    360.00000   0.00000   0.00000
+7    420.00000   0.00000   0.00000
+prescribed displacment x: node  disp value
+    0 0.0
+    -10
+prescribed displacment y: node  disp value
+    0 0.0
+    1 0.0
+    2 0.0
+    3 0.0
+    4 0.0
+    5 0.0
+    6 0.0
+    7 0.0
+    -10
+prescribed displacment z: node  disp value
+    0 0.0
+    1 0.0
+    2 0.0
+    3 0.0
+    4 0.0
+    5 0.0
+    6 0.0
+    7 0.0
+    -10
+node with point load and load vector in x,y,z
+    7  10000.00000   000.00   0.00000
+   -10 
+element with stress and tensile stress vector 
+-10

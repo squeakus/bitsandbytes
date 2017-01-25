@@ -1,0 +1,76 @@
+# A grammar for 3d design using beams. The output of the grammar is a 
+# string which can be eval'd in blender-python. It evals to a list of 
+# shapes which are drawn in render.py.
+#
+# We use two methods of creating lists of shapes. We can use map(), or
+# we can use a method which returns multiple (somehow connected)
+# shapes. A possible third method -- creating a single shape in square
+# brackets (indicating a list) is not used yet.
+
+# These two lines provide a test mechanism -- if you have some code you
+# want to test, just paste it in as <literal> and see if it runs. To use the
+# real grammar, comment these two lines out.
+
+
+<scene> ::= <imports>def mutant():{<funcdef>}<call>
+<call> ::= XXXeval_or_exec_outputXXX = mutant()
+<imports> ::= from geometry import * {}import graph{}
+<funcdef> ::= <header><shapes>{}<footer>
+<header> ::= shape = graph.graph(){}
+<footer> ::= return shape
+<shapes> ::= <list_of_shapes>
+
+# Given a list of functions and a list of points, return a list of shapes
+<list_of_shapes> ::= map_mapply(<list_of_point_to_shape_funcs>, <list_of_points>)
+
+# Only one method of creating a list of points. Consider other methods?
+<list_of_points> ::= map(<scalar_point_func>, make_scalar_list(<n>))
+
+# Functions which return a point, given a scalar.
+<scalar_point_func> ::= <unitcircle> | <ellipse> | <diagonal> | <bezier> | <spiral> | <add_scalar_point_funcs> | <xyzcos>
+
+# Given a scalar t, return a point on the spiral around a bezier carrier curve.
+# The radius, initial phase, and number of revolutions can be specified.
+<spiral> ::= lambda t: spiral(t, <radius>, <phase>, <revs>, <scalar_point_func>)
+
+# Given a scalar t, return a point on a diagonal between two points.
+<diagonal> ::= lambda t: interpolate(t, (<pt>, <pt>))
+
+# Given a scalar t, return a point on a circle with given radius and centre
+# in the plane indicated by <dimension>.
+# FIXME the circle shouldn't have to be aligned to one of the three axes -- could
+# instead pass in three points to define the plane in which the circle lies.
+<unitcircle> ::=  lambda t : circlePath(t, <radius>, <pt>, <dimension>)
+<ellipse> ::=  lambda t : ellipsePath(t, <radius>, <radius>, <pt>, <dimension>)
+
+<add_scalar_point_funcs> ::=  lambda t : pt_plus_pt((<scalar_point_func>)(t), (<scalar_point_func>)(t))
+
+# use 4pi * t so that we get 2 full revolutions, for t in [0, 1]
+<xyzcos> ::=  lambda t : (0.0, 0.0, <xcos>) |  lambda t : (0.0, <xcos>, 0.0) |  lambda t : (<xcos>, 0.0, 0.0)
+# use 1.0 + cos() to keep it positive, avoid negative z values
+<xcos> ::= <x> * (1.0 + cos(<ndoublerevs> * 4 * pi * t))
+
+# Given a scalar t, return a point on a cubic bezier curve.
+<bezier> ::=  lambda t : bezier_form(t, (<pt>, <pt>, <pt>, <pt>))
+
+# Functions which return a shape (really a LIST of shapes), given a point.
+<point_shape_func> ::=  lambda x : [shape.connect(<pt>, x)]|  lambda x : [dropPerpendicular(shape, x, 2)]|  lambda x : connect3(shape, x, <dimension>)
+#|  lambda x  : [connectToOrigin(x)]
+
+<list_of_point_to_shape_funcs> ::= [<point_shape_funcs>]
+<point_shape_funcs> ::= <point_shape_func> | <point_shape_funcs>,<point_shape_func>
+
+<ndoublerevs> ::= 1 | 2 | 3 | 4
+# points are represented as tuples
+<pt> ::= (<x>, <x>, <x>)
+# <x> is used for point coordinates
+<x> ::= 0|1000|2000|3000|4000|5000|6000|7000|8000|9000|10000|11000|12000|13000|14000|15000
+# <n> is used for (eg) point counts, in lists of points
+<n> ::= 2|3|4|5|6|7|8|9|10|11|12
+# a small, floating point value
+<sx> ::= 0.1|0.3|0.5|0.6|0.7|0.8|0.9|1.3|1.5|1.6|1.9|2.4|2.8.|3.0
+# <dimension> indicates x, y or z
+<dimension> ::= 0 | 1 | 2
+<radius> ::= <x>
+<phase> ::= 0.1|0.3|0.5|0.6|0.7|0.8|0.9|1.0
+<revs> ::= 1|2|3|4|5|6|7

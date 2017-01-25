@@ -1,0 +1,6 @@
+for (int i=0;i<5;++i)
+{
+int[int] labs=[11,12,13,14];
+mesh Th=square(5,5,flags=i,label=labs,region=5);
+plot(Th,wait=1,cmm=" square flags = "+i );
+}

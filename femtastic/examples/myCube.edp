@@ -1,0 +1,29 @@
+load "msh3"
+load "tetgen"
+load "medit"
+
+real x0,x1,y0,y1;
+x0=0.; x1=2; y0=0.; y1=4;
+mesh sqr1 = square(5,5,[x0+(x1-x0)*x,y0+(y1-y0)*y],flags =1);
+
+func ZZ1min = 0;
+func ZZ1max = 4;
+func XX1 = x;
+func YY1 = y;
+
+mesh3 roofMesh = movemesh23(sqr1,transfo=[XX1,YY1,ZZ1min],orientation=1);
+mesh3 fixedMesh = movemesh23(sqr1,transfo=[XX1,YY1,ZZ1max],orientation=4);
+
+func ZZ2 = y;
+func XX2 = x;
+func YY2min = 0.;
+func YY2max = 4;
+
+mesh3 lhsMesh = movemesh23(sqr1,transfo=[XX2,YY2max,ZZ2],orientation=-1);
+
+mesh3 rhsMesh = movemesh23(sqr1,transfo=[XX2,YY2min,ZZ2],orientation=1);
+
+mesh3 glueMesh = lhsMesh+rhsMesh+roofMesh+fixedMesh;
+
+medit("glueMesh",glueMesh,wait=1);
+savemesh(glueMesh,"test.mesh");

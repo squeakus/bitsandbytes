@@ -1,0 +1,12 @@
+#img3
+{'matches': [168, 1260, 111, 680, 46], 'distance': [], 'inliers': [116, 1136, 78, 581, 19], 'keypoints': 3008, 'time': 0.7369961738586426}
+#img2
+{'matches': [873, 1260, 25, 120, 242], 'distance': [], 'inliers': [801, 1136, 7, 89, 183], 'keypoints': 3513, 'time': 0.7622089385986328}
+#img1
+{'matches': [168, 873, 21, 27, 1048], 'distance': [], 'inliers': [116, 801, 5, 8, 1003], 'keypoints': 3235, 'time': 0.7388269901275635}
+#img0
+{'matches': [1048, 46, 242, 14, 20], 'distance': [], 'inliers': [1003, 19, 183, 4, 5], 'keypoints': 2947, 'time': 0.7199199199676514}
+#img5
+{'matches': [21, 111, 25, 787, 14], 'distance': [], 'inliers': [5, 78, 7, 752, 4], 'keypoints': 2713, 'time': 0.7154021263122559}
+#img4
+{'matches': [27, 680, 120, 787, 20], 'distance': [], 'inliers': [8, 581, 89, 752, 5], 'keypoints': 3140, 'time': 0.7372641563415527}

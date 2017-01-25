@@ -1,0 +1,295 @@
+node 0 4.286 -5.555 0.953 post
+node 1 1.557 -6.497 6.907 handrail
+node 2 1.557 -6.497 6.907 handrail
+node 3 3.873 -6.739 7.101 handrail
+node 4 2.143 -5.555 0.134 walkway
+node 5 4.286 -5.555 0.26 walkway
+node 6 0.0 -5.555 0.0 walkway
+node 7 0.0 -5.555 0.68 post
+node 8 -3.073 -5.834 6.444 handrail
+node 9 -0.757 -6.197 6.687 handrail
+node 10 13.201 1.645 7.552 handrail
+node 11 10.854 1.597 7.492 handrail
+node 12 8.519 1.506 7.396 handrail
+node 13 6.193 1.37 7.265 handrail
+node 14 8.571 0.0 1.167 post
+node 15 8.571 -5.555 1.167 post
+node 16 6.429 0.0 0.374 walkway
+node 17 8.519 1.506 7.396 handrail
+node 18 6.193 1.37 7.265 handrail
+node 19 3.873 1.184 7.101 handrail
+node 20 17.143 0.0 0.585 walkway
+node 21 17.143 0.0 1.281 post
+node 22 12.857 0.0 1.283 post
+node 23 10.854 1.597 7.492 handrail
+node 24 10.714 0.0 0.541 walkway
+node 25 12.857 0.0 0.585 walkway
+node 26 17.942 1.636 7.566 handrail
+node 27 15.0 0.0 0.6 walkway
+node 28 13.201 1.645 7.552 handrail
+node 29 15.563 1.657 7.576 handrail
+node 30 1.557 0.942 6.907 handrail
+node 31 4.286 0.0 0.953 post
+node 32 -0.757 0.642 6.687 handrail
+node 33 -3.073 0.279 6.444 handrail
+node 34 0.0 0.0 0.68 post
+node 35 0.0 0.0 0.0 walkway
+node 36 4.286 0.0 0.26 walkway
+node 37 2.143 0.0 0.134 walkway
+node 38 3.873 1.184 7.101 handrail
+node 39 1.557 0.942 6.907 handrail
+node 40 21.429 0.0 0.469 walkway
+node 41 19.286 0.0 0.541 walkway
+node 42 20.34 1.586 7.524 handrail
+node 43 21.429 0.0 1.163 post
+node 44 17.942 1.636 7.566 handrail
+node 45 15.563 1.657 7.576 handrail
+node 46 22.761 1.512 7.455 handrail
+node 47 20.34 1.586 7.524 handrail
+node 48 25.206 1.419 7.365 handrail
+node 49 22.761 1.512 7.455 handrail
+node 50 27.679 -6.865 7.262 handrail
+node 51 32.719 -6.619 7.048 handrail
+node 52 35.29 -6.491 6.957 handrail
+node 53 30.0 -5.555 0.7 post
+node 54 30.183 -6.745 7.153 handrail
+node 55 37.9 -6.365 6.889 handrail
+node 56 27.679 1.31 7.262 handrail
+node 57 23.571 0.0 0.374 walkway
+node 58 25.714 0.0 0.26 walkway
+node 59 25.714 0.0 0.955 post
+node 60 25.206 1.419 7.365 handrail
+node 61 27.679 1.31 7.262 handrail
+node 62 30.183 1.19 7.153 handrail
+node 63 32.719 1.064 7.048 handrail
+node 64 27.857 0.0 0.134 walkway
+node 65 30.0 0.0 0.0 walkway
+node 66 35.29 0.936 6.957 handrail
+node 67 32.719 1.064 7.048 handrail
+node 68 30.183 1.19 7.153 handrail
+node 69 30.0 0.0 0.7 post
+node 70 37.9 0.81 6.889 handrail
+node 71 10.854 -7.152 7.492 handrail
+node 72 13.201 -7.2 7.552 handrail
+node 73 6.193 -6.925 7.265 handrail
+node 74 8.519 -7.061 7.396 handrail
+node 75 8.571 -5.555 0.469 walkway
+node 76 8.571 0.0 0.469 walkway
+node 77 8.519 -7.061 7.396 handrail
+node 78 6.429 -5.555 0.374 walkway
+node 79 27.679 -6.865 7.262 handrail
+node 80 25.206 -6.974 7.365 handrail
+node 81 32.719 -6.619 7.048 handrail
+node 82 30.183 -6.745 7.153 handrail
+node 83 23.571 -5.555 0.374 walkway
+node 84 3.873 -6.739 7.101 handrail
+node 85 25.714 -5.555 0.955 post
+node 86 25.714 -5.555 0.26 walkway
+node 87 6.193 -6.925 7.265 handrail
+node 88 30.0 -5.555 0.0 walkway
+node 89 27.857 -5.555 0.134 walkway
+node 90 15.563 -7.212 7.576 handrail
+node 91 17.942 -7.191 7.566 handrail
+node 92 20.34 -7.141 7.524 handrail
+node 93 22.761 -7.067 7.455 handrail
+node 94 19.286 -5.555 0.541 walkway
+node 95 21.429 -5.555 0.469 walkway
+node 96 21.429 -5.555 1.163 post
+node 97 20.34 -7.141 7.524 handrail
+node 98 22.761 -7.067 7.455 handrail
+node 99 25.206 -6.974 7.365 handrail
+node 100 10.854 -7.152 7.492 handrail
+node 101 12.857 -5.555 1.283 post
+node 102 12.857 -5.555 0.585 walkway
+node 103 10.714 -5.555 0.541 walkway
+node 104 15.0 -5.555 0.6 walkway
+node 105 17.942 -7.191 7.566 handrail
+node 106 15.563 -7.212 7.576 handrail
+node 107 13.201 -7.2 7.552 handrail
+node 108 17.143 -5.555 1.281 post
+node 109 17.143 -5.555 0.585 walkway
+edge 0 0 1
+edge 1 0 84
+edge 2 0 5
+edge 3 0 77
+edge 4 0 87
+edge 5 1 3
+edge 6 1 84
+edge 7 2 9
+edge 8 2 3
+edge 9 2 7
+edge 10 3 7
+edge 11 4 5
+edge 12 4 6
+edge 13 4 37
+edge 14 5 36
+edge 15 5 78
+edge 16 6 35
+edge 17 6 7
+edge 18 7 8
+edge 19 7 9
+edge 20 8 9
+edge 21 10 11
+edge 22 10 14
+edge 23 10 23
+edge 24 11 12
+edge 25 11 14
+edge 26 12 13
+edge 27 12 14
+edge 28 13 17
+edge 29 13 14
+edge 30 14 76
+edge 31 15 72
+edge 32 15 73
+edge 33 15 74
+edge 34 15 75
+edge 35 15 71
+edge 36 16 76
+edge 37 16 36
+edge 38 16 78
+edge 39 17 18
+edge 40 17 31
+edge 41 18 19
+edge 42 18 31
+edge 43 19 30
+edge 44 19 31
+edge 45 20 41
+edge 46 20 27
+edge 47 20 21
+edge 48 20 109
+edge 49 21 44
+edge 50 21 45
+edge 51 21 46
+edge 52 21 47
+edge 53 22 25
+edge 54 22 26
+edge 55 22 28
+edge 56 22 29
+edge 57 22 23
+edge 58 23 28
+edge 59 24 25
+edge 60 24 76
+edge 61 24 103
+edge 62 25 27
+edge 63 25 102
+edge 64 26 45
+edge 65 26 29
+edge 66 27 104
+edge 67 28 29
+edge 68 30 38
+edge 69 30 31
+edge 70 31 36
+edge 71 32 33
+edge 72 32 34
+edge 73 32 39
+edge 74 33 34
+edge 75 34 35
+edge 76 34 38
+edge 77 34 39
+edge 78 35 37
+edge 79 36 37
+edge 80 38 39
+edge 81 40 41
+edge 82 40 95
+edge 83 40 43
+edge 84 40 57
+edge 85 41 94
+edge 86 42 49
+edge 87 42 43
+edge 88 42 46
+edge 89 43 56
+edge 90 43 48
+edge 91 43 49
+edge 92 44 45
+edge 93 44 47
+edge 94 46 47
+edge 95 48 56
+edge 96 48 49
+edge 97 50 80
+edge 98 50 96
+edge 99 50 99
+edge 100 51 52
+edge 101 51 53
+edge 102 51 54
+edge 103 52 53
+edge 104 52 55
+edge 105 53 88
+edge 106 53 54
+edge 107 53 55
+edge 108 54 81
+edge 109 56 60
+edge 110 57 58
+edge 111 57 83
+edge 112 58 64
+edge 113 58 59
+edge 114 58 86
+edge 115 59 60
+edge 116 59 61
+edge 117 59 62
+edge 118 59 63
+edge 119 60 61
+edge 120 61 62
+edge 121 62 63
+edge 122 63 68
+edge 123 64 65
+edge 124 64 89
+edge 125 65 88
+edge 126 65 69
+edge 127 66 67
+edge 128 66 69
+edge 129 66 70
+edge 130 67 68
+edge 131 67 69
+edge 132 68 69
+edge 133 69 70
+edge 134 71 72
+edge 135 71 74
+edge 136 72 100
+edge 137 73 74
+edge 138 73 77
+edge 139 75 103
+edge 140 75 76
+edge 141 75 78
+edge 142 77 87
+edge 143 79 80
+edge 144 79 82
+edge 145 79 85
+edge 146 80 85
+edge 147 81 82
+edge 148 81 85
+edge 149 82 85
+edge 150 83 86
+edge 151 83 95
+edge 152 84 87
+edge 153 85 86
+edge 154 86 89
+edge 155 88 89
+edge 156 90 105
+edge 157 90 91
+edge 158 90 108
+edge 159 91 108
+edge 160 91 92
+edge 161 92 108
+edge 162 92 93
+edge 163 93 108
+edge 164 93 97
+edge 165 94 109
+edge 166 94 95
+edge 167 95 96
+edge 168 96 97
+edge 169 96 99
+edge 170 96 98
+edge 171 97 98
+edge 172 98 99
+edge 173 100 107
+edge 174 100 101
+edge 175 101 105
+edge 176 101 106
+edge 177 101 107
+edge 178 101 102
+edge 179 102 104
+edge 180 102 103
+edge 181 104 109
+edge 182 105 106
+edge 183 106 107
+edge 184 108 109

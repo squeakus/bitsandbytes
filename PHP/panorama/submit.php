@@ -1,0 +1,1 @@
+<h1 class="litenrubrik">Enkätsvaren är registrerade.</h1>

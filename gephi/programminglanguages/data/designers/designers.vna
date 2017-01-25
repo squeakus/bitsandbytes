@@ -1,0 +1,1062 @@
+*Node data
+ID Modularity_Class
+"Nicholas F. Benton" 0
+"Luca Cardelli" 0
+"Cédric Fournet" 0
+PARC 1
+"Butler Lampson" 1
+"Warren Burton" 2
+"Erik Meijer" 2
+"John Hughes" 2
+"Lennart Augustsson" 2
+"Philip Wadler" 2
+"Simon Peyton Jones" 2
+"Paul Hudak" 2
+"Alastair Reid" 2
+"Brian Boutel" 2
+"Colin Runciman" 2
+"Dave Barton" 2
+"John Launchbury" 2
+"John Peterson" 2
+"Joseph Fasel" 2
+"Kevin Hammond" 2
+"Mark Jones" 2
+"Ralf Hinze" 2
+"Thomas Johnsson" 2
+"Steven Pemberton" 3
+"Leo Geurts" 3
+"Lambert Meertens" 3
+"Edward A. Ashcroft" 4
+"William W. Wadge" 4
+"Ascánder Suárez" 5
+"Xavier Leroy" 5
+"Gérard Huet" 5
+"Guy Cousineau" 5
+"Michel Mauny" 5
+"Pierre Weis" 5
+"Francis McCabe" 6
+"Keith Clark" 6
+"Sean Dorward" 11
+"Rob Pike" 11
+"Phil Winterbottom" 11
+"Ross Ihaka" 7
+"Robert Gentleman" 7
+"Gilad Bracha" 8
+"Martin Odersky" 8
+"David Stoutamire" 8
+"William Maddox" 8
+"Raymond F. Boyce" 9
+"Donald D. Chamberlin" 9
+"Anders Hejlsberg" 32
+"Niklaus Wirth" 32
+"Apple Inc." 32
+"D. B. Russell" 10
+"William Wulf" 10
+"Nico Habermann" 10
+"Ken Thompson" 11
+"Robert Griesemer" 11
+"Kristen Nygaard" 12
+"Ole-Johan Dahl" 12
+"Birger Møller-Pedersen" 12
+"Ge Wang" 13
+"Perry R. Cook" 13
+"D.T. Barnard" 14
+"James Cordy" 14
+"Ric Holt" 14
+"D.B. Wortman" 14
+"Bernard Vauquois" 15
+"Friedrich L. Bauer" 15
+"Peter Naur" 15
+"Adriaan van Wijngaarden" 15
+"John Backus" 15
+"Klaus Samelson" 15
+"Alan Perlis" 15
+"John McCarthy" 15
+"Heinz Rutishauser" 15
+"Charles Katz" 15
+"Joseph Henry Wegstein" 15
+"Julien Green" 15
+"Michael Woodger" 15
+"Hermann Bottenbruch" 15
+"Leszek Pacholski" 16
+"Kamil Skalski" 16
+"Michał Moskal" 16
+"Paweł Olszta" 16
+"Norman Ramsey" 2
+"Børge R. Christensen" 17
+"Benedict Løfstedt" 17
+"Keith Packard" 18
+"Bart Massey" 18
+"Microsoft SQL Server" 19
+"Microsoft Research" 19
+SHARE 20
+IBM 20
+"Guy L. Steele" 21
+"Gerald Jay Sussman" 21
+"Ralph Griswold" 22
+"David J. Farber" 22
+"Ivan P. Polonsky" 22
+"Brendan Eich" 23
+"Ecma International" 23
+"Alan Kay" 24
+"Adele Goldberg" 24
+"Daniel Henry Holmes Ingalls" 24
+"Commissariat à l'énergie atomique et aux énergies alternatives" 25
+"National Institute for Research in Computer Science and Control" 25
+"David A. Wagner" 26
+"Mark S. Miller" 26
+"Roger Hui" 27
+"Kenneth E. Iverson" 27
+"Marc Bezem" 28
+"Andrea Schaerf" 28
+"Jacob Brunekree" 28
+"Krzysztof Apt" 28
+"Vincent Partington" 28
+"Hanspeter Mössenböck" 32
+Olivetti 29
+"Digital Equipment Corporation" 29
+"Charles Halpern-Hamu" 14
+"Paul Graham" 30
+"Robert Tappan Morris" 30
+"Barbara Liskov" 31
+"Massachusetts Institute of Technology" 31
+Acorn 32
+"DEC Systems Research Center" 32
+"Wally Feurzeig" 33
+"Seymour Papert" 33
+"Allen Newell" 34
+"Herbert A. Simon" 34
+"Cliff Shaw" 34
+"Dennis Ritchie" 35
+"Bjarne Stroustrup" 35
+"Brian Kernighan" 35
+"Bell Labs" 35
+"Robert Fourer" 35
+"David Gay" 35
+"Andrei Alexandrescu" 36
+"Walter Bright" 36
+"Cornelis H. A. Koster" 15
+"Barry J. Mailloux" 15
+"John E. L. Peck" 15
+"Jie Huang Fu" 37
+"Léon Bottou" 37
+"Yann LeCun" 37
+"Alfred Aho" 35
+"Peter J. Weinberger" 35
+"Edward Wimmers" 15
+"John Williams" 15
+"Grace Hopper" 38
+"Jean E. Sammet" 38
+"James Gosling" 39
+"Sun Microsystems" 39
+"Thomas Eugene Kurtz" 40
+"John Kemeny" 40
+"Don Syme" 19
+"Vijay A. Saraswat" 41
+"Ken Kahn" 41
+*Node properties
+ID x y size color shortlabel
+Nicholas F. Benton 56.323692 -183.91971 7.25 22 "Nicholas F. Benton"
+Luca Cardelli 96.01959 -146.54906 7.25 22 "Luca Cardelli"
+Cédric Fournet 142.25671 -164.78859 7.25 22 "Cédric Fournet"
+PARC -577.607 95.707344 5.0 171 PARC
+Butler Lampson -606.26636 150.14813 5.0 171 "Butler Lampson"
+Warren Burton -295.80298 721.93933 41.0 171 "Warren Burton"
+Erik Meijer 100.12277 601.81335 41.0 171 "Erik Meijer"
+John Hughes -443.86285 512.75653 41.0 171 "John Hughes"
+Lennart Augustsson -230.84119 401.05502 41.0 171 "Lennart Augustsson"
+Philip Wadler 285.45956 41.46143 50.0 171 "Philip Wadler"
+Simon Peyton Jones -24.279388 844.5822 43.25 171 "Simon Peyton Jones"
+Paul Hudak 200.74655 364.24356 41.0 171 "Paul Hudak"
+Alastair Reid 52.715065 167.28603 41.0 171 "Alastair Reid"
+Brian Boutel -111.53466 576.67346 41.0 171 "Brian Boutel"
+Colin Runciman -146.23015 195.74255 41.0 171 "Colin Runciman"
+Dave Barton 692.9564 92.25246 41.0 171 "Dave Barton"
+John Launchbury 353.0544 273.26758 41.0 171 "John Launchbury"
+John Peterson 583.13947 287.03558 41.0 171 "John Peterson"
+Joseph Fasel 436.85468 443.1737 41.0 171 "Joseph Fasel"
+Kevin Hammond -19.155783 332.2047 41.0 171 "Kevin Hammond"
+Mark Jones 504.25128 -160.18636 41.0 171 "Mark Jones"
+Ralf Hinze -376.37643 245.79314 41.0 171 "Ralf Hinze"
+Thomas Johnsson 305.64502 661.6227 41.0 171 "Thomas Johnsson"
+Steven Pemberton 801.9714 377.42566 7.25 171 "Steven Pemberton"
+Leo Geurts 755.61816 322.8939 7.25 171 "Leo Geurts"
+Lambert Meertens 720.753 354.6523 7.25 171 "Lambert Meertens"
+Edward A. Ashcroft -162.89954 -153.49152 5.0 171 "Edward A. Ashcroft"
+William W. Wadge -210.63382 -133.24438 5.0 171 "William W. Wadge"
+Ascánder Suárez 227.76599 863.60486 14.0 171 "Ascánder Suárez"
+Xavier Leroy 378.7853 887.7844 14.0 171 "Xavier Leroy"
+Gérard Huet 364.92673 921.70465 14.0 171 "Gérard Huet"
+Guy Cousineau 299.43872 825.6489 14.0 171 "Guy Cousineau"
+Michel Mauny 234.08856 904.26697 14.0 171 "Michel Mauny"
+Pierre Weis 299.3593 951.5527 14.0 171 "Pierre Weis"
+Francis McCabe 702.59906 -122.08852 5.0 128 "Francis McCabe"
+Keith Clark 675.069 -165.95058 5.0 128 "Keith Clark"
+Sean Dorward -671.201 355.12268 7.25 22 "Sean Dorward"
+Rob Pike -584.9901 380.81326 11.75 22 "Rob Pike"
+Phil Winterbottom -484.35675 349.18286 7.25 22 "Phil Winterbottom"
+Ross Ihaka 355.54538 513.2998 5.0 171 "Ross Ihaka"
+Robert Gentleman 375.44055 531.68677 5.0 171 "Robert Gentleman"
+Gilad Bracha 301.79596 -104.09669 11.75 171 "Gilad Bracha"
+Martin Odersky 200.32878 -125.00048 11.75 171 "Martin Odersky"
+David Stoutamire 380.32364 -122.42391 11.75 171 "David Stoutamire"
+William Maddox 271.54312 -145.6376 11.75 171 "William Maddox"
+Raymond F. Boyce -158.68623 146.67567 5.0 128 "Raymond F. Boyce"
+Donald D. Chamberlin -14.433071 125.80803 5.0 128 "Donald D. Chamberlin"
+Anders Hejlsberg 175.16501 22.716415 7.25 22 "Anders Hejlsberg"
+Niklaus Wirth 8.945589 12.715913 14.0 22 "Niklaus Wirth"
+Apple Inc. 14.000991 58.99303 7.25 22 "Apple Inc."
+D. B. Russell 227.40001 -61.276676 7.25 171 "D. B. Russell"
+William Wulf 148.27138 -2.1798668 7.25 171 "William Wulf"
+Nico Habermann 330.28122 -2.8258977 7.25 171 "Nico Habermann"
+Ken Thompson -556.4854 439.74036 7.25 22 "Ken Thompson"
+Robert Griesemer -514.1893 408.50146 7.25 22 "Robert Griesemer"
+Kristen Nygaard 362.36276 -333.54343 7.25 22 "Kristen Nygaard"
+Ole-Johan Dahl 456.27057 -313.50458 5.0 22 "Ole-Johan Dahl"
+Birger Møller-Pedersen 342.13715 -356.31924 5.0 22 "Birger Møller-Pedersen"
+Ge Wang 395.03867 -236.83963 5.0 171 "Ge Wang"
+Perry R. Cook 376.8515 -198.38475 5.0 171 "Perry R. Cook"
+D.T. Barnard -110.49675 -172.33817 9.5 22 "D.T. Barnard"
+James Cordy -43.850246 -125.53417 11.75 22 "James Cordy"
+Ric Holt -15.568243 -146.7674 9.5 22 "Ric Holt"
+D.B. Wortman -34.915813 -202.15674 9.5 22 "D.B. Wortman"
+Bernard Vauquois -547.7978 -417.93768 32.0 22 "Bernard Vauquois"
+Friedrich L. Bauer -199.09619 -572.3958 32.0 22 "Friedrich L. Bauer"
+Peter Naur -240.47688 -361.9241 32.0 22 "Peter Naur"
+Adriaan van Wijngaarden -257.84824 -817.3105 38.75 22 "Adriaan van Wijngaarden"
+John Backus -104.193275 -453.41455 36.5 22 "John Backus"
+Klaus Samelson -456.26624 -483.89786 32.0 22 "Klaus Samelson"
+Alan Perlis -391.10977 -603.15015 32.0 22 "Alan Perlis"
+John McCarthy -132.50342 -642.2269 32.0 22 "John McCarthy"
+Heinz Rutishauser -368.54846 -394.62473 32.0 22 "Heinz Rutishauser"
+Charles Katz -280.359 -626.0131 32.0 22 "Charles Katz"
+Joseph Henry Wegstein -311.45596 -519.8645 32.0 22 "Joseph Henry Wegstein"
+Julien Green -552.2121 -588.6649 32.0 22 "Julien Green"
+Michael Woodger -452.18753 -716.329 32.0 22 "Michael Woodger"
+Hermann Bottenbruch -425.09616 -273.4191 32.0 22 "Hermann Bottenbruch"
+Leszek Pacholski 26.78946 -104.085556 9.5 22 "Leszek Pacholski"
+Kamil Skalski 203.88069 -85.89372 9.5 22 "Kamil Skalski"
+Michał Moskal 70.48172 -67.02061 9.5 22 "Michał Moskal"
+Paweł Olszta 41.804726 -85.7107 9.5 22 "Paweł Olszta"
+Norman Ramsey -69.70026 895.5706 5.0 171 "Norman Ramsey"
+Børge R. Christensen -350.2569 -5.5360203 5.0 86 "Børge R. Christensen"
+Benedict Løfstedt -163.65579 15.803993 5.0 86 "Benedict Løfstedt"
+Keith Packard 275.8328 -691.15173 5.0 64 "Keith Packard"
+Bart Massey 352.95053 -722.6528 5.0 64 "Bart Massey"
+Microsoft SQL Server 91.69703 -646.56915 5.0 171 "Microsoft SQL Server"
+Microsoft Research 123.75632 -607.4616 7.25 171 "Microsoft Research"
+SHARE -563.31696 255.30096 5.0 107 SHARE
+IBM -531.1286 291.40784 5.0 107 IBM
+Guy L. Steele -170.08267 -237.40665 5.0 22 "Guy L. Steele"
+Gerald Jay Sussman -387.3464 -162.19046 5.0 22 "Gerald Jay Sussman"
+Ralph Griswold 454.7434 -48.827225 7.25 107 "Ralph Griswold"
+David J. Farber 498.24033 -6.660001 7.25 107 "David J. Farber"
+Ivan P. Polonsky 574.1871 -26.691952 7.25 107 "Ivan P. Polonsky"
+Brendan Eich 72.006485 -719.951 5.0 171 "Brendan Eich"
+Ecma International 147.1008 -759.12445 5.0 171 "Ecma International"
+Alan Kay 683.2614 605.97394 7.25 22 "Alan Kay"
+Adele Goldberg 691.6468 561.75916 7.25 22 "Adele Goldberg"
+Daniel Henry Holmes Ingalls 636.65735 583.9287 7.25 22 "Daniel Henry Holmes Ingalls"
+Commissariat à l'énergie atomique et aux énergies alternatives -607.8546 59.914085 5.0 43 "Commissariat à l'énergie atomique et aux énergies alternatives"
+National Institute for Research in Computer Science and Control -621.4877 13.5345955 5.0 43 "National Institute for Research in Computer Science and Control"
+David A. Wagner 100.45448 87.06814 5.0 22 "David A. Wagner"
+Mark S. Miller 29.53378 107.47206 5.0 22 "Mark S. Miller"
+Roger Hui 570.2681 -241.37563 5.0 64 "Roger Hui"
+Kenneth E. Iverson 607.2989 -212.678 5.0 64 "Kenneth E. Iverson"
+Marc Bezem -382.32166 54.174747 11.75 22 "Marc Bezem"
+Andrea Schaerf -320.65366 -41.781803 11.75 22 "Andrea Schaerf"
+Jacob Brunekree -337.08694 35.617565 11.75 22 "Jacob Brunekree"
+Krzysztof Apt -501.7237 18.280048 11.75 22 "Krzysztof Apt"
+Vincent Partington -461.9705 -22.65834 11.75 22 "Vincent Partington"
+Hanspeter Mössenböck 117.34738 -22.517397 5.0 22 "Hanspeter Mössenböck"
+Olivetti 97.86779 38.67644 5.0 171 Olivetti
+Digital Equipment Corporation 232.82848 127.284386 5.0 171 "Digital Equipment Corporation"
+Charles Halpern-Hamu -234.67192 -110.5509 5.0 22 "Charles Halpern-Hamu"
+Paul Graham 379.49945 15.328627 5.0 171 "Paul Graham"
+Robert Tappan Morris 470.63416 35.55815 5.0 171 "Robert Tappan Morris"
+Barbara Liskov -185.01273 54.401142 5.0 22 "Barbara Liskov"
+Massachusetts Institute of Technology -354.10852 123.30035 5.0 22 "Massachusetts Institute of Technology"
+Acorn -47.364895 -5.9950566 7.25 22 Acorn
+DEC Systems Research Center -7.8804774 -45.901157 7.25 22 "DEC Systems Research Center"
+Wally Feurzeig -486.00027 217.68541 5.0 149 "Wally Feurzeig"
+Seymour Papert -486.895 186.55591 5.0 149 "Seymour Papert"
+Allen Newell 568.3995 -635.9709 7.25 22 "Allen Newell"
+Herbert A. Simon 528.9126 -617.9126 7.25 22 "Herbert A. Simon"
+Cliff Shaw 524.98596 -653.93713 7.25 22 "Cliff Shaw"
+Dennis Ritchie 144.5901 -369.07666 7.25 22 "Dennis Ritchie"
+Bjarne Stroustrup 219.85999 -389.97128 5.0 22 "Bjarne Stroustrup"
+Brian Kernighan 166.17992 -326.91983 16.25 22 "Brian Kernighan"
+Bell Labs 171.57779 -261.81763 9.5 22 "Bell Labs"
+Robert Fourer 108.63047 -243.5161 9.5 22 "Robert Fourer"
+David Gay 110.06207 -287.62164 9.5 22 "David Gay"
+Andrei Alexandrescu 176.27715 216.42459 5.0 22 "Andrei Alexandrescu"
+Walter Bright 197.73093 195.98732 5.0 22 "Walter Bright"
+Cornelis H. A. Koster -259.79407 -910.7891 9.5 22 "Cornelis H. A. Koster"
+Barry J. Mailloux -198.30618 -934.34937 9.5 22 "Barry J. Mailloux"
+John E. L. Peck -188.57704 -876.86444 9.5 22 "John E. L. Peck"
+Jie Huang Fu -128.37785 100.16267 7.25 171 "Jie Huang Fu"
+Léon Bottou -96.93066 34.445435 7.25 171 "Léon Bottou"
+Yann LeCun -66.72692 79.78299 7.25 171 "Yann LeCun"
+Alfred Aho 235.47795 -280.1965 7.25 22 "Alfred Aho"
+Peter J. Weinberger 269.37097 -300.6727 7.25 22 "Peter J. Weinberger"
+Edward Wimmers -18.298874 -410.59375 7.25 22 "Edward Wimmers"
+John Williams -10.005644 -429.23688 7.25 22 "John Williams"
+Grace Hopper -247.07356 -64.690636 5.0 171 "Grace Hopper"
+Jean E. Sammet -150.61179 -24.231318 5.0 171 "Jean E. Sammet"
+James Gosling 125.124725 -454.68646 5.0 43 "James Gosling"
+Sun Microsystems 95.875626 -500.3147 5.0 43 "Sun Microsystems"
+Thomas Eugene Kurtz 511.9233 87.02301 5.0 149 "Thomas Eugene Kurtz"
+John Kemeny 588.8181 58.93558 5.0 149 "John Kemeny"
+Don Syme 169.22885 -561.0286 5.0 171 "Don Syme"
+Vijay A. Saraswat 52.11434 427.5117 5.0 86 "Vijay A. Saraswat"
+Ken Kahn 79.85432 469.39603 5.0 86 "Ken Kahn"
+*Tie data
+from to strength
+"Nicholas F. Benton" "Luca Cardelli" 1.0
+"Nicholas F. Benton" "Cédric Fournet" 1.0
+"Luca Cardelli" "Nicholas F. Benton" 1.0
+"Luca Cardelli" "Cédric Fournet" 1.0
+"Cédric Fournet" "Nicholas F. Benton" 1.0
+"Cédric Fournet" "Luca Cardelli" 1.0
+PARC "Butler Lampson" 1.0
+"Butler Lampson" PARC 1.0
+"Warren Burton" "Erik Meijer" 1.0
+"Warren Burton" "John Hughes" 1.0
+"Warren Burton" "Lennart Augustsson" 1.0
+"Warren Burton" "Philip Wadler" 1.0
+"Warren Burton" "Simon Peyton Jones" 1.0
+"Warren Burton" "Paul Hudak" 1.0
+"Warren Burton" "Alastair Reid" 1.0
+"Warren Burton" "Brian Boutel" 1.0
+"Warren Burton" "Colin Runciman" 1.0
+"Warren Burton" "Dave Barton" 1.0
+"Warren Burton" "John Launchbury" 1.0
+"Warren Burton" "John Peterson" 1.0
+"Warren Burton" "Joseph Fasel" 1.0
+"Warren Burton" "Kevin Hammond" 1.0
+"Warren Burton" "Mark Jones" 1.0
+"Warren Burton" "Ralf Hinze" 1.0
+"Warren Burton" "Thomas Johnsson" 1.0
+"Erik Meijer" "Warren Burton" 1.0
+"Erik Meijer" "John Hughes" 1.0
+"Erik Meijer" "Lennart Augustsson" 1.0
+"Erik Meijer" "Philip Wadler" 1.0
+"Erik Meijer" "Simon Peyton Jones" 1.0
+"Erik Meijer" "Paul Hudak" 1.0
+"Erik Meijer" "Alastair Reid" 1.0
+"Erik Meijer" "Brian Boutel" 1.0
+"Erik Meijer" "Colin Runciman" 1.0
+"Erik Meijer" "Dave Barton" 1.0
+"Erik Meijer" "John Launchbury" 1.0
+"Erik Meijer" "John Peterson" 1.0
+"Erik Meijer" "Joseph Fasel" 1.0
+"Erik Meijer" "Kevin Hammond" 1.0
+"Erik Meijer" "Mark Jones" 1.0
+"Erik Meijer" "Ralf Hinze" 1.0
+"Erik Meijer" "Thomas Johnsson" 1.0
+"John Hughes" "Warren Burton" 1.0
+"John Hughes" "Erik Meijer" 1.0
+"John Hughes" "Lennart Augustsson" 1.0
+"John Hughes" "Philip Wadler" 1.0
+"John Hughes" "Simon Peyton Jones" 1.0
+"John Hughes" "Paul Hudak" 1.0
+"John Hughes" "Alastair Reid" 1.0
+"John Hughes" "Brian Boutel" 1.0
+"John Hughes" "Colin Runciman" 1.0
+"John Hughes" "Dave Barton" 1.0
+"John Hughes" "John Launchbury" 1.0
+"John Hughes" "John Peterson" 1.0
+"John Hughes" "Joseph Fasel" 1.0
+"John Hughes" "Kevin Hammond" 1.0
+"John Hughes" "Mark Jones" 1.0
+"John Hughes" "Ralf Hinze" 1.0
+"John Hughes" "Thomas Johnsson" 1.0
+"Lennart Augustsson" "Warren Burton" 1.0
+"Lennart Augustsson" "Erik Meijer" 1.0
+"Lennart Augustsson" "John Hughes" 1.0
+"Lennart Augustsson" "Philip Wadler" 1.0
+"Lennart Augustsson" "Simon Peyton Jones" 1.0
+"Lennart Augustsson" "Paul Hudak" 1.0
+"Lennart Augustsson" "Alastair Reid" 1.0
+"Lennart Augustsson" "Brian Boutel" 1.0
+"Lennart Augustsson" "Colin Runciman" 1.0
+"Lennart Augustsson" "Dave Barton" 1.0
+"Lennart Augustsson" "John Launchbury" 1.0
+"Lennart Augustsson" "John Peterson" 1.0
+"Lennart Augustsson" "Joseph Fasel" 1.0
+"Lennart Augustsson" "Kevin Hammond" 1.0
+"Lennart Augustsson" "Mark Jones" 1.0
+"Lennart Augustsson" "Ralf Hinze" 1.0
+"Lennart Augustsson" "Thomas Johnsson" 1.0
+"Philip Wadler" "Warren Burton" 1.0
+"Philip Wadler" "Erik Meijer" 1.0
+"Philip Wadler" "John Hughes" 1.0
+"Philip Wadler" "Lennart Augustsson" 1.0
+"Philip Wadler" "Simon Peyton Jones" 1.0
+"Philip Wadler" "Paul Hudak" 1.0
+"Philip Wadler" "Alastair Reid" 1.0
+"Philip Wadler" "Brian Boutel" 1.0
+"Philip Wadler" "Colin Runciman" 1.0
+"Philip Wadler" "Dave Barton" 1.0
+"Philip Wadler" "John Launchbury" 1.0
+"Philip Wadler" "John Peterson" 1.0
+"Philip Wadler" "Joseph Fasel" 1.0
+"Philip Wadler" "Kevin Hammond" 1.0
+"Philip Wadler" "Mark Jones" 1.0
+"Philip Wadler" "Ralf Hinze" 1.0
+"Philip Wadler" "Thomas Johnsson" 1.0
+"Philip Wadler" "Gilad Bracha" 1.0
+"Philip Wadler" "Martin Odersky" 1.0
+"Philip Wadler" "David Stoutamire" 1.0
+"Philip Wadler" "William Maddox" 1.0
+"Simon Peyton Jones" "Warren Burton" 1.0
+"Simon Peyton Jones" "Erik Meijer" 1.0
+"Simon Peyton Jones" "John Hughes" 1.0
+"Simon Peyton Jones" "Lennart Augustsson" 1.0
+"Simon Peyton Jones" "Philip Wadler" 1.0
+"Simon Peyton Jones" "Paul Hudak" 1.0
+"Simon Peyton Jones" "Alastair Reid" 1.0
+"Simon Peyton Jones" "Brian Boutel" 1.0
+"Simon Peyton Jones" "Colin Runciman" 1.0
+"Simon Peyton Jones" "Dave Barton" 1.0
+"Simon Peyton Jones" "John Launchbury" 1.0
+"Simon Peyton Jones" "John Peterson" 1.0
+"Simon Peyton Jones" "Joseph Fasel" 1.0
+"Simon Peyton Jones" "Kevin Hammond" 1.0
+"Simon Peyton Jones" "Mark Jones" 1.0
+"Simon Peyton Jones" "Ralf Hinze" 1.0
+"Simon Peyton Jones" "Thomas Johnsson" 1.0
+"Simon Peyton Jones" "Norman Ramsey" 1.0
+"Paul Hudak" "Warren Burton" 1.0
+"Paul Hudak" "Erik Meijer" 1.0
+"Paul Hudak" "John Hughes" 1.0
+"Paul Hudak" "Lennart Augustsson" 1.0
+"Paul Hudak" "Philip Wadler" 1.0
+"Paul Hudak" "Simon Peyton Jones" 1.0
+"Paul Hudak" "Alastair Reid" 1.0
+"Paul Hudak" "Brian Boutel" 1.0
+"Paul Hudak" "Colin Runciman" 1.0
+"Paul Hudak" "Dave Barton" 1.0
+"Paul Hudak" "John Launchbury" 1.0
+"Paul Hudak" "John Peterson" 1.0
+"Paul Hudak" "Joseph Fasel" 1.0
+"Paul Hudak" "Kevin Hammond" 1.0
+"Paul Hudak" "Mark Jones" 1.0
+"Paul Hudak" "Ralf Hinze" 1.0
+"Paul Hudak" "Thomas Johnsson" 1.0
+"Alastair Reid" "Warren Burton" 1.0
+"Alastair Reid" "Erik Meijer" 1.0
+"Alastair Reid" "John Hughes" 1.0
+"Alastair Reid" "Lennart Augustsson" 1.0
+"Alastair Reid" "Philip Wadler" 1.0
+"Alastair Reid" "Simon Peyton Jones" 1.0
+"Alastair Reid" "Paul Hudak" 1.0
+"Alastair Reid" "Brian Boutel" 1.0
+"Alastair Reid" "Colin Runciman" 1.0
+"Alastair Reid" "Dave Barton" 1.0
+"Alastair Reid" "John Launchbury" 1.0
+"Alastair Reid" "John Peterson" 1.0
+"Alastair Reid" "Joseph Fasel" 1.0
+"Alastair Reid" "Kevin Hammond" 1.0
+"Alastair Reid" "Mark Jones" 1.0
+"Alastair Reid" "Ralf Hinze" 1.0
+"Alastair Reid" "Thomas Johnsson" 1.0
+"Brian Boutel" "Warren Burton" 1.0
+"Brian Boutel" "Erik Meijer" 1.0
+"Brian Boutel" "John Hughes" 1.0
+"Brian Boutel" "Lennart Augustsson" 1.0
+"Brian Boutel" "Philip Wadler" 1.0
+"Brian Boutel" "Simon Peyton Jones" 1.0
+"Brian Boutel" "Paul Hudak" 1.0
+"Brian Boutel" "Alastair Reid" 1.0
+"Brian Boutel" "Colin Runciman" 1.0
+"Brian Boutel" "Dave Barton" 1.0
+"Brian Boutel" "John Launchbury" 1.0
+"Brian Boutel" "John Peterson" 1.0
+"Brian Boutel" "Joseph Fasel" 1.0
+"Brian Boutel" "Kevin Hammond" 1.0
+"Brian Boutel" "Mark Jones" 1.0
+"Brian Boutel" "Ralf Hinze" 1.0
+"Brian Boutel" "Thomas Johnsson" 1.0
+"Colin Runciman" "Warren Burton" 1.0
+"Colin Runciman" "Erik Meijer" 1.0
+"Colin Runciman" "John Hughes" 1.0
+"Colin Runciman" "Lennart Augustsson" 1.0
+"Colin Runciman" "Philip Wadler" 1.0
+"Colin Runciman" "Simon Peyton Jones" 1.0
+"Colin Runciman" "Paul Hudak" 1.0
+"Colin Runciman" "Alastair Reid" 1.0
+"Colin Runciman" "Brian Boutel" 1.0
+"Colin Runciman" "Dave Barton" 1.0
+"Colin Runciman" "John Launchbury" 1.0
+"Colin Runciman" "John Peterson" 1.0
+"Colin Runciman" "Joseph Fasel" 1.0
+"Colin Runciman" "Kevin Hammond" 1.0
+"Colin Runciman" "Mark Jones" 1.0
+"Colin Runciman" "Ralf Hinze" 1.0
+"Colin Runciman" "Thomas Johnsson" 1.0
+"Dave Barton" "Warren Burton" 1.0
+"Dave Barton" "Erik Meijer" 1.0
+"Dave Barton" "John Hughes" 1.0
+"Dave Barton" "Lennart Augustsson" 1.0
+"Dave Barton" "Philip Wadler" 1.0
+"Dave Barton" "Simon Peyton Jones" 1.0
+"Dave Barton" "Paul Hudak" 1.0
+"Dave Barton" "Alastair Reid" 1.0
+"Dave Barton" "Brian Boutel" 1.0
+"Dave Barton" "Colin Runciman" 1.0
+"Dave Barton" "John Launchbury" 1.0
+"Dave Barton" "John Peterson" 1.0
+"Dave Barton" "Joseph Fasel" 1.0
+"Dave Barton" "Kevin Hammond" 1.0
+"Dave Barton" "Mark Jones" 1.0
+"Dave Barton" "Ralf Hinze" 1.0
+"Dave Barton" "Thomas Johnsson" 1.0
+"John Launchbury" "Warren Burton" 1.0
+"John Launchbury" "Erik Meijer" 1.0
+"John Launchbury" "John Hughes" 1.0
+"John Launchbury" "Lennart Augustsson" 1.0
+"John Launchbury" "Philip Wadler" 1.0
+"John Launchbury" "Simon Peyton Jones" 1.0
+"John Launchbury" "Paul Hudak" 1.0
+"John Launchbury" "Alastair Reid" 1.0
+"John Launchbury" "Brian Boutel" 1.0
+"John Launchbury" "Colin Runciman" 1.0
+"John Launchbury" "Dave Barton" 1.0
+"John Launchbury" "John Peterson" 1.0
+"John Launchbury" "Joseph Fasel" 1.0
+"John Launchbury" "Kevin Hammond" 1.0
+"John Launchbury" "Mark Jones" 1.0
+"John Launchbury" "Ralf Hinze" 1.0
+"John Launchbury" "Thomas Johnsson" 1.0
+"John Peterson" "Warren Burton" 1.0
+"John Peterson" "Erik Meijer" 1.0
+"John Peterson" "John Hughes" 1.0
+"John Peterson" "Lennart Augustsson" 1.0
+"John Peterson" "Philip Wadler" 1.0
+"John Peterson" "Simon Peyton Jones" 1.0
+"John Peterson" "Paul Hudak" 1.0
+"John Peterson" "Alastair Reid" 1.0
+"John Peterson" "Brian Boutel" 1.0
+"John Peterson" "Colin Runciman" 1.0
+"John Peterson" "Dave Barton" 1.0
+"John Peterson" "John Launchbury" 1.0
+"John Peterson" "Joseph Fasel" 1.0
+"John Peterson" "Kevin Hammond" 1.0
+"John Peterson" "Mark Jones" 1.0
+"John Peterson" "Ralf Hinze" 1.0
+"John Peterson" "Thomas Johnsson" 1.0
+"Joseph Fasel" "Warren Burton" 1.0
+"Joseph Fasel" "Erik Meijer" 1.0
+"Joseph Fasel" "John Hughes" 1.0
+"Joseph Fasel" "Lennart Augustsson" 1.0
+"Joseph Fasel" "Philip Wadler" 1.0
+"Joseph Fasel" "Simon Peyton Jones" 1.0
+"Joseph Fasel" "Paul Hudak" 1.0
+"Joseph Fasel" "Alastair Reid" 1.0
+"Joseph Fasel" "Brian Boutel" 1.0
+"Joseph Fasel" "Colin Runciman" 1.0
+"Joseph Fasel" "Dave Barton" 1.0
+"Joseph Fasel" "John Launchbury" 1.0
+"Joseph Fasel" "John Peterson" 1.0
+"Joseph Fasel" "Kevin Hammond" 1.0
+"Joseph Fasel" "Mark Jones" 1.0
+"Joseph Fasel" "Ralf Hinze" 1.0
+"Joseph Fasel" "Thomas Johnsson" 1.0
+"Kevin Hammond" "Warren Burton" 1.0
+"Kevin Hammond" "Erik Meijer" 1.0
+"Kevin Hammond" "John Hughes" 1.0
+"Kevin Hammond" "Lennart Augustsson" 1.0
+"Kevin Hammond" "Philip Wadler" 1.0
+"Kevin Hammond" "Simon Peyton Jones" 1.0
+"Kevin Hammond" "Paul Hudak" 1.0
+"Kevin Hammond" "Alastair Reid" 1.0
+"Kevin Hammond" "Brian Boutel" 1.0
+"Kevin Hammond" "Colin Runciman" 1.0
+"Kevin Hammond" "Dave Barton" 1.0
+"Kevin Hammond" "John Launchbury" 1.0
+"Kevin Hammond" "John Peterson" 1.0
+"Kevin Hammond" "Joseph Fasel" 1.0
+"Kevin Hammond" "Mark Jones" 1.0
+"Kevin Hammond" "Ralf Hinze" 1.0
+"Kevin Hammond" "Thomas Johnsson" 1.0
+"Mark Jones" "Warren Burton" 1.0
+"Mark Jones" "Erik Meijer" 1.0
+"Mark Jones" "John Hughes" 1.0
+"Mark Jones" "Lennart Augustsson" 1.0
+"Mark Jones" "Philip Wadler" 1.0
+"Mark Jones" "Simon Peyton Jones" 1.0
+"Mark Jones" "Paul Hudak" 1.0
+"Mark Jones" "Alastair Reid" 1.0
+"Mark Jones" "Brian Boutel" 1.0
+"Mark Jones" "Colin Runciman" 1.0
+"Mark Jones" "Dave Barton" 1.0
+"Mark Jones" "John Launchbury" 1.0
+"Mark Jones" "John Peterson" 1.0
+"Mark Jones" "Joseph Fasel" 1.0
+"Mark Jones" "Kevin Hammond" 1.0
+"Mark Jones" "Ralf Hinze" 1.0
+"Mark Jones" "Thomas Johnsson" 1.0
+"Ralf Hinze" "Warren Burton" 1.0
+"Ralf Hinze" "Erik Meijer" 1.0
+"Ralf Hinze" "John Hughes" 1.0
+"Ralf Hinze" "Lennart Augustsson" 1.0
+"Ralf Hinze" "Philip Wadler" 1.0
+"Ralf Hinze" "Simon Peyton Jones" 1.0
+"Ralf Hinze" "Paul Hudak" 1.0
+"Ralf Hinze" "Alastair Reid" 1.0
+"Ralf Hinze" "Brian Boutel" 1.0
+"Ralf Hinze" "Colin Runciman" 1.0
+"Ralf Hinze" "Dave Barton" 1.0
+"Ralf Hinze" "John Launchbury" 1.0
+"Ralf Hinze" "John Peterson" 1.0
+"Ralf Hinze" "Joseph Fasel" 1.0
+"Ralf Hinze" "Kevin Hammond" 1.0
+"Ralf Hinze" "Mark Jones" 1.0
+"Ralf Hinze" "Thomas Johnsson" 1.0
+"Thomas Johnsson" "Warren Burton" 1.0
+"Thomas Johnsson" "Erik Meijer" 1.0
+"Thomas Johnsson" "John Hughes" 1.0
+"Thomas Johnsson" "Lennart Augustsson" 1.0
+"Thomas Johnsson" "Philip Wadler" 1.0
+"Thomas Johnsson" "Simon Peyton Jones" 1.0
+"Thomas Johnsson" "Paul Hudak" 1.0
+"Thomas Johnsson" "Alastair Reid" 1.0
+"Thomas Johnsson" "Brian Boutel" 1.0
+"Thomas Johnsson" "Colin Runciman" 1.0
+"Thomas Johnsson" "Dave Barton" 1.0
+"Thomas Johnsson" "John Launchbury" 1.0
+"Thomas Johnsson" "John Peterson" 1.0
+"Thomas Johnsson" "Joseph Fasel" 1.0
+"Thomas Johnsson" "Kevin Hammond" 1.0
+"Thomas Johnsson" "Mark Jones" 1.0
+"Thomas Johnsson" "Ralf Hinze" 1.0
+"Steven Pemberton" "Leo Geurts" 1.0
+"Steven Pemberton" "Lambert Meertens" 1.0
+"Leo Geurts" "Steven Pemberton" 1.0
+"Leo Geurts" "Lambert Meertens" 1.0
+"Lambert Meertens" "Steven Pemberton" 1.0
+"Lambert Meertens" "Leo Geurts" 1.0
+"Edward A. Ashcroft" "William W. Wadge" 1.0
+"William W. Wadge" "Edward A. Ashcroft" 1.0
+"Ascánder Suárez" "Xavier Leroy" 1.0
+"Ascánder Suárez" "Gérard Huet" 1.0
+"Ascánder Suárez" "Guy Cousineau" 1.0
+"Ascánder Suárez" "Michel Mauny" 1.0
+"Ascánder Suárez" "Pierre Weis" 1.0
+"Xavier Leroy" "Ascánder Suárez" 1.0
+"Xavier Leroy" "Gérard Huet" 1.0
+"Xavier Leroy" "Guy Cousineau" 1.0
+"Xavier Leroy" "Michel Mauny" 1.0
+"Xavier Leroy" "Pierre Weis" 1.0
+"Gérard Huet" "Ascánder Suárez" 1.0
+"Gérard Huet" "Xavier Leroy" 1.0
+"Gérard Huet" "Guy Cousineau" 1.0
+"Gérard Huet" "Michel Mauny" 1.0
+"Gérard Huet" "Pierre Weis" 1.0
+"Guy Cousineau" "Ascánder Suárez" 1.0
+"Guy Cousineau" "Xavier Leroy" 1.0
+"Guy Cousineau" "Gérard Huet" 1.0
+"Guy Cousineau" "Michel Mauny" 1.0
+"Guy Cousineau" "Pierre Weis" 1.0
+"Michel Mauny" "Ascánder Suárez" 1.0
+"Michel Mauny" "Xavier Leroy" 1.0
+"Michel Mauny" "Gérard Huet" 1.0
+"Michel Mauny" "Guy Cousineau" 1.0
+"Michel Mauny" "Pierre Weis" 1.0
+"Pierre Weis" "Ascánder Suárez" 1.0
+"Pierre Weis" "Xavier Leroy" 1.0
+"Pierre Weis" "Gérard Huet" 1.0
+"Pierre Weis" "Guy Cousineau" 1.0
+"Pierre Weis" "Michel Mauny" 1.0
+"Francis McCabe" "Keith Clark" 1.0
+"Keith Clark" "Francis McCabe" 1.0
+"Sean Dorward" "Rob Pike" 1.0
+"Sean Dorward" "Phil Winterbottom" 1.0
+"Rob Pike" "Sean Dorward" 1.0
+"Rob Pike" "Phil Winterbottom" 1.0
+"Rob Pike" "Ken Thompson" 1.0
+"Rob Pike" "Robert Griesemer" 1.0
+"Phil Winterbottom" "Sean Dorward" 1.0
+"Phil Winterbottom" "Rob Pike" 1.0
+"Ross Ihaka" "Robert Gentleman" 1.0
+"Robert Gentleman" "Ross Ihaka" 1.0
+"Gilad Bracha" "Philip Wadler" 1.0
+"Gilad Bracha" "Martin Odersky" 1.0
+"Gilad Bracha" "David Stoutamire" 1.0
+"Gilad Bracha" "William Maddox" 1.0
+"Martin Odersky" "Philip Wadler" 1.0
+"Martin Odersky" "Gilad Bracha" 1.0
+"Martin Odersky" "David Stoutamire" 1.0
+"Martin Odersky" "William Maddox" 1.0
+"David Stoutamire" "Philip Wadler" 1.0
+"David Stoutamire" "Gilad Bracha" 1.0
+"David Stoutamire" "Martin Odersky" 1.0
+"David Stoutamire" "William Maddox" 1.0
+"William Maddox" "Philip Wadler" 1.0
+"William Maddox" "Gilad Bracha" 1.0
+"William Maddox" "Martin Odersky" 1.0
+"William Maddox" "David Stoutamire" 1.0
+"Raymond F. Boyce" "Donald D. Chamberlin" 1.0
+"Donald D. Chamberlin" "Raymond F. Boyce" 1.0
+"Anders Hejlsberg" "Niklaus Wirth" 1.0
+"Anders Hejlsberg" "Apple Inc." 1.0
+"Niklaus Wirth" "Anders Hejlsberg" 1.0
+"Niklaus Wirth" "Apple Inc." 1.0
+"Niklaus Wirth" "Hanspeter Mössenböck" 1.0
+"Niklaus Wirth" Acorn 1.0
+"Niklaus Wirth" "DEC Systems Research Center" 1.0
+"Apple Inc." "Anders Hejlsberg" 1.0
+"Apple Inc." "Niklaus Wirth" 1.0
+"D. B. Russell" "William Wulf" 1.0
+"D. B. Russell" "Nico Habermann" 1.0
+"William Wulf" "D. B. Russell" 1.0
+"William Wulf" "Nico Habermann" 1.0
+"Nico Habermann" "D. B. Russell" 1.0
+"Nico Habermann" "William Wulf" 1.0
+"Ken Thompson" "Rob Pike" 1.0
+"Ken Thompson" "Robert Griesemer" 1.0
+"Robert Griesemer" "Rob Pike" 1.0
+"Robert Griesemer" "Ken Thompson" 1.0
+"Kristen Nygaard" "Ole-Johan Dahl" 1.0
+"Kristen Nygaard" "Birger Møller-Pedersen" 1.0
+"Ole-Johan Dahl" "Kristen Nygaard" 1.0
+"Birger Møller-Pedersen" "Kristen Nygaard" 1.0
+"Ge Wang" "Perry R. Cook" 1.0
+"Perry R. Cook" "Ge Wang" 1.0
+"D.T. Barnard" "James Cordy" 1.0
+"D.T. Barnard" "Ric Holt" 1.0
+"D.T. Barnard" "D.B. Wortman" 1.0
+"James Cordy" "D.T. Barnard" 1.0
+"James Cordy" "Ric Holt" 6.0
+"James Cordy" "D.B. Wortman" 1.0
+"James Cordy" "Charles Halpern-Hamu" 1.0
+"Ric Holt" "D.T. Barnard" 1.0
+"Ric Holt" "James Cordy" 6.0
+"Ric Holt" "D.B. Wortman" 1.0
+"D.B. Wortman" "D.T. Barnard" 1.0
+"D.B. Wortman" "James Cordy" 1.0
+"D.B. Wortman" "Ric Holt" 1.0
+"Bernard Vauquois" "Friedrich L. Bauer" 2.0
+"Bernard Vauquois" "Peter Naur" 2.0
+"Bernard Vauquois" "Adriaan van Wijngaarden" 2.0
+"Bernard Vauquois" "John Backus" 2.0
+"Bernard Vauquois" "Klaus Samelson" 2.0
+"Bernard Vauquois" "Alan Perlis" 2.0
+"Bernard Vauquois" "John McCarthy" 2.0
+"Bernard Vauquois" "Heinz Rutishauser" 2.0
+"Bernard Vauquois" "Charles Katz" 2.0
+"Bernard Vauquois" "Joseph Henry Wegstein" 2.0
+"Bernard Vauquois" "Julien Green" 2.0
+"Bernard Vauquois" "Michael Woodger" 2.0
+"Bernard Vauquois" "Hermann Bottenbruch" 1.0
+"Friedrich L. Bauer" "Bernard Vauquois" 2.0
+"Friedrich L. Bauer" "Peter Naur" 2.0
+"Friedrich L. Bauer" "Adriaan van Wijngaarden" 2.0
+"Friedrich L. Bauer" "John Backus" 3.0
+"Friedrich L. Bauer" "Klaus Samelson" 3.0
+"Friedrich L. Bauer" "Alan Perlis" 3.0
+"Friedrich L. Bauer" "John McCarthy" 2.0
+"Friedrich L. Bauer" "Heinz Rutishauser" 3.0
+"Friedrich L. Bauer" "Charles Katz" 3.0
+"Friedrich L. Bauer" "Joseph Henry Wegstein" 3.0
+"Friedrich L. Bauer" "Julien Green" 2.0
+"Friedrich L. Bauer" "Michael Woodger" 2.0
+"Friedrich L. Bauer" "Hermann Bottenbruch" 2.0
+"Peter Naur" "Bernard Vauquois" 2.0
+"Peter Naur" "Friedrich L. Bauer" 2.0
+"Peter Naur" "Adriaan van Wijngaarden" 2.0
+"Peter Naur" "John Backus" 2.0
+"Peter Naur" "Klaus Samelson" 2.0
+"Peter Naur" "Alan Perlis" 2.0
+"Peter Naur" "John McCarthy" 2.0
+"Peter Naur" "Heinz Rutishauser" 2.0
+"Peter Naur" "Charles Katz" 2.0
+"Peter Naur" "Joseph Henry Wegstein" 2.0
+"Peter Naur" "Julien Green" 2.0
+"Peter Naur" "Michael Woodger" 2.0
+"Peter Naur" "Hermann Bottenbruch" 1.0
+"Adriaan van Wijngaarden" "Bernard Vauquois" 2.0
+"Adriaan van Wijngaarden" "Friedrich L. Bauer" 2.0
+"Adriaan van Wijngaarden" "Peter Naur" 2.0
+"Adriaan van Wijngaarden" "John Backus" 2.0
+"Adriaan van Wijngaarden" "Klaus Samelson" 2.0
+"Adriaan van Wijngaarden" "Alan Perlis" 2.0
+"Adriaan van Wijngaarden" "John McCarthy" 2.0
+"Adriaan van Wijngaarden" "Heinz Rutishauser" 2.0
+"Adriaan van Wijngaarden" "Charles Katz" 2.0
+"Adriaan van Wijngaarden" "Joseph Henry Wegstein" 2.0
+"Adriaan van Wijngaarden" "Julien Green" 2.0
+"Adriaan van Wijngaarden" "Michael Woodger" 2.0
+"Adriaan van Wijngaarden" "Hermann Bottenbruch" 1.0
+"Adriaan van Wijngaarden" "Cornelis H. A. Koster" 1.0
+"Adriaan van Wijngaarden" "Barry J. Mailloux" 1.0
+"Adriaan van Wijngaarden" "John E. L. Peck" 1.0
+"John Backus" "Bernard Vauquois" 2.0
+"John Backus" "Friedrich L. Bauer" 3.0
+"John Backus" "Peter Naur" 2.0
+"John Backus" "Adriaan van Wijngaarden" 2.0
+"John Backus" "Klaus Samelson" 3.0
+"John Backus" "Alan Perlis" 3.0
+"John Backus" "John McCarthy" 2.0
+"John Backus" "Heinz Rutishauser" 3.0
+"John Backus" "Charles Katz" 3.0
+"John Backus" "Joseph Henry Wegstein" 3.0
+"John Backus" "Julien Green" 2.0
+"John Backus" "Michael Woodger" 2.0
+"John Backus" "Hermann Bottenbruch" 2.0
+"John Backus" "Edward Wimmers" 1.0
+"John Backus" "John Williams" 1.0
+"Klaus Samelson" "Bernard Vauquois" 2.0
+"Klaus Samelson" "Friedrich L. Bauer" 3.0
+"Klaus Samelson" "Peter Naur" 2.0
+"Klaus Samelson" "Adriaan van Wijngaarden" 2.0
+"Klaus Samelson" "John Backus" 3.0
+"Klaus Samelson" "Alan Perlis" 3.0
+"Klaus Samelson" "John McCarthy" 2.0
+"Klaus Samelson" "Heinz Rutishauser" 3.0
+"Klaus Samelson" "Charles Katz" 3.0
+"Klaus Samelson" "Joseph Henry Wegstein" 3.0
+"Klaus Samelson" "Julien Green" 2.0
+"Klaus Samelson" "Michael Woodger" 2.0
+"Klaus Samelson" "Hermann Bottenbruch" 2.0
+"Alan Perlis" "Bernard Vauquois" 2.0
+"Alan Perlis" "Friedrich L. Bauer" 3.0
+"Alan Perlis" "Peter Naur" 2.0
+"Alan Perlis" "Adriaan van Wijngaarden" 2.0
+"Alan Perlis" "John Backus" 3.0
+"Alan Perlis" "Klaus Samelson" 3.0
+"Alan Perlis" "John McCarthy" 2.0
+"Alan Perlis" "Heinz Rutishauser" 3.0
+"Alan Perlis" "Charles Katz" 3.0
+"Alan Perlis" "Joseph Henry Wegstein" 3.0
+"Alan Perlis" "Julien Green" 2.0
+"Alan Perlis" "Michael Woodger" 2.0
+"Alan Perlis" "Hermann Bottenbruch" 2.0
+"John McCarthy" "Bernard Vauquois" 2.0
+"John McCarthy" "Friedrich L. Bauer" 2.0
+"John McCarthy" "Peter Naur" 2.0
+"John McCarthy" "Adriaan van Wijngaarden" 2.0
+"John McCarthy" "John Backus" 2.0
+"John McCarthy" "Klaus Samelson" 2.0
+"John McCarthy" "Alan Perlis" 2.0
+"John McCarthy" "Heinz Rutishauser" 2.0
+"John McCarthy" "Charles Katz" 2.0
+"John McCarthy" "Joseph Henry Wegstein" 2.0
+"John McCarthy" "Julien Green" 2.0
+"John McCarthy" "Michael Woodger" 2.0
+"John McCarthy" "Hermann Bottenbruch" 1.0
+"Heinz Rutishauser" "Bernard Vauquois" 2.0
+"Heinz Rutishauser" "Friedrich L. Bauer" 3.0
+"Heinz Rutishauser" "Peter Naur" 2.0
+"Heinz Rutishauser" "Adriaan van Wijngaarden" 2.0
+"Heinz Rutishauser" "John Backus" 3.0
+"Heinz Rutishauser" "Klaus Samelson" 3.0
+"Heinz Rutishauser" "Alan Perlis" 3.0
+"Heinz Rutishauser" "John McCarthy" 2.0
+"Heinz Rutishauser" "Charles Katz" 3.0
+"Heinz Rutishauser" "Joseph Henry Wegstein" 3.0
+"Heinz Rutishauser" "Julien Green" 2.0
+"Heinz Rutishauser" "Michael Woodger" 2.0
+"Heinz Rutishauser" "Hermann Bottenbruch" 2.0
+"Charles Katz" "Bernard Vauquois" 2.0
+"Charles Katz" "Friedrich L. Bauer" 3.0
+"Charles Katz" "Peter Naur" 2.0
+"Charles Katz" "Adriaan van Wijngaarden" 2.0
+"Charles Katz" "John Backus" 3.0
+"Charles Katz" "Klaus Samelson" 3.0
+"Charles Katz" "Alan Perlis" 3.0
+"Charles Katz" "John McCarthy" 2.0
+"Charles Katz" "Heinz Rutishauser" 3.0
+"Charles Katz" "Joseph Henry Wegstein" 3.0
+"Charles Katz" "Julien Green" 2.0
+"Charles Katz" "Michael Woodger" 2.0
+"Charles Katz" "Hermann Bottenbruch" 2.0
+"Joseph Henry Wegstein" "Bernard Vauquois" 2.0
+"Joseph Henry Wegstein" "Friedrich L. Bauer" 3.0
+"Joseph Henry Wegstein" "Peter Naur" 2.0
+"Joseph Henry Wegstein" "Adriaan van Wijngaarden" 2.0
+"Joseph Henry Wegstein" "John Backus" 3.0
+"Joseph Henry Wegstein" "Klaus Samelson" 3.0
+"Joseph Henry Wegstein" "Alan Perlis" 3.0
+"Joseph Henry Wegstein" "John McCarthy" 2.0
+"Joseph Henry Wegstein" "Heinz Rutishauser" 3.0
+"Joseph Henry Wegstein" "Charles Katz" 3.0
+"Joseph Henry Wegstein" "Julien Green" 2.0
+"Joseph Henry Wegstein" "Michael Woodger" 2.0
+"Joseph Henry Wegstein" "Hermann Bottenbruch" 2.0
+"Julien Green" "Bernard Vauquois" 2.0
+"Julien Green" "Friedrich L. Bauer" 2.0
+"Julien Green" "Peter Naur" 2.0
+"Julien Green" "Adriaan van Wijngaarden" 2.0
+"Julien Green" "John Backus" 2.0
+"Julien Green" "Klaus Samelson" 2.0
+"Julien Green" "Alan Perlis" 2.0
+"Julien Green" "John McCarthy" 2.0
+"Julien Green" "Heinz Rutishauser" 2.0
+"Julien Green" "Charles Katz" 2.0
+"Julien Green" "Joseph Henry Wegstein" 2.0
+"Julien Green" "Michael Woodger" 2.0
+"Julien Green" "Hermann Bottenbruch" 1.0
+"Michael Woodger" "Bernard Vauquois" 2.0
+"Michael Woodger" "Friedrich L. Bauer" 2.0
+"Michael Woodger" "Peter Naur" 2.0
+"Michael Woodger" "Adriaan van Wijngaarden" 2.0
+"Michael Woodger" "John Backus" 2.0
+"Michael Woodger" "Klaus Samelson" 2.0
+"Michael Woodger" "Alan Perlis" 2.0
+"Michael Woodger" "John McCarthy" 2.0
+"Michael Woodger" "Heinz Rutishauser" 2.0
+"Michael Woodger" "Charles Katz" 2.0
+"Michael Woodger" "Joseph Henry Wegstein" 2.0
+"Michael Woodger" "Julien Green" 2.0
+"Michael Woodger" "Hermann Bottenbruch" 1.0
+"Hermann Bottenbruch" "Bernard Vauquois" 1.0
+"Hermann Bottenbruch" "Friedrich L. Bauer" 2.0
+"Hermann Bottenbruch" "Peter Naur" 1.0
+"Hermann Bottenbruch" "Adriaan van Wijngaarden" 1.0
+"Hermann Bottenbruch" "John Backus" 2.0
+"Hermann Bottenbruch" "Klaus Samelson" 2.0
+"Hermann Bottenbruch" "Alan Perlis" 2.0
+"Hermann Bottenbruch" "John McCarthy" 1.0
+"Hermann Bottenbruch" "Heinz Rutishauser" 2.0
+"Hermann Bottenbruch" "Charles Katz" 2.0
+"Hermann Bottenbruch" "Joseph Henry Wegstein" 2.0
+"Hermann Bottenbruch" "Julien Green" 1.0
+"Hermann Bottenbruch" "Michael Woodger" 1.0
+"Leszek Pacholski" "Kamil Skalski" 1.0
+"Leszek Pacholski" "Michał Moskal" 1.0
+"Leszek Pacholski" "Paweł Olszta" 1.0
+"Kamil Skalski" "Leszek Pacholski" 1.0
+"Kamil Skalski" "Michał Moskal" 1.0
+"Kamil Skalski" "Paweł Olszta" 1.0
+"Michał Moskal" "Leszek Pacholski" 1.0
+"Michał Moskal" "Kamil Skalski" 1.0
+"Michał Moskal" "Paweł Olszta" 1.0
+"Paweł Olszta" "Leszek Pacholski" 1.0
+"Paweł Olszta" "Kamil Skalski" 1.0
+"Paweł Olszta" "Michał Moskal" 1.0
+"Norman Ramsey" "Simon Peyton Jones" 1.0
+"Børge R. Christensen" "Benedict Løfstedt" 1.0
+"Benedict Løfstedt" "Børge R. Christensen" 1.0
+"Keith Packard" "Bart Massey" 1.0
+"Bart Massey" "Keith Packard" 1.0
+"Microsoft SQL Server" "Microsoft Research" 1.0
+"Microsoft Research" "Microsoft SQL Server" 1.0
+"Microsoft Research" "Don Syme" 1.0
+SHARE IBM 1.0
+IBM SHARE 1.0
+"Guy L. Steele" "Gerald Jay Sussman" 1.0
+"Gerald Jay Sussman" "Guy L. Steele" 1.0
+"Ralph Griswold" "David J. Farber" 1.0
+"Ralph Griswold" "Ivan P. Polonsky" 1.0
+"David J. Farber" "Ralph Griswold" 1.0
+"David J. Farber" "Ivan P. Polonsky" 1.0
+"Ivan P. Polonsky" "Ralph Griswold" 1.0
+"Ivan P. Polonsky" "David J. Farber" 1.0
+"Brendan Eich" "Ecma International" 1.0
+"Ecma International" "Brendan Eich" 1.0
+"Alan Kay" "Adele Goldberg" 1.0
+"Alan Kay" "Daniel Henry Holmes Ingalls" 1.0
+"Adele Goldberg" "Alan Kay" 1.0
+"Adele Goldberg" "Daniel Henry Holmes Ingalls" 1.0
+"Daniel Henry Holmes Ingalls" "Alan Kay" 1.0
+"Daniel Henry Holmes Ingalls" "Adele Goldberg" 1.0
+"Commissariat à l'énergie atomique et aux énergies alternatives" "National Institute for Research in Computer Science and Control" 1.0
+"National Institute for Research in Computer Science and Control" "Commissariat à l'énergie atomique et aux énergies alternatives" 1.0
+"David A. Wagner" "Mark S. Miller" 1.0
+"Mark S. Miller" "David A. Wagner" 1.0
+"Roger Hui" "Kenneth E. Iverson" 1.0
+"Kenneth E. Iverson" "Roger Hui" 1.0
+"Marc Bezem" "Andrea Schaerf" 1.0
+"Marc Bezem" "Jacob Brunekree" 1.0
+"Marc Bezem" "Krzysztof Apt" 1.0
+"Marc Bezem" "Vincent Partington" 1.0
+"Andrea Schaerf" "Marc Bezem" 1.0
+"Andrea Schaerf" "Jacob Brunekree" 1.0
+"Andrea Schaerf" "Krzysztof Apt" 1.0
+"Andrea Schaerf" "Vincent Partington" 1.0
+"Jacob Brunekree" "Marc Bezem" 1.0
+"Jacob Brunekree" "Andrea Schaerf" 1.0
+"Jacob Brunekree" "Krzysztof Apt" 1.0
+"Jacob Brunekree" "Vincent Partington" 1.0
+"Krzysztof Apt" "Marc Bezem" 1.0
+"Krzysztof Apt" "Andrea Schaerf" 1.0
+"Krzysztof Apt" "Jacob Brunekree" 1.0
+"Krzysztof Apt" "Vincent Partington" 1.0
+"Vincent Partington" "Marc Bezem" 1.0
+"Vincent Partington" "Andrea Schaerf" 1.0
+"Vincent Partington" "Jacob Brunekree" 1.0
+"Vincent Partington" "Krzysztof Apt" 1.0
+"Hanspeter Mössenböck" "Niklaus Wirth" 1.0
+Olivetti "Digital Equipment Corporation" 1.0
+"Digital Equipment Corporation" Olivetti 1.0
+"Charles Halpern-Hamu" "James Cordy" 1.0
+"Paul Graham" "Robert Tappan Morris" 1.0
+"Robert Tappan Morris" "Paul Graham" 1.0
+"Barbara Liskov" "Massachusetts Institute of Technology" 1.0
+"Massachusetts Institute of Technology" "Barbara Liskov" 1.0
+Acorn "Niklaus Wirth" 1.0
+Acorn "DEC Systems Research Center" 1.0
+"DEC Systems Research Center" "Niklaus Wirth" 1.0
+"DEC Systems Research Center" Acorn 1.0
+"Wally Feurzeig" "Seymour Papert" 1.0
+"Seymour Papert" "Wally Feurzeig" 1.0
+"Allen Newell" "Herbert A. Simon" 1.0
+"Allen Newell" "Cliff Shaw" 1.0
+"Herbert A. Simon" "Allen Newell" 1.0
+"Herbert A. Simon" "Cliff Shaw" 1.0
+"Cliff Shaw" "Allen Newell" 1.0
+"Cliff Shaw" "Herbert A. Simon" 1.0
+"Dennis Ritchie" "Bjarne Stroustrup" 1.0
+"Dennis Ritchie" "Brian Kernighan" 1.0
+"Bjarne Stroustrup" "Dennis Ritchie" 1.0
+"Brian Kernighan" "Dennis Ritchie" 1.0
+"Brian Kernighan" "Bell Labs" 1.0
+"Brian Kernighan" "Robert Fourer" 1.0
+"Brian Kernighan" "David Gay" 1.0
+"Brian Kernighan" "Alfred Aho" 1.0
+"Brian Kernighan" "Peter J. Weinberger" 1.0
+"Bell Labs" "Brian Kernighan" 1.0
+"Bell Labs" "Robert Fourer" 1.0
+"Bell Labs" "David Gay" 1.0
+"Robert Fourer" "Brian Kernighan" 1.0
+"Robert Fourer" "Bell Labs" 1.0
+"Robert Fourer" "David Gay" 1.0
+"David Gay" "Brian Kernighan" 1.0
+"David Gay" "Bell Labs" 1.0
+"David Gay" "Robert Fourer" 1.0
+"Andrei Alexandrescu" "Walter Bright" 1.0
+"Walter Bright" "Andrei Alexandrescu" 1.0
+"Cornelis H. A. Koster" "Adriaan van Wijngaarden" 1.0
+"Cornelis H. A. Koster" "Barry J. Mailloux" 1.0
+"Cornelis H. A. Koster" "John E. L. Peck" 1.0
+"Barry J. Mailloux" "Adriaan van Wijngaarden" 1.0
+"Barry J. Mailloux" "Cornelis H. A. Koster" 1.0
+"Barry J. Mailloux" "John E. L. Peck" 1.0
+"John E. L. Peck" "Adriaan van Wijngaarden" 1.0
+"John E. L. Peck" "Cornelis H. A. Koster" 1.0
+"John E. L. Peck" "Barry J. Mailloux" 1.0
+"Jie Huang Fu" "Léon Bottou" 1.0
+"Jie Huang Fu" "Yann LeCun" 1.0
+"Léon Bottou" "Jie Huang Fu" 1.0
+"Léon Bottou" "Yann LeCun" 1.0
+"Yann LeCun" "Jie Huang Fu" 1.0
+"Yann LeCun" "Léon Bottou" 1.0
+"Alfred Aho" "Brian Kernighan" 1.0
+"Alfred Aho" "Peter J. Weinberger" 1.0
+"Peter J. Weinberger" "Brian Kernighan" 1.0
+"Peter J. Weinberger" "Alfred Aho" 1.0
+"Edward Wimmers" "John Backus" 1.0
+"Edward Wimmers" "John Williams" 1.0
+"John Williams" "John Backus" 1.0
+"John Williams" "Edward Wimmers" 1.0
+"Grace Hopper" "Jean E. Sammet" 1.0
+"Jean E. Sammet" "Grace Hopper" 1.0
+"James Gosling" "Sun Microsystems" 1.0
+"Sun Microsystems" "James Gosling" 1.0
+"Thomas Eugene Kurtz" "John Kemeny" 2.0
+"John Kemeny" "Thomas Eugene Kurtz" 2.0
+"Don Syme" "Microsoft Research" 1.0
+"Vijay A. Saraswat" "Ken Kahn" 1.0
+"Ken Kahn" "Vijay A. Saraswat" 1.0

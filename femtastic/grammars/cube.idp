@@ -1,0 +1,27 @@
+load "msh3"
+load "medit"
+// ! basic functions to build regular mesh of a cube
+func mesh3 Cube(mesh Th, int[int] & Z, int vertical)
+{     
+  mesh3 Th1, Th2, Th3,Th4;
+  if (vertical)
+    {
+      Th1=movemesh23(Th,transfo=[x,Z[0],y]);
+      Th2=movemesh23(Th,transfo=[x,Z[1],y]);
+      Th3=movemesh23(Th,transfo=[Z[1],x,y]);
+      Th4=movemesh23(Th,transfo=[Z[0],x,y]);
+    }
+  else
+    {
+      Th1=movemesh23(Th,transfo=[x,y,Z[0]]);
+      Th2=movemesh23(Th,transfo=[Z[1],y,x]);
+      Th3=movemesh23(Th,transfo=[x,y,Z[1]]);
+      Th4=movemesh23(Th,transfo=[Z[0],y,x]);
+    }
+   mesh3 Th5= Th1+Th2+Th3+Th4;
+  return Th5; 
+}
+ 
+ 
+
+  

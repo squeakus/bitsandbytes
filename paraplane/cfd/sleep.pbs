@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=12
+#PBS -l walltime=00:03:00
+#PBS -A ucd01
+#PBS -o out.log
+#PBS -e err.log
+
+module purge
+module load openfoam/2.2.0
+source /ichec/packages/OpenFOAM/OpenFOAM-2.2.0/etc/bashrc
+
+cd $PBS_O_WORKDIR
+
+echo "Starting at "
+date
+echo "working dir:" $PBS_O_WORKDIR
+sleep 100
+echo "Run completed at "
+date

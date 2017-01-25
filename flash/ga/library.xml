@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<movie width="500" height="400" framerate="25">
+<background color="#FFFFFF"/> 
+<frame>
+<library>
+
+<!-- gui stuff -->
+<clip id="smallArrow_r" import="resources/gui/smallArrow_r.png"/>
+<clip id="smallArrow_l" import="resources/gui/smallArrow_l.png"/>
+
+<!--icon set 1 -->
+<clip id="pencil" import="resources/gui/pencil.png"/>
+<clip id="rubber" import="resources/gui/rubber.png"/>
+<clip id="magnify" import="resources/gui/magnify.png"/>
+<clip id="scenery" import="resources/gui/scenery.png"/>
+<clip id="star" import="resources/gui/star.png"/>
+<clip id="grid" import="resources/gui/grid.png"/>
+
+<clip id="console" import="resources/gui/console.png"/>
+
+
+<!--icon set 2 -->
+<clip id="camera" import="resources/gui/camera.png"/>
+<clip id="pause" import="resources/gui/pause.png"/>
+<clip id="restart" import="resources/gui/restart.png"/>
+
+<!--icon set 3 -->
+<clip id="theme" import="resources/gui/theme.png"/>
+<clip id="vehicle" import="resources/gui/vehicle.png"/>
+<clip id="quality" import="resources/gui/quality.png"/>
+<clip id="help" import="resources/gui/help.png"/>
+<clip id="skull" import="resources/gui/skull.png"/>
+
+<!--icon set 4 -->
+<clip id="clear" import="resources/gui/clear.png"/>
+<clip id="save" import="resources/gui/save.png"/>
+<clip id="load" import="resources/gui/load.png"/>
+<clip id="share" import="resources/gui/share.png"/>
+
+</library>
+</frame>
+</movie>

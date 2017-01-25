@@ -1,0 +1,16 @@
+load "msh3"
+include "cube.idp"
+int[int] DENSE=[6,6];
+int vert = 1;
+int flag = 5;
+func Func =1./5*y;
+int width=2, height=8; 
+int Z = width/2; 
+mesh Th=square(DENSE[0],DENSE[1],[x*width-Z,y*height],flags=flag); 
+if(Func)
+{
+    Th= adaptmesh(Th,Func,IsMetric=1,nbvx=10000);
+}
+mesh3 Th3=Cube(Th,Z,vert);
+medit("Th3",Th3);
+savemesh(Th3,"test.mesh");

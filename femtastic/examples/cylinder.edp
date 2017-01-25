@@ -1,0 +1,26 @@
+// file adaptsphere.edp
+load "msh3"
+load "tetgen"
+load "medit"
+
+mesh Th=square(10,20,[x*pi-pi/2,2*y*pi],flags=1);  //  $]\frac{-pi}{2},frac{-pi}{2}[\times]0,2\pi[ $
+//  a parametrization of a sphere 
+//func f1 =cos(x)*cos(y);
+//func f2 =cos(x)*sin(y);
+//func f3 = sin(x);
+//func f = 2./10+x-1.5;
+//Th = adaptmesh(Th,f,IsMetric=1,nbvx=10000);
+plot(Th, wait =1);
+func f1 =sin(y);
+func f2 =cos(y);
+func f3 =x;
+
+//plot(Th,wait=1);
+// construction of the surface of spheres
+real Rmin  = 5.;
+func f1min = Rmin*f1;
+func f2min = Rmin*f2;
+func f3min = Rmin*f3;
+mesh3 Th3=movemesh23(Th,transfo=[f1min,f2min,f3min]);
+medit("original",Th3);
+savemesh(Th3,"test.mesh");

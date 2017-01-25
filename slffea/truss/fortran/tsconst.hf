@@ -1,0 +1,52 @@
+c  This is the include file "tsconst.hf" for the fortran finite element progam 
+c  which uses 3D truss elements.
+c
+c               Updated 12/28/98
+c
+c
+c    SLFFEA source file
+c    Version:  1.0
+c    Copyright (C) 1999  San Le
+c
+c    The source code contained in this file is released under the
+c    terms of the GNU Library General Public License.
+c
+c
+c
+c nsd       3                   number of spatial dimentions per node 
+c ndof      3			degrees of freedom per node 
+c npel      2			nodes per element 
+c neqel     npel*ndof		degrees of freedom per element 
+c num_int   1			number of integration points 
+c neqlsq    neqel*neqel 	neqel squared 
+c npelsq    npel*npel   	npel squared 
+c sdim      1                   stress dimentions per element 
+c soB       sdim*npel           size of B matrix 
+c
+c mxnode    100                 maximum number of nodes
+c mxel      100                 maximum number of nodes
+c mxdof     ndof*mxnode         maximum number of degrees of freedom
+c mxnsd     nsd*mxnode          maximum number of spatial dimensions
+c mxkmat    mxdof*mxdof         maximum size of K stiffness 
+
+	implicit none
+
+	integer nsd, ndof, npel, neqel, numint, neqlsq, npelsq
+     	integer sdim, soB, mxnode, mxel, mxdof, mxnsd, mxkmat 
+
+	parameter (nsd = 3, ndof = 3, npel = 2, neqel = npel*ndof,
+     &	numint = 1, neqlsq = neqel*neqel, npelsq = npel*npel, sdim = 1, 
+     & 	soB = sdim*npel, mxnode = 100, mxel=100, mxdof = ndof*mxnode,
+     &	mxkmat = mxdof*mxdof)
+
+c  title   problem title
+c  numel   number of elements
+c  numnp   number of nodal points 
+c  dof     total number of degrees of freedom 
+c  XYZ     (0) x coordinate of node
+c          (1) y coordinate of node
+c          (2) z coordinate of node
+c  connect (1)-(8) connectivity array 
+c  Emod    young's modulus
+c  area	  Area
+

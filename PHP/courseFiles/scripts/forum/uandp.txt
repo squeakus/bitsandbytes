@@ -1,0 +1,8 @@
+Sample usernames and password for the memebers table of the forum database
+
+Username 	Password
+administrator 	admin101
+newBoyJoined 	newboy
+member5 	member5
+thisGirl 	thisGirl
+thatGirl 	thatGirl

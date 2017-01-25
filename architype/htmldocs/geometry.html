@@ -1,0 +1,144 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module geometry</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>geometry</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/jonathan/Jonathan/programs/architype/geometry.py">/home/jonathan/Jonathan/programs/architype/geometry.py</a></font></td></tr></table>
+    <p><tt>A&nbsp;module&nbsp;for&nbsp;calculating&nbsp;geometrical&nbsp;stuff,&nbsp;like&nbsp;distance&nbsp;from&nbsp;a<br>
+point&nbsp;to&nbsp;a&nbsp;line,&nbsp;whether&nbsp;a&nbsp;point&nbsp;is&nbsp;inside&nbsp;a&nbsp;polygon,&nbsp;and&nbsp;so&nbsp;on.<br>
+Copyright&nbsp;(c)&nbsp;2010&nbsp;Jonathan&nbsp;Byrne,&nbsp;Erik&nbsp;Hemberg&nbsp;and&nbsp;James&nbsp;McDermott<br>
+Hereby&nbsp;licensed&nbsp;under&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;v3.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-L1_distance_to_n_cube_boundary"><strong>L1_distance_to_n_cube_boundary</strong></a>(pt)</dt><dd><tt>The&nbsp;L1&nbsp;distance&nbsp;just&nbsp;takes&nbsp;the&nbsp;minimum&nbsp;of&nbsp;the&nbsp;distances&nbsp;in&nbsp;each<br>
+dimension.</tt></dd></dl>
+ <dl><dt><a name="-above_line"><strong>above_line</strong></a>(pt, vertices)</dt><dd><tt>Is&nbsp;a&nbsp;point&nbsp;(2-tuple)&nbsp;above&nbsp;a&nbsp;line&nbsp;(2-tuple&nbsp;of&nbsp;2-tuples)?</tt></dd></dl>
+ <dl><dt><a name="-abs_value"><strong>abs_value</strong></a>(pts)</dt><dd><tt>takes&nbsp;a&nbsp;list&nbsp;and&nbsp;reflects&nbsp;any&nbsp;negative&nbsp;vals&nbsp;through&nbsp;the&nbsp;z&nbsp;axis</tt></dd></dl>
+ <dl><dt><a name="-acos"><strong>acos</strong></a>(...)</dt><dd><tt><a href="#-acos">acos</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;arc&nbsp;cosine&nbsp;(measured&nbsp;in&nbsp;radians)&nbsp;of&nbsp;x.</tt></dd></dl>
+ <dl><dt><a name="-angle"><strong>angle</strong></a>(pt)</dt><dd><tt>pt&nbsp;is&nbsp;a&nbsp;2-tuple.&nbsp;Returns&nbsp;an&nbsp;angle&nbsp;in&nbsp;radians.</tt></dd></dl>
+ <dl><dt><a name="-angle_between_two_vectors"><strong>angle_between_two_vectors</strong></a>(a, b)</dt></dl>
+ <dl><dt><a name="-angle_between_two_vectors_given_base_pt"><strong>angle_between_two_vectors_given_base_pt</strong></a>(base, a, b)</dt></dl>
+ <dl><dt><a name="-asin"><strong>asin</strong></a>(...)</dt><dd><tt><a href="#-asin">asin</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;arc&nbsp;sine&nbsp;(measured&nbsp;in&nbsp;radians)&nbsp;of&nbsp;x.</tt></dd></dl>
+ <dl><dt><a name="-bezier_form"><strong>bezier_form</strong></a>(t, p)</dt></dl>
+ <dl><dt><a name="-cos"><strong>cos</strong></a>(...)</dt><dd><tt><a href="#-cos">cos</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;cosine&nbsp;of&nbsp;x&nbsp;(measured&nbsp;in&nbsp;radians).</tt></dd></dl>
+ <dl><dt><a name="-cosine"><strong>cosine</strong></a>(pt_a, pt_b, height, length)</dt><dd><tt>generates&nbsp;a&nbsp;sinusoid&nbsp;between&nbsp;two&nbsp;points,&nbsp;returns&nbsp;a&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-cross_product"><strong>cross_product</strong></a>(pt0, pt1)</dt></dl>
+ <dl><dt><a name="-disk_at_pt0_perp_to_line_pt0pt1"><strong>disk_at_pt0_perp_to_line_pt0pt1</strong></a>(theta, pt0, pt1, r)</dt><dd><tt>calculating&nbsp;a&nbsp;disk&nbsp;in&nbsp;the&nbsp;plane&nbsp;perpendicular&nbsp;to&nbsp;the&nbsp;line<br>
+between&nbsp;two&nbsp;points.&nbsp;from:<br>
+<a href="http://local.wasp.uwa.edu.au/~pbourke/geometry/disk/">http://local.wasp.uwa.edu.au/~pbourke/geometry/disk/</a></tt></dd></dl>
+ <dl><dt><a name="-dot_operation"><strong>dot_operation</strong></a>(pt0, pt1, fn)</dt><dd><tt>use&nbsp;this&nbsp;to&nbsp;do&nbsp;(eg)&nbsp;(1,&nbsp;1,&nbsp;1)&nbsp;+&nbsp;(4,&nbsp;4,&nbsp;6)<br>
+pass&nbsp;in&nbsp;lambda&nbsp;x,&nbsp;y:&nbsp;x&nbsp;+&nbsp;y&nbsp;as&nbsp;the&nbsp;operation.</tt></dd></dl>
+ <dl><dt><a name="-dot_product"><strong>dot_product</strong></a>(a, b)</dt></dl>
+ <dl><dt><a name="-euclidean_distance"><strong>euclidean_distance</strong></a>(p, q)</dt></dl>
+ <dl><dt><a name="-fabs"><strong>fabs</strong></a>(...)</dt><dd><tt><a href="#-fabs">fabs</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;absolute&nbsp;value&nbsp;of&nbsp;the&nbsp;float&nbsp;x.</tt></dd></dl>
+ <dl><dt><a name="-generate_random_pt_inside_polygon"><strong>generate_random_pt_inside_polygon</strong></a>(poly)</dt><dd><tt>Make&nbsp;a&nbsp;new&nbsp;2-tuple&nbsp;point&nbsp;inside&nbsp;the&nbsp;given&nbsp;polygon.&nbsp;The&nbsp;problem&nbsp;is<br>
+to&nbsp;avoid&nbsp;generating&nbsp;a&nbsp;point&nbsp;outside&nbsp;the&nbsp;polygon.&nbsp;There&nbsp;are&nbsp;clever<br>
+ways&nbsp;of&nbsp;doing&nbsp;it,&nbsp;using&nbsp;the&nbsp;right&nbsp;distribution,&nbsp;but&nbsp;simply&nbsp;looping<br>
+is&nbsp;an&nbsp;ok&nbsp;solution.</tt></dd></dl>
+ <dl><dt><a name="-get_hex_proportions"><strong>get_hex_proportions</strong></a>(hex_pts, pt)</dt><dd><tt>Given&nbsp;the&nbsp;vertices&nbsp;of&nbsp;a&nbsp;hexagon&nbsp;plus&nbsp;the&nbsp;centre&nbsp;point,&nbsp;plus&nbsp;a<br>
+point&nbsp;in&nbsp;the&nbsp;hexagon,&nbsp;calculate&nbsp;the&nbsp;proportions&nbsp;(weights)<br>
+corresponding&nbsp;to&nbsp;the&nbsp;vertices.</tt></dd></dl>
+ <dl><dt><a name="-get_orthonormal_vectors"><strong>get_orthonormal_vectors</strong></a>(pt0, pt1)</dt><dd><tt>given&nbsp;two&nbsp;points,&nbsp;find&nbsp;two&nbsp;unit&nbsp;vectors&nbsp;which&nbsp;are&nbsp;orthogonal&nbsp;to<br>
+the&nbsp;line&nbsp;between&nbsp;them.&nbsp;we&nbsp;use&nbsp;a&nbsp;couple&nbsp;of&nbsp;hacks&nbsp;to&nbsp;make&nbsp;sure<br>
+they're&nbsp;nicely&nbsp;aligned&nbsp;to&nbsp;axes.</tt></dd></dl>
+ <dl><dt><a name="-get_tri_proportions"><strong>get_tri_proportions</strong></a>(tri_pts, pt)</dt><dd><tt>Given&nbsp;the&nbsp;vertices&nbsp;of&nbsp;a&nbsp;triangle,&nbsp;and&nbsp;a&nbsp;point&nbsp;within&nbsp;that<br>
+triangle,&nbsp;calculate&nbsp;the&nbsp;proportions&nbsp;(weights)&nbsp;corresponding&nbsp;to&nbsp;the<br>
+vertices.</tt></dd></dl>
+ <dl><dt><a name="-hex_vertices"><strong>hex_vertices</strong></a>(size<font color="#909090">=1.0</font>)</dt><dd><tt>The&nbsp;vertices&nbsp;of&nbsp;a&nbsp;"unit"&nbsp;hexagon,&nbsp;starting&nbsp;with&nbsp;the&nbsp;right-most<br>
+point&nbsp;and&nbsp;going&nbsp;anti-clockwise&nbsp;(in&nbsp;the&nbsp;direction&nbsp;of&nbsp;positive&nbsp;theta<br>
+in&nbsp;the&nbsp;unit&nbsp;circle&nbsp;(<a href="#-cos">cos</a>(theta),&nbsp;<a href="#-sin">sin</a>(theta))).</tt></dd></dl>
+ <dl><dt><a name="-inside_polygon"><strong>inside_polygon</strong></a>(pt, vertices)</dt><dd><tt>Check&nbsp;whether&nbsp;a&nbsp;point&nbsp;is&nbsp;inside&nbsp;a&nbsp;polygon.&nbsp;I&nbsp;think&nbsp;the&nbsp;vertices<br>
+have&nbsp;to&nbsp;be&nbsp;given&nbsp;in&nbsp;the&nbsp;anti-clockwise&nbsp;order,&nbsp;so&nbsp;we&nbsp;always&nbsp;want&nbsp;pt<br>
+to&nbsp;be&nbsp;"on&nbsp;the&nbsp;left"&nbsp;of&nbsp;the&nbsp;line&nbsp;between&nbsp;the&nbsp;current&nbsp;vertex&nbsp;and&nbsp;the<br>
+next&nbsp;vertex.&nbsp;This&nbsp;only&nbsp;works&nbsp;for&nbsp;convex&nbsp;polygons.&nbsp;They&nbsp;don't&nbsp;have<br>
+to&nbsp;be&nbsp;regular&nbsp;though.</tt></dd></dl>
+ <dl><dt><a name="-inside_unit_n_cube"><strong>inside_unit_n_cube</strong></a>(pt)</dt><dd><tt>Given&nbsp;a&nbsp;point&nbsp;in&nbsp;n-space,&nbsp;determine&nbsp;whether&nbsp;it's&nbsp;inside&nbsp;the&nbsp;unit<br>
+n-cube.</tt></dd></dl>
+ <dl><dt><a name="-interpolate"><strong>interpolate</strong></a>(p, xy)</dt></dl>
+ <dl><dt><a name="-invert"><strong>invert</strong></a>(pts, height)</dt><dd><tt>flips&nbsp;a&nbsp;curve&nbsp;upside&nbsp;down&nbsp;for&nbsp;the&nbsp;bridge</tt></dd></dl>
+ <dl><dt><a name="-is_on_the_right"><strong>is_on_the_right</strong></a>(pt, vertices)</dt><dd><tt>"On&nbsp;the&nbsp;right"&nbsp;means&nbsp;as&nbsp;we&nbsp;go&nbsp;from&nbsp;vertex&nbsp;0&nbsp;to&nbsp;vertex&nbsp;1.&nbsp;&nbsp;if<br>
+the&nbsp;line&nbsp;is&nbsp;vertical,&nbsp;then&nbsp;pt&nbsp;is&nbsp;"on&nbsp;the&nbsp;right"&nbsp;in&nbsp;the&nbsp;v0-&gt;v1<br>
+direction&nbsp;if&nbsp;2nd&nbsp;vertex&nbsp;has&nbsp;greater&nbsp;y-value&nbsp;than&nbsp;the&nbsp;1st&nbsp;and&nbsp;pt&nbsp;is<br>
+actually&nbsp;"on&nbsp;the&nbsp;right"&nbsp;(ignoring&nbsp;direction).&nbsp;pt&nbsp;is&nbsp;"on&nbsp;the&nbsp;right"<br>
+in&nbsp;the&nbsp;v0-&gt;v1&nbsp;sense&nbsp;if&nbsp;it's&nbsp;actually&nbsp;on&nbsp;the&nbsp;left&nbsp;and&nbsp;v0&nbsp;is&nbsp;above<br>
+v1.&nbsp;Argh&nbsp;it's&nbsp;hard!</tt></dd></dl>
+ <dl><dt><a name="-mag"><strong>mag</strong></a>(a)</dt></dl>
+ <dl><dt><a name="-mirror"><strong>mirror</strong></a>(pts)</dt><dd><tt>reflects&nbsp;list&nbsp;of&nbsp;points&nbsp;through&nbsp;their&nbsp;X&nbsp;axes&nbsp;and&nbsp;returns&nbsp;a&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-normalised"><strong>normalised</strong></a>(pt)</dt></dl>
+ <dl><dt><a name="-offset_list"><strong>offset_list</strong></a>(pts, offset)</dt><dd><tt>This&nbsp;method&nbsp;takes&nbsp;a&nbsp;list&nbsp;of&nbsp;points&nbsp;(tuples)&nbsp;and&nbsp;an&nbsp;offset&nbsp;tuple<br>
+and&nbsp;returns&nbsp;a&nbsp;new&nbsp;list&nbsp;of&nbsp;points&nbsp;(tuples)&nbsp;offset&nbsp;by&nbsp;the&nbsp;values<br>
+given&nbsp;in&nbsp;the&nbsp;offset&nbsp;tuple.</tt></dd></dl>
+ <dl><dt><a name="-point_line_dist"><strong>point_line_dist</strong></a>(pt, line)</dt><dd><tt>Distance&nbsp;from&nbsp;a&nbsp;point&nbsp;to&nbsp;a&nbsp;line.&nbsp;pt&nbsp;is&nbsp;a&nbsp;2-tuple,&nbsp;(x0,<br>
+y0).&nbsp;Line&nbsp;is&nbsp;a&nbsp;2-tuple&nbsp;of&nbsp;two&nbsp;pts&nbsp;((x1,&nbsp;y1),&nbsp;(x2,&nbsp;y2)).</tt></dd></dl>
+ <dl><dt><a name="-point_line_intersection"><strong>point_line_intersection</strong></a>(pt, line)</dt><dd><tt>Distance&nbsp;from&nbsp;a&nbsp;point&nbsp;to&nbsp;a&nbsp;line.&nbsp;pt&nbsp;is&nbsp;a&nbsp;2-tuple,&nbsp;(x0,<br>
+y0).&nbsp;Line&nbsp;is&nbsp;a&nbsp;2-tuple&nbsp;of&nbsp;two&nbsp;pts&nbsp;((x1,&nbsp;y1),&nbsp;(x2,&nbsp;y2)).</tt></dd></dl>
+ <dl><dt><a name="-projection_to_boundary"><strong>projection_to_boundary</strong></a>(cp, dp)</dt><dd><tt>Given&nbsp;two&nbsp;01-list&nbsp;presets&nbsp;(centre&nbsp;prs&nbsp;and&nbsp;a&nbsp;distance&nbsp;prs),&nbsp;find<br>
+the&nbsp;point&nbsp;where&nbsp;the&nbsp;projection&nbsp;from&nbsp;one&nbsp;to&nbsp;the&nbsp;other&nbsp;meets&nbsp;the<br>
+boundary.&nbsp;&nbsp;There&nbsp;are&nbsp;better&nbsp;ways&nbsp;to&nbsp;do&nbsp;this,&nbsp;but&nbsp;it's&nbsp;not&nbsp;worth<br>
+the&nbsp;effort&nbsp;here.</tt></dd></dl>
+ <dl><dt><a name="-pt_minus_pt"><strong>pt_minus_pt</strong></a>(pt0, pt1)</dt><dd><tt>get&nbsp;the&nbsp;vector&nbsp;from&nbsp;pt0&nbsp;to&nbsp;pt1</tt></dd></dl>
+ <dl><dt><a name="-pt_plus_pt"><strong>pt_plus_pt</strong></a>(pt0, pt1)</dt><dd><tt>get&nbsp;the&nbsp;dot-sum&nbsp;of&nbsp;pt0&nbsp;and&nbsp;pt1</tt></dd></dl>
+ <dl><dt><a name="-rect_at_pt0_perp_to_line_pt0pt1"><strong>rect_at_pt0_perp_to_line_pt0pt1</strong></a>(pt0, pt1, side1, side2)</dt><dd><tt>get&nbsp;the&nbsp;four&nbsp;corners&nbsp;of&nbsp;a&nbsp;rectangle&nbsp;*centered*&nbsp;at&nbsp;pt0<br>
+such&nbsp;that&nbsp;the&nbsp;rectangle&nbsp;lies&nbsp;in&nbsp;the&nbsp;plane&nbsp;perpendicular<br>
+to&nbsp;the&nbsp;line&nbsp;from&nbsp;pt0&nbsp;to&nbsp;pt1.&nbsp;Rectangle&nbsp;has&nbsp;sides&nbsp;of&nbsp;given&nbsp;size.</tt></dd></dl>
+ <dl><dt><a name="-scale"><strong>scale</strong></a>(pt, factor)</dt><dd><tt>scale&nbsp;a&nbsp;vector&nbsp;by&nbsp;a&nbsp;scaling&nbsp;factor</tt></dd></dl>
+ <dl><dt><a name="-shift_value"><strong>shift_value</strong></a>(pts)</dt><dd><tt>Shifts&nbsp;all&nbsp;z&nbsp;values&nbsp;up&nbsp;until&nbsp;theyare&nbsp;all&nbsp;positive,&nbsp;returns&nbsp;a&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-sin"><strong>sin</strong></a>(...)</dt><dd><tt><a href="#-sin">sin</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;sine&nbsp;of&nbsp;x&nbsp;(measured&nbsp;in&nbsp;radians).</tt></dd></dl>
+ <dl><dt><a name="-sinusoid"><strong>sinusoid</strong></a>(pt_a, pt_b, height, length)</dt><dd><tt>generates&nbsp;a&nbsp;sinusoid&nbsp;between&nbsp;two&nbsp;points,&nbsp;returns&nbsp;a&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-spiral"><strong>spiral</strong></a>(t, radius, initial_phase, revs, fn)</dt><dd><tt>fn&nbsp;is&nbsp;the&nbsp;"carrier&nbsp;function".&nbsp;fn(t)&nbsp;gives&nbsp;a&nbsp;point&nbsp;"in&nbsp;the&nbsp;centre&nbsp;of"<br>
+the&nbsp;spiral.&nbsp;<a href="#-spiral">spiral</a>()&nbsp;returns&nbsp;a&nbsp;single&nbsp;point&nbsp;on&nbsp;the&nbsp;outside&nbsp;of&nbsp;the<br>
+spiral&nbsp;depending&nbsp;on&nbsp;the&nbsp;time&nbsp;parameter&nbsp;t.&nbsp;That&nbsp;is,&nbsp;call&nbsp;this<br>
+multiple&nbsp;times&nbsp;with&nbsp;different&nbsp;values&nbsp;of&nbsp;t&nbsp;(same&nbsp;values&nbsp;for<br>
+everything&nbsp;else)&nbsp;and&nbsp;you'll&nbsp;generate&nbsp;a&nbsp;spiral&nbsp;around&nbsp;the&nbsp;carrier<br>
+curve.</tt></dd></dl>
+ <dl><dt><a name="-sqrt"><strong>sqrt</strong></a>(...)</dt><dd><tt><a href="#-sqrt">sqrt</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;square&nbsp;root&nbsp;of&nbsp;x.</tt></dd></dl>
+ <dl><dt><a name="-square_at_pt0_perp_to_line_pt0pt1"><strong>square_at_pt0_perp_to_line_pt0pt1</strong></a>(pt0, pt1, side)</dt><dd><tt>get&nbsp;the&nbsp;four&nbsp;corners&nbsp;of&nbsp;a&nbsp;square&nbsp;*centered*&nbsp;at&nbsp;pt0<br>
+such&nbsp;that&nbsp;the&nbsp;square&nbsp;lies&nbsp;in&nbsp;the&nbsp;plane&nbsp;perpendicular<br>
+to&nbsp;the&nbsp;line&nbsp;from&nbsp;pt0&nbsp;to&nbsp;pt1</tt></dd></dl>
+ <dl><dt><a name="-tri_vertices"><strong>tri_vertices</strong></a>(size<font color="#909090">=1.0</font>)</dt><dd><tt>The&nbsp;vertices&nbsp;of&nbsp;a&nbsp;unit&nbsp;equilateral&nbsp;triangle,&nbsp;anti-clockwise.&nbsp;Starts<br>
+at&nbsp;origin,&nbsp;goes&nbsp;clockwise.</tt></dd></dl>
+ <dl><dt><a name="-triangle_height"><strong>triangle_height</strong></a>(x)</dt><dd><tt>Pass&nbsp;in&nbsp;the&nbsp;side&nbsp;of&nbsp;the&nbsp;equilateral&nbsp;triangle&nbsp;and&nbsp;this&nbsp;returns&nbsp;its<br>
+height.</tt></dd></dl>
+ <dl><dt><a name="-triangle_no"><strong>triangle_no</strong></a>(angle_val)</dt><dd><tt>Given&nbsp;an&nbsp;angle&nbsp;in&nbsp;radians,&nbsp;says&nbsp;which&nbsp;of&nbsp;the&nbsp;six&nbsp;inscribed&nbsp;triangles<br>
+in&nbsp;a&nbsp;hexagon&nbsp;(centred&nbsp;on&nbsp;the&nbsp;origin)&nbsp;the&nbsp;angle&nbsp;brings&nbsp;us&nbsp;to&nbsp;(going<br>
+anticlockwise,&nbsp;counting&nbsp;from&nbsp;the&nbsp;rightmost&nbsp;point).</tt></dd></dl>
+ <dl><dt><a name="-vector_length"><strong>vector_length</strong></a>(pt)</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>pi</strong> = 3.1415926535897931</td></tr></table>
+</body></html>

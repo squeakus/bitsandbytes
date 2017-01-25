@@ -1,0 +1,10 @@
+<prog> ::= MOVE ={<move>}
+<move> ::= <limb> | <limb>, <move>
+#<limb> ::= <l_arm>
+#<limb> ::= <l_arm>|<r_arm>|<l_leg>|<r_leg>|<l_arm>,<r_arm>|<l_leg>,<r_leg>|<l_arm>,<l_leg>|<r_arm>,<r_leg>|<r_arm>,<l_leg>|<l_arm>,<r_leg>
+<limb> ::= <l_arm>|<r_arm>|<l_leg>|<r_leg>
+<l_arm> ::= larm
+<r_arm> ::= rarm
+<r_leg> ::= rleg
+<l_leg> ::= lleg
+<torso> ::= torso

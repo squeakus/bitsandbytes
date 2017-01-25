@@ -1,0 +1,27 @@
+   numel numnp nmat nmode plane_stress_flag  (This is for a quad "q1")
+   1     4    1   -1 0
+matl no., E modulus, Poisson Ratio, mass
+0	30e6   0.3   1.0
+el no., connectivity, matl no
+0    0    1    2    3   0
+node no., coordinates
+0     0.0   0.0
+1     1.0   0.0
+2     1.0   1.0
+3     0.0   1.0
+prescribed displacement x: node  disp value
+    0     0.0
+    1     0.0
+    2     0.0
+    -10
+prescribed displacement y: node  disp value
+    0     0.0
+    1     0.0
+    2     0.0
+    -10
+node with point load and load vector in x,y,z
+3    0.0  -1000.0
+   -10
+element no. and gauss pt. no. with stress and stress vector in xx,yy,zz,yz,zx,xy
+-10
+

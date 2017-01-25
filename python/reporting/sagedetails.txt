@@ -1,0 +1,18 @@
+Printer spec:
+VISION ID toshiba tec SA4 200dpi thermal transfer printer
+wax on paper
+resin on polysynthetic
+7cm ribbon
+
+two tax codes: plants(T3@13.5%), herbs and veg(T9@0.0%) and pots(T1@23)
+
+A/C: Drop down values, customers can be added
+DATE: Current date
+REF: unique ID, dont let it overlap with the book codes
+N/C: Nominal Code, what sages sees it as, always 4006 (plant sales)
+DEPT: two companies,1=(spring, summer, autumn),2=(winter)
+DETAILS: (spring summer autumn winter) + (sales) or fruits and herbs
+NET: actual amount sold
+TC: T3=plants, T9=herbs, T1=pots
+VAT: Automatically computed
+ 

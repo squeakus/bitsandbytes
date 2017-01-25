@@ -1,0 +1,13 @@
+#This creates a mesh, plots it and saves it
+<prog> ::=<import> <params> <buildMesh> <save>
+<import> ::= load "medit" include "pyramid.idp" include "pyr2d.idp"
+<params> ::= <dense> <arrays>
+#<dense> ::= int d1=<n>,d2=<n>,d3=<n>,d4=<n>;
+<dense> ::= int d1=<n>,d2=<n>,d3=d1,d4=<n>;
+<arrays> ::= int[int] DENSE=[d1,d2,d3,d4];
+<buildMesh> ::= mesh3 test=Pyramid(DENSE);
+<show> ::= medit("test",test,wait=1); 
+<save> ::= savemesh(test,"test.mesh");
+
+<n> ::= 1|2|3|4|5|6|7|8|9|10
+

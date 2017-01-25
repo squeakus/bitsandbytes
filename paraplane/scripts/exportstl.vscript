@@ -1,0 +1,2 @@
+open planes/plane.vsp
+export -stereo planes/plane.stl

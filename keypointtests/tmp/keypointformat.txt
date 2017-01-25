@@ -1,0 +1,53 @@
+~/Applications/vsfm/bin/VisualSFM sfm+pairs $workfolder model.nvm
+
+mat details
+https://groups.google.com/forum/#!searchin/vsfm/pairwise$20matching$20H[/vsfm/92w-ExncfB8/25mhdodHYPMJ
+
+
+Option 1. You can write a binary feature detector that works like Lowe's SiftWin32.exe.
+          Or you can write a shared library that has a SiftGPU-like interface.
+
+Option 2. Write the .sift files in Lowe's ASCII format, they will be automatically converted to the VisualSFM binary format. (Let me know if there is a bug). 
+
+Option 3. Write the .sift files in the binary format as follows:
+[Header][Location Data][Descriptor Data][EOF]
+
+[Header] = int[5] = {name, version, npoint, 5, 128};
+name = ('S'+ ('I'<<8)+('F'<<16)+('T'<<24));
+version = ('V'+('4'<<8)+('.'<<16)+('0'<<24)); or ('V'+('5'<<8)+('.'<<16)+('0'<<24)) if containing color info
+npoint = number of features.
+
+[Location Data]  is a npoint x 5 float matrix and each row  is [x, y, color, scale, orientation]. 
+Write color by casting the float to unsigned char[4]
+scale & orientation are only used for visualization, so you can simply write 0 for them
+
+* Sort features in the order of decreasing importance, since VisualSFM may use only part of those features.
+* VisualSFM sorts the features in the order of decreasing scales.
+
+[Descriptor Data] is a npoint x 128 unsigned char matrix. Note the feature descriptors are normalized to 512.
+
+[EOF]  int eof_marker = (0xff+('E'<<8)+('O'<<16)+('F'<<24));
+
+***********************************************************
+VisualSFM sfm+skipsfm+exportp . outmatches.txt
+
+
+
+"P" stands for putative and "I" stands for inlier. I think you want the inlier matches with GetIMatch.
+
+The pattern is to create the MatchFile object with the full image path (minus extension), and call get match with the path of the matched one.
+
+
+Essential Matrix:
+the essential matrix is a  3 \times 3  matrix,  \mathbf{E} , with some additional properties described below, which relates corresponding points in stereo images assuming that the cameras satisfy the pinhole camera model.
+
+
+Each worker can be seen as a matching thread. 
+
+E[22/47]: 22 inliers found from 47 putative matches and an Essential matrix is successfully estimated.
+
+Putative matches are from nearest neighbor feature match while inliers are from RANSAC-based geometric verification.
+
+padding from 61 to 128 dimensions
+https://groups.google.com/forum/#!topic/vsfm/SKHrcTPpVEo
+ 

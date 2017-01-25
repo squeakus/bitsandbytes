@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>OpenLayers Example</title>
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
+    </head>
+    <body>
+      <div style="width:100%; height:100%" id="map"></div>
+
+      <script>
+      var layer = new OpenLayers.Layer.TMS(
+      "My Layer",
+      "http://tilecache.osgeo.org/wms-c/Basic.py/",
+      {
+      layername: "basic",
+      type: "png",
+      // set if different than the bottom left of map.maxExtent
+      tileOrigin: new OpenLayers.LonLat(-180, -90)
+      }
+      );
+      </script>
+</body>
+</html>

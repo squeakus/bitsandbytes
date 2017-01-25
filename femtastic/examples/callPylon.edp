@@ -1,0 +1,23 @@
+load "medit"
+include "pylon.idp"
+
+//int base=4;
+//int w3=6;
+//int w1=(4%base)+1; 
+//int w2=(3%w1)+1;
+//int base=5;int w3=5%(base)+1;int w1=(4%base)+1;int w2=(6%w1)+1;
+//cout << "base:" << base << " w1: " << w1 << " w2:" <<w2 << " w3: "<<w3 ;
+
+//int[int] WIDTH=[base,w1,w2,w3];
+int[int] WIDTH=[10,1,2,8];
+int[int] DENSE=[5,5,5];
+int[int] HEIGHT=[20,20,20];
+int faces = 5;
+int height = 20;
+
+
+mesh3 pylon=Pylon(WIDTH,HEIGHT,DENSE,height,faces);
+medit("pylon",pylon,wait=1);
+savemesh(pylon,"test.mesh");
+
+

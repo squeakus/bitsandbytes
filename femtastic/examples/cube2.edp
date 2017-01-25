@@ -1,0 +1,33 @@
+load "msh3"
+load "tetgen"
+load "medit"
+
+real height,width;
+int flagA,flagB;
+height=6; width=5;
+
+
+mesh panel1 = square(7,3,[width*x,height*y],flags =1);
+mesh panel2 = square(4,5,[width*x,height*y]);
+//medit("side panel",panel2,wait=1);
+
+func ZZ1min = 0 ;
+func ZZ1max = height;
+func XX1 = y;
+func YY1 = x;
+
+mesh3 frontMesh = movemesh23(panel1,transfo=[XX1,YY1,ZZ1min],orientation=1);
+mesh3 backMesh = movemesh23(panel1,transfo=[XX1,YY1,ZZ1max],orientation=1);
+
+func ZZ2 = y;
+func YY2 = x;
+func XX2min = 0.;
+func XX2max = height;
+
+mesh3 lhsMesh = movemesh23(panel2,transfo=[XX2min,YY2,ZZ2],orientation=1);
+mesh3 rhsMesh = movemesh23(panel2,transfo=[XX2max,YY2,ZZ2],orientation=1);
+
+mesh3 glueMesh = lhsMesh+rhsMesh+frontMesh+backMesh;
+
+medit("glueMesh",glueMesh,wait=1);
+savemesh(glueMesh,"test.mesh");

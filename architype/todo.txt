@@ -1,0 +1,17 @@
+fix width scaling, cumulative height scaler doesn't work for it
+add new methods for generating bracing patterns
+add multiprocessing
+add ctype
+confirm nsga is working
+distance returns int, euclidean_dist does not
+find out about the bloody x and y co-ordinate systems from San Le - They are local, they should be global (read through his emails/the readme's and try to make sense of it)
+Material strength factors?
+add wind loads over the entire structure - need to:
+    find all components of each "side"
+    maybe assign a label to all nodes for a particular side?
+    break those nodes into panels somehow
+    
+    
+    
+    gnu plot?
+    matplotlib

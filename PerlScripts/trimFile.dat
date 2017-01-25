@@ -1,0 +1,42 @@
+#!/usr/bin/perl -w
+
+#This script is to be used with the mutation operators that record the fitness
+#of an individual before and after the operation.
+
+package parseFitness;
+use strict;
+
+
+my $fullFileName;
+my $popsize;
+
+#read in the arguments passed in at the command line
+if (@ARGV == 1) {
+  $fullFileName = $ARGV[0];
+} else {
+  print "please enter filename\n";
+  exit(0);
+}
+
+my @fitnessArray;
+my $counter =0;
+
+my $line;
+
+#open the file
+open(DAT, $fullFileName) or die "Can't open $fullFileName: $!";
+
+while ($line = <DAT>)
+{
+if($counter < 1000000)
+{
+  $counter++;
+  #splitting the lines in the file into two variables  
+  push(@fitnessArray,$line); 
+}
+}
+close(DAT);
+
+open (MYFILE,'>',$fullFileName)or die "Can't open $fullFileName: $!";;
+print MYFILE "@fitnessArray";
+close (MYFILE);

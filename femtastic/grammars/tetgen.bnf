@@ -1,0 +1,6 @@
+#This creates a mesh, plots it and saves it
+<prog> ::=<mesh> <save>
+<mesh> ::= mesh Th =  square(<n>,<n>,flags=<flag>);
+<save> ::= savemesh(Th,"test.mesh");
+<n> ::= 2|4|5|10
+<flag> ::= 0|1|2|3|4|5

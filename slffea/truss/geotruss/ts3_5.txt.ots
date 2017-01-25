@@ -1,0 +1,47 @@
+   numel numnp nmat nmode (This is for the truss mesh file: ts3_5.txt)
+       3    4    1    0
+ matl no., E modulus, density, Area 
+     0    3.000000e+07 2.383920e+00 2.000000e+00
+el no., connectivity, matl no. 
+     0      0      1      0
+     1      0      2      0
+     2      0      3      0
+node no., coordinates 
+   0       0.004142      -0.015858       0.000000
+   1       0.000000     120.000000       0.000000
+   2     120.000000     120.000000       0.000000
+   3     120.000000       0.000000       0.000000
+prescribed displacement x: node  disp value 
+   0   4.142136e-03
+   1   0.000000e+00
+   2   0.000000e+00
+   3   0.000000e+00
+ -10 
+prescribed displacement y: node  disp value 
+   0  -1.585786e-02
+   1   0.000000e+00
+   2   0.000000e+00
+   3   0.000000e+00
+ -10 
+prescribed displacement z: node  disp value 
+   0   0.000000e+00
+   1   0.000000e+00
+   2   0.000000e+00
+   3   0.000000e+00
+ -10 
+node with point load and load vector in x,y,z 
+   0   0.000000e+00   -1.000000e+04    0.000000e+00 
+   1   0.000000e+00    7.928932e+03    0.000000e+00 
+   2   2.071068e+03    2.071068e+03    0.000000e+00 
+   3  -2.071068e+03    0.000000e+00    0.000000e+00 
+ -10
+element no. with stress and tensile stress vector 
+   0    3.964466e+03 
+   1    1.464466e+03 
+   2   -1.035534e+03 
+ -10 
+element no. with strain and tensile strain vector 
+   0    1.321489e-04 
+   1    4.881554e-05 
+   2   -3.451780e-05 
+ -10 

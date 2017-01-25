@@ -1,0 +1,59 @@
+   numel numnp nmat nmode   (This is "patch.in" for a brick)
+	8   27  1  0
+matl no., E modulus, Poisson Ratio, and mass
+0    3000000.0   0.29    2.77e3
+el no.,connectivity, matl no
+0        0   1   2   3   4   5   6   7    0
+1	 0   3   9   8   4   7  11  10    0
+2        3   2  12  13   7   6  14  15    0
+3        4   5   6   7  16  17  18  19    0
+4        7   6  14  15  19  18  20  21    0
+5        9   3  13  22  11   7  15  23    0
+6       10   4   7  11  24  16  19  25    0
+7       21  19  25  26  15   7  11  23    0
+node no. coordinates
+0      2.83   0.20  -3.10
+1      4.20   3.10  -2.90
+2     -1.20   3.70  -4.30
+3      0.50  -1.10  -2.90
+4      6.40   1.00   0.10
+5      3.80   4.20  -0.12
+6     -1.40   3.70   0.01
+7      1.10   0.40   1.30
+8      4.20  -4.00  -3.50
+9      0.80  -5.70  -5.70
+10     5.10  -3.40   0.61
+11    -0.30  -4.10  -1.10
+12    -6.10   3.90  -4.50
+13    -4.80   1.10  -3.20
+14    -3.10   4.20   0.50
+15    -4.50   0.60   1.20
+16     3.80   0.65   3.90
+17     5.20   4.70   6.10
+18     0.65   3.30   5.40
+19     1.20   0.41   4.20
+20    -5.10   6.40   3.30
+21    -4.50   1.10   5.80
+22    -6.30  -3.70  -4.50
+23    -4.30  -5.50  -1.10
+24     3.80  -4.80   4.20
+25     0.30  -7.60   5.40
+26    -6.20  -3.90   4.80
+prescribed displacement x: node  disp value
+    24  0.0
+    25  0.0
+    -10
+prescribed displacement y: node  disp value
+    24  0.0
+    25  0.0
+    26  0.0
+    27  0.0
+    -10
+prescribed displacement z: node  disp value
+    24  0.0
+    27  0.0
+    -10
+node with point load and load vector in x,y,z
+-10
+element and gauss pt. with stress and stress vector in xx,yy,zz,yz,zx,xy
+-10

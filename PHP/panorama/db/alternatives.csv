@@ -1,0 +1,169 @@
+1,1,"I mycket hög grad",0
+2,1,"I ganska hög grad",1000
+3,1,"I viss mån",2000
+4,1,"I ganska liten utsträckning",3000
+5,1,"I mycket liten utsträckning",4000
+6,2,"Ja, utan tvekan",0
+7,2,"Ja, i stort sett",1000
+8,2,"I viss mån",2000
+9,2,"Nej, knappast",3000
+10,2,"Nej, inte alls",4000
+11,3,"I mycket hög grad",0
+12,3,"I ganska hög grad",1000
+13,3,"I viss mån",2000
+14,3,"I ganska liten utsträckning",3000
+15,3,"I mycket liten utsträckning",4000
+16,4,"Ja, utan tvekan",0
+17,4,"Ja, i stort sett",1000
+18,4,"I viss mån",2000
+19,4,"Nej, knappast",3000
+20,4,"Nej, inte alls",4000
+21,5,"Ja, utan tvekan",0
+22,5,"Ja, i stort sett",1000
+23,5,"I viss mån",2000
+24,5,"Nej, knappast",3000
+25,5,"Nej, inte alls",4000
+26,6,"I mycket hög grad",0
+27,6,"I ganska hög grad",1000
+28,6,"I viss mån",2000
+29,6,"I ganska liten utsträckning",3000
+30,6,"I mycket liten utsträckning",4000
+31,7,"I mycket hög grad",0
+32,7,"I ganska hög grad",1000
+33,7,"I viss mån",2000
+34,7,"I ganska liten utsträckning",3000
+35,7,"I mycket liten utsträckning",4000
+36,8,"I mycket hög grad",0
+37,8,"I ganska hög grad",1000
+38,8,"I viss mån",2000
+39,8,"I ganska liten utsträckning",3000
+40,8,"I mycket liten utsträckning",4000
+41,9,"I mycket hög grad",0
+42,9,"I ganska hög grad",1000
+43,9,"I viss mån",2000
+44,9,"I ganska liten utsträckning",3000
+45,9,"I mycket liten utsträckning",4000
+46,10,"Ja, utan tvekan",0
+47,10,"Ja, i stort sett",1000
+48,10,"I viss mån",2000
+49,10,"Nej, knappast",3000
+50,10,"Nej, inte alls",4000
+51,11,"Ja, utan tvekan",0
+52,11,"Ja, i stort sett",1000
+53,11,"I viss mån",2000
+54,11,"Nej, knappast",3000
+55,11,"Nej, inte alls",4000
+56,12,"Ja, utan tvekan",0
+57,12,"Ja, i stort sett",1000
+58,12,"I viss mån",2000
+59,12,"Nej, knappast",3000
+60,12,"Nej, inte alls",4000
+61,13,"Ja, utan tvekan",0
+62,13,"Ja, i stort sett",1000
+63,13,"I viss mån",2000
+64,13,"Nej, knappast",3000
+65,13,"Nej, inte alls",4000
+66,14,"I mycket hög grad",0
+67,14,"I ganska hög grad",1000
+68,14,"I viss mån",2000
+69,14,"I ganska liten utsträckning",3000
+70,14,"I mycket liten utsträckning",4000
+71,15,"Ja, utan tvekan",0
+72,15,"Ja, i stort sett",1000
+73,15,"I viss mån",2000
+74,15,"Nej, knappast",3000
+75,15,"Nej, inte alls",4000
+76,16,"Ja, mycket mer tid",0
+77,16,"Ja, något mer tid",1000
+78,16,"Varken mer eller mindre tid",2000
+79,16,"Nej, knappast mer tid",3000
+80,16,"Nej, ingen mer tid",4000
+81,17,"Ja, utan tvekan",0
+82,17,"Ja, i stort sett",1000
+83,17,"I viss mån",2000
+84,17,"Nej, knappast",3000
+85,17,"Nej, inte alls",4000
+86,18,"Mycket stort",0
+87,18,"Ganska stort",1000
+88,18,"Varken mycket eller litet",2000
+89,18,"Ganska litet",3000
+90,18,"Mycket litet",4000
+91,19,"Mycket ",0
+92,19,"Ganska mycket",1000
+93,19,"Varken mycket eller lite",2000
+94,19,"Ganska lite",3000
+95,19,"Mycket lite",4000
+96,20,"Mycket avgörande",0
+97,20,"Ganska avgörande",1000
+98,20,"I viss mån",2000
+99,20,"Knappast avgörande",3000
+100,20,"Inte alls avgörande",4000
+101,21,"I mycket hög grad",0
+102,21,"I ganska hög grad",1000
+103,21,"I viss mån",2000
+104,21,"I ganska liten utsträckning",3000
+105,21,"I mycket liten utsträckning",4000
+106,22,"Ja, utan tvekan",0
+107,22,"Ja, i stort sett",1000
+108,22,"I viss mån",2000
+109,22,"Nej, knappast",3000
+110,22,"Nej, inte alls",4000
+111,23,"Ja, utan tvekan",0
+112,23,"Ja, i stort sett",1000
+113,23,"I viss mån",2000
+114,23,"Nej, knappast",3000
+115,23,"Nej, inte alls",4000
+116,24,"Ja, utan tvekan",0
+117,24,"Ja, i stort sett",1000
+118,24,"I viss mån",2000
+119,24,"Nej, knappast",3000
+120,24,"Nej, inte alls",4000
+121,25,"Ja, utan tvekan",0
+122,25,"Ja, i stort sett",1000
+123,25,"I viss mån",2000
+124,25,"Nej, knappast",3000
+125,25,"Nej, inte alls",4000
+126,26,"I mycket hög grad",0
+127,26,"I ganska hög grad",1000
+128,26,"I viss mån",2000
+129,26,"I ganska liten utsträckning",3000
+130,26,"I mycket liten utsträckning",4000
+131,27,"I mycket hög grad",0
+132,27,"I ganska hög grad",1000
+133,27,"I viss mån",2000
+134,27,"I ganska liten utsträckning",3000
+135,27,"I mycket liten utsträckning",4000
+136,28,"I mycket hög grad",0
+137,28,"I ganska hög grad",1000
+138,28,"I viss mån",2000
+139,28,"I ganska liten utsträckning",3000
+140,28,"I mycket liten utsträckning",4000
+141,29,"I mycket hög grad",0
+142,29,"I ganska hög grad",1000
+143,29,"I viss mån",2000
+144,29,"I ganska liten utsträckning",3000
+145,29,"I mycket liten utsträckning",4000
+146,30,"Ökad kunskap kring jämställdhetsfrågor",0
+147,30,"Fler kvinnor på höga poster",1000
+148,30,"Aktivt verka för en jämnare könsfördelning på alla avdelningar inom organisationen",2000
+149,30,"Tillämpa positiv särbehandling (kvotering) vid rekrytering",3000
+150,30,"Aktivt verka för att fler män tar ut föräldraledighet",4000
+151,30,"Utjämna osakliga löneskillnader mellan kvinnor och män",5000
+152,30,"Synliggöra icke-jämställt beteende på alla nivåer i organisationen",6000
+153,30,"Aktivt verka för att personalen kan förena arbetsliv med familjeliv",7000
+154,30,"Motverka informella nätverk som utesluter ena könet",8000
+155,30,"Belöna jämställt beteende",9000
+156,30,"Nej, jag anser inte att jämställdheten på min arbetsplats behöver förbättras",10000
+157,31,"Motigt",0
+158,31,"Intressant",1000
+159,31,"Tidskrävande",2000
+160,31,"Ljummet",3000
+161,31,"Ointressant",4000
+162,31,"Viktigt",5000
+163,31,"Kravfyllt",6000
+164,31,"Nödvändigt",7000
+165,31,"Svårgenomförbart",8000
+166,31,"Inspirerande",9000
+167,31,"Varken roligt eller tråkigt",10000
+168,31,"Omvälvande",11000
+169,32,"Kommentarer:",0

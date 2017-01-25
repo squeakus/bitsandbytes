@@ -1,0 +1,27 @@
+//  example to build a mesh a cone 
+load "msh3"
+load "medit"
+// pyramid using buildlayers with a triangle 
+real LX=1,LY=1,LXY=sqrt(LX*LX+LY*LY),HH=2; 
+border Hypo(t=1,0){x=LX*t;y=LY*(1-t);};
+border Vert(t=LY,.01){x=0;y=t;};
+border Nub(t=0,.01){x=t;y=.01-t;};
+border Hori(t=.01,LX){x=t;y=0;};
+
+int nn=10;
+real h= 1./nn;
+cout << "LY: " << LY*nn << " LXY: " << LXY*nn<< "LX: " << LX*nn << "\n";
+mesh Th2=buildmesh( Vert(10)+ Hypo(5) + Hori(10)+Nub(1) ) ;
+//plot(Th2,wait =1);
+Th2 = Th2 + movemesh(Th2,[x,-y])+ movemesh(Th2,[-x,-y])+  movemesh(Th2,[-x,y]);
+plot(Th2,wait=1);
+
+func fpyramide= (1-abs(x)/LX-abs(y)/LY)*HH;
+//fespace Vh2(Th2,P1);
+//Vh2 fp2=fpyramide;
+//plot(fp2,wait=1,dim=3);
+
+mesh3 Th3=buildlayers(Th2,coef= max(fpyramide/HH,0.1), nn,zbound=[0,fpyramide],facemerge=1);
+savemesh(Th3,"test.mesh");
+medit("Pyramide",Th3,wait=1);
+

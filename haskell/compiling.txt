@@ -1,0 +1,2 @@
+ghc --make <filename>
+runhaskell <filename>

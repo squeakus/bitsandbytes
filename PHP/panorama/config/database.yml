@@ -1,0 +1,21 @@
+development:
+  adapter:   mysql
+  database:  enresa_panorama_develpoment
+  host:      localhost
+  username:  root
+  password:  5553bmr
+
+test:
+  adapter:   mysql
+  database:  enresa_panorama_test
+  host:      localhost
+  username:  root
+  password:  5553bmr
+
+production:
+  adapter:   mysql
+  database:  enresa_panorama_production:
+  host:      localhost
+  username:  
+  password:  
+

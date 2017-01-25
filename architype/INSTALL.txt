@@ -1,0 +1,49 @@
+INSTALLATION: 
+software requirements
+the mesaGL libraries:
+sudo aptitude install libosmesa6 libosmesa6-dev 
+
+Networkx 
+you can download the latest version from my repository.
+Download it into a separate folder and
+create a symbolic link in the architype folder 
+ln -s ../networkx .
+
+slffea
+http://slffea.sourceforge.net/download.html
+once you compile it, create symbolic links for the beam analysers
+in your /usr/local/bin folder.
+ln -s ./slffea-1.5/beam/beam/bm /usr/local/bin
+ln -s ./slffea-1.5/beam/beam/bmpost /usr/local/bin
+
+if no images are being shown then you need to recompile animedit
+which is also available in my github repo:
+compile it for your os and overwrite the existing file
+mv ./mesh/animedit <architype_folder>/population/linuxMedit
+also make sure all the python libraries are installed
+sudo apt-get install python python-tk idle python-pmw python-imaging
+
+DOCUMENTATION:
+an overview of the classes is given in the htmldocs folder
+
+OVERVIEW:
+architype.py <- main class, creates GUI using tkinter
+evolver.py <- standalone EA that generates the individuals,
+and calls the fitness function, uses grammar.py to map individuals
+analyser <- generates slffea mesh from phenotype and calcs fitness
+grammar.py <- contains bnf_parser and derivation tree classes
+graph.py <- extends networkx for creating 3D graphs
+geometry <- utility class with geometry methods
+pylon.py <- demo class, creates sample graphs
+
+geometry class: 
+pass in point [x,y,z] or pointList returns new point or pointList
+graph class:
+pass in point[x,y,z], if new point then add to graph, return node_id
+pass in node_ids, if no edge between nodes then add edge
+
+movie.py:
+if you want to debug your graphs you can set self.save = True in the
+graph class. Then run movie.py to compile the meshes into a video
+
+

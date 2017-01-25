@@ -1,0 +1,52 @@
+<style>
+  #byte_content {
+    margin: 5px 0;
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  #mesh_canvas{ margin-top: 105px; }
+
+</style>
+
+<b> Select a .glmesh file </b>
+<input type="file" id="files" name="file" /> 
+<span class="readBytesButtons">
+  <button>load mesh</button>
+</span>
+<span class="renderButton">
+  <button>render!</button>
+</span>
+
+
+
+<div id="byte_content"></div>
+<div id="mesh">
+<canvas id="lesson01-canvas" style="border: none;"
+            width="500" height="500"></canvas>
+</div>
+
+<script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="webgl-utils.js"></script>
+
+<script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    void main(void) {
+        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+    }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+
+    void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+    }
+</script>
+
+<script type="text/javascript" src="meshRender.js"></script>
+

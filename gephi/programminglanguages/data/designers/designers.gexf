@@ -1,0 +1,3494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2" xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
+  <meta lastmodifieddate="2014-01-19">
+    <creator>Gephi 0.8.1</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="modularity_class" title="Modularity Class" type="integer">
+        <default>0</default>
+      </attribute>
+    </attributes>
+    <nodes>
+      <node id="Nicholas F. Benton" label="Nicholas F. Benton">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="56.323692" y="-183.91971" z="0.0"></viz:position>
+        <viz:color r="22" g="86" b="171"></viz:color>
+      </node>
+      <node id="Luca Cardelli" label="Luca Cardelli">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="96.01959" y="-146.54906" z="0.0"></viz:position>
+        <viz:color r="22" g="86" b="171"></viz:color>
+      </node>
+      <node id="Cédric Fournet" label="Cédric Fournet">
+        <attvalues>
+          <attvalue for="modularity_class" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="142.25671" y="-164.78859" z="0.0"></viz:position>
+        <viz:color r="22" g="86" b="171"></viz:color>
+      </node>
+      <node id="PARC" label="PARC">
+        <attvalues>
+          <attvalue for="modularity_class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-577.607" y="95.707344" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="171"></viz:color>
+      </node>
+      <node id="Butler Lampson" label="Butler Lampson">
+        <attvalues>
+          <attvalue for="modularity_class" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-606.26636" y="150.14813" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="171"></viz:color>
+      </node>
+      <node id="Warren Burton" label="Warren Burton">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="-295.80298" y="721.93933" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Erik Meijer" label="Erik Meijer">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="100.12277" y="601.81335" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="John Hughes" label="John Hughes">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="-443.86285" y="512.75653" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Lennart Augustsson" label="Lennart Augustsson">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="-230.84119" y="401.05502" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Philip Wadler" label="Philip Wadler">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="50.0"></viz:size>
+        <viz:position x="285.45956" y="41.46143" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Simon Peyton Jones" label="Simon Peyton Jones">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="43.25"></viz:size>
+        <viz:position x="-24.279388" y="844.5822" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Paul Hudak" label="Paul Hudak">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="200.74655" y="364.24356" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Alastair Reid" label="Alastair Reid">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="52.715065" y="167.28603" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Brian Boutel" label="Brian Boutel">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="-111.53466" y="576.67346" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Colin Runciman" label="Colin Runciman">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="-146.23015" y="195.74255" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Dave Barton" label="Dave Barton">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="692.9564" y="92.25246" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="John Launchbury" label="John Launchbury">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="353.0544" y="273.26758" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="John Peterson" label="John Peterson">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="583.13947" y="287.03558" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Joseph Fasel" label="Joseph Fasel">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="436.85468" y="443.1737" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Kevin Hammond" label="Kevin Hammond">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="-19.155783" y="332.2047" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Mark Jones" label="Mark Jones">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="504.25128" y="-160.18636" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Ralf Hinze" label="Ralf Hinze">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="-376.37643" y="245.79314" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Thomas Johnsson" label="Thomas Johnsson">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="41.0"></viz:size>
+        <viz:position x="305.64502" y="661.6227" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Steven Pemberton" label="Steven Pemberton">
+        <attvalues>
+          <attvalue for="modularity_class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="801.9714" y="377.42566" z="0.0"></viz:position>
+        <viz:color r="171" g="128" b="22"></viz:color>
+      </node>
+      <node id="Leo Geurts" label="Leo Geurts">
+        <attvalues>
+          <attvalue for="modularity_class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="755.61816" y="322.8939" z="0.0"></viz:position>
+        <viz:color r="171" g="128" b="22"></viz:color>
+      </node>
+      <node id="Lambert Meertens" label="Lambert Meertens">
+        <attvalues>
+          <attvalue for="modularity_class" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="720.753" y="354.6523" z="0.0"></viz:position>
+        <viz:color r="171" g="128" b="22"></viz:color>
+      </node>
+      <node id="Edward A. Ashcroft" label="Edward A. Ashcroft">
+        <attvalues>
+          <attvalue for="modularity_class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-162.89954" y="-153.49152" z="0.0"></viz:position>
+        <viz:color r="171" g="64" b="22"></viz:color>
+      </node>
+      <node id="William W. Wadge" label="William W. Wadge">
+        <attvalues>
+          <attvalue for="modularity_class" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-210.63382" y="-133.24438" z="0.0"></viz:position>
+        <viz:color r="171" g="64" b="22"></viz:color>
+      </node>
+      <node id="Ascánder Suárez" label="Ascánder Suárez">
+        <attvalues>
+          <attvalue for="modularity_class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="14.0"></viz:size>
+        <viz:position x="227.76599" y="863.60486" z="0.0"></viz:position>
+        <viz:color r="171" g="107" b="22"></viz:color>
+      </node>
+      <node id="Xavier Leroy" label="Xavier Leroy">
+        <attvalues>
+          <attvalue for="modularity_class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="14.0"></viz:size>
+        <viz:position x="378.7853" y="887.7844" z="0.0"></viz:position>
+        <viz:color r="171" g="107" b="22"></viz:color>
+      </node>
+      <node id="Gérard Huet" label="Gérard Huet">
+        <attvalues>
+          <attvalue for="modularity_class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="14.0"></viz:size>
+        <viz:position x="364.92673" y="921.70465" z="0.0"></viz:position>
+        <viz:color r="171" g="107" b="22"></viz:color>
+      </node>
+      <node id="Guy Cousineau" label="Guy Cousineau">
+        <attvalues>
+          <attvalue for="modularity_class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="14.0"></viz:size>
+        <viz:position x="299.43872" y="825.6489" z="0.0"></viz:position>
+        <viz:color r="171" g="107" b="22"></viz:color>
+      </node>
+      <node id="Michel Mauny" label="Michel Mauny">
+        <attvalues>
+          <attvalue for="modularity_class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="14.0"></viz:size>
+        <viz:position x="234.08856" y="904.26697" z="0.0"></viz:position>
+        <viz:color r="171" g="107" b="22"></viz:color>
+      </node>
+      <node id="Pierre Weis" label="Pierre Weis">
+        <attvalues>
+          <attvalue for="modularity_class" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="14.0"></viz:size>
+        <viz:position x="299.3593" y="951.5527" z="0.0"></viz:position>
+        <viz:color r="171" g="107" b="22"></viz:color>
+      </node>
+      <node id="Francis McCabe" label="Francis McCabe">
+        <attvalues>
+          <attvalue for="modularity_class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="702.59906" y="-122.08852" z="0.0"></viz:position>
+        <viz:color r="128" g="22" b="171"></viz:color>
+      </node>
+      <node id="Keith Clark" label="Keith Clark">
+        <attvalues>
+          <attvalue for="modularity_class" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="675.069" y="-165.95058" z="0.0"></viz:position>
+        <viz:color r="128" g="22" b="171"></viz:color>
+      </node>
+      <node id="Sean Dorward" label="Sean Dorward">
+        <attvalues>
+          <attvalue for="modularity_class" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-671.201" y="355.12268" z="0.0"></viz:position>
+        <viz:color r="22" g="149" b="171"></viz:color>
+      </node>
+      <node id="Rob Pike" label="Rob Pike">
+        <attvalues>
+          <attvalue for="modularity_class" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="-584.9901" y="380.81326" z="0.0"></viz:position>
+        <viz:color r="22" g="149" b="171"></viz:color>
+      </node>
+      <node id="Phil Winterbottom" label="Phil Winterbottom">
+        <attvalues>
+          <attvalue for="modularity_class" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-484.35675" y="349.18286" z="0.0"></viz:position>
+        <viz:color r="22" g="149" b="171"></viz:color>
+      </node>
+      <node id="Ross Ihaka" label="Ross Ihaka">
+        <attvalues>
+          <attvalue for="modularity_class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="355.54538" y="513.2998" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="86"></viz:color>
+      </node>
+      <node id="Robert Gentleman" label="Robert Gentleman">
+        <attvalues>
+          <attvalue for="modularity_class" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="375.44055" y="531.68677" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="86"></viz:color>
+      </node>
+      <node id="Gilad Bracha" label="Gilad Bracha">
+        <attvalues>
+          <attvalue for="modularity_class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="301.79596" y="-104.09669" z="0.0"></viz:position>
+        <viz:color r="171" g="86" b="22"></viz:color>
+      </node>
+      <node id="Martin Odersky" label="Martin Odersky">
+        <attvalues>
+          <attvalue for="modularity_class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="200.32878" y="-125.00048" z="0.0"></viz:position>
+        <viz:color r="171" g="86" b="22"></viz:color>
+      </node>
+      <node id="David Stoutamire" label="David Stoutamire">
+        <attvalues>
+          <attvalue for="modularity_class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="380.32364" y="-122.42391" z="0.0"></viz:position>
+        <viz:color r="171" g="86" b="22"></viz:color>
+      </node>
+      <node id="William Maddox" label="William Maddox">
+        <attvalues>
+          <attvalue for="modularity_class" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="271.54312" y="-145.6376" z="0.0"></viz:position>
+        <viz:color r="171" g="86" b="22"></viz:color>
+      </node>
+      <node id="Raymond F. Boyce" label="Raymond F. Boyce">
+        <attvalues>
+          <attvalue for="modularity_class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-158.68623" y="146.67567" z="0.0"></viz:position>
+        <viz:color r="128" g="171" b="22"></viz:color>
+      </node>
+      <node id="Donald D. Chamberlin" label="Donald D. Chamberlin">
+        <attvalues>
+          <attvalue for="modularity_class" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-14.433071" y="125.80803" z="0.0"></viz:position>
+        <viz:color r="128" g="171" b="22"></viz:color>
+      </node>
+      <node id="Anders Hejlsberg" label="Anders Hejlsberg">
+        <attvalues>
+          <attvalue for="modularity_class" value="32"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="175.16501" y="22.716415" z="0.0"></viz:position>
+        <viz:color r="22" g="64" b="171"></viz:color>
+      </node>
+      <node id="Niklaus Wirth" label="Niklaus Wirth">
+        <attvalues>
+          <attvalue for="modularity_class" value="32"></attvalue>
+        </attvalues>
+        <viz:size value="14.0"></viz:size>
+        <viz:position x="8.945589" y="12.715913" z="0.0"></viz:position>
+        <viz:color r="22" g="64" b="171"></viz:color>
+      </node>
+      <node id="Apple Inc." label="Apple Inc.">
+        <attvalues>
+          <attvalue for="modularity_class" value="32"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="14.000991" y="58.99303" z="0.0"></viz:position>
+        <viz:color r="22" g="64" b="171"></viz:color>
+      </node>
+      <node id="D. B. Russell" label="D. B. Russell">
+        <attvalues>
+          <attvalue for="modularity_class" value="10"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="227.40001" y="-61.276676" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="107"></viz:color>
+      </node>
+      <node id="William Wulf" label="William Wulf">
+        <attvalues>
+          <attvalue for="modularity_class" value="10"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="148.27138" y="-2.1798668" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="107"></viz:color>
+      </node>
+      <node id="Nico Habermann" label="Nico Habermann">
+        <attvalues>
+          <attvalue for="modularity_class" value="10"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="330.28122" y="-2.8258977" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="107"></viz:color>
+      </node>
+      <node id="Ken Thompson" label="Ken Thompson">
+        <attvalues>
+          <attvalue for="modularity_class" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-556.4854" y="439.74036" z="0.0"></viz:position>
+        <viz:color r="22" g="149" b="171"></viz:color>
+      </node>
+      <node id="Robert Griesemer" label="Robert Griesemer">
+        <attvalues>
+          <attvalue for="modularity_class" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-514.1893" y="408.50146" z="0.0"></viz:position>
+        <viz:color r="22" g="149" b="171"></viz:color>
+      </node>
+      <node id="Kristen Nygaard" label="Kristen Nygaard">
+        <attvalues>
+          <attvalue for="modularity_class" value="12"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="362.36276" y="-333.54343" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="149"></viz:color>
+      </node>
+      <node id="Ole-Johan Dahl" label="Ole-Johan Dahl">
+        <attvalues>
+          <attvalue for="modularity_class" value="12"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="456.27057" y="-313.50458" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="149"></viz:color>
+      </node>
+      <node id="Birger Møller-Pedersen" label="Birger Møller-Pedersen">
+        <attvalues>
+          <attvalue for="modularity_class" value="12"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="342.13715" y="-356.31924" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="149"></viz:color>
+      </node>
+      <node id="Ge Wang" label="Ge Wang">
+        <attvalues>
+          <attvalue for="modularity_class" value="13"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="395.03867" y="-236.83963" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="22"></viz:color>
+      </node>
+      <node id="Perry R. Cook" label="Perry R. Cook">
+        <attvalues>
+          <attvalue for="modularity_class" value="13"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="376.8515" y="-198.38475" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="22"></viz:color>
+      </node>
+      <node id="D.T. Barnard" label="D.T. Barnard">
+        <attvalues>
+          <attvalue for="modularity_class" value="14"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="-110.49675" y="-172.33817" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="43"></viz:color>
+      </node>
+      <node id="James Cordy" label="James Cordy">
+        <attvalues>
+          <attvalue for="modularity_class" value="14"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="-43.850246" y="-125.53417" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="43"></viz:color>
+      </node>
+      <node id="Ric Holt" label="Ric Holt">
+        <attvalues>
+          <attvalue for="modularity_class" value="14"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="-15.568243" y="-146.7674" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="43"></viz:color>
+      </node>
+      <node id="D.B. Wortman" label="D.B. Wortman">
+        <attvalues>
+          <attvalue for="modularity_class" value="14"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="-34.915813" y="-202.15674" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="43"></viz:color>
+      </node>
+      <node id="Bernard Vauquois" label="Bernard Vauquois">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-547.7978" y="-417.93768" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Friedrich L. Bauer" label="Friedrich L. Bauer">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-199.09619" y="-572.3958" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Peter Naur" label="Peter Naur">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-240.47688" y="-361.9241" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Adriaan van Wijngaarden" label="Adriaan van Wijngaarden">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="38.75"></viz:size>
+        <viz:position x="-257.84824" y="-817.3105" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="John Backus" label="John Backus">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="36.5"></viz:size>
+        <viz:position x="-104.193275" y="-453.41455" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Klaus Samelson" label="Klaus Samelson">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-456.26624" y="-483.89786" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Alan Perlis" label="Alan Perlis">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-391.10977" y="-603.15015" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="John McCarthy" label="John McCarthy">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-132.50342" y="-642.2269" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Heinz Rutishauser" label="Heinz Rutishauser">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-368.54846" y="-394.62473" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Charles Katz" label="Charles Katz">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-280.359" y="-626.0131" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Joseph Henry Wegstein" label="Joseph Henry Wegstein">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-311.45596" y="-519.8645" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Julien Green" label="Julien Green">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-552.2121" y="-588.6649" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Michael Woodger" label="Michael Woodger">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-452.18753" y="-716.329" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Hermann Bottenbruch" label="Hermann Bottenbruch">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="32.0"></viz:size>
+        <viz:position x="-425.09616" y="-273.4191" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Leszek Pacholski" label="Leszek Pacholski">
+        <attvalues>
+          <attvalue for="modularity_class" value="16"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="26.78946" y="-104.085556" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="22"></viz:color>
+      </node>
+      <node id="Kamil Skalski" label="Kamil Skalski">
+        <attvalues>
+          <attvalue for="modularity_class" value="16"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="203.88069" y="-85.89372" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="22"></viz:color>
+      </node>
+      <node id="Michał Moskal" label="Michał Moskal">
+        <attvalues>
+          <attvalue for="modularity_class" value="16"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="70.48172" y="-67.02061" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="22"></viz:color>
+      </node>
+      <node id="Paweł Olszta" label="Paweł Olszta">
+        <attvalues>
+          <attvalue for="modularity_class" value="16"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="41.804726" y="-85.7107" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="22"></viz:color>
+      </node>
+      <node id="Norman Ramsey" label="Norman Ramsey">
+        <attvalues>
+          <attvalue for="modularity_class" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-69.70026" y="895.5706" z="0.0"></viz:position>
+        <viz:color r="171" g="171" b="22"></viz:color>
+      </node>
+      <node id="Børge R. Christensen" label="Børge R. Christensen">
+        <attvalues>
+          <attvalue for="modularity_class" value="17"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-350.2569" y="-5.5360203" z="0.0"></viz:position>
+        <viz:color r="86" g="171" b="22"></viz:color>
+      </node>
+      <node id="Benedict Løfstedt" label="Benedict Løfstedt">
+        <attvalues>
+          <attvalue for="modularity_class" value="17"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-163.65579" y="15.803993" z="0.0"></viz:position>
+        <viz:color r="86" g="171" b="22"></viz:color>
+      </node>
+      <node id="Keith Packard" label="Keith Packard">
+        <attvalues>
+          <attvalue for="modularity_class" value="18"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="275.8328" y="-691.15173" z="0.0"></viz:position>
+        <viz:color r="64" g="171" b="22"></viz:color>
+      </node>
+      <node id="Bart Massey" label="Bart Massey">
+        <attvalues>
+          <attvalue for="modularity_class" value="18"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="352.95053" y="-722.6528" z="0.0"></viz:position>
+        <viz:color r="64" g="171" b="22"></viz:color>
+      </node>
+      <node id="Microsoft SQL Server" label="Microsoft SQL Server">
+        <attvalues>
+          <attvalue for="modularity_class" value="19"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="91.69703" y="-646.56915" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="43"></viz:color>
+      </node>
+      <node id="Microsoft Research" label="Microsoft Research">
+        <attvalues>
+          <attvalue for="modularity_class" value="19"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="123.75632" y="-607.4616" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="43"></viz:color>
+      </node>
+      <node id="SHARE" label="SHARE">
+        <attvalues>
+          <attvalue for="modularity_class" value="20"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-563.31696" y="255.30096" z="0.0"></viz:position>
+        <viz:color r="107" g="22" b="171"></viz:color>
+      </node>
+      <node id="IBM" label="IBM">
+        <attvalues>
+          <attvalue for="modularity_class" value="20"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-531.1286" y="291.40784" z="0.0"></viz:position>
+        <viz:color r="107" g="22" b="171"></viz:color>
+      </node>
+      <node id="Guy L. Steele" label="Guy L. Steele">
+        <attvalues>
+          <attvalue for="modularity_class" value="21"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-170.08267" y="-237.40665" z="0.0"></viz:position>
+        <viz:color r="22" g="22" b="171"></viz:color>
+      </node>
+      <node id="Gerald Jay Sussman" label="Gerald Jay Sussman">
+        <attvalues>
+          <attvalue for="modularity_class" value="21"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-387.3464" y="-162.19046" z="0.0"></viz:position>
+        <viz:color r="22" g="22" b="171"></viz:color>
+      </node>
+      <node id="Ralph Griswold" label="Ralph Griswold">
+        <attvalues>
+          <attvalue for="modularity_class" value="22"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="454.7434" y="-48.827225" z="0.0"></viz:position>
+        <viz:color r="107" g="171" b="22"></viz:color>
+      </node>
+      <node id="David J. Farber" label="David J. Farber">
+        <attvalues>
+          <attvalue for="modularity_class" value="22"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="498.24033" y="-6.660001" z="0.0"></viz:position>
+        <viz:color r="107" g="171" b="22"></viz:color>
+      </node>
+      <node id="Ivan P. Polonsky" label="Ivan P. Polonsky">
+        <attvalues>
+          <attvalue for="modularity_class" value="22"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="574.1871" y="-26.691952" z="0.0"></viz:position>
+        <viz:color r="107" g="171" b="22"></viz:color>
+      </node>
+      <node id="Brendan Eich" label="Brendan Eich">
+        <attvalues>
+          <attvalue for="modularity_class" value="23"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="72.006485" y="-719.951" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="128"></viz:color>
+      </node>
+      <node id="Ecma International" label="Ecma International">
+        <attvalues>
+          <attvalue for="modularity_class" value="23"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="147.1008" y="-759.12445" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="128"></viz:color>
+      </node>
+      <node id="Alan Kay" label="Alan Kay">
+        <attvalues>
+          <attvalue for="modularity_class" value="24"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="683.2614" y="605.97394" z="0.0"></viz:position>
+        <viz:color r="22" g="128" b="171"></viz:color>
+      </node>
+      <node id="Adele Goldberg" label="Adele Goldberg">
+        <attvalues>
+          <attvalue for="modularity_class" value="24"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="691.6468" y="561.75916" z="0.0"></viz:position>
+        <viz:color r="22" g="128" b="171"></viz:color>
+      </node>
+      <node id="Daniel Henry Holmes Ingalls" label="Daniel Henry Holmes Ingalls">
+        <attvalues>
+          <attvalue for="modularity_class" value="24"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="636.65735" y="583.9287" z="0.0"></viz:position>
+        <viz:color r="22" g="128" b="171"></viz:color>
+      </node>
+      <node id="Commissariat à l'énergie atomique et aux énergies alternatives" label="Commissariat à l'énergie atomique et aux énergies alternatives">
+        <attvalues>
+          <attvalue for="modularity_class" value="25"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-607.8546" y="59.914085" z="0.0"></viz:position>
+        <viz:color r="43" g="171" b="22"></viz:color>
+      </node>
+      <node id="National Institute for Research in Computer Science and Control" label="National Institute for Research in Computer Science and Control">
+        <attvalues>
+          <attvalue for="modularity_class" value="25"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-621.4877" y="13.5345955" z="0.0"></viz:position>
+        <viz:color r="43" g="171" b="22"></viz:color>
+      </node>
+      <node id="David A. Wagner" label="David A. Wagner">
+        <attvalues>
+          <attvalue for="modularity_class" value="26"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="100.45448" y="87.06814" z="0.0"></viz:position>
+        <viz:color r="22" g="107" b="171"></viz:color>
+      </node>
+      <node id="Mark S. Miller" label="Mark S. Miller">
+        <attvalues>
+          <attvalue for="modularity_class" value="26"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="29.53378" y="107.47206" z="0.0"></viz:position>
+        <viz:color r="22" g="107" b="171"></viz:color>
+      </node>
+      <node id="Roger Hui" label="Roger Hui">
+        <attvalues>
+          <attvalue for="modularity_class" value="27"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="570.2681" y="-241.37563" z="0.0"></viz:position>
+        <viz:color r="64" g="22" b="171"></viz:color>
+      </node>
+      <node id="Kenneth E. Iverson" label="Kenneth E. Iverson">
+        <attvalues>
+          <attvalue for="modularity_class" value="27"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="607.2989" y="-212.678" z="0.0"></viz:position>
+        <viz:color r="64" g="22" b="171"></viz:color>
+      </node>
+      <node id="Marc Bezem" label="Marc Bezem">
+        <attvalues>
+          <attvalue for="modularity_class" value="28"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="-382.32166" y="54.174747" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="86"></viz:color>
+      </node>
+      <node id="Andrea Schaerf" label="Andrea Schaerf">
+        <attvalues>
+          <attvalue for="modularity_class" value="28"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="-320.65366" y="-41.781803" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="86"></viz:color>
+      </node>
+      <node id="Jacob Brunekree" label="Jacob Brunekree">
+        <attvalues>
+          <attvalue for="modularity_class" value="28"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="-337.08694" y="35.617565" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="86"></viz:color>
+      </node>
+      <node id="Krzysztof Apt" label="Krzysztof Apt">
+        <attvalues>
+          <attvalue for="modularity_class" value="28"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="-501.7237" y="18.280048" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="86"></viz:color>
+      </node>
+      <node id="Vincent Partington" label="Vincent Partington">
+        <attvalues>
+          <attvalue for="modularity_class" value="28"></attvalue>
+        </attvalues>
+        <viz:size value="11.75"></viz:size>
+        <viz:position x="-461.9705" y="-22.65834" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="86"></viz:color>
+      </node>
+      <node id="Hanspeter Mössenböck" label="Hanspeter Mössenböck">
+        <attvalues>
+          <attvalue for="modularity_class" value="32"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="117.34738" y="-22.517397" z="0.0"></viz:position>
+        <viz:color r="22" g="64" b="171"></viz:color>
+      </node>
+      <node id="Olivetti" label="Olivetti">
+        <attvalues>
+          <attvalue for="modularity_class" value="29"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="97.86779" y="38.67644" z="0.0"></viz:position>
+        <viz:color r="171" g="149" b="22"></viz:color>
+      </node>
+      <node id="Digital Equipment Corporation" label="Digital Equipment Corporation">
+        <attvalues>
+          <attvalue for="modularity_class" value="29"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="232.82848" y="127.284386" z="0.0"></viz:position>
+        <viz:color r="171" g="149" b="22"></viz:color>
+      </node>
+      <node id="Charles Halpern-Hamu" label="Charles Halpern-Hamu">
+        <attvalues>
+          <attvalue for="modularity_class" value="14"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-234.67192" y="-110.5509" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="43"></viz:color>
+      </node>
+      <node id="Paul Graham" label="Paul Graham">
+        <attvalues>
+          <attvalue for="modularity_class" value="30"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="379.49945" y="15.328627" z="0.0"></viz:position>
+        <viz:color r="171" g="43" b="22"></viz:color>
+      </node>
+      <node id="Robert Tappan Morris" label="Robert Tappan Morris">
+        <attvalues>
+          <attvalue for="modularity_class" value="30"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="470.63416" y="35.55815" z="0.0"></viz:position>
+        <viz:color r="171" g="43" b="22"></viz:color>
+      </node>
+      <node id="Barbara Liskov" label="Barbara Liskov">
+        <attvalues>
+          <attvalue for="modularity_class" value="31"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-185.01273" y="54.401142" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="128"></viz:color>
+      </node>
+      <node id="Massachusetts Institute of Technology" label="Massachusetts Institute of Technology">
+        <attvalues>
+          <attvalue for="modularity_class" value="31"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-354.10852" y="123.30035" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="128"></viz:color>
+      </node>
+      <node id="Acorn" label="Acorn">
+        <attvalues>
+          <attvalue for="modularity_class" value="32"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-47.364895" y="-5.9950566" z="0.0"></viz:position>
+        <viz:color r="22" g="64" b="171"></viz:color>
+      </node>
+      <node id="DEC Systems Research Center" label="DEC Systems Research Center">
+        <attvalues>
+          <attvalue for="modularity_class" value="32"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-7.8804774" y="-45.901157" z="0.0"></viz:position>
+        <viz:color r="22" g="64" b="171"></viz:color>
+      </node>
+      <node id="Wally Feurzeig" label="Wally Feurzeig">
+        <attvalues>
+          <attvalue for="modularity_class" value="33"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-486.00027" y="217.68541" z="0.0"></viz:position>
+        <viz:color r="149" g="171" b="22"></viz:color>
+      </node>
+      <node id="Seymour Papert" label="Seymour Papert">
+        <attvalues>
+          <attvalue for="modularity_class" value="33"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-486.895" y="186.55591" z="0.0"></viz:position>
+        <viz:color r="149" g="171" b="22"></viz:color>
+      </node>
+      <node id="Allen Newell" label="Allen Newell">
+        <attvalues>
+          <attvalue for="modularity_class" value="34"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="568.3995" y="-635.9709" z="0.0"></viz:position>
+        <viz:color r="22" g="43" b="171"></viz:color>
+      </node>
+      <node id="Herbert A. Simon" label="Herbert A. Simon">
+        <attvalues>
+          <attvalue for="modularity_class" value="34"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="528.9126" y="-617.9126" z="0.0"></viz:position>
+        <viz:color r="22" g="43" b="171"></viz:color>
+      </node>
+      <node id="Cliff Shaw" label="Cliff Shaw">
+        <attvalues>
+          <attvalue for="modularity_class" value="34"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="524.98596" y="-653.93713" z="0.0"></viz:position>
+        <viz:color r="22" g="43" b="171"></viz:color>
+      </node>
+      <node id="Dennis Ritchie" label="Dennis Ritchie">
+        <attvalues>
+          <attvalue for="modularity_class" value="35"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="144.5901" y="-369.07666" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="107"></viz:color>
+      </node>
+      <node id="Bjarne Stroustrup" label="Bjarne Stroustrup">
+        <attvalues>
+          <attvalue for="modularity_class" value="35"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="219.85999" y="-389.97128" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="107"></viz:color>
+      </node>
+      <node id="Brian Kernighan" label="Brian Kernighan">
+        <attvalues>
+          <attvalue for="modularity_class" value="35"></attvalue>
+        </attvalues>
+        <viz:size value="16.25"></viz:size>
+        <viz:position x="166.17992" y="-326.91983" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="107"></viz:color>
+      </node>
+      <node id="Bell Labs" label="Bell Labs">
+        <attvalues>
+          <attvalue for="modularity_class" value="35"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="171.57779" y="-261.81763" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="107"></viz:color>
+      </node>
+      <node id="Robert Fourer" label="Robert Fourer">
+        <attvalues>
+          <attvalue for="modularity_class" value="35"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="108.63047" y="-243.5161" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="107"></viz:color>
+      </node>
+      <node id="David Gay" label="David Gay">
+        <attvalues>
+          <attvalue for="modularity_class" value="35"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="110.06207" y="-287.62164" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="107"></viz:color>
+      </node>
+      <node id="Andrei Alexandrescu" label="Andrei Alexandrescu">
+        <attvalues>
+          <attvalue for="modularity_class" value="36"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="176.27715" y="216.42459" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="171"></viz:color>
+      </node>
+      <node id="Walter Bright" label="Walter Bright">
+        <attvalues>
+          <attvalue for="modularity_class" value="36"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="197.73093" y="195.98732" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="171"></viz:color>
+      </node>
+      <node id="Cornelis H. A. Koster" label="Cornelis H. A. Koster">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="-259.79407" y="-910.7891" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Barry J. Mailloux" label="Barry J. Mailloux">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="-198.30618" y="-934.34937" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="John E. L. Peck" label="John E. L. Peck">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="9.5"></viz:size>
+        <viz:position x="-188.57704" y="-876.86444" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Jie Huang Fu" label="Jie Huang Fu">
+        <attvalues>
+          <attvalue for="modularity_class" value="37"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-128.37785" y="100.16267" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="149"></viz:color>
+      </node>
+      <node id="Léon Bottou" label="Léon Bottou">
+        <attvalues>
+          <attvalue for="modularity_class" value="37"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-96.93066" y="34.445435" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="149"></viz:color>
+      </node>
+      <node id="Yann LeCun" label="Yann LeCun">
+        <attvalues>
+          <attvalue for="modularity_class" value="37"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-66.72692" y="79.78299" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="149"></viz:color>
+      </node>
+      <node id="Alfred Aho" label="Alfred Aho">
+        <attvalues>
+          <attvalue for="modularity_class" value="35"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="235.47795" y="-280.1965" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="107"></viz:color>
+      </node>
+      <node id="Peter J. Weinberger" label="Peter J. Weinberger">
+        <attvalues>
+          <attvalue for="modularity_class" value="35"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="269.37097" y="-300.6727" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="107"></viz:color>
+      </node>
+      <node id="Edward Wimmers" label="Edward Wimmers">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-18.298874" y="-410.59375" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="John Williams" label="John Williams">
+        <attvalues>
+          <attvalue for="modularity_class" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-10.005644" y="-429.23688" z="0.0"></viz:position>
+        <viz:color r="22" g="171" b="64"></viz:color>
+      </node>
+      <node id="Grace Hopper" label="Grace Hopper">
+        <attvalues>
+          <attvalue for="modularity_class" value="38"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-247.07356" y="-64.690636" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="64"></viz:color>
+      </node>
+      <node id="Jean E. Sammet" label="Jean E. Sammet">
+        <attvalues>
+          <attvalue for="modularity_class" value="38"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="-150.61179" y="-24.231318" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="64"></viz:color>
+      </node>
+      <node id="James Gosling" label="James Gosling">
+        <attvalues>
+          <attvalue for="modularity_class" value="39"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="125.124725" y="-454.68646" z="0.0"></viz:position>
+        <viz:color r="43" g="22" b="171"></viz:color>
+      </node>
+      <node id="Sun Microsystems" label="Sun Microsystems">
+        <attvalues>
+          <attvalue for="modularity_class" value="39"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="95.875626" y="-500.3147" z="0.0"></viz:position>
+        <viz:color r="43" g="22" b="171"></viz:color>
+      </node>
+      <node id="Thomas Eugene Kurtz" label="Thomas Eugene Kurtz">
+        <attvalues>
+          <attvalue for="modularity_class" value="40"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="511.9233" y="87.02301" z="0.0"></viz:position>
+        <viz:color r="149" g="22" b="171"></viz:color>
+      </node>
+      <node id="John Kemeny" label="John Kemeny">
+        <attvalues>
+          <attvalue for="modularity_class" value="40"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="588.8181" y="58.93558" z="0.0"></viz:position>
+        <viz:color r="149" g="22" b="171"></viz:color>
+      </node>
+      <node id="Don Syme" label="Don Syme">
+        <attvalues>
+          <attvalue for="modularity_class" value="19"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="169.22885" y="-561.0286" z="0.0"></viz:position>
+        <viz:color r="171" g="22" b="43"></viz:color>
+      </node>
+      <node id="Vijay A. Saraswat" label="Vijay A. Saraswat">
+        <attvalues>
+          <attvalue for="modularity_class" value="41"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="52.11434" y="427.5117" z="0.0"></viz:position>
+        <viz:color r="86" g="22" b="171"></viz:color>
+      </node>
+      <node id="Ken Kahn" label="Ken Kahn">
+        <attvalues>
+          <attvalue for="modularity_class" value="41"></attvalue>
+        </attvalues>
+        <viz:size value="5.0"></viz:size>
+        <viz:position x="79.85432" y="469.39603" z="0.0"></viz:position>
+        <viz:color r="86" g="22" b="171"></viz:color>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="Nicholas F. Benton" target="Luca Cardelli">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Nicholas F. Benton" target="Cédric Fournet">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Luca Cardelli" target="Nicholas F. Benton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Luca Cardelli" target="Cédric Fournet">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Cédric Fournet" target="Nicholas F. Benton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Cédric Fournet" target="Luca Cardelli">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="PARC" target="Butler Lampson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Butler Lampson" target="PARC">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Warren Burton" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Erik Meijer" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Hughes" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lennart Augustsson" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Gilad Bracha">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="Martin Odersky">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="David Stoutamire">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Philip Wadler" target="William Maddox">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Simon Peyton Jones" target="Norman Ramsey">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Hudak" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alastair Reid" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Boutel" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Colin Runciman" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dave Barton" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Launchbury" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Peterson" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Fasel" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kevin Hammond" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark Jones" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralf Hinze" target="Thomas Johnsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Warren Burton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Erik Meijer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="John Hughes">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Lennart Augustsson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Paul Hudak">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Alastair Reid">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Brian Boutel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Colin Runciman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Dave Barton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="John Launchbury">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="John Peterson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Joseph Fasel">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Kevin Hammond">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Mark Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Johnsson" target="Ralf Hinze">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Steven Pemberton" target="Leo Geurts">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Steven Pemberton" target="Lambert Meertens">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Leo Geurts" target="Steven Pemberton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Leo Geurts" target="Lambert Meertens">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lambert Meertens" target="Steven Pemberton">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Lambert Meertens" target="Leo Geurts">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Edward A. Ashcroft" target="William W. Wadge">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="William W. Wadge" target="Edward A. Ashcroft">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ascánder Suárez" target="Xavier Leroy">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ascánder Suárez" target="Gérard Huet">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ascánder Suárez" target="Guy Cousineau">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ascánder Suárez" target="Michel Mauny">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ascánder Suárez" target="Pierre Weis">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Xavier Leroy" target="Ascánder Suárez">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Xavier Leroy" target="Gérard Huet">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Xavier Leroy" target="Guy Cousineau">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Xavier Leroy" target="Michel Mauny">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Xavier Leroy" target="Pierre Weis">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gérard Huet" target="Ascánder Suárez">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gérard Huet" target="Xavier Leroy">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gérard Huet" target="Guy Cousineau">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gérard Huet" target="Michel Mauny">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gérard Huet" target="Pierre Weis">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Guy Cousineau" target="Ascánder Suárez">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Guy Cousineau" target="Xavier Leroy">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Guy Cousineau" target="Gérard Huet">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Guy Cousineau" target="Michel Mauny">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Guy Cousineau" target="Pierre Weis">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michel Mauny" target="Ascánder Suárez">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michel Mauny" target="Xavier Leroy">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michel Mauny" target="Gérard Huet">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michel Mauny" target="Guy Cousineau">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michel Mauny" target="Pierre Weis">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Pierre Weis" target="Ascánder Suárez">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Pierre Weis" target="Xavier Leroy">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Pierre Weis" target="Gérard Huet">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Pierre Weis" target="Guy Cousineau">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Pierre Weis" target="Michel Mauny">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Francis McCabe" target="Keith Clark">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Keith Clark" target="Francis McCabe">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Sean Dorward" target="Rob Pike">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Sean Dorward" target="Phil Winterbottom">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Rob Pike" target="Sean Dorward">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Rob Pike" target="Phil Winterbottom">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Rob Pike" target="Ken Thompson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Rob Pike" target="Robert Griesemer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Phil Winterbottom" target="Sean Dorward">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Phil Winterbottom" target="Rob Pike">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ross Ihaka" target="Robert Gentleman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Robert Gentleman" target="Ross Ihaka">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gilad Bracha" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gilad Bracha" target="Martin Odersky">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gilad Bracha" target="David Stoutamire">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gilad Bracha" target="William Maddox">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Martin Odersky" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Martin Odersky" target="Gilad Bracha">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Martin Odersky" target="David Stoutamire">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Martin Odersky" target="William Maddox">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David Stoutamire" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David Stoutamire" target="Gilad Bracha">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David Stoutamire" target="Martin Odersky">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David Stoutamire" target="William Maddox">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="William Maddox" target="Philip Wadler">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="William Maddox" target="Gilad Bracha">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="William Maddox" target="Martin Odersky">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="William Maddox" target="David Stoutamire">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Raymond F. Boyce" target="Donald D. Chamberlin">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Donald D. Chamberlin" target="Raymond F. Boyce">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Anders Hejlsberg" target="Niklaus Wirth">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Anders Hejlsberg" target="Apple Inc.">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Niklaus Wirth" target="Anders Hejlsberg">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Niklaus Wirth" target="Apple Inc.">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Niklaus Wirth" target="Hanspeter Mössenböck">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Niklaus Wirth" target="Acorn">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Niklaus Wirth" target="DEC Systems Research Center">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Apple Inc." target="Anders Hejlsberg">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Apple Inc." target="Niklaus Wirth">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="D. B. Russell" target="William Wulf">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="D. B. Russell" target="Nico Habermann">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="William Wulf" target="D. B. Russell">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="William Wulf" target="Nico Habermann">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Nico Habermann" target="D. B. Russell">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Nico Habermann" target="William Wulf">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ken Thompson" target="Rob Pike">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ken Thompson" target="Robert Griesemer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Robert Griesemer" target="Rob Pike">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Robert Griesemer" target="Ken Thompson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kristen Nygaard" target="Ole-Johan Dahl">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kristen Nygaard" target="Birger Møller-Pedersen">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ole-Johan Dahl" target="Kristen Nygaard">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Birger Møller-Pedersen" target="Kristen Nygaard">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ge Wang" target="Perry R. Cook">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Perry R. Cook" target="Ge Wang">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="D.T. Barnard" target="James Cordy">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="D.T. Barnard" target="Ric Holt">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="D.T. Barnard" target="D.B. Wortman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="James Cordy" target="D.T. Barnard">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="James Cordy" target="Ric Holt" weight="6.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="James Cordy" target="D.B. Wortman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="James Cordy" target="Charles Halpern-Hamu">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ric Holt" target="D.T. Barnard">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ric Holt" target="James Cordy" weight="6.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ric Holt" target="D.B. Wortman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="D.B. Wortman" target="D.T. Barnard">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="D.B. Wortman" target="James Cordy">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="D.B. Wortman" target="Ric Holt">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Friedrich L. Bauer" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="John Backus" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Klaus Samelson" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Alan Perlis" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Heinz Rutishauser" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Charles Katz" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Joseph Henry Wegstein" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bernard Vauquois" target="Hermann Bottenbruch">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="John Backus" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Klaus Samelson" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Alan Perlis" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Heinz Rutishauser" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Charles Katz" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Joseph Henry Wegstein" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Friedrich L. Bauer" target="Hermann Bottenbruch" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Friedrich L. Bauer" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="John Backus" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Klaus Samelson" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Alan Perlis" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Heinz Rutishauser" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Charles Katz" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Joseph Henry Wegstein" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter Naur" target="Hermann Bottenbruch">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Friedrich L. Bauer" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="John Backus" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Klaus Samelson" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Alan Perlis" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Heinz Rutishauser" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Charles Katz" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Joseph Henry Wegstein" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Hermann Bottenbruch">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Cornelis H. A. Koster">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="Barry J. Mailloux">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adriaan van Wijngaarden" target="John E. L. Peck">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Friedrich L. Bauer" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Klaus Samelson" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Alan Perlis" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Heinz Rutishauser" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Charles Katz" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Joseph Henry Wegstein" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Hermann Bottenbruch" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="Edward Wimmers">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Backus" target="John Williams">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Friedrich L. Bauer" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="John Backus" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Alan Perlis" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Heinz Rutishauser" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Charles Katz" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Joseph Henry Wegstein" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Klaus Samelson" target="Hermann Bottenbruch" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Friedrich L. Bauer" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="John Backus" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Klaus Samelson" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Heinz Rutishauser" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Charles Katz" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Joseph Henry Wegstein" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Perlis" target="Hermann Bottenbruch" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Friedrich L. Bauer" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="John Backus" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Klaus Samelson" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Alan Perlis" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Heinz Rutishauser" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Charles Katz" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Joseph Henry Wegstein" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John McCarthy" target="Hermann Bottenbruch">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Friedrich L. Bauer" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="John Backus" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Klaus Samelson" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Alan Perlis" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Charles Katz" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Joseph Henry Wegstein" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Heinz Rutishauser" target="Hermann Bottenbruch" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Friedrich L. Bauer" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="John Backus" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Klaus Samelson" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Alan Perlis" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Heinz Rutishauser" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Joseph Henry Wegstein" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Katz" target="Hermann Bottenbruch" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Friedrich L. Bauer" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="John Backus" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Klaus Samelson" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Alan Perlis" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Heinz Rutishauser" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Charles Katz" weight="3.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Joseph Henry Wegstein" target="Hermann Bottenbruch" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Friedrich L. Bauer" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="John Backus" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Klaus Samelson" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Alan Perlis" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Heinz Rutishauser" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Charles Katz" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Joseph Henry Wegstein" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Michael Woodger" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Julien Green" target="Hermann Bottenbruch">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Bernard Vauquois" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Friedrich L. Bauer" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Peter Naur" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Adriaan van Wijngaarden" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="John Backus" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Klaus Samelson" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Alan Perlis" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="John McCarthy" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Heinz Rutishauser" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Charles Katz" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Joseph Henry Wegstein" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Julien Green" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michael Woodger" target="Hermann Bottenbruch">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Bernard Vauquois">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Friedrich L. Bauer" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Peter Naur">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Adriaan van Wijngaarden">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="John Backus" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Klaus Samelson" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Alan Perlis" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="John McCarthy">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Heinz Rutishauser" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Charles Katz" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Joseph Henry Wegstein" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Julien Green">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hermann Bottenbruch" target="Michael Woodger">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Leszek Pacholski" target="Kamil Skalski">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Leszek Pacholski" target="Michał Moskal">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Leszek Pacholski" target="Paweł Olszta">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kamil Skalski" target="Leszek Pacholski">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kamil Skalski" target="Michał Moskal">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kamil Skalski" target="Paweł Olszta">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michał Moskal" target="Leszek Pacholski">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michał Moskal" target="Kamil Skalski">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Michał Moskal" target="Paweł Olszta">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paweł Olszta" target="Leszek Pacholski">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paweł Olszta" target="Kamil Skalski">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paweł Olszta" target="Michał Moskal">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Norman Ramsey" target="Simon Peyton Jones">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Børge R. Christensen" target="Benedict Løfstedt">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Benedict Løfstedt" target="Børge R. Christensen">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Keith Packard" target="Bart Massey">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bart Massey" target="Keith Packard">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Microsoft SQL Server" target="Microsoft Research">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Microsoft Research" target="Microsoft SQL Server">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Microsoft Research" target="Don Syme">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="SHARE" target="IBM">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="IBM" target="SHARE">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Guy L. Steele" target="Gerald Jay Sussman">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Gerald Jay Sussman" target="Guy L. Steele">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralph Griswold" target="David J. Farber">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ralph Griswold" target="Ivan P. Polonsky">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David J. Farber" target="Ralph Griswold">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David J. Farber" target="Ivan P. Polonsky">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ivan P. Polonsky" target="Ralph Griswold">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ivan P. Polonsky" target="David J. Farber">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brendan Eich" target="Ecma International">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ecma International" target="Brendan Eich">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Kay" target="Adele Goldberg">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alan Kay" target="Daniel Henry Holmes Ingalls">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adele Goldberg" target="Alan Kay">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Adele Goldberg" target="Daniel Henry Holmes Ingalls">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Daniel Henry Holmes Ingalls" target="Alan Kay">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Daniel Henry Holmes Ingalls" target="Adele Goldberg">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Commissariat à l'énergie atomique et aux énergies alternatives" target="National Institute for Research in Computer Science and Control">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="National Institute for Research in Computer Science and Control" target="Commissariat à l'énergie atomique et aux énergies alternatives">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David A. Wagner" target="Mark S. Miller">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Mark S. Miller" target="David A. Wagner">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Roger Hui" target="Kenneth E. Iverson">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Kenneth E. Iverson" target="Roger Hui">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Marc Bezem" target="Andrea Schaerf">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Marc Bezem" target="Jacob Brunekree">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Marc Bezem" target="Krzysztof Apt">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Marc Bezem" target="Vincent Partington">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Andrea Schaerf" target="Marc Bezem">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Andrea Schaerf" target="Jacob Brunekree">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Andrea Schaerf" target="Krzysztof Apt">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Andrea Schaerf" target="Vincent Partington">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Jacob Brunekree" target="Marc Bezem">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Jacob Brunekree" target="Andrea Schaerf">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Jacob Brunekree" target="Krzysztof Apt">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Jacob Brunekree" target="Vincent Partington">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Krzysztof Apt" target="Marc Bezem">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Krzysztof Apt" target="Andrea Schaerf">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Krzysztof Apt" target="Jacob Brunekree">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Krzysztof Apt" target="Vincent Partington">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Vincent Partington" target="Marc Bezem">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Vincent Partington" target="Andrea Schaerf">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Vincent Partington" target="Jacob Brunekree">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Vincent Partington" target="Krzysztof Apt">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Hanspeter Mössenböck" target="Niklaus Wirth">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Olivetti" target="Digital Equipment Corporation">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Digital Equipment Corporation" target="Olivetti">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Charles Halpern-Hamu" target="James Cordy">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Paul Graham" target="Robert Tappan Morris">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Robert Tappan Morris" target="Paul Graham">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Barbara Liskov" target="Massachusetts Institute of Technology">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Massachusetts Institute of Technology" target="Barbara Liskov">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Acorn" target="Niklaus Wirth">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Acorn" target="DEC Systems Research Center">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="DEC Systems Research Center" target="Niklaus Wirth">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="DEC Systems Research Center" target="Acorn">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Wally Feurzeig" target="Seymour Papert">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Seymour Papert" target="Wally Feurzeig">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Allen Newell" target="Herbert A. Simon">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Allen Newell" target="Cliff Shaw">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Herbert A. Simon" target="Allen Newell">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Herbert A. Simon" target="Cliff Shaw">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Cliff Shaw" target="Allen Newell">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Cliff Shaw" target="Herbert A. Simon">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dennis Ritchie" target="Bjarne Stroustrup">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Dennis Ritchie" target="Brian Kernighan">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bjarne Stroustrup" target="Dennis Ritchie">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Kernighan" target="Dennis Ritchie">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Kernighan" target="Bell Labs">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Kernighan" target="Robert Fourer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Kernighan" target="David Gay">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Kernighan" target="Alfred Aho">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Brian Kernighan" target="Peter J. Weinberger">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bell Labs" target="Brian Kernighan">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bell Labs" target="Robert Fourer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Bell Labs" target="David Gay">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Robert Fourer" target="Brian Kernighan">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Robert Fourer" target="Bell Labs">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Robert Fourer" target="David Gay">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David Gay" target="Brian Kernighan">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David Gay" target="Bell Labs">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="David Gay" target="Robert Fourer">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Andrei Alexandrescu" target="Walter Bright">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Walter Bright" target="Andrei Alexandrescu">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Cornelis H. A. Koster" target="Adriaan van Wijngaarden">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Cornelis H. A. Koster" target="Barry J. Mailloux">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Cornelis H. A. Koster" target="John E. L. Peck">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Barry J. Mailloux" target="Adriaan van Wijngaarden">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Barry J. Mailloux" target="Cornelis H. A. Koster">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Barry J. Mailloux" target="John E. L. Peck">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John E. L. Peck" target="Adriaan van Wijngaarden">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John E. L. Peck" target="Cornelis H. A. Koster">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John E. L. Peck" target="Barry J. Mailloux">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Jie Huang Fu" target="Léon Bottou">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Jie Huang Fu" target="Yann LeCun">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Léon Bottou" target="Jie Huang Fu">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Léon Bottou" target="Yann LeCun">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Yann LeCun" target="Jie Huang Fu">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Yann LeCun" target="Léon Bottou">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alfred Aho" target="Brian Kernighan">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Alfred Aho" target="Peter J. Weinberger">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter J. Weinberger" target="Brian Kernighan">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Peter J. Weinberger" target="Alfred Aho">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Edward Wimmers" target="John Backus">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Edward Wimmers" target="John Williams">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Williams" target="John Backus">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Williams" target="Edward Wimmers">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Grace Hopper" target="Jean E. Sammet">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Jean E. Sammet" target="Grace Hopper">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="James Gosling" target="Sun Microsystems">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Sun Microsystems" target="James Gosling">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Thomas Eugene Kurtz" target="John Kemeny" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="John Kemeny" target="Thomas Eugene Kurtz" weight="2.0">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Don Syme" target="Microsoft Research">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Vijay A. Saraswat" target="Ken Kahn">
+        <attvalues></attvalues>
+      </edge>
+      <edge source="Ken Kahn" target="Vijay A. Saraswat">
+        <attvalues></attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

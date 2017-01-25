@@ -1,0 +1,127 @@
+Sum the velocities to ensure cyclical path
+It is up to us to give the position and the velocities
+0:"BETA", 1:"YAW", 2:"SSARJ", 3:"SSARJVel", 4:"PSARJ",
+
+
+relaxed CSV:
+alpha, beta, yaw, SSARJ angle, PSARJ angle, BGA 1A angle, BGA 2A angle, ..., BGA 4B angle.
+
+Full description available at:
+http://community.topcoder.com/longcontest/?module=ViewProblemStatement&compid=27068&rd=15520
+
+HIGH LEVEL PROBLEM DESCRIPTION:
+Provide position of all 10 rotatary joints at each of the 92 timesteps
+Soln must be cyclic
+Optimise the ISS for a particular Beta
+The Beta is the angle between the plane of the orbit and a vector to the sun 
+ISS itself can be adjusted a small amount (yaw 0 to 7 inclusive)
+The Sun moves in a circle, relative to the aircraft.
+beta will be one of 70,71,72,73,74,75,-70,-71,-72,-73,-74 or -75
+Minutes will be from 0 to 91, inclusive.
+
+MODEL:
+Sun and Earth static
+No Earth shadow
+"Bottom" side of ISS always points to centre of the earth (like a plane)
+"Front" always points in direction of motion(like nose of an aircraft)
+
+APPARENT SUN POSITION (see angles.png): 
+Imagining a large sphere around the ISS, the apparent path of the Sun
+will be on a circle on this sphere. The size and location of the
+circle are determined by the beta angle (the beta angle is the angle
+between the plane of the orbit and a vector to the Sun). Positive beta
+angles put the circle centered somewhere on the negative y
+axis. Negative beta angles put the circle centered somewhere on the
+positive y axis. The angular radius of this circle is
+90-abs(beta). The alpha angle determines the apparent position of the
+Sun on this circle, starting from the -z axis. The alpha angle
+measures how far the ISS is through its orbit (0 degrees = 0 minutes,
+180 degrees = 46 minutes, etc.)
+
+The above description is complete when the yaw angle is zero. When the
+yaw angle is small and positive, the ISS is rotated a small amount
+about the z axis, in the direction of the arrow. From the perspective
+of the ISS, the center of the circle is then rotated a small amount
+about the z axis, in the opposite direction.
+
+to_sunx = cos(beta)sin(alpha)cos(yaw) - sin(beta)sin(yaw)
+to_suny = -cos(beta)sin(alpha)sin(yaw) - sin(beta)cos(yaw)
+to_sunz = -cos(beta) cos(alpha)
+
+ISS COMPONENTS (see operations.png):
+Solar Alpha Rotary Joint (SARJ) port and starboard (Y axis)
+Solar Array Wings (SAW) x4 x2 (x-axis)
+Each Saw is rotated by Beta Gimbal Assembly (BGA) 
+
+SOFT CONSTRAINTS:
+The minimum unpenalized average power for SAW 1A = 6.3 kilowatts
+The minimum unpenalized average power for SAW 2A = 6.4 kilowatts
+The minimum unpenalized average power for SAW 3A = 6.7 kilowatts
+The minimum unpenalized average power for SAW 4A = 8.9 kilowatts
+The minimum unpenalized average power for SAW 1B = 5.5 kilowatts
+The minimum unpenalized average power for SAW 2B = 8.1 kilowatts
+The minimum unpenalized average power for SAW 3B = 4.4 kilowatts
+The minimum unpenalized average power for SAW 4B = 4.3 kilowatts
+The maximum unpenalized amount of rotation for each BGA is 80 degrees per orbit
+
+POWER (soft constraint):
+fitness = P * min{1.0, 2.0^((80-R)/300.0)}/2^M
+P is power
+R is total rotation of each? BGA
+M is the number of SAWs that didn't produce the min average power
+
+HARD CONSTRAINTS:
+Each of the SARJ and BGA angles, a, must satisfy 0 <= a < 360
+The yaw angle must be between 0.0 and 7.0, inclusive
+The maximum absolute value of SARJ velocity = 0.15 degrees/second(minute!)
+The maximum absolute value of SARJ acceleration = 0.005 degrees/second^2
+The maximum absolute value of BGA velocity = 0.25 degrees/second
+The maximum absolute value of BGA acceleration = 0.01 degrees/second^2
+The pos and vel at time step t must be achievable from time step t-1 without violating the above constraints (for t in 1 to 91, inclusive)
+The pos and vel at time step 0 must be achievable from time step 91 without violating the above constrains
+maximum allowable longeron "danger count" = 20 minutes (over repeated orbits)
+
+LONGERONS (Hard Constraint):
+4 Longerons per mast (SAW?)
+Odd numbers of hot/cold longerons lead to mast failure
+10% Shadow on lenght of longeron =  shadowed
+
+for each minute of 21 full orbits (92*21?):
+if shadowed == odd:
+   penalty++
+if shadowed == even:
+   penalty--
+   if penalty < 0:
+      penalty = 0
+if the penalty reaches 21 then the solution is rejected
+
+
+TEST CASES (ACTUAL COMPETITION TEST CASES!!!!!!!):
+[70, -72] Example test cases (for example submission)
+[72, 74, -70, -74] Provisional test cases (milestone prizes)
+[71, 73, 75, -71,, -73, -75] System test cases
+
+RADIATORS:
+if beta angle is positive:
+   port_rad = 45 degrees
+   starboard_rad = 25 degrees
+if beta angle is negative:
+   port_rad = 45 degrees
+   starboard_rad = 65 degrees
+I don't know if we have to configure this or if it is automatic
+
+IMPLEMENTATION:
+Time limit is 60 seconds per test case
+the memory limit is 1024mb 
+
+GetInitialOrientation(Beta):
+   #called at the beginning of each test
+   return desired yaw angle (double)
+
+getStateAtMinute(minute):
+   #called 92 times for each testcase, with minute = [0..91]
+   alpha = (360/92) * minute
+   return double[20] (10 x angular position, 10 x angular velocity)
+
+
+If results generated offline then only submit code after a win

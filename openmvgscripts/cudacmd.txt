@@ -1,0 +1,2 @@
+/home/jonathan/data/linuxapps/latchMVG/build/Linux-x86_64-Release/openMVG_main_ComputeFeatures -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result/latch_unsignedmatches/sfm_data.json -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result/latch_unsignedmatches -m LATCH_UNSIGNED -f 1
+

@@ -1,0 +1,19 @@
+<table width="182" border="1" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="182" height="30" valign="middle" bgcolor="#FFFFCC"><a href="links.php">About 
+      Us</a></td>
+  </tr>
+  <tr> 
+    <td valign="middle" height="30" bgcolor="#FFFFCC"><a href="links.php">Latest 
+      News</a></td>
+  </tr>
+  <tr> 
+    <td height="30" valign="middle" bgcolor="#FFFFCC"><a href="links.php">Forum</a></td>
+  </tr>
+  <tr> 
+    <td height="30" valign="middle" bgcolor="#FFFFCC"><a href="links.php">Login</a></td>
+  </tr>
+  <tr> 
+    <td height="30" valign="middle" bgcolor="#FFFFCC"><a href="links.php">New Section</a></td>
+  </tr>
+</table>

@@ -1,0 +1,26 @@
+<html>
+<head>
+    <style>
+	#byte_content {
+	margin: 5px 0;
+	max-height: 100px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	}
+	#mesh_canvas{ margin-top: 105px; }
+    </style>
+</head>
+
+<body>
+    <b> Select a file </b>
+    <input type="file" id="files" name="file" /> 
+    <span class="readButton">
+	<button>load mesh</button>
+    </span>
+    <div id="byte_content"></div>
+</body>
+
+<script type="text/javascript" src="readFile.js"></script>
+<script type="text/javascript">
+initListeners();
+</script>

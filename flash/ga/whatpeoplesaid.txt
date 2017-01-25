@@ -1,0 +1,3207 @@
+ #1 posted by dX , December 9, 2008 12:32 AM
+
+Okay, screw LittleBigPlanet, I want this game for Christmas!
+Take a look at this
+#2 posted by Kilo , December 9, 2008 12:46 AM
+
+Matthew, any chance you're interesting in releasing the source for this? It's absolutely fantastic, and I let it run for hours... now I want to play with it more, and I'm wondering what the code looks like.
+Take a look at this
+#3 posted by Iunnrais , December 9, 2008 1:09 AM
+
+What selection method does he use? Roulette wheel? What are the mutation rates? Does he use "throwback" techniques when previous generations had a better fit than the current one (apparently not)?
+Take a look at this
+#4 posted by js7a , December 9, 2008 1:17 AM
+
+I wonder what it would do with the VW Gold TwinDrive plug-in hybrid.
+Take a look at this
+#5 posted by js7a , December 9, 2008 1:26 AM
+
+Golf* :/
+Take a look at this
+#6 posted by jfranchino , December 9, 2008 2:06 AM
+
+Very nicely done.
+
+But good heavens, that's tedious and seemingly inefficient in this example. There has GOT to be a better way.
+Take a look at this
+#7 posted by Kevbo , December 9, 2008 2:49 AM
+
+You could save the Big 3 automakers with this! They're probably not running flash/java-enabled browsers though.
+Take a look at this
+#8 posted by pinguis , December 9, 2008 3:53 AM
+
+The relevant reddit discussions, for those interested in more info.
+
+@3 kilo, he does not mention open sourcing it (as far as i can see) but he does plan to update the app to some extent.
+
+one
+
+two
+Take a look at this
+#9 posted by Alexandre Van de Sande Author Profile Page, December 9, 2008 5:35 AM
+
+that's what they should teach in schools when talking about evolution.
+
+Not about wether or not your cousin waldo resembles more or less an ape, not either jesus met dinossaurs, not about fossils or all that hard biology.
+
+They should teach about evolution the universal law, the universal process, the 'algorithm' (maybe not saying that a-word) and how it can be universally applied to anything.
+
+That's when evolution stops being something abstract that may have happened billions of years ago and may or may not contradict you beliefs, and evolution becomes a useful everyday tool.
+Take a look at this
+#10 posted by Alexandre Van de Sande Author Profile Page, December 9, 2008 5:49 AM
+
+will wright must be mad right now. this is funnier to look at than most spore planets...
+Take a look at this
+#11 posted by IamInnocent , December 9, 2008 6:08 AM
+
+Thanks God for intelligence: all those 'evolutionary' concept really need that nudge from time to time to work.
+Take a look at this
+#12 posted by websorcerer , December 9, 2008 7:02 AM
+
+TRY IT YOURSELF!!
+
+An amazingly similar game is on Addicting Games:
+
+http://www.addictinggames.com/fantasticcontraption.html
+Take a look at this
+#13 posted by the Other michael Author Profile Page, December 9, 2008 7:05 AM
+
+"that nudge" is usually supplied by your dumber neighbors being eaten or eating the wrong kind of food, themselves.
+
+My G-d created a marvelous Universe that runs itself just fine from His first principles -- and He doesn't need to constantly tinker with it. I'm so sorry to hear that yours in still in Beta. "Intelligent Design" is not -- it's an apologia for Flawed Creation from a minor deity.
+Take a look at this
+#14 posted by padster123 , December 9, 2008 7:08 AM
+
+Ah - the blind watchmaker itself, in action.
+
+Brilliant. This x deep time = no need for "intelligent design"
+Take a look at this
+#15 posted by lecti , December 9, 2008 7:31 AM
+
+It makes for a wonderful "generative" narrative. I like the accessibility of the concept.
+Take a look at this
+#16 posted by meadhbh , December 9, 2008 8:49 AM
+
+yay! well done! i was looking for something like this to explain GA to a n00b friend of mine.
+
+the only tweak i would make would be to display the top one or two designs. that way you could see what design the current one was competing against.
+
+and for the person who commented about the app's inefficiency.. i think the main purpose for this app is to demonstrate GA in general, not to be the most efficient at what it's doing.
+Take a look at this
+#17 posted by Versh , December 9, 2008 8:51 AM
+
+@#9 Alexandre Van de Sande
+Exactly!
+And what would even drive the point home even further, would to have the failed car generations remain stuck in piles of wasted iterations.
+Slowly zoom out to reveal the many, many broken versions in comparison to the few successes. Evolution doesn't have end goals-- there's results based on the functional survival of mutations. Giraffes didn't grow longer necks from straining to reach the top leaves, the descendants of mutants that had longer necks were simply eating more, living longer, and procreating more often.
+Interactive mediums and animated illustrations seem to be the best tools toward explaining such an abstract concept, including the many thousands of years abbreviated to a human scale.
+I wish there were these kind of examples and COSMOS type programs in development-- this type of "layman explanation" is just what the world needs to increase scientific literacy.
+
+programmingother redditsprogramming
+
+    * comments
+    * related
+
+    *
+
+      genetic algorithm building a small car (flash)
+
+      880 points | 320 comments |  submitted 23 hours ago by greut from wreck.devisland.net
+
+    *
+
+      copperdomebodha |201 pointswritten 19 hours ago
+
+      GROW A BIGGER FRONT WHEEL DODAMMIT!
+          o
+
+            FormKing |13 pointswritten 3 hours ago
+
+            I left it running all night - results
+                +
+
+                  flyingfox |2 pointswritten 1 hour ago
+
+                  After enough time, all of my cars start to look the same.
+
+                  Long-ish wheel base with medium or larger wheels (usually similarly sized). The masses (red circles) are suspended near the mid point just high enough to clear the terrain. The supporting springs tend to be soft.
+
+                  The most common failure mode (aside from mutation related funkyness) involves a red circle moving too low and striking the ground after a large bump. With the right combination of springs and weights sometimes a series of bumps can completely invert the Explorer... just like real life.
+                      #
+
+                        yxhuvud |4 pointswritten 35 minutes ago
+
+                        It seems the cars are given too little time on the track, creating many diverse but ok designs. More time on track would probably narrow it down a little.
+                +
+
+                  copperdomebodha |2 pointswritten 1 hour ago
+
+                  Nice! It doesn't suck! But, did it make it over the hill O' doom?
+                      #
+
+                        FormKing |2 pointswritten 1 hour ago
+
+                        If it's the hill I think you're talking about (where most die) then yes, it's just off the left edge of the screenshot.
+          o
+
+            EmptyTon |21 pointswritten 15 hours ago
+
+            Oh, the disappointment. I've been running mine for quite a while when suddenly it grows a fucking huge front wheel. The previous thousand "cars" keep failing on this particularly large drop and I suspect the big wheel will give this species an advantage. At the very least, it's the right direction.
+
+            I watch, almost in tears, as the vehicle flips, dooming its passengers to a pointy upside-down death.
+
+            Playing god is hard, lets go shopping!
+                +
+
+                  EmptyTon |13 pointswritten 14 hours ago
+
+                  I watched the miracle of the machine conquering the slope. It looked as if it was going to tip like the others, but it did not. It looked defiantly in the face of the murderous slope and conquered it! Unfortunately it ran out of time, but it died a better man than the rest.
+          o
+
+            itsmeee |41 pointswritten 18 hours ago
+
+            mine grew a smaller front wheel which made me sad :(
+
+            edit: sweet, now he has a huge front wheel! EAT IT COPPERDOMEBODHA!
+                +
+
+                  parsim |29 pointswritten 15 hours ago
+
+                  Mine formed a shape I had never seen before in Nature and traveled so fast it went back in time. I can't say much except that I applied for a patent and Time magazine wants to put me on the cover next month.
+                      #
+
+                        Chairboy |54 pointswritten 15 hours ago
+
+                        Better: Time magazine wants to put me on the cover last month.
+                            *
+
+                              JohnnyCanuck |4 pointswritten 10 hours ago
+
+                              http://i.somethingawful.com/inserts/articlepics/photoshop/03-31-06-magazines/Blue-Storm.jpg (source)
+                            *
+
+                              Space-Paranoids |4 pointswritten 15 hours ago
+
+                              Well, why didn't they?
+                                  o
+
+                                    GLneo |16 pointswritten 14 hours ago
+
+                                    They will, they need to do it first then they will have...
+                                        +
+
+                                          Space-Paranoids |7 pointswritten 14 hours ago
+
+                                          Once they do it in the future it will have happened in the past?
+                                              #
+
+                                                MercurialMadnessMan |4 pointswritten 13 hours ago
+
+                                                duh
+                                  o
+
+                                    teambob |7 pointswritten 14 hours ago
+
+                                    You are not thinking four dimensionally
+                                        +
+
+                                          monroetransfer |18 pointswritten 13 hours ago
+
+                                          1 X 1 man cube is 4 X 4 world cube. You are now thinking dimensionally 4 sided god cube is lie cube -1 = +1 education is liar. You are now thinking five dimensionally.
+                                              #
+
+                                                0x44 |1 pointwritten 1 hour ago
+
+                                                Cubic time is a fallacy promoted by evil men to blind you to the truth of the icosikaitetragonic day.
+          o
+
+            Dagon |31 pointswritten 19 hours ago
+
+            Have you any idea how hard it is to evolve a natural wheel? All the sinews and muscles can go hang - it's a tough thing to do!
+                +
+
+                  Lemm1w1nkz |5 pointswritten 13 hours ago
+
+                  Apparently not that hard. Welcome to the wrong club, the line for your mandatory manual of poor fact checking starts here.
+                      #
+
+                        Dagon |8 pointswritten 13 hours ago
+
+                        That's hardly a wheel. When I roll along the ground independant of anything else, I'm hardly 'freewheeling', I'm rolling along the smegging ground.
+
+                        Though, it's fairly solid proof that Life Finds A Way.
+                            *
+
+                              zanthraxnl |5 pointswritten 9 hours ago
+
+                              According to Wikipedia a wheel is "a circular device that is capable of rotating on its axis, facilitating movement or transportation whilst supporting a load, or performing labour" So I guess rolling on the floor isn't enough to be called a wheel.
+                            *
+
+                              sqwishy |1 pointwritten 10 hours ago
+
+                              What the spider was doing was like a human doing a cartwheel. Except an eight-legged human... So your sort of have a point. But also it was spinning fast... I guess that's cause it's small... But it was on its side so still a smegging wheel!
+                                  o
+
+                                    Dagon |4 pointswritten 10 hours ago
+
+                                    So if I lay down and roll along the ground (not doing a cartwheel, but it's functionally identical, so I want to make the distinction) I can be classed as a wheel?
+                +
+
+                  nmcyall |13 pointswritten 17 hours ago
+
+                  rotating blob cylinder
+                      #
+
+                        Dagon |21 pointswritten 17 hours ago
+
+                        Wouldn't produce much in the way of what you'd call torque...
+
+                        "I mean, is sitting in the mud with your wheels spinning an important evolutionary niche?"
+
+                        -- 'Ponder' Stibbons, Head of Inadvisably Applied Magic at Unseen University.
+                            *
+
+                              unonimus5 |10 pointswritten 14 hours ago
+
+                              Terry Pratchett is a god.
+                                  o
+
+                                    Dagon |7 pointswritten 14 hours ago
+
+                                    Out of my 50Kb+ quotes.txt file, around 20% of all quotes are by Einstein or some variant on the quote, and another 20-30% easy taken up by Discworld quotes.
+
+                                    Sometimes I commit one to the file that I've previously simply committed to memory ^_^
+                                        +
+
+                                          jaggederest |8 pointswritten 13 hours ago
+
+                                          post.
+
+                                          Edit: it.
+                                              #
+
+                                                Dagon |6 pointswritten 13 hours ago
+
+                                                Okay.
+                                                    *
+
+                                                      jaggederest |5 pointswritten 13 hours ago
+
+                                                      Can I have a link?
+                                                          o
+
+                                                            Dagon |9 pointswritten 12 hours ago
+
+                                                            http://www.shorttext.com/pmux8mn ^^ My at-work quotes.txt
+                                                          o
+
+                                                            Dagon |4 pointswritten 12 hours ago
+
+                                                            When I can a) get home and get the quotes file from home - I gather them from different sources when at home than I do at work;
+
+                                                            b) How do you post a text file to reddit? Do I link to my blog? Can I post to a free site?
+                                                          o
+
+                                                            sqwishy |1 pointwritten 10 hours ago
+
+                                                            Also, http://en.wikiquote.org/
+                                        +
+
+                                          MercurialMadnessMan |6 pointswritten 13 hours ago
+
+                                          You have a quotes.txt ?
+
+                                          LOL, I've always wondered how people came up with amazing quotes and puns on the spot. Clearly having files for them is the most efficient way possible!
+                                              #
+
+                                                Dagon |9 pointswritten 13 hours ago
+
+                                                Funnily enough, putting the quotes into the file triggers something in my memory that lets me remember the quote. I'm really horrible with remembering anything, but I'm really good with quotes.
+                                  o
+
+                                    p3ngwin |3 pointswritten 13 hours ago
+
+                                    sadly he'll be next to god with his current condition :(
+                            *
+
+                              nmcyall |5 pointswritten 16 hours ago
+
+                              I was thinking more like tank threads.The skin of the blob would advance.
+                                  o
+
+                                    Dagon |3 pointswritten 16 hours ago
+
+                                    Good lord, that's far better than what I was thinking. I was thinking a cylinder filled with a viscous fluid and somehow rotating the fluid either chemically or electromechanically.
+                                        +
+
+                                          nmcyall |5 pointswritten 14 hours ago
+
+                                          With a small 8 ohm speaker blasting "They see me rolling."
+                                        +
+
+                                          jaggederest |2 pointswritten 13 hours ago
+
+                                          Or you could use muscles to form an oblate spheroid and rotate the flat part of the sphere.
+                                              #
+
+                                                Dagon |2 pointswritten 13 hours ago
+
+                                                You'd still need some form of axle, unless the entire body would rotate with it...
+                                                    *
+
+                                                      jaggederest |3 pointswritten 12 hours ago
+
+                                                      Entire body.
+                                                          o
+
+                                                            Dagon |2 pointswritten 12 hours ago
+
+                                                            shrugs
+
+                                                            Stranger things have happened.
+                +
+
+                  macrael |3 pointswritten 12 hours ago
+
+                  What about the mulefa from His Dark Materials? They evolved an axle and two pushing arms.
+                      #
+
+                        Dagon |3 pointswritten 12 hours ago
+
+                        That series has always been on my to-read list. How does this axle function?
+                            *
+
+                              philh |2 pointswritten 3 hours ago
+
+                              The axle is essentially a hook made of bone. The wheels are large round seed pods from a plant.
+                            *
+
+                              idonthack |0 pointswritten 8 hours ago
+
+                              Magic.
+          o
+
+            tankd0g |10 pointswritten 14 hours ago
+
+            PUT THE LOAD FURTHER BACK MOTHER FUCKER!
+                +
+
+                  MercurialMadnessMan |13 pointswritten 13 hours ago
+
+                  NO IT'LL FALL BACKWARDS. IT'S ALGORITHM'ING SO YOU DON'T HAVE TO
+          o
+
+            cloud4197 |17 pointswritten 17 hours ago
+
+            Leave Dod out of it. It's evolution
+                +
+
+                  Ciceros_Assassin |8 pointswritten 16 hours ago
+
+                  Indeed.
+                      #
+
+                        modnar |9 pointswritten 16 hours ago
+
+                        Indodd.
+                +
+
+                  thatguydr |2 pointswritten 14 hours ago
+
+                  He meant "Liebermandamnit", but he got impatient.
+          o
+
+            dustyBin23 |1 pointwritten 3 hours ago
+
+            mine looked like the Oscar Mayer Wienermobile! Ummmm
+          o
+
+            jokermatt999 |5 pointswritten 13 hours ago
+
+            I'm running this in 3 tabs right now. One has become completely screwed and continuously puts the red circles on the bottom. The continual failure is somehow hilarious.
+
+            Edit: aww, I went to screenshot and accidentally refreshed. Anyway, it was doomed for about 4 or 5 straight generations. The graph was basically a spike and then a flatline at the top of efficiency, since not a single one made progress.
+    *
+
+      IBFreddy |81 pointswritten 17 hours ago
+
+      Funny, the intelligent design version of this works on the first try.
+
+      /s
+          o
+
+            fabjan |7 pointswritten 8 hours ago
+
+            Sure, now you just need someone to do the design.
+                +
+
+                  LuxOFlux |5 pointswritten 1 hour ago
+
+                  Yeah, add tinted glass and spoiler.
+          o
+
+            vagyok |3 pointswritten 8 hours ago
+
+            Also, mine's still a car after 5 minutes (did not evolve into a human or a dog), so no new information was produced, or could ever be produced, by mutations using a "genetic algorithm".
+
+            Edit: /s
+          o
+
+            ak_avenger |5 pointswritten 11 hours ago
+
+            Yeah, but the evolutionary version of this is both more interesting and more likely to exist.
+                +
+
+                  charminggeek |6 pointswritten 4 hours ago
+
+                  More interesting, yes -- but did you just say that small cars that are the result of evolution are more likely to exist than those intelligently designed?
+                +
+
+                  gizmo490 |2 pointswritten 3 hours ago
+
+                  Also if you leave it on all night it's different and seems to go further than the one that I would have intelligently designed. Although maybe that says something about me as an intelligent designer.
+          o
+
+            Eiii333 |8 pointswritten 16 hours ago
+
+            Just like real life!
+    *
+
+      erisian |80 pointswritten 18 hours ago
+
+      suggestions:
+         1.
+
+            better statistics. identify what the longest distance achieved was, and distribute each of the individuals along a bell curve.
+         2.
+
+            MULTIPLAYER, BABY! Our little cars could have sex with / fight each other.
+         3.
+
+            I would say 'extend the time limit' but thats just my greater issues with the concept of death speaking out. Maybe include the ability to modify what the different constraints are.
+         4.
+
+            Cross-generational analysis. Show what % of each generation achieved the goals of the previous generations. Show how many individuals 'aborted' (i.e. instant death or -50% achievement of mean) per generation -- does overspecialization cause higher abortion/miscarriage rate?
+         5.
+
+            More evolutionary barriers. Throw in some pits that they have to have enough speed to jump over, that kind of thing.
+
+      I could go on. Blah. I'm going to go toss some chlorine into the swimming pool so I can get that 'playin god' feeling out of my system.
+          o
+
+            Wavicle |31 pointswritten 15 hours ago
+
+            Other suggestions:
+               1.
+
+                  LOWER THE MUTATION RATE... Good heavens, a population of 20 that regularly makes it past the crater is often breeding a second generation where as many as 1/3 of the descendants fail to even make the first hill.
+               2.
+
+                  Elitist selection. I've had one of these simulations running for 8 hours and the "best" design fails to increase monotonically because it isn't making it into the next generation.
+               3.
+
+                  Use Gray Codes. There appears to be a hamming cliff in the case of a triangular-shaped car with roughly centered weights. The approximately-quadrilateral car beats it every time and the triangular car can't evolve into a quadrilateral. I'm not sure why, but it looks like it might be a cliff.
+          o
+
+            eOgas |9 pointswritten 15 hours ago
+
+                MULTIPLAYER, BABY! Our little cars could have sex with / fight each other.
+
+            http://memeparty.com/i/m/306f76c6c0a7d8e6e50eb361a4b1bdf9.jpg
+                +
+
+                  master_gopher |9 pointswritten 14 hours ago
+
+                  Please, nobody post that thing with the dragons.
+                      #
+
+                        takeda64 |6 pointswritten 13 hours ago
+
+                        what do you mean? It's pretty cute ;)))
+                            *
+
+                              idonthack |5 pointswritten 7 hours ago
+
+                              i'm pretty sure that's not what he was talking about.
+    *
+
+      randomb0y |3 pointswritten 1 hour ago
+
+      I left it running for about 12 hours and this is what I ended up with.
+    *
+
+      hectorwc |103 pointswritten 20 hours ago
+
+      Will it take millions of years? It sure seems like it.
+          o
+
+            steve_j |6 pointswritten 9 hours ago
+
+            a genetic algorithm is not guaranteed to find the most optimal solution to a problem. You could be running it until the end of time!
+          o
+
+            TheColonel |9 pointswritten 13 hours ago
+
+            I think I'm going to leave it running overnight to see if the stupid fucker ever makes it.
+
+            It's both interesting and amazingly frustrating.
+                +
+
+                  brdude |11 pointswritten 13 hours ago
+
+                  I left it running for about 30min - 1 hour and it actually found a solution that would get passed the big drop intact but moments later the time limit would kick in. If only if had more time.
+                      #
+
+                        idonthack |3 pointswritten 7 hours ago
+
+                        Does it really take a lot of time? Mine was doing that within five minutes
+
+                        EDIT: I guess I was lucky. I restarted it and now it's building unicycles that barely make it past the first hill
+    *
+
+      bazoople |90 pointswritten 20 hours ago
+
+      I keep wanting to yell, "No, idiot, you've already done that one a million times (with slight variation) and every time you flip over & squish the passengers!"
+
+      No wonder God gets cranky.
+          o
+
+            mycall |21 pointswritten 19 hours ago
+
+            It would be smart to mutate from the best run until it doesn't get better, then go to random mutation, or go next best previous mutation.
+                +
+
+                  fancy-free |5 pointswritten 7 hours ago
+
+                  That's called simulated annealing
+                +
+
+                  nmcyall |15 pointswritten 17 hours ago
+
+                  Yes to optimize the time it takes to find A solution, but perhaps some of the other individuals will give unexpected results, it is more fair to do it this way.
+                      #
+
+                        tesseracter |11 pointswritten 15 hours ago
+
+                        the proper way of putting this is to ignore local maximums in order to find a global maximum.
+
+                        or to put it another way, don't put all your eggs in one basket, or dont fight with a knife(even the best knife) if the other dude brought a gun.
+          o
+
+            lolmanzorz |5 pointswritten 15 hours ago
+
+            So this is why we have retarded babies.
+                +
+
+                  Mr_A |20 pointswritten 15 hours ago
+
+                  Because the cars carrying them didn't evolve right?
+                      #
+
+                        Shaper_pmp |5 pointswritten 8 hours ago
+
+                        Broadly speaking... yes.
+    *
+
+      akabaka |31 pointswritten 16 hours ago
+
+      I ran this for 6 hours and it evolved into a sentient bulldozer and leveled the entire field.
+          o
+
+            thatguydr |21 pointswritten 13 hours ago
+
+            If you run it for a few months, eventually it starts screaming to be released.
+
+            Close the browser window when that happens.
+                +
+
+                  IConrad |1 pointwritten 1 hour ago
+
+                  I'm afraid you waited too long, Dave.
+    *
+
+      randito |48 pointswritten 19 hours ago
+
+      We should crossbreed this with LineRider and see what kind of babies it has.
+          o
+
+            racetrack |26 pointswritten 18 hours ago
+
+            I was thinking more Fantastic Contraption
+                +
+
+                  Skofo |4 pointswritten 13 hours ago
+
+                  I was thinking more Interactive Buddy. Survival of the best buddy brutalizers.
+          o
+
+            thatguydr |4 pointswritten 14 hours ago
+
+            omg.
+
+            but what would the linerider fitness function be?
+                +
+
+                  albinofrenchy |6 pointswritten 13 hours ago
+
+                  how quick it fucks up a car
+
+                  Edit: Holy fuck. That could work...
+                      #
+
+                        thatguydr |3 pointswritten 13 hours ago
+
+                        Define "fuck up". I'm actually curious.
+                            *
+
+                              albinofrenchy |4 pointswritten 13 hours ago
+
+                              At first, I was thinking, start the line as a straight line, and evolve the car for twenty rounds. Then evolve the line to try to minimize(crash it!) the cars movements. I'm thinking model the line as a large series of connected points that can 'evolve' up or down.
+
+                              Here is the trick: you'd have to also reward line smoothness or it would make a wall.
+                                  o
+
+                                    thatguydr |7 pointswritten 12 hours ago
+
+                                    The pathology: it will generate a steep hill. No car can pass.
+
+                                    Line Rider is awesome because the path LOOKS like something. I'd evolve a line rider path which looked as much like an edge of a picture as possible while allowing the sled maximal distance along mostly unique lines.
+                                        +
+
+                                          albinofrenchy |1 pointwritten 7 hours ago
+
+                                          You are assuming the car can only go forward. Give the car some initial force, and count any distance traveled as legit. Even if it goes up a steep hill, it will have to come down that steep hill.
+
+                                          Although, the metric would have to change to movement, as opposed to distance from the initial place.
+
+                                          You could do the picture thing too, but then they'd be cooperative... It occurs to me you could evolve them together in such a case, which would likely simplify the problem.
+    *
+
+      Ulrika |42 pointswritten 20 hours ago
+
+      Wonderful! I picked this link up from a comment in another article last night and have been running six simulations side by side all morning. In fact I was just comparing the six continuously improving vehicles right before I switched to reddit and read the title. :)
+
+      The vehicles seem to do best when their weight, suspension, and wheel spacing are optimum for getting over the big crater. Also, it seems that a few designs find unique local maxima, where they oscillate, never finding the global maximum that most of settle on.
+
+      Finally, I have a hunch if one were to take the spatial fourier transform of the terrain, that the optimum wheel spacing would be d/2 where d corresponds to the largest spectral peak. That is, the wheels tend to be sized to just straddle the predominant peaks.
+          o
+
+            sniper1rfa |1 pointwritten 2 hours ago
+
+            "The vehicles seem to do best when their weight, suspension, and wheel spacing are optimum for getting over the big crater."
+
+            Makes sense - the peak is the biggest immediate barrier, therefore it will have the most predominate effect on the construction of the vehicle. That's the way it is when you engineer something, too.
+          o
+
+            noseeme |6 pointswritten 13 hours ago
+
+            Stop making us look bad, smartypants.
+    *
+
+      grandeandy |22 pointswritten 16 hours ago
+
+      Hours have gone by and I have had minimal progress. I'm in too far now though... I must keep this going until it can compete with foreign manufacturers.
+          o
+
+            redditnoob |35 pointswritten 15 hours ago
+
+            My program discovered unions. Oh shit.
+                +
+
+                  snissn |4 pointswritten 12 hours ago
+
+                  i read that as un-yuns or like onions
+          o
+
+            fiercelyfriendly |5 pointswritten 8 hours ago
+
+            Mine just got refused a bailout.
+          o
+
+            sn0re |4 pointswritten 14 hours ago
+
+            Seems like once it settles on a design that doesn't crash before time runs out, there's not a whole lot left for it to do.
+    *
+
+      b3mus3d |39 pointswritten 20 hours ago
+
+      This should really be a screensaver.
+          o
+
+            dmd |18 pointswritten 17 hours ago
+
+            Same idea, but visually way cooler, and OSS and extensible.
+                +
+
+                  steve_j |1 pointwritten 9 hours ago
+
+                  any idea how to change the settings for that screensaver? It's running oh about 3 fps for me.
+                +
+
+                  thatguydr |3 pointswritten 14 hours ago
+
+                  I love breve, but his Mac screensaver has never worked for me under 10.4. =\
+                +
+
+                  GuigzForAll |3 pointswritten 14 hours ago
+
+                  Cool!
+
+                  It really cracked me up when a massive brick of only a single block fell down, moving at near-zero speed (even then, God knows how).
+                +
+
+                  tesseracter |2 pointswritten 15 hours ago
+
+                  bah, apt has made me lazy, and i cant find it :-(
+          o
+
+            Seeders |5 pointswritten 18 hours ago
+
+            swf files can also be set as your desktop background. Also, theres plenty of converters out there to turn them in to screen savers: http://www.google.com/search?q=flash+screensaver
+                +
+
+                  Kostoglotov |4 pointswritten 17 hours ago
+
+                      swf files can also be set as your desktop background.
+
+                  Which OS are you using?
+                      #
+
+                        Seeders |8 pointswritten 17 hours ago
+
+                        I remember doing it in XP a few years back. I tried making a flash desktop that would launch my programs and do animations and things. I dont think you can point directly at the swf file, but if you embed it in an html page you can use Active Desktop to display it.
+
+                        Looks like Active Desktop was discontinued for Vista. http://en.wikipedia.org/wiki/Active_Desktop
+                            *
+
+                              voxel |6 pointswritten 15 hours ago
+
+                              That's because Vista is better, faster, and gives you more features than XP.
+                                  o
+
+                                    Space-Paranoids |19 pointswritten 14 hours ago
+
+                                    I'm sure the twelve people using Active Desktop were crushed.
+                                        +
+
+                                          voxel |2 pointswritten 9 hours ago
+
+                                          I actually agree with you. I tried using Active Desktop a few times, and it seemed slow and unresponsive. I never kept it on more than 30 seconds before turning it back off.
+
+                                          Good riddance to that feature.
+                                  o
+
+                                    Filmore |3 pointswritten 13 hours ago
+
+                                    After finally beating the High Wizard of Argonok, the GM decided we'd all get a heaping helping of Vista instead... we were pissed.
+    *
+
+      liquen |11 pointswritten 12 hours ago
+
+      I just discovered it is possible to zoom in and out (using mouse wheel) and to brake (using down arrow).
+    *
+
+      LuxOFlux |1 pointwritten 58 minutes ago
+
+      The .. the large downward slope ....
+    *
+
+      xuhu |47 pointswritten 21 hours ago
+
+      Can't believe noone's commenting. This is wonderfully useless.
+
+      I was somewhat disappointed that the best individuals weren't submitted back to the server. It sucks starting from a random population each time.
+          o
+
+            Lumarin |6 pointswritten 12 hours ago
+
+            I didn't see Noone's comment...
+          o
+
+            powerfulmojo |26 pointswritten 21 hours ago
+
+            The author posted it to a different thread earlier. There's a discussion there with a little more detail: http://www.reddit.com/r/programming/comments/7i22c/genetic_programming_evolution_of_mona_lisa/c06pt65
+          o
+
+            jokermatt999 |5 pointswritten 13 hours ago
+
+            Now I really want to take part in some massive genetic algorithm/evolution program/contest.
+                +
+
+                  ak_avenger |2 pointswritten 11 hours ago
+
+                  Me too. I've only ever written one genetic algorithm and it was lame compared to this.
+    *
+
+      Mad_Gouki |28 pointswritten 19 hours ago
+
+      We need a genetic algorithm subreddit, because I want more of these, like one for clocks.
+          o
+
+            oconnor0 |14 pointswritten 16 hours ago
+
+            Like a flash version of http://scienceblogs.com/pharyngula/2007/10/how_to_evolve_a_watch.php ?
+          o
+
+            Siraf |7 pointswritten 13 hours ago
+
+            Done and done
+          o
+
+            inoshiro |5 pointswritten 14 hours ago
+
+            i got into these ages ago, here are some of the cooler ones i've found.
+
+            Darwinbots - part ecology, part arena combat between evolving "bots". http://www.darwinbots.com/WikiManual/index.php?title=Main_Page
+
+            Jeffrey Ventrella's page - tons of cool evolution-based programs, check out gene pool and darwin pond especially. http://www.ventrella.com/
+
+            Framsticks - may be discontinued, highly customizable, sort of hard to use, but very good at producing variety if you know what you're doing. http://www.framsticks.com/
+    *
+
+      mosesconspiracy |30 pointswritten 19 hours ago
+
+      it took mine an excessively long time to realize that the wheels needed to be on the bottom.
+          o
+
+            polyparadigm |11 pointswritten 18 hours ago
+
+            One of my windows got stuck in a "W strategy" for a while: It realized that, if you start high enough, a controlled collapse can actually get you pretty far. There were generations of front-heavy cars after that, with the red circles poised to lean over and grab a little more length at the end of the run.
+
+            I've seen this in other genetic algorithm work. I guess it's hard to distinguish diving from sustainable locomotion.
+                +
+
+                  timmaxw |11 pointswritten 17 hours ago
+
+                  I think that effect can be diminished by making the run time longer. Maybe the run time should progressively get longer as the simulation goes on.
+                      #
+
+                        adrianmonk |7 pointswritten 16 hours ago
+
+                        It would not be hard to measure the furthest distance that any car travels and then run the simulation for 1.25 times that distance.
+                +
+
+                  starwed |5 pointswritten 17 hours ago
+
+                  Yeah, mine is definitely surmounting hills by tipping over them.
+
+                  The basic template is a right triangle. The left wheel is large, the right wheel small. Above the small wheel is a large weight, and exactly halfway along the line between the large wheel and large weight is a very small weight.
+
+                  As it lurches onto a hill (or even a small bump), it starts to tip over. The large wheel and large weight counterbalance, so it skates along on one wheel. On the other side of the small hills, it then rights itself and continues along.
+
+                  This works until it encounters the large downward slope and flips over to its doom.
+
+                  -edit-
+
+                  It's now tweaked the parameters such that it almost always gets past the previous point of doom. No viable competitors have emerged, and the triangle car is slowly optimizing for speed.
+          o
+
+            Mr_A |2 pointswritten 15 hours ago
+
+            I counted 22 complete run-throughs before a single car had both wheels touch the ground first.
+    *
+
+      funkah |1 pointwritten 2 hours ago
+
+      Uh... I have no idea how to respond to this. Maybe it gets better if you sit there like an idiot and watch this thing go through thousands of iterations?
+    *
+
+      myddrn |1 pointwritten 3 hours ago
+
+      Eight tabs at the same time, they all seem to approximate a triangle with wheels eventually.
+    *
+
+      daz3dpanda |1 pointwritten 3 hours ago
+
+      where is the algorithm?
+    *
+
+      neoabraxas |11 pointswritten 15 hours ago
+
+      I'm not very big on the current crop of genetic algorithms. It seems like we're doing the whole inheritance thing wrong. The demos I've seen to date all get stuck in local minima or jump all over the solution space and this one is no different. I think there is more to evolution than we currently account for in our computer modeling. For example, there might be environmental effects on the DNA of the parents that get propagated to offspring. Thus evolution might be a sum of not just inheritance and random variation but also the experience of the parents. Granted this is a controversial hypothesis but it's something many evolutionary biologists are beginning to warm up to.
+
+      Secondly, most genetic algorithms that I see popping around the net do not implement speciation and allow species with too much genetic diversity to crossbreed resulting in pretty pathetic offspring. This is evident in this simulation as well where two passable designs often get crossbred producing an utterly useless vehicle.
+
+      Finally, remember that evolution is nothing more than a stochastic search of the solution space that may or may not get stuck in a local minimum. There is nothing magical about it. The reason it produces such impressive variety of species on this planet is that the computation was executed with immense parallelism for almost four billion years. And it still had a tendency to get stuck in local minima. Consider the pre-cambrian explosion period or the reign of dinosaurs. I think there are more interesting stochastic search algorithms that produce equally interesting results.
+
+      But it's a cool animation nonetheless. It seems to be heavily constrained in its gene expression though as I'd expect it to be able to come upon a big front wheel pretty quickly yet it keeps stuck in the same pattern and really not making progress. Is the mating system properly designed? It seems like the subsequent generations have too much variation so the good traits often get lost. I think there you're allowing for too much random mutation and not enough inheritance...
+          o
+
+            tie-rack |7 pointswritten 12 hours ago
+
+                The demos I've seen to date all get stuck in local minima...
+
+            I'm pretty sure real (biological) evolution has the same problem.
+                +
+
+                  crusoe |5 pointswritten 11 hours ago
+
+                  Panda versus pidgeon. A Panda is a perfect example of a "Local Minima" adapted animal, tied very tightly to its biome. Pidgeons and rats are everywhere!
+    *
+
+      t35t0r |1 pointwritten 3 hours ago
+
+      it can't get past the dipped valley, and sometimes it looks like it's doing ok but it resets itself for no reason!!
+    *
+
+      noseeme |8 pointswritten 13 hours ago
+
+      I've been running this for a few hours now. Now,instead of rolling forward, the car just flies over the mountains while reading poetry.
+          o
+
+            NinthAgendaDotCom |3 pointswritten 8 hours ago
+
+            But can it run Linux?
+    *
+
+      adrianmonk |12 pointswritten 16 hours ago
+
+      I'd love to see a version (or an option) where all 20 cars in the current generation run across the same course at the same time, superimposed on each other.
+          o
+
+            thatguydr |7 pointswritten 13 hours ago
+
+            I'd love to see one in which the cars grow missiles and fight while driving over naked women.
+                +
+
+                  eipipuz |4 pointswritten 10 hours ago
+
+                  I'd love to see one where all 20 naked women run across the same course at the same time, superimposed on each other.
+                      #
+
+                        thatguydr |3 pointswritten 9 hours ago
+
+                        Like QWOP, but with boobs.
+
+                        Nice pitch.
+    *
+
+      rabidgnome229 |20 pointswritten 20 hours ago
+
+      I watched it for a while and it really isn't a great example of a genetic algorithm. After weeding out the designs that fail immediately none of the designs did a whole lot better than any others. It's not really that it converged as there was still a great deal of variety in the cars, but their performance did not vary greatly, which kills the effectiveness of a genetic algorithm. A better track which creates more variation in fitness might make for more interesting results.
+          o
+
+            sniper1rfa |1 pointwritten 1 hour ago
+
+            Wouldn't optimizing the search be sortof negate the point of the program?
+          o
+
+            tesseracter |2 pointswritten 14 hours ago
+
+            my fitness test would be "area under the curve", or the integral of distance over time. it would highlight the cars that are faster earlier that straight distance fitness.
+          o
+
+            Wavicle |2 pointswritten 15 hours ago
+
+            I'm not completely sure, but I think the "great variety" of cars is due to either a bad selection algorithm or a high mutation rate. I suspect the latter. I've seen runs that had 20/20 cars at least make the first hill, followed by a generation where 5 or 6 (hard to say because they blip by so fast) die immediately.
+    *
+
+      clipmann |4 pointswritten 11 hours ago
+
+      I already picked names for all of my 20, i'm gonna leave this running for months!.
+    *
+
+      Noink |2 pointswritten 9 hours ago
+
+      Mine was stuck in a unicycle strategy for awhile - one large wheel with everything else aloft and forward just enough to balance as long as possible.
+    *
+
+      ngcazz |1 pointwritten 5 hours ago
+
+      I just lost 15 minutes looking at this awesome thing.
+    *
+
+      steve_j |2 pointswritten 9 hours ago
+
+      What exactly are the requirement for fitness? I've noticed the obvious, like when the red circles hit the ground, but is there a drop height limit? Or can the terrain not tough the gray frame holding the wheels?
+    *
+
+      Skofo |4 pointswritten 13 hours ago
+
+      That barely evolved. This is a lot more interesting.
+          o
+
+            spaceknarf |2 pointswritten 4 hours ago
+
+            The cool thing about this is that it's different every time, where the YouTube video is not.
+    *
+
+      planetmatt |1 pointwritten 6 hours ago
+
+      If it starts evolving into a little wireframe HK, someone call Sarah Connor.
+    *
+
+      IanCal |1 pointwritten 6 hours ago
+
+      Not bad, but I can't help but feel that the small number of configurations could be brute forced pretty easily. Particularly with some simple iterative refinement.
+    *
+
+      Mattyi |16 pointswritten 21 hours ago
+
+      Short explanation here.
+    *
+
+      Jalisciense |6 pointswritten 16 hours ago
+
+      And on the 8th day....god made a Pinto with a Hemi
+    *
+
+      jomtom |7 pointswritten 18 hours ago
+
+      Are genetic algorithms the new reddit Erlang?
+          o
+
+            thatguydr |4 pointswritten 14 hours ago
+
+            I hope so, since I love them and I'm an expert in them. It would be a wet dream for people to suddenly go all apeshit over global search heuristics.
+
+            I just wish someone could build a screensaver that had robots fighting to the death on a robotron 2084-style board. If you could evolve the winners, it would be so wonderful.
+    *
+
+      calantorntain |8 pointswritten 20 hours ago
+
+      This is wonderful.
+
+      I'm so glad I've got a 24 inch monitor, so I can have multiple windows open on the side of my screen while I "work." Go, little car, go!
+    *
+
+      justinhj |8 pointswritten 21 hours ago
+
+      Oh, no! I don't believe in evolution any more.
+          o
+
+            jokermatt999 |20 pointswritten 20 hours ago
+
+            Yeah, I believe most cars now are intelligently designed by a team of engineers.
+                +
+
+                  polyparadigm |14 pointswritten 18 hours ago
+
+                  Have you driven a Ford lately?
+                      #
+
+                        irenedakota |1 pointwritten 2 hours ago
+
+                        Why yes I have, but not a US Ford, an Australian Ford (The Territory)
+                      #
+
+                        jokermatt999 |4 pointswritten 18 hours ago
+
+                        It's never a perfect process.
+                            *
+
+                              dakatabri |12 pointswritten 15 hours ago
+
+                              You mean, except in the case of platypuses, which are basically pretty awesome.
+                +
+
+                  oniony |5 pointswritten 19 hours ago
+
+                  But if the designers were themselves evolved, is that still intelligent design?
+                      #
+
+                        paperhat |3 pointswritten 15 hours ago
+
+                        That depends on whether they have evolved into intelligent beings.
+    *
+
+      i8080 |1 pointwritten 9 hours ago
+
+      I wish it would make smaller changes to the next generation if the previous generation was partially successful. I sometimes ended up with a half decent car which it just discarded when it didn't succeed, rather than simply refining the design with incremental changes.
+    *
+
+      ironklad |4 pointswritten 15 hours ago
+
+      Hmmm, so the car flips over..
+
+      Maybe we should make it more topheavy!
+    *
+
+      soupcan |6 pointswritten 19 hours ago
+
+      It seems like it can't get much farther than the sharp hill. The time always runs out.
+          o
+
+            erisian |41 pointswritten 18 hours ago
+
+            I started hating that hill with a loathing that truly startled me, then I realized that the hill was merely a 2d representation of the concept of death that ultimately we all face and the stunning insight brought me to such heights of enlightenment that it took me a full sixty seconds longer to realize I was taking this game way too seriously.
+
+            EDIT: As of writing, no fewer than SIX of those little fuckers have made it OVER THE HILL! HA! Take that, death!
+                +
+
+                  lit_to_dowse |6 pointswritten 17 hours ago
+
+                  hail eris.
+    *
+
+      yellowking |3 pointswritten 15 hours ago
+
+      Some people will take any shortcut in Fantastic Contraption.
+    *
+
+      steve_j |1 pointwritten 10 hours ago
+
+      Im not kidding when I say this: my fifth generation got further than anything for a loooong loooong time. It was the coolest random thing ever!
+    *
+
+      z0ltanz0ltan |0 pointswritten 10 hours ago
+
+      What a load of ineefficient crap?
+    *
+
+      semmi |10 pointswritten 21 hours ago
+
+      I wish I understood what the lines in the top right corner were
+          o
+
+            mclin |13 pointswritten 21 hours ago
+
+            I would guess they are max fitness and average fitness. Once they converge it stops improving.
+    *
+
+      jeremybub |3 pointswritten 14 hours ago
+
+      This reminds me of some stuff I looked at with sodaplay ( http:/www.sodaplay.com ) and sodarace (http://www.sodarace.com ). (this was all before soda * 2.0 came out, and I think it is completely different now.
+
+      Basically sodaplay was a system of placing springs, muscles and joints. You could then ajust the springiness, gravity, and friction of the environment, and the strength of the muscles. The muscles went through a phase, of speed which you could determine, and you could place the muscles at different points in the oscillation so they could be timed differently. All the muscles contracted based on a sine wave, I believe.
+
+      That was sodaplay, but sodarace was a thing where people competed creating these things to move the fastest on different terrain. People could create their own models, but also there was some stuff to use computers to help, as the designs could be saved to xml.
+
+      Some people at an English university (queen mary or something) wrote a program to do simulated annealing on an ameoba (a rolling thing), and made it extremely fast.
+
+      There was also a program called miro which would do that for any model you gave it, and wodka which would randomly generate models, and truly "evolve" models using breeding etc, but mostly they were vibrating masses.
+
+      The speedup by running a model through a computer optimizer like that made a ridiculous improvement in speed.
+
+      Note: here is wodka: http://wodka.sourceforge.net/
+
+      I always have difficulty finding miro, because there are other things with the same name. The guy who wrote it also wrote an improved sodarace runner, which removed some of the physics limits and made the races more fair be eliminating starting velocities.
+
+      That was how I found out about genetic algorithms. I think it was really cool, and something people at reddit would like. I don't really know what is up with sodaplay 2, but someone who has checked it out could tell me.
+    *
+
+      sshd |3 pointswritten 16 hours ago
+
+      Hint: dangling your little red guy below the wheels does not help you stupid fucker.
+          o
+
+            MercurialMadnessMan |1 pointwritten 10 hours ago
+
+            If you talk louder, maybe it will evolve to listen to your stupid thoughts!
+
+            :P
+    *
+
+      zemmekkis |2 pointswritten 14 hours ago
+
+      Man how do I win at this game?!
+          o
+
+            IConrad |1 pointwritten 1 hour ago
+
+            Up Down Up Down A B A B Start.
+          o
+
+            mathmoi |2 pointswritten 2 hours ago
+
+            Great, I just lost "the game" because of you.
+                +
+
+                  IConrad |1 pointwritten 1 hour ago
+
+                  You must not be a fan of XKCD.
+          o
+
+            spotter |1 pointwritten 6 hours ago
+
+            You're doing it!
+    *
+
+      MercurialMadnessMan |1 pointwritten 10 hours ago
+
+      Anybody have any success? any intersecting lines out there? :P
+    *
+
+      originalucifer |3 pointswritten 16 hours ago
+
+      I'd be happy with just a generation counter
+    *
+
+      radioRaheem |3 pointswritten 16 hours ago
+
+      I heard the guys at GM are using this for their car designs
+          o
+
+            fiercelyfriendly |1 pointwritten 8 hours ago
+
+            That explains a lot...
+    *
+
+      irchs |4 pointswritten 19 hours ago
+
+      I want to play God by setting some parameters :(
+my reddits
+environmentfunnygamingpicsprogrammingreddit.comsciencetechnologyworldnewsWTFedit
+
+    * programming
+    * -nsfw
+    * -reddit.com
+    * -politics
+    * -pics
+    * -funny
+    * -WTF
+    * -technology
+    * -worldnews
+    * -science
+    * -business
+    * -comics
+    * -entertainment
+    * -atheism
+    * -videos
+    * -Economics
+    * -offbeat
+    * -gaming
+    * -AskReddit
+    * -environment
+    * -bestof
+    * -Libertarian
+    * -linux
+    * -geek
+    * -news
+    * -Health
+    * -Marijuana
+    * -gadgets
+    * -canada
+    * -Music
+
+more »
+programming programming
+
+    * comments
+    * related
+
+prunesquallor (1)|messages|
+
+    * preferences
+    * |logout
+
+submitted on	08 Dec 2008
+points	866
+up votes	978
+down votes	112
+programming
+unsubscribe
+(67393 subscribers)
+
+a community for 2 years
+
+    * moderators
+
+Submit a link
+to anything interesting: news article, blog entry, video, picture...
+
+866
+
+Genetic Programming: Evolution of Mona Lisa (rogeralsing.com)
+
+submitted 1 day ago by leppie
+
+    * 256 comments
+    * share
+    *
+      save
+    *
+      hide
+    *
+      report
+
+sort by:
+hot
+newcontroversialtopold
+200
+all
+
+send this link to		
+
+your name (optional)		
+
+your email (optional)		
+
+message (optional)	prunesquallor from http://reddit.com/ has shared a link with you.	
+
+	i wonder if these things even work
+human?		
+	sharecancel	
+
+you are viewing a single comment's thread
+
+see the above comments
+
+commenteditcancel
+help
+you type:	you see:
+*italics*	italics
+**bold**	bold
+[reddit!](http://reddit.com)	reddit!
+* item 1
+* item 2
+* item 3	
+
+    * item 1
+    * item 2
+    * item 3
+
+> quoted text	
+
+    quoted text
+
+prunesquallor 280 points 1 day ago* [+] (138 children)
+
+prunesquallor 280 points 1 day ago* [-]
+
+http://www.wreck.devisland.net/ga/
+
+This is a GA I wrote to design a little car for a specific terrain. It runs in real-time in Flash.
+
+The fitness function is the distance travelled before the red circles hit the ground, or time runs out. The degrees of freedom are the size and inital positions of the four circles, and length, spring constant and damping of the eight springs. The graph shows the "mean" and "best" fitness.
+
+I should really make a new version with better explanations of what's going on.
+
+edit: thanks very much for all the nice comments! i'll try and find some time to make a more polished version where you can fiddle with the parameters, create maps etc.
+
+p.s. the mona lisa thing owns
+http%3A%2F%2Fwww.wreck.devisland.net%2Fga%2F%0A%0AThis+is+a+GA+I+wrote+to+design+a+little+car+for+a+specific+terrain.+It+runs+in+real-time+in+Flash.%0A%0AThe+fitness+function+is+the+distance+travelled+before+the+red+circles+hit+the+ground%2C+or+time+runs+out.+The+degrees+of+freedom+are+the+size+and+inital+positions+of+the+four+circles%2C+and+length%2C+spring+constant+and+damping+of+the+eight+springs.+The+graph+shows+the+%22mean%22+and+%22best%22+fitness.%0A%0AI+should+really+make+a+new+version+with+better+explanations+of+what%27s+going+on.%0A%0A%2Aedit%3A+thanks+very+much+for+all+the+nice+comments%21+i%27ll+try+and+find+some+time+to+make+a+more+polished+version+where+you+can+fiddle+with+the+parameters%2C+create+maps+etc.%2A+%0A%0A%2Ap.s.+the+mona+lisa+thing+owns%2A
+
+    * permalink
+    * edit
+    *
+      delete
+    * reply
+
+ThisIsDave 20 points 19 hours ago* [+] (0 children)
+
+ThisIsDave 20 points 19 hours ago* [-]
+
+Are you familiar with Hod Lipson's work? He does a lot of the same things at Cornell.
+
+Extraordinarily cool.
+
+Edit
+
+A few cool anecdotes from Lipson's talk:
+
+1) One of his robots evolved to be extremely tall and just fall over after it was created. The way fitness was scored, this counted as going an extremely long horizontal distance, so it was highly favored.
+
+2) Another robot found an error in their physics code and learned how to fly in their simulations.
+
+3) Another one started vibrating really fast, generated a divide by zero error, and thus got infinite fitness because it "traveled" infinitely far.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 87 points 1 day ago* [+] (83 children)
+
+arnar 87 points 1 day ago* [-]
+
+Damn, that is impressive. I spent way to long watching it.
+
+Two important points stand out immediately to me.
+
+   1.
+
+      It hits "barriers". The first one is staying on flat ground, the second one is hitting the first hill, third one is getting up a steep incline and the third one (and where I gave up after quite a while) is not toppling over itself when it goes down that crater. I imagine natural evolution is much the same, hitting barriers that confine the expansion of a species until suddenly there is some important mutation that overcomes the barrier.
+   2.
+
+      Evolution is S.T.U.P.I.D. One keeps thinking "no, no, the center of gravity has to be more to the back..", but still it produces car after car putting the weight at the front because it has no understanding whatsoever. This is what I think what makes evolution hard to understand for many people, we are so apt to think and reason about things, while evolution is quite simply just the brute force method of try, try again.
+
+My hat tips to you!
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+pavel_lishin 64 points 1 day ago[+] (14 children)
+
+pavel_lishin 64 points 1 day ago[-]
+
+The description of evolution as "survival of the fittest" doesn't really describe the process accurately; it's more like "survival of the least unfit".
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+xzxzzx 2 points 1 hour ago[+] (1 child)
+
+xzxzzx 2 points 1 hour ago[-]
+
+Technically that's the same thing, given the same pool of organisms. ;)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+pavel_lishin 2 points 1 hour ago[+] (0 children)
+
+pavel_lishin 2 points 1 hour ago[-]
+
+Well, true. But to someone who doesn't understand evolution very well, they could interpret the former to mean that nature optimizes organisms, which clearly doesn't happen.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+freesand 54 points 1 day ago[+] (7 children)
+
+freesand 54 points 1 day ago[-]
+
+Related fact: Darwin never describe evolution as survival of the fittest.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+bloqmon 16 points 1 day ago[+] (3 children)
+
+bloqmon 16 points 1 day ago[-]
+
+Right you are!
+
+"Originally applied by Herbert Spencer in his Principles of Biology of 1864, Spencer drew parallels to his ideas of economics with Charles Darwin's theories of evolution by what Darwin termed natural selection.
+
+Although Darwin used the phrase "survival of the fittest" as a synonym for "natural selection",[1] it is a metaphor, not a scientific description.[2] It is not generally used by modern biologists, who use the phrase "natural selection" almost exclusively."
+
+http://en.wikipedia.org/wiki/Survival_of_the_fittest
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+hollerith 2 points 7 hours ago[+] (0 children)
+
+hollerith 2 points 7 hours ago[-]
+
+Ridiculous as it seems now, at the time "Vestiges of the Natural History of Creation" was published anonymously in 1844 it was thought that every species was of a fixed type created by a god with no transmutation from one to another. Wallace wrote very many years later to Darwin "On the Tendency of Varieties to depart from the Original Type".
+
+Individuals, even well-adapted individuals die but the trend is that variants best fitted to their circumstances survive.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+api 22 points 1 day ago[+] (0 children)
+
+api 22 points 1 day ago[-]
+
+"Survival of the fittest" is probably one of the worst dumbed-down-version statements in history in terms of the amount of misunderstanding it's created.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+sn0re 7 points 23 hours ago[+] (0 children)
+
+sn0re 7 points 23 hours ago[-]
+
+Huh? I don't see how that makes him right. The article seems to directly contradict the GP:
+
+    "I have called this principle, by which each slight variation, if useful, is preserved, by the term natural selection, in order to mark its relation to man's power of selection. But the expression often used by Mr. Herbert Spencer, of the Survival of the Fittest, is more accurate, and is sometimes equally convenient."
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+ThisIsDave 3 points 19 hours ago[+] (2 children)
+
+ThisIsDave 3 points 19 hours ago[-]
+
+Actually, he used it in at least one of the later editions of the Origin.
+
+Check out the title of Chapter 4.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+freesand 4 points 19 hours ago[+] (1 child)
+
+freesand 4 points 19 hours ago[-]
+
+To describe natural selection, not evolution.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+sn0re 5 points 15 hours ago[+] (0 children)
+
+sn0re 5 points 15 hours ago[-]
+
+OK, I guess, but I took your post to mean that Darwin somehow disapproved of the term or wasn't familiar with it. He was in fact aware of the term and explicitly approved of it, calling it "more accurate" than natural selection.
+
+I suppose I could take your post to mean you were stressing the difference between "evolution" and "natural selection", but that seems like a really odd way to do it.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+mutable_beast 5 points 1 day ago[+] (2 children)
+
+mutable_beast 5 points 1 day ago[-]
+
+I always thought it should be something like Newton's first law, "A self sustaining system will continue to self-sustain unless acted upon or unbalanced." Or rather "Whatever works, works."
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+mindbleach 5 points 20 hours ago[+] (1 child)
+
+mindbleach 5 points 20 hours ago[-]
+
+The theory of evolution basically boils down to "that which does not survive, dies." The harsh simplicity of it leads me to despise detractors like Ham & Hovind.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+CodeMonkey1 4 points 17 hours ago[+] (0 children)
+
+CodeMonkey1 4 points 17 hours ago[-]
+
+Even Ham and Hovind acknowledge that part of it. It's the other part of the theory, that random mutation can create new structures, which gives them trouble.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+ixid 14 points 23 hours ago[+] (14 children)
+
+ixid 14 points 23 hours ago[-]
+
+Another aspect that people miss, and especially the creationists seem to be unaware of is the tallest midget. When you make competitive evolving systems it's amazing how BAD your simulated organisms can be and still thrive. Bad at steering, bad at eating, bad at mating. They don't need to be good, just marginally better than their competition.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+api 6 points 20 hours ago[+] (13 children)
+
+api 6 points 20 hours ago[-]
+
+"Life doesn't work perfectly, it just works." - My evolutionary bio professor.
+
+It gets deeper though. Evolution works in search spaces that can basically be considered infinite-dimensional and where there is no known method for calculating an optimum. We have no way of knowing how "good" an evolved solution is in such a space relative to a theoretical global maximum, since the global maximum is impossible to ever find.
+
+For example, the human genome has about 3 billion base pairs. Each base can have four values. Therefore, we have a search space of 3 billion dimensions with 4^3000000000 possible unique combinations. There might be super-beings with X-ray vision, telepathy, million year life spans, and the ability to levitate in there, but we can't prove it or find them.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+ixid 2 points 9 hours ago[+] (5 children)
+
+ixid 2 points 9 hours ago[-]
+
+There are fewer meaningfully unique permutations than that as the triplets can only code for one of twenty amino acids vs 81 combinations of base pairs in a codon.
+
+As for super-powers- other than the million year life span which is just not useful as far as evolution is concerned so may be achievable, any of those abilities would have dominated the natural environment so I'd feel comfortable concluding they're not in there.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+mackstann 1 point 8 hours ago[+] (4 children)
+
+mackstann 1 point 8 hours ago[-]
+
+Building cities dominates the natural environment, yet it took billions of years to evolve one species that can do it. Who knows what lies ahead?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+ixid 1 point 6 hours ago[+] (0 children)
+
+ixid 1 point 6 hours ago[-]
+
+What lies ahead will be directed and technological. We're talking about the options available to genes. Superpowers are not going to evolve. Levitation has already been done, it's called flight and you can see how dedicated to producing that evolution had to be. Mindreading would require long-term evolution among animals with minds worth reading which isn't going to happen as technology happens so much faster, we'll build wearable mind reading devices before evolution could produce it.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+cappie2000 1 point 6 hours ago[+] (2 children)
+
+cappie2000 1 point 6 hours ago[-]
+
+As soon as the population achieves a certain level of sustainability, and every degenerate lowlife (literally) can sustain it's life, the really unique solutions that have a greater advantage over the others aren't stimulated anymore (don't have an advantage over the others) and thus will be bread out due to the shear numbers of the genetic waste that can procreate itself until the whole ecosystem dies off... pretty much whats happening to earth right now :)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+mindbleach 1 point 2 hours ago[+] (0 children)
+
+mindbleach 1 point 2 hours ago[-]
+
+*bred
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+ixid 1 point 5 hours ago[+] (0 children)
+
+ixid 1 point 5 hours ago[-]
+
+"and thus will be bread out"
+
+I don't think that's true, there will be vast numbers with poor genes but the upper levels of the gene pool do not interbreed much with the lower levels.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 11 points 20 hours ago* [+] (5 children)
+
+arnar 11 points 20 hours ago* [-]
+
+Yes. The classic example are our own eyes. Our retina is in fact turned inside out - with light receptor cells facing inwards and all the veins and nerves stacked on the inside, so light has to pass those to get to the receptors.
+
+Not exactly perfect, is it? :)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+13ren 13 points 19 hours ago[+] (2 children)
+
+13ren 13 points 19 hours ago[-]
+
+The resulting blind-spot, where the nerves exit, wasn't harmful enough to get us out of that local optima.
+
+The octopus got it right though. Also, they can write messages with their skin.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+masklinn 3 points 7 hours ago[+] (0 children)
+
+masklinn 3 points 7 hours ago[-]
+
+    The resulting blind-spot, where the nerves exit, wasn't harmful enough to get us out of that local optima.
+
+And neither is retinal detachment, which usually happens fairly late (or following situations which are likely to end up badly anyway)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 6 points 17 hours ago[+] (0 children)
+
+arnar 6 points 17 hours ago[-]
+
+Yes. It is quite surprising that they haven't taken over world domination :P
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+theCorrectorator 2 points 10 hours ago[+] (1 child)
+
+theCorrectorator 2 points 10 hours ago[-]
+
+    The classical example
+
+The classic example
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 2 points 6 hours ago[+] (0 children)
+
+arnar 2 points 6 hours ago[-]
+
+Thanks, hope you don't mind I changed it. English is my second language and could use a lot of improvement.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+joeyo 5 points 17 hours ago[+] (0 children)
+
+joeyo 5 points 17 hours ago[-]
+
+Not only that but the search space is not static! Today's local maximum ("I'm a dinosaur!") may not be so great when conditions change ("Oh crap, meteors!").
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+adremeaux 16 points 1 day ago[+] (14 children)
+
+adremeaux 16 points 1 day ago[-]
+
+I've started this thing over many times and it seems the center of gravity ends up in the front every single time, without fail. I think the issue here is that the beginnings of the course demand it. The car is being designed to travel as far across the course in 5 seconds as possible, and nothing else. The program would be much more effective if the terrain was randomly generated for every iteration. It may take slightly longer to come up with a good solution, but I think the car created would be a much better "real world" example.
+
+That said, the program is awesome.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+adrianmonk 12 points 20 hours ago[+] (9 children)
+
+adrianmonk 12 points 20 hours ago[-]
+
+    The program would be much more effective if the terrain was randomly generated for every iteration.
+
+Then you're optimizing for cars that have the best chance of dealing with some random piece of terrain. That's a different problem. This program is optimizing for the car that traverses this particular terrain best.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+mindbleach 9 points 20 hours ago[+] (0 children)
+
+mindbleach 9 points 20 hours ago[-]
+
+... in five seconds.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+hax0r 4 points 19 hours ago* [+] (7 children)
+
+hax0r 4 points 19 hours ago* [-]
+
+        The program would be much more effective if the terrain was randomly generated for every iteration.
+
+    Then you're optimizing for cars that have the best chance of dealing with some random piece of terrain. That's a different problem. This program is optimizing for the car that traverses this particular terrain best.
+
+I agree with adremeaux, I don't care about a car that is optimized for that specific, particular terrain. I'd much rather see a car that is optimized for random terrains. It just seems so much more intuitive and somehow more useful, even as an intellectual exercise that way.
+
+Also, I look forward to a future version with tweakable parameters for all of the variables!
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+adrianmonk 7 points 16 hours ago[+] (5 children)
+
+adrianmonk 7 points 16 hours ago[-]
+
+    I agree with adremeaux, I don't care about a car that is optimized for that specific, particular terrain.
+
+I was mostly just responding to adremeaux's wording. He said, "The program would be much more effective if the terrain was randomly generated for every iteration." When I first read that, it sounded to me like "a better way to implement the same thing is...". So I was just trying to highlight that it's a different goal, not just a different implementation.
+
+Having said that, it seems to me it's a more complex and more difficult thing to implement this if you are changing the course every time. You are then, effectively, changing the fitness function constantly. Certain traits that were rewarded in the previous generation will be punished in the current generation. Maybe the current course requires very little ability to go over sharp bumps without bottoming out (which would reward a shorter wheelbase) but the previous course rewarded the ability to stay balanced (not tip over) on a steep incline (which would reward a longer wheelbase). In the face of changing challenges, you'd want relatively few mutations to ensure that traits that are needed only occasionally are still preserved. Otherwise, you run the risk of over-fitting (is that the right term) to the short term problems and never arriving at a solution that's good over a variety of problems in the long term.
+
+So AFAICT, randomizing the course requires more carefully tuned parameters, which makes it a harder programming problem.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+bandman614 1 point 1 hour ago[+] (0 children)
+
+bandman614 1 point 1 hour ago[-]
+
+Why not a check box "keep this course". Unless that box is checked, the next iteration gets a different course.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+sn0re 7 points 14 hours ago[+] (1 child)
+
+sn0re 7 points 14 hours ago[-]
+
+    You are then, effectively, changing the fitness function constantly. Certain traits that were rewarded in the previous generation will be punished in the current generation.
+
+Isn't that what happens in the real world? Organisms don't evolve in a static environment. For one thing, there are a lot of competing organisms around them. One species' adaptation can cause negative consequences for another.
+
+I'd like to see the road be subject to a genetic algorithm, where its fitness function is defined by how well it retards the vehicles. It'd be like predator/prey evolution in action.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+covertbadger 1 point 4 hours ago[+] (0 children)
+
+covertbadger 1 point 4 hours ago[-]
+
+It'd probably be overdoing it to randomly generate a completely new terrain for every generation of the vehicle. The real world doesn't change that drastically that often. It'd be interesting to randomize the terrain, say, every 50 car generations. Or simply allow the terrain to evolve slightly each time - that incline a bit steeper, that crevice a bit shallower, etc.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+shitcovereddick 1 point 13 hours ago[+] (0 children)
+
+shitcovereddick 1 point 13 hours ago[-]
+
+Randomisation is an oft used technique to improve generalisation and robustness of the solutions machine learning provides.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+hax0r 0 points 16 hours ago[+] (0 children)
+
+hax0r 0 points 16 hours ago[-]
+
+Thanks for that highly intelligent and informative reply, you get an up vote for me.
+
+I'm not really sure what I wrote to deserve being down voted on my previous comment, but that's reddit I suppose.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+shitcovereddick 1 point 13 hours ago[+] (0 children)
+
+shitcovereddick 1 point 13 hours ago[-]
+
+You would then be optimizing for a particular random distribution of terrains. Perhaps smoother terrains should be more likely.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+gigamonkey 7 points 18 hours ago[+] (0 children)
+
+gigamonkey 7 points 18 hours ago[-]
+
+Perhaps even better would be to run two populations at once: a population of cars whose fitness is how far they get and a population of courses whose fitness is determined by how quickly they dispatch the cars. Then you can get the red-queen effect working for you. This is, of course, assuming you want to actually evolve cars that can deal with arbitrary terrain, not just one specific course.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+Tekmo 2 points 15 hours ago[+] (0 children)
+
+Tekmo 2 points 15 hours ago[-]
+
+It does work after all if you wait. My cars got stuck in the same rut for a while and then they finally figured it out and got over that damn hill safely after like 20 generations.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+a1k0n 2 points 19 hours ago[+] (1 child)
+
+a1k0n 2 points 19 hours ago[-]
+
+The center of gravity being relatively far forward is also useful when going down the jump where many "creatures" tend to flip over and fall on their head. And the time limit seems more like 7 seconds.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+polyparadigm 5 points 18 hours ago[+] (0 children)
+
+polyparadigm 5 points 18 hours ago[-]
+
+Not to mention its adaptive value very, very early on, when nothing can survive the initial fall. Falling forward gives a huge marginal advantage over falling straight down.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+Kanin 12 points 1 day ago[+] (3 children)
+
+Kanin 12 points 1 day ago[-]
+
+yeah evolution is bruteforce, but luckily, when done in computers, we can supervise it, and give it hints :)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 27 points 1 day ago[+] (2 children)
+
+arnar 27 points 1 day ago[-]
+
+And by doing so, ruin the sheer genius of it. :)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+Kanin 13 points 1 day ago[+] (1 child)
+
+Kanin 13 points 1 day ago[-]
+
+depends the goal :)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+SkipHash 3 points 21 hours ago* [+] (3 children)
+
+SkipHash 3 points 21 hours ago* [-]
+
+    "no, no, the center of gravity has to be more to the back.."
+
+hmmm... not quite true. at first yes, but just as it is rather uncommon for human babies to be born with tusks, over time, this simulation rarely produces cars with poor centre of gravity (for the course it faces). Evolution is random but also convergent on success.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 3 points 20 hours ago[+] (1 child)
+
+arnar 3 points 20 hours ago[-]
+
+The point is not if it is true, but that to me (a human) it looks sensible to move the center of mass backwards as the car keeps toppling over itself -- the point is that evolution does not "design" with forward thinking like this.
+
+This is the most common misconception that I encounter with people's understanding of evolution, e.g. animals needed fangs so they evolved with fangs.
+
+I've heard it made as an evolutional argument that since people (and I'm focusing on the western world here) generally benefit from not having wisdom teeth, by evolution more and more people are born without them.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+SkipHash 1 point 9 hours ago[+] (0 children)
+
+SkipHash 1 point 9 hours ago[-]
+
+Yes you're right people often put the cart before the horse.
+
+Our evolved sense of conciousness is an interesting phenomena.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+fatdefacto 1 point 17 hours ago[+] (0 children)
+
+fatdefacto 1 point 17 hours ago[-]
+
+Unless genetic algorithms can go extinct?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+api -3 points 1 day ago* [+] (29 children)
+
+api -3 points 1 day ago* [-]
+
+Evolution isn't stupid. Put that on a computer with the processing power of the human brain (hint: your brain makes the highest end desktop machine you can get look like the microcontroller in your coffee maker) and it'll "realize" those things pretty fast.
+
+Did you know your brain spends more time with inhibitory neural signals than with excitatory signals? You spend more neural energy winnowing down than building up. I've speculated for a long time that our brains might be doing something like an evolutionary process, at least to some extent. (In reality our brains are probably hybrid systems using a bunch of overlaid techniques that worked for our ancestors in different ways, but evolutionary-computational ones might be in there.)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+mistercow 1 point 36 minutes ago[+] (0 children)
+
+mistercow 1 point 36 minutes ago[-]
+
+    (hint: your brain makes the highest end desktop machine you can get look like the microcontroller in your coffee maker)
+
+Not exactly. Our brains are very slow, by silicon processor standards, but intensely parallel. Genetic algorithms can make use of parallelism, but they are not the best application of it. In any case, implementing a massively parallelized genetic algorithm on a neural network would be a laughably inefficient use of the hardware.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 21 points 1 day ago[+] (12 children)
+
+arnar 21 points 1 day ago[-]
+
+    Evolution isn't stupid. Put that on a computer with the processing power of the human brain (hint: your brain makes the highest end desktop machine you can get look like the microcontroller in your coffee maker) and it'll "realize" those things pretty fast.
+
+Yes it is stupid, in the sense that the weight isn't moved back or lower because it will work well. It only looks "intelligent" because if you repeat natural selection for an ridiculous number of times, the better design will emerge.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+api 6 points 20 hours ago* [+] (9 children)
+
+api 6 points 20 hours ago* [-]
+
+Our brains only look intelligent because if you fire 100 billion neurons for a while a better design will emerge.
+
+BTW, for the non-biologists in the house, a neuron is not just a switch that can be modeled with an equation. It's a living cell with millions of internal components and a gene regulatory network that itself resembles a brain-like regulatory network when its interactions are graphed.
+
+Gene regulatory networks look like this, for example:
+
+http://www.pnas.org/content/104/31/12890/F2.large.jpg
+
+Oh, and there are about ten glial cells in the brain for every one neuron and it appears based on recent research that those participate to some extent in computation and learning as well:
+
+http://synapses.clm.utexas.edu/lab/harris/lecture16/index.htm
+
+The brain is a big big big massively-parallel mother-farking machine. The PC/coffee maker analogy is probably being very generous to the PC.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 4 points 19 hours ago[+] (2 children)
+
+arnar 4 points 19 hours ago[-]
+
+    The PC/coffee maker analogy is probably being very generous to the PC.
+
+I think you can safely remove the word "probably". Knowing something about chips and PC-s.. there is not such a huge difference between the two.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+api 3 points 19 hours ago[+] (1 child)
+
+api 3 points 19 hours ago[-]
+
+I think what I'm getting at here is what does it mean for something to be "stupid" vs. "intelligent."
+
+Is our intelligence just a matter of massive computational throughput? The answer is "we don't know." We don't really know enough to give a definitive answer.
+
+I suspect that the brain is a mixture of both: that we have a general learning capability that just crunches a lot of stuff to learn in general situations, but that we also have a number of very clever "hacks" in there that give us shortcuts to learning in certain kinds of solution spaces... namely those that were valuable for our ancestors. However, those hacks may be the origins of some of our blind spots (see my other post on the No Free Lunch Theorem). For example, why are we so unspeakably awful at estimating statistical risk? Why do we fall for confirmation bias so often, or see Jesus in a grilled cheese sandwich? Maybe some of our hacks work against us in other domains.
+
+My overarching point is that you can't say that evolution is "stupid" without making an apples to apples comparison. The question is a lot more nuanced than that.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 1 point 17 hours ago* [+] (0 children)
+
+arnar 1 point 17 hours ago* [-]
+
+Well, when I say evolution is stupid I mean it in the most common sense -- trying to point out the common misconception that things "evolve" because there is need, as if nature has some foresight. By stupid I mean that it has no foresight and it cannot reason.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+jmmcd 2 points 18 hours ago[+] (5 children)
+
+jmmcd 2 points 18 hours ago[-]
+
+    Our brains only look intelligent because if you fire 100 billion neurons for a while a better design will emerge.
+
+No, our brains genuinely are intelligent. They don't learn, as you are perhaps implying, through some kind of super-back-propagation algorithm, or anything else directly analogous to evolution. In fact some learning algorithms are built-in to the brain by evolution [citation needed? Perhaps Chomsky].
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+nvrmnd 2 points 13 hours ago[+] (2 children)
+
+nvrmnd 2 points 13 hours ago[-]
+
+citation has yet to be published... I'm afraid no one has figured this one out. There have been some frequently cited neuroscience papers on the topic, evidence seems to indicate that neurons grow more synapses when they fire at similar times. But this is far from a complete theory by any means.
+
+This idea inspired the whole 'Hebbian learning' research area, which never really led anywhere.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+jmmcd 1 point 5 hours ago[+] (1 child)
+
+jmmcd 1 point 5 hours ago[-]
+
+You're right that no-one understands the brain. But Chomsky is still a reasonable citation for the claim that evolution builds some learning algorithms into the brain.
+
+But even if we don't know how exactly the brain does work, we do know that it's not directly analogous to evolution. The brain is capable of directed learning (whether by example or by reasoning).
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+nvrmnd 1 point 1 hour ago[+] (0 children)
+
+nvrmnd 1 point 1 hour ago[-]
+
+oh, right, undoubtedly.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+api 1 point 18 hours ago[+] (1 child)
+
+api 1 point 18 hours ago[-]
+
+What does it mean to be intelligent?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+jmmcd 2 points 18 hours ago[+] (0 children)
+
+jmmcd 2 points 18 hours ago[-]
+
+I don't want to take a strong position on that question, but let's go with the definition you had in mind when you said that our brains "only look intelligent".
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+polyparadigm 1 point 18 hours ago* [+] (1 child)
+
+polyparadigm 1 point 18 hours ago* [-]
+
+If you take Hecht-Nielsen's theory of cognition, we think by running a series of confabulations against past experience until only one survives.
+
+In that sense, these are both the same sort of intelligence, since no actual cars are harmed in the working-out of the algorithm. Your brain sees a car working poorly, and imagines what would happen in a number of related scenarios. It's running gedankenexperiments just like the little Flash app, otherwise it wouldn't be able to make predictions at all...only it's doing so invisibly and much more efficiently.
+
+Hecht-Nielsen could be wrong, of course...
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+arnar 2 points 17 hours ago[+] (0 children)
+
+arnar 2 points 17 hours ago[-]
+
+You are not getting the point. I'm comparing people's common misunderstanding of evolution and trying to explain how it really is. When I say "stupid" I mean stupid in the common sense.
+
+You may call this algorithm intelligent if you like, but real evolution does not compare any series against any past - there is just a population with some gene pool, and some genes are more likely to survive than others. Period.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+omargard 6 points 23 hours ago* [+] (7 children)
+
+omargard 6 points 23 hours ago* [-]
+
+I've never seen a "true" genetic algorithm that is competitive with engineered algorithms. You can start with a sub-optimal solution for a control problem and optimize it by some kind of evolution, I've seen that work pretty well for neural nets.
+
+    hint: your brain makes the highest end desktop machine you can get look like the microcontroller in your coffee maker
+
+The human brain works totally different from von Neumann style computers. It's very slow neuron-wise but extremely parallelized. That's why you can't compute things in your mind any PC computes in a millisecond.
+
+For some things (like consciousness?) the parallel brain architecture is much better suited, and simulating this architecture on a von-Neumann machine requires incredible amounts of computing power.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+masukomi 4 points 21 hours ago* [+] (2 children)
+
+masukomi 4 points 21 hours ago* [-]
+
+It seems NASA has
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+omargard 1 point 10 hours ago[+] (0 children)
+
+omargard 1 point 10 hours ago[-]
+
+That's the kind of thing I meant when I said
+
+    You can start with a sub-optimal solution for a control problem and optimize it by some kind of evolution,[...]
+
+Nonetheless, I didn't know this application. Thanks for the link.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+adrianmonk 2 points 20 hours ago[+] (0 children)
+
+adrianmonk 2 points 20 hours ago[-]
+
+That antenna optimization problem sounds like a problem that's tailor-made for genetic algorithms.
+
+Note that they're not, as far as I know, actually coming up with a new antenna design. They're choosing (near-)optimal parameters for a design that already exists: for example, the computer starts with something like the assumption that the antenna will have N parallel elements, and it is just trying to find the best value of N (or maybe that's a given), and the lengths and spacing.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+jmmcd 2 points 18 hours ago[+] (0 children)
+
+jmmcd 2 points 18 hours ago[-]
+
+    I've never seen a "true" genetic algorithm that is competitive with engineered algorithms.
+
+You mean "competitive with engineered solutions". A genetic algorithm itself is engineered, it's the output which could be called non-engineered.
+
+Also, check out Koza and the Humies for human-competitiveness.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+fatdefacto 1 point 17 hours ago[+] (0 children)
+
+fatdefacto 1 point 17 hours ago[-]
+
+Avida, found a way to make an equals function out of nands, better than their engineers could do pdf of the paper.
+
+But it is artificial life software, which is just a shitload cooler than genetic algorithms.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+api 1 point 20 hours ago* [+] (0 children)
+
+api 1 point 20 hours ago* [-]
+
+"I've never seen a "true" genetic algorithm that is competitive with engineered algorithms. You can start with a sub-optimal solution for a control problem and optimize it by some kind of evolution, I've seen that work pretty well for neural nets."
+
+You're right, but you're sort of missing the point.
+
+There is a theorem in machine learning theory called the "No Free Lunch Theorem." It's a bit hard to get your head around, but what it basically says is that all learning algorithms perform equally when averaged over the set of all possible search spaces.
+
+This means that any time you tweak an algorithm to be better in search spaces with certain characteristics, you're making it worse in other situations.
+
+The goal of evolutionary algorithms is typically good general performance across the board, which means that they will usually be worse than engineered algorithms designed for specific situations. But here's the point: compute cycles are orders of magnitude cheaper than human cycles. The goal is to allow computers to learn in a variety of problem spaces automatically without human intervention or specialized a priori knowledge. For that, not only does evolution work, but I actually know of no other approach that does this at all. Evolutionary processes are the only thing that I've ever seen that can make a computer invent something "ex nihilo."
+
+Finally, on the subject of the brain's processing power, you basically agreed with me:
+
+"For some things (like consciousness?) the parallel brain architecture is much better suited, and simulating this architecture on a von-Neumann machine requires incredible amounts of computing power."
+
+It's true that the brain's serial "clock speed" is nowhere close to even very early computers. However, the total throughput is significantly larger. We don't even know how much larger yet since we haven't discovered all the ways the brain computes, but based on what we do know we know it's orders of magnitude beyond present-day computers.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+burke 4 points 23 hours ago[+] (2 children)
+
+burke 4 points 23 hours ago[-]
+
+What if my coffee maker runs on a Pentium 4?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+lytfyre 21 points 21 hours ago[+] (1 child)
+
+lytfyre 21 points 21 hours ago[-]
+
+Then your probably using it as the heating element.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+jmkogut 2 points 18 hours ago[+] (0 children)
+
+jmkogut 2 points 18 hours ago[-]
+
+Well said sir!
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+erisian 3 points 21 hours ago[+] (1 child)
+
+erisian 3 points 21 hours ago[-]
+
+    Put that on a computer with the processing power of the human brain (hint: your brain makes the highest end desktop machine you can get look like the microcontroller in your coffee maker) and it'll "realize" those things pretty fast.
+
+And yet, for some reason, low-iq hulking brutes still manage to breed. Huzzah for the all-powerful human brain!
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+polyparadigm 1 point 18 hours ago* [+] (0 children)
+
+polyparadigm 1 point 18 hours ago* [-]
+
+    low-iq hulking brutes still manage to breed.
+
+The termites which actually reproduce have serious trouble with locomotion, while more-agile ones never breed.
+
+What matters is the intelligence (and other measures of fitness) of the superorganism. I'm just hoping Western society will be reasonably well-suited to scarce supplies of fossil fuels.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+vkkim 1 point 19 hours ago[+] (1 child)
+
+vkkim 1 point 19 hours ago[-]
+
+    I've speculated for a long time that our brains might be doing something like an evolutionary process, at least to some extent.
+
+At least that's how it forms during infancy and childhood--IIRC infants are born with ca. 3x the amount of neurons in an adult brain, and a "mini-evolution" routine during development cuts the connections and cells that aren't very effective. That's why it's so important to provide a child with stimulation and allow him to experiment.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+polyparadigm 1 point 18 hours ago[+] (0 children)
+
+polyparadigm 1 point 18 hours ago[-]
+
+You may have heard dendrites, rather than neurons.
+
+Hearing foreign-sounding languages while young may also keep open the door to distinguishing sounds that your native language would otherwise lump together.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+Poromenos 44 points 1 day ago[+] (0 children)
+
+Poromenos 44 points 1 day ago[-]
+
+Well, this is more interesting than the article.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+qarl 10 points 22 hours ago* [+] (1 child)
+
+qarl 10 points 22 hours ago* [-]
+
+for anyone itching to do similar experiments - i highly recommend "breve". it provides a python scripting framework, physics engine, and automatic screensaver idle-cpu-thingie:
+
+http://www.spiderland.org/
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+qarl 6 points 22 hours ago[+] (0 children)
+
+qarl 6 points 22 hours ago[-]
+
+obligatory eye candy:
+
+http://www.spiderland.org/movies
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+sherlok 20 points 1 day ago[+] (1 child)
+
+sherlok 20 points 1 day ago[-]
+
+you sir have just provided me and my co-workers with a way to waste hours. I've got 4 instances running with 3 completely different vehicles. A trapazoidal one, a triangle and a triangle with the weight in the wheel.
+
+I pray you release the source, or at least add a way to know what generation we're on and the ability to tweak some parameters.
+
+Adding more wheels would be infinitely interesting.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+atomicthumbs 13 points 23 hours ago[+] (0 children)
+
+atomicthumbs 13 points 23 hours ago[-]
+
+Mine's making unicycles! :D
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+antich 4 points 18 hours ago[+] (1 child)
+
+antich 4 points 18 hours ago[-]
+
+Here's mine after a few hours -
+
+http://e.imagehost.org/0308/GACar.png
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+peerbentzen 1 point 29 minutes ago[+] (0 children)
+
+peerbentzen 1 point 29 minutes ago[-]
+
+Oh I like that you call it "yours". How quickly we attach! :-)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+13ren 13 points 1 day ago* [+] (1 child)
+
+13ren 13 points 1 day ago* [-]
+
+Very, very cool! My humble suggestion: make it into a proper Spore...
+
+   1.
+
+      Make some serialized text representation of the vehicle, that it prints out into a text field, where we can cut n paste. Allow us to paste in another text representation as a starting seed.
+   2.
+
+      Then - people paste their favourites to this thread!!! Someone else (or many others) continues the evolution, in parallel!!!
+
+Or you could make a subreddit for it etc. A fancier input is to enable it to accept the text-rep in a long REST-style URL - that way we can lazily just click on another version. For now, trust redditors not to reverse engineer the format... that would be practicing intelligent design.
+
+This is an idea I've reserved for a long time - but you can have it, sir, as a finer custodian than me. :-)
+
+EDIT by "a proper Spore", I meant what Spore was aiming at, but didn't achieve. This work of prunesquallor is already more realistic than Spore.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+jmcqk6 2 points 19 hours ago[+] (0 children)
+
+jmcqk6 2 points 19 hours ago[-]
+
+I've been thinking about this for quite a while. Creating a text representation for this simulation would be easy. It would be interesting to create a genome-like string of 0's and 1's and figure out how to construct an object out of those.
+
+The problem is allowing unlimited iterations. Basically, there are a finite number of combination possible in this specific simulation, and you're looking for the most efficient solution. GA's are really good at that. At the same time, you're not going to see things like (to use this example) a third or fourth wheel popping up.
+
+I could really be misunderstanding how this is built, though. My sole exposure to GA comes through a Ruby Programming book that simplified things enough for me to understand it.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+Psy-Kosh 4 points 19 hours ago[+] (1 child)
+
+Psy-Kosh 4 points 19 hours ago[-]
+
+Hrm... What effects to the red circles have other than defining when failure occurs? ie, if the size of the red circles can mutate and stuff, why aren't they shrinking to tinyness?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+mindbleach 2 points 2 hours ago[+] (0 children)
+
+mindbleach 2 points 2 hours ago[-]
+
+I think larger circles have more mass, so giving them a bit of heft keeps the car's traction up.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+sligowaths 15 points 1 day ago[+] (1 child)
+
+sligowaths 15 points 1 day ago[-]
+
+Very nice example...
+
+    I should really make a new version with better explanations of what's going on.
+
+yes, please =)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+mithunc 6 points 1 day ago[+] (0 children)
+
+mithunc 6 points 1 day ago[-]
+
+Seconded. It's quite impressive, I'd like to know more.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+watergeese 1 point 13 hours ago[+] (0 children)
+
+watergeese 1 point 13 hours ago[-]
+
+Awesomazingly cool. So so interested in the next version, source for interested people also would be loved... :-)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+peregrine 15 points 1 day ago[+] (3 children)
+
+peregrine 15 points 1 day ago[-]
+
+Its pretty cool, although it usually cuts the car off before it gets to the end. and many good designs just randomly die.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+qualt 10 points 1 day ago[+] (2 children)
+
+qualt 10 points 1 day ago[-]
+
+I think he just limited the time they "live". So the cars that make it that far are still considered the fittest.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+chrxs 16 points 1 day ago[+] (1 child)
+
+chrxs 16 points 1 day ago[-]
+
+    The fitness function is the distance travelled before the red circles hit the ground, or time runs out.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+bonzinip 1 point 17 hours ago[+] (0 children)
+
+bonzinip 1 point 17 hours ago[-]
+
+and in most cases the red circles hit the ground very soon, so the fitness function filters away things that get stuck or are slow very well (their fitnesses are all after the first steep descents).
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+Antiuniverse 12 points 1 day ago[+] (4 children)
+
+Antiuniverse 12 points 1 day ago[-]
+
+In conjunction with the article, you've inspired me to go off and learn about genetic algorithms. Way to go.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+sligowaths 9 points 1 day ago[+] (2 children)
+
+sligowaths 9 points 1 day ago[-]
+
+This article inspired me too last week: http://ejohn.org/blog/genetic-ab-testing-with-javascript/
+
+I´m currently reading "A Field Guide to Genetic Programming"... seems to be a very nice introduction...
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+borlak 2 points 3 hours ago[+] (0 children)
+
+borlak 2 points 3 hours ago[-]
+
+thanks for the book recommendation
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+madangler 2 points 22 hours ago[+] (0 children)
+
+madangler 2 points 22 hours ago[-]
+
+We used that book as our unofficial text for an evolutionary computing course at my university (Michigan State). It manages to be both concise and readable, and web searches can usually pick up the slack when you need more detail on specific topics.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+Kanin 4 points 1 day ago* [+] (0 children)
+
+Kanin 4 points 1 day ago* [-]
+
+May i suggest Polyworld
+
+edit: oh yeah, it's open source too :V
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+greginnj 8 points 1 day ago[+] (0 children)
+
+greginnj 8 points 1 day ago[-]
+
+may I suggest putting in an option to set the max time traveled parameter? It looks like that's what's killing most of mine off...
+
+But thanks for an excellent toy!
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+Wavicle 4 points 22 hours ago[+] (0 children)
+
+Wavicle 4 points 22 hours ago[-]
+
+What selection algorithm(s) are you using? I thought it odd that a solution that could get past the crater evolved, but didn't make it into the next generation. I assume you don't have elitism enabled?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+jmkogut 2 points 17 hours ago[+] (0 children)
+
+jmkogut 2 points 17 hours ago[-]
+
+Does this use Flade?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+stumo 2 points 21 hours ago[+] (0 children)
+
+stumo 2 points 21 hours ago[-]
+
+Is the distance traveled by the furthermost point in the vehicle the measure? Or is the front wheel the measure? Because all of mine eventually flip over at the end, and I wonder if that puts them slightly ahead of those that don't flip over at the end of the five seconds.
+
+In other words, it's bred something that does an impressive wipeout in the last nanosecond of life in order to go just a titch further.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+MarshallBanana 2 points 21 hours ago[+] (0 children)
+
+MarshallBanana 2 points 21 hours ago[-]
+
+This is the kind of thing that happens if you play too much Fantastic Contraption, isn't it?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+qualt 6 points 1 day ago[+] (0 children)
+
+qualt 6 points 1 day ago[-]
+
+I really like it. I have two instances running that developed two quite different types of cars.
+
+It would be very cool if you could release the source, so we could play with it more.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+britishben 3 points 22 hours ago[+] (3 children)
+
+britishben 3 points 22 hours ago[-]
+
+I've never seen someone try to brute force Fantastic Contraption before. Nicely done!
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+jmcqk6 5 points 19 hours ago[+] (1 child)
+
+jmcqk6 5 points 19 hours ago[-]
+
+Brute force would be working through every possible iteration one by one. This is very different from brute force.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+britishben 1 point 1 hour ago[+] (0 children)
+
+britishben 1 point 1 hour ago[-]
+
+Over-simplifying for the sake of a joke ;o)
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+willyjlyles 2 points 20 hours ago[+] (0 children)
+
+willyjlyles 2 points 20 hours ago[-]
+
+It's not quite brute force, though it does appear so if you don't know what's going on underneath.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+gordonjay2 1 point 19 hours ago[+] (0 children)
+
+gordonjay2 1 point 19 hours ago[-]
+
+i'd like to see an option where it will simulate x iterations without displaying so we can see the millionth or septillionth generation and where it ends up.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+spaceknarf 5 points 1 day ago* [+] (3 children)
+
+spaceknarf 5 points 1 day ago* [-]
+
+Wow! That is a nice demonstration of a genetic algorithm. It is so cool to see the variations that fail (especially in the beginning). Usually only the best result of an iteration is shown (like in the article). This would make for a very good demonstration in a class about GA.
+
+Also, is it the case that after iteration 10 not a lot of improvement is seen? All the little carts don't get past the big pit.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+MindStalker 5 points 1 day ago[+] (1 child)
+
+MindStalker 5 points 1 day ago[-]
+
+No, I have a version running in the background that is probably in the thousands (no counter but I'm not sure). It handles the pit just fine, though its still more front loaded than it probably should be.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+shinynew -1 points 1 day ago[+] (0 children)
+
+shinynew -1 points 1 day ago[-]
+
+It seems that the filenames may be indicators of what iteration it is.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+jmcqk6 1 point 19 hours ago[+] (0 children)
+
+jmcqk6 1 point 19 hours ago[-]
+
+You have to really let it run for a while. It will plateau and then climb steeply in efficiency, and then plateau again. I just have it open in a new tab and check in on it every once in a while.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+Ciserus 4 points 1 day ago[+] (1 child)
+
+Ciserus 4 points 1 day ago[-]
+
+I'm hoping that somebody gets around to making a game based around this idea. Maybe some kind of strategy or puzzle game where you have to evolve units to accomplish specific tasks. You'd have no direct influence over their evolution, except maybe to crossbreed ones with traits you want for certain things.
+
+I'm never going to do it, so somebody should get on this!
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+borichka 1 point 1 day ago[+] (0 children)
+
+borichka 1 point 1 day ago[-]
+
+I know Darwinia uses GA. I only just recently got a copy and haven't gotten too far into it though.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+non-sequitur 6 points 1 day ago[+] (0 children)
+
+non-sequitur 6 points 1 day ago[-]
+
+I have yet to unlock the handcannon in Resident Evil 4.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+sovtek 2 points 20 hours ago[+] (0 children)
+
+sovtek 2 points 20 hours ago[-]
+
+I've got this running in 7 tabs. It made a couple different species. Seems like triangles with smaller wheels in the back and the weight towards the back work the best.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+SkipHash 1 point 21 hours ago[+] (0 children)
+
+SkipHash 1 point 21 hours ago[-]
+
+I stared something similar myself in haXe (open source flash) a while back. But never finished it. Any chance of seeing the source?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+netcraft 1 point 21 hours ago[+] (0 children)
+
+netcraft 1 point 21 hours ago[-]
+
+The biggest thing I would like to see with this is the ability to let it go longer and see a fitness "score" that tries to objectify how well a particular run did. But then I guess that would only be useful if you could compare generations after the end of the run.
+
+Either way, awesome job and look forward to your revised one when you find the time.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+peanut42 2 points 1 day ago[+] (1 child)
+
+peanut42 2 points 1 day ago[-]
+
+Is the terrain generated randomly?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+adremeaux 4 points 1 day ago[+] (0 children)
+
+adremeaux 4 points 1 day ago[-]
+
+no
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+borichka 1 point 1 day ago[+] (0 children)
+
+borichka 1 point 1 day ago[-]
+
+What is the pic of the field on the front page?
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+greginnj 0 points 1 day ago[+] (2 children)
+
+greginnj 0 points 1 day ago[-]
+
+may I suggest putting in an option to set the max time traveled parameter? It looks like that's what's killing most of mine off...
+
+But thanks for an excellent toy!
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+javaru 1 point 21 hours ago[+] (1 child)
+
+javaru 1 point 21 hours ago[-]
+
+Why the downvotes? They don't improve much after they evolve to make it down the pit safely because they get cut off by the timer. I'd like the see a checkpoint system. Also the source code so I can play with it.
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+joshwa 4 points 21 hours ago[+] (0 children)
+
+joshwa 4 points 21 hours ago[-]
+
+'cause it's a dupe comment: http://www.reddit.com/r/programming/comments/7i22c/genetic_programming_evolution_of_mona_lisa/c06putf
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+hax0r 0 points 19 hours ago* [+] (0 children)
+
+hax0r 0 points 19 hours ago* [-]
+
+Thanks for this, this is very cool.
+I look forward to an updated version with tweakable parameters for all of the variables.
+A map creator sounds fun and also perhaps a random map option.
+You could turn this into a game or a race, also even eventually I'd love to see a 3D version or game, more of a physics model toy. I can imagine a monster truck 4x4 simulator where you can put together a whole track with obstacles you have to run over or knock down. The designs could be saved as an ASCII text string so people could pit their designs against others and run on a set of test tracks. You could turn this into something way cooler than spore and make $millions! I hope you do, just remember to keep it shareware, maybe have an option to pay $5 to unlock additional features or whatever, no DRM! You can combine this idea with some sort of turret game such as Storm Winds, except you could make the turrets GA optimize with variable parameters that the player can tweak, each round maybe getting some points to spend towards optimizing the turrets and weapons, but at the same time the 'enemies' could also have their GA working in their favor getting stronger each time to launch their offensive against your forts. Each game would be different, the replayability would be fantastic as no two rounds would ever be the same. Some games you could defend against many multiple small attackers well, but not well against fewer, large, slow firing attackers, and vice versa. You could have all types of weaponry, energy based, cold, fire, electricity, earth, sound, etc.. projectiles, etc... You can do all of this online, in flash (including the 3D engine), have you seen the Doom port in flash using alchemy? Perhaps you can use some of that code from the 3D engine source code so you don't have to re-invent the wheel (pun intended).
+
+    * permalink
+    * parent
+    *
+      report
+    * reply
+
+    * help
+    * |blog
+    * |stats
+    * |feedback
+    * |bookmarklets
+    * |socialite
+    * |buttons
+    * |widget
+    * |code
+    * |mobile
+    * |store
+    * |advertise
+
+wiredWIRED.com-WIRED How-To
+
+Use of this site constitutes acceptance of our User Agreement and Privacy Policy. (c) 2008 CondeNet, Inc. All rights reserved.

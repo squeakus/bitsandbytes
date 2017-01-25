@@ -1,0 +1,7 @@
+"""Mr Blobby is a fictional character who featured on Noel
+    Edmonds' Saturday night entertainment show Noel's House Party,
+    which was often a ratings winner in the 1990s.
+    He was a large pink humanoid, covered with yellow spots, sporting a
+    permanent toothy grin and jiggling eyes. He communicated by saying
+    the word "blobby" in an electronically-altered voice, expressing
+    his moods through tone of voice and repetition."""

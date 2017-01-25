@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello Map</title>
+        
+	<script src='http://code.jquery.com/jquery-1.11.1.js'></script>
+        <script src='js/ol.js'></script>
+        <script src='js/main.js'></script>
+        <!-- Styles go here -->
+        <link rel='stylesheet' href='js/ol.css'>
+
+	<style>
+	  #map{
+	  width:80%;
+	  height:500px;
+	  }
+	</style>
+
+
+    </head>
+    
+    <body onload='init()'>
+        <div id='map'></div>
+	<button style='position:absolute; left: 10px; top:30%' onclick='removeTopLayer()'>Remove Top Layer</button>
+	<button style='position:absolute; left: 10px; top:40%' onclick='swapTopLayer()'>Swap Top Layers</button>
+    </body>
+</html>

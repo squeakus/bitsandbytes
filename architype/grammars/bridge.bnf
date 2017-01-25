@@ -1,0 +1,87 @@
+# blender3d_bridge_graph.bnf
+# James McDermott <jamesmichaelmcdermott@gmail.com>
+#
+
+# Works like the blender3d_graph.bnf grammar, but uses curves defined
+# by HOFs. Starts with fixed points A and B indicating end-points of
+# the bridge and creates nodes and edges along the straight line
+# between them. Adds a curved handrail, with struts from walkway to
+# handrail. Then copies and offsets this into the 3rd dimension, and
+# adds crosspieces for the walkway between corresponding points in the
+# two copies.
+
+<S> ::= <fn_def><call>
+<fn_def> ::= def mutant():{<adf_defs><handrail_def><walkway_def><parabola_def><const_defs><init><walkway><add_walkway_edges><add_handrail_edges><offset_copy><return>}
+
+<handrail_def> ::= def handrail(t):{return <handrail_curve>(t)}
+<walkway_def> ::= def walkway(t):{retval=<walkway_curve>(t){}return(retval)}
+<parabola_def> ::= def f(t):{return 1.0 - pow(2 * t - 1.0, 2)}
+
+<adf_defs> ::= def make_strut(i, t):{n=<nbranches>{}xyz=walkway(t){}xyz[2]=p*xyz[2]+(1-p)*handrail(t)[2]{}id=g.add_unique_node(xyz,'post'){}g.add_edge(i, id){}for j in range(n):{xyz=handrail(t+(j-(n-1)/2.0)/float(npts)){}id2=g.add_unique_node(xyz,'handrail'){}handrail_node_ids.append(id2){}g.add_edge(id, id2){}}}
+
+<init> ::= g = graph.graph(){}handrail_node_ids=[]{}walkway_node_ids=[]{}
+<add_handrail_edges> ::= handrail_node_ids.sort(){}for i in range(len(handrail_node_ids) - 1):{g.add_edge(handrail_node_ids[i], handrail_node_ids[i+1])}
+<add_walkway_edges> ::= walkway_node_ids.sort(){}for i in range(len(walkway_node_ids) - 1):{g.add_edge(walkway_node_ids[i], walkway_node_ids[i+1])}
+
+<return> ::= return g
+<const_defs> ::= strut_multiple = <strut_multiple>{}npts = 20{}pointA = [0, 0, 0]{}pointB = [20, 0, 0]{}p = <phase>{}
+<call> ::= XXXeval_or_exec_outputXXX = mutant()
+<offset_copy> ::= g.copy_and_offset_with_mirror((0.0, 5.5+0.1*<sx>, 0), True){}
+
+<bool> ::= True | False
+
+<walkway> ::= for i in range(npts+1):{t=i/float(npts){}id = g.add_unique_node(walkway(t),'walkway'){}walkway_node_ids.append(id){}if i % strut_multiple == 0:{make_strut(id, t){}}}
+
+#if i < npts+1:{make_strut(id, t+1/float(npts))}
+
+# Functions which return a point, given a scalar.
+<scalar_point_func> ::= <add_scalar_point_funcs> | <bezier> | <xyzcos> | <xyzcos> | <expcurve>
+# <diagonal>  |
+
+# Given a scalar t, return a point on a cubic bezier curve.
+<bezier> ::= lambda t: bezier_form(t, (<bpt>, <bpt>, <bpt>, <bpt>))
+
+<expcurve> ::= lambda t: [<xexp>, 0.0, 0.0] | lambda t: [0.0, <xexp>, 0.0] | lambda t: [0.0, 0.0, <xexp>]
+<xexp> ::= <sx> * exp(1.0 + 2 * <sx> * t)
+
+# 4ft seems a reasonable guess for desired handrail height
+<zoffset> ::= lambda t: [0, 0, 4]
+
+<walkway_curve> ::= (lambda t: pt_plus_pt((<interpolateAtoB>)(t), (<z_half_cycle_sin>)(t)))
+# lambda t: pt_plus_pt(parabola(t), lambda t: interpolate(t, (pointA, pointB))(t))
+# lambda t: interpolate(t, (pointA, pointB))
+#
+<interpolateAtoB> ::= lambda t: interpolate(t, (pointA, pointB))
+
+<handrail_curve> ::= (<add_scalar_point_func_and_offset>)
+
+<walkway_plus_zoffset> ::= lambda t: pt_plus_pt(walkway(t), (<zoffset>)(t))
+
+# Given a scalar t, return a point on a diagonal between two points.
+<diagonal> ::= lambda t: interpolate(t, (<pt>, <pt>))
+
+<add_scalar_point_funcs> ::= lambda t: pt_plus_pt((<scalar_point_func>)(t), (<scalar_point_func>)(t))
+
+<add_scalar_point_func_and_offset> ::= lambda t: pt_plus_pt((<scalar_point_func>)(t), (<walkway_plus_zoffset>)(t))
+
+# allow any number (even not a multiple of 2pi) of revolutions
+<xyzcos> ::= lambda t: [<xcos>, 0.0, 0.0] | lambda t: [0.0, <xcos>, 0.0] | lambda t: [0.0, 0.0, <xcos>]
+# use 1.0 + cos() to keep it positive, avoid negative z values
+<xcos> ::= <sx> * (1.0 + cos(<ndoublerevs> * 4 * pi * t))
+
+<z_half_cycle_sin> ::= lambda t: [0.0, 0.0, 4 * <sx> * sin(pi * t)]
+
+<ndoublerevs> ::= 5*<sx>
+# points are represented as tuples
+<pt> ::= [<sx>, <sx>, <sx>]
+<bpt> ::= [4*<sx>, 4*<sx>, 4*<sx>]
+# a small, floating point value: depends on scale.
+<sx> ::= <phase>
+# <dimension> indicates x, y or z
+<dimension> ::= 0 | 1 | 2
+<radius> ::= <sx>
+<phase> ::= 0.05|0.1|0.15|0.2|0.25|0.3|0.35|0.4|0.45|0.5|0.55|0.6|0.65|0.7|0.75|0.8|0.85|0.9|0.95|1.0
+<revs> ::= 1|2|3|4|5|6|7
+<n> ::= 5|6|7|8|9|10|11|12
+<strut_multiple> ::= 2|3|4|5
+<nbranches> ::= 1|2|3|4|5

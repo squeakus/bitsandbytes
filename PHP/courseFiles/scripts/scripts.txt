@@ -1,0 +1,167 @@
+Script One - Set up an array and print out the values
+
+<?PHP
+
+$seasons = array("Autumn", "Winter", "Spring", "Summer");
+
+print $seasons[0] . " ";
+print $seasons[1] . " ";
+print $seasons[2] . " ";
+print $seasons[3];
+
+?>
+
+Script Two - Set up an array with your own Keys
+
+<?PHP
+
+$seasons = array(1 => "Autumn", 2 => "Winter", 3 => "Spring", 4 => "Summer");
+
+print $seasons[1] . " ";
+print $seasons[2] . " ";
+print $seasons[3] . " ";
+print $seasons[4];
+
+?>
+
+Script Three - Set up an array with mixed values
+
+<?PHP
+
+$seasons = array(1 => 10, 2 => "Spring", 3 => 30, 4 => "Summer");
+
+print $seasons[1] . " ";
+print $seasons[2] . " ";
+print $seasons[3] . " ";
+print $seasons[4];
+
+?>
+
+Script four - Assign values to am array: Method Two example
+
+<?PHP
+
+$seasons = array();
+
+$seasons[]="Autumn";
+$seasons[]="Winter";
+$seasons[]="Spring";
+$seasons[]="Summer";
+
+print $seasons[0] . " ";
+print $seasons[1] . " ";
+print $seasons[2] . " ";
+print $seasons[3];
+
+?>
+
+Script Five - Looping round values in an array
+
+<?PHP
+
+$start = 1;
+$times = 2;
+$answer = array();
+
+for ($start; $start < 11; $start++) {
+	$answer[$start] = $start * $times;
+}
+
+print $answer[1] . " ";
+print $answer[4] . " ";
+print $answer[8] . " ";
+print $answer[10];
+
+?>
+
+Script Six - Looping round values in an array: example 2
+
+<?PHP
+
+$seasons = array("Autumn", "Winter", "Spring", "Summer");
+
+for ($key_Number = 0; $key_Number < 4; $key_Number++) {
+	print $seasons[$key_Number];
+}
+
+?>
+
+Script Seven - Using text as Keys
+
+<?PHP
+
+$full_name = array();
+
+$full_name["David"] = "Gilmour";
+$full_name["Nick"] = "Mason";
+$full_name["Roger"] = "Waters";
+$full_name["Richard"] = "Wright"; 
+
+print $full_name["Nick"] . "<BR>";
+print $full_name["David"];
+?>
+
+Script Eight - Looping round an Associative array using For Each
+
+<?PHP
+
+$full_name = array();
+
+$full_name["David"] = "Gilmour";
+$full_name["Nick"] = "Mason";
+$full_name["Roger"] = "Waters";
+$full_name["Richard"] = "Wright"; 
+
+foreach ($full_name as $first_name => $surname) {
+	print "Key = " . $first_name . " Value = " . $surname . "<BR>";
+}
+
+?>
+
+Script Nine - Sorting Arrays (Associative)
+
+<?PHP
+
+$full_name = array();
+
+$full_name["Roger"] = "Waters";
+$full_name["Richard"] = "Wright"; 
+$full_name["Nick"] = "Mason";
+$full_name["David"] = "Gilmour";
+
+foreach ($full_name as $first_name => $surname) {
+	print "Key = " . $first_name . " Value = " . $surname . "<BR>";
+}
+
+print "<P>";
+
+ksort($full_name);
+
+foreach ($full_name as $first_name => $surname) {
+	print "Key = " . $first_name . " Value = " . $surname . "<BR>";
+}
+
+?>
+
+Script Ten - Sorting Arrays (Scalar)
+
+<?PHP
+
+$numbers = array();
+
+$numbers[]="2";
+$numbers[]="8";
+$numbers[]="10";
+$numbers[]="6";
+
+print $numbers[0] . " ";
+print $numbers[1] . " ";
+print $numbers[2] . " ";
+print $numbers[3];
+
+?>
+
+
+
+
+

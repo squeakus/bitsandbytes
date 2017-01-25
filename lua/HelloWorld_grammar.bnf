@@ -1,0 +1,8 @@
+# Always add a space when mixing terminals and non terminals(see func)
+<prog> ::= <func> | <func><prog><prog>
+<func> ::= writeChar(<letter>);
+<letter> ::= <vowel> | <consonant> | <space>
+#this is a comment
+<space> ::= '_'
+<vowel> ::='a'|'o'|'u'|'e'|'i'
+<consonant> ::= 'q'|'w'|'r'|'t'|'y'|'p'|'s'|'d'|'f'|'g'|'h'|'j'|'k'|'l'|'z'|'x'|'c'|'v'|'b'|'n'|'m'

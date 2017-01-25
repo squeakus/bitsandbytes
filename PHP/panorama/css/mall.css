@@ -1,0 +1,175 @@
+.center
+{
+	align=center;			
+	background-color: #fffff1;
+	position: 350px;
+}
+.litenrubrik
+{
+    COLOR: #333333;
+    FONT-FAMILY: verdana, helvetica, times;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bold;
+    text-align: left;
+	padding-top: 10px;
+}
+.storrubrik
+{
+    COLOR: #333333;
+    FONT-FAMILY: verdana, helvetica, times;
+    FONT-SIZE: 14px;
+    FONT-WEIGHT: bold;
+}
+.text
+{
+    COLOR: #666666;
+    FONT-FAMILY: verdana, helvetica, times;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bold;
+    text-align: left;
+}
+
+.text_td
+{
+    COLOR: #666666;
+    FONT-FAMILY: verdana, helvetica, times;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bold;
+    text-align: right;
+}
+
+.finstilt
+{
+	font-family: trebuchet ms, geneva;
+	font-size: 10px;
+	font-style: italic;
+	margin: 4px 0px 4px 4px;
+}
+.finstilt2
+{
+	font-family: trebuchet ms, geneva;
+	font-size: 11px;
+	font-style: italic;
+	margin: 4px 0px 4px 4px;
+    text-align: left;
+}
+.menurowEven {
+	background-color: #F0F8F9;
+}
+.menurow {
+	background-color: #ffffff;
+}
+
+body {
+	background-color: #EDEDD9;
+}
+.highlight
+{
+	color: #C0841B;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+	body
+{
+	background-color: #EDEDD9;
+}
+
+table.main
+{
+	position: relative;
+	top:40px;
+	left:40px;
+}
+
+td
+{
+	font-family: Georgia, times;
+	font-size: 11px;
+}
+
+td.g
+{
+	font-family: Georgia, times;
+	font-size: 11px;
+	background-color: #CCCC99;
+	line-height: 16px;
+}
+
+td.gg
+{
+	background-color: #999966;
+}
+
+td.gg-h
+{
+	background-color: #999966;
+	width: 10px;
+}
+
+p
+{
+	margin: 10px 10px 10px 10px;
+}
+
+p.mindre
+{
+	font-family: trebuchet ms, geneva;
+	font-size: 10px;
+	font-style: italic;
+	margin: 10px 10px 10px 10px;
+}
+
+p.finstilt
+{
+	font-family: trebuchet ms, geneva;
+	font-size: 10px;
+	font-style: italic;
+	margin: 4px 0px 4px 4px;
+}
+
+p.citat
+{
+	font-family: trebuchet ms, geneva;
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+p.rubrik
+{
+	font-family: trebuchet ms, geneva;
+	font-size: 20px;
+	margin-bottom: 10px; 
+	text-align: center;
+}
+
+p.rubrik-liten
+{
+	font-family: Georgia, times;
+	font-weight: bold;
+	font-size: 11px;
+	margin-bottom: -10px; 
+}
+
+a.finstilt
+{	
+	font-family: trebuchet ms, geneva;
+	font-size: 10px;
+	font-style: italic;
+}
+
+a
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
+a:hover
+{
+	color: #CCCC99;
+	text-decoration: none;
+	background: #94070C;
+}

@@ -1,0 +1,24 @@
+load "msh3"
+load "medit"
+
+mesh Th=square(5,5,flags=3);
+plot(Th,wait=1);
+// fespace Vh(Th,P0);
+// Vh u;
+// int i,n=u.n;
+// u=0;
+// for (i=0;i<n;i++)
+// {
+//   u[][i]=1;
+//   cout << "VAL: " << abs(u)>1.e-01 << "\n";
+//   plot(u,wait=1);
+//   mesh Sh1=trunc(Th,abs(u)>1.e-10,split=2);
+//   plot(Sh1,wait=1,ps="trunc"+i+".eps");
+// }
+
+Th=splitmesh(Th,1+2*z);
+plot(Th,wait=1);
+//Th=splitmesh(Th,1+5*(square(x-0.5)+y*y));
+//Th=trunc(Th,2,split=2);
+//plot(Th,wait=1);
+

@@ -1,0 +1,128 @@
+
+
+<S> ::= <fn_def><call>
+<fn_def> ::= def mutant():{<init><define_funcs><define_struts><roof><walkway><add_edges><offset_copy><return>}
+
+
+<init> ::= g = graph.graph(){}handrail_node_ids=[]{}walkway_node_ids=[]{}roof_node_ids=[]{}
+#{}support_node_ids=[]{}brace_node_ids=[]{}
+<define_funcs> ::= <handrail_def><walkway_def><roof_def><const_defs>
+#<support_def>
+<roof_def> ::= def roof(t):{retval=<roof_curve>(t){}return(retval)}
+<handrail_def> ::= def handrail(t):{return <handrail_curve>(t)}
+<walkway_def> ::= def walkway(t):{retval=<walkway_curve>(t){}return(retval)}
+#<support_def> ::= def support(t):{retval=<support_curve>(t){}return(retval)}
+<const_defs> ::= strut_multiple = <strut_multiple>{}npts = <bridge_length>{}width=2{}pointA = [0, 0, 0]{}pointB = [<bridge_length>, 0, 0]{}pointC = [0, 0, <roof_height>]{}pointD = [<bridge_length>, 0, <roof_height>]{}pointE = [0, 0, <roof_width>]{}pointF = [<bridge_length>, 0, <roof_width>]{}p = (<phase>/2){}
+
+
+<define_struts> ::= <handrail_strut><roof_strut>
+#<support_strut><brace_strut>
+<handrail_strut> ::= def handrail_strut(i, t):{n=<nbranches>{}xyz=walkway(t){}xyz[2]=p*xyz[2]+(p)*handrail(t)[2]{}id=g.add_unique_node(xyz,<join>){}g.add_edge(i, id){}for j in range(n):{xyz=handrail(t+(j-(n-2)/9.0)/float(npts)){}id2=g.add_unique_node(xyz,'handrail'){}handrail_node_ids.append(id2){}g.add_edge(id, id2){}}}
+#<support_strut> ::= <simple_walkway_support> | <curved_support> | <simple_roof_support> 
+#<simple_walkway_support> ::= def support_strut(i,t):{xyz = walkway(t){}xyz[2]= xyz[2]-2{}id=g.add_unique_node(xyz,<join>){}support_node_ids.append(id){}g.add_edge(i, id)}
+<roof_strut> ::= def roof_strut(i,t):{xyz=roof(t){}id=g.add_unique_node(xyz,'post'){}roof_node_ids.append(id){}g.add_edge(i,id)}
+#<curved_support> ::= def support_strut(i,t):{n=<nbranches>{}for j in range(n):xyz=support(t+(j-(n-1)/5.0)/float(npts)){}xyz[2]=(xyz[2]*0.5)-(<sx>){}id=g.add_unique_node(xyz,'post'){}support_node_ids.append(id){}g.add_edge(i, id)}
+#<simple_roof_support> ::= def support_strut(i,t):{xyz = roof(t){}xyz[2]= xyz[2]+(3*<sx>){}id=g.add_unique_node(xyz,<join>){}support_node_ids.append(id){}g.add_edge(i, id)}
+#<brace_strut> ::= <simple_walkway_brace>|<simple_roof_brace>
+#|<curved_brace>
+#<simple_walkway_brace> ::=def brace_strut(i,t):{xyz = walkway(t){}xyz[2]=-1{}xyz[2]= xyz[2]-1{}id=g.add_unique_node(xyz,<join>){}brace_node_ids.append(id){}g.add_edge(i, id)}
+#<simple_roof_brace> ::=def brace_strut(i,t):{xyz = roof(t){}xyz[1]=+1{}xyz[2]= xyz[2]+(2*<sx>){}id=g.add_unique_node(xyz,<join>){}brace_node_ids.append(id){}g.add_edge(i, id)}
+#<curved_brace>::= def brace_strut(i,t):{n=<nbranches>{}for j in range(n):xyz=support(t+(j-(n-1)/5.0)/float(npts)){}xyz[1]=-(width * 0.5){}xyz[2]=(xyz[2]*0.5)-(2*<sx>){}id=g.add_unique_node(xyz,'post'){}brace_node_ids.append(id){}g.add_edge(i, id)}
+
+
+<add_edges> ::= <add_walkway_edges><add_handrail_edges><add_roof_edges>
+#<add_support_edges><add_brace_edges>
+<add_handrail_edges> ::= g.connect_nodes(handrail_node_ids){}
+<add_walkway_edges> ::= g.connect_nodes(walkway_node_ids){}
+#<add_support_edges> ::= g.connect_nodes(support_node_ids){}
+#<add_brace_edges> ::= g.connect_nodes(brace_node_ids){}g.connect_nodes(brace_node_ids+walkway_node_ids){}
+#+support_node_ids
+<add_roof_edges> ::= g.connect_nodes(roof_node_ids){}g.connect_nodes(roof_node_ids+handrail_node_ids){}
+
+
+<make_strut> ::= handrail_strut(id, t){}roof_strut(id, t){}
+#|handrail_strut(id, t)
+#||handrail_strut(id,t)handrail_strut(id, t){}brace_strut(id,t){}brace_strut(id,t)
+<make_roof_strut> ::= handrail_strut(id, t){}
+#{}support_strut(id,t)|handrail_strut(id, t){}support_strut(id,t)|handrail_strut(id,t){}roof_strut(id,t)
+<walkway> ::= for i in range(npts+1):{t=i/float(npts){}id=g.add_unique_node(walkway(t),'walkway'){}walkway_node_ids.append(id){}if i % strut_multiple == 0:{<make_strut>}}
+<roof> ::= for i in range(npts+1):{t=i/float(npts){}id=g.add_unique_node(roof(t),'roof'){}roof_node_ids.append(id){}if i % strut_multiple == 0:{<make_roof_strut>}}
+
+
+<return> ::= return g
+<call> ::= XXXeval_or_exec_outputXXX = mutant()
+<offset_copy> ::= g.copy_and_offset_with_mirror((0.0,width, 0), True){}
+
+
+<bool> ::= True | False
+<join> ::= 'join' | 'post'
+
+
+# Functions which return a point, given a scalar.
+<scalar_point_func> ::= <add_scalar_point_funcs> | <spiral> | <expcurve> | <bezier> | <xyzcos>
+
+
+# Given a scalar t, return a point on a cubic bezier curve.
+<bezier> ::= lambda t: bezier_form(t, (<bpt>, <bpt>, <bpt>, <bpt>))
+<expcurve> ::= lambda t: [<xexp>, 0.0, 0.0] | lambda t: [0.0, <xexp>, 0.0] | lambda t: [0.0, 0.0, <xexp>]
+<xexp> ::= <sx> * exp(1.0 + 2 * <sx> * t)
+<spiral> ::= lambda t: [2 * <sx> * <xcos>, 2 * <sx> * <xsin>, 0.0] 
+
+
+# 1.2m seems a reasonable guess for desired handrail height
+<zoffset> ::= lambda t: [0, 0, 1.2]
+<xzoffset> ::= lambda t: [1, 0, 1.2]
+<yzoffset> ::= lambda t: [0, (width-7), 1.2]
+<xyzoffset> ::= lambda t: [1, width, 1.2]
+
+
+<walkway_curve> ::= (lambda t: pt_plus_pt((<interpolateAtoB>)(t), (<z_half_cycle_sin>)(t)))| (lambda t: interpolate(t, (pointA, pointB)))
+<roof_curve> ::= (lambda t: pt_plus_pt((<interpolateCtoD>)(t), (<z_half_cycle_sin>)(t))) 
+
+
+<interpolateAtoB> ::= lambda t: interpolate(t, (pointA, pointB))
+<interpolateCtoD> ::= lambda t: interpolate(t, (pointC, pointD))
+
+
+<handrail_curve> ::= (<add_scalar_point_func_and_offset>)
+#<support_curve> ::= (<add_scalar_point_func_and_offset>)
+
+<walkway_plus_zoffset> ::= lambda t: pt_plus_pt(walkway(t), (<xzoffset>)(t))
+<walkway_plus_yzoffset> ::= lambda t: pt_plus_pt(walkway(t), (<xyzoffset>)(t))
+
+# Given a scalar t, return a point on a diagonal between two points.
+#<diagonal> ::= lambda t: interpolate(t, (<pt>, <pt>))
+
+<add_scalar_point_funcs> ::= lambda t: pt_plus_pt((<scalar_point_func>)(t), (<scalar_point_func>)(t))
+<add_scalar_point_func_and_offset> ::= lambda t: pt_plus_pt((<scalar_point_func>)(t), (<walkway_plus_zoffset>)(t))|lambda t: pt_plus_pt((<scalar_point_func>)(t), (<walkway_plus_yzoffset>)(t))
+
+# allow any number (even not a multiple of 2pi) of revolutions
+<xyzcos> ::= lambda t: [<xcos>, 0.0, 0.0] | lambda t: [0.0, <xcos>, 0.0] | lambda t: [0.0, 0.0, <xcos>]
+<xyzsin> ::= lambda t: [<xsin>, 0.0, 0.0] | lambda t: [0.0, <xsin>, 0.0] | lambda t: [0.0, 0.0, <xsin>]
+
+# use 1.0 + cos() to keep it positive, avoid negative z values
+<xcos> ::= <sx> * (1.0 + cos(<ndoublerevs> * 4 * pi * t))
+<xsin> ::= <sx> * (1.0 + sin(<ndoublerevs> * 4 * pi * t))
+
+<z_half_cycle_sin> ::= lambda t: [0.0, 0.0, 2 * <sx> * sin(pi * t)]
+<z_half_cycle_sin_inverted> ::= lambda t: [0.0, 0.0, -2 * <sx> * sin(pi * t)]
+<z_half_cycle_sin_wide> ::= lambda t:[0.0, <roof_width>, 2 * <sx> * sin(pi * t)]
+<z_half_cycle_sin_inverted_wide> ::= lambda t: [0.0, <roof_width>, -2 * <sx> * sin(pi * t)]
+
+<ndoublerevs> ::= 5*<sx>
+# points are represented as tuples
+<pt> ::= [<sx>, <sx>, <sx>]
+<bpt> ::= [3*<sx>, 3*<sx>, 3*<sx>]
+# a small, floating point value: depends on scale.
+<sx> ::= <phase>
+# <dimension> indicates x, y or z
+<dimension> ::= 0 | 1 | 2
+<radius> ::= <sx>
+<phase> ::= 0.05|0.1|0.15|0.2|0.25|0.3|0.35|0.4|0.45|0.5|0.55|0.6|0.65|0.7|0.75|0.8|0.85|0.9|0.95|1.0
+<revs> ::= 1|2|3|4|5|6|7
+<n> ::= 5|6|7|8|9|10|11|12
+<bridge_length> ::= 20
+<roof_height> ::= 3|3.5|4
+<roof_width> ::= 0.5|0.75|1|1.25|1.5|1.75|2|2.25|2.5|2.75|3
+<strut_multiple> ::= 2|4|5
+<nbranches> ::= 1|2|3|4|5

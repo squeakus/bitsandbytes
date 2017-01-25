@@ -1,0 +1,78 @@
+//  example to build a mesh a cone 
+load "msh3"
+load "medit"
+// cone using buildlayers with a triangle 
+real radius=2,height=5; 
+border Adj(t=0,height){x=t;y=0;};
+border Hypo(t=1,0){x=height*t;y=radius*t;};
+border Vert(t=0,radius){x=height;y=t;};
+
+int nn=2; //affects sides
+real h= 1./nn;
+//mesh cone=buildmesh(  Adj(nn)+ Hypo(nn) + Vert(100*nn) ) ;
+//plot(cone,wait=1);
+
+mesh crossSection=buildmesh(  Adj(height*nn)+ Hypo(sqrt(height*height+radius*radius)*2) + Vert(radius*5) ) ;
+
+int n = 1; // affects density of mesh
+//border a(t=1,3){x=t;y=0;};
+//border b(t=0,1){x=3;y=t;};
+//border c(t=3,0){x=t ;y=1;};
+//border d(t=1,0){x = 1-t; y = t;};
+
+//bullet
+//border a(t=0,1){x=t;y=0;};
+//border b(t=0,3){x=1;y=t;};
+//border c(t=0,.5){x=1-t;y=3+t;};
+//border d(t=.5,0){x=t ;y=3.5;};
+//border e(t=3.5,0){x = 0; y = t;};
+//mesh test = buildmesh( a(5*n) + b(1) +c(5*n)+ d(5*n)+e(5*n));
+
+//boring box
+//border a(t=0,1){x=t;y=0;};
+//border b(t=0,2){x=1;y=t;};
+//border c(t=1,0){x=t;y=2;};
+//border d(t=2,0){x=0;y=t;};
+//mesh test = buildmesh( a(1) + b(1) +c(1)+ d(3));
+
+//crossing over x axis
+//border a(t=0,1){x=t;y=0;};
+//border b(t=0,2){x=1;y=t;};
+//border c(t=1,0){x=t;y=2;};
+//border d(t=0,-1){x=t;y=2;};
+//border e(t=2,0){x=-1;y=t;};
+//border f(t=-1,0){x=t;y=0;}
+//mesh test = buildmesh( a(1) + b(1) +c(1)+ d(1)+e(1)+f(1));
+
+
+
+//real theta=4.*pi/3.;
+//real a=2.,b=1.;
+//func z=x;
+//border Gamma1(t=0,theta){ x = a * cos(t); y = b*sin(t); }
+//border Gamma2(t=theta,2*pi) { x = a * cos(t); y = b*sin(t); }
+//mesh test=buildmesh(Gamma1(100)+Gamma2(50));
+
+//border C(t=0,2*pi){x=cos(t); y=sin(t);}
+//border C(t=2*pi,0){x=0.1+0.3*cos(t); y=0.5*sin(t);}
+
+//border a(t=0,2*pi){ x=cos(t); y=sin(t);}
+//border b(t=0,2*pi){ x=0.8+0.3*cos(t); y=0.3*sin(t);}
+//plot(a(50)+b(-30),wait=1);
+
+//mesh test = buildmesh (C(20));
+plot(test,wait=1);
+
+
+//3D BUILD LAYERS STUFF
+int MaxLayersT=(int(2*pi*radius/.2)/2)*4;
+func zminT = 0;
+func zmaxT = 2*pi;
+func fx= x*cos(z);// / max( abs(cos(z) ), abs(sin(z)));
+func fz= y;
+func fy= x*sin(z);// / max( abs(c5s(z) ), abs(sin(z)));
+
+//mesh3 Th3T=buildlayers(test,coef= max(.03,y/max(x/height,0.4) /radius), MaxLayersT,zbound=[zminT,zmaxT],transfo=[fx,fy,fz],facemerge=1);
+mesh3 Th3T=buildlayers(test,coef= 0.03, MaxLayersT,zbound=[zminT,zmaxT],transfo=[fx,fy,fz],facemerge=1,ptmerge=200);
+medit("cone",Th3T,wait=1);
+savemesh(Th3T,"test.mesh");

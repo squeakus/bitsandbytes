@@ -1,0 +1,69 @@
+      numel numnp nmat nmode integ_flag This is the patch test 
+        4    9    1    0    1
+  matl no., E mod., Poiss. Ratio, density, shear fac. 
+  0  30000000.0000    0.3000 22920.0000    0.8333
+el no., connectivity, matl no 
+   0    0    3    4    1    0
+   1    1    4    5    2    0
+   2    3    6    7    4    0
+   3    4    7    8    5    0
+node no., coordinates 
+0       0.000000       0.000000      -0.525000
+1       0.100000       0.300000      -0.350000
+2      -0.200000       1.200000       0.475000
+3       0.300000       0.100000      -0.600000
+4       0.300000       0.500000      -0.300000
+5       0.550000       0.900000      -0.125000
+6       1.100000       0.000000      -1.075000
+7       0.800000       0.500000      -0.550000
+8       1.000000       1.000000      -0.275000
+The corresponding top nodes are:
+0       0.000000       0.000000      -0.425000
+1       0.100000       0.300000      -0.250000
+2      -0.200000       1.200000       0.575000
+3       0.300000       0.100000      -0.500000
+4       0.300000       0.500000      -0.200000
+5       0.550000       0.900000      -0.025000
+6       1.100000       0.000000      -0.975000
+7       0.800000       0.500000      -0.450000
+8       1.000000       1.000000      -0.175000
+prescribed displacement x: node  disp value
+   0   0.000000e+00
+   1   0.000000e+00
+ -10
+ prescribed displacement y: node  disp value
+   0   0.000000e+00
+   1   0.000000e+00
+ -10
+ prescribed displacement z: node  disp value
+   0   0.000000e+00
+ -10
+ prescribed angle phi x: node angle value
+   0   9.450000e-05
+   1   1.630000e-04
+   2   2.545000e-04
+   3   1.680000e-04
+   5   3.475000e-04
+   6   3.035000e-04
+   7   3.290000e-04
+   8   4.495000e-04
+ -10
+ prescribed angle phi y: node angle value
+   0  -1.732500e-04
+   1   2.450000e-05
+   2   5.967500e-04
+   3  -9.800000e-05
+   5   4.287500e-04
+   6  -1.347500e-04
+   7   1.785000e-04
+   8   5.092500e-04
+ -10
+ node with point load x, y, z and 2 moments phi x, phi y
+ -10
+ node no. with stress and stress vector in lamina xx,yy,xy,zx,yz
+ -10 
+
+
+ Note: Remove the prescribed angles and disp. for node 4.
+   4   2.340000e-04
+   4   1.610000e-04

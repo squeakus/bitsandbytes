@@ -1,0 +1,24 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=24
+#PBS -l walltime=05:00:00
+#PBS -N taskfarmtest
+#PBS -A ucd01
+#PBS -o out.log
+#PBS -e err.log
+
+module load apps
+module load openfoam/intel/2.2.2
+module load taskfarm/2.3
+source /ichec/packages/OpenFOAM/2.2.2/intel/14.0.0.080/OpenFOAM-2.2.2/etc/bashrc
+
+cd $PBS_O_WORKDIR
+cp $PBS_NODEFILE ./hostfile
+
+echo "Taskfarm starting at" `date`
+T="$(date +%s)"
+taskfarm tasks
+echo "Run completed at " `date`
+T="$(($(date +%s)-T))"
+echo "Time in seconds: ${T}"
+
+

@@ -1,0 +1,38 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="myStyle.css" />
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('#mybutton').click(function() {
+
+
+  jQuery.ajax({
+  url: "http://0.0.0.0:8080",
+  type: "GET",
+  data: {"name" : "joe"},
+  success: function(data) {
+  console.log(data)
+  $('#mycontent').html(data);
+  },
+  });
+
+
+  });
+  });
+</script>
+
+<input class="button" id="mybutton">Click me</a>
+
+
+<div id="mycontent">Click above, to see me change!</div>
+
+</body>
+</html>
+
+

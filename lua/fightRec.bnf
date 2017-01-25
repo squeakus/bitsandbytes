@@ -1,0 +1,9 @@
+<prog> ::= MOVE ={<move>}
+<move> ::= <limb> | <limb>, <move>
+<limb> ::= <l_arm>|<r_arm>|<l_leg>|<r_leg>|<torso>
+<l_arm> ::= L_WRIST=<state>,L_ELBOW=<state>,L_SHOULDER = <state>,L_PECS=<state>
+<r_arm> ::= R_WRIST=<state>,R_ELBOW=<state>,R_SHOULDER = <state>,R_PECS=<state>
+<r_leg> ::= L_ANKLE=<state>,L_KNEE=<state>,L_HIP=<state>,L_GLUTE=<state>
+<l_leg> ::= L_ANKLE=<state>,L_KNEE=<state>,L_HIP=<state>,L_GLUTE=<state>
+<torso> ::= L_PECS=<state>,R_PECS=<state>,CHEST=<state>,ABS=<state>
+<state> ::= 1 | 2 | 3 | 4

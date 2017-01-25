@@ -1,0 +1,40 @@
+require("gplots")
+# This will take the experiments passed in and graph the mean of the best reults
+
+
+wilcoxtestdata <- function(experimentArray)
+{
+        baseDir <- "/Users/jonathanbyrne/results/maxAdjusted"
+
+        #no. of files to read from
+        noOfRuns <- 550
+        noOfExperiments <- length(experimentArray)
+                
+        #create vector to store last result in each run
+        tmpArray <- matrix(NaN,nrow=noOfRuns)  #this has a row for each run
+
+        #create an array to hold the two samples you want to compare
+        compareArray <- matrix(,nrow=noOfRuns,ncol=noOfExperiments)
+        for(i in 1:noOfExperiments)
+	{
+          #specify the directory
+          experimentDir <- paste(baseDir, experimentArray[i] , sep="/")
+          print(experimentDir)
+
+          #create alist of all the files in the folder
+          files = list.files(path=experimentDir, pattern = ".dat")		
+	  cnt <- 0
+          
+          #take last element from the run to do histogram
+	  for(file in files)
+	  {
+            cnt <- cnt+1   
+            localFile = paste(experimentDir,file, sep = "/")
+            tmpExperiment <- read.table(localFile); 
+            tmpArray[cnt] <- tail(tmpExperiment$V1, n=1)   #add the first row(best) to the column
+	  }
+
+          compareArray[,i] <-tmpArray
+        }
+        wilcox.test(compareArray[,1],compareArray[,2],paired = FALSE)
+}

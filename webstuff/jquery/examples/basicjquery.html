@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+   <meta charset="utf-8">
+   <title>jQuery demo</title>
+   <style>
+     a.test { font-weight: bold; font-size: 50 }
+   </style>
+ </head>
+
+ <body>
+
+   <a href="http://jquery.com/">jQuery</a>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+   <script>
+     $("a").addClass("test");
+     
+     $(document).ready(function(){
+       $("a").click(function(event){
+         alert("As you can see, the longer took you to jquery.com");
+         event.preventDefault();
+       });
+     });
+   </script>
+ </body>
+ </html>

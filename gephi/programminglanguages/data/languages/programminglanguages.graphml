@@ -1,0 +1,5231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+<key attr.name="label" attr.type="string" for="node" id="label"/>
+<key attr.name="Edge Label" attr.type="string" for="edge" id="edgelabel"/>
+<key attr.name="weight" attr.type="double" for="edge" id="weight"/>
+<key attr.name="Edge Id" attr.type="string" for="edge" id="edgeid"/>
+<key attr.name="r" attr.type="int" for="node" id="r"/>
+<key attr.name="g" attr.type="int" for="node" id="g"/>
+<key attr.name="b" attr.type="int" for="node" id="b"/>
+<key attr.name="x" attr.type="float" for="node" id="x"/>
+<key attr.name="y" attr.type="float" for="node" id="y"/>
+<key attr.name="size" attr.type="float" for="node" id="size"/>
+<key attr.name="Modularity Class" attr.type="int" for="node" id="modularity_class"/>
+<graph edgedefault="directed">
+<node id="ABC">
+<data key="label">ABC</data>
+<data key="modularity_class">40</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">150</data>
+<data key="b">246</data>
+<data key="x">-243.57945</data>
+<data key="y">-1024.2955</data>
+</node>
+<node id="Python">
+<data key="label">Python</data>
+<data key="modularity_class">1</data>
+<data key="size">31.75</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">120.29675</data>
+<data key="y">-621.1107</data>
+</node>
+<node id="AS/400 Control Language">
+<data key="label">AS/400 Control Language</data>
+<data key="modularity_class">10</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">754.68274</data>
+<data key="y">455.78293</data>
+</node>
+<node id="Windows PowerShell">
+<data key="label">Windows PowerShell</data>
+<data key="modularity_class">10</data>
+<data key="size">18.867647</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">242.05554</data>
+<data key="y">274.732</data>
+</node>
+<node id="Common Lisp">
+<data key="label">Common Lisp</data>
+<data key="modularity_class">8</data>
+<data key="size">22.088234</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-473.34055</data>
+<data key="y">-973.1142</data>
+</node>
+<node id="Dylan">
+<data key="label">Dylan</data>
+<data key="modularity_class">1</data>
+<data key="size">22.088234</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-393.5663</data>
+<data key="y">-750.6829</data>
+</node>
+<node id="Emacs Lisp">
+<data key="label">Emacs Lisp</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-536.5748</data>
+<data key="y">-1045.819</data>
+</node>
+<node id="R">
+<data key="label">R</data>
+<data key="modularity_class">8</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-446.50305</data>
+<data key="y">-837.4486</data>
+</node>
+<node id="Clojure">
+<data key="label">Clojure</data>
+<data key="modularity_class">8</data>
+<data key="size">17.794117</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-40.273346</data>
+<data key="y">-943.35614</data>
+</node>
+<node id="EuLisp">
+<data key="label">EuLisp</data>
+<data key="modularity_class">8</data>
+<data key="size">18.867647</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-585.0994</data>
+<data key="y">-918.92804</data>
+</node>
+<node id="SubL">
+<data key="label">SubL</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-670.2519</data>
+<data key="y">-1086.4542</data>
+</node>
+<node id="Cadence SKILL">
+<data key="label">Cadence SKILL</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-527.34064</data>
+<data key="y">-1123.4323</data>
+</node>
+<node id="ISLISP">
+<data key="label">ISLISP</data>
+<data key="modularity_class">8</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-693.0584</data>
+<data key="y">-1005.17645</data>
+</node>
+<node id="Ruby">
+<data key="label">Ruby</data>
+<data key="modularity_class">1</data>
+<data key="size">29.602942</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-71.04534</data>
+<data key="y">-566.9539</data>
+</node>
+<node id="Goo">
+<data key="label">Goo</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-517.2315</data>
+<data key="y">-765.0981</data>
+</node>
+<node id="Eiffel">
+<data key="label">Eiffel</data>
+<data key="modularity_class">17</data>
+<data key="size">22.088234</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">275.62393</data>
+<data key="y">-649.6155</data>
+</node>
+<node id="D">
+<data key="label">D</data>
+<data key="modularity_class">17</data>
+<data key="size">23.161766</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">400.8458</data>
+<data key="y">-469.02762</data>
+</node>
+<node id="Scala">
+<data key="label">Scala</data>
+<data key="modularity_class">17</data>
+<data key="size">22.088234</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">286.69852</data>
+<data key="y">-866.77515</data>
+</node>
+<node id="C#">
+<data key="label">C#</data>
+<data key="modularity_class">17</data>
+<data key="size">25.308823</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">525.77893</data>
+<data key="y">-716.8999</data>
+</node>
+<node id="Java">
+<data key="label">Java</data>
+<data key="modularity_class">17</data>
+<data key="size">42.485294</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">437.51404</data>
+<data key="y">-588.7609</data>
+</node>
+<node id="Sather">
+<data key="label">Sather</data>
+<data key="modularity_class">9</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">581.99194</data>
+<data key="y">-817.93756</data>
+</node>
+<node id="Lisaac">
+<data key="label">Lisaac</data>
+<data key="modularity_class">1</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-52.287296</data>
+<data key="y">-314.60077</data>
+</node>
+<node id="Racket">
+<data key="label">Racket</data>
+<data key="modularity_class">8</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-179.15855</data>
+<data key="y">-737.8792</data>
+</node>
+<node id="Factor">
+<data key="label">Factor</data>
+<data key="modularity_class">7</data>
+<data key="size">17.794117</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-911.28625</data>
+<data key="y">76.7215</data>
+</node>
+<node id="Concatenation">
+<data key="label">Concatenation</data>
+<data key="modularity_class">7</data>
+<data key="size">13.5</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-962.37646</data>
+<data key="y">140.5584</data>
+</node>
+<node id="Cat">
+<data key="label">Cat</data>
+<data key="modularity_class">7</data>
+<data key="size">14.573529</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-1041.3463</data>
+<data key="y">184.42932</data>
+</node>
+<node id="Icon">
+<data key="label">Icon</data>
+<data key="modularity_class">1</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">61.613926</data>
+<data key="y">-288.47687</data>
+</node>
+<node id="Joy">
+<data key="label">Joy</data>
+<data key="modularity_class">7</data>
+<data key="size">16.720589</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-1106.13</data>
+<data key="y">238.33653</data>
+</node>
+<node id="Trith">
+<data key="label">Trith</data>
+<data key="modularity_class">7</data>
+<data key="size">13.5</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-1138.959</data>
+<data key="y">312.68527</data>
+</node>
+<node id="V">
+<data key="label">V</data>
+<data key="modularity_class">7</data>
+<data key="size">13.5</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-1180.1187</data>
+<data key="y">271.0057</data>
+</node>
+<node id="PostScript">
+<data key="label">PostScript</data>
+<data key="modularity_class">7</data>
+<data key="size">14.573529</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-992.6574</data>
+<data key="y">-82.43786</data>
+</node>
+<node id="Portable Document Format">
+<data key="label">Portable Document Format</data>
+<data key="modularity_class">7</data>
+<data key="size">13.5</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-1064.234</data>
+<data key="y">-41.78225</data>
+</node>
+<node id="STOS BASIC">
+<data key="label">STOS BASIC</data>
+<data key="modularity_class">0</data>
+<data key="size">13.5</data>
+<data key="r">164</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1225.0358</data>
+<data key="y">1476.3751</data>
+</node>
+<node id="AMOS">
+<data key="label">AMOS</data>
+<data key="modularity_class">0</data>
+<data key="size">13.5</data>
+<data key="r">164</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1303.882</data>
+<data key="y">1442.2279</data>
+</node>
+<node id="Smalltalk">
+<data key="label">Smalltalk</data>
+<data key="modularity_class">1</data>
+<data key="size">36.044117</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-193.72673</data>
+<data key="y">-445.81702</data>
+</node>
+<node id="Falcon">
+<data key="label">Falcon</data>
+<data key="modularity_class">1</data>
+<data key="size">19.941177</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">48.72941</data>
+<data key="y">-445.77374</data>
+</node>
+<node id="Fancy">
+<data key="label">Fancy</data>
+<data key="modularity_class">1</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-355.0731</data>
+<data key="y">-403.6501</data>
+</node>
+<node id="Objective-C">
+<data key="label">Objective-C</data>
+<data key="modularity_class">28</data>
+<data key="size">18.867647</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">213.93037</data>
+<data key="y">-382.83112</data>
+</node>
+<node id="PHP">
+<data key="label">PHP</data>
+<data key="modularity_class">17</data>
+<data key="size">17.794117</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">353.80026</data>
+<data key="y">-328.65662</data>
+</node>
+<node id="Dart">
+<data key="label">Dart</data>
+<data key="modularity_class">28</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">-167.42416</data>
+<data key="y">-293.67838</data>
+</node>
+<node id="AppleScript">
+<data key="label">AppleScript</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-353.8749</data>
+<data key="y">-312.1344</data>
+</node>
+<node id="Groovy">
+<data key="label">Groovy</data>
+<data key="modularity_class">1</data>
+<data key="size">16.720589</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">63.3028</data>
+<data key="y">-526.78546</data>
+</node>
+<node id="Logtalk">
+<data key="label">Logtalk</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-292.24954</data>
+<data key="y">-263.8725</data>
+</node>
+<node id="Ioke">
+<data key="label">Ioke</data>
+<data key="modularity_class">1</data>
+<data key="size">16.720589</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-384.90247</data>
+<data key="y">-444.5228</data>
+</node>
+<node id="Common Lisp Object System">
+<data key="label">Common Lisp Object System</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-278.25043</data>
+<data key="y">-357.8803</data>
+</node>
+<node id="Io">
+<data key="label">Io</data>
+<data key="modularity_class">1</data>
+<data key="size">22.088234</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-440.605</data>
+<data key="y">-271.69168</data>
+</node>
+<node id="NewtonScript">
+<data key="label">NewtonScript</data>
+<data key="modularity_class">1</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-453.03888</data>
+<data key="y">-215.08334</data>
+</node>
+<node id="Self">
+<data key="label">Self</data>
+<data key="modularity_class">1</data>
+<data key="size">24.235294</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-453.76807</data>
+<data key="y">-146.19678</data>
+</node>
+<node id="Perl 6">
+<data key="label">Perl 6</data>
+<data key="modularity_class">10</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">6.6716294</data>
+<data key="y">-679.5778</data>
+</node>
+<node id="T">
+<data key="label">T</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-701.5368</data>
+<data key="y">-946.6103</data>
+</node>
+<node id="Ada">
+<data key="label">Ada</data>
+<data key="modularity_class">17</data>
+<data key="size">28.529411</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">657.27545</data>
+<data key="y">-450.62497</data>
+</node>
+<node id="C++">
+<data key="label">C++</data>
+<data key="modularity_class">17</data>
+<data key="size">29.602942</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">488.7298</data>
+<data key="y">-376.44913</data>
+</node>
+<node id="PL/SQL">
+<data key="label">PL/SQL</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">751.61804</data>
+<data key="y">-512.9274</data>
+</node>
+<node id="VHDL">
+<data key="label">VHDL</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">797.0862</data>
+<data key="y">-475.9324</data>
+</node>
+<node id="Seed7">
+<data key="label">Seed7</data>
+<data key="modularity_class">17</data>
+<data key="size">19.941177</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">772.07056</data>
+<data key="y">-402.68323</data>
+</node>
+<node id="Vala">
+<data key="label">Vala</data>
+<data key="modularity_class">17</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">556.1871</data>
+<data key="y">-633.7875</data>
+</node>
+<node id="Qore">
+<data key="label">Qore</data>
+<data key="modularity_class">10</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">337.29675</data>
+<data key="y">-254.40321</data>
+</node>
+<node id="MiniD">
+<data key="label">MiniD</data>
+<data key="modularity_class">1</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">170.71432</data>
+<data key="y">-169.43063</data>
+</node>
+<node id="DScript">
+<data key="label">DScript</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">353.22272</data>
+<data key="y">-428.7861</data>
+</node>
+<node id="HyperTalk">
+<data key="label">HyperTalk</data>
+<data key="modularity_class">10</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">436.66473</data>
+<data key="y">184.13017</data>
+</node>
+<node id="ECMAScript">
+<data key="label">ECMAScript</data>
+<data key="modularity_class">10</data>
+<data key="size">16.720589</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">379.38434</data>
+<data key="y">-125.85546</data>
+</node>
+<node id="LiveCode">
+<data key="label">LiveCode</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">468.02402</data>
+<data key="y">311.95193</data>
+</node>
+<node id="JavaScript">
+<data key="label">JavaScript</data>
+<data key="modularity_class">28</data>
+<data key="size">27.455883</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">-34.70347</data>
+<data key="y">-404.869</data>
+</node>
+<node id="Objective-J">
+<data key="label">Objective-J</data>
+<data key="modularity_class">28</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">152.33957</data>
+<data key="y">-330.61353</data>
+</node>
+<node id="CoffeeScript">
+<data key="label">CoffeeScript</data>
+<data key="modularity_class">28</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">-20.339952</data>
+<data key="y">-786.77435</data>
+</node>
+<node id="ActionScript">
+<data key="label">ActionScript</data>
+<data key="modularity_class">28</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">-58.346825</data>
+<data key="y">-247.54396</data>
+</node>
+<node id="QML">
+<data key="label">QML</data>
+<data key="modularity_class">28</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">-238.29086</data>
+<data key="y">-80.63624</data>
+</node>
+<node id="JScript .NET">
+<data key="label">JScript .NET</data>
+<data key="modularity_class">28</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">-175.91801</data>
+<data key="y">-202.1633</data>
+</node>
+<node id="TypeScript">
+<data key="label">TypeScript</data>
+<data key="modularity_class">28</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">-63.69465</data>
+<data key="y">-156.2944</data>
+</node>
+<node id="Logo">
+<data key="label">Logo</data>
+<data key="modularity_class">25</data>
+<data key="size">19.941177</data>
+<data key="r">246</data>
+<data key="g">136</data>
+<data key="b">93</data>
+<data key="x">-840.0318</data>
+<data key="y">-417.70154</data>
+</node>
+<node id="Scratch">
+<data key="label">Scratch</data>
+<data key="modularity_class">25</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">136</data>
+<data key="b">93</data>
+<data key="x">-1089.7444</data>
+<data key="y">-316.73544</data>
+</node>
+<node id="NetLogo">
+<data key="label">NetLogo</data>
+<data key="modularity_class">25</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">136</data>
+<data key="b">93</data>
+<data key="x">-1006.9695</data>
+<data key="y">-440.33603</data>
+</node>
+<node id="Etoys">
+<data key="label">Etoys</data>
+<data key="modularity_class">25</data>
+<data key="size">18.867647</data>
+<data key="r">246</data>
+<data key="g">136</data>
+<data key="b">93</data>
+<data key="x">-1166.9403</data>
+<data key="y">-356.4467</data>
+</node>
+<node id="KTurtle">
+<data key="label">KTurtle</data>
+<data key="modularity_class">25</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">136</data>
+<data key="b">93</data>
+<data key="x">-942.5122</data>
+<data key="y">-377.09348</data>
+</node>
+<node id="REBOL">
+<data key="label">REBOL</data>
+<data key="modularity_class">1</data>
+<data key="size">17.794117</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-711.46216</data>
+<data key="y">-304.95425</data>
+</node>
+<node id="Lua">
+<data key="label">Lua</data>
+<data key="modularity_class">1</data>
+<data key="size">26.382353</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">85.33614</data>
+<data key="y">-205.12437</data>
+</node>
+<node id="Squirrel">
+<data key="label">Squirrel</data>
+<data key="modularity_class">1</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">181.59375</data>
+<data key="y">-63.599163</data>
+</node>
+<node id="GameMonkey Script">
+<data key="label">GameMonkey Script</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">34.488346</data>
+<data key="y">-109.11535</data>
+</node>
+<node id="Fantom">
+<data key="label">Fantom</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">355.72806</data>
+<data key="y">-928.3491</data>
+</node>
+<node id="Ceylon">
+<data key="label">Ceylon</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">323.1374</data>
+<data key="y">-983.72864</data>
+</node>
+<node id="Kotlin">
+<data key="label">Kotlin</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">214.37445</data>
+<data key="y">-941.8409</data>
+</node>
+<node id="Emerald">
+<data key="label">Emerald</data>
+<data key="modularity_class">17</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">663.0735</data>
+<data key="y">-781.626</data>
+</node>
+<node id="Singularity">
+<data key="label">Singularity</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">775.4039</data>
+<data key="y">-852.4155</data>
+</node>
+<node id="Information Processing Language">
+<data key="label">Information Processing Language</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-500.3511</data>
+<data key="y">-597.7025</data>
+</node>
+<node id="Lisp">
+<data key="label">Lisp</data>
+<data key="modularity_class">1</data>
+<data key="size">41.411766</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-339.2693</data>
+<data key="y">-550.6658</data>
+</node>
+<node id="LESS">
+<data key="label">LESS</data>
+<data key="modularity_class">2</data>
+<data key="size">14.573529</data>
+<data key="r">143</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-2147.4417</data>
+<data key="y">1854.7432</data>
+</node>
+<node id="Sass">
+<data key="label">Sass</data>
+<data key="modularity_class">2</data>
+<data key="size">15.6470585</data>
+<data key="r">143</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-2131.0051</data>
+<data key="y">1803.2466</data>
+</node>
+<node id="MSX BASIC">
+<data key="label">MSX BASIC</data>
+<data key="modularity_class">3</data>
+<data key="size">13.5</data>
+<data key="r">143</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-693.32587</data>
+<data key="y">1792.7255</data>
+</node>
+<node id="Vilnius BASIC">
+<data key="label">Vilnius BASIC</data>
+<data key="modularity_class">3</data>
+<data key="size">13.5</data>
+<data key="r">143</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-646.5251</data>
+<data key="y">1759.0934</data>
+</node>
+<node id="Modula-2+">
+<data key="label">Modula-2+</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">771.3576</data>
+<data key="y">-745.1851</data>
+</node>
+<node id="Modula-3">
+<data key="label">Modula-3</data>
+<data key="modularity_class">17</data>
+<data key="size">19.941177</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">592.5897</data>
+<data key="y">-678.86224</data>
+</node>
+<node id="Newsqueak">
+<data key="label">Newsqueak</data>
+<data key="modularity_class">9</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">1118.5225</data>
+<data key="y">-884.6282</data>
+</node>
+<node id="Rust">
+<data key="label">Rust</data>
+<data key="modularity_class">9</data>
+<data key="size">17.794117</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">973.0991</data>
+<data key="y">-931.57697</data>
+</node>
+<node id="Go">
+<data key="label">Go</data>
+<data key="modularity_class">9</data>
+<data key="size">17.794117</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">1159.1102</data>
+<data key="y">-663.4505</data>
+</node>
+<node id="Limbo">
+<data key="label">Limbo</data>
+<data key="modularity_class">9</data>
+<data key="size">18.867647</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">1104.3954</data>
+<data key="y">-758.4136</data>
+</node>
+<node id="Alef">
+<data key="label">Alef</data>
+<data key="modularity_class">9</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">1201.3162</data>
+<data key="y">-844.0759</data>
+</node>
+<node id="Spec Sharp">
+<data key="label">Spec Sharp</data>
+<data key="modularity_class">4</data>
+<data key="size">13.5</data>
+<data key="r">207</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">92.62339</data>
+<data key="y">1956.0177</data>
+</node>
+<node id="Sing Sharp">
+<data key="label">Sing Sharp</data>
+<data key="modularity_class">4</data>
+<data key="size">13.5</data>
+<data key="r">207</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">174.23355</data>
+<data key="y">1997.9779</data>
+</node>
+<node id="Rexx">
+<data key="label">Rexx</data>
+<data key="modularity_class">13</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1236.4342</data>
+<data key="y">686.6008</data>
+</node>
+<node id="Object REXX">
+<data key="label">Object REXX</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1278.2722</data>
+<data key="y">739.3301</data>
+</node>
+<node id="NetRexx">
+<data key="label">NetRexx</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1187.7122</data>
+<data key="y">779.41174</data>
+</node>
+<node id="A+">
+<data key="label">A+</data>
+<data key="modularity_class">20</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1940.6802</data>
+<data key="y">-616.09143</data>
+</node>
+<node id="K">
+<data key="label">K</data>
+<data key="modularity_class">20</data>
+<data key="size">14.573529</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1893.8846</data>
+<data key="y">-583.8386</data>
+</node>
+<node id="CPL">
+<data key="label">CPL</data>
+<data key="modularity_class">17</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1254.4136</data>
+<data key="y">-159.52295</data>
+</node>
+<node id="BCPL">
+<data key="label">BCPL</data>
+<data key="modularity_class">17</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1172.504</data>
+<data key="y">-17.720642</data>
+</node>
+<node id="POP-2">
+<data key="label">POP-2</data>
+<data key="modularity_class">17</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1440.2065</data>
+<data key="y">-160.82172</data>
+</node>
+<node id="Lucid">
+<data key="label">Lucid</data>
+<data key="modularity_class">5</data>
+<data key="size">16.720589</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">136</data>
+<data key="x">20.37522</data>
+<data key="y">-1891.0336</data>
+</node>
+<node id="Pure Data">
+<data key="label">Pure Data</data>
+<data key="modularity_class">5</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">136</data>
+<data key="x">-38.146393</data>
+<data key="y">-1933.6895</data>
+</node>
+<node id="Lustre">
+<data key="label">Lustre</data>
+<data key="modularity_class">5</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">136</data>
+<data key="x">49.826454</data>
+<data key="y">-1970.0739</data>
+</node>
+<node id="SISAL">
+<data key="label">SISAL</data>
+<data key="modularity_class">5</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">136</data>
+<data key="x">-9.4225445</data>
+<data key="y">-2037.3174</data>
+</node>
+<node id="SP/k">
+<data key="label">SP/k</data>
+<data key="modularity_class">13</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1145.121</data>
+<data key="y">571.5822</data>
+</node>
+<node id="Turing">
+<data key="label">Turing</data>
+<data key="modularity_class">13</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1030.7825</data>
+<data key="y">539.9477</data>
+</node>
+<node id="IBM RPG">
+<data key="label">IBM RPG</data>
+<data key="modularity_class">6</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">129</data>
+<data key="x">-1039.054</data>
+<data key="y">1370.897</data>
+</node>
+<node id="IBM RPG II">
+<data key="label">IBM RPG II</data>
+<data key="modularity_class">6</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">129</data>
+<data key="x">-992.8547</data>
+<data key="y">1405.4178</data>
+</node>
+<node id="TOM">
+<data key="label">TOM</data>
+<data key="modularity_class">28</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">218.50645</data>
+<data key="y">-288.3172</data>
+</node>
+<node id="Nu">
+<data key="label">Nu</data>
+<data key="modularity_class">1</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-64.37167</data>
+<data key="y">-476.55594</data>
+</node>
+<node id="Visual Basic">
+<data key="label">Visual Basic</data>
+<data key="modularity_class">13</data>
+<data key="size">17.794117</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1296.5111</data>
+<data key="y">287.31488</data>
+</node>
+<node id="Basic4ppc">
+<data key="label">Basic4ppc</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1273.7538</data>
+<data key="y">406.1594</data>
+</node>
+<node id="Gambas">
+<data key="label">Gambas</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1413.7354</data>
+<data key="y">445.6994</data>
+</node>
+<node id="Visual Basic .NET">
+<data key="label">Visual Basic .NET</data>
+<data key="modularity_class">13</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1063.2059</data>
+<data key="y">-117.31394</data>
+</node>
+<node id="Realbasic">
+<data key="label">Realbasic</data>
+<data key="modularity_class">13</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1425.8232</data>
+<data key="y">366.87067</data>
+</node>
+<node id="Fortran">
+<data key="label">Fortran</data>
+<data key="modularity_class">13</data>
+<data key="size">22.088234</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1275.4463</data>
+<data key="y">83.574</data>
+</node>
+<node id="BASIC">
+<data key="label">BASIC</data>
+<data key="modularity_class">13</data>
+<data key="size">23.161766</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1455.3699</data>
+<data key="y">238.63387</data>
+</node>
+<node id="C">
+<data key="label">C</data>
+<data key="modularity_class">17</data>
+<data key="size">40.338234</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">747.02673</data>
+<data key="y">-260.43365</data>
+</node>
+<node id="ALGOL 58">
+<data key="label">ALGOL 58</data>
+<data key="modularity_class">13</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1304.9806</data>
+<data key="y">17.99573</data>
+</node>
+<node id="Ratfor">
+<data key="label">Ratfor</data>
+<data key="modularity_class">13</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1397.2024</data>
+<data key="y">119.07041</data>
+</node>
+<node id="PL/I">
+<data key="label">PL/I</data>
+<data key="modularity_class">13</data>
+<data key="size">19.941177</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1181.1127</data>
+<data key="y">445.9873</data>
+</node>
+<node id="MUMPS">
+<data key="label">MUMPS</data>
+<data key="modularity_class">13</data>
+<data key="size">18.867647</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1640.105</data>
+<data key="y">239.85728</data>
+</node>
+<node id="PACT">
+<data key="label">PACT</data>
+<data key="modularity_class">13</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1431.4773</data>
+<data key="y">155.04759</data>
+</node>
+<node id="AutoHotkey">
+<data key="label">AutoHotkey</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1505.4958</data>
+<data key="y">327.03998</data>
+</node>
+<node id="GRASS">
+<data key="label">GRASS</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1634.5593</data>
+<data key="y">367.33197</data>
+</node>
+<node id="AutoIt">
+<data key="label">AutoIt</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1538.7622</data>
+<data key="y">402.61295</data>
+</node>
+<node id="COMAL">
+<data key="label">COMAL</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1504.4974</data>
+<data key="y">276.03506</data>
+</node>
+<node id="Pike">
+<data key="label">Pike</data>
+<data key="modularity_class">17</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">593.69995</data>
+<data key="y">-254.89795</data>
+</node>
+<node id="Perl">
+<data key="label">Perl</data>
+<data key="modularity_class">10</data>
+<data key="size">28.529411</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">228.6977</data>
+<data key="y">-239.11044</data>
+</node>
+<node id="C99">
+<data key="label">C99</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">473.6336</data>
+<data key="y">-270.32178</data>
+</node>
+<node id="LPC">
+<data key="label">LPC</data>
+<data key="modularity_class">17</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">515.9373</data>
+<data key="y">-217.17398</data>
+</node>
+<node id="COBOL">
+<data key="label">COBOL</data>
+<data key="modularity_class">13</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1362.5408</data>
+<data key="y">780.794</data>
+</node>
+<node id="ABAP">
+<data key="label">ABAP</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1304.618</data>
+<data key="y">849.36505</data>
+</node>
+<node id="CobolScript">
+<data key="label">CobolScript</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1408.1931</data>
+<data key="y">888.0653</data>
+</node>
+<node id="C--">
+<data key="label">C--</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">795.1301</data>
+<data key="y">-173.59976</data>
+</node>
+<node id="BitC">
+<data key="label">BitC</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">878.04724</data>
+<data key="y">-203.39728</data>
+</node>
+<node id="C shell">
+<data key="label">C shell</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">907.5735</data>
+<data key="y">-163.07486</data>
+</node>
+<node id="AWK">
+<data key="label">AWK</data>
+<data key="modularity_class">10</data>
+<data key="size">19.941177</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">279.27347</data>
+<data key="y">6.177446</data>
+</node>
+<node id="Processing">
+<data key="label">Processing</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">738.60205</data>
+<data key="y">-121.51677</data>
+</node>
+<node id="AMPL">
+<data key="label">AMPL</data>
+<data key="modularity_class">10</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">496.1016</data>
+<data key="y">-81.04154</data>
+</node>
+<node id="F Sharp">
+<data key="label">F Sharp</data>
+<data key="modularity_class">9</data>
+<data key="size">19.941177</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">432.73798</data>
+<data key="y">-1030.2645</data>
+</node>
+<node id="Nemerle">
+<data key="label">Nemerle</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">501.4098</data>
+<data key="y">-854.4007</data>
+</node>
+<node id="Caml">
+<data key="label">Caml</data>
+<data key="modularity_class">9</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">582.50757</data>
+<data key="y">-930.50885</data>
+</node>
+<node id="Forth">
+<data key="label">Forth</data>
+<data key="modularity_class">7</data>
+<data key="size">17.794117</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-818.6875</data>
+<data key="y">-168.37767</data>
+</node>
+<node id="RPL">
+<data key="label">RPL</data>
+<data key="modularity_class">7</data>
+<data key="size">13.5</data>
+<data key="r">186</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-891.64233</data>
+<data key="y">-121.591225</data>
+</node>
+<node id="Haskell">
+<data key="label">Haskell</data>
+<data key="modularity_class">8</data>
+<data key="size">50.0</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">127.29864</data>
+<data key="y">-1032.2516</data>
+</node>
+<node id="Timber">
+<data key="label">Timber</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-165.6635</data>
+<data key="y">-1317.7645</data>
+</node>
+<node id="Cayenne">
+<data key="label">Cayenne</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">98.53026</data>
+<data key="y">-1150.5114</data>
+</node>
+<node id="Qi">
+<data key="label">Qi</data>
+<data key="modularity_class">8</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-158.04146</data>
+<data key="y">-873.08685</data>
+</node>
+<node id="Kaya">
+<data key="label">Kaya</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">11.42246</data>
+<data key="y">-1239.8734</data>
+</node>
+<node id="Quark Framework">
+<data key="label">Quark Framework</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-41.44044</data>
+<data key="y">-1070.8837</data>
+</node>
+<node id="C++11">
+<data key="label">C++11</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-64.931984</data>
+<data key="y">-1185.432</data>
+</node>
+<node id="Ωmega">
+<data key="label">Ωmega</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">283.87796</data>
+<data key="y">-1147.8778</data>
+</node>
+<node id="Language Integrated Query">
+<data key="label">Language Integrated Query</data>
+<data key="modularity_class">10</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">-127.92131</data>
+<data key="y">-16.127522</data>
+</node>
+<node id="Agda">
+<data key="label">Agda</data>
+<data key="modularity_class">35</data>
+<data key="size">14.573529</data>
+<data key="r">100</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-164.49141</data>
+<data key="y">-1467.5206</data>
+</node>
+<node id="Concepts">
+<data key="label">Concepts</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">283.9044</data>
+<data key="y">-1241.2919</data>
+</node>
+<node id="Bluespec, Inc.">
+<data key="label">Bluespec, Inc.</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-149.78407</data>
+<data key="y">-1368.6381</data>
+</node>
+<node id="Epigram">
+<data key="label">Epigram</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">153.19923</data>
+<data key="y">-1196.1106</data>
+</node>
+<node id="Escher">
+<data key="label">Escher</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-77.64796</data>
+<data key="y">-1280.868</data>
+</node>
+<node id="Clean">
+<data key="label">Clean</data>
+<data key="modularity_class">8</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">74.0789</data>
+<data key="y">-1389.2866</data>
+</node>
+<node id="Generics in Java">
+<data key="label">Generics in Java</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-77.814735</data>
+<data key="y">-1109.2003</data>
+</node>
+<node id="Mercury">
+<data key="label">Mercury</data>
+<data key="modularity_class">16</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">443.69238</data>
+<data key="y">-1357.8043</data>
+</node>
+<node id="Curry">
+<data key="label">Curry</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">42.684513</data>
+<data key="y">-1322.502</data>
+</node>
+<node id="Isabelle">
+<data key="label">Isabelle</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-170.07199</data>
+<data key="y">-1222.3049</data>
+</node>
+<node id="Elm">
+<data key="label">Elm</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-294.25653</data>
+<data key="y">-1083.8392</data>
+</node>
+<node id="J">
+<data key="label">J</data>
+<data key="modularity_class">20</data>
+<data key="size">17.794117</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-2126.6174</data>
+<data key="y">-508.59116</data>
+</node>
+<node id="NumPy">
+<data key="label">NumPy</data>
+<data key="modularity_class">20</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-2202.597</data>
+<data key="y">-384.0568</data>
+</node>
+<node id="SuperCollider">
+<data key="label">SuperCollider</data>
+<data key="modularity_class">20</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-2118.2146</data>
+<data key="y">-427.2943</data>
+</node>
+<node id="OCaml">
+<data key="label">OCaml</data>
+<data key="modularity_class">9</data>
+<data key="size">17.794117</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">606.9675</data>
+<data key="y">-1094.4254</data>
+</node>
+<node id="ATS">
+<data key="label">ATS</data>
+<data key="modularity_class">9</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">670.02747</data>
+<data key="y">-1173.7421</data>
+</node>
+<node id="Opa">
+<data key="label">Opa</data>
+<data key="modularity_class">9</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">492.16513</data>
+<data key="y">-1182.2607</data>
+</node>
+<node id="Object Pascal">
+<data key="label">Object Pascal</data>
+<data key="modularity_class">17</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">821.22906</data>
+<data key="y">-637.6183</data>
+</node>
+<node id="Game Maker Language">
+<data key="label">Game Maker Language</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">944.159</data>
+<data key="y">-704.24396</data>
+</node>
+<node id="Prolog">
+<data key="label">Prolog</data>
+<data key="modularity_class">16</data>
+<data key="size">22.088234</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">743.8043</data>
+<data key="y">-1487.9783</data>
+</node>
+<node id="Visual Prolog">
+<data key="label">Visual Prolog</data>
+<data key="modularity_class">16</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">801.249</data>
+<data key="y">-1640.3239</data>
+</node>
+<node id="KL1">
+<data key="label">KL1</data>
+<data key="modularity_class">16</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">849.52997</data>
+<data key="y">-1520.0455</data>
+</node>
+<node id="Erlang">
+<data key="label">Erlang</data>
+<data key="modularity_class">9</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">552.9051</data>
+<data key="y">-1402.4225</data>
+</node>
+<node id="Oz">
+<data key="label">Oz</data>
+<data key="modularity_class">16</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">867.6936</data>
+<data key="y">-1680.9558</data>
+</node>
+<node id="Strand">
+<data key="label">Strand</data>
+<data key="modularity_class">16</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">788.503</data>
+<data key="y">-1600.006</data>
+</node>
+<node id="Datalog">
+<data key="label">Datalog</data>
+<data key="modularity_class">16</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">925.08466</data>
+<data key="y">-1560.0802</data>
+</node>
+<node id="KL0">
+<data key="label">KL0</data>
+<data key="modularity_class">16</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">679.59357</data>
+<data key="y">-1600.1494</data>
+</node>
+<node id="Boo">
+<data key="label">Boo</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">46.865543</data>
+<data key="y">-716.1471</data>
+</node>
+<node id="Cobra">
+<data key="label">Cobra</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">153.66634</data>
+<data key="y">-746.2636</data>
+</node>
+<node id="Mirah">
+<data key="label">Mirah</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-112.03583</data>
+<data key="y">-675.73157</data>
+</node>
+<node id="Reia">
+<data key="label">Reia</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-148.48694</data>
+<data key="y">-639.02985</data>
+</node>
+<node id="SNOBOL">
+<data key="label">SNOBOL</data>
+<data key="modularity_class">1</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-56.268982</data>
+<data key="y">-67.560616</data>
+</node>
+<node id="SQL">
+<data key="label">SQL</data>
+<data key="modularity_class">10</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">-4.5868754</data>
+<data key="y">236.98389</data>
+</node>
+<node id="Contextual Query Language">
+<data key="label">Contextual Query Language</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">-52.75569</data>
+<data key="y">318.5209</data>
+</node>
+<node id="Scheme">
+<data key="label">Scheme</data>
+<data key="modularity_class">8</data>
+<data key="size">26.382353</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-267.26974</data>
+<data key="y">-814.85114</data>
+</node>
+<node id="Kernel">
+<data key="label">Kernel</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-371.8645</data>
+<data key="y">-881.6844</data>
+</node>
+<node id="Hop">
+<data key="label">Hop</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-326.55286</data>
+<data key="y">-923.3854</data>
+</node>
+<node id="Simula">
+<data key="label">Simula</data>
+<data key="modularity_class">17</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1201.5754</data>
+<data key="y">-290.33685</data>
+</node>
+<node id="Tcl">
+<data key="label">Tcl</data>
+<data key="modularity_class">10</data>
+<data key="size">16.720589</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">33.18004</data>
+<data key="y">38.29452</data>
+</node>
+<node id="Tea">
+<data key="label">Tea</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">-4.4054613</data>
+<data key="y">148.12683</data>
+</node>
+<node id="VBScript">
+<data key="label">VBScript</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">184.66281</data>
+<data key="y">364.46527</data>
+</node>
+<node id="XPath">
+<data key="label">XPath</data>
+<data key="modularity_class">11</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">172</data>
+<data key="x">1050.4941</data>
+<data key="y">2105.4143</data>
+</node>
+<node id="XForms">
+<data key="label">XForms</data>
+<data key="modularity_class">11</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">172</data>
+<data key="x">976.96375</data>
+<data key="y">2072.0613</data>
+</node>
+<node id="XML Schema">
+<data key="label">XML Schema</data>
+<data key="modularity_class">11</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">172</data>
+<data key="x">1062.048</data>
+<data key="y">2039.5034</data>
+</node>
+<node id="Short Code">
+<data key="label">Short Code</data>
+<data key="modularity_class">12</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">115</data>
+<data key="x">-2022.0536</data>
+<data key="y">1197.772</data>
+</node>
+<node id="Intermediate Programming Language">
+<data key="label">Intermediate Programming Language</data>
+<data key="modularity_class">12</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">115</data>
+<data key="x">-1938.94</data>
+<data key="y">1234.377</data>
+</node>
+<node id="OMNIBAC Symbolic Assembler">
+<data key="label">OMNIBAC Symbolic Assembler</data>
+<data key="modularity_class">12</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">115</data>
+<data key="x">-1982.2238</data>
+<data key="y">1159.7603</data>
+</node>
+<node id="Speedcoding">
+<data key="label">Speedcoding</data>
+<data key="modularity_class">13</data>
+<data key="size">21.014706</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1323.9911</data>
+<data key="y">195.03072</data>
+</node>
+<node id="ALGOL">
+<data key="label">ALGOL</data>
+<data key="modularity_class">17</data>
+<data key="size">18.867647</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1060.5161</data>
+<data key="y">-209.69984</data>
+</node>
+<node id="ALGOL 60">
+<data key="label">ALGOL 60</data>
+<data key="modularity_class">17</data>
+<data key="size">17.794117</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1030.3481</data>
+<data key="y">-326.9501</data>
+</node>
+<node id="Pascal">
+<data key="label">Pascal</data>
+<data key="modularity_class">17</data>
+<data key="size">27.455883</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">958.49634</data>
+<data key="y">-527.06335</data>
+</node>
+<node id="ALGOL 68">
+<data key="label">ALGOL 68</data>
+<data key="modularity_class">17</data>
+<data key="size">23.161766</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">608.99713</data>
+<data key="y">-167.42783</data>
+</node>
+<node id="Mary">
+<data key="label">Mary</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">814.34064</data>
+<data key="y">6.7250066</data>
+</node>
+<node id="Bash">
+<data key="label">Bash</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">728.79614</data>
+<data key="y">-80.82636</data>
+</node>
+<node id="Bourne shell">
+<data key="label">Bourne shell</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">628.4212</data>
+<data key="y">41.593433</data>
+</node>
+<node id="ALGOL 68C">
+<data key="label">ALGOL 68C</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">496.15274</data>
+<data key="y">3.9262567</data>
+</node>
+<node id="ALGOL W">
+<data key="label">ALGOL W</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1071.7812</data>
+<data key="y">-597.3135</data>
+</node>
+<node id="DIGITAL Command Language">
+<data key="label">DIGITAL Command Language</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">276.67194</data>
+<data key="y">409.36176</data>
+</node>
+<node id="Generic Java">
+<data key="label">Generic Java</data>
+<data key="modularity_class">17</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">417.3101</data>
+<data key="y">-774.5981</data>
+</node>
+<node id="Liberty BASIC">
+<data key="label">Liberty BASIC</data>
+<data key="modularity_class">14</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">243</data>
+<data key="x">-504.30103</data>
+<data key="y">1614.6233</data>
+</node>
+<node id="Just BASIC">
+<data key="label">Just BASIC</data>
+<data key="modularity_class">14</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">243</data>
+<data key="x">-560.9902</data>
+<data key="y">1575.7091</data>
+</node>
+<node id="MUF">
+<data key="label">MUF</data>
+<data key="modularity_class">15</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">157</data>
+<data key="b">93</data>
+<data key="x">-804.7819</data>
+<data key="y">3137.9824</data>
+</node>
+<node id="CoolMUD">
+<data key="label">CoolMUD</data>
+<data key="modularity_class">15</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">157</data>
+<data key="b">93</data>
+<data key="x">-659.93567</data>
+<data key="y">3172.193</data>
+</node>
+<node id="ColdC">
+<data key="label">ColdC</data>
+<data key="modularity_class">15</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">157</data>
+<data key="b">93</data>
+<data key="x">-711.1887</data>
+<data key="y">3102.4956</data>
+</node>
+<node id="MOO">
+<data key="label">MOO</data>
+<data key="modularity_class">15</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">157</data>
+<data key="b">93</data>
+<data key="x">-753.7408</data>
+<data key="y">3208.1584</data>
+</node>
+<node id="Modula-2">
+<data key="label">Modula-2</data>
+<data key="modularity_class">17</data>
+<data key="size">22.088234</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">897.1738</data>
+<data key="y">-363.51715</data>
+</node>
+<node id="Zonnon">
+<data key="label">Zonnon</data>
+<data key="modularity_class">17</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1123.9614</data>
+<data key="y">-399.79065</data>
+</node>
+<node id="Oberon">
+<data key="label">Oberon</data>
+<data key="modularity_class">17</data>
+<data key="size">18.867647</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1236.6042</data>
+<data key="y">-561.65936</data>
+</node>
+<node id="Oaklisp">
+<data key="label">Oaklisp</data>
+<data key="modularity_class">8</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">-576.3491</data>
+<data key="y">-836.82983</data>
+</node>
+<node id="Object Oberon">
+<data key="label">Object Oberon</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1463.5876</data>
+<data key="y">-530.3437</data>
+</node>
+<node id="Oberon-2">
+<data key="label">Oberon-2</data>
+<data key="modularity_class">17</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1290.9982</data>
+<data key="y">-489.6467</data>
+</node>
+<node id="Alice">
+<data key="label">Alice</data>
+<data key="modularity_class">16</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">899.9712</data>
+<data key="y">-1737.6018</data>
+</node>
+<node id="Pizza">
+<data key="label">Pizza</data>
+<data key="modularity_class">17</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">402.3311</data>
+<data key="y">-891.21747</data>
+</node>
+<node id="Q">
+<data key="label">Q</data>
+<data key="modularity_class">20</data>
+<data key="size">14.573529</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1927.6559</data>
+<data key="y">-510.23053</data>
+</node>
+<node id="Pure">
+<data key="label">Pure</data>
+<data key="modularity_class">20</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1915.9468</data>
+<data key="y">-410.51224</data>
+</node>
+<node id="StarLogo">
+<data key="label">StarLogo</data>
+<data key="modularity_class">25</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">136</data>
+<data key="b">93</data>
+<data key="x">-1214.6509</data>
+<data key="y">-456.65503</data>
+</node>
+<node id="TELCOMP">
+<data key="label">TELCOMP</data>
+<data key="modularity_class">13</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1806.597</data>
+<data key="y">330.19598</data>
+</node>
+<node id="Verilog">
+<data key="label">Verilog</data>
+<data key="modularity_class">18</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">222</data>
+<data key="b">93</data>
+<data key="x">-1249.8612</data>
+<data key="y">1245.1073</data>
+</node>
+<node id="SystemVerilog">
+<data key="label">SystemVerilog</data>
+<data key="modularity_class">18</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">222</data>
+<data key="b">93</data>
+<data key="x">-1292.3708</data>
+<data key="y">1199.9695</data>
+</node>
+<node id="B">
+<data key="label">B</data>
+<data key="modularity_class">17</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1064.2988</data>
+<data key="y">105.23934</data>
+</node>
+<node id="Turing+">
+<data key="label">Turing+</data>
+<data key="modularity_class">13</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">973.0386</data>
+<data key="y">860.94116</data>
+</node>
+<node id="Object-Oriented Turing">
+<data key="label">Object-Oriented Turing</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">968.7854</data>
+<data key="y">932.3491</data>
+</node>
+<node id="Concurrent Euclid">
+<data key="label">Concurrent Euclid</data>
+<data key="modularity_class">13</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">962.92334</data>
+<data key="y">698.9743</data>
+</node>
+<node id="Korn shell">
+<data key="label">Korn shell</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">305.7675</data>
+<data key="y">114.854614</data>
+</node>
+<node id="BeanShell">
+<data key="label">BeanShell</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">562.45844</data>
+<data key="y">-547.03876</data>
+</node>
+<node id="J Sharp">
+<data key="label">J Sharp</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">608.7546</data>
+<data key="y">-588.57513</data>
+</node>
+<node id="CLIPS">
+<data key="label">CLIPS</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-560.894</data>
+<data key="y">-518.55334</data>
+</node>
+<node id="Mathematica">
+<data key="label">Mathematica</data>
+<data key="modularity_class">20</data>
+<data key="size">14.573529</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1120.292</data>
+<data key="y">-560.2689</data>
+</node>
+<node id="ML">
+<data key="label">ML</data>
+<data key="modularity_class">9</data>
+<data key="size">24.235294</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">313.61447</data>
+<data key="y">-1107.0353</data>
+</node>
+<node id="CLU">
+<data key="label">CLU</data>
+<data key="modularity_class">1</data>
+<data key="size">18.867647</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">194.48357</data>
+<data key="y">-521.65076</data>
+</node>
+<node id="Shen">
+<data key="label">Shen</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-473.88382</data>
+<data key="y">-481.18433</data>
+</node>
+<node id="MDL">
+<data key="label">MDL</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-445.04504</data>
+<data key="y">-553.8881</data>
+</node>
+<node id="OPS5">
+<data key="label">OPS5</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-577.38635</data>
+<data key="y">-556.2276</data>
+</node>
+<node id="Occam">
+<data key="label">Occam</data>
+<data key="modularity_class">19</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">200</data>
+<data key="x">55.4771</data>
+<data key="y">1747.4642</data>
+</node>
+<node id="Ease">
+<data key="label">Ease</data>
+<data key="modularity_class">19</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">200</data>
+<data key="x">-21.406876</data>
+<data key="y">1713.7942</data>
+</node>
+<node id="Modula">
+<data key="label">Modula</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1109.7845</data>
+<data key="y">-525.24316</data>
+</node>
+<node id="Component Pascal">
+<data key="label">Component Pascal</data>
+<data key="modularity_class">17</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1319.346</data>
+<data key="y">-439.46185</data>
+</node>
+<node id="Oxygene">
+<data key="label">Oxygene</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1085.0682</data>
+<data key="y">-484.35657</data>
+</node>
+<node id="APL">
+<data key="label">APL</data>
+<data key="modularity_class">20</data>
+<data key="size">19.941177</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1804.6808</data>
+<data key="y">-541.72424</data>
+</node>
+<node id="MATLAB">
+<data key="label">MATLAB</data>
+<data key="modularity_class">20</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1707.4286</data>
+<data key="y">-507.7874</data>
+</node>
+<node id="Polymorphic Programming Language">
+<data key="label">Polymorphic Programming Language</data>
+<data key="modularity_class">20</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1752.4857</data>
+<data key="y">-469.33298</data>
+</node>
+<node id="Nial">
+<data key="label">Nial</data>
+<data key="modularity_class">20</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1803.4086</data>
+<data key="y">-606.2424</data>
+</node>
+<node id="Miranda">
+<data key="label">Miranda</data>
+<data key="modularity_class">8</data>
+<data key="size">18.867647</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">187.43414</data>
+<data key="y">-1425.4371</data>
+</node>
+<node id="Felix">
+<data key="label">Felix</data>
+<data key="modularity_class">9</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">397.2075</data>
+<data key="y">-1199.3119</data>
+</node>
+<node id="Cyclone">
+<data key="label">Cyclone</data>
+<data key="modularity_class">9</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">293.20544</data>
+<data key="y">-1292.7928</data>
+</node>
+<node id="Boomerang">
+<data key="label">Boomerang</data>
+<data key="modularity_class">21</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">236</data>
+<data key="b">246</data>
+<data key="x">-1558.1305</data>
+<data key="y">1023.4676</data>
+</node>
+<node id="XSLT">
+<data key="label">XSLT</data>
+<data key="modularity_class">21</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">236</data>
+<data key="b">246</data>
+<data key="x">-1629.3802</data>
+<data key="y">1062.2289</data>
+</node>
+<node id="Argus">
+<data key="label">Argus</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">184.42354</data>
+<data key="y">-479.4256</data>
+</node>
+<node id="Caja project">
+<data key="label">Caja project</data>
+<data key="modularity_class">22</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">179</data>
+<data key="x">-2223.4175</data>
+<data key="y">808.73535</data>
+</node>
+<node id="Jacaranda">
+<data key="label">Jacaranda</data>
+<data key="modularity_class">22</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">179</data>
+<data key="x">-2191.5254</data>
+<data key="y">767.22473</data>
+</node>
+<node id="GW-BASIC">
+<data key="label">GW-BASIC</data>
+<data key="modularity_class">23</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">200</data>
+<data key="b">93</data>
+<data key="x">-1296.2211</data>
+<data key="y">2149.9602</data>
+</node>
+<node id="QuickBASIC">
+<data key="label">QuickBASIC</data>
+<data key="modularity_class">23</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">200</data>
+<data key="b">93</data>
+<data key="x">-1205.4205</data>
+<data key="y">2183.5994</data>
+</node>
+<node id="QBasic">
+<data key="label">QBasic</data>
+<data key="modularity_class">23</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">200</data>
+<data key="b">93</data>
+<data key="x">-1395.2711</data>
+<data key="y">2115.821</data>
+</node>
+<node id="Gemstone">
+<data key="label">Gemstone</data>
+<data key="modularity_class">24</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">115</data>
+<data key="b">93</data>
+<data key="x">-422.30438</data>
+<data key="y">1868.6721</data>
+</node>
+<node id="Java Platform, Enterprise Edition">
+<data key="label">Java Platform, Enterprise Edition</data>
+<data key="modularity_class">24</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">115</data>
+<data key="b">93</data>
+<data key="x">-442.31842</data>
+<data key="y">1829.9097</data>
+</node>
+<node id="Orwell">
+<data key="label">Orwell</data>
+<data key="modularity_class">8</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">119.86212</data>
+<data key="y">-1281.4368</data>
+</node>
+<node id="SASL">
+<data key="label">SASL</data>
+<data key="modularity_class">8</data>
+<data key="size">16.720589</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">178.49257</data>
+<data key="y">-1463.6042</data>
+</node>
+<node id="Kent Recursive Calculator">
+<data key="label">Kent Recursive Calculator</data>
+<data key="modularity_class">8</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">179.88931</data>
+<data key="y">-1548.6465</data>
+</node>
+<node id="AgentSheets">
+<data key="label">AgentSheets</data>
+<data key="modularity_class">25</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">136</data>
+<data key="b">93</data>
+<data key="x">-1219.7174</data>
+<data key="y">-268.51416</data>
+</node>
+<node id="AmbientTalk">
+<data key="label">AmbientTalk</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">382.80832</data>
+<data key="y">78.194725</data>
+</node>
+<node id="COMTRAN">
+<data key="label">COMTRAN</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1440.2428</data>
+<data key="y">815.6174</data>
+</node>
+<node id="Joyce">
+<data key="label">Joyce</data>
+<data key="modularity_class">26</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">214</data>
+<data key="x">-819.8976</data>
+<data key="y">1490.3088</data>
+</node>
+<node id="SuperPascal">
+<data key="label">SuperPascal</data>
+<data key="modularity_class">26</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">214</data>
+<data key="x">-747.52875</data>
+<data key="y">1532.5786</data>
+</node>
+<node id="TUTOR">
+<data key="label">TUTOR</data>
+<data key="modularity_class">27</data>
+<data key="size">14.573529</data>
+<data key="r">229</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">678.4798</data>
+<data key="y">2201.9539</data>
+</node>
+<node id="TenCORE">
+<data key="label">TenCORE</data>
+<data key="modularity_class">27</data>
+<data key="size">13.5</data>
+<data key="r">229</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">605.54474</data>
+<data key="y">2169.1008</data>
+</node>
+<node id="USE">
+<data key="label">USE</data>
+<data key="modularity_class">27</data>
+<data key="size">13.5</data>
+<data key="r">229</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">704.50867</data>
+<data key="y">2135.737</data>
+</node>
+<node id="Qt">
+<data key="label">Qt</data>
+<data key="modularity_class">28</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">222</data>
+<data key="x">-269.5239</data>
+<data key="y">27.763948</data>
+</node>
+<node id="COWSEL">
+<data key="label">COWSEL</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1551.7715</data>
+<data key="y">-124.417366</data>
+</node>
+<node id="FP">
+<data key="label">FP</data>
+<data key="modularity_class">20</data>
+<data key="size">15.6470585</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-2252.8186</data>
+<data key="y">-487.07352</data>
+</node>
+<node id="FPr">
+<data key="label">FPr</data>
+<data key="modularity_class">20</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-2292.6484</data>
+<data key="y">-441.10153</data>
+</node>
+<node id="FL">
+<data key="label">FL</data>
+<data key="modularity_class">20</data>
+<data key="size">14.573529</data>
+<data key="r">122</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-2202.004</data>
+<data key="y">-524.2472</data>
+</node>
+<node id="JOVIAL">
+<data key="label">JOVIAL</data>
+<data key="modularity_class">29</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">150</data>
+<data key="x">-1646.0192</data>
+<data key="y">1642.6467</data>
+</node>
+<node id="Coral 66">
+<data key="label">Coral 66</data>
+<data key="modularity_class">29</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">150</data>
+<data key="x">-1629.049</data>
+<data key="y">1571.961</data>
+</node>
+<node id="SYMPL">
+<data key="label">SYMPL</data>
+<data key="modularity_class">29</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">150</data>
+<data key="x">-1559.4541</data>
+<data key="y">1609.0378</data>
+</node>
+<node id="KRL">
+<data key="label">KRL</data>
+<data key="modularity_class">30</data>
+<data key="size">13.5</data>
+<data key="r">164</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">289.08322</data>
+<data key="y">1801.3727</data>
+</node>
+<node id="KM programming language">
+<data key="label">KM programming language</data>
+<data key="modularity_class">30</data>
+<data key="size">13.5</data>
+<data key="r">164</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">281.90894</data>
+<data key="y">1870.0708</data>
+</node>
+<node id="Karel">
+<data key="label">Karel</data>
+<data key="modularity_class">31</data>
+<data key="size">13.5</data>
+<data key="r">186</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1482.0927</data>
+<data key="y">1275.4772</data>
+</node>
+<node id="Karel++">
+<data key="label">Karel++</data>
+<data key="modularity_class">31</data>
+<data key="size">13.5</data>
+<data key="r">186</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-1508.0767</data>
+<data key="y">1240.9072</data>
+</node>
+<node id="Cω">
+<data key="label">Cω</data>
+<data key="modularity_class">10</data>
+<data key="size">16.720589</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">-382.70697</data>
+<data key="y">302.91708</data>
+</node>
+<node id="Superplan">
+<data key="label">Superplan</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">-411.65903</data>
+<data key="y">393.7632</data>
+</node>
+<node id="Stylus">
+<data key="label">Stylus</data>
+<data key="modularity_class">2</data>
+<data key="size">13.5</data>
+<data key="r">143</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-2083.954</data>
+<data key="y">1757.7823</data>
+</node>
+<node id="Cool">
+<data key="label">Cool</data>
+<data key="modularity_class">9</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">669.0206</data>
+<data key="y">-894.4415</data>
+</node>
+<node id="Standard ML of New Jersey">
+<data key="label">Standard ML of New Jersey</data>
+<data key="modularity_class">32</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">193</data>
+<data key="x">-1048.1403</data>
+<data key="y">1601.3018</data>
+</node>
+<node id="Mythryl">
+<data key="label">Mythryl</data>
+<data key="modularity_class">32</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">193</data>
+<data key="x">-1111.8818</data>
+<data key="y">1642.8873</data>
+</node>
+<node id="CLACL">
+<data key="label">CLACL</data>
+<data key="modularity_class">16</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">214</data>
+<data key="b">246</data>
+<data key="x">810.9269</data>
+<data key="y">-944.2778</data>
+</node>
+<node id="Joins">
+<data key="label">Joins</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">-300.03403</data>
+<data key="y">433.77734</data>
+</node>
+<node id="F*">
+<data key="label">F*</data>
+<data key="modularity_class">9</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">469.7259</data>
+<data key="y">-1100.551</data>
+</node>
+<node id="DBase">
+<data key="label">DBase</data>
+<data key="modularity_class">33</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">236</data>
+<data key="x">268.6239</data>
+<data key="y">2527.0222</data>
+</node>
+<node id="Clipper">
+<data key="label">Clipper</data>
+<data key="modularity_class">33</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">236</data>
+<data key="x">189.81915</data>
+<data key="y">2488.873</data>
+</node>
+<node id="Paradox">
+<data key="label">Paradox</data>
+<data key="modularity_class">33</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">236</data>
+<data key="x">258.80615</data>
+<data key="y">2451.9128</data>
+</node>
+<node id="Harbour">
+<data key="label">Harbour</data>
+<data key="modularity_class">33</data>
+<data key="size">14.573529</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">236</data>
+<data key="x">359.6001</data>
+<data key="y">2491.3481</data>
+</node>
+<node id="Oberon-07">
+<data key="label">Oberon-07</data>
+<data key="modularity_class">17</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">1313.6359</data>
+<data key="y">-598.8497</data>
+</node>
+<node id="Rc">
+<data key="label">Rc</data>
+<data key="modularity_class">34</data>
+<data key="size">14.573529</data>
+<data key="r">122</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-706.1905</data>
+<data key="y">2199.9292</data>
+</node>
+<node id="Inferno">
+<data key="label">Inferno</data>
+<data key="modularity_class">34</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-637.511</data>
+<data key="y">2167.2024</data>
+</node>
+<node id="Es">
+<data key="label">Es</data>
+<data key="modularity_class">34</data>
+<data key="size">13.5</data>
+<data key="r">122</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-730.19464</data>
+<data key="y">2136.9917</data>
+</node>
+<node id="Mizar system">
+<data key="label">Mizar system</data>
+<data key="modularity_class">35</data>
+<data key="size">15.6470585</data>
+<data key="r">100</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-449.29996</data>
+<data key="y">-1889.831</data>
+</node>
+<node id="OMDoc">
+<data key="label">OMDoc</data>
+<data key="modularity_class">35</data>
+<data key="size">13.5</data>
+<data key="r">100</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-542.32135</data>
+<data key="y">-1929.0637</data>
+</node>
+<node id="HOL Light">
+<data key="label">HOL Light</data>
+<data key="modularity_class">35</data>
+<data key="size">13.5</data>
+<data key="r">100</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-474.8792</data>
+<data key="y">-1969.5706</data>
+</node>
+<node id="Coq">
+<data key="label">Coq</data>
+<data key="modularity_class">35</data>
+<data key="size">14.573529</data>
+<data key="r">100</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-337.7072</data>
+<data key="y">-1727.7051</data>
+</node>
+<node id="COMIT">
+<data key="label">COMIT</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-87.42874</data>
+<data key="y">31.594725</data>
+</node>
+<node id="ISWIM">
+<data key="label">ISWIM</data>
+<data key="modularity_class">8</data>
+<data key="size">18.867647</data>
+<data key="r">93</data>
+<data key="g">129</data>
+<data key="b">246</data>
+<data key="x">76.26783</data>
+<data key="y">-1500.0847</data>
+</node>
+<node id="Croquet Project">
+<data key="label">Croquet Project</data>
+<data key="modularity_class">25</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">136</data>
+<data key="b">93</data>
+<data key="x">-1390.1526</data>
+<data key="y">-314.49466</data>
+</node>
+<node id="Tweak programming environment">
+<data key="label">Tweak programming environment</data>
+<data key="modularity_class">25</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">136</data>
+<data key="b">93</data>
+<data key="x">-1447.2628</data>
+<data key="y">-400.05463</data>
+</node>
+<node id="Stackless Python">
+<data key="label">Stackless Python</data>
+<data key="modularity_class">9</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">193</data>
+<data key="b">246</data>
+<data key="x">1237.3314</data>
+<data key="y">-800.1451</data>
+</node>
+<node id="JSON">
+<data key="label">JSON</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-796.3946</data>
+<data key="y">-263.05475</data>
+</node>
+<node id="Sed">
+<data key="label">Sed</data>
+<data key="modularity_class">10</data>
+<data key="size">15.6470585</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">207.70364</data>
+<data key="y">65.26804</data>
+</node>
+<node id="Chomski">
+<data key="label">Chomski</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">213.55269</data>
+<data key="y">157.48853</data>
+</node>
+<node id="XHarbour">
+<data key="label">XHarbour</data>
+<data key="modularity_class">33</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">236</data>
+<data key="x">393.28027</data>
+<data key="y">2418.652</data>
+</node>
+<node id="C*">
+<data key="label">C*</data>
+<data key="modularity_class">36</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">107</data>
+<data key="b">246</data>
+<data key="x">-311.6732</data>
+<data key="y">1651.0057</data>
+</node>
+<node id="Dataparallel-C">
+<data key="label">Dataparallel-C</data>
+<data key="modularity_class">36</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">107</data>
+<data key="b">246</data>
+<data key="x">-234.65643</data>
+<data key="y">1689.166</data>
+</node>
+<node id="Euclid">
+<data key="label">Euclid</data>
+<data key="modularity_class">13</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1012.1799</data>
+<data key="y">497.4126</data>
+</node>
+<node id="Mesa">
+<data key="label">Mesa</data>
+<data key="modularity_class">17</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">246</data>
+<data key="b">107</data>
+<data key="x">903.2991</data>
+<data key="y">-81.029785</data>
+</node>
+<node id="IBM BASIC">
+<data key="label">IBM BASIC</data>
+<data key="modularity_class">23</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">200</data>
+<data key="b">93</data>
+<data key="x">-1223.5295</data>
+<data key="y">2082.1943</data>
+</node>
+<node id="GScript">
+<data key="label">GScript</data>
+<data key="modularity_class">37</data>
+<data key="size">13.5</data>
+<data key="r">229</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-1763.2195</data>
+<data key="y">868.73914</data>
+</node>
+<node id="Gosu">
+<data key="label">Gosu</data>
+<data key="modularity_class">37</data>
+<data key="size">13.5</data>
+<data key="r">229</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">-1790.427</data>
+<data key="y">830.4526</data>
+</node>
+<node id="QB64">
+<data key="label">QB64</data>
+<data key="modularity_class">23</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">200</data>
+<data key="b">93</data>
+<data key="x">-1359.5021</data>
+<data key="y">2048.3987</data>
+</node>
+<node id="A Sharp">
+<data key="label">A Sharp</data>
+<data key="modularity_class">38</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">157</data>
+<data key="x">-871.1136</data>
+<data key="y">1711.2867</data>
+</node>
+<node id="Aldor">
+<data key="label">Aldor</data>
+<data key="modularity_class">38</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">157</data>
+<data key="x">-879.719</data>
+<data key="y">1758.5393</data>
+</node>
+<node id="P′′">
+<data key="label">P′′</data>
+<data key="modularity_class">39</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">179</data>
+<data key="b">93</data>
+<data key="x">-190.61435</data>
+<data key="y">2254.1638</data>
+</node>
+<node id="Brainfuck">
+<data key="label">Brainfuck</data>
+<data key="modularity_class">39</data>
+<data key="size">14.573529</data>
+<data key="r">246</data>
+<data key="g">179</data>
+<data key="b">93</data>
+<data key="x">-242.64262</data>
+<data key="y">2286.851</data>
+</node>
+<node id="SETL">
+<data key="label">SETL</data>
+<data key="modularity_class">40</data>
+<data key="size">15.6470585</data>
+<data key="r">93</data>
+<data key="g">150</data>
+<data key="b">246</data>
+<data key="x">-489.31845</data>
+<data key="y">-1290.619</data>
+</node>
+<node id="ProSet">
+<data key="label">ProSet</data>
+<data key="modularity_class">40</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">150</data>
+<data key="b">246</data>
+<data key="x">-574.7074</data>
+<data key="y">-1332.415</data>
+</node>
+<node id="Slim">
+<data key="label">Slim</data>
+<data key="modularity_class">40</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">150</data>
+<data key="b">246</data>
+<data key="x">-533.3587</data>
+<data key="y">-1369.9944</data>
+</node>
+<node id="FALSE">
+<data key="label">FALSE</data>
+<data key="modularity_class">39</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">179</data>
+<data key="b">93</data>
+<data key="x">-280.45892</data>
+<data key="y">2235.55</data>
+</node>
+<node id="Luna">
+<data key="label">Luna</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-655.254</data>
+<data key="y">-218.15013</data>
+</node>
+<node id="Restricted Io">
+<data key="label">Restricted Io</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-595.4856</data>
+<data key="y">-255.80107</data>
+</node>
+<node id="JOSS">
+<data key="label">JOSS</data>
+<data key="modularity_class">13</data>
+<data key="size">17.794117</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1766.413</data>
+<data key="y">398.66702</data>
+</node>
+<node id="CAL">
+<data key="label">CAL</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1857.0227</data>
+<data key="y">433.52957</data>
+</node>
+<node id="FOCAL">
+<data key="label">FOCAL</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1785.0065</data>
+<data key="y">468.0117</data>
+</node>
+<node id="Caché ObjectScript">
+<data key="label">Caché ObjectScript</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1774.4214</data>
+<data key="y">200.08458</data>
+</node>
+<node id="Profile Scripting Language">
+<data key="label">Profile Scripting Language</data>
+<data key="modularity_class">13</data>
+<data key="size">13.5</data>
+<data key="r">93</data>
+<data key="g">172</data>
+<data key="b">246</data>
+<data key="x">1855.4884</data>
+<data key="y">283.18765</data>
+</node>
+<node id="Polyphonic C#">
+<data key="label">Polyphonic C#</data>
+<data key="modularity_class">10</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">243</data>
+<data key="b">93</data>
+<data key="x">-401.84018</data>
+<data key="y">475.70786</data>
+</node>
+<node id="SAC programming language">
+<data key="label">SAC programming language</data>
+<data key="modularity_class">5</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">136</data>
+<data key="x">-26.834558</data>
+<data key="y">-2098.6555</data>
+</node>
+<node id="Cel">
+<data key="label">Cel</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-570.3811</data>
+<data key="y">-101.806305</data>
+</node>
+<node id="Squeak">
+<data key="label">Squeak</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-575.671</data>
+<data key="y">-11.513504</data>
+</node>
+<node id="Agora">
+<data key="label">Agora</data>
+<data key="modularity_class">1</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">93</data>
+<data key="x">-483.50684</data>
+<data key="y">-60.445663</data>
+</node>
+<node id="Joe-E">
+<data key="label">Joe-E</data>
+<data key="modularity_class">22</data>
+<data key="size">13.5</data>
+<data key="r">246</data>
+<data key="g">93</data>
+<data key="b">179</data>
+<data key="x">-2156.795</data>
+<data key="y">846.8234</data>
+</node>
+<node id="Join-pattern">
+<data key="label">Join-pattern</data>
+<data key="modularity_class">41</data>
+<data key="size">13.5</data>
+<data key="r">100</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-137.58359</data>
+<data key="y">1914.9032</data>
+</node>
+<node id="Join-calculus">
+<data key="label">Join-calculus</data>
+<data key="modularity_class">41</data>
+<data key="size">13.5</data>
+<data key="r">100</data>
+<data key="g">246</data>
+<data key="b">93</data>
+<data key="x">-190.92032</data>
+<data key="y">1877.5256</data>
+</node>
+<node id="ECL">
+<data key="label">ECL</data>
+<data key="modularity_class">42</data>
+<data key="size">13.5</data>
+<data key="r">207</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">518.3909</data>
+<data key="y">1831.739</data>
+</node>
+<node id="Big data">
+<data key="label">Big data</data>
+<data key="modularity_class">42</data>
+<data key="size">13.5</data>
+<data key="r">207</data>
+<data key="g">93</data>
+<data key="b">246</data>
+<data key="x">587.27325</data>
+<data key="y">1794.2639</data>
+</node>
+<edge source="ABC" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Python" target="Ruby">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Python" target="D">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Python" target="Falcon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Python" target="Groovy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Python" target="JavaScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Python" target="F Sharp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Python" target="Boo">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Python" target="Cobra">
+<data key="weight">1.0</data>
+</edge>
+<edge source="AS/400 Control Language" target="Windows PowerShell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Common Lisp" target="Dylan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Common Lisp" target="Emacs Lisp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Common Lisp" target="R">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Common Lisp" target="Clojure">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Common Lisp" target="EuLisp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Common Lisp" target="SubL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Common Lisp" target="Cadence SKILL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Common Lisp" target="ISLISP">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dylan" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dylan" target="Ruby">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dylan" target="Goo">
+<data key="weight">1.0</data>
+</edge>
+<edge source="EuLisp" target="Dylan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="EuLisp" target="ISLISP">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ruby" target="Falcon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ruby" target="Fancy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ruby" target="Groovy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ruby" target="Ioke">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ruby" target="Nu">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ruby" target="Mirah">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ruby" target="Reia">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Eiffel" target="Ruby">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Eiffel" target="D">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Eiffel" target="Scala">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Eiffel" target="C#">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Eiffel" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Eiffel" target="Sather">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Eiffel" target="Lisaac">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Eiffel" target="Racket">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D" target="Vala">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D" target="Qore">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D" target="MiniD">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D" target="DScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scala" target="Fantom">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scala" target="Ceylon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scala" target="Kotlin">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C#" target="D">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C#" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C#" target="Vala">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C#" target="F Sharp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C#" target="Nemerle">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="Clojure">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="D">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="Scala">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="C#">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="PHP">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="Groovy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="Ada">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="Seed7">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="Vala">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="ECMAScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="JavaScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="BeanShell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Java" target="J Sharp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sather" target="Rust">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sather" target="Cool">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Racket" target="Scheme">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Factor" target="Concatenation">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Factor" target="Cat">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Icon" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joy" target="Factor">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joy" target="Cat">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joy" target="Trith">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joy" target="V">
+<data key="weight">1.0</data>
+</edge>
+<edge source="PostScript" target="Portable Document Format">
+<data key="weight">1.0</data>
+</edge>
+<edge source="STOS BASIC" target="AMOS">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Dylan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Ruby">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Scala">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Lisaac">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Falcon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Fancy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Objective-C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="PHP">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Dart">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="AppleScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Groovy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Logtalk">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Ioke">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Common Lisp Object System">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Io">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="NewtonScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Self">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Smalltalk" target="Perl 6">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Objective-C" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Objective-C" target="Objective-J">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Objective-C" target="TOM">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Objective-C" target="Nu">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Io" target="Fancy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Io" target="Ioke">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Io" target="Luna">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Io" target="Restricted Io">
+<data key="weight">1.0</data>
+</edge>
+<edge source="NewtonScript" target="Io">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="Lisaac">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="Factor">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="Io">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="NewtonScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="JavaScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="REBOL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="Lua">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="Cel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="Squeak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Self" target="Agora">
+<data key="weight">1.0</data>
+</edge>
+<edge source="T" target="EuLisp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ada" target="Ruby">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ada" target="Eiffel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ada" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ada" target="C++">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ada" target="PL/SQL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ada" target="VHDL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ada" target="Seed7">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="D">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="C#">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="Falcon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="PHP">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="Ada">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="Seed7">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="Lua">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="Pike">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="Perl">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="C99">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C++" target="LPC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="HyperTalk" target="ECMAScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="HyperTalk" target="LiveCode">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JavaScript" target="Dart">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JavaScript" target="Objective-J">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JavaScript" target="CoffeeScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JavaScript" target="ActionScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JavaScript" target="QML">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JavaScript" target="JScript .NET">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JavaScript" target="TypeScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="QML" target="Qt">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Logo" target="Smalltalk">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Logo" target="Scratch">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Logo" target="NetLogo">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Logo" target="Etoys">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Logo" target="KTurtle">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Logo" target="REBOL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Etoys" target="Scratch">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Etoys" target="Croquet Project">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Etoys" target="Tweak programming environment">
+<data key="weight">1.0</data>
+</edge>
+<edge source="REBOL" target="JSON">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lua" target="Falcon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lua" target="Io">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lua" target="MiniD">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lua" target="Squirrel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lua" target="GameMonkey Script">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Squirrel" target="MiniD">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Emerald" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Emerald" target="Singularity">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Information Processing Language" target="Lisp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Dylan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="R">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Ruby">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Racket">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Smalltalk">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Falcon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Ioke">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Io">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="JavaScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Logo">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="REBOL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Lua">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Nu">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Perl">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Forth">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Haskell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Qi">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Tcl">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="CLIPS">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Mathematica">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="ML">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="CLU">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="Shen">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="MDL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lisp" target="OPS5">
+<data key="weight">1.0</data>
+</edge>
+<edge source="LESS" target="Sass">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sass" target="LESS">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sass" target="Stylus">
+<data key="weight">1.0</data>
+</edge>
+<edge source="MSX BASIC" target="Vilnius BASIC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-2+" target="Modula-3">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-3" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-3" target="C#">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-3" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-3" target="Caml">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Newsqueak" target="Rust">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Newsqueak" target="Go">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Newsqueak" target="Limbo">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Newsqueak" target="Alef">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Limbo" target="Rust">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Limbo" target="Go">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Limbo" target="Stackless Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alef" target="Rust">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alef" target="Go">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alef" target="Limbo">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Spec Sharp" target="Sing Sharp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Rexx" target="Object REXX">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Rexx" target="NetRexx">
+<data key="weight">1.0</data>
+</edge>
+<edge source="A+" target="K">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CPL" target="BCPL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CPL" target="POP-2">
+<data key="weight">1.0</data>
+</edge>
+<edge source="BCPL" target="B">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lucid" target="Pure Data">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lucid" target="Lustre">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lucid" target="SISAL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SISAL" target="SAC programming language">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SP/k" target="Turing">
+<data key="weight">1.0</data>
+</edge>
+<edge source="IBM RPG" target="IBM RPG II">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Visual Basic" target="Basic4ppc">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Visual Basic" target="Gambas">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Visual Basic" target="Visual Basic .NET">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Visual Basic" target="Realbasic">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Fortran" target="BASIC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Fortran" target="C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Fortran" target="ALGOL 58">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Fortran" target="Ratfor">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Fortran" target="PL/I">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Fortran" target="MUMPS">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Fortran" target="PACT">
+<data key="weight">1.0</data>
+</edge>
+<edge source="BASIC" target="Visual Basic">
+<data key="weight">1.0</data>
+</edge>
+<edge source="BASIC" target="Visual Basic .NET">
+<data key="weight">1.0</data>
+</edge>
+<edge source="BASIC" target="Realbasic">
+<data key="weight">1.0</data>
+</edge>
+<edge source="BASIC" target="AutoHotkey">
+<data key="weight">1.0</data>
+</edge>
+<edge source="BASIC" target="GRASS">
+<data key="weight">1.0</data>
+</edge>
+<edge source="BASIC" target="AutoIt">
+<data key="weight">1.0</data>
+</edge>
+<edge source="BASIC" target="COMAL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="D">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="C#">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="Objective-C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="PHP">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="C++">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="Seed7">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="JavaScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="Go">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="Limbo">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="Pike">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="Perl">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="LPC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="C--">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="BitC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="C shell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="AWK">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="Processing">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C" target="AMPL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 58" target="ALGOL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="PL/I" target="AS/400 Control Language">
+<data key="weight">1.0</data>
+</edge>
+<edge source="PL/I" target="Rexx">
+<data key="weight">1.0</data>
+</edge>
+<edge source="PL/I" target="SP/k">
+<data key="weight">1.0</data>
+</edge>
+<edge source="PL/I" target="B">
+<data key="weight">1.0</data>
+</edge>
+<edge source="MUMPS" target="Caché ObjectScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="MUMPS" target="Profile Scripting Language">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="Windows PowerShell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="Ruby">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="Falcon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="PHP">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="Perl 6">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="Qore">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="ECMAScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="JavaScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perl" target="LPC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="LPC" target="Pike">
+<data key="weight">1.0</data>
+</edge>
+<edge source="COBOL" target="PL/I">
+<data key="weight">1.0</data>
+</edge>
+<edge source="COBOL" target="ABAP">
+<data key="weight">1.0</data>
+</edge>
+<edge source="COBOL" target="CobolScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="AWK" target="Lua">
+<data key="weight">1.0</data>
+</edge>
+<edge source="AWK" target="Perl">
+<data key="weight">1.0</data>
+</edge>
+<edge source="AWK" target="AMPL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="AWK" target="Tcl">
+<data key="weight">1.0</data>
+</edge>
+<edge source="AWK" target="Korn shell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="F Sharp" target="F*">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Caml" target="F Sharp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Forth" target="Factor">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Forth" target="PostScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Forth" target="REBOL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Forth" target="RPL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Clojure">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Scala">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="C#">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Perl 6">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="CoffeeScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Visual Basic .NET">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="F Sharp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Timber">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Cayenne">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Qi">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Kaya">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Quark Framework">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="C++11">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Ωmega">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Language Integrated Query">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Agda">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Concepts">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Bluespec, Inc.">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Epigram">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Escher">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Clean">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Generics in Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Mercury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Curry">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Isabelle">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Haskell" target="Elm">
+<data key="weight">1.0</data>
+</edge>
+<edge source="J" target="NumPy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="J" target="SuperCollider">
+<data key="weight">1.0</data>
+</edge>
+<edge source="OCaml" target="Scala">
+<data key="weight">1.0</data>
+</edge>
+<edge source="OCaml" target="Rust">
+<data key="weight">1.0</data>
+</edge>
+<edge source="OCaml" target="F Sharp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="OCaml" target="ATS">
+<data key="weight">1.0</data>
+</edge>
+<edge source="OCaml" target="Opa">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Object Pascal" target="C#">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Object Pascal" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Object Pascal" target="Game Maker Language">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Prolog" target="Mercury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Prolog" target="Visual Prolog">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Prolog" target="KL1">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Prolog" target="Erlang">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Prolog" target="Oz">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Prolog" target="Strand">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Prolog" target="Datalog">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Prolog" target="KL0">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Oz" target="Alice">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SNOBOL" target="Icon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SNOBOL" target="Lua">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SQL" target="Windows PowerShell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SQL" target="Language Integrated Query">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SQL" target="Contextual Query Language">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="Common Lisp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="Dylan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="R">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="Clojure">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="EuLisp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="Ruby">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="Racket">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="JavaScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="Lua">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="Haskell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="Kernel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Scheme" target="Hop">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Tcl" target="Windows PowerShell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Tcl" target="Tea">
+<data key="weight">1.0</data>
+</edge>
+<edge source="VBScript" target="Windows PowerShell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="XPath" target="XForms">
+<data key="weight">1.0</data>
+</edge>
+<edge source="XPath" target="XML Schema">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Short Code" target="Intermediate Programming Language">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Short Code" target="OMNIBAC Symbolic Assembler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Speedcoding" target="Fortran">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Speedcoding" target="BASIC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Speedcoding" target="C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Speedcoding" target="ALGOL 58">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Speedcoding" target="Ratfor">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Speedcoding" target="PL/I">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Speedcoding" target="MUMPS">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Speedcoding" target="PACT">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL" target="Ada">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL" target="CPL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL" target="C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL" target="Simula">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL" target="Pascal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 60" target="Ada">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 60" target="CPL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 60" target="C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 60" target="Simula">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 60" target="Pascal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Ada">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Seed7">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Modula-3">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Object Pascal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Modula-2">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Oberon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Oberon-2">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Modula">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Component Pascal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pascal" target="Oxygene">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 68" target="Python">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 68" target="Ada">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 68" target="C++">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 68" target="Seed7">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 68" target="C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 68" target="Mary">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 68" target="Bash">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 68" target="Bourne shell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL 68" target="ALGOL 68C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ALGOL W" target="Pascal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="DIGITAL Command Language" target="Windows PowerShell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Generic Java" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Liberty BASIC" target="Just BASIC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="MUF" target="CoolMUD">
+<data key="weight">1.0</data>
+</edge>
+<edge source="MUF" target="ColdC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="MUF" target="MOO">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CoolMUD" target="ColdC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="MOO" target="CoolMUD">
+<data key="weight">1.0</data>
+</edge>
+<edge source="MOO" target="ColdC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-2" target="Ada">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-2" target="Seed7">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-2" target="Lua">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-2" target="Modula-3">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-2" target="Fortran">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-2" target="Zonnon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Modula-2" target="Oberon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Oberon" target="Go">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Oberon" target="Zonnon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Oberon" target="Oberon-2">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Oberon" target="Oberon-07">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Oaklisp" target="Dylan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Oaklisp" target="EuLisp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Object Oberon" target="Oberon-2">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Oberon-2" target="Component Pascal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pizza" target="Scala">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pizza" target="Generic Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Q" target="Pure">
+<data key="weight">1.0</data>
+</edge>
+<edge source="StarLogo" target="NetLogo">
+<data key="weight">1.0</data>
+</edge>
+<edge source="StarLogo" target="Etoys">
+<data key="weight">1.0</data>
+</edge>
+<edge source="TELCOMP" target="MUMPS">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Verilog" target="SystemVerilog">
+<data key="weight">1.0</data>
+</edge>
+<edge source="B" target="C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Turing+" target="Object-Oriented Turing">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Concurrent Euclid" target="Turing+">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ML" target="Clojure">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ML" target="C++">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ML" target="F Sharp">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ML" target="Haskell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ML" target="Opa">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ML" target="Erlang">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ML" target="Miranda">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ML" target="Felix">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ML" target="Cyclone">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CLU" target="Ruby">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CLU" target="Sather">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CLU" target="Ada">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CLU" target="Lua">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CLU" target="Argus">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Occam" target="Ease">
+<data key="weight">1.0</data>
+</edge>
+<edge source="APL" target="K">
+<data key="weight">1.0</data>
+</edge>
+<edge source="APL" target="J">
+<data key="weight">1.0</data>
+</edge>
+<edge source="APL" target="Q">
+<data key="weight">1.0</data>
+</edge>
+<edge source="APL" target="Mathematica">
+<data key="weight">1.0</data>
+</edge>
+<edge source="APL" target="MATLAB">
+<data key="weight">1.0</data>
+</edge>
+<edge source="APL" target="Polymorphic Programming Language">
+<data key="weight">1.0</data>
+</edge>
+<edge source="APL" target="Nial">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Miranda" target="Haskell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Miranda" target="Clean">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Boomerang" target="XSLT">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Caja project" target="Jacaranda">
+<data key="weight">1.0</data>
+</edge>
+<edge source="GW-BASIC" target="QuickBASIC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="GW-BASIC" target="QBasic">
+<data key="weight">1.0</data>
+</edge>
+<edge source="QBasic" target="QB64">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gemstone" target="Java Platform, Enterprise Edition">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Orwell" target="Haskell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SASL" target="Haskell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SASL" target="Miranda">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SASL" target="Kent Recursive Calculator">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kent Recursive Calculator" target="Miranda">
+<data key="weight">1.0</data>
+</edge>
+<edge source="AgentSheets" target="Scratch">
+<data key="weight">1.0</data>
+</edge>
+<edge source="AgentSheets" target="Etoys">
+<data key="weight">1.0</data>
+</edge>
+<edge source="AmbientTalk" target="ECMAScript">
+<data key="weight">1.0</data>
+</edge>
+<edge source="COMTRAN" target="COBOL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joyce" target="SuperPascal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="TUTOR" target="TenCORE">
+<data key="weight">1.0</data>
+</edge>
+<edge source="TUTOR" target="USE">
+<data key="weight">1.0</data>
+</edge>
+<edge source="COWSEL" target="POP-2">
+<data key="weight">1.0</data>
+</edge>
+<edge source="FP" target="J">
+<data key="weight">1.0</data>
+</edge>
+<edge source="FP" target="FPr">
+<data key="weight">1.0</data>
+</edge>
+<edge source="FP" target="FL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="FL" target="J">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JOVIAL" target="Coral 66">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JOVIAL" target="SYMPL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="KRL" target="KM programming language">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Karel" target="Karel++">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cω" target="Language Integrated Query">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cω" target="Superplan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cω" target="Joins">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Standard ML of New Jersey" target="Mythryl">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CLACL" target="C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="CLACL" target="Prolog">
+<data key="weight">1.0</data>
+</edge>
+<edge source="DBase" target="Clipper">
+<data key="weight">1.0</data>
+</edge>
+<edge source="DBase" target="Paradox">
+<data key="weight">1.0</data>
+</edge>
+<edge source="DBase" target="Harbour">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Harbour" target="XHarbour">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Rc" target="Inferno">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Rc" target="Es">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mizar system" target="OMDoc">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mizar system" target="HOL Light">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mizar system" target="Coq">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Coq" target="Agda">
+<data key="weight">1.0</data>
+</edge>
+<edge source="COMIT" target="SNOBOL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ISWIM" target="Lucid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ISWIM" target="Haskell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ISWIM" target="Clean">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ISWIM" target="ML">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ISWIM" target="Miranda">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ISWIM" target="SASL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sed" target="Perl">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sed" target="AWK">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sed" target="Chomski">
+<data key="weight">1.0</data>
+</edge>
+<edge source="C*" target="Dataparallel-C">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Euclid" target="Turing">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Euclid" target="Concurrent Euclid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Euclid" target="Mesa">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mesa" target="Java">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mesa" target="Modula-2">
+<data key="weight">1.0</data>
+</edge>
+<edge source="IBM BASIC" target="GW-BASIC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="GScript" target="Gosu">
+<data key="weight">1.0</data>
+</edge>
+<edge source="A Sharp" target="Aldor">
+<data key="weight">1.0</data>
+</edge>
+<edge source="P′′" target="Brainfuck">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SETL" target="ABC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SETL" target="ProSet">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SETL" target="Slim">
+<data key="weight">1.0</data>
+</edge>
+<edge source="FALSE" target="Brainfuck">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JOSS" target="BASIC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JOSS" target="MUMPS">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JOSS" target="TELCOMP">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JOSS" target="CAL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="JOSS" target="FOCAL">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Polyphonic C#" target="Cω">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joe-E" target="Caja project">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Join-pattern" target="Join-calculus">
+<data key="weight">1.0</data>
+</edge>
+<edge source="ECL" target="Big data">
+<data key="weight">1.0</data>
+</edge>
+</graph>
+</graphml>

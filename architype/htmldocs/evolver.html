@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module evolver</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>evolver</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/jonathan/Jonathan/programs/architype/evolver.py">/home/jonathan/Jonathan/programs/architype/evolver.py</a></font></td></tr></table>
+    <p><tt>evolver:&nbsp;does&nbsp;the&nbsp;evolvy&nbsp;bit<br>
+Copyright&nbsp;(c)&nbsp;2010&nbsp;Jonathan&nbsp;Byrne,&nbsp;Erik&nbsp;Hemberg&nbsp;and&nbsp;James&nbsp;McDermott<br>
+Hereby&nbsp;licensed&nbsp;under&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;v3.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="analyser.html">analyser</a><br>
+<a href="copy.html">copy</a><br>
+</td><td width="25%" valign=top><a href="math.html">math</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="evolver.html#Individual">Individual</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="evolver.html#StructuralFitness">StructuralFitness</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Individual">class <strong>Individual</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;GE&nbsp;individual<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Individual-__init__"><strong>__init__</strong></a>(self, genome, length<font color="#909090">=200</font>)</dt></dl>
+
+<dl><dt><a name="Individual-__lt__"><strong>__lt__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Individual-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Individual-dominates"><strong>dominates</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Individual-evaluate"><strong>evaluate</strong></a>(self, fitness)</dt></dl>
+
+<dl><dt><a name="Individual-set_values"><strong>set_values</strong></a>(self, values)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="StructuralFitness">class <strong>StructuralFitness</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Fitness&nbsp;function&nbsp;for&nbsp;testing&nbsp;generated&nbsp;mesh&nbsp;programs.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="StructuralFitness-__call__"><strong>__call__</strong></a>(self, unique_id, program)</dt></dl>
+
+<dl><dt><a name="StructuralFitness-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-build_individual"><strong>build_individual</strong></a>(filename, genome, grammar)</dt><dd><tt>map&nbsp;genotype&nbsp;and&nbsp;save&nbsp;mesh&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-count_fronts"><strong>count_fronts</strong></a>(fronts)</dt></dl>
+ <dl><dt><a name="-create_meshes"><strong>create_meshes</strong></a>(population)</dt><dd><tt>assign&nbsp;uid&nbsp;and&nbsp;creating&nbsp;meshes</tt></dd></dl>
+ <dl><dt><a name="-crowded_comparasion_operator"><strong>crowded_comparasion_operator</strong></a>(x, y)</dt></dl>
+ <dl><dt><a name="-crowding_distance_assignment"><strong>crowding_distance_assignment</strong></a>(pop)</dt><dd><tt>calulates&nbsp;distances&nbsp;between&nbsp;individuals</tt></dd></dl>
+ <dl><dt><a name="-default_fitness"><strong>default_fitness</strong></a>(maximise<font color="#909090">=False</font>)</dt></dl>
+ <dl><dt><a name="-evaluate_fitness"><strong>evaluate_fitness</strong></a>(individuals, grammar, fitness_function)</dt><dd><tt>Perform&nbsp;the&nbsp;mapping&nbsp;and&nbsp;evaluate&nbsp;each&nbsp;individual</tt></dd></dl>
+ <dl><dt><a name="-fast_nondominated_sort"><strong>fast_nondominated_sort</strong></a>(pop)</dt><dd><tt>takes&nbsp;a&nbsp;population&nbsp;and&nbsp;uses&nbsp;nsga2&nbsp;algorithm&nbsp;to&nbsp;create&nbsp;a&nbsp;list&nbsp;of<br>
+fronts</tt></dd></dl>
+ <dl><dt><a name="-initialise_population"><strong>initialise_population</strong></a>(size<font color="#909090">=10</font>)</dt><dd><tt>Create&nbsp;a&nbsp;popultaion&nbsp;of&nbsp;size&nbsp;and&nbsp;return</tt></dd></dl>
+ <dl><dt><a name="-int_flip_mutation"><strong>int_flip_mutation</strong></a>(individual, use_prob<font color="#909090">=True</font>)</dt><dd><tt>Mutate&nbsp;the&nbsp;individual&nbsp;by&nbsp;randomly&nbsp;chosing&nbsp;a&nbsp;new&nbsp;int&nbsp;with<br>
+probability&nbsp;p_mut.&nbsp;Works&nbsp;per-codon,&nbsp;hence&nbsp;no&nbsp;need&nbsp;for<br>
+"within_used"&nbsp;option.</tt></dd></dl>
+ <dl><dt><a name="-mutate_individual"><strong>mutate_individual</strong></a>(ind, grammar, mut_op)</dt><dd><tt>checks&nbsp;mutation&nbsp;operator&nbsp;and&nbsp;calls&nbsp;correct&nbsp;function</tt></dd></dl>
+ <dl><dt><a name="-nodal_mutation"><strong>nodal_mutation</strong></a>(individual, use_prob<font color="#909090">=True</font>)</dt><dd><tt>only&nbsp;mutates&nbsp;codons&nbsp;encoding&nbsp;for&nbsp;nodal&nbsp;rules</tt></dd></dl>
+ <dl><dt><a name="-onepoint_crossover"><strong>onepoint_crossover</strong></a>(p, q, within_used<font color="#909090">=True</font>)</dt><dd><tt>Given&nbsp;two&nbsp;individuals,&nbsp;create&nbsp;two&nbsp;children&nbsp;using&nbsp;one-point<br>
+crossover&nbsp;and&nbsp;return&nbsp;them.</tt></dd></dl>
+ <dl><dt><a name="-print_stats"><strong>print_stats</strong></a>(generation, individuals)</dt></dl>
+ <dl><dt><a name="-run_analysis"><strong>run_analysis</strong></a>(indiv)</dt><dd><tt>create&nbsp;mesh&nbsp;and&nbsp;show&nbsp;it&nbsp;using&nbsp;bmpost</tt></dd></dl>
+ <dl><dt><a name="-search_loop"><strong>search_loop</strong></a>(max_gens, individuals, grammar, selection, fit_func)</dt><dd><tt>Loop&nbsp;over&nbsp;max&nbsp;generations</tt></dd></dl>
+ <dl><dt><a name="-step"><strong>step</strong></a>(parent_pop, fronts, grammar, selection, fitness_function, best_ever)</dt><dd><tt>perform&nbsp;single&nbsp;iteration&nbsp;and&nbsp;return&nbsp;next&nbsp;generation</tt></dd></dl>
+ <dl><dt><a name="-struct_mutation"><strong>struct_mutation</strong></a>(individual, use_prob<font color="#909090">=True</font>)</dt><dd><tt>only&nbsp;mutates&nbsp;codons&nbsp;encoding&nbsp;for&nbsp;structural&nbsp;rules</tt></dd></dl>
+ <dl><dt><a name="-tournament_selection"><strong>tournament_selection</strong></a>(population, tournament_size<font color="#909090">=3</font>)</dt><dd><tt>Given&nbsp;an&nbsp;entire&nbsp;population,&nbsp;draw&nbsp;&lt;tournament_size&gt;&nbsp;competitors<br>
+randomly&nbsp;and&nbsp;return&nbsp;the&nbsp;best.</tt></dd></dl>
+ <dl><dt><a name="-truncation_selection"><strong>truncation_selection</strong></a>(population, proportion<font color="#909090">=0.5</font>)</dt><dd><tt>Given&nbsp;an&nbsp;entire&nbsp;population,&nbsp;return&nbsp;the&nbsp;best&nbsp;&lt;proportion&gt;&nbsp;of<br>
+them.</tt></dd></dl>
+ <dl><dt><a name="-write_front"><strong>write_front</strong></a>(idx, fronts)</dt></dl>
+ <dl><dt><a name="-write_fronts"><strong>write_fronts</strong></a>(fronts)</dt></dl>
+ <dl><dt><a name="-write_mesh"><strong>write_mesh</strong></a>(fronts, name)</dt></dl>
+ <dl><dt><a name="-write_pop"><strong>write_pop</strong></a>(idx, pop)</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CODON_SIZE</strong> = 100<br>
+<strong>CROSSOVER_PROBABILITY</strong> = 0.69999999999999996<br>
+<strong>DEFAULT_FIT</strong> = 100000<br>
+<strong>ELITE_SIZE</strong> = 2<br>
+<strong>FITNESS_FUNCTION</strong> = &lt;evolver.StructuralFitness instance&gt;<br>
+<strong>FRONT_FOLDER</strong> = 'frontData'<br>
+<strong>GENERATIONS</strong> = 1<br>
+<strong>GENERATION_SIZE</strong> = 100<br>
+<strong>GRAMMAR_FILE</strong> = 'grammars/support.bnf'<br>
+<strong>IMG_COUNTER</strong> = 0<br>
+<strong>MUTATION_PROBABILITY</strong> = 0.014999999999999999<br>
+<strong>POPULATION_SIZE</strong> = 100<br>
+<strong>SAVE_BEST</strong> = False<br>
+<strong>TIME</strong> = 1306520858.8103631</td></tr></table>
+</body></html>

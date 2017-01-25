@@ -1,0 +1,898 @@
+nodedef> name VARCHAR,label VARCHAR,width DOUBLE,height DOUBLE,x DOUBLE,y DOUBLE,color VARCHAR,Modularity Class INTEGER default 0
+ABC,"ABC",14.573529,14.573529,-243.57945,-1024.2955,'93,150,246',40
+Python,"Python",31.75,31.75,120.29675,-621.1107,'246,93,93',1
+AS/400 Control Language,"AS/400 Control Language",14.573529,14.573529,754.68274,455.78293,'246,243,93',10
+Windows PowerShell,"Windows PowerShell",18.867647,18.867647,242.05554,274.732,'246,243,93',10
+Common Lisp,"Common Lisp",22.088234,22.088234,-473.34055,-973.1142,'93,129,246',8
+Dylan,"Dylan",22.088234,22.088234,-393.5663,-750.6829,'246,93,93',1
+Emacs Lisp,"Emacs Lisp",13.5,13.5,-536.5748,-1045.819,'93,129,246',8
+R,"R",15.6470585,15.6470585,-446.50305,-837.4486,'93,129,246',8
+Clojure,"Clojure",17.794117,17.794117,-40.273346,-943.35614,'93,129,246',8
+EuLisp,"EuLisp",18.867647,18.867647,-585.0994,-918.92804,'93,129,246',8
+SubL,"SubL",13.5,13.5,-670.2519,-1086.4542,'93,129,246',8
+Cadence SKILL,"Cadence SKILL",13.5,13.5,-527.34064,-1123.4323,'93,129,246',8
+ISLISP,"ISLISP",14.573529,14.573529,-693.0584,-1005.17645,'93,129,246',8
+Ruby,"Ruby",29.602942,29.602942,-71.04534,-566.9539,'246,93,93',1
+Goo,"Goo",13.5,13.5,-517.2315,-765.0981,'246,93,93',1
+Eiffel,"Eiffel",22.088234,22.088234,275.62393,-649.6155,'93,246,107',17
+D,"D",23.161766,23.161766,400.8458,-469.02762,'93,246,107',17
+Scala,"Scala",22.088234,22.088234,286.69852,-866.77515,'93,246,107',17
+C#,"C#",25.308823,25.308823,525.77893,-716.8999,'93,246,107',17
+Java,"Java",42.485294,42.485294,437.51404,-588.7609,'93,246,107',17
+Sather,"Sather",16.720589,16.720589,581.99194,-817.93756,'93,193,246',9
+Lisaac,"Lisaac",15.6470585,15.6470585,-52.287296,-314.60077,'246,93,93',1
+Racket,"Racket",16.720589,16.720589,-179.15855,-737.8792,'93,129,246',8
+Factor,"Factor",17.794117,17.794117,-911.28625,76.7215,'186,93,246',7
+Concatenation,"Concatenation",13.5,13.5,-962.37646,140.5584,'186,93,246',7
+Cat,"Cat",14.573529,14.573529,-1041.3463,184.42932,'186,93,246',7
+Icon,"Icon",14.573529,14.573529,61.613926,-288.47687,'246,93,93',1
+Joy,"Joy",16.720589,16.720589,-1106.13,238.33653,'186,93,246',7
+Trith,"Trith",13.5,13.5,-1138.959,312.68527,'186,93,246',7
+V,"V",13.5,13.5,-1180.1187,271.0057,'186,93,246',7
+PostScript,"PostScript",14.573529,14.573529,-992.6574,-82.43786,'186,93,246',7
+Portable Document Format,"Portable Document Format",13.5,13.5,-1064.234,-41.78225,'186,93,246',7
+STOS BASIC,"STOS BASIC",13.5,13.5,-1225.0358,1476.3751,'164,246,93',0
+AMOS,"AMOS",13.5,13.5,-1303.882,1442.2279,'164,246,93',0
+Smalltalk,"Smalltalk",36.044117,36.044117,-193.72673,-445.81702,'246,93,93',1
+Falcon,"Falcon",19.941177,19.941177,48.72941,-445.77374,'246,93,93',1
+Fancy,"Fancy",15.6470585,15.6470585,-355.0731,-403.6501,'246,93,93',1
+Objective-C,"Objective-C",18.867647,18.867647,213.93037,-382.83112,'246,93,222',28
+PHP,"PHP",17.794117,17.794117,353.80026,-328.65662,'93,246,107',17
+Dart,"Dart",14.573529,14.573529,-167.42416,-293.67838,'246,93,222',28
+AppleScript,"AppleScript",13.5,13.5,-353.8749,-312.1344,'246,93,93',1
+Groovy,"Groovy",16.720589,16.720589,63.3028,-526.78546,'246,93,93',1
+Logtalk,"Logtalk",13.5,13.5,-292.24954,-263.8725,'246,93,93',1
+Ioke,"Ioke",16.720589,16.720589,-384.90247,-444.5228,'246,93,93',1
+Common Lisp Object System,"Common Lisp Object System",13.5,13.5,-278.25043,-357.8803,'246,93,93',1
+Io,"Io",22.088234,22.088234,-440.605,-271.69168,'246,93,93',1
+NewtonScript,"NewtonScript",15.6470585,15.6470585,-453.03888,-215.08334,'246,93,93',1
+Self,"Self",24.235294,24.235294,-453.76807,-146.19678,'246,93,93',1
+Perl 6,"Perl 6",15.6470585,15.6470585,6.6716294,-679.5778,'246,243,93',10
+T,"T",13.5,13.5,-701.5368,-946.6103,'93,129,246',8
+Ada,"Ada",28.529411,28.529411,657.27545,-450.62497,'93,246,107',17
+C++,"C++",29.602942,29.602942,488.7298,-376.44913,'93,246,107',17
+PL/SQL,"PL/SQL",13.5,13.5,751.61804,-512.9274,'93,246,107',17
+VHDL,"VHDL",13.5,13.5,797.0862,-475.9324,'93,246,107',17
+Seed7,"Seed7",19.941177,19.941177,772.07056,-402.68323,'93,246,107',17
+Vala,"Vala",15.6470585,15.6470585,556.1871,-633.7875,'93,246,107',17
+Qore,"Qore",14.573529,14.573529,337.29675,-254.40321,'246,243,93',10
+MiniD,"MiniD",15.6470585,15.6470585,170.71432,-169.43063,'246,93,93',1
+DScript,"DScript",13.5,13.5,353.22272,-428.7861,'93,246,107',17
+HyperTalk,"HyperTalk",14.573529,14.573529,436.66473,184.13017,'246,243,93',10
+ECMAScript,"ECMAScript",16.720589,16.720589,379.38434,-125.85546,'246,243,93',10
+LiveCode,"LiveCode",13.5,13.5,468.02402,311.95193,'246,243,93',10
+JavaScript,"JavaScript",27.455883,27.455883,-34.70347,-404.869,'246,93,222',28
+Objective-J,"Objective-J",14.573529,14.573529,152.33957,-330.61353,'246,93,222',28
+CoffeeScript,"CoffeeScript",14.573529,14.573529,-20.339952,-786.77435,'246,93,222',28
+ActionScript,"ActionScript",13.5,13.5,-58.346825,-247.54396,'246,93,222',28
+QML,"QML",14.573529,14.573529,-238.29086,-80.63624,'246,93,222',28
+JScript .NET,"JScript .NET",13.5,13.5,-175.91801,-202.1633,'246,93,222',28
+TypeScript,"TypeScript",13.5,13.5,-63.69465,-156.2944,'246,93,222',28
+Logo,"Logo",19.941177,19.941177,-840.0318,-417.70154,'246,136,93',25
+Scratch,"Scratch",15.6470585,15.6470585,-1089.7444,-316.73544,'246,136,93',25
+NetLogo,"NetLogo",14.573529,14.573529,-1006.9695,-440.33603,'246,136,93',25
+Etoys,"Etoys",18.867647,18.867647,-1166.9403,-356.4467,'246,136,93',25
+KTurtle,"KTurtle",13.5,13.5,-942.5122,-377.09348,'246,136,93',25
+REBOL,"REBOL",17.794117,17.794117,-711.46216,-304.95425,'246,93,93',1
+Lua,"Lua",26.382353,26.382353,85.33614,-205.12437,'246,93,93',1
+Squirrel,"Squirrel",14.573529,14.573529,181.59375,-63.599163,'246,93,93',1
+GameMonkey Script,"GameMonkey Script",13.5,13.5,34.488346,-109.11535,'246,93,93',1
+Fantom,"Fantom",13.5,13.5,355.72806,-928.3491,'93,246,107',17
+Ceylon,"Ceylon",13.5,13.5,323.1374,-983.72864,'93,246,107',17
+Kotlin,"Kotlin",13.5,13.5,214.37445,-941.8409,'93,246,107',17
+Emerald,"Emerald",14.573529,14.573529,663.0735,-781.626,'93,246,107',17
+Singularity,"Singularity",13.5,13.5,775.4039,-852.4155,'93,246,107',17
+Information Processing Language,"Information Processing Language",13.5,13.5,-500.3511,-597.7025,'246,93,93',1
+Lisp,"Lisp",41.411766,41.411766,-339.2693,-550.6658,'246,93,93',1
+LESS,"LESS",14.573529,14.573529,-2147.4417,1854.7432,'143,246,93',2
+Sass,"Sass",15.6470585,15.6470585,-2131.0051,1803.2466,'143,246,93',2
+MSX BASIC,"MSX BASIC",13.5,13.5,-693.32587,1792.7255,'143,93,246',3
+Vilnius BASIC,"Vilnius BASIC",13.5,13.5,-646.5251,1759.0934,'143,93,246',3
+Modula-2+,"Modula-2+",13.5,13.5,771.3576,-745.1851,'93,246,107',17
+Modula-3,"Modula-3",19.941177,19.941177,592.5897,-678.86224,'93,246,107',17
+Newsqueak,"Newsqueak",16.720589,16.720589,1118.5225,-884.6282,'93,193,246',9
+Rust,"Rust",17.794117,17.794117,973.0991,-931.57697,'93,193,246',9
+Go,"Go",17.794117,17.794117,1159.1102,-663.4505,'93,193,246',9
+Limbo,"Limbo",18.867647,18.867647,1104.3954,-758.4136,'93,193,246',9
+Alef,"Alef",16.720589,16.720589,1201.3162,-844.0759,'93,193,246',9
+Spec Sharp,"Spec Sharp",13.5,13.5,92.62339,1956.0177,'207,246,93',4
+Sing Sharp,"Sing Sharp",13.5,13.5,174.23355,1997.9779,'207,246,93',4
+Rexx,"Rexx",15.6470585,15.6470585,1236.4342,686.6008,'93,172,246',13
+Object REXX,"Object REXX",13.5,13.5,1278.2722,739.3301,'93,172,246',13
+NetRexx,"NetRexx",13.5,13.5,1187.7122,779.41174,'93,172,246',13
+A+,"A+",13.5,13.5,-1940.6802,-616.09143,'122,246,93',20
+K,"K",14.573529,14.573529,-1893.8846,-583.8386,'122,246,93',20
+CPL,"CPL",16.720589,16.720589,1254.4136,-159.52295,'93,246,107',17
+BCPL,"BCPL",14.573529,14.573529,1172.504,-17.720642,'93,246,107',17
+POP-2,"POP-2",14.573529,14.573529,1440.2065,-160.82172,'93,246,107',17
+Lucid,"Lucid",16.720589,16.720589,20.37522,-1891.0336,'246,93,136',5
+Pure Data,"Pure Data",13.5,13.5,-38.146393,-1933.6895,'246,93,136',5
+Lustre,"Lustre",13.5,13.5,49.826454,-1970.0739,'246,93,136',5
+SISAL,"SISAL",14.573529,14.573529,-9.4225445,-2037.3174,'246,93,136',5
+SP/k,"SP/k",14.573529,14.573529,1145.121,571.5822,'93,172,246',13
+Turing,"Turing",14.573529,14.573529,1030.7825,539.9477,'93,172,246',13
+IBM RPG,"IBM RPG",13.5,13.5,-1039.054,1370.897,'93,246,129',6
+IBM RPG II,"IBM RPG II",13.5,13.5,-992.8547,1405.4178,'93,246,129',6
+TOM,"TOM",13.5,13.5,218.50645,-288.3172,'246,93,222',28
+Nu,"Nu",15.6470585,15.6470585,-64.37167,-476.55594,'246,93,93',1
+Visual Basic,"Visual Basic",17.794117,17.794117,1296.5111,287.31488,'93,172,246',13
+Basic4ppc,"Basic4ppc",13.5,13.5,1273.7538,406.1594,'93,172,246',13
+Gambas,"Gambas",13.5,13.5,1413.7354,445.6994,'93,172,246',13
+Visual Basic .NET,"Visual Basic .NET",15.6470585,15.6470585,1063.2059,-117.31394,'93,172,246',13
+Realbasic,"Realbasic",14.573529,14.573529,1425.8232,366.87067,'93,172,246',13
+Fortran,"Fortran",22.088234,22.088234,1275.4463,83.574,'93,172,246',13
+BASIC,"BASIC",23.161766,23.161766,1455.3699,238.63387,'93,172,246',13
+C,"C",40.338234,40.338234,747.02673,-260.43365,'93,246,107',17
+ALGOL 58,"ALGOL 58",15.6470585,15.6470585,1304.9806,17.99573,'93,172,246',13
+Ratfor,"Ratfor",14.573529,14.573529,1397.2024,119.07041,'93,172,246',13
+PL/I,"PL/I",19.941177,19.941177,1181.1127,445.9873,'93,172,246',13
+MUMPS,"MUMPS",18.867647,18.867647,1640.105,239.85728,'93,172,246',13
+PACT,"PACT",14.573529,14.573529,1431.4773,155.04759,'93,172,246',13
+AutoHotkey,"AutoHotkey",13.5,13.5,1505.4958,327.03998,'93,172,246',13
+GRASS,"GRASS",13.5,13.5,1634.5593,367.33197,'93,172,246',13
+AutoIt,"AutoIt",13.5,13.5,1538.7622,402.61295,'93,172,246',13
+COMAL,"COMAL",13.5,13.5,1504.4974,276.03506,'93,172,246',13
+Pike,"Pike",15.6470585,15.6470585,593.69995,-254.89795,'93,246,107',17
+Perl,"Perl",28.529411,28.529411,228.6977,-239.11044,'246,243,93',10
+C99,"C99",13.5,13.5,473.6336,-270.32178,'93,246,107',17
+LPC,"LPC",16.720589,16.720589,515.9373,-217.17398,'93,246,107',17
+COBOL,"COBOL",16.720589,16.720589,1362.5408,780.794,'93,172,246',13
+ABAP,"ABAP",13.5,13.5,1304.618,849.36505,'93,172,246',13
+CobolScript,"CobolScript",13.5,13.5,1408.1931,888.0653,'93,172,246',13
+C--,"C--",13.5,13.5,795.1301,-173.59976,'93,246,107',17
+BitC,"BitC",13.5,13.5,878.04724,-203.39728,'93,246,107',17
+C shell,"C shell",13.5,13.5,907.5735,-163.07486,'93,246,107',17
+AWK,"AWK",19.941177,19.941177,279.27347,6.177446,'246,243,93',10
+Processing,"Processing",13.5,13.5,738.60205,-121.51677,'93,246,107',17
+AMPL,"AMPL",14.573529,14.573529,496.1016,-81.04154,'246,243,93',10
+F Sharp,"F Sharp",19.941177,19.941177,432.73798,-1030.2645,'93,193,246',9
+Nemerle,"Nemerle",13.5,13.5,501.4098,-854.4007,'93,246,107',17
+Caml,"Caml",14.573529,14.573529,582.50757,-930.50885,'93,193,246',9
+Forth,"Forth",17.794117,17.794117,-818.6875,-168.37767,'186,93,246',7
+RPL,"RPL",13.5,13.5,-891.64233,-121.591225,'186,93,246',7
+Haskell,"Haskell",50.0,50.0,127.29864,-1032.2516,'93,129,246',8
+Timber,"Timber",13.5,13.5,-165.6635,-1317.7645,'93,129,246',8
+Cayenne,"Cayenne",13.5,13.5,98.53026,-1150.5114,'93,129,246',8
+Qi,"Qi",14.573529,14.573529,-158.04146,-873.08685,'93,129,246',8
+Kaya,"Kaya",13.5,13.5,11.42246,-1239.8734,'93,129,246',8
+Quark Framework,"Quark Framework",13.5,13.5,-41.44044,-1070.8837,'93,129,246',8
+C++11,"C++11",13.5,13.5,-64.931984,-1185.432,'93,129,246',8
+Ωmega,"Ωmega",13.5,13.5,283.87796,-1147.8778,'93,129,246',8
+Language Integrated Query,"Language Integrated Query",15.6470585,15.6470585,-127.92131,-16.127522,'246,243,93',10
+Agda,"Agda",14.573529,14.573529,-164.49141,-1467.5206,'100,93,246',35
+Concepts,"Concepts",13.5,13.5,283.9044,-1241.2919,'93,129,246',8
+Bluespec, Inc.,"Bluespec, Inc.",13.5,13.5,-149.78407,-1368.6381,'93,129,246',8
+Epigram,"Epigram",13.5,13.5,153.19923,-1196.1106,'93,129,246',8
+Escher,"Escher",13.5,13.5,-77.64796,-1280.868,'93,129,246',8
+Clean,"Clean",15.6470585,15.6470585,74.0789,-1389.2866,'93,129,246',8
+Generics in Java,"Generics in Java",13.5,13.5,-77.814735,-1109.2003,'93,129,246',8
+Mercury,"Mercury",14.573529,14.573529,443.69238,-1357.8043,'93,214,246',16
+Curry,"Curry",13.5,13.5,42.684513,-1322.502,'93,129,246',8
+Isabelle,"Isabelle",13.5,13.5,-170.07199,-1222.3049,'93,129,246',8
+Elm,"Elm",13.5,13.5,-294.25653,-1083.8392,'93,129,246',8
+J,"J",17.794117,17.794117,-2126.6174,-508.59116,'122,246,93',20
+NumPy,"NumPy",13.5,13.5,-2202.597,-384.0568,'122,246,93',20
+SuperCollider,"SuperCollider",13.5,13.5,-2118.2146,-427.2943,'122,246,93',20
+OCaml,"OCaml",17.794117,17.794117,606.9675,-1094.4254,'93,193,246',9
+ATS,"ATS",13.5,13.5,670.02747,-1173.7421,'93,193,246',9
+Opa,"Opa",14.573529,14.573529,492.16513,-1182.2607,'93,193,246',9
+Object Pascal,"Object Pascal",16.720589,16.720589,821.22906,-637.6183,'93,246,107',17
+Game Maker Language,"Game Maker Language",13.5,13.5,944.159,-704.24396,'93,246,107',17
+Prolog,"Prolog",22.088234,22.088234,743.8043,-1487.9783,'93,214,246',16
+Visual Prolog,"Visual Prolog",13.5,13.5,801.249,-1640.3239,'93,214,246',16
+KL1,"KL1",13.5,13.5,849.52997,-1520.0455,'93,214,246',16
+Erlang,"Erlang",14.573529,14.573529,552.9051,-1402.4225,'93,193,246',9
+Oz,"Oz",14.573529,14.573529,867.6936,-1680.9558,'93,214,246',16
+Strand,"Strand",13.5,13.5,788.503,-1600.006,'93,214,246',16
+Datalog,"Datalog",13.5,13.5,925.08466,-1560.0802,'93,214,246',16
+KL0,"KL0",13.5,13.5,679.59357,-1600.1494,'93,214,246',16
+Boo,"Boo",13.5,13.5,46.865543,-716.1471,'246,93,93',1
+Cobra,"Cobra",13.5,13.5,153.66634,-746.2636,'246,93,93',1
+Mirah,"Mirah",13.5,13.5,-112.03583,-675.73157,'246,93,93',1
+Reia,"Reia",13.5,13.5,-148.48694,-639.02985,'246,93,93',1
+SNOBOL,"SNOBOL",15.6470585,15.6470585,-56.268982,-67.560616,'246,93,93',1
+SQL,"SQL",15.6470585,15.6470585,-4.5868754,236.98389,'246,243,93',10
+Contextual Query Language,"Contextual Query Language",13.5,13.5,-52.75569,318.5209,'246,243,93',10
+Scheme,"Scheme",26.382353,26.382353,-267.26974,-814.85114,'93,129,246',8
+Kernel,"Kernel",13.5,13.5,-371.8645,-881.6844,'93,129,246',8
+Hop,"Hop",13.5,13.5,-326.55286,-923.3854,'93,129,246',8
+Simula,"Simula",15.6470585,15.6470585,1201.5754,-290.33685,'93,246,107',17
+Tcl,"Tcl",16.720589,16.720589,33.18004,38.29452,'246,243,93',10
+Tea,"Tea",13.5,13.5,-4.4054613,148.12683,'246,243,93',10
+VBScript,"VBScript",13.5,13.5,184.66281,364.46527,'246,243,93',10
+XPath,"XPath",14.573529,14.573529,1050.4941,2105.4143,'93,246,172',11
+XForms,"XForms",13.5,13.5,976.96375,2072.0613,'93,246,172',11
+XML Schema,"XML Schema",13.5,13.5,1062.048,2039.5034,'93,246,172',11
+Short Code,"Short Code",14.573529,14.573529,-2022.0536,1197.772,'246,93,115',12
+Intermediate Programming Language,"Intermediate Programming Language",13.5,13.5,-1938.94,1234.377,'246,93,115',12
+OMNIBAC Symbolic Assembler,"OMNIBAC Symbolic Assembler",13.5,13.5,-1982.2238,1159.7603,'246,93,115',12
+Speedcoding,"Speedcoding",21.014706,21.014706,1323.9911,195.03072,'93,172,246',13
+ALGOL,"ALGOL",18.867647,18.867647,1060.5161,-209.69984,'93,246,107',17
+ALGOL 60,"ALGOL 60",17.794117,17.794117,1030.3481,-326.9501,'93,246,107',17
+Pascal,"Pascal",27.455883,27.455883,958.49634,-527.06335,'93,246,107',17
+ALGOL 68,"ALGOL 68",23.161766,23.161766,608.99713,-167.42783,'93,246,107',17
+Mary,"Mary",13.5,13.5,814.34064,6.7250066,'93,246,107',17
+Bash,"Bash",13.5,13.5,728.79614,-80.82636,'93,246,107',17
+Bourne shell,"Bourne shell",13.5,13.5,628.4212,41.593433,'93,246,107',17
+ALGOL 68C,"ALGOL 68C",13.5,13.5,496.15274,3.9262567,'93,246,107',17
+ALGOL W,"ALGOL W",13.5,13.5,1071.7812,-597.3135,'93,246,107',17
+DIGITAL Command Language,"DIGITAL Command Language",13.5,13.5,276.67194,409.36176,'246,243,93',10
+Generic Java,"Generic Java",14.573529,14.573529,417.3101,-774.5981,'93,246,107',17
+Liberty BASIC,"Liberty BASIC",13.5,13.5,-504.30103,1614.6233,'246,93,243',14
+Just BASIC,"Just BASIC",13.5,13.5,-560.9902,1575.7091,'246,93,243',14
+MUF,"MUF",15.6470585,15.6470585,-804.7819,3137.9824,'246,157,93',15
+CoolMUD,"CoolMUD",15.6470585,15.6470585,-659.93567,3172.193,'246,157,93',15
+ColdC,"ColdC",15.6470585,15.6470585,-711.1887,3102.4956,'246,157,93',15
+MOO,"MOO",15.6470585,15.6470585,-753.7408,3208.1584,'246,157,93',15
+Modula-2,"Modula-2",22.088234,22.088234,897.1738,-363.51715,'93,246,107',17
+Zonnon,"Zonnon",14.573529,14.573529,1123.9614,-399.79065,'93,246,107',17
+Oberon,"Oberon",18.867647,18.867647,1236.6042,-561.65936,'93,246,107',17
+Oaklisp,"Oaklisp",14.573529,14.573529,-576.3491,-836.82983,'93,129,246',8
+Object Oberon,"Object Oberon",13.5,13.5,1463.5876,-530.3437,'93,246,107',17
+Oberon-2,"Oberon-2",16.720589,16.720589,1290.9982,-489.6467,'93,246,107',17
+Alice,"Alice",13.5,13.5,899.9712,-1737.6018,'93,214,246',16
+Pizza,"Pizza",14.573529,14.573529,402.3311,-891.21747,'93,246,107',17
+Q,"Q",14.573529,14.573529,-1927.6559,-510.23053,'122,246,93',20
+Pure,"Pure",13.5,13.5,-1915.9468,-410.51224,'122,246,93',20
+StarLogo,"StarLogo",14.573529,14.573529,-1214.6509,-456.65503,'246,136,93',25
+TELCOMP,"TELCOMP",14.573529,14.573529,1806.597,330.19598,'93,172,246',13
+Verilog,"Verilog",13.5,13.5,-1249.8612,1245.1073,'246,222,93',18
+SystemVerilog,"SystemVerilog",13.5,13.5,-1292.3708,1199.9695,'246,222,93',18
+B,"B",15.6470585,15.6470585,1064.2988,105.23934,'93,246,107',17
+Turing+,"Turing+",14.573529,14.573529,973.0386,860.94116,'93,172,246',13
+Object-Oriented Turing,"Object-Oriented Turing",13.5,13.5,968.7854,932.3491,'93,172,246',13
+Concurrent Euclid,"Concurrent Euclid",14.573529,14.573529,962.92334,698.9743,'93,172,246',13
+Korn shell,"Korn shell",13.5,13.5,305.7675,114.854614,'246,243,93',10
+BeanShell,"BeanShell",13.5,13.5,562.45844,-547.03876,'93,246,107',17
+J Sharp,"J Sharp",13.5,13.5,608.7546,-588.57513,'93,246,107',17
+CLIPS,"CLIPS",13.5,13.5,-560.894,-518.55334,'246,93,93',1
+Mathematica,"Mathematica",14.573529,14.573529,-1120.292,-560.2689,'122,246,93',20
+ML,"ML",24.235294,24.235294,313.61447,-1107.0353,'93,193,246',9
+CLU,"CLU",18.867647,18.867647,194.48357,-521.65076,'246,93,93',1
+Shen,"Shen",13.5,13.5,-473.88382,-481.18433,'246,93,93',1
+MDL,"MDL",13.5,13.5,-445.04504,-553.8881,'246,93,93',1
+OPS5,"OPS5",13.5,13.5,-577.38635,-556.2276,'246,93,93',1
+Occam,"Occam",13.5,13.5,55.4771,1747.4642,'246,93,200',19
+Ease,"Ease",13.5,13.5,-21.406876,1713.7942,'246,93,200',19
+Modula,"Modula",13.5,13.5,1109.7845,-525.24316,'93,246,107',17
+Component Pascal,"Component Pascal",14.573529,14.573529,1319.346,-439.46185,'93,246,107',17
+Oxygene,"Oxygene",13.5,13.5,1085.0682,-484.35657,'93,246,107',17
+APL,"APL",19.941177,19.941177,-1804.6808,-541.72424,'122,246,93',20
+MATLAB,"MATLAB",13.5,13.5,-1707.4286,-507.7874,'122,246,93',20
+Polymorphic Programming Language,"Polymorphic Programming Language",13.5,13.5,-1752.4857,-469.33298,'122,246,93',20
+Nial,"Nial",13.5,13.5,-1803.4086,-606.2424,'122,246,93',20
+Miranda,"Miranda",18.867647,18.867647,187.43414,-1425.4371,'93,129,246',8
+Felix,"Felix",13.5,13.5,397.2075,-1199.3119,'93,193,246',9
+Cyclone,"Cyclone",13.5,13.5,293.20544,-1292.7928,'93,193,246',9
+Boomerang,"Boomerang",13.5,13.5,-1558.1305,1023.4676,'93,236,246',21
+XSLT,"XSLT",13.5,13.5,-1629.3802,1062.2289,'93,236,246',21
+Argus,"Argus",13.5,13.5,184.42354,-479.4256,'246,93,93',1
+Caja project,"Caja project",14.573529,14.573529,-2223.4175,808.73535,'246,93,179',22
+Jacaranda,"Jacaranda",13.5,13.5,-2191.5254,767.22473,'246,93,179',22
+GW-BASIC,"GW-BASIC",15.6470585,15.6470585,-1296.2211,2149.9602,'246,200,93',23
+QuickBASIC,"QuickBASIC",13.5,13.5,-1205.4205,2183.5994,'246,200,93',23
+QBasic,"QBasic",14.573529,14.573529,-1395.2711,2115.821,'246,200,93',23
+Gemstone,"Gemstone",13.5,13.5,-422.30438,1868.6721,'246,115,93',24
+Java Platform, Enterprise Edition,"Java Platform, Enterprise Edition",13.5,13.5,-442.31842,1829.9097,'246,115,93',24
+Orwell,"Orwell",13.5,13.5,119.86212,-1281.4368,'93,129,246',8
+SASL,"SASL",16.720589,16.720589,178.49257,-1463.6042,'93,129,246',8
+Kent Recursive Calculator,"Kent Recursive Calculator",14.573529,14.573529,179.88931,-1548.6465,'93,129,246',8
+AgentSheets,"AgentSheets",14.573529,14.573529,-1219.7174,-268.51416,'246,136,93',25
+AmbientTalk,"AmbientTalk",13.5,13.5,382.80832,78.194725,'246,243,93',10
+COMTRAN,"COMTRAN",13.5,13.5,1440.2428,815.6174,'93,172,246',13
+Joyce,"Joyce",13.5,13.5,-819.8976,1490.3088,'93,246,214',26
+SuperPascal,"SuperPascal",13.5,13.5,-747.52875,1532.5786,'93,246,214',26
+TUTOR,"TUTOR",14.573529,14.573529,678.4798,2201.9539,'229,246,93',27
+TenCORE,"TenCORE",13.5,13.5,605.54474,2169.1008,'229,246,93',27
+USE,"USE",13.5,13.5,704.50867,2135.737,'229,246,93',27
+Qt,"Qt",13.5,13.5,-269.5239,27.763948,'246,93,222',28
+COWSEL,"COWSEL",13.5,13.5,1551.7715,-124.417366,'93,246,107',17
+FP,"FP",15.6470585,15.6470585,-2252.8186,-487.07352,'122,246,93',20
+FPr,"FPr",13.5,13.5,-2292.6484,-441.10153,'122,246,93',20
+FL,"FL",14.573529,14.573529,-2202.004,-524.2472,'122,246,93',20
+JOVIAL,"JOVIAL",14.573529,14.573529,-1646.0192,1642.6467,'93,246,150',29
+Coral 66,"Coral 66",13.5,13.5,-1629.049,1571.961,'93,246,150',29
+SYMPL,"SYMPL",13.5,13.5,-1559.4541,1609.0378,'93,246,150',29
+KRL,"KRL",13.5,13.5,289.08322,1801.3727,'164,93,246',30
+KM programming language,"KM programming language",13.5,13.5,281.90894,1870.0708,'164,93,246',30
+Karel,"Karel",13.5,13.5,-1482.0927,1275.4772,'186,246,93',31
+Karel++,"Karel++",13.5,13.5,-1508.0767,1240.9072,'186,246,93',31
+Cω,"Cω",16.720589,16.720589,-382.70697,302.91708,'246,243,93',10
+Superplan,"Superplan",13.5,13.5,-411.65903,393.7632,'246,243,93',10
+Stylus,"Stylus",13.5,13.5,-2083.954,1757.7823,'143,246,93',2
+Cool,"Cool",13.5,13.5,669.0206,-894.4415,'93,193,246',9
+Standard ML of New Jersey,"Standard ML of New Jersey",13.5,13.5,-1048.1403,1601.3018,'93,246,193',32
+Mythryl,"Mythryl",13.5,13.5,-1111.8818,1642.8873,'93,246,193',32
+CLACL,"CLACL",14.573529,14.573529,810.9269,-944.2778,'93,214,246',16
+Joins,"Joins",13.5,13.5,-300.03403,433.77734,'246,243,93',10
+F*,"F*",13.5,13.5,469.7259,-1100.551,'93,193,246',9
+DBase,"DBase",15.6470585,15.6470585,268.6239,2527.0222,'93,246,236',33
+Clipper,"Clipper",13.5,13.5,189.81915,2488.873,'93,246,236',33
+Paradox,"Paradox",13.5,13.5,258.80615,2451.9128,'93,246,236',33
+Harbour,"Harbour",14.573529,14.573529,359.6001,2491.3481,'93,246,236',33
+Oberon-07,"Oberon-07",13.5,13.5,1313.6359,-598.8497,'93,246,107',17
+Rc,"Rc",14.573529,14.573529,-706.1905,2199.9292,'122,93,246',34
+Inferno,"Inferno",13.5,13.5,-637.511,2167.2024,'122,93,246',34
+Es,"Es",13.5,13.5,-730.19464,2136.9917,'122,93,246',34
+Mizar system,"Mizar system",15.6470585,15.6470585,-449.29996,-1889.831,'100,93,246',35
+OMDoc,"OMDoc",13.5,13.5,-542.32135,-1929.0637,'100,93,246',35
+HOL Light,"HOL Light",13.5,13.5,-474.8792,-1969.5706,'100,93,246',35
+Coq,"Coq",14.573529,14.573529,-337.7072,-1727.7051,'100,93,246',35
+COMIT,"COMIT",13.5,13.5,-87.42874,31.594725,'246,93,93',1
+ISWIM,"ISWIM",18.867647,18.867647,76.26783,-1500.0847,'93,129,246',8
+Croquet Project,"Croquet Project",13.5,13.5,-1390.1526,-314.49466,'246,136,93',25
+Tweak programming environment,"Tweak programming environment",13.5,13.5,-1447.2628,-400.05463,'246,136,93',25
+Stackless Python,"Stackless Python",13.5,13.5,1237.3314,-800.1451,'93,193,246',9
+JSON,"JSON",13.5,13.5,-796.3946,-263.05475,'246,93,93',1
+Sed,"Sed",15.6470585,15.6470585,207.70364,65.26804,'246,243,93',10
+Chomski,"Chomski",13.5,13.5,213.55269,157.48853,'246,243,93',10
+XHarbour,"XHarbour",13.5,13.5,393.28027,2418.652,'93,246,236',33
+C*,"C*",13.5,13.5,-311.6732,1651.0057,'93,107,246',36
+Dataparallel-C,"Dataparallel-C",13.5,13.5,-234.65643,1689.166,'93,107,246',36
+Euclid,"Euclid",15.6470585,15.6470585,1012.1799,497.4126,'93,172,246',13
+Mesa,"Mesa",15.6470585,15.6470585,903.2991,-81.029785,'93,246,107',17
+IBM BASIC,"IBM BASIC",13.5,13.5,-1223.5295,2082.1943,'246,200,93',23
+GScript,"GScript",13.5,13.5,-1763.2195,868.73914,'229,93,246',37
+Gosu,"Gosu",13.5,13.5,-1790.427,830.4526,'229,93,246',37
+QB64,"QB64",13.5,13.5,-1359.5021,2048.3987,'246,200,93',23
+A Sharp,"A Sharp",13.5,13.5,-871.1136,1711.2867,'246,93,157',38
+Aldor,"Aldor",13.5,13.5,-879.719,1758.5393,'246,93,157',38
+P′′,"P′′",13.5,13.5,-190.61435,2254.1638,'246,179,93',39
+Brainfuck,"Brainfuck",14.573529,14.573529,-242.64262,2286.851,'246,179,93',39
+SETL,"SETL",15.6470585,15.6470585,-489.31845,-1290.619,'93,150,246',40
+ProSet,"ProSet",13.5,13.5,-574.7074,-1332.415,'93,150,246',40
+Slim,"Slim",13.5,13.5,-533.3587,-1369.9944,'93,150,246',40
+FALSE,"FALSE",13.5,13.5,-280.45892,2235.55,'246,179,93',39
+Luna,"Luna",13.5,13.5,-655.254,-218.15013,'246,93,93',1
+Restricted Io,"Restricted Io",13.5,13.5,-595.4856,-255.80107,'246,93,93',1
+JOSS,"JOSS",17.794117,17.794117,1766.413,398.66702,'93,172,246',13
+CAL,"CAL",13.5,13.5,1857.0227,433.52957,'93,172,246',13
+FOCAL,"FOCAL",13.5,13.5,1785.0065,468.0117,'93,172,246',13
+Caché ObjectScript,"Caché ObjectScript",13.5,13.5,1774.4214,200.08458,'93,172,246',13
+Profile Scripting Language,"Profile Scripting Language",13.5,13.5,1855.4884,283.18765,'93,172,246',13
+Polyphonic C#,"Polyphonic C#",13.5,13.5,-401.84018,475.70786,'246,243,93',10
+SAC programming language,"SAC programming language",13.5,13.5,-26.834558,-2098.6555,'246,93,136',5
+Cel,"Cel",13.5,13.5,-570.3811,-101.806305,'246,93,93',1
+Squeak,"Squeak",13.5,13.5,-575.671,-11.513504,'246,93,93',1
+Agora,"Agora",13.5,13.5,-483.50684,-60.445663,'246,93,93',1
+Joe-E,"Joe-E",13.5,13.5,-2156.795,846.8234,'246,93,179',22
+Join-pattern,"Join-pattern",13.5,13.5,-137.58359,1914.9032,'100,246,93',41
+Join-calculus,"Join-calculus",13.5,13.5,-190.92032,1877.5256,'100,246,93',41
+ECL,"ECL",13.5,13.5,518.3909,1831.739,'207,93,246',42
+Big data,"Big data",13.5,13.5,587.27325,1794.2639,'207,93,246',42
+edgedef> node1,node2,weight DOUBLE,directed BOOLEAN
+ABC,Python,1.0,true
+Python,Ruby,1.0,true
+Python,D,1.0,true
+Python,Falcon,1.0,true
+Python,Groovy,1.0,true
+Python,JavaScript,1.0,true
+Python,F Sharp,1.0,true
+Python,Boo,1.0,true
+Python,Cobra,1.0,true
+AS/400 Control Language,Windows PowerShell,1.0,true
+Common Lisp,Dylan,1.0,true
+Common Lisp,Emacs Lisp,1.0,true
+Common Lisp,R,1.0,true
+Common Lisp,Clojure,1.0,true
+Common Lisp,EuLisp,1.0,true
+Common Lisp,SubL,1.0,true
+Common Lisp,Cadence SKILL,1.0,true
+Common Lisp,ISLISP,1.0,true
+Dylan,Python,1.0,true
+Dylan,Ruby,1.0,true
+Dylan,Goo,1.0,true
+EuLisp,Dylan,1.0,true
+EuLisp,ISLISP,1.0,true
+Ruby,Falcon,1.0,true
+Ruby,Fancy,1.0,true
+Ruby,Groovy,1.0,true
+Ruby,Ioke,1.0,true
+Ruby,Nu,1.0,true
+Ruby,Mirah,1.0,true
+Ruby,Reia,1.0,true
+Eiffel,Ruby,1.0,true
+Eiffel,D,1.0,true
+Eiffel,Scala,1.0,true
+Eiffel,C#,1.0,true
+Eiffel,Java,1.0,true
+Eiffel,Sather,1.0,true
+Eiffel,Lisaac,1.0,true
+Eiffel,Racket,1.0,true
+D,Vala,1.0,true
+D,Qore,1.0,true
+D,MiniD,1.0,true
+D,DScript,1.0,true
+Scala,Fantom,1.0,true
+Scala,Ceylon,1.0,true
+Scala,Kotlin,1.0,true
+C#,D,1.0,true
+C#,Java,1.0,true
+C#,Vala,1.0,true
+C#,F Sharp,1.0,true
+C#,Nemerle,1.0,true
+Java,Python,1.0,true
+Java,Clojure,1.0,true
+Java,D,1.0,true
+Java,Scala,1.0,true
+Java,C#,1.0,true
+Java,PHP,1.0,true
+Java,Groovy,1.0,true
+Java,Ada,1.0,true
+Java,Seed7,1.0,true
+Java,Vala,1.0,true
+Java,ECMAScript,1.0,true
+Java,JavaScript,1.0,true
+Java,BeanShell,1.0,true
+Java,J Sharp,1.0,true
+Sather,Rust,1.0,true
+Sather,Cool,1.0,true
+Racket,Scheme,1.0,true
+Factor,Concatenation,1.0,true
+Factor,Cat,1.0,true
+Icon,Python,1.0,true
+Joy,Factor,1.0,true
+Joy,Cat,1.0,true
+Joy,Trith,1.0,true
+Joy,V,1.0,true
+PostScript,Portable Document Format,1.0,true
+STOS BASIC,AMOS,1.0,true
+Smalltalk,Python,1.0,true
+Smalltalk,Dylan,1.0,true
+Smalltalk,Ruby,1.0,true
+Smalltalk,Scala,1.0,true
+Smalltalk,Java,1.0,true
+Smalltalk,Lisaac,1.0,true
+Smalltalk,Falcon,1.0,true
+Smalltalk,Fancy,1.0,true
+Smalltalk,Objective-C,1.0,true
+Smalltalk,PHP,1.0,true
+Smalltalk,Dart,1.0,true
+Smalltalk,AppleScript,1.0,true
+Smalltalk,Groovy,1.0,true
+Smalltalk,Logtalk,1.0,true
+Smalltalk,Ioke,1.0,true
+Smalltalk,Common Lisp Object System,1.0,true
+Smalltalk,Io,1.0,true
+Smalltalk,NewtonScript,1.0,true
+Smalltalk,Self,1.0,true
+Smalltalk,Perl 6,1.0,true
+Objective-C,Java,1.0,true
+Objective-C,Objective-J,1.0,true
+Objective-C,TOM,1.0,true
+Objective-C,Nu,1.0,true
+Io,Fancy,1.0,true
+Io,Ioke,1.0,true
+Io,Luna,1.0,true
+Io,Restricted Io,1.0,true
+NewtonScript,Io,1.0,true
+Self,Lisaac,1.0,true
+Self,Factor,1.0,true
+Self,Io,1.0,true
+Self,NewtonScript,1.0,true
+Self,JavaScript,1.0,true
+Self,REBOL,1.0,true
+Self,Lua,1.0,true
+Self,Cel,1.0,true
+Self,Squeak,1.0,true
+Self,Agora,1.0,true
+T,EuLisp,1.0,true
+Ada,Ruby,1.0,true
+Ada,Eiffel,1.0,true
+Ada,Java,1.0,true
+Ada,C++,1.0,true
+Ada,PL/SQL,1.0,true
+Ada,VHDL,1.0,true
+Ada,Seed7,1.0,true
+C++,D,1.0,true
+C++,C#,1.0,true
+C++,Java,1.0,true
+C++,Falcon,1.0,true
+C++,PHP,1.0,true
+C++,Ada,1.0,true
+C++,Seed7,1.0,true
+C++,Lua,1.0,true
+C++,Pike,1.0,true
+C++,Perl,1.0,true
+C++,C99,1.0,true
+C++,LPC,1.0,true
+HyperTalk,ECMAScript,1.0,true
+HyperTalk,LiveCode,1.0,true
+JavaScript,Dart,1.0,true
+JavaScript,Objective-J,1.0,true
+JavaScript,CoffeeScript,1.0,true
+JavaScript,ActionScript,1.0,true
+JavaScript,QML,1.0,true
+JavaScript,JScript .NET,1.0,true
+JavaScript,TypeScript,1.0,true
+QML,Qt,1.0,true
+Logo,Smalltalk,1.0,true
+Logo,Scratch,1.0,true
+Logo,NetLogo,1.0,true
+Logo,Etoys,1.0,true
+Logo,KTurtle,1.0,true
+Logo,REBOL,1.0,true
+Etoys,Scratch,1.0,true
+Etoys,Croquet Project,1.0,true
+Etoys,Tweak programming environment,1.0,true
+REBOL,JSON,1.0,true
+Lua,Falcon,1.0,true
+Lua,Io,1.0,true
+Lua,MiniD,1.0,true
+Lua,Squirrel,1.0,true
+Lua,GameMonkey Script,1.0,true
+Squirrel,MiniD,1.0,true
+Emerald,Java,1.0,true
+Emerald,Singularity,1.0,true
+Information Processing Language,Lisp,1.0,true
+Lisp,Python,1.0,true
+Lisp,Dylan,1.0,true
+Lisp,R,1.0,true
+Lisp,Ruby,1.0,true
+Lisp,Racket,1.0,true
+Lisp,Smalltalk,1.0,true
+Lisp,Falcon,1.0,true
+Lisp,Ioke,1.0,true
+Lisp,Io,1.0,true
+Lisp,JavaScript,1.0,true
+Lisp,Logo,1.0,true
+Lisp,REBOL,1.0,true
+Lisp,Lua,1.0,true
+Lisp,Nu,1.0,true
+Lisp,Perl,1.0,true
+Lisp,Forth,1.0,true
+Lisp,Haskell,1.0,true
+Lisp,Qi,1.0,true
+Lisp,Tcl,1.0,true
+Lisp,CLIPS,1.0,true
+Lisp,Mathematica,1.0,true
+Lisp,ML,1.0,true
+Lisp,CLU,1.0,true
+Lisp,Shen,1.0,true
+Lisp,MDL,1.0,true
+Lisp,OPS5,1.0,true
+LESS,Sass,1.0,true
+Sass,LESS,1.0,true
+Sass,Stylus,1.0,true
+MSX BASIC,Vilnius BASIC,1.0,true
+Modula-2+,Modula-3,1.0,true
+Modula-3,Python,1.0,true
+Modula-3,C#,1.0,true
+Modula-3,Java,1.0,true
+Modula-3,Caml,1.0,true
+Newsqueak,Rust,1.0,true
+Newsqueak,Go,1.0,true
+Newsqueak,Limbo,1.0,true
+Newsqueak,Alef,1.0,true
+Limbo,Rust,1.0,true
+Limbo,Go,1.0,true
+Limbo,Stackless Python,1.0,true
+Alef,Rust,1.0,true
+Alef,Go,1.0,true
+Alef,Limbo,1.0,true
+Spec Sharp,Sing Sharp,1.0,true
+Rexx,Object REXX,1.0,true
+Rexx,NetRexx,1.0,true
+A+,K,1.0,true
+CPL,BCPL,1.0,true
+CPL,POP-2,1.0,true
+BCPL,B,1.0,true
+Lucid,Pure Data,1.0,true
+Lucid,Lustre,1.0,true
+Lucid,SISAL,1.0,true
+SISAL,SAC programming language,1.0,true
+SP/k,Turing,1.0,true
+IBM RPG,IBM RPG II,1.0,true
+Visual Basic,Basic4ppc,1.0,true
+Visual Basic,Gambas,1.0,true
+Visual Basic,Visual Basic .NET,1.0,true
+Visual Basic,Realbasic,1.0,true
+Fortran,BASIC,1.0,true
+Fortran,C,1.0,true
+Fortran,ALGOL 58,1.0,true
+Fortran,Ratfor,1.0,true
+Fortran,PL/I,1.0,true
+Fortran,MUMPS,1.0,true
+Fortran,PACT,1.0,true
+BASIC,Visual Basic,1.0,true
+BASIC,Visual Basic .NET,1.0,true
+BASIC,Realbasic,1.0,true
+BASIC,AutoHotkey,1.0,true
+BASIC,GRASS,1.0,true
+BASIC,AutoIt,1.0,true
+BASIC,COMAL,1.0,true
+C,D,1.0,true
+C,C#,1.0,true
+C,Java,1.0,true
+C,Objective-C,1.0,true
+C,PHP,1.0,true
+C,C++,1.0,true
+C,Seed7,1.0,true
+C,JavaScript,1.0,true
+C,Go,1.0,true
+C,Limbo,1.0,true
+C,Pike,1.0,true
+C,Perl,1.0,true
+C,LPC,1.0,true
+C,C--,1.0,true
+C,BitC,1.0,true
+C,C shell,1.0,true
+C,AWK,1.0,true
+C,Processing,1.0,true
+C,AMPL,1.0,true
+ALGOL 58,ALGOL,1.0,true
+PL/I,AS/400 Control Language,1.0,true
+PL/I,Rexx,1.0,true
+PL/I,SP/k,1.0,true
+PL/I,B,1.0,true
+MUMPS,Caché ObjectScript,1.0,true
+MUMPS,Profile Scripting Language,1.0,true
+Perl,Python,1.0,true
+Perl,Windows PowerShell,1.0,true
+Perl,Ruby,1.0,true
+Perl,Falcon,1.0,true
+Perl,PHP,1.0,true
+Perl,Perl 6,1.0,true
+Perl,Qore,1.0,true
+Perl,ECMAScript,1.0,true
+Perl,JavaScript,1.0,true
+Perl,LPC,1.0,true
+LPC,Pike,1.0,true
+COBOL,PL/I,1.0,true
+COBOL,ABAP,1.0,true
+COBOL,CobolScript,1.0,true
+AWK,Lua,1.0,true
+AWK,Perl,1.0,true
+AWK,AMPL,1.0,true
+AWK,Tcl,1.0,true
+AWK,Korn shell,1.0,true
+F Sharp,F*,1.0,true
+Caml,F Sharp,1.0,true
+Forth,Factor,1.0,true
+Forth,PostScript,1.0,true
+Forth,REBOL,1.0,true
+Forth,RPL,1.0,true
+Haskell,Python,1.0,true
+Haskell,Clojure,1.0,true
+Haskell,Scala,1.0,true
+Haskell,C#,1.0,true
+Haskell,Java,1.0,true
+Haskell,Perl 6,1.0,true
+Haskell,CoffeeScript,1.0,true
+Haskell,Visual Basic .NET,1.0,true
+Haskell,F Sharp,1.0,true
+Haskell,Timber,1.0,true
+Haskell,Cayenne,1.0,true
+Haskell,Qi,1.0,true
+Haskell,Kaya,1.0,true
+Haskell,Quark Framework,1.0,true
+Haskell,C++11,1.0,true
+Haskell,Ωmega,1.0,true
+Haskell,Language Integrated Query,1.0,true
+Haskell,Agda,1.0,true
+Haskell,Concepts,1.0,true
+Haskell,Bluespec, Inc.,1.0,true
+Haskell,Epigram,1.0,true
+Haskell,Escher,1.0,true
+Haskell,Clean,1.0,true
+Haskell,Generics in Java,1.0,true
+Haskell,Mercury,1.0,true
+Haskell,Curry,1.0,true
+Haskell,Isabelle,1.0,true
+Haskell,Elm,1.0,true
+J,NumPy,1.0,true
+J,SuperCollider,1.0,true
+OCaml,Scala,1.0,true
+OCaml,Rust,1.0,true
+OCaml,F Sharp,1.0,true
+OCaml,ATS,1.0,true
+OCaml,Opa,1.0,true
+Object Pascal,C#,1.0,true
+Object Pascal,Java,1.0,true
+Object Pascal,Game Maker Language,1.0,true
+Prolog,Mercury,1.0,true
+Prolog,Visual Prolog,1.0,true
+Prolog,KL1,1.0,true
+Prolog,Erlang,1.0,true
+Prolog,Oz,1.0,true
+Prolog,Strand,1.0,true
+Prolog,Datalog,1.0,true
+Prolog,KL0,1.0,true
+Oz,Alice,1.0,true
+SNOBOL,Icon,1.0,true
+SNOBOL,Lua,1.0,true
+SQL,Windows PowerShell,1.0,true
+SQL,Language Integrated Query,1.0,true
+SQL,Contextual Query Language,1.0,true
+Scheme,Common Lisp,1.0,true
+Scheme,Dylan,1.0,true
+Scheme,R,1.0,true
+Scheme,Clojure,1.0,true
+Scheme,EuLisp,1.0,true
+Scheme,Ruby,1.0,true
+Scheme,Racket,1.0,true
+Scheme,JavaScript,1.0,true
+Scheme,Lua,1.0,true
+Scheme,Haskell,1.0,true
+Scheme,Kernel,1.0,true
+Scheme,Hop,1.0,true
+Tcl,Windows PowerShell,1.0,true
+Tcl,Tea,1.0,true
+VBScript,Windows PowerShell,1.0,true
+XPath,XForms,1.0,true
+XPath,XML Schema,1.0,true
+Short Code,Intermediate Programming Language,1.0,true
+Short Code,OMNIBAC Symbolic Assembler,1.0,true
+Speedcoding,Fortran,1.0,true
+Speedcoding,BASIC,1.0,true
+Speedcoding,C,1.0,true
+Speedcoding,ALGOL 58,1.0,true
+Speedcoding,Ratfor,1.0,true
+Speedcoding,PL/I,1.0,true
+Speedcoding,MUMPS,1.0,true
+Speedcoding,PACT,1.0,true
+ALGOL,Ada,1.0,true
+ALGOL,CPL,1.0,true
+ALGOL,C,1.0,true
+ALGOL,Simula,1.0,true
+ALGOL,Pascal,1.0,true
+ALGOL 60,Ada,1.0,true
+ALGOL 60,CPL,1.0,true
+ALGOL 60,C,1.0,true
+ALGOL 60,Simula,1.0,true
+ALGOL 60,Pascal,1.0,true
+Pascal,Java,1.0,true
+Pascal,Ada,1.0,true
+Pascal,Seed7,1.0,true
+Pascal,Modula-3,1.0,true
+Pascal,Object Pascal,1.0,true
+Pascal,Modula-2,1.0,true
+Pascal,Oberon,1.0,true
+Pascal,Oberon-2,1.0,true
+Pascal,Modula,1.0,true
+Pascal,Component Pascal,1.0,true
+Pascal,Oxygene,1.0,true
+ALGOL 68,Python,1.0,true
+ALGOL 68,Ada,1.0,true
+ALGOL 68,C++,1.0,true
+ALGOL 68,Seed7,1.0,true
+ALGOL 68,C,1.0,true
+ALGOL 68,Mary,1.0,true
+ALGOL 68,Bash,1.0,true
+ALGOL 68,Bourne shell,1.0,true
+ALGOL 68,ALGOL 68C,1.0,true
+ALGOL W,Pascal,1.0,true
+DIGITAL Command Language,Windows PowerShell,1.0,true
+Generic Java,Java,1.0,true
+Liberty BASIC,Just BASIC,1.0,true
+MUF,CoolMUD,1.0,true
+MUF,ColdC,1.0,true
+MUF,MOO,1.0,true
+CoolMUD,ColdC,1.0,true
+MOO,CoolMUD,1.0,true
+MOO,ColdC,1.0,true
+Modula-2,Ada,1.0,true
+Modula-2,Seed7,1.0,true
+Modula-2,Lua,1.0,true
+Modula-2,Modula-3,1.0,true
+Modula-2,Fortran,1.0,true
+Modula-2,Zonnon,1.0,true
+Modula-2,Oberon,1.0,true
+Oberon,Go,1.0,true
+Oberon,Zonnon,1.0,true
+Oberon,Oberon-2,1.0,true
+Oberon,Oberon-07,1.0,true
+Oaklisp,Dylan,1.0,true
+Oaklisp,EuLisp,1.0,true
+Object Oberon,Oberon-2,1.0,true
+Oberon-2,Component Pascal,1.0,true
+Pizza,Scala,1.0,true
+Pizza,Generic Java,1.0,true
+Q,Pure,1.0,true
+StarLogo,NetLogo,1.0,true
+StarLogo,Etoys,1.0,true
+TELCOMP,MUMPS,1.0,true
+Verilog,SystemVerilog,1.0,true
+B,C,1.0,true
+Turing+,Object-Oriented Turing,1.0,true
+Concurrent Euclid,Turing+,1.0,true
+ML,Clojure,1.0,true
+ML,C++,1.0,true
+ML,F Sharp,1.0,true
+ML,Haskell,1.0,true
+ML,Opa,1.0,true
+ML,Erlang,1.0,true
+ML,Miranda,1.0,true
+ML,Felix,1.0,true
+ML,Cyclone,1.0,true
+CLU,Ruby,1.0,true
+CLU,Sather,1.0,true
+CLU,Ada,1.0,true
+CLU,Lua,1.0,true
+CLU,Argus,1.0,true
+Occam,Ease,1.0,true
+APL,K,1.0,true
+APL,J,1.0,true
+APL,Q,1.0,true
+APL,Mathematica,1.0,true
+APL,MATLAB,1.0,true
+APL,Polymorphic Programming Language,1.0,true
+APL,Nial,1.0,true
+Miranda,Haskell,1.0,true
+Miranda,Clean,1.0,true
+Boomerang,XSLT,1.0,true
+Caja project,Jacaranda,1.0,true
+GW-BASIC,QuickBASIC,1.0,true
+GW-BASIC,QBasic,1.0,true
+QBasic,QB64,1.0,true
+Gemstone,Java Platform, Enterprise Edition,1.0,true
+Orwell,Haskell,1.0,true
+SASL,Haskell,1.0,true
+SASL,Miranda,1.0,true
+SASL,Kent Recursive Calculator,1.0,true
+Kent Recursive Calculator,Miranda,1.0,true
+AgentSheets,Scratch,1.0,true
+AgentSheets,Etoys,1.0,true
+AmbientTalk,ECMAScript,1.0,true
+COMTRAN,COBOL,1.0,true
+Joyce,SuperPascal,1.0,true
+TUTOR,TenCORE,1.0,true
+TUTOR,USE,1.0,true
+COWSEL,POP-2,1.0,true
+FP,J,1.0,true
+FP,FPr,1.0,true
+FP,FL,1.0,true
+FL,J,1.0,true
+JOVIAL,Coral 66,1.0,true
+JOVIAL,SYMPL,1.0,true
+KRL,KM programming language,1.0,true
+Karel,Karel++,1.0,true
+Cω,Language Integrated Query,1.0,true
+Cω,Superplan,1.0,true
+Cω,Joins,1.0,true
+Standard ML of New Jersey,Mythryl,1.0,true
+CLACL,C,1.0,true
+CLACL,Prolog,1.0,true
+DBase,Clipper,1.0,true
+DBase,Paradox,1.0,true
+DBase,Harbour,1.0,true
+Harbour,XHarbour,1.0,true
+Rc,Inferno,1.0,true
+Rc,Es,1.0,true
+Mizar system,OMDoc,1.0,true
+Mizar system,HOL Light,1.0,true
+Mizar system,Coq,1.0,true
+Coq,Agda,1.0,true
+COMIT,SNOBOL,1.0,true
+ISWIM,Lucid,1.0,true
+ISWIM,Haskell,1.0,true
+ISWIM,Clean,1.0,true
+ISWIM,ML,1.0,true
+ISWIM,Miranda,1.0,true
+ISWIM,SASL,1.0,true
+Sed,Perl,1.0,true
+Sed,AWK,1.0,true
+Sed,Chomski,1.0,true
+C*,Dataparallel-C,1.0,true
+Euclid,Turing,1.0,true
+Euclid,Concurrent Euclid,1.0,true
+Euclid,Mesa,1.0,true
+Mesa,Java,1.0,true
+Mesa,Modula-2,1.0,true
+IBM BASIC,GW-BASIC,1.0,true
+GScript,Gosu,1.0,true
+A Sharp,Aldor,1.0,true
+P′′,Brainfuck,1.0,true
+SETL,ABC,1.0,true
+SETL,ProSet,1.0,true
+SETL,Slim,1.0,true
+FALSE,Brainfuck,1.0,true
+JOSS,BASIC,1.0,true
+JOSS,MUMPS,1.0,true
+JOSS,TELCOMP,1.0,true
+JOSS,CAL,1.0,true
+JOSS,FOCAL,1.0,true
+Polyphonic C#,Cω,1.0,true
+Joe-E,Caja project,1.0,true
+Join-pattern,Join-calculus,1.0,true
+ECL,Big data,1.0,true

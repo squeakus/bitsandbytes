@@ -1,0 +1,17 @@
+load "msh3"
+load "medit"
+int nn=15;
+
+border cc(t=0,2*pi){x=cos(t);y=sin(t);}
+mesh Th2= buildmesh(cc(50));
+func zmin= 2-sqrt(4-(x*x+y*y));
+func zmax= 2-sqrt(3);
+
+mesh3 Th=buildlayers(Th2,nn,coef= max((zmax-zmin)/zmax, 1./(nn*4)),zbound=[zmin,zmax]);
+
+//mesh3 Th=buildlayers(Th2,nn,coef=1./(nn*4),zbound=[zmin,zmax]);
+//func u=x^2+y^2;
+//mesh3 Th3=trunc(Th,(u-0.5)>1.e-10,split=1);
+medit("Lac",wait=1,Th);
+//medit("LacTruncated",Th3,wait=1);
+//savemesh(Th3,"test.mesh");

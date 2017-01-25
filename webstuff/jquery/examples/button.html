@@ -1,0 +1,23 @@
+<html>
+<head>
+<title> beginning jquery </title>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('#mybutton').click(function() {
+  $('#mycontent').text('My content has changed now!');
+  $('#mycontent').css({'color':'#FF0000' });
+  });
+  });
+</script>
+
+<a href="javascript:;" id="mybutton">Click me</a>
+<div id="mycontent">Click above, to see me change!</div>
+</body>
+</html>
+
+

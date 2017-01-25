@@ -1,0 +1,5 @@
+include "pyramid.idp"
+int[int] DENSE=[10,10,10,3];
+mesh3 test = Pyramid(DENSE);
+medit("test",test);
+savemesh(test,"test.mesh");

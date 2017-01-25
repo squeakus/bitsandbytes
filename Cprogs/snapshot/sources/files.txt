@@ -1,0 +1,44 @@
+mesh generators:
+eigenv.c <- used for calcing eigenvectors 
+zaldy1.c <- data structures for meshes
+zaldy2.c <- some constants
+libmesh5.c/h <- external library for tetrahedra
+inmsh2.c <- assigns memory for mesh
+mesh.c/h <- object used by medit
+*** inout.c <- uses above to create meshes
+
+geometry.c <- used to draw the meshes
+
+graphics:
+grafic.h <- data structure for scene objects
+image.c/h <- save and load ppms
+persp.c <- sets up perspective of shot
+camera.c <- adds camera to shot
+transform.c <- ???
+clip.c 	<- used to create scene (clipping)
+clipvol.c < used by clip.c
+mlists.c <- used by clip.c
+vector.c <- used by clip.c
+stream.c <- barycentric tets(vector)
+dlists.c <- lists tetra for vector 
+cube.c <- creates cube for scene
+tiling.c <- used by drawModel in scene.c
+particle.c <- used by drawModel in scene.c
+
+scene.c <- add everything for scene shot
+ 
+util:
+listnum.c updates point (drawmodel)
+normal.c calcs norms (drawmodel)
+items.c <- used to draw boxes/axes/etc
+util.c <- write to screen,transform point
+hash.c <- generates hash codes (hex)
+bbfile.c <- blitz3d file handler
+parsar.c <- read properties
+parsop.c <- check prog opts sets values
+material.c <- define material and mat menu
+memory.c/h <- mem stack and mem methods
+
+maybe merge parsar and parsop?
+could remove inmsh2, maybe
+

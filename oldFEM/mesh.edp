@@ -1,0 +1,7 @@
+//mesh Th = square(40,50);
+real x0=1.2,x1=1.8;
+real y0=0,y1=1;
+int n=20,m=20;
+mesh Th=square(n,m,[x0+(x1-x0)*x,y0+(y1-y0)*y]);
+plot(Th,wait=true, ps="membraneTh.eps",fill=true);
+

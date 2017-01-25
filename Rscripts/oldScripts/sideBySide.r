@@ -1,0 +1,6 @@
+exp<-cbind(abs(round(rnorm(10),2)*10), seq(100, 200, by=10))
+ref<-cbind(abs(round(rnorm(10),2)*10), seq(100, 200, by=10))
+op <- par(mfrow=c(1,2))
+plot(ref, col="red")
+plot(exp, col="blue")
+par(op)

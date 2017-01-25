@@ -1,0 +1,13 @@
+#This creates a mesh, plots it and saves it
+<prog> ::=<import> <params> <panel> <buildMesh> <save>
+<import> ::= load "medit" include "cube.idp"
+<params> ::= int width=2,height=6,flag=<flag>,vert=1; <dense>
+<dense> ::= int d1=<n>,d2=<n>;int[int] Z=[width/2,-width/2];
+<panel> ::= mesh Th=square(d1,d2,[x*width-Z[0],y*height],flags=flag);
+<buildMesh> ::= mesh3 test=Cube(Th,Z,vert);
+<show> ::= medit("test",test,wait=1); 
+<save> ::= savemesh(test,"test.mesh");
+
+<flag> ::= 0|1|2|3|4|5
+<n> ::= 1|2|3|4|5|6|7|8|9|10
+

@@ -1,0 +1,46 @@
+      numel numnp nmat This is the patch test 
+        2    3    1    0
+  matl no., E mod, Poiss. Ratio, density, Area, Iy, Iz
+  0  200000.0000    0.2700 3440.0000    0.0100    0.0010    0.0010
+el no., connectivity, matl no. 
+   0    0    1    0    2
+   1    1    2    0    2
+node no., coordinates 
+0      -4.282000       5.440279      -2.283000
+1       8.092300      -0.767907      22.414139
+2      14.759000      -4.112590      35.719814
+element with specified local z axis: x, y, z component
+ -10
+ prescribed displacement x: node  disp value
+   0   0.000000e+00
+ -10
+ prescribed displacement y: node  disp value
+   0   0.000000e+00
+ -10
+ prescribed displacement z: node  disp value
+   0   0.000000e+00
+ -10
+ prescribed angle phi x: node angle value
+   0   1.614824e-03
+   2  -6.187444e-03
+ -10
+ prescribed angle phi y: node angle value
+   0   5.663218e-04
+   2   1.309430e-02
+ -10
+ prescribed angle phi z: node angle value
+   0  -7.192812e-03
+   2   2.279642e-02
+ -10
+ node with point load x, y, z and 3 moments phi x, phi y, phi z
+ -10
+ element with distributed load in local beam y and z coordinates
+ -10
+ element no. and gauss pt. no. with stress and tensile stress vectormoment xx,yy,zz
+ -10 
+
+
+ Note: Remove the prescribed angles and disp. for node 1.
+   1  -3.455687e-03
+   1   8.707963e-03
+   1   1.229649e-02

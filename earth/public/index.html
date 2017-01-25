@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Map" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+    <meta charset="utf-8"/>
+    <title>earth wind map</title>
+    <meta itemprop="name"                                      content="earth"/>
+    <meta itemprop="description"     name="description"        content="an animated map of global wind conditions"/>
+    <meta itemprop="author"          name="author"             content="Cameron Beccario"/>
+
+    <meta                           content="summary_large_image"/>
+    <meta property="og:type"        content="website"/>
+    <meta property="og:title"       content="earth"/>
+    <meta property="og:description" content="an animated map of global wind conditions"/>
+    <meta property="og:url"         content="http://earth.nullschool.net"/>
+    <meta property="og:image"       content="http://earth.nullschool.net/preview.jpg"/>
+    <meta                           content="@cambecc"/>
+    <meta                           content="@cambecc"/>
+    <meta property="fb:admins"      content="510217216"/>
+
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/iphone-icon.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/ipad-icon.png"/>
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css"/>
+
+    <link rel="alternate" hreflang="x-default" href="http://earth.nullschool.net/"/>
+    <link rel="alternate" hreflang="ja" href="http://earth.nullschool.net/jp/"/>
+</head>
+<body data-lang="en">
+
+    <!--[if lte IE 8]><p id="warn">This site requires IE9 or newer.</p><![endif]-->
+
+    <div id="display">
+        <svg id="map" class="fill-screen" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+        <canvas id="animation" class="fill-screen"></canvas>
+        <canvas id="overlay" class="fill-screen"></canvas>
+        <svg id="foreground" class="fill-screen" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+    </div>
+
+    <div id="details">
+        <p id="status"></p>
+        <div id="location">
+            <p>
+                <span id="location-coord"></span>
+                <span id="location-close" class="invisible text-button"> ✕ </span>
+            </p>
+            <p>
+                <span id="location-value"></span>
+                <span id="toggle-units" class="invisible text-button"></span>
+            </p>
+        </div>
+        <p id="start">
+            <span id="show-menu" class="text-button">earth</span>
+            <span id="progress" class="invisible"></span>
+        </p>
+
+        <div id="menu" class="invisible">
+            <p>Date |
+                <span id="data-date" class="local"></span>
+                <span id="toggle-zone" class="text-button"></span>
+            </p>
+            <p>Layer | <span id="data-layer"></span></p>
+            <p><span id="scale-label">Scale | </span><canvas id="scale"></canvas></p>
+            <p>Data | <span id="data-center">NCEP / US National Weather Service / NOAA</span></p>
+            <p>Control | <span
+                class="text-button" id="nav-now" title="Current Conditions">Now</span><span
+                class="text-button" id="nav-prev-day" title="-1 Day"> « </span> – <span
+                class="text-button" id="nav-prev-forecast" title="-3 Hours"> ‹ </span> – <span
+                class="text-button" id="nav-next-forecast" title="+3 Hours"> › </span> – <span
+                class="text-button" id="nav-next-day" title="+1 Day"> » </span><span
+                class="text-button" id="show-location" title="Current Position">〖◯〗</span>
+            </p>
+            <p>Height | <span
+                class="text-button" id="iso-1000">1000</span> – <span
+                class="text-button" id="iso-850">850</span> – <span
+                class="text-button" id="iso-700">700</span> – <span
+                class="text-button" id="iso-500">500</span> – <span
+                class="text-button" id="iso-250">250</span> – <span
+                class="text-button" id="iso-70">70</span> – <span
+                class="text-button" id="iso-10">10</span> hPa
+            </p>
+            <p>Overlay | <span
+                class="text-button" id="none">None</span> – <span
+                class="text-button" id="wind">Wind</span>
+            </p>
+            <p>Projection | <span
+                class="proj text-button" id="atlantis" title="Atlantis">A</span> – <span
+                class="proj text-button" id="azimuthal_equidistant" title="Azimuthal Equidistant">AE</span> – <span
+                class="proj text-button" id="conic_equidistant" title="Conic Equidistant">CE</span> – <span
+                class="proj text-button" id="equirectangular" title="Equirectangular">E</span> – <span
+                class="proj text-button" id="orthographic" title="Orthographic">O</span> – <span
+                class="proj text-button" id="stereographic" title="Stereographic">S</span> – <span
+                class="proj text-button" id="waterman" title="Waterman Butterfly">WB</span> – <span
+                class="proj text-button" id="winkel3" title="Winkel Tripel">W3</span>
+            </p>
+            <!--<p>免責事項 | 正確な情報を提供するためのものではありません</p>-->
+            <p id="lang"><a href="/jp">日本語</a></p>
+            <p><a href="about.html">about</a></p>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.3.10/d3.min.js" charset="utf-8"></script>
+
+    <script src="/libs/d3.geo/0.0.0/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+    <script src="/libs/d3.geo/0.0.0/d3.geo.polyhedron.v0.min.js" charset="utf-8"></script>
+    <script src="/libs/when/2.6.0/when.js" charset="utf-8"></script>
+
+    <script src="/libs/earth/1.0.0/micro.js" charset="utf-8"></script>
+    <script src="/libs/earth/1.0.0/globes.js" charset="utf-8"></script>
+    <script src="/libs/earth/1.0.0/grids.js" charset="utf-8"></script>
+    <script src="/libs/earth/1.0.0/earth.js" charset="utf-8"></script>
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments); }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-44235933-2', 'nullschool.net');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

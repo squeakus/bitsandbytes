@@ -1,0 +1,14 @@
+How many elements in the spring's cross section do you want?
+10
+What is the spring outer Radius? 
+3.18
+What is the spring arc Radius? 
+15
+How many loops in the spring? 
+5
+How many elements in one spring loop? 
+12
+Space between loops
+2.0
+Last loop points up ( 1 = yes, 0 = no )
+1

@@ -1,0 +1,33 @@
+function [chk a b c d]=checksimp(p11,p12,p13,p21,p22,p23)
+p1=p11;
+q1=p12;
+r1=p13;
+pq1=q1-p1;
+pr1=r1-p1;
+n1=cross(pq1,pr1);
+a1=n1(1);
+b1=n1(2);
+c1=n1(3);
+d1=(-a1*p11(1))-(b1*p11(2))-(c1*p11(3));
+% normal1=[a1 b1 c1];
+p2=p21;
+q2=p22;
+r2=p23;
+pq2=q2-p2;
+pr2=r2-p2;
+n2=cross(pq2,pr2);
+a2=n2(1);
+b2=n2(2);
+c2=n2(3);
+d2=(-a2*p21(1))-(b2*p21(2))-(c2*p21(3));
+% normal2=[a2 b2 c2];
+factr=a1/a2;
+auniq1=a1/factr;
+buniq1=b1/factr;
+cuniq1=c1/factr;
+duniq1=d1/factr;
+val1=[floor(auniq1*10000)/10000 floor(buniq1*10000)/10000 floor(cuniq1*10000)/10000 floor(duniq1*10000)/10000];
+val2=[floor(a2*10000)/10000 floor(b2*10000)/10000 floor(c2*10000)/10000 floor(d2*10000)/10000];
+chk=isequal(val1,val2);
+a=a1;b=b1;c=c1;d=d1;
+end

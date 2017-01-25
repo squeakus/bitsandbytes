@@ -1,0 +1,30 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Surface Reconstruction: Poisson">
+  <Param tooltip="" description="" type="RichInt" value="9" name="OctDepth"/>
+  <Param tooltip="" description="" type="RichInt" value="8" name="SolverDivide"/>
+  <Param tooltip="" description="" type="RichFloat" value="1" name="SamplesPerNode"/>
+  <Param tooltip="" description="" type="RichFloat" value="1" name="Offset"/>
+ </filter>
+ <filter name="Select Faces with edges longer than...">
+  <Param tooltip="" description="" type="RichDynamicFloat" value="1" min="0" name="Threshold" max="12.325"/>
+ </filter>
+ <filter name="Delete Selected Faces and Vertices"/>
+ <filter name="Remove Isolated pieces (wrt Face Num.)">
+  <Param tooltip="" description="" type="RichInt" value="500" name="MinComponentSize"/>
+ </filter>
+ <filter name="Select non Manifold Edges "/>
+ <filter name="Delete Selected Faces and Vertices"/>
+ <filter name="Parameterization + texturing from registered rasters">
+  <Param tooltip="Specifies the dimension of the generated texture" description="Texture size" type="RichInt" value="2048" name="textureSize"/>
+  <Param tooltip="Specifies the name of the file into which the texture image will be saved" description="Texture name" type="RichString" value="sm3texture.png" name="textureName"/>
+  <Param tooltip="If true, the final texture is corrected so as to ensure seamless transitions" description="Color correction" type="RichBool" value="true" name="colorCorrection"/>
+  <Param tooltip="It is the radius (in pixel) of the kernel that is used to compute the difference between corresponding texels in different rasters. Default is 1 that generate a 3x3 kernel. Highest values increase the robustness of the color correction process in the case of strong image-to-geometry misalignments" description="Color correction filter" type="RichInt" value="1" name="colorCorrectionFilterSize"/>
+  <Param tooltip="Includes a weight accounting for the distance to the camera during the computation of reference images" description="Use distance weight" type="RichBool" value="true" name="useDistanceWeight"/>
+  <Param tooltip="Includes a weight accounting for the distance to the image border during the computation of reference images" description="Use image border weight" type="RichBool" value="true" name="useImgBorderWeight"/>
+  <Param tooltip="If true, alpha channel of the image is used as additional weight. In this way it is possible to mask-out parts of the images that should not be projected on the mesh. Please note this is not a transparency effect, but just influences the weigthing between different images" description="Use image alpha weight" type="RichBool" value="false" name="useAlphaWeight"/>
+  <Param tooltip="Remove all patches compound of a single triangle by aggregating them to adjacent patches" description="Clean isolated triangles" type="RichBool" value="true" name="cleanIsolatedTriangles"/>
+  <Param tooltip="If true, texture coordinates are stretched so as to cover the full interval [0,1] for both directions" description="UV stretching" type="RichBool" value="true" name="stretchingAllowed"/>
+  <Param tooltip="Extra boundary to add to each patch before packing in texture space (in pixels)" description="Texture gutter" type="RichInt" value="4" name="textureGutter"/>
+ </filter>
+</FilterScript>

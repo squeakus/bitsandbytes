@@ -1,0 +1,34 @@
+// file adaptsphere.edp
+load "msh3"
+load "tetgen"
+load "medit"
+
+int xdensity=2, ydensity=10; 
+int width=2, height=6; 
+int z = width/2; 
+
+mesh Th=square(xdensity,ydensity,[x*width-z,y*height],flags=3);  //$]\frac{-pi}{2},frac{-pi}{2}[\times]0,2\pi[$
+
+cout << "x: " << x*pi-pi/2 << " y: " << 2*y*pi << "\n";
+cout << "x: " << pi-pi/2 << " y: " << pi << "\n";
+
+func f = 1./10*x*y;
+Th = adaptmesh(Th,f,IsMetric=1,nbvx=10000);
+plot(Th, wait =1);
+
+//horizontal box
+//mesh3 Th1=movemesh23(Th,transfo=[x,y,z]);
+//mesh3 Th2=movemesh23(Th,transfo=[z,y,x]);
+//mesh3 Th3=movemesh23(Th,transfo=[x,y,-z]);
+//mesh3 Th4=movemesh23(Th,transfo=[-z,y,x]);
+
+//vertical box
+mesh3 Th1=movemesh23(Th,transfo=[x,z,y]);
+mesh3 Th2=movemesh23(Th,transfo=[x,-z,y]);
+mesh3 Th3=movemesh23(Th,transfo=[z,x,y]);
+mesh3 Th4=movemesh23(Th,transfo=[-z,x,y]);
+
+
+mesh3 Th5= Th1+Th2+Th3+Th4;
+medit("original",Th5);
+savemesh(Th5,"test.mesh");

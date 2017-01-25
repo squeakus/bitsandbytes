@@ -1,0 +1,40 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=24
+#PBS -l walltime=00:30:00
+#PBS -N planegen
+#PBS -A ucd01
+#PBS -o out.log
+#PBS -e err.log
+
+module load apps
+module load openfoam/intel/2.2.2
+source /ichec/packages/OpenFOAM/2.2.2/intel/14.0.0.080/OpenFOAM-2.2.2/etc/bashrc
+
+cd $PBS_O_WORKDIR
+
+echo "24 Core: Starting at"
+date
+T="$(date +%s)"
+
+cp -r 0.org/ 0
+
+surfaceConvert constant/triSurface/plane.stl constant/triSurface/cleanedplane.stl -clean -scale 0.2 >> surfconv.log
+mv constant/triSurface/cleanedplane.stl constant/triSurface/plane.stl
+surfaceFeatureExtract >> surfaceFeatureExtract.log
+blockMesh >> blockMesh.log
+decomposePar >> decomposePar.log
+mpiexec -np 24 snappyHexMesh -overwrite -parallel >> snappyHexMesh.log
+
+ls -d processor* | xargs -i rm -rf ./{}/0 $1
+ls -d processor* | xargs -i cp -r 0.org ./{}/0 $1
+
+mpiexec -np 24 potentialFoam -parallel -noFunctionObjects -writep >> potentialFoam.log
+mpiexec -np 24 simpleFoam -parallel >> simpleFoam.log
+reconstructParMesh -mergeTol 1.0e-6 -constant >> reconstructParMesh.log
+reconstructPar >> reconstructPar.log
+
+echo "Run completed at "
+date
+T="$(($(date +%s)-T))"
+echo "Time in seconds: ${T}"
+

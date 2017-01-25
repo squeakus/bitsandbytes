@@ -1,0 +1,12 @@
+svn co http://ncra.ucd.ie:8080/svn/Jonathan/Documents/Thesis -r271
+vi Thesis/TOC.tex 
+cd Thesis/
+rubber TOC.tex 
+dvipdf TOC
+open TOC.pdf 
+mv TOC.pdf ../pdfs/rev001.pdf
+convert main.pdf -background white +matte out%03d.png
+
+
+svn co http://ncra.ucd.ie:8080/svn/Jonathan/Documents/pylonGrammars
+/usr/local/bin/btex

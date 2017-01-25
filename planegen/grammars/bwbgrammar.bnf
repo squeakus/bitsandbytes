@@ -1,0 +1,13 @@
+#grammar for evolving the section and airfoil of the BWB aircraft
+<wing> ::= <sect0>{::}<sect1>{::}<foil0>{::}<foil1>{::}<foil2>
+<section> ::= {'Span':<r>, 'TC':<r>, 'RC':<r>, 'Sweep':<r>,'Dihedral':<r>}
+<airfoil> ::= {'Camber':<r>, 'Camber_Loc':<r>, 'Thickness':<r>}
+<sect0> ::= self.plane['section0'] = <section>
+<sect1> ::= self.plane['section1'] = <section>
+<foil0> ::= self.plane['foil0'] = <airfoil>
+<foil1> ::= self.plane['foil1'] = <airfoil>
+<foil2> ::= self.plane['foil2'] = <airfoil>
+
+<r> ::= 0.<digit><digit><digit><digit><digit>
+
+<digit> ::= 1|2|3|4|5|6|7|8|9|0

@@ -1,0 +1,111 @@
+
+                             SLFFEA 1.2  MODAL ANALYSIS
+
+                    Copyright (C) 1999, 2000, 2001, 2002 San Le
+
+                    email:     slffea@yahoo.com
+                    homepage:  http://slffea.sourceforge.net/
+
+
+Here are some important notes for modal analysis.
+
+1.) There is a new variable, nmode, that you specify in the input files.  If
+    nmode = 0, then the problem will be a standard static analysis.  If you
+    give a positive integer for nmode, it will do eigenvalue analysis using a
+    lumped mass matrix and write out the results for those nmode eigenmodes. 
+    If you specify a negative integer, a consistent mass matrix will be used
+    instead.  It is recommended that consistent mass matrices should always
+    be used for modal analysis.  I keep the option for both in case I do
+    other types of dynamic analysis one day, where using a lumped mass is
+    acceptable.
+
+     1a.) You also need to give the density in the list of the material properties.
+
+     1b.) The names of the output files for modal analysis for a brick problem
+          look like:
+
+             filename.mod-x.obr
+
+          where x is the mode number.  For a beam, instead of "obr" at the end
+          you would have "obm".  This is true for all the other elements as
+          well.  There is also a file filename.eig which contains all the
+          eigenvalue and frequency data.
+
+     1c.) nmode has to be less than 1000 in magnitude.
+
+2.) Traditionally, you have to calculate more modes than the number which you
+    desire.  To get convergence, it is recommended by B. N. Parlett that you
+    calculate at least j = (integer)2*sqrt(n) eigenmodes where n is the total
+    number of degrees of freedom of the system.  The paper is:
+
+B. N. Parlett and D. Scott, "The Lanczos Algorithm with Selective Orthogonal-
+  ization," Mathematics of Computation, 33, no. 145(1979), 217-238.
+
+    Because I felt this was more than needed, I decided to go with the criteria
+    given in "The Finite Element Method" by Thomas Hughes, page 578 for subspace
+    iteration.  In it he says to pick the smallest in the set of
+    (nmode + 8, 2*nmode) where nmode is the number of desired modes.  The tests
+    I have done make me feel that this is a good standard from which to work,
+    and only requires a little modification depending on the element.
+
+3.) I recommend you do some tests of your own to see how well they conform to your
+    bench mark tests.  I have only done a very limited series of tests, and only with
+    consistent mass matrices.   You may find that you need to over-calculate
+    more modes than my program does to get convergence.   I also recommend you
+    watch out for convergence of the part where the QR code is run.   If you want
+    to change this part of the code, look for the lines:
+
+                num_eigen = (int)(2.2*nmode);
+                num_eigen = MIN(num_eigen + 8, num_eigen);
+
+    The numbers you can change are the 2.2 and 8.
+
+4.) The test I have done consisted of calculating 5 modes and then 10 modes
+    for a particular mesh, and seeing if the 5 modes closely match that
+    of the first 5 modes of the 10 mode calculation.  If this was the case
+    then I assumed there was convergence.  If not, I would modify the numbers
+    given above until the over-calculation of modes was enough to achieve
+    convergence.  The only data file I had a problem with was for the modal
+    analysis for the truss input file, "tower".   It seemed not to converge
+    beyond the first 4 modes, and also there was a problem with the QR
+    algorithm never being fully able to reduce the T matrix to its
+    eigenvalues(by zeroing the off-diagonal elements).  This problem also arose
+    for the beam data file "building", so I think there is a problem with 
+    meshes that have large aspect ratios.   But for the most part,
+    the tests seemed to work and an examination of the mode shapes imply to me
+    that my results are correct.  
+
+5.) A good way to see if convergence has been achieved is by first calculating
+    j modes, then run the problem again calculating j+5 modes to see if
+    the first j eigenvalues in the j+5 calculation match the eigenvalues in the
+    j mode calculation.  The eigenvalues should be pretty close as well as
+    the eigenmodes, but you should be aware of a few things:
+
+     5a.) The displacements in the eigenmode data file may be the
+          negative of the corresponding eigenmode in the other calculation.
+	  For example, the 2nd mode in the j calculation may have a displacement
+          of:
+
+     { 2.2929e-3, -3.2929e-5, 9.0648e-2 ....}
+
+          whereas the 2nd mode in the j+5 calculation has a displacement of:
+
+     { -2.2929e-3, 3.2929e-5, -9.0648e-2 ....} 
+
+          This is perfectly acceptable.  Also, it is possible that the magnitude
+          is higher for one mode than another.  For example, the 2nd mode in the j
+          calculation may have a displacement of:
+
+     { 2.2929e-3, -3.2929e-5, 9.0648e-2 ....}
+
+          whereas the 2nd mode in the j+5 calculation has a displacement of:
+
+     { 1.8343e-3, -2.6343e-5, 7.2518e-2 ....} 
+ 
+
+Output data for modal analysis
+
+If you look in bmwriter.c, you will see that based on the way I write out the reaction
+forces for the beam, I will not have the same reaction forces as that of the original
+data file if modal analysis is used.
+

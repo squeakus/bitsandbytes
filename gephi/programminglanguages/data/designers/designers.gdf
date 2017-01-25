@@ -1,0 +1,904 @@
+nodedef> name VARCHAR,label VARCHAR,width DOUBLE,height DOUBLE,x DOUBLE,y DOUBLE,color VARCHAR,Modularity Class INTEGER default 0
+Nicholas F. Benton,"Nicholas F. Benton",7.25,7.25,56.323692,-183.91971,'22,86,171',0
+Luca Cardelli,"Luca Cardelli",7.25,7.25,96.01959,-146.54906,'22,86,171',0
+Cédric Fournet,"Cédric Fournet",7.25,7.25,142.25671,-164.78859,'22,86,171',0
+PARC,"PARC",5.0,5.0,-577.607,95.707344,'171,22,171',1
+Butler Lampson,"Butler Lampson",5.0,5.0,-606.26636,150.14813,'171,22,171',1
+Warren Burton,"Warren Burton",41.0,41.0,-295.80298,721.93933,'171,171,22',2
+Erik Meijer,"Erik Meijer",41.0,41.0,100.12277,601.81335,'171,171,22',2
+John Hughes,"John Hughes",41.0,41.0,-443.86285,512.75653,'171,171,22',2
+Lennart Augustsson,"Lennart Augustsson",41.0,41.0,-230.84119,401.05502,'171,171,22',2
+Philip Wadler,"Philip Wadler",50.0,50.0,285.45956,41.46143,'171,171,22',2
+Simon Peyton Jones,"Simon Peyton Jones",43.25,43.25,-24.279388,844.5822,'171,171,22',2
+Paul Hudak,"Paul Hudak",41.0,41.0,200.74655,364.24356,'171,171,22',2
+Alastair Reid,"Alastair Reid",41.0,41.0,52.715065,167.28603,'171,171,22',2
+Brian Boutel,"Brian Boutel",41.0,41.0,-111.53466,576.67346,'171,171,22',2
+Colin Runciman,"Colin Runciman",41.0,41.0,-146.23015,195.74255,'171,171,22',2
+Dave Barton,"Dave Barton",41.0,41.0,692.9564,92.25246,'171,171,22',2
+John Launchbury,"John Launchbury",41.0,41.0,353.0544,273.26758,'171,171,22',2
+John Peterson,"John Peterson",41.0,41.0,583.13947,287.03558,'171,171,22',2
+Joseph Fasel,"Joseph Fasel",41.0,41.0,436.85468,443.1737,'171,171,22',2
+Kevin Hammond,"Kevin Hammond",41.0,41.0,-19.155783,332.2047,'171,171,22',2
+Mark Jones,"Mark Jones",41.0,41.0,504.25128,-160.18636,'171,171,22',2
+Ralf Hinze,"Ralf Hinze",41.0,41.0,-376.37643,245.79314,'171,171,22',2
+Thomas Johnsson,"Thomas Johnsson",41.0,41.0,305.64502,661.6227,'171,171,22',2
+Steven Pemberton,"Steven Pemberton",7.25,7.25,801.9714,377.42566,'171,128,22',3
+Leo Geurts,"Leo Geurts",7.25,7.25,755.61816,322.8939,'171,128,22',3
+Lambert Meertens,"Lambert Meertens",7.25,7.25,720.753,354.6523,'171,128,22',3
+Edward A. Ashcroft,"Edward A. Ashcroft",5.0,5.0,-162.89954,-153.49152,'171,64,22',4
+William W. Wadge,"William W. Wadge",5.0,5.0,-210.63382,-133.24438,'171,64,22',4
+Ascánder Suárez,"Ascánder Suárez",14.0,14.0,227.76599,863.60486,'171,107,22',5
+Xavier Leroy,"Xavier Leroy",14.0,14.0,378.7853,887.7844,'171,107,22',5
+Gérard Huet,"Gérard Huet",14.0,14.0,364.92673,921.70465,'171,107,22',5
+Guy Cousineau,"Guy Cousineau",14.0,14.0,299.43872,825.6489,'171,107,22',5
+Michel Mauny,"Michel Mauny",14.0,14.0,234.08856,904.26697,'171,107,22',5
+Pierre Weis,"Pierre Weis",14.0,14.0,299.3593,951.5527,'171,107,22',5
+Francis McCabe,"Francis McCabe",5.0,5.0,702.59906,-122.08852,'128,22,171',6
+Keith Clark,"Keith Clark",5.0,5.0,675.069,-165.95058,'128,22,171',6
+Sean Dorward,"Sean Dorward",7.25,7.25,-671.201,355.12268,'22,149,171',11
+Rob Pike,"Rob Pike",11.75,11.75,-584.9901,380.81326,'22,149,171',11
+Phil Winterbottom,"Phil Winterbottom",7.25,7.25,-484.35675,349.18286,'22,149,171',11
+Ross Ihaka,"Ross Ihaka",5.0,5.0,355.54538,513.2998,'171,22,86',7
+Robert Gentleman,"Robert Gentleman",5.0,5.0,375.44055,531.68677,'171,22,86',7
+Gilad Bracha,"Gilad Bracha",11.75,11.75,301.79596,-104.09669,'171,86,22',8
+Martin Odersky,"Martin Odersky",11.75,11.75,200.32878,-125.00048,'171,86,22',8
+David Stoutamire,"David Stoutamire",11.75,11.75,380.32364,-122.42391,'171,86,22',8
+William Maddox,"William Maddox",11.75,11.75,271.54312,-145.6376,'171,86,22',8
+Raymond F. Boyce,"Raymond F. Boyce",5.0,5.0,-158.68623,146.67567,'128,171,22',9
+Donald D. Chamberlin,"Donald D. Chamberlin",5.0,5.0,-14.433071,125.80803,'128,171,22',9
+Anders Hejlsberg,"Anders Hejlsberg",7.25,7.25,175.16501,22.716415,'22,64,171',32
+Niklaus Wirth,"Niklaus Wirth",14.0,14.0,8.945589,12.715913,'22,64,171',32
+Apple Inc.,"Apple Inc.",7.25,7.25,14.000991,58.99303,'22,64,171',32
+D. B. Russell,"D. B. Russell",7.25,7.25,227.40001,-61.276676,'171,22,107',10
+William Wulf,"William Wulf",7.25,7.25,148.27138,-2.1798668,'171,22,107',10
+Nico Habermann,"Nico Habermann",7.25,7.25,330.28122,-2.8258977,'171,22,107',10
+Ken Thompson,"Ken Thompson",7.25,7.25,-556.4854,439.74036,'22,149,171',11
+Robert Griesemer,"Robert Griesemer",7.25,7.25,-514.1893,408.50146,'22,149,171',11
+Kristen Nygaard,"Kristen Nygaard",7.25,7.25,362.36276,-333.54343,'22,171,149',12
+Ole-Johan Dahl,"Ole-Johan Dahl",5.0,5.0,456.27057,-313.50458,'22,171,149',12
+Birger Møller-Pedersen,"Birger Møller-Pedersen",5.0,5.0,342.13715,-356.31924,'22,171,149',12
+Ge Wang,"Ge Wang",5.0,5.0,395.03867,-236.83963,'171,22,22',13
+Perry R. Cook,"Perry R. Cook",5.0,5.0,376.8515,-198.38475,'171,22,22',13
+D.T. Barnard,"D.T. Barnard",9.5,9.5,-110.49675,-172.33817,'22,171,43',14
+James Cordy,"James Cordy",11.75,11.75,-43.850246,-125.53417,'22,171,43',14
+Ric Holt,"Ric Holt",9.5,9.5,-15.568243,-146.7674,'22,171,43',14
+D.B. Wortman,"D.B. Wortman",9.5,9.5,-34.915813,-202.15674,'22,171,43',14
+Bernard Vauquois,"Bernard Vauquois",32.0,32.0,-547.7978,-417.93768,'22,171,64',15
+Friedrich L. Bauer,"Friedrich L. Bauer",32.0,32.0,-199.09619,-572.3958,'22,171,64',15
+Peter Naur,"Peter Naur",32.0,32.0,-240.47688,-361.9241,'22,171,64',15
+Adriaan van Wijngaarden,"Adriaan van Wijngaarden",38.75,38.75,-257.84824,-817.3105,'22,171,64',15
+John Backus,"John Backus",36.5,36.5,-104.193275,-453.41455,'22,171,64',15
+Klaus Samelson,"Klaus Samelson",32.0,32.0,-456.26624,-483.89786,'22,171,64',15
+Alan Perlis,"Alan Perlis",32.0,32.0,-391.10977,-603.15015,'22,171,64',15
+John McCarthy,"John McCarthy",32.0,32.0,-132.50342,-642.2269,'22,171,64',15
+Heinz Rutishauser,"Heinz Rutishauser",32.0,32.0,-368.54846,-394.62473,'22,171,64',15
+Charles Katz,"Charles Katz",32.0,32.0,-280.359,-626.0131,'22,171,64',15
+Joseph Henry Wegstein,"Joseph Henry Wegstein",32.0,32.0,-311.45596,-519.8645,'22,171,64',15
+Julien Green,"Julien Green",32.0,32.0,-552.2121,-588.6649,'22,171,64',15
+Michael Woodger,"Michael Woodger",32.0,32.0,-452.18753,-716.329,'22,171,64',15
+Hermann Bottenbruch,"Hermann Bottenbruch",32.0,32.0,-425.09616,-273.4191,'22,171,64',15
+Leszek Pacholski,"Leszek Pacholski",9.5,9.5,26.78946,-104.085556,'22,171,22',16
+Kamil Skalski,"Kamil Skalski",9.5,9.5,203.88069,-85.89372,'22,171,22',16
+Michał Moskal,"Michał Moskal",9.5,9.5,70.48172,-67.02061,'22,171,22',16
+Paweł Olszta,"Paweł Olszta",9.5,9.5,41.804726,-85.7107,'22,171,22',16
+Norman Ramsey,"Norman Ramsey",5.0,5.0,-69.70026,895.5706,'171,171,22',2
+Børge R. Christensen,"Børge R. Christensen",5.0,5.0,-350.2569,-5.5360203,'86,171,22',17
+Benedict Løfstedt,"Benedict Løfstedt",5.0,5.0,-163.65579,15.803993,'86,171,22',17
+Keith Packard,"Keith Packard",5.0,5.0,275.8328,-691.15173,'64,171,22',18
+Bart Massey,"Bart Massey",5.0,5.0,352.95053,-722.6528,'64,171,22',18
+Microsoft SQL Server,"Microsoft SQL Server",5.0,5.0,91.69703,-646.56915,'171,22,43',19
+Microsoft Research,"Microsoft Research",7.25,7.25,123.75632,-607.4616,'171,22,43',19
+SHARE,"SHARE",5.0,5.0,-563.31696,255.30096,'107,22,171',20
+IBM,"IBM",5.0,5.0,-531.1286,291.40784,'107,22,171',20
+Guy L. Steele,"Guy L. Steele",5.0,5.0,-170.08267,-237.40665,'22,22,171',21
+Gerald Jay Sussman,"Gerald Jay Sussman",5.0,5.0,-387.3464,-162.19046,'22,22,171',21
+Ralph Griswold,"Ralph Griswold",7.25,7.25,454.7434,-48.827225,'107,171,22',22
+David J. Farber,"David J. Farber",7.25,7.25,498.24033,-6.660001,'107,171,22',22
+Ivan P. Polonsky,"Ivan P. Polonsky",7.25,7.25,574.1871,-26.691952,'107,171,22',22
+Brendan Eich,"Brendan Eich",5.0,5.0,72.006485,-719.951,'171,22,128',23
+Ecma International,"Ecma International",5.0,5.0,147.1008,-759.12445,'171,22,128',23
+Alan Kay,"Alan Kay",7.25,7.25,683.2614,605.97394,'22,128,171',24
+Adele Goldberg,"Adele Goldberg",7.25,7.25,691.6468,561.75916,'22,128,171',24
+Daniel Henry Holmes Ingalls,"Daniel Henry Holmes Ingalls",7.25,7.25,636.65735,583.9287,'22,128,171',24
+Commissariat à l'énergie atomique et aux énergies alternatives,"Commissariat à l'énergie atomique et aux énergies alternatives",5.0,5.0,-607.8546,59.914085,'43,171,22',25
+National Institute for Research in Computer Science and Control,"National Institute for Research in Computer Science and Control",5.0,5.0,-621.4877,13.5345955,'43,171,22',25
+David A. Wagner,"David A. Wagner",5.0,5.0,100.45448,87.06814,'22,107,171',26
+Mark S. Miller,"Mark S. Miller",5.0,5.0,29.53378,107.47206,'22,107,171',26
+Roger Hui,"Roger Hui",5.0,5.0,570.2681,-241.37563,'64,22,171',27
+Kenneth E. Iverson,"Kenneth E. Iverson",5.0,5.0,607.2989,-212.678,'64,22,171',27
+Marc Bezem,"Marc Bezem",11.75,11.75,-382.32166,54.174747,'22,171,86',28
+Andrea Schaerf,"Andrea Schaerf",11.75,11.75,-320.65366,-41.781803,'22,171,86',28
+Jacob Brunekree,"Jacob Brunekree",11.75,11.75,-337.08694,35.617565,'22,171,86',28
+Krzysztof Apt,"Krzysztof Apt",11.75,11.75,-501.7237,18.280048,'22,171,86',28
+Vincent Partington,"Vincent Partington",11.75,11.75,-461.9705,-22.65834,'22,171,86',28
+Hanspeter Mössenböck,"Hanspeter Mössenböck",5.0,5.0,117.34738,-22.517397,'22,64,171',32
+Olivetti,"Olivetti",5.0,5.0,97.86779,38.67644,'171,149,22',29
+Digital Equipment Corporation,"Digital Equipment Corporation",5.0,5.0,232.82848,127.284386,'171,149,22',29
+Charles Halpern-Hamu,"Charles Halpern-Hamu",5.0,5.0,-234.67192,-110.5509,'22,171,43',14
+Paul Graham,"Paul Graham",5.0,5.0,379.49945,15.328627,'171,43,22',30
+Robert Tappan Morris,"Robert Tappan Morris",5.0,5.0,470.63416,35.55815,'171,43,22',30
+Barbara Liskov,"Barbara Liskov",5.0,5.0,-185.01273,54.401142,'22,171,128',31
+Massachusetts Institute of Technology,"Massachusetts Institute of Technology",5.0,5.0,-354.10852,123.30035,'22,171,128',31
+Acorn,"Acorn",7.25,7.25,-47.364895,-5.9950566,'22,64,171',32
+DEC Systems Research Center,"DEC Systems Research Center",7.25,7.25,-7.8804774,-45.901157,'22,64,171',32
+Wally Feurzeig,"Wally Feurzeig",5.0,5.0,-486.00027,217.68541,'149,171,22',33
+Seymour Papert,"Seymour Papert",5.0,5.0,-486.895,186.55591,'149,171,22',33
+Allen Newell,"Allen Newell",7.25,7.25,568.3995,-635.9709,'22,43,171',34
+Herbert A. Simon,"Herbert A. Simon",7.25,7.25,528.9126,-617.9126,'22,43,171',34
+Cliff Shaw,"Cliff Shaw",7.25,7.25,524.98596,-653.93713,'22,43,171',34
+Dennis Ritchie,"Dennis Ritchie",7.25,7.25,144.5901,-369.07666,'22,171,107',35
+Bjarne Stroustrup,"Bjarne Stroustrup",5.0,5.0,219.85999,-389.97128,'22,171,107',35
+Brian Kernighan,"Brian Kernighan",16.25,16.25,166.17992,-326.91983,'22,171,107',35
+Bell Labs,"Bell Labs",9.5,9.5,171.57779,-261.81763,'22,171,107',35
+Robert Fourer,"Robert Fourer",9.5,9.5,108.63047,-243.5161,'22,171,107',35
+David Gay,"David Gay",9.5,9.5,110.06207,-287.62164,'22,171,107',35
+Andrei Alexandrescu,"Andrei Alexandrescu",5.0,5.0,176.27715,216.42459,'22,171,171',36
+Walter Bright,"Walter Bright",5.0,5.0,197.73093,195.98732,'22,171,171',36
+Cornelis H. A. Koster,"Cornelis H. A. Koster",9.5,9.5,-259.79407,-910.7891,'22,171,64',15
+Barry J. Mailloux,"Barry J. Mailloux",9.5,9.5,-198.30618,-934.34937,'22,171,64',15
+John E. L. Peck,"John E. L. Peck",9.5,9.5,-188.57704,-876.86444,'22,171,64',15
+Jie Huang Fu,"Jie Huang Fu",7.25,7.25,-128.37785,100.16267,'171,22,149',37
+Léon Bottou,"Léon Bottou",7.25,7.25,-96.93066,34.445435,'171,22,149',37
+Yann LeCun,"Yann LeCun",7.25,7.25,-66.72692,79.78299,'171,22,149',37
+Alfred Aho,"Alfred Aho",7.25,7.25,235.47795,-280.1965,'22,171,107',35
+Peter J. Weinberger,"Peter J. Weinberger",7.25,7.25,269.37097,-300.6727,'22,171,107',35
+Edward Wimmers,"Edward Wimmers",7.25,7.25,-18.298874,-410.59375,'22,171,64',15
+John Williams,"John Williams",7.25,7.25,-10.005644,-429.23688,'22,171,64',15
+Grace Hopper,"Grace Hopper",5.0,5.0,-247.07356,-64.690636,'171,22,64',38
+Jean E. Sammet,"Jean E. Sammet",5.0,5.0,-150.61179,-24.231318,'171,22,64',38
+James Gosling,"James Gosling",5.0,5.0,125.124725,-454.68646,'43,22,171',39
+Sun Microsystems,"Sun Microsystems",5.0,5.0,95.875626,-500.3147,'43,22,171',39
+Thomas Eugene Kurtz,"Thomas Eugene Kurtz",5.0,5.0,511.9233,87.02301,'149,22,171',40
+John Kemeny,"John Kemeny",5.0,5.0,588.8181,58.93558,'149,22,171',40
+Don Syme,"Don Syme",5.0,5.0,169.22885,-561.0286,'171,22,43',19
+Vijay A. Saraswat,"Vijay A. Saraswat",5.0,5.0,52.11434,427.5117,'86,22,171',41
+Ken Kahn,"Ken Kahn",5.0,5.0,79.85432,469.39603,'86,22,171',41
+edgedef> node1,node2,weight DOUBLE,directed BOOLEAN
+Nicholas F. Benton,Luca Cardelli,1.0,true
+Nicholas F. Benton,Cédric Fournet,1.0,true
+Luca Cardelli,Nicholas F. Benton,1.0,true
+Luca Cardelli,Cédric Fournet,1.0,true
+Cédric Fournet,Nicholas F. Benton,1.0,true
+Cédric Fournet,Luca Cardelli,1.0,true
+PARC,Butler Lampson,1.0,true
+Butler Lampson,PARC,1.0,true
+Warren Burton,Erik Meijer,1.0,true
+Warren Burton,John Hughes,1.0,true
+Warren Burton,Lennart Augustsson,1.0,true
+Warren Burton,Philip Wadler,1.0,true
+Warren Burton,Simon Peyton Jones,1.0,true
+Warren Burton,Paul Hudak,1.0,true
+Warren Burton,Alastair Reid,1.0,true
+Warren Burton,Brian Boutel,1.0,true
+Warren Burton,Colin Runciman,1.0,true
+Warren Burton,Dave Barton,1.0,true
+Warren Burton,John Launchbury,1.0,true
+Warren Burton,John Peterson,1.0,true
+Warren Burton,Joseph Fasel,1.0,true
+Warren Burton,Kevin Hammond,1.0,true
+Warren Burton,Mark Jones,1.0,true
+Warren Burton,Ralf Hinze,1.0,true
+Warren Burton,Thomas Johnsson,1.0,true
+Erik Meijer,Warren Burton,1.0,true
+Erik Meijer,John Hughes,1.0,true
+Erik Meijer,Lennart Augustsson,1.0,true
+Erik Meijer,Philip Wadler,1.0,true
+Erik Meijer,Simon Peyton Jones,1.0,true
+Erik Meijer,Paul Hudak,1.0,true
+Erik Meijer,Alastair Reid,1.0,true
+Erik Meijer,Brian Boutel,1.0,true
+Erik Meijer,Colin Runciman,1.0,true
+Erik Meijer,Dave Barton,1.0,true
+Erik Meijer,John Launchbury,1.0,true
+Erik Meijer,John Peterson,1.0,true
+Erik Meijer,Joseph Fasel,1.0,true
+Erik Meijer,Kevin Hammond,1.0,true
+Erik Meijer,Mark Jones,1.0,true
+Erik Meijer,Ralf Hinze,1.0,true
+Erik Meijer,Thomas Johnsson,1.0,true
+John Hughes,Warren Burton,1.0,true
+John Hughes,Erik Meijer,1.0,true
+John Hughes,Lennart Augustsson,1.0,true
+John Hughes,Philip Wadler,1.0,true
+John Hughes,Simon Peyton Jones,1.0,true
+John Hughes,Paul Hudak,1.0,true
+John Hughes,Alastair Reid,1.0,true
+John Hughes,Brian Boutel,1.0,true
+John Hughes,Colin Runciman,1.0,true
+John Hughes,Dave Barton,1.0,true
+John Hughes,John Launchbury,1.0,true
+John Hughes,John Peterson,1.0,true
+John Hughes,Joseph Fasel,1.0,true
+John Hughes,Kevin Hammond,1.0,true
+John Hughes,Mark Jones,1.0,true
+John Hughes,Ralf Hinze,1.0,true
+John Hughes,Thomas Johnsson,1.0,true
+Lennart Augustsson,Warren Burton,1.0,true
+Lennart Augustsson,Erik Meijer,1.0,true
+Lennart Augustsson,John Hughes,1.0,true
+Lennart Augustsson,Philip Wadler,1.0,true
+Lennart Augustsson,Simon Peyton Jones,1.0,true
+Lennart Augustsson,Paul Hudak,1.0,true
+Lennart Augustsson,Alastair Reid,1.0,true
+Lennart Augustsson,Brian Boutel,1.0,true
+Lennart Augustsson,Colin Runciman,1.0,true
+Lennart Augustsson,Dave Barton,1.0,true
+Lennart Augustsson,John Launchbury,1.0,true
+Lennart Augustsson,John Peterson,1.0,true
+Lennart Augustsson,Joseph Fasel,1.0,true
+Lennart Augustsson,Kevin Hammond,1.0,true
+Lennart Augustsson,Mark Jones,1.0,true
+Lennart Augustsson,Ralf Hinze,1.0,true
+Lennart Augustsson,Thomas Johnsson,1.0,true
+Philip Wadler,Warren Burton,1.0,true
+Philip Wadler,Erik Meijer,1.0,true
+Philip Wadler,John Hughes,1.0,true
+Philip Wadler,Lennart Augustsson,1.0,true
+Philip Wadler,Simon Peyton Jones,1.0,true
+Philip Wadler,Paul Hudak,1.0,true
+Philip Wadler,Alastair Reid,1.0,true
+Philip Wadler,Brian Boutel,1.0,true
+Philip Wadler,Colin Runciman,1.0,true
+Philip Wadler,Dave Barton,1.0,true
+Philip Wadler,John Launchbury,1.0,true
+Philip Wadler,John Peterson,1.0,true
+Philip Wadler,Joseph Fasel,1.0,true
+Philip Wadler,Kevin Hammond,1.0,true
+Philip Wadler,Mark Jones,1.0,true
+Philip Wadler,Ralf Hinze,1.0,true
+Philip Wadler,Thomas Johnsson,1.0,true
+Philip Wadler,Gilad Bracha,1.0,true
+Philip Wadler,Martin Odersky,1.0,true
+Philip Wadler,David Stoutamire,1.0,true
+Philip Wadler,William Maddox,1.0,true
+Simon Peyton Jones,Warren Burton,1.0,true
+Simon Peyton Jones,Erik Meijer,1.0,true
+Simon Peyton Jones,John Hughes,1.0,true
+Simon Peyton Jones,Lennart Augustsson,1.0,true
+Simon Peyton Jones,Philip Wadler,1.0,true
+Simon Peyton Jones,Paul Hudak,1.0,true
+Simon Peyton Jones,Alastair Reid,1.0,true
+Simon Peyton Jones,Brian Boutel,1.0,true
+Simon Peyton Jones,Colin Runciman,1.0,true
+Simon Peyton Jones,Dave Barton,1.0,true
+Simon Peyton Jones,John Launchbury,1.0,true
+Simon Peyton Jones,John Peterson,1.0,true
+Simon Peyton Jones,Joseph Fasel,1.0,true
+Simon Peyton Jones,Kevin Hammond,1.0,true
+Simon Peyton Jones,Mark Jones,1.0,true
+Simon Peyton Jones,Ralf Hinze,1.0,true
+Simon Peyton Jones,Thomas Johnsson,1.0,true
+Simon Peyton Jones,Norman Ramsey,1.0,true
+Paul Hudak,Warren Burton,1.0,true
+Paul Hudak,Erik Meijer,1.0,true
+Paul Hudak,John Hughes,1.0,true
+Paul Hudak,Lennart Augustsson,1.0,true
+Paul Hudak,Philip Wadler,1.0,true
+Paul Hudak,Simon Peyton Jones,1.0,true
+Paul Hudak,Alastair Reid,1.0,true
+Paul Hudak,Brian Boutel,1.0,true
+Paul Hudak,Colin Runciman,1.0,true
+Paul Hudak,Dave Barton,1.0,true
+Paul Hudak,John Launchbury,1.0,true
+Paul Hudak,John Peterson,1.0,true
+Paul Hudak,Joseph Fasel,1.0,true
+Paul Hudak,Kevin Hammond,1.0,true
+Paul Hudak,Mark Jones,1.0,true
+Paul Hudak,Ralf Hinze,1.0,true
+Paul Hudak,Thomas Johnsson,1.0,true
+Alastair Reid,Warren Burton,1.0,true
+Alastair Reid,Erik Meijer,1.0,true
+Alastair Reid,John Hughes,1.0,true
+Alastair Reid,Lennart Augustsson,1.0,true
+Alastair Reid,Philip Wadler,1.0,true
+Alastair Reid,Simon Peyton Jones,1.0,true
+Alastair Reid,Paul Hudak,1.0,true
+Alastair Reid,Brian Boutel,1.0,true
+Alastair Reid,Colin Runciman,1.0,true
+Alastair Reid,Dave Barton,1.0,true
+Alastair Reid,John Launchbury,1.0,true
+Alastair Reid,John Peterson,1.0,true
+Alastair Reid,Joseph Fasel,1.0,true
+Alastair Reid,Kevin Hammond,1.0,true
+Alastair Reid,Mark Jones,1.0,true
+Alastair Reid,Ralf Hinze,1.0,true
+Alastair Reid,Thomas Johnsson,1.0,true
+Brian Boutel,Warren Burton,1.0,true
+Brian Boutel,Erik Meijer,1.0,true
+Brian Boutel,John Hughes,1.0,true
+Brian Boutel,Lennart Augustsson,1.0,true
+Brian Boutel,Philip Wadler,1.0,true
+Brian Boutel,Simon Peyton Jones,1.0,true
+Brian Boutel,Paul Hudak,1.0,true
+Brian Boutel,Alastair Reid,1.0,true
+Brian Boutel,Colin Runciman,1.0,true
+Brian Boutel,Dave Barton,1.0,true
+Brian Boutel,John Launchbury,1.0,true
+Brian Boutel,John Peterson,1.0,true
+Brian Boutel,Joseph Fasel,1.0,true
+Brian Boutel,Kevin Hammond,1.0,true
+Brian Boutel,Mark Jones,1.0,true
+Brian Boutel,Ralf Hinze,1.0,true
+Brian Boutel,Thomas Johnsson,1.0,true
+Colin Runciman,Warren Burton,1.0,true
+Colin Runciman,Erik Meijer,1.0,true
+Colin Runciman,John Hughes,1.0,true
+Colin Runciman,Lennart Augustsson,1.0,true
+Colin Runciman,Philip Wadler,1.0,true
+Colin Runciman,Simon Peyton Jones,1.0,true
+Colin Runciman,Paul Hudak,1.0,true
+Colin Runciman,Alastair Reid,1.0,true
+Colin Runciman,Brian Boutel,1.0,true
+Colin Runciman,Dave Barton,1.0,true
+Colin Runciman,John Launchbury,1.0,true
+Colin Runciman,John Peterson,1.0,true
+Colin Runciman,Joseph Fasel,1.0,true
+Colin Runciman,Kevin Hammond,1.0,true
+Colin Runciman,Mark Jones,1.0,true
+Colin Runciman,Ralf Hinze,1.0,true
+Colin Runciman,Thomas Johnsson,1.0,true
+Dave Barton,Warren Burton,1.0,true
+Dave Barton,Erik Meijer,1.0,true
+Dave Barton,John Hughes,1.0,true
+Dave Barton,Lennart Augustsson,1.0,true
+Dave Barton,Philip Wadler,1.0,true
+Dave Barton,Simon Peyton Jones,1.0,true
+Dave Barton,Paul Hudak,1.0,true
+Dave Barton,Alastair Reid,1.0,true
+Dave Barton,Brian Boutel,1.0,true
+Dave Barton,Colin Runciman,1.0,true
+Dave Barton,John Launchbury,1.0,true
+Dave Barton,John Peterson,1.0,true
+Dave Barton,Joseph Fasel,1.0,true
+Dave Barton,Kevin Hammond,1.0,true
+Dave Barton,Mark Jones,1.0,true
+Dave Barton,Ralf Hinze,1.0,true
+Dave Barton,Thomas Johnsson,1.0,true
+John Launchbury,Warren Burton,1.0,true
+John Launchbury,Erik Meijer,1.0,true
+John Launchbury,John Hughes,1.0,true
+John Launchbury,Lennart Augustsson,1.0,true
+John Launchbury,Philip Wadler,1.0,true
+John Launchbury,Simon Peyton Jones,1.0,true
+John Launchbury,Paul Hudak,1.0,true
+John Launchbury,Alastair Reid,1.0,true
+John Launchbury,Brian Boutel,1.0,true
+John Launchbury,Colin Runciman,1.0,true
+John Launchbury,Dave Barton,1.0,true
+John Launchbury,John Peterson,1.0,true
+John Launchbury,Joseph Fasel,1.0,true
+John Launchbury,Kevin Hammond,1.0,true
+John Launchbury,Mark Jones,1.0,true
+John Launchbury,Ralf Hinze,1.0,true
+John Launchbury,Thomas Johnsson,1.0,true
+John Peterson,Warren Burton,1.0,true
+John Peterson,Erik Meijer,1.0,true
+John Peterson,John Hughes,1.0,true
+John Peterson,Lennart Augustsson,1.0,true
+John Peterson,Philip Wadler,1.0,true
+John Peterson,Simon Peyton Jones,1.0,true
+John Peterson,Paul Hudak,1.0,true
+John Peterson,Alastair Reid,1.0,true
+John Peterson,Brian Boutel,1.0,true
+John Peterson,Colin Runciman,1.0,true
+John Peterson,Dave Barton,1.0,true
+John Peterson,John Launchbury,1.0,true
+John Peterson,Joseph Fasel,1.0,true
+John Peterson,Kevin Hammond,1.0,true
+John Peterson,Mark Jones,1.0,true
+John Peterson,Ralf Hinze,1.0,true
+John Peterson,Thomas Johnsson,1.0,true
+Joseph Fasel,Warren Burton,1.0,true
+Joseph Fasel,Erik Meijer,1.0,true
+Joseph Fasel,John Hughes,1.0,true
+Joseph Fasel,Lennart Augustsson,1.0,true
+Joseph Fasel,Philip Wadler,1.0,true
+Joseph Fasel,Simon Peyton Jones,1.0,true
+Joseph Fasel,Paul Hudak,1.0,true
+Joseph Fasel,Alastair Reid,1.0,true
+Joseph Fasel,Brian Boutel,1.0,true
+Joseph Fasel,Colin Runciman,1.0,true
+Joseph Fasel,Dave Barton,1.0,true
+Joseph Fasel,John Launchbury,1.0,true
+Joseph Fasel,John Peterson,1.0,true
+Joseph Fasel,Kevin Hammond,1.0,true
+Joseph Fasel,Mark Jones,1.0,true
+Joseph Fasel,Ralf Hinze,1.0,true
+Joseph Fasel,Thomas Johnsson,1.0,true
+Kevin Hammond,Warren Burton,1.0,true
+Kevin Hammond,Erik Meijer,1.0,true
+Kevin Hammond,John Hughes,1.0,true
+Kevin Hammond,Lennart Augustsson,1.0,true
+Kevin Hammond,Philip Wadler,1.0,true
+Kevin Hammond,Simon Peyton Jones,1.0,true
+Kevin Hammond,Paul Hudak,1.0,true
+Kevin Hammond,Alastair Reid,1.0,true
+Kevin Hammond,Brian Boutel,1.0,true
+Kevin Hammond,Colin Runciman,1.0,true
+Kevin Hammond,Dave Barton,1.0,true
+Kevin Hammond,John Launchbury,1.0,true
+Kevin Hammond,John Peterson,1.0,true
+Kevin Hammond,Joseph Fasel,1.0,true
+Kevin Hammond,Mark Jones,1.0,true
+Kevin Hammond,Ralf Hinze,1.0,true
+Kevin Hammond,Thomas Johnsson,1.0,true
+Mark Jones,Warren Burton,1.0,true
+Mark Jones,Erik Meijer,1.0,true
+Mark Jones,John Hughes,1.0,true
+Mark Jones,Lennart Augustsson,1.0,true
+Mark Jones,Philip Wadler,1.0,true
+Mark Jones,Simon Peyton Jones,1.0,true
+Mark Jones,Paul Hudak,1.0,true
+Mark Jones,Alastair Reid,1.0,true
+Mark Jones,Brian Boutel,1.0,true
+Mark Jones,Colin Runciman,1.0,true
+Mark Jones,Dave Barton,1.0,true
+Mark Jones,John Launchbury,1.0,true
+Mark Jones,John Peterson,1.0,true
+Mark Jones,Joseph Fasel,1.0,true
+Mark Jones,Kevin Hammond,1.0,true
+Mark Jones,Ralf Hinze,1.0,true
+Mark Jones,Thomas Johnsson,1.0,true
+Ralf Hinze,Warren Burton,1.0,true
+Ralf Hinze,Erik Meijer,1.0,true
+Ralf Hinze,John Hughes,1.0,true
+Ralf Hinze,Lennart Augustsson,1.0,true
+Ralf Hinze,Philip Wadler,1.0,true
+Ralf Hinze,Simon Peyton Jones,1.0,true
+Ralf Hinze,Paul Hudak,1.0,true
+Ralf Hinze,Alastair Reid,1.0,true
+Ralf Hinze,Brian Boutel,1.0,true
+Ralf Hinze,Colin Runciman,1.0,true
+Ralf Hinze,Dave Barton,1.0,true
+Ralf Hinze,John Launchbury,1.0,true
+Ralf Hinze,John Peterson,1.0,true
+Ralf Hinze,Joseph Fasel,1.0,true
+Ralf Hinze,Kevin Hammond,1.0,true
+Ralf Hinze,Mark Jones,1.0,true
+Ralf Hinze,Thomas Johnsson,1.0,true
+Thomas Johnsson,Warren Burton,1.0,true
+Thomas Johnsson,Erik Meijer,1.0,true
+Thomas Johnsson,John Hughes,1.0,true
+Thomas Johnsson,Lennart Augustsson,1.0,true
+Thomas Johnsson,Philip Wadler,1.0,true
+Thomas Johnsson,Simon Peyton Jones,1.0,true
+Thomas Johnsson,Paul Hudak,1.0,true
+Thomas Johnsson,Alastair Reid,1.0,true
+Thomas Johnsson,Brian Boutel,1.0,true
+Thomas Johnsson,Colin Runciman,1.0,true
+Thomas Johnsson,Dave Barton,1.0,true
+Thomas Johnsson,John Launchbury,1.0,true
+Thomas Johnsson,John Peterson,1.0,true
+Thomas Johnsson,Joseph Fasel,1.0,true
+Thomas Johnsson,Kevin Hammond,1.0,true
+Thomas Johnsson,Mark Jones,1.0,true
+Thomas Johnsson,Ralf Hinze,1.0,true
+Steven Pemberton,Leo Geurts,1.0,true
+Steven Pemberton,Lambert Meertens,1.0,true
+Leo Geurts,Steven Pemberton,1.0,true
+Leo Geurts,Lambert Meertens,1.0,true
+Lambert Meertens,Steven Pemberton,1.0,true
+Lambert Meertens,Leo Geurts,1.0,true
+Edward A. Ashcroft,William W. Wadge,1.0,true
+William W. Wadge,Edward A. Ashcroft,1.0,true
+Ascánder Suárez,Xavier Leroy,1.0,true
+Ascánder Suárez,Gérard Huet,1.0,true
+Ascánder Suárez,Guy Cousineau,1.0,true
+Ascánder Suárez,Michel Mauny,1.0,true
+Ascánder Suárez,Pierre Weis,1.0,true
+Xavier Leroy,Ascánder Suárez,1.0,true
+Xavier Leroy,Gérard Huet,1.0,true
+Xavier Leroy,Guy Cousineau,1.0,true
+Xavier Leroy,Michel Mauny,1.0,true
+Xavier Leroy,Pierre Weis,1.0,true
+Gérard Huet,Ascánder Suárez,1.0,true
+Gérard Huet,Xavier Leroy,1.0,true
+Gérard Huet,Guy Cousineau,1.0,true
+Gérard Huet,Michel Mauny,1.0,true
+Gérard Huet,Pierre Weis,1.0,true
+Guy Cousineau,Ascánder Suárez,1.0,true
+Guy Cousineau,Xavier Leroy,1.0,true
+Guy Cousineau,Gérard Huet,1.0,true
+Guy Cousineau,Michel Mauny,1.0,true
+Guy Cousineau,Pierre Weis,1.0,true
+Michel Mauny,Ascánder Suárez,1.0,true
+Michel Mauny,Xavier Leroy,1.0,true
+Michel Mauny,Gérard Huet,1.0,true
+Michel Mauny,Guy Cousineau,1.0,true
+Michel Mauny,Pierre Weis,1.0,true
+Pierre Weis,Ascánder Suárez,1.0,true
+Pierre Weis,Xavier Leroy,1.0,true
+Pierre Weis,Gérard Huet,1.0,true
+Pierre Weis,Guy Cousineau,1.0,true
+Pierre Weis,Michel Mauny,1.0,true
+Francis McCabe,Keith Clark,1.0,true
+Keith Clark,Francis McCabe,1.0,true
+Sean Dorward,Rob Pike,1.0,true
+Sean Dorward,Phil Winterbottom,1.0,true
+Rob Pike,Sean Dorward,1.0,true
+Rob Pike,Phil Winterbottom,1.0,true
+Rob Pike,Ken Thompson,1.0,true
+Rob Pike,Robert Griesemer,1.0,true
+Phil Winterbottom,Sean Dorward,1.0,true
+Phil Winterbottom,Rob Pike,1.0,true
+Ross Ihaka,Robert Gentleman,1.0,true
+Robert Gentleman,Ross Ihaka,1.0,true
+Gilad Bracha,Philip Wadler,1.0,true
+Gilad Bracha,Martin Odersky,1.0,true
+Gilad Bracha,David Stoutamire,1.0,true
+Gilad Bracha,William Maddox,1.0,true
+Martin Odersky,Philip Wadler,1.0,true
+Martin Odersky,Gilad Bracha,1.0,true
+Martin Odersky,David Stoutamire,1.0,true
+Martin Odersky,William Maddox,1.0,true
+David Stoutamire,Philip Wadler,1.0,true
+David Stoutamire,Gilad Bracha,1.0,true
+David Stoutamire,Martin Odersky,1.0,true
+David Stoutamire,William Maddox,1.0,true
+William Maddox,Philip Wadler,1.0,true
+William Maddox,Gilad Bracha,1.0,true
+William Maddox,Martin Odersky,1.0,true
+William Maddox,David Stoutamire,1.0,true
+Raymond F. Boyce,Donald D. Chamberlin,1.0,true
+Donald D. Chamberlin,Raymond F. Boyce,1.0,true
+Anders Hejlsberg,Niklaus Wirth,1.0,true
+Anders Hejlsberg,Apple Inc.,1.0,true
+Niklaus Wirth,Anders Hejlsberg,1.0,true
+Niklaus Wirth,Apple Inc.,1.0,true
+Niklaus Wirth,Hanspeter Mössenböck,1.0,true
+Niklaus Wirth,Acorn,1.0,true
+Niklaus Wirth,DEC Systems Research Center,1.0,true
+Apple Inc.,Anders Hejlsberg,1.0,true
+Apple Inc.,Niklaus Wirth,1.0,true
+D. B. Russell,William Wulf,1.0,true
+D. B. Russell,Nico Habermann,1.0,true
+William Wulf,D. B. Russell,1.0,true
+William Wulf,Nico Habermann,1.0,true
+Nico Habermann,D. B. Russell,1.0,true
+Nico Habermann,William Wulf,1.0,true
+Ken Thompson,Rob Pike,1.0,true
+Ken Thompson,Robert Griesemer,1.0,true
+Robert Griesemer,Rob Pike,1.0,true
+Robert Griesemer,Ken Thompson,1.0,true
+Kristen Nygaard,Ole-Johan Dahl,1.0,true
+Kristen Nygaard,Birger Møller-Pedersen,1.0,true
+Ole-Johan Dahl,Kristen Nygaard,1.0,true
+Birger Møller-Pedersen,Kristen Nygaard,1.0,true
+Ge Wang,Perry R. Cook,1.0,true
+Perry R. Cook,Ge Wang,1.0,true
+D.T. Barnard,James Cordy,1.0,true
+D.T. Barnard,Ric Holt,1.0,true
+D.T. Barnard,D.B. Wortman,1.0,true
+James Cordy,D.T. Barnard,1.0,true
+James Cordy,Ric Holt,6.0,true
+James Cordy,D.B. Wortman,1.0,true
+James Cordy,Charles Halpern-Hamu,1.0,true
+Ric Holt,D.T. Barnard,1.0,true
+Ric Holt,James Cordy,6.0,true
+Ric Holt,D.B. Wortman,1.0,true
+D.B. Wortman,D.T. Barnard,1.0,true
+D.B. Wortman,James Cordy,1.0,true
+D.B. Wortman,Ric Holt,1.0,true
+Bernard Vauquois,Friedrich L. Bauer,2.0,true
+Bernard Vauquois,Peter Naur,2.0,true
+Bernard Vauquois,Adriaan van Wijngaarden,2.0,true
+Bernard Vauquois,John Backus,2.0,true
+Bernard Vauquois,Klaus Samelson,2.0,true
+Bernard Vauquois,Alan Perlis,2.0,true
+Bernard Vauquois,John McCarthy,2.0,true
+Bernard Vauquois,Heinz Rutishauser,2.0,true
+Bernard Vauquois,Charles Katz,2.0,true
+Bernard Vauquois,Joseph Henry Wegstein,2.0,true
+Bernard Vauquois,Julien Green,2.0,true
+Bernard Vauquois,Michael Woodger,2.0,true
+Bernard Vauquois,Hermann Bottenbruch,1.0,true
+Friedrich L. Bauer,Bernard Vauquois,2.0,true
+Friedrich L. Bauer,Peter Naur,2.0,true
+Friedrich L. Bauer,Adriaan van Wijngaarden,2.0,true
+Friedrich L. Bauer,John Backus,3.0,true
+Friedrich L. Bauer,Klaus Samelson,3.0,true
+Friedrich L. Bauer,Alan Perlis,3.0,true
+Friedrich L. Bauer,John McCarthy,2.0,true
+Friedrich L. Bauer,Heinz Rutishauser,3.0,true
+Friedrich L. Bauer,Charles Katz,3.0,true
+Friedrich L. Bauer,Joseph Henry Wegstein,3.0,true
+Friedrich L. Bauer,Julien Green,2.0,true
+Friedrich L. Bauer,Michael Woodger,2.0,true
+Friedrich L. Bauer,Hermann Bottenbruch,2.0,true
+Peter Naur,Bernard Vauquois,2.0,true
+Peter Naur,Friedrich L. Bauer,2.0,true
+Peter Naur,Adriaan van Wijngaarden,2.0,true
+Peter Naur,John Backus,2.0,true
+Peter Naur,Klaus Samelson,2.0,true
+Peter Naur,Alan Perlis,2.0,true
+Peter Naur,John McCarthy,2.0,true
+Peter Naur,Heinz Rutishauser,2.0,true
+Peter Naur,Charles Katz,2.0,true
+Peter Naur,Joseph Henry Wegstein,2.0,true
+Peter Naur,Julien Green,2.0,true
+Peter Naur,Michael Woodger,2.0,true
+Peter Naur,Hermann Bottenbruch,1.0,true
+Adriaan van Wijngaarden,Bernard Vauquois,2.0,true
+Adriaan van Wijngaarden,Friedrich L. Bauer,2.0,true
+Adriaan van Wijngaarden,Peter Naur,2.0,true
+Adriaan van Wijngaarden,John Backus,2.0,true
+Adriaan van Wijngaarden,Klaus Samelson,2.0,true
+Adriaan van Wijngaarden,Alan Perlis,2.0,true
+Adriaan van Wijngaarden,John McCarthy,2.0,true
+Adriaan van Wijngaarden,Heinz Rutishauser,2.0,true
+Adriaan van Wijngaarden,Charles Katz,2.0,true
+Adriaan van Wijngaarden,Joseph Henry Wegstein,2.0,true
+Adriaan van Wijngaarden,Julien Green,2.0,true
+Adriaan van Wijngaarden,Michael Woodger,2.0,true
+Adriaan van Wijngaarden,Hermann Bottenbruch,1.0,true
+Adriaan van Wijngaarden,Cornelis H. A. Koster,1.0,true
+Adriaan van Wijngaarden,Barry J. Mailloux,1.0,true
+Adriaan van Wijngaarden,John E. L. Peck,1.0,true
+John Backus,Bernard Vauquois,2.0,true
+John Backus,Friedrich L. Bauer,3.0,true
+John Backus,Peter Naur,2.0,true
+John Backus,Adriaan van Wijngaarden,2.0,true
+John Backus,Klaus Samelson,3.0,true
+John Backus,Alan Perlis,3.0,true
+John Backus,John McCarthy,2.0,true
+John Backus,Heinz Rutishauser,3.0,true
+John Backus,Charles Katz,3.0,true
+John Backus,Joseph Henry Wegstein,3.0,true
+John Backus,Julien Green,2.0,true
+John Backus,Michael Woodger,2.0,true
+John Backus,Hermann Bottenbruch,2.0,true
+John Backus,Edward Wimmers,1.0,true
+John Backus,John Williams,1.0,true
+Klaus Samelson,Bernard Vauquois,2.0,true
+Klaus Samelson,Friedrich L. Bauer,3.0,true
+Klaus Samelson,Peter Naur,2.0,true
+Klaus Samelson,Adriaan van Wijngaarden,2.0,true
+Klaus Samelson,John Backus,3.0,true
+Klaus Samelson,Alan Perlis,3.0,true
+Klaus Samelson,John McCarthy,2.0,true
+Klaus Samelson,Heinz Rutishauser,3.0,true
+Klaus Samelson,Charles Katz,3.0,true
+Klaus Samelson,Joseph Henry Wegstein,3.0,true
+Klaus Samelson,Julien Green,2.0,true
+Klaus Samelson,Michael Woodger,2.0,true
+Klaus Samelson,Hermann Bottenbruch,2.0,true
+Alan Perlis,Bernard Vauquois,2.0,true
+Alan Perlis,Friedrich L. Bauer,3.0,true
+Alan Perlis,Peter Naur,2.0,true
+Alan Perlis,Adriaan van Wijngaarden,2.0,true
+Alan Perlis,John Backus,3.0,true
+Alan Perlis,Klaus Samelson,3.0,true
+Alan Perlis,John McCarthy,2.0,true
+Alan Perlis,Heinz Rutishauser,3.0,true
+Alan Perlis,Charles Katz,3.0,true
+Alan Perlis,Joseph Henry Wegstein,3.0,true
+Alan Perlis,Julien Green,2.0,true
+Alan Perlis,Michael Woodger,2.0,true
+Alan Perlis,Hermann Bottenbruch,2.0,true
+John McCarthy,Bernard Vauquois,2.0,true
+John McCarthy,Friedrich L. Bauer,2.0,true
+John McCarthy,Peter Naur,2.0,true
+John McCarthy,Adriaan van Wijngaarden,2.0,true
+John McCarthy,John Backus,2.0,true
+John McCarthy,Klaus Samelson,2.0,true
+John McCarthy,Alan Perlis,2.0,true
+John McCarthy,Heinz Rutishauser,2.0,true
+John McCarthy,Charles Katz,2.0,true
+John McCarthy,Joseph Henry Wegstein,2.0,true
+John McCarthy,Julien Green,2.0,true
+John McCarthy,Michael Woodger,2.0,true
+John McCarthy,Hermann Bottenbruch,1.0,true
+Heinz Rutishauser,Bernard Vauquois,2.0,true
+Heinz Rutishauser,Friedrich L. Bauer,3.0,true
+Heinz Rutishauser,Peter Naur,2.0,true
+Heinz Rutishauser,Adriaan van Wijngaarden,2.0,true
+Heinz Rutishauser,John Backus,3.0,true
+Heinz Rutishauser,Klaus Samelson,3.0,true
+Heinz Rutishauser,Alan Perlis,3.0,true
+Heinz Rutishauser,John McCarthy,2.0,true
+Heinz Rutishauser,Charles Katz,3.0,true
+Heinz Rutishauser,Joseph Henry Wegstein,3.0,true
+Heinz Rutishauser,Julien Green,2.0,true
+Heinz Rutishauser,Michael Woodger,2.0,true
+Heinz Rutishauser,Hermann Bottenbruch,2.0,true
+Charles Katz,Bernard Vauquois,2.0,true
+Charles Katz,Friedrich L. Bauer,3.0,true
+Charles Katz,Peter Naur,2.0,true
+Charles Katz,Adriaan van Wijngaarden,2.0,true
+Charles Katz,John Backus,3.0,true
+Charles Katz,Klaus Samelson,3.0,true
+Charles Katz,Alan Perlis,3.0,true
+Charles Katz,John McCarthy,2.0,true
+Charles Katz,Heinz Rutishauser,3.0,true
+Charles Katz,Joseph Henry Wegstein,3.0,true
+Charles Katz,Julien Green,2.0,true
+Charles Katz,Michael Woodger,2.0,true
+Charles Katz,Hermann Bottenbruch,2.0,true
+Joseph Henry Wegstein,Bernard Vauquois,2.0,true
+Joseph Henry Wegstein,Friedrich L. Bauer,3.0,true
+Joseph Henry Wegstein,Peter Naur,2.0,true
+Joseph Henry Wegstein,Adriaan van Wijngaarden,2.0,true
+Joseph Henry Wegstein,John Backus,3.0,true
+Joseph Henry Wegstein,Klaus Samelson,3.0,true
+Joseph Henry Wegstein,Alan Perlis,3.0,true
+Joseph Henry Wegstein,John McCarthy,2.0,true
+Joseph Henry Wegstein,Heinz Rutishauser,3.0,true
+Joseph Henry Wegstein,Charles Katz,3.0,true
+Joseph Henry Wegstein,Julien Green,2.0,true
+Joseph Henry Wegstein,Michael Woodger,2.0,true
+Joseph Henry Wegstein,Hermann Bottenbruch,2.0,true
+Julien Green,Bernard Vauquois,2.0,true
+Julien Green,Friedrich L. Bauer,2.0,true
+Julien Green,Peter Naur,2.0,true
+Julien Green,Adriaan van Wijngaarden,2.0,true
+Julien Green,John Backus,2.0,true
+Julien Green,Klaus Samelson,2.0,true
+Julien Green,Alan Perlis,2.0,true
+Julien Green,John McCarthy,2.0,true
+Julien Green,Heinz Rutishauser,2.0,true
+Julien Green,Charles Katz,2.0,true
+Julien Green,Joseph Henry Wegstein,2.0,true
+Julien Green,Michael Woodger,2.0,true
+Julien Green,Hermann Bottenbruch,1.0,true
+Michael Woodger,Bernard Vauquois,2.0,true
+Michael Woodger,Friedrich L. Bauer,2.0,true
+Michael Woodger,Peter Naur,2.0,true
+Michael Woodger,Adriaan van Wijngaarden,2.0,true
+Michael Woodger,John Backus,2.0,true
+Michael Woodger,Klaus Samelson,2.0,true
+Michael Woodger,Alan Perlis,2.0,true
+Michael Woodger,John McCarthy,2.0,true
+Michael Woodger,Heinz Rutishauser,2.0,true
+Michael Woodger,Charles Katz,2.0,true
+Michael Woodger,Joseph Henry Wegstein,2.0,true
+Michael Woodger,Julien Green,2.0,true
+Michael Woodger,Hermann Bottenbruch,1.0,true
+Hermann Bottenbruch,Bernard Vauquois,1.0,true
+Hermann Bottenbruch,Friedrich L. Bauer,2.0,true
+Hermann Bottenbruch,Peter Naur,1.0,true
+Hermann Bottenbruch,Adriaan van Wijngaarden,1.0,true
+Hermann Bottenbruch,John Backus,2.0,true
+Hermann Bottenbruch,Klaus Samelson,2.0,true
+Hermann Bottenbruch,Alan Perlis,2.0,true
+Hermann Bottenbruch,John McCarthy,1.0,true
+Hermann Bottenbruch,Heinz Rutishauser,2.0,true
+Hermann Bottenbruch,Charles Katz,2.0,true
+Hermann Bottenbruch,Joseph Henry Wegstein,2.0,true
+Hermann Bottenbruch,Julien Green,1.0,true
+Hermann Bottenbruch,Michael Woodger,1.0,true
+Leszek Pacholski,Kamil Skalski,1.0,true
+Leszek Pacholski,Michał Moskal,1.0,true
+Leszek Pacholski,Paweł Olszta,1.0,true
+Kamil Skalski,Leszek Pacholski,1.0,true
+Kamil Skalski,Michał Moskal,1.0,true
+Kamil Skalski,Paweł Olszta,1.0,true
+Michał Moskal,Leszek Pacholski,1.0,true
+Michał Moskal,Kamil Skalski,1.0,true
+Michał Moskal,Paweł Olszta,1.0,true
+Paweł Olszta,Leszek Pacholski,1.0,true
+Paweł Olszta,Kamil Skalski,1.0,true
+Paweł Olszta,Michał Moskal,1.0,true
+Norman Ramsey,Simon Peyton Jones,1.0,true
+Børge R. Christensen,Benedict Løfstedt,1.0,true
+Benedict Løfstedt,Børge R. Christensen,1.0,true
+Keith Packard,Bart Massey,1.0,true
+Bart Massey,Keith Packard,1.0,true
+Microsoft SQL Server,Microsoft Research,1.0,true
+Microsoft Research,Microsoft SQL Server,1.0,true
+Microsoft Research,Don Syme,1.0,true
+SHARE,IBM,1.0,true
+IBM,SHARE,1.0,true
+Guy L. Steele,Gerald Jay Sussman,1.0,true
+Gerald Jay Sussman,Guy L. Steele,1.0,true
+Ralph Griswold,David J. Farber,1.0,true
+Ralph Griswold,Ivan P. Polonsky,1.0,true
+David J. Farber,Ralph Griswold,1.0,true
+David J. Farber,Ivan P. Polonsky,1.0,true
+Ivan P. Polonsky,Ralph Griswold,1.0,true
+Ivan P. Polonsky,David J. Farber,1.0,true
+Brendan Eich,Ecma International,1.0,true
+Ecma International,Brendan Eich,1.0,true
+Alan Kay,Adele Goldberg,1.0,true
+Alan Kay,Daniel Henry Holmes Ingalls,1.0,true
+Adele Goldberg,Alan Kay,1.0,true
+Adele Goldberg,Daniel Henry Holmes Ingalls,1.0,true
+Daniel Henry Holmes Ingalls,Alan Kay,1.0,true
+Daniel Henry Holmes Ingalls,Adele Goldberg,1.0,true
+Commissariat à l'énergie atomique et aux énergies alternatives,National Institute for Research in Computer Science and Control,1.0,true
+National Institute for Research in Computer Science and Control,Commissariat à l'énergie atomique et aux énergies alternatives,1.0,true
+David A. Wagner,Mark S. Miller,1.0,true
+Mark S. Miller,David A. Wagner,1.0,true
+Roger Hui,Kenneth E. Iverson,1.0,true
+Kenneth E. Iverson,Roger Hui,1.0,true
+Marc Bezem,Andrea Schaerf,1.0,true
+Marc Bezem,Jacob Brunekree,1.0,true
+Marc Bezem,Krzysztof Apt,1.0,true
+Marc Bezem,Vincent Partington,1.0,true
+Andrea Schaerf,Marc Bezem,1.0,true
+Andrea Schaerf,Jacob Brunekree,1.0,true
+Andrea Schaerf,Krzysztof Apt,1.0,true
+Andrea Schaerf,Vincent Partington,1.0,true
+Jacob Brunekree,Marc Bezem,1.0,true
+Jacob Brunekree,Andrea Schaerf,1.0,true
+Jacob Brunekree,Krzysztof Apt,1.0,true
+Jacob Brunekree,Vincent Partington,1.0,true
+Krzysztof Apt,Marc Bezem,1.0,true
+Krzysztof Apt,Andrea Schaerf,1.0,true
+Krzysztof Apt,Jacob Brunekree,1.0,true
+Krzysztof Apt,Vincent Partington,1.0,true
+Vincent Partington,Marc Bezem,1.0,true
+Vincent Partington,Andrea Schaerf,1.0,true
+Vincent Partington,Jacob Brunekree,1.0,true
+Vincent Partington,Krzysztof Apt,1.0,true
+Hanspeter Mössenböck,Niklaus Wirth,1.0,true
+Olivetti,Digital Equipment Corporation,1.0,true
+Digital Equipment Corporation,Olivetti,1.0,true
+Charles Halpern-Hamu,James Cordy,1.0,true
+Paul Graham,Robert Tappan Morris,1.0,true
+Robert Tappan Morris,Paul Graham,1.0,true
+Barbara Liskov,Massachusetts Institute of Technology,1.0,true
+Massachusetts Institute of Technology,Barbara Liskov,1.0,true
+Acorn,Niklaus Wirth,1.0,true
+Acorn,DEC Systems Research Center,1.0,true
+DEC Systems Research Center,Niklaus Wirth,1.0,true
+DEC Systems Research Center,Acorn,1.0,true
+Wally Feurzeig,Seymour Papert,1.0,true
+Seymour Papert,Wally Feurzeig,1.0,true
+Allen Newell,Herbert A. Simon,1.0,true
+Allen Newell,Cliff Shaw,1.0,true
+Herbert A. Simon,Allen Newell,1.0,true
+Herbert A. Simon,Cliff Shaw,1.0,true
+Cliff Shaw,Allen Newell,1.0,true
+Cliff Shaw,Herbert A. Simon,1.0,true
+Dennis Ritchie,Bjarne Stroustrup,1.0,true
+Dennis Ritchie,Brian Kernighan,1.0,true
+Bjarne Stroustrup,Dennis Ritchie,1.0,true
+Brian Kernighan,Dennis Ritchie,1.0,true
+Brian Kernighan,Bell Labs,1.0,true
+Brian Kernighan,Robert Fourer,1.0,true
+Brian Kernighan,David Gay,1.0,true
+Brian Kernighan,Alfred Aho,1.0,true
+Brian Kernighan,Peter J. Weinberger,1.0,true
+Bell Labs,Brian Kernighan,1.0,true
+Bell Labs,Robert Fourer,1.0,true
+Bell Labs,David Gay,1.0,true
+Robert Fourer,Brian Kernighan,1.0,true
+Robert Fourer,Bell Labs,1.0,true
+Robert Fourer,David Gay,1.0,true
+David Gay,Brian Kernighan,1.0,true
+David Gay,Bell Labs,1.0,true
+David Gay,Robert Fourer,1.0,true
+Andrei Alexandrescu,Walter Bright,1.0,true
+Walter Bright,Andrei Alexandrescu,1.0,true
+Cornelis H. A. Koster,Adriaan van Wijngaarden,1.0,true
+Cornelis H. A. Koster,Barry J. Mailloux,1.0,true
+Cornelis H. A. Koster,John E. L. Peck,1.0,true
+Barry J. Mailloux,Adriaan van Wijngaarden,1.0,true
+Barry J. Mailloux,Cornelis H. A. Koster,1.0,true
+Barry J. Mailloux,John E. L. Peck,1.0,true
+John E. L. Peck,Adriaan van Wijngaarden,1.0,true
+John E. L. Peck,Cornelis H. A. Koster,1.0,true
+John E. L. Peck,Barry J. Mailloux,1.0,true
+Jie Huang Fu,Léon Bottou,1.0,true
+Jie Huang Fu,Yann LeCun,1.0,true
+Léon Bottou,Jie Huang Fu,1.0,true
+Léon Bottou,Yann LeCun,1.0,true
+Yann LeCun,Jie Huang Fu,1.0,true
+Yann LeCun,Léon Bottou,1.0,true
+Alfred Aho,Brian Kernighan,1.0,true
+Alfred Aho,Peter J. Weinberger,1.0,true
+Peter J. Weinberger,Brian Kernighan,1.0,true
+Peter J. Weinberger,Alfred Aho,1.0,true
+Edward Wimmers,John Backus,1.0,true
+Edward Wimmers,John Williams,1.0,true
+John Williams,John Backus,1.0,true
+John Williams,Edward Wimmers,1.0,true
+Grace Hopper,Jean E. Sammet,1.0,true
+Jean E. Sammet,Grace Hopper,1.0,true
+James Gosling,Sun Microsystems,1.0,true
+Sun Microsystems,James Gosling,1.0,true
+Thomas Eugene Kurtz,John Kemeny,2.0,true
+John Kemeny,Thomas Eugene Kurtz,2.0,true
+Don Syme,Microsoft Research,1.0,true
+Vijay A. Saraswat,Ken Kahn,1.0,true
+Ken Kahn,Vijay A. Saraswat,1.0,true

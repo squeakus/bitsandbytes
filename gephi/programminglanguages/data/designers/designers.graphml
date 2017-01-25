@@ -1,0 +1,3800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+<key attr.name="label" attr.type="string" for="node" id="label"/>
+<key attr.name="Edge Label" attr.type="string" for="edge" id="edgelabel"/>
+<key attr.name="weight" attr.type="double" for="edge" id="weight"/>
+<key attr.name="Edge Id" attr.type="string" for="edge" id="edgeid"/>
+<key attr.name="r" attr.type="int" for="node" id="r"/>
+<key attr.name="g" attr.type="int" for="node" id="g"/>
+<key attr.name="b" attr.type="int" for="node" id="b"/>
+<key attr.name="x" attr.type="float" for="node" id="x"/>
+<key attr.name="y" attr.type="float" for="node" id="y"/>
+<key attr.name="size" attr.type="float" for="node" id="size"/>
+<key attr.name="Modularity Class" attr.type="int" for="node" id="modularity_class"/>
+<graph edgedefault="directed">
+<node id="Nicholas F. Benton">
+<data key="label">Nicholas F. Benton</data>
+<data key="modularity_class">0</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">86</data>
+<data key="b">171</data>
+<data key="x">56.323692</data>
+<data key="y">-183.91971</data>
+</node>
+<node id="Luca Cardelli">
+<data key="label">Luca Cardelli</data>
+<data key="modularity_class">0</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">86</data>
+<data key="b">171</data>
+<data key="x">96.01959</data>
+<data key="y">-146.54906</data>
+</node>
+<node id="Cédric Fournet">
+<data key="label">Cédric Fournet</data>
+<data key="modularity_class">0</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">86</data>
+<data key="b">171</data>
+<data key="x">142.25671</data>
+<data key="y">-164.78859</data>
+</node>
+<node id="PARC">
+<data key="label">PARC</data>
+<data key="modularity_class">1</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">-577.607</data>
+<data key="y">95.707344</data>
+</node>
+<node id="Butler Lampson">
+<data key="label">Butler Lampson</data>
+<data key="modularity_class">1</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">-606.26636</data>
+<data key="y">150.14813</data>
+</node>
+<node id="Warren Burton">
+<data key="label">Warren Burton</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-295.80298</data>
+<data key="y">721.93933</data>
+</node>
+<node id="Erik Meijer">
+<data key="label">Erik Meijer</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">100.12277</data>
+<data key="y">601.81335</data>
+</node>
+<node id="John Hughes">
+<data key="label">John Hughes</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-443.86285</data>
+<data key="y">512.75653</data>
+</node>
+<node id="Lennart Augustsson">
+<data key="label">Lennart Augustsson</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-230.84119</data>
+<data key="y">401.05502</data>
+</node>
+<node id="Philip Wadler">
+<data key="label">Philip Wadler</data>
+<data key="modularity_class">2</data>
+<data key="size">50.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">285.45956</data>
+<data key="y">41.46143</data>
+</node>
+<node id="Simon Peyton Jones">
+<data key="label">Simon Peyton Jones</data>
+<data key="modularity_class">2</data>
+<data key="size">43.25</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-24.279388</data>
+<data key="y">844.5822</data>
+</node>
+<node id="Paul Hudak">
+<data key="label">Paul Hudak</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">200.74655</data>
+<data key="y">364.24356</data>
+</node>
+<node id="Alastair Reid">
+<data key="label">Alastair Reid</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">52.715065</data>
+<data key="y">167.28603</data>
+</node>
+<node id="Brian Boutel">
+<data key="label">Brian Boutel</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-111.53466</data>
+<data key="y">576.67346</data>
+</node>
+<node id="Colin Runciman">
+<data key="label">Colin Runciman</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-146.23015</data>
+<data key="y">195.74255</data>
+</node>
+<node id="Dave Barton">
+<data key="label">Dave Barton</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">692.9564</data>
+<data key="y">92.25246</data>
+</node>
+<node id="John Launchbury">
+<data key="label">John Launchbury</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">353.0544</data>
+<data key="y">273.26758</data>
+</node>
+<node id="John Peterson">
+<data key="label">John Peterson</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">583.13947</data>
+<data key="y">287.03558</data>
+</node>
+<node id="Joseph Fasel">
+<data key="label">Joseph Fasel</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">436.85468</data>
+<data key="y">443.1737</data>
+</node>
+<node id="Kevin Hammond">
+<data key="label">Kevin Hammond</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-19.155783</data>
+<data key="y">332.2047</data>
+</node>
+<node id="Mark Jones">
+<data key="label">Mark Jones</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">504.25128</data>
+<data key="y">-160.18636</data>
+</node>
+<node id="Ralf Hinze">
+<data key="label">Ralf Hinze</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-376.37643</data>
+<data key="y">245.79314</data>
+</node>
+<node id="Thomas Johnsson">
+<data key="label">Thomas Johnsson</data>
+<data key="modularity_class">2</data>
+<data key="size">41.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">305.64502</data>
+<data key="y">661.6227</data>
+</node>
+<node id="Steven Pemberton">
+<data key="label">Steven Pemberton</data>
+<data key="modularity_class">3</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">128</data>
+<data key="b">22</data>
+<data key="x">801.9714</data>
+<data key="y">377.42566</data>
+</node>
+<node id="Leo Geurts">
+<data key="label">Leo Geurts</data>
+<data key="modularity_class">3</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">128</data>
+<data key="b">22</data>
+<data key="x">755.61816</data>
+<data key="y">322.8939</data>
+</node>
+<node id="Lambert Meertens">
+<data key="label">Lambert Meertens</data>
+<data key="modularity_class">3</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">128</data>
+<data key="b">22</data>
+<data key="x">720.753</data>
+<data key="y">354.6523</data>
+</node>
+<node id="Edward A. Ashcroft">
+<data key="label">Edward A. Ashcroft</data>
+<data key="modularity_class">4</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">64</data>
+<data key="b">22</data>
+<data key="x">-162.89954</data>
+<data key="y">-153.49152</data>
+</node>
+<node id="William W. Wadge">
+<data key="label">William W. Wadge</data>
+<data key="modularity_class">4</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">64</data>
+<data key="b">22</data>
+<data key="x">-210.63382</data>
+<data key="y">-133.24438</data>
+</node>
+<node id="Ascánder Suárez">
+<data key="label">Ascánder Suárez</data>
+<data key="modularity_class">5</data>
+<data key="size">14.0</data>
+<data key="r">171</data>
+<data key="g">107</data>
+<data key="b">22</data>
+<data key="x">227.76599</data>
+<data key="y">863.60486</data>
+</node>
+<node id="Xavier Leroy">
+<data key="label">Xavier Leroy</data>
+<data key="modularity_class">5</data>
+<data key="size">14.0</data>
+<data key="r">171</data>
+<data key="g">107</data>
+<data key="b">22</data>
+<data key="x">378.7853</data>
+<data key="y">887.7844</data>
+</node>
+<node id="Gérard Huet">
+<data key="label">Gérard Huet</data>
+<data key="modularity_class">5</data>
+<data key="size">14.0</data>
+<data key="r">171</data>
+<data key="g">107</data>
+<data key="b">22</data>
+<data key="x">364.92673</data>
+<data key="y">921.70465</data>
+</node>
+<node id="Guy Cousineau">
+<data key="label">Guy Cousineau</data>
+<data key="modularity_class">5</data>
+<data key="size">14.0</data>
+<data key="r">171</data>
+<data key="g">107</data>
+<data key="b">22</data>
+<data key="x">299.43872</data>
+<data key="y">825.6489</data>
+</node>
+<node id="Michel Mauny">
+<data key="label">Michel Mauny</data>
+<data key="modularity_class">5</data>
+<data key="size">14.0</data>
+<data key="r">171</data>
+<data key="g">107</data>
+<data key="b">22</data>
+<data key="x">234.08856</data>
+<data key="y">904.26697</data>
+</node>
+<node id="Pierre Weis">
+<data key="label">Pierre Weis</data>
+<data key="modularity_class">5</data>
+<data key="size">14.0</data>
+<data key="r">171</data>
+<data key="g">107</data>
+<data key="b">22</data>
+<data key="x">299.3593</data>
+<data key="y">951.5527</data>
+</node>
+<node id="Francis McCabe">
+<data key="label">Francis McCabe</data>
+<data key="modularity_class">6</data>
+<data key="size">5.0</data>
+<data key="r">128</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">702.59906</data>
+<data key="y">-122.08852</data>
+</node>
+<node id="Keith Clark">
+<data key="label">Keith Clark</data>
+<data key="modularity_class">6</data>
+<data key="size">5.0</data>
+<data key="r">128</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">675.069</data>
+<data key="y">-165.95058</data>
+</node>
+<node id="Sean Dorward">
+<data key="label">Sean Dorward</data>
+<data key="modularity_class">11</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">149</data>
+<data key="b">171</data>
+<data key="x">-671.201</data>
+<data key="y">355.12268</data>
+</node>
+<node id="Rob Pike">
+<data key="label">Rob Pike</data>
+<data key="modularity_class">11</data>
+<data key="size">11.75</data>
+<data key="r">22</data>
+<data key="g">149</data>
+<data key="b">171</data>
+<data key="x">-584.9901</data>
+<data key="y">380.81326</data>
+</node>
+<node id="Phil Winterbottom">
+<data key="label">Phil Winterbottom</data>
+<data key="modularity_class">11</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">149</data>
+<data key="b">171</data>
+<data key="x">-484.35675</data>
+<data key="y">349.18286</data>
+</node>
+<node id="Ross Ihaka">
+<data key="label">Ross Ihaka</data>
+<data key="modularity_class">7</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">86</data>
+<data key="x">355.54538</data>
+<data key="y">513.2998</data>
+</node>
+<node id="Robert Gentleman">
+<data key="label">Robert Gentleman</data>
+<data key="modularity_class">7</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">86</data>
+<data key="x">375.44055</data>
+<data key="y">531.68677</data>
+</node>
+<node id="Gilad Bracha">
+<data key="label">Gilad Bracha</data>
+<data key="modularity_class">8</data>
+<data key="size">11.75</data>
+<data key="r">171</data>
+<data key="g">86</data>
+<data key="b">22</data>
+<data key="x">301.79596</data>
+<data key="y">-104.09669</data>
+</node>
+<node id="Martin Odersky">
+<data key="label">Martin Odersky</data>
+<data key="modularity_class">8</data>
+<data key="size">11.75</data>
+<data key="r">171</data>
+<data key="g">86</data>
+<data key="b">22</data>
+<data key="x">200.32878</data>
+<data key="y">-125.00048</data>
+</node>
+<node id="David Stoutamire">
+<data key="label">David Stoutamire</data>
+<data key="modularity_class">8</data>
+<data key="size">11.75</data>
+<data key="r">171</data>
+<data key="g">86</data>
+<data key="b">22</data>
+<data key="x">380.32364</data>
+<data key="y">-122.42391</data>
+</node>
+<node id="William Maddox">
+<data key="label">William Maddox</data>
+<data key="modularity_class">8</data>
+<data key="size">11.75</data>
+<data key="r">171</data>
+<data key="g">86</data>
+<data key="b">22</data>
+<data key="x">271.54312</data>
+<data key="y">-145.6376</data>
+</node>
+<node id="Raymond F. Boyce">
+<data key="label">Raymond F. Boyce</data>
+<data key="modularity_class">9</data>
+<data key="size">5.0</data>
+<data key="r">128</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-158.68623</data>
+<data key="y">146.67567</data>
+</node>
+<node id="Donald D. Chamberlin">
+<data key="label">Donald D. Chamberlin</data>
+<data key="modularity_class">9</data>
+<data key="size">5.0</data>
+<data key="r">128</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-14.433071</data>
+<data key="y">125.80803</data>
+</node>
+<node id="Anders Hejlsberg">
+<data key="label">Anders Hejlsberg</data>
+<data key="modularity_class">32</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">64</data>
+<data key="b">171</data>
+<data key="x">175.16501</data>
+<data key="y">22.716415</data>
+</node>
+<node id="Niklaus Wirth">
+<data key="label">Niklaus Wirth</data>
+<data key="modularity_class">32</data>
+<data key="size">14.0</data>
+<data key="r">22</data>
+<data key="g">64</data>
+<data key="b">171</data>
+<data key="x">8.945589</data>
+<data key="y">12.715913</data>
+</node>
+<node id="Apple Inc.">
+<data key="label">Apple Inc.</data>
+<data key="modularity_class">32</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">64</data>
+<data key="b">171</data>
+<data key="x">14.000991</data>
+<data key="y">58.99303</data>
+</node>
+<node id="D. B. Russell">
+<data key="label">D. B. Russell</data>
+<data key="modularity_class">10</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">107</data>
+<data key="x">227.40001</data>
+<data key="y">-61.276676</data>
+</node>
+<node id="William Wulf">
+<data key="label">William Wulf</data>
+<data key="modularity_class">10</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">107</data>
+<data key="x">148.27138</data>
+<data key="y">-2.1798668</data>
+</node>
+<node id="Nico Habermann">
+<data key="label">Nico Habermann</data>
+<data key="modularity_class">10</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">107</data>
+<data key="x">330.28122</data>
+<data key="y">-2.8258977</data>
+</node>
+<node id="Ken Thompson">
+<data key="label">Ken Thompson</data>
+<data key="modularity_class">11</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">149</data>
+<data key="b">171</data>
+<data key="x">-556.4854</data>
+<data key="y">439.74036</data>
+</node>
+<node id="Robert Griesemer">
+<data key="label">Robert Griesemer</data>
+<data key="modularity_class">11</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">149</data>
+<data key="b">171</data>
+<data key="x">-514.1893</data>
+<data key="y">408.50146</data>
+</node>
+<node id="Kristen Nygaard">
+<data key="label">Kristen Nygaard</data>
+<data key="modularity_class">12</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">149</data>
+<data key="x">362.36276</data>
+<data key="y">-333.54343</data>
+</node>
+<node id="Ole-Johan Dahl">
+<data key="label">Ole-Johan Dahl</data>
+<data key="modularity_class">12</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">149</data>
+<data key="x">456.27057</data>
+<data key="y">-313.50458</data>
+</node>
+<node id="Birger Møller-Pedersen">
+<data key="label">Birger Møller-Pedersen</data>
+<data key="modularity_class">12</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">149</data>
+<data key="x">342.13715</data>
+<data key="y">-356.31924</data>
+</node>
+<node id="Ge Wang">
+<data key="label">Ge Wang</data>
+<data key="modularity_class">13</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">22</data>
+<data key="x">395.03867</data>
+<data key="y">-236.83963</data>
+</node>
+<node id="Perry R. Cook">
+<data key="label">Perry R. Cook</data>
+<data key="modularity_class">13</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">22</data>
+<data key="x">376.8515</data>
+<data key="y">-198.38475</data>
+</node>
+<node id="D.T. Barnard">
+<data key="label">D.T. Barnard</data>
+<data key="modularity_class">14</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">43</data>
+<data key="x">-110.49675</data>
+<data key="y">-172.33817</data>
+</node>
+<node id="James Cordy">
+<data key="label">James Cordy</data>
+<data key="modularity_class">14</data>
+<data key="size">11.75</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">43</data>
+<data key="x">-43.850246</data>
+<data key="y">-125.53417</data>
+</node>
+<node id="Ric Holt">
+<data key="label">Ric Holt</data>
+<data key="modularity_class">14</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">43</data>
+<data key="x">-15.568243</data>
+<data key="y">-146.7674</data>
+</node>
+<node id="D.B. Wortman">
+<data key="label">D.B. Wortman</data>
+<data key="modularity_class">14</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">43</data>
+<data key="x">-34.915813</data>
+<data key="y">-202.15674</data>
+</node>
+<node id="Bernard Vauquois">
+<data key="label">Bernard Vauquois</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-547.7978</data>
+<data key="y">-417.93768</data>
+</node>
+<node id="Friedrich L. Bauer">
+<data key="label">Friedrich L. Bauer</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-199.09619</data>
+<data key="y">-572.3958</data>
+</node>
+<node id="Peter Naur">
+<data key="label">Peter Naur</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-240.47688</data>
+<data key="y">-361.9241</data>
+</node>
+<node id="Adriaan van Wijngaarden">
+<data key="label">Adriaan van Wijngaarden</data>
+<data key="modularity_class">15</data>
+<data key="size">38.75</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-257.84824</data>
+<data key="y">-817.3105</data>
+</node>
+<node id="John Backus">
+<data key="label">John Backus</data>
+<data key="modularity_class">15</data>
+<data key="size">36.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-104.193275</data>
+<data key="y">-453.41455</data>
+</node>
+<node id="Klaus Samelson">
+<data key="label">Klaus Samelson</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-456.26624</data>
+<data key="y">-483.89786</data>
+</node>
+<node id="Alan Perlis">
+<data key="label">Alan Perlis</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-391.10977</data>
+<data key="y">-603.15015</data>
+</node>
+<node id="John McCarthy">
+<data key="label">John McCarthy</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-132.50342</data>
+<data key="y">-642.2269</data>
+</node>
+<node id="Heinz Rutishauser">
+<data key="label">Heinz Rutishauser</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-368.54846</data>
+<data key="y">-394.62473</data>
+</node>
+<node id="Charles Katz">
+<data key="label">Charles Katz</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-280.359</data>
+<data key="y">-626.0131</data>
+</node>
+<node id="Joseph Henry Wegstein">
+<data key="label">Joseph Henry Wegstein</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-311.45596</data>
+<data key="y">-519.8645</data>
+</node>
+<node id="Julien Green">
+<data key="label">Julien Green</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-552.2121</data>
+<data key="y">-588.6649</data>
+</node>
+<node id="Michael Woodger">
+<data key="label">Michael Woodger</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-452.18753</data>
+<data key="y">-716.329</data>
+</node>
+<node id="Hermann Bottenbruch">
+<data key="label">Hermann Bottenbruch</data>
+<data key="modularity_class">15</data>
+<data key="size">32.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-425.09616</data>
+<data key="y">-273.4191</data>
+</node>
+<node id="Leszek Pacholski">
+<data key="label">Leszek Pacholski</data>
+<data key="modularity_class">16</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">26.78946</data>
+<data key="y">-104.085556</data>
+</node>
+<node id="Kamil Skalski">
+<data key="label">Kamil Skalski</data>
+<data key="modularity_class">16</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">203.88069</data>
+<data key="y">-85.89372</data>
+</node>
+<node id="Michał Moskal">
+<data key="label">Michał Moskal</data>
+<data key="modularity_class">16</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">70.48172</data>
+<data key="y">-67.02061</data>
+</node>
+<node id="Paweł Olszta">
+<data key="label">Paweł Olszta</data>
+<data key="modularity_class">16</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">41.804726</data>
+<data key="y">-85.7107</data>
+</node>
+<node id="Norman Ramsey">
+<data key="label">Norman Ramsey</data>
+<data key="modularity_class">2</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-69.70026</data>
+<data key="y">895.5706</data>
+</node>
+<node id="Børge R. Christensen">
+<data key="label">Børge R. Christensen</data>
+<data key="modularity_class">17</data>
+<data key="size">5.0</data>
+<data key="r">86</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-350.2569</data>
+<data key="y">-5.5360203</data>
+</node>
+<node id="Benedict Løfstedt">
+<data key="label">Benedict Løfstedt</data>
+<data key="modularity_class">17</data>
+<data key="size">5.0</data>
+<data key="r">86</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-163.65579</data>
+<data key="y">15.803993</data>
+</node>
+<node id="Keith Packard">
+<data key="label">Keith Packard</data>
+<data key="modularity_class">18</data>
+<data key="size">5.0</data>
+<data key="r">64</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">275.8328</data>
+<data key="y">-691.15173</data>
+</node>
+<node id="Bart Massey">
+<data key="label">Bart Massey</data>
+<data key="modularity_class">18</data>
+<data key="size">5.0</data>
+<data key="r">64</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">352.95053</data>
+<data key="y">-722.6528</data>
+</node>
+<node id="Microsoft SQL Server">
+<data key="label">Microsoft SQL Server</data>
+<data key="modularity_class">19</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">43</data>
+<data key="x">91.69703</data>
+<data key="y">-646.56915</data>
+</node>
+<node id="Microsoft Research">
+<data key="label">Microsoft Research</data>
+<data key="modularity_class">19</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">43</data>
+<data key="x">123.75632</data>
+<data key="y">-607.4616</data>
+</node>
+<node id="SHARE">
+<data key="label">SHARE</data>
+<data key="modularity_class">20</data>
+<data key="size">5.0</data>
+<data key="r">107</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">-563.31696</data>
+<data key="y">255.30096</data>
+</node>
+<node id="IBM">
+<data key="label">IBM</data>
+<data key="modularity_class">20</data>
+<data key="size">5.0</data>
+<data key="r">107</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">-531.1286</data>
+<data key="y">291.40784</data>
+</node>
+<node id="Guy L. Steele">
+<data key="label">Guy L. Steele</data>
+<data key="modularity_class">21</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">-170.08267</data>
+<data key="y">-237.40665</data>
+</node>
+<node id="Gerald Jay Sussman">
+<data key="label">Gerald Jay Sussman</data>
+<data key="modularity_class">21</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">-387.3464</data>
+<data key="y">-162.19046</data>
+</node>
+<node id="Ralph Griswold">
+<data key="label">Ralph Griswold</data>
+<data key="modularity_class">22</data>
+<data key="size">7.25</data>
+<data key="r">107</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">454.7434</data>
+<data key="y">-48.827225</data>
+</node>
+<node id="David J. Farber">
+<data key="label">David J. Farber</data>
+<data key="modularity_class">22</data>
+<data key="size">7.25</data>
+<data key="r">107</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">498.24033</data>
+<data key="y">-6.660001</data>
+</node>
+<node id="Ivan P. Polonsky">
+<data key="label">Ivan P. Polonsky</data>
+<data key="modularity_class">22</data>
+<data key="size">7.25</data>
+<data key="r">107</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">574.1871</data>
+<data key="y">-26.691952</data>
+</node>
+<node id="Brendan Eich">
+<data key="label">Brendan Eich</data>
+<data key="modularity_class">23</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">128</data>
+<data key="x">72.006485</data>
+<data key="y">-719.951</data>
+</node>
+<node id="Ecma International">
+<data key="label">Ecma International</data>
+<data key="modularity_class">23</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">128</data>
+<data key="x">147.1008</data>
+<data key="y">-759.12445</data>
+</node>
+<node id="Alan Kay">
+<data key="label">Alan Kay</data>
+<data key="modularity_class">24</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">128</data>
+<data key="b">171</data>
+<data key="x">683.2614</data>
+<data key="y">605.97394</data>
+</node>
+<node id="Adele Goldberg">
+<data key="label">Adele Goldberg</data>
+<data key="modularity_class">24</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">128</data>
+<data key="b">171</data>
+<data key="x">691.6468</data>
+<data key="y">561.75916</data>
+</node>
+<node id="Daniel Henry Holmes Ingalls">
+<data key="label">Daniel Henry Holmes Ingalls</data>
+<data key="modularity_class">24</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">128</data>
+<data key="b">171</data>
+<data key="x">636.65735</data>
+<data key="y">583.9287</data>
+</node>
+<node id="Commissariat à l'énergie atomique et aux énergies alternatives">
+<data key="label">Commissariat à l'énergie atomique et aux énergies alternatives</data>
+<data key="modularity_class">25</data>
+<data key="size">5.0</data>
+<data key="r">43</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-607.8546</data>
+<data key="y">59.914085</data>
+</node>
+<node id="National Institute for Research in Computer Science and Control">
+<data key="label">National Institute for Research in Computer Science and Control</data>
+<data key="modularity_class">25</data>
+<data key="size">5.0</data>
+<data key="r">43</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-621.4877</data>
+<data key="y">13.5345955</data>
+</node>
+<node id="David A. Wagner">
+<data key="label">David A. Wagner</data>
+<data key="modularity_class">26</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">107</data>
+<data key="b">171</data>
+<data key="x">100.45448</data>
+<data key="y">87.06814</data>
+</node>
+<node id="Mark S. Miller">
+<data key="label">Mark S. Miller</data>
+<data key="modularity_class">26</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">107</data>
+<data key="b">171</data>
+<data key="x">29.53378</data>
+<data key="y">107.47206</data>
+</node>
+<node id="Roger Hui">
+<data key="label">Roger Hui</data>
+<data key="modularity_class">27</data>
+<data key="size">5.0</data>
+<data key="r">64</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">570.2681</data>
+<data key="y">-241.37563</data>
+</node>
+<node id="Kenneth E. Iverson">
+<data key="label">Kenneth E. Iverson</data>
+<data key="modularity_class">27</data>
+<data key="size">5.0</data>
+<data key="r">64</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">607.2989</data>
+<data key="y">-212.678</data>
+</node>
+<node id="Marc Bezem">
+<data key="label">Marc Bezem</data>
+<data key="modularity_class">28</data>
+<data key="size">11.75</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">86</data>
+<data key="x">-382.32166</data>
+<data key="y">54.174747</data>
+</node>
+<node id="Andrea Schaerf">
+<data key="label">Andrea Schaerf</data>
+<data key="modularity_class">28</data>
+<data key="size">11.75</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">86</data>
+<data key="x">-320.65366</data>
+<data key="y">-41.781803</data>
+</node>
+<node id="Jacob Brunekree">
+<data key="label">Jacob Brunekree</data>
+<data key="modularity_class">28</data>
+<data key="size">11.75</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">86</data>
+<data key="x">-337.08694</data>
+<data key="y">35.617565</data>
+</node>
+<node id="Krzysztof Apt">
+<data key="label">Krzysztof Apt</data>
+<data key="modularity_class">28</data>
+<data key="size">11.75</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">86</data>
+<data key="x">-501.7237</data>
+<data key="y">18.280048</data>
+</node>
+<node id="Vincent Partington">
+<data key="label">Vincent Partington</data>
+<data key="modularity_class">28</data>
+<data key="size">11.75</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">86</data>
+<data key="x">-461.9705</data>
+<data key="y">-22.65834</data>
+</node>
+<node id="Hanspeter Mössenböck">
+<data key="label">Hanspeter Mössenböck</data>
+<data key="modularity_class">32</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">64</data>
+<data key="b">171</data>
+<data key="x">117.34738</data>
+<data key="y">-22.517397</data>
+</node>
+<node id="Olivetti">
+<data key="label">Olivetti</data>
+<data key="modularity_class">29</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">149</data>
+<data key="b">22</data>
+<data key="x">97.86779</data>
+<data key="y">38.67644</data>
+</node>
+<node id="Digital Equipment Corporation">
+<data key="label">Digital Equipment Corporation</data>
+<data key="modularity_class">29</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">149</data>
+<data key="b">22</data>
+<data key="x">232.82848</data>
+<data key="y">127.284386</data>
+</node>
+<node id="Charles Halpern-Hamu">
+<data key="label">Charles Halpern-Hamu</data>
+<data key="modularity_class">14</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">43</data>
+<data key="x">-234.67192</data>
+<data key="y">-110.5509</data>
+</node>
+<node id="Paul Graham">
+<data key="label">Paul Graham</data>
+<data key="modularity_class">30</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">43</data>
+<data key="b">22</data>
+<data key="x">379.49945</data>
+<data key="y">15.328627</data>
+</node>
+<node id="Robert Tappan Morris">
+<data key="label">Robert Tappan Morris</data>
+<data key="modularity_class">30</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">43</data>
+<data key="b">22</data>
+<data key="x">470.63416</data>
+<data key="y">35.55815</data>
+</node>
+<node id="Barbara Liskov">
+<data key="label">Barbara Liskov</data>
+<data key="modularity_class">31</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">128</data>
+<data key="x">-185.01273</data>
+<data key="y">54.401142</data>
+</node>
+<node id="Massachusetts Institute of Technology">
+<data key="label">Massachusetts Institute of Technology</data>
+<data key="modularity_class">31</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">128</data>
+<data key="x">-354.10852</data>
+<data key="y">123.30035</data>
+</node>
+<node id="Acorn">
+<data key="label">Acorn</data>
+<data key="modularity_class">32</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">64</data>
+<data key="b">171</data>
+<data key="x">-47.364895</data>
+<data key="y">-5.9950566</data>
+</node>
+<node id="DEC Systems Research Center">
+<data key="label">DEC Systems Research Center</data>
+<data key="modularity_class">32</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">64</data>
+<data key="b">171</data>
+<data key="x">-7.8804774</data>
+<data key="y">-45.901157</data>
+</node>
+<node id="Wally Feurzeig">
+<data key="label">Wally Feurzeig</data>
+<data key="modularity_class">33</data>
+<data key="size">5.0</data>
+<data key="r">149</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-486.00027</data>
+<data key="y">217.68541</data>
+</node>
+<node id="Seymour Papert">
+<data key="label">Seymour Papert</data>
+<data key="modularity_class">33</data>
+<data key="size">5.0</data>
+<data key="r">149</data>
+<data key="g">171</data>
+<data key="b">22</data>
+<data key="x">-486.895</data>
+<data key="y">186.55591</data>
+</node>
+<node id="Allen Newell">
+<data key="label">Allen Newell</data>
+<data key="modularity_class">34</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">43</data>
+<data key="b">171</data>
+<data key="x">568.3995</data>
+<data key="y">-635.9709</data>
+</node>
+<node id="Herbert A. Simon">
+<data key="label">Herbert A. Simon</data>
+<data key="modularity_class">34</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">43</data>
+<data key="b">171</data>
+<data key="x">528.9126</data>
+<data key="y">-617.9126</data>
+</node>
+<node id="Cliff Shaw">
+<data key="label">Cliff Shaw</data>
+<data key="modularity_class">34</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">43</data>
+<data key="b">171</data>
+<data key="x">524.98596</data>
+<data key="y">-653.93713</data>
+</node>
+<node id="Dennis Ritchie">
+<data key="label">Dennis Ritchie</data>
+<data key="modularity_class">35</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">107</data>
+<data key="x">144.5901</data>
+<data key="y">-369.07666</data>
+</node>
+<node id="Bjarne Stroustrup">
+<data key="label">Bjarne Stroustrup</data>
+<data key="modularity_class">35</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">107</data>
+<data key="x">219.85999</data>
+<data key="y">-389.97128</data>
+</node>
+<node id="Brian Kernighan">
+<data key="label">Brian Kernighan</data>
+<data key="modularity_class">35</data>
+<data key="size">16.25</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">107</data>
+<data key="x">166.17992</data>
+<data key="y">-326.91983</data>
+</node>
+<node id="Bell Labs">
+<data key="label">Bell Labs</data>
+<data key="modularity_class">35</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">107</data>
+<data key="x">171.57779</data>
+<data key="y">-261.81763</data>
+</node>
+<node id="Robert Fourer">
+<data key="label">Robert Fourer</data>
+<data key="modularity_class">35</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">107</data>
+<data key="x">108.63047</data>
+<data key="y">-243.5161</data>
+</node>
+<node id="David Gay">
+<data key="label">David Gay</data>
+<data key="modularity_class">35</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">107</data>
+<data key="x">110.06207</data>
+<data key="y">-287.62164</data>
+</node>
+<node id="Andrei Alexandrescu">
+<data key="label">Andrei Alexandrescu</data>
+<data key="modularity_class">36</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">171</data>
+<data key="x">176.27715</data>
+<data key="y">216.42459</data>
+</node>
+<node id="Walter Bright">
+<data key="label">Walter Bright</data>
+<data key="modularity_class">36</data>
+<data key="size">5.0</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">171</data>
+<data key="x">197.73093</data>
+<data key="y">195.98732</data>
+</node>
+<node id="Cornelis H. A. Koster">
+<data key="label">Cornelis H. A. Koster</data>
+<data key="modularity_class">15</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-259.79407</data>
+<data key="y">-910.7891</data>
+</node>
+<node id="Barry J. Mailloux">
+<data key="label">Barry J. Mailloux</data>
+<data key="modularity_class">15</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-198.30618</data>
+<data key="y">-934.34937</data>
+</node>
+<node id="John E. L. Peck">
+<data key="label">John E. L. Peck</data>
+<data key="modularity_class">15</data>
+<data key="size">9.5</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-188.57704</data>
+<data key="y">-876.86444</data>
+</node>
+<node id="Jie Huang Fu">
+<data key="label">Jie Huang Fu</data>
+<data key="modularity_class">37</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">149</data>
+<data key="x">-128.37785</data>
+<data key="y">100.16267</data>
+</node>
+<node id="Léon Bottou">
+<data key="label">Léon Bottou</data>
+<data key="modularity_class">37</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">149</data>
+<data key="x">-96.93066</data>
+<data key="y">34.445435</data>
+</node>
+<node id="Yann LeCun">
+<data key="label">Yann LeCun</data>
+<data key="modularity_class">37</data>
+<data key="size">7.25</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">149</data>
+<data key="x">-66.72692</data>
+<data key="y">79.78299</data>
+</node>
+<node id="Alfred Aho">
+<data key="label">Alfred Aho</data>
+<data key="modularity_class">35</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">107</data>
+<data key="x">235.47795</data>
+<data key="y">-280.1965</data>
+</node>
+<node id="Peter J. Weinberger">
+<data key="label">Peter J. Weinberger</data>
+<data key="modularity_class">35</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">107</data>
+<data key="x">269.37097</data>
+<data key="y">-300.6727</data>
+</node>
+<node id="Edward Wimmers">
+<data key="label">Edward Wimmers</data>
+<data key="modularity_class">15</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-18.298874</data>
+<data key="y">-410.59375</data>
+</node>
+<node id="John Williams">
+<data key="label">John Williams</data>
+<data key="modularity_class">15</data>
+<data key="size">7.25</data>
+<data key="r">22</data>
+<data key="g">171</data>
+<data key="b">64</data>
+<data key="x">-10.005644</data>
+<data key="y">-429.23688</data>
+</node>
+<node id="Grace Hopper">
+<data key="label">Grace Hopper</data>
+<data key="modularity_class">38</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">64</data>
+<data key="x">-247.07356</data>
+<data key="y">-64.690636</data>
+</node>
+<node id="Jean E. Sammet">
+<data key="label">Jean E. Sammet</data>
+<data key="modularity_class">38</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">64</data>
+<data key="x">-150.61179</data>
+<data key="y">-24.231318</data>
+</node>
+<node id="James Gosling">
+<data key="label">James Gosling</data>
+<data key="modularity_class">39</data>
+<data key="size">5.0</data>
+<data key="r">43</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">125.124725</data>
+<data key="y">-454.68646</data>
+</node>
+<node id="Sun Microsystems">
+<data key="label">Sun Microsystems</data>
+<data key="modularity_class">39</data>
+<data key="size">5.0</data>
+<data key="r">43</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">95.875626</data>
+<data key="y">-500.3147</data>
+</node>
+<node id="Thomas Eugene Kurtz">
+<data key="label">Thomas Eugene Kurtz</data>
+<data key="modularity_class">40</data>
+<data key="size">5.0</data>
+<data key="r">149</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">511.9233</data>
+<data key="y">87.02301</data>
+</node>
+<node id="John Kemeny">
+<data key="label">John Kemeny</data>
+<data key="modularity_class">40</data>
+<data key="size">5.0</data>
+<data key="r">149</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">588.8181</data>
+<data key="y">58.93558</data>
+</node>
+<node id="Don Syme">
+<data key="label">Don Syme</data>
+<data key="modularity_class">19</data>
+<data key="size">5.0</data>
+<data key="r">171</data>
+<data key="g">22</data>
+<data key="b">43</data>
+<data key="x">169.22885</data>
+<data key="y">-561.0286</data>
+</node>
+<node id="Vijay A. Saraswat">
+<data key="label">Vijay A. Saraswat</data>
+<data key="modularity_class">41</data>
+<data key="size">5.0</data>
+<data key="r">86</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">52.11434</data>
+<data key="y">427.5117</data>
+</node>
+<node id="Ken Kahn">
+<data key="label">Ken Kahn</data>
+<data key="modularity_class">41</data>
+<data key="size">5.0</data>
+<data key="r">86</data>
+<data key="g">22</data>
+<data key="b">171</data>
+<data key="x">79.85432</data>
+<data key="y">469.39603</data>
+</node>
+<edge source="Nicholas F. Benton" target="Luca Cardelli">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Nicholas F. Benton" target="Cédric Fournet">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Luca Cardelli" target="Nicholas F. Benton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Luca Cardelli" target="Cédric Fournet">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cédric Fournet" target="Nicholas F. Benton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cédric Fournet" target="Luca Cardelli">
+<data key="weight">1.0</data>
+</edge>
+<edge source="PARC" target="Butler Lampson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Butler Lampson" target="PARC">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Warren Burton" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Erik Meijer" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Hughes" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lennart Augustsson" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Gilad Bracha">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="Martin Odersky">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="David Stoutamire">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Philip Wadler" target="William Maddox">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Simon Peyton Jones" target="Norman Ramsey">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Hudak" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alastair Reid" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Boutel" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Colin Runciman" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dave Barton" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Launchbury" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Peterson" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Joseph Fasel" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kevin Hammond" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark Jones" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralf Hinze" target="Thomas Johnsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Warren Burton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Erik Meijer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="John Hughes">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Lennart Augustsson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Paul Hudak">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Alastair Reid">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Brian Boutel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Colin Runciman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Dave Barton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="John Launchbury">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="John Peterson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Joseph Fasel">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Kevin Hammond">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Mark Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Johnsson" target="Ralf Hinze">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Steven Pemberton" target="Leo Geurts">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Steven Pemberton" target="Lambert Meertens">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Leo Geurts" target="Steven Pemberton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Leo Geurts" target="Lambert Meertens">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lambert Meertens" target="Steven Pemberton">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Lambert Meertens" target="Leo Geurts">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Edward A. Ashcroft" target="William W. Wadge">
+<data key="weight">1.0</data>
+</edge>
+<edge source="William W. Wadge" target="Edward A. Ashcroft">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ascánder Suárez" target="Xavier Leroy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ascánder Suárez" target="Gérard Huet">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ascánder Suárez" target="Guy Cousineau">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ascánder Suárez" target="Michel Mauny">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ascánder Suárez" target="Pierre Weis">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Xavier Leroy" target="Ascánder Suárez">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Xavier Leroy" target="Gérard Huet">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Xavier Leroy" target="Guy Cousineau">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Xavier Leroy" target="Michel Mauny">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Xavier Leroy" target="Pierre Weis">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gérard Huet" target="Ascánder Suárez">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gérard Huet" target="Xavier Leroy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gérard Huet" target="Guy Cousineau">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gérard Huet" target="Michel Mauny">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gérard Huet" target="Pierre Weis">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Guy Cousineau" target="Ascánder Suárez">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Guy Cousineau" target="Xavier Leroy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Guy Cousineau" target="Gérard Huet">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Guy Cousineau" target="Michel Mauny">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Guy Cousineau" target="Pierre Weis">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Michel Mauny" target="Ascánder Suárez">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Michel Mauny" target="Xavier Leroy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Michel Mauny" target="Gérard Huet">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Michel Mauny" target="Guy Cousineau">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Michel Mauny" target="Pierre Weis">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pierre Weis" target="Ascánder Suárez">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pierre Weis" target="Xavier Leroy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pierre Weis" target="Gérard Huet">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pierre Weis" target="Guy Cousineau">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Pierre Weis" target="Michel Mauny">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Francis McCabe" target="Keith Clark">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Keith Clark" target="Francis McCabe">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sean Dorward" target="Rob Pike">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sean Dorward" target="Phil Winterbottom">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Rob Pike" target="Sean Dorward">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Rob Pike" target="Phil Winterbottom">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Rob Pike" target="Ken Thompson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Rob Pike" target="Robert Griesemer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Phil Winterbottom" target="Sean Dorward">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Phil Winterbottom" target="Rob Pike">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ross Ihaka" target="Robert Gentleman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Robert Gentleman" target="Ross Ihaka">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gilad Bracha" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gilad Bracha" target="Martin Odersky">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gilad Bracha" target="David Stoutamire">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gilad Bracha" target="William Maddox">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Martin Odersky" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Martin Odersky" target="Gilad Bracha">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Martin Odersky" target="David Stoutamire">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Martin Odersky" target="William Maddox">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David Stoutamire" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David Stoutamire" target="Gilad Bracha">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David Stoutamire" target="Martin Odersky">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David Stoutamire" target="William Maddox">
+<data key="weight">1.0</data>
+</edge>
+<edge source="William Maddox" target="Philip Wadler">
+<data key="weight">1.0</data>
+</edge>
+<edge source="William Maddox" target="Gilad Bracha">
+<data key="weight">1.0</data>
+</edge>
+<edge source="William Maddox" target="Martin Odersky">
+<data key="weight">1.0</data>
+</edge>
+<edge source="William Maddox" target="David Stoutamire">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Raymond F. Boyce" target="Donald D. Chamberlin">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Donald D. Chamberlin" target="Raymond F. Boyce">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Anders Hejlsberg" target="Niklaus Wirth">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Anders Hejlsberg" target="Apple Inc.">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Niklaus Wirth" target="Anders Hejlsberg">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Niklaus Wirth" target="Apple Inc.">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Niklaus Wirth" target="Hanspeter Mössenböck">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Niklaus Wirth" target="Acorn">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Niklaus Wirth" target="DEC Systems Research Center">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Apple Inc." target="Anders Hejlsberg">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Apple Inc." target="Niklaus Wirth">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D. B. Russell" target="William Wulf">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D. B. Russell" target="Nico Habermann">
+<data key="weight">1.0</data>
+</edge>
+<edge source="William Wulf" target="D. B. Russell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="William Wulf" target="Nico Habermann">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Nico Habermann" target="D. B. Russell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Nico Habermann" target="William Wulf">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ken Thompson" target="Rob Pike">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ken Thompson" target="Robert Griesemer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Robert Griesemer" target="Rob Pike">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Robert Griesemer" target="Ken Thompson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kristen Nygaard" target="Ole-Johan Dahl">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kristen Nygaard" target="Birger Møller-Pedersen">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ole-Johan Dahl" target="Kristen Nygaard">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Birger Møller-Pedersen" target="Kristen Nygaard">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ge Wang" target="Perry R. Cook">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Perry R. Cook" target="Ge Wang">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D.T. Barnard" target="James Cordy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D.T. Barnard" target="Ric Holt">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D.T. Barnard" target="D.B. Wortman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="James Cordy" target="D.T. Barnard">
+<data key="weight">1.0</data>
+</edge>
+<edge source="James Cordy" target="Ric Holt">
+<data key="weight">6.0</data>
+</edge>
+<edge source="James Cordy" target="D.B. Wortman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="James Cordy" target="Charles Halpern-Hamu">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ric Holt" target="D.T. Barnard">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ric Holt" target="James Cordy">
+<data key="weight">6.0</data>
+</edge>
+<edge source="Ric Holt" target="D.B. Wortman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D.B. Wortman" target="D.T. Barnard">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D.B. Wortman" target="James Cordy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="D.B. Wortman" target="Ric Holt">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Friedrich L. Bauer">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="John Backus">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Klaus Samelson">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Alan Perlis">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Heinz Rutishauser">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Charles Katz">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Joseph Henry Wegstein">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Bernard Vauquois" target="Hermann Bottenbruch">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="John Backus">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Klaus Samelson">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Alan Perlis">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Heinz Rutishauser">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Charles Katz">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Joseph Henry Wegstein">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Friedrich L. Bauer" target="Hermann Bottenbruch">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Friedrich L. Bauer">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="John Backus">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Klaus Samelson">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Alan Perlis">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Heinz Rutishauser">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Charles Katz">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Joseph Henry Wegstein">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Peter Naur" target="Hermann Bottenbruch">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Friedrich L. Bauer">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="John Backus">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Klaus Samelson">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Alan Perlis">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Heinz Rutishauser">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Charles Katz">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Joseph Henry Wegstein">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Hermann Bottenbruch">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Cornelis H. A. Koster">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="Barry J. Mailloux">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Adriaan van Wijngaarden" target="John E. L. Peck">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Backus" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John Backus" target="Friedrich L. Bauer">
+<data key="weight">3.0</data>
+</edge>
+<edge source="John Backus" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John Backus" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John Backus" target="Klaus Samelson">
+<data key="weight">3.0</data>
+</edge>
+<edge source="John Backus" target="Alan Perlis">
+<data key="weight">3.0</data>
+</edge>
+<edge source="John Backus" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John Backus" target="Heinz Rutishauser">
+<data key="weight">3.0</data>
+</edge>
+<edge source="John Backus" target="Charles Katz">
+<data key="weight">3.0</data>
+</edge>
+<edge source="John Backus" target="Joseph Henry Wegstein">
+<data key="weight">3.0</data>
+</edge>
+<edge source="John Backus" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John Backus" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John Backus" target="Hermann Bottenbruch">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John Backus" target="Edward Wimmers">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Backus" target="John Williams">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Friedrich L. Bauer">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Klaus Samelson" target="John Backus">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Alan Perlis">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Klaus Samelson" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Heinz Rutishauser">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Charles Katz">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Joseph Henry Wegstein">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Klaus Samelson" target="Hermann Bottenbruch">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Alan Perlis" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Alan Perlis" target="Friedrich L. Bauer">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Alan Perlis" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Alan Perlis" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Alan Perlis" target="John Backus">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Alan Perlis" target="Klaus Samelson">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Alan Perlis" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Alan Perlis" target="Heinz Rutishauser">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Alan Perlis" target="Charles Katz">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Alan Perlis" target="Joseph Henry Wegstein">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Alan Perlis" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Alan Perlis" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Alan Perlis" target="Hermann Bottenbruch">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Friedrich L. Bauer">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="John Backus">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Klaus Samelson">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Alan Perlis">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Heinz Rutishauser">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Charles Katz">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Joseph Henry Wegstein">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John McCarthy" target="Hermann Bottenbruch">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Friedrich L. Bauer">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="John Backus">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Klaus Samelson">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Alan Perlis">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Charles Katz">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Joseph Henry Wegstein">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Heinz Rutishauser" target="Hermann Bottenbruch">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Charles Katz" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Charles Katz" target="Friedrich L. Bauer">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Charles Katz" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Charles Katz" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Charles Katz" target="John Backus">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Charles Katz" target="Klaus Samelson">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Charles Katz" target="Alan Perlis">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Charles Katz" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Charles Katz" target="Heinz Rutishauser">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Charles Katz" target="Joseph Henry Wegstein">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Charles Katz" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Charles Katz" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Charles Katz" target="Hermann Bottenbruch">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Friedrich L. Bauer">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="John Backus">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Klaus Samelson">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Alan Perlis">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Heinz Rutishauser">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Charles Katz">
+<data key="weight">3.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Joseph Henry Wegstein" target="Hermann Bottenbruch">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Friedrich L. Bauer">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="John Backus">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Klaus Samelson">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Alan Perlis">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Heinz Rutishauser">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Charles Katz">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Joseph Henry Wegstein">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Michael Woodger">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Julien Green" target="Hermann Bottenbruch">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Michael Woodger" target="Bernard Vauquois">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Friedrich L. Bauer">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Peter Naur">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Adriaan van Wijngaarden">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="John Backus">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Klaus Samelson">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Alan Perlis">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="John McCarthy">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Heinz Rutishauser">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Charles Katz">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Joseph Henry Wegstein">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Julien Green">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Michael Woodger" target="Hermann Bottenbruch">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Bernard Vauquois">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Friedrich L. Bauer">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Peter Naur">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Adriaan van Wijngaarden">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="John Backus">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Klaus Samelson">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Alan Perlis">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="John McCarthy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Heinz Rutishauser">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Charles Katz">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Joseph Henry Wegstein">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Julien Green">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Hermann Bottenbruch" target="Michael Woodger">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Leszek Pacholski" target="Kamil Skalski">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Leszek Pacholski" target="Michał Moskal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Leszek Pacholski" target="Paweł Olszta">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kamil Skalski" target="Leszek Pacholski">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kamil Skalski" target="Michał Moskal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kamil Skalski" target="Paweł Olszta">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Michał Moskal" target="Leszek Pacholski">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Michał Moskal" target="Kamil Skalski">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Michał Moskal" target="Paweł Olszta">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paweł Olszta" target="Leszek Pacholski">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paweł Olszta" target="Kamil Skalski">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paweł Olszta" target="Michał Moskal">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Norman Ramsey" target="Simon Peyton Jones">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Børge R. Christensen" target="Benedict Løfstedt">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Benedict Løfstedt" target="Børge R. Christensen">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Keith Packard" target="Bart Massey">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Bart Massey" target="Keith Packard">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Microsoft SQL Server" target="Microsoft Research">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Microsoft Research" target="Microsoft SQL Server">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Microsoft Research" target="Don Syme">
+<data key="weight">1.0</data>
+</edge>
+<edge source="SHARE" target="IBM">
+<data key="weight">1.0</data>
+</edge>
+<edge source="IBM" target="SHARE">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Guy L. Steele" target="Gerald Jay Sussman">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Gerald Jay Sussman" target="Guy L. Steele">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralph Griswold" target="David J. Farber">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ralph Griswold" target="Ivan P. Polonsky">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David J. Farber" target="Ralph Griswold">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David J. Farber" target="Ivan P. Polonsky">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ivan P. Polonsky" target="Ralph Griswold">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ivan P. Polonsky" target="David J. Farber">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brendan Eich" target="Ecma International">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ecma International" target="Brendan Eich">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alan Kay" target="Adele Goldberg">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alan Kay" target="Daniel Henry Holmes Ingalls">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Adele Goldberg" target="Alan Kay">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Adele Goldberg" target="Daniel Henry Holmes Ingalls">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Daniel Henry Holmes Ingalls" target="Alan Kay">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Daniel Henry Holmes Ingalls" target="Adele Goldberg">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Commissariat à l'énergie atomique et aux énergies alternatives" target="National Institute for Research in Computer Science and Control">
+<data key="weight">1.0</data>
+</edge>
+<edge source="National Institute for Research in Computer Science and Control" target="Commissariat à l'énergie atomique et aux énergies alternatives">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David A. Wagner" target="Mark S. Miller">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Mark S. Miller" target="David A. Wagner">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Roger Hui" target="Kenneth E. Iverson">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Kenneth E. Iverson" target="Roger Hui">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Marc Bezem" target="Andrea Schaerf">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Marc Bezem" target="Jacob Brunekree">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Marc Bezem" target="Krzysztof Apt">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Marc Bezem" target="Vincent Partington">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Andrea Schaerf" target="Marc Bezem">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Andrea Schaerf" target="Jacob Brunekree">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Andrea Schaerf" target="Krzysztof Apt">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Andrea Schaerf" target="Vincent Partington">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Jacob Brunekree" target="Marc Bezem">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Jacob Brunekree" target="Andrea Schaerf">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Jacob Brunekree" target="Krzysztof Apt">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Jacob Brunekree" target="Vincent Partington">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Krzysztof Apt" target="Marc Bezem">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Krzysztof Apt" target="Andrea Schaerf">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Krzysztof Apt" target="Jacob Brunekree">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Krzysztof Apt" target="Vincent Partington">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Vincent Partington" target="Marc Bezem">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Vincent Partington" target="Andrea Schaerf">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Vincent Partington" target="Jacob Brunekree">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Vincent Partington" target="Krzysztof Apt">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Hanspeter Mössenböck" target="Niklaus Wirth">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Olivetti" target="Digital Equipment Corporation">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Digital Equipment Corporation" target="Olivetti">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Charles Halpern-Hamu" target="James Cordy">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Paul Graham" target="Robert Tappan Morris">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Robert Tappan Morris" target="Paul Graham">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Barbara Liskov" target="Massachusetts Institute of Technology">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Massachusetts Institute of Technology" target="Barbara Liskov">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Acorn" target="Niklaus Wirth">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Acorn" target="DEC Systems Research Center">
+<data key="weight">1.0</data>
+</edge>
+<edge source="DEC Systems Research Center" target="Niklaus Wirth">
+<data key="weight">1.0</data>
+</edge>
+<edge source="DEC Systems Research Center" target="Acorn">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Wally Feurzeig" target="Seymour Papert">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Seymour Papert" target="Wally Feurzeig">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Allen Newell" target="Herbert A. Simon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Allen Newell" target="Cliff Shaw">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Herbert A. Simon" target="Allen Newell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Herbert A. Simon" target="Cliff Shaw">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cliff Shaw" target="Allen Newell">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cliff Shaw" target="Herbert A. Simon">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dennis Ritchie" target="Bjarne Stroustrup">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Dennis Ritchie" target="Brian Kernighan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Bjarne Stroustrup" target="Dennis Ritchie">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Kernighan" target="Dennis Ritchie">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Kernighan" target="Bell Labs">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Kernighan" target="Robert Fourer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Kernighan" target="David Gay">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Kernighan" target="Alfred Aho">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Brian Kernighan" target="Peter J. Weinberger">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Bell Labs" target="Brian Kernighan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Bell Labs" target="Robert Fourer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Bell Labs" target="David Gay">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Robert Fourer" target="Brian Kernighan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Robert Fourer" target="Bell Labs">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Robert Fourer" target="David Gay">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David Gay" target="Brian Kernighan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David Gay" target="Bell Labs">
+<data key="weight">1.0</data>
+</edge>
+<edge source="David Gay" target="Robert Fourer">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Andrei Alexandrescu" target="Walter Bright">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Walter Bright" target="Andrei Alexandrescu">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cornelis H. A. Koster" target="Adriaan van Wijngaarden">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cornelis H. A. Koster" target="Barry J. Mailloux">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Cornelis H. A. Koster" target="John E. L. Peck">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Barry J. Mailloux" target="Adriaan van Wijngaarden">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Barry J. Mailloux" target="Cornelis H. A. Koster">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Barry J. Mailloux" target="John E. L. Peck">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John E. L. Peck" target="Adriaan van Wijngaarden">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John E. L. Peck" target="Cornelis H. A. Koster">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John E. L. Peck" target="Barry J. Mailloux">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Jie Huang Fu" target="Léon Bottou">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Jie Huang Fu" target="Yann LeCun">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Léon Bottou" target="Jie Huang Fu">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Léon Bottou" target="Yann LeCun">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Yann LeCun" target="Jie Huang Fu">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Yann LeCun" target="Léon Bottou">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alfred Aho" target="Brian Kernighan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Alfred Aho" target="Peter J. Weinberger">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Peter J. Weinberger" target="Brian Kernighan">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Peter J. Weinberger" target="Alfred Aho">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Edward Wimmers" target="John Backus">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Edward Wimmers" target="John Williams">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Williams" target="John Backus">
+<data key="weight">1.0</data>
+</edge>
+<edge source="John Williams" target="Edward Wimmers">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Grace Hopper" target="Jean E. Sammet">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Jean E. Sammet" target="Grace Hopper">
+<data key="weight">1.0</data>
+</edge>
+<edge source="James Gosling" target="Sun Microsystems">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Sun Microsystems" target="James Gosling">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Thomas Eugene Kurtz" target="John Kemeny">
+<data key="weight">2.0</data>
+</edge>
+<edge source="John Kemeny" target="Thomas Eugene Kurtz">
+<data key="weight">2.0</data>
+</edge>
+<edge source="Don Syme" target="Microsoft Research">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Vijay A. Saraswat" target="Ken Kahn">
+<data key="weight">1.0</data>
+</edge>
+<edge source="Ken Kahn" target="Vijay A. Saraswat">
+<data key="weight">1.0</data>
+</edge>
+</graph>
+</graphml>

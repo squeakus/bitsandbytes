@@ -1,0 +1,43 @@
+# makefile for medit
+
+# objects list
+src    = $(wildcard *.c)
+objs   = $(src:.c=.o)
+header = $(wildcard *.h)
+
+# working dirs
+SRCDIR = sources
+OBJDIR = ./objects/$(ARCHI)
+ARCDIR = archives
+DIRDIR = objects $(OBJDIR) $(ARCDIR)
+VPATH  = $(SRCDIR)
+
+# objects list
+src    = $(wildcard $(SRCDIR)/*.c)
+header = $(wildcard $(SRCDIR)/*.h)
+objs   = $(patsubst $(SRCDIR)%,$(OBJDIR)%,$(src:.c=.o))
+
+#.SILENT:
+
+$(prog): $(DIRDIR) $(objs)
+	$(CC) -c $(CFLAGS) $(INCDIR) $(SRCDIR)/medit.c -o $(OBJDIR)/medit.o
+	$(CC) -o $@ $(objs) $(LDFLAGS) $(GLUT_LIB) $(GLU_LIB) $(XLIBS) -lm
+	cp $@ ./linuxMedit
+	mv $@ ./mesh/linuxMedit
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) -c $(CFLAGS) $(INCDIR) $< -o $@
+
+$(objs): $(header)
+
+$(DIRDIR):
+	@[ -d $@ ] || mkdir $@
+
+clean:
+	-rm $(objs) $(EXEDIR)/$(prog)
+
+tar:$(DIRDIR)
+	tar czf $(ARCDIR)/medit.`date +"%Y.%m.%d"`.tgz sources makefile
+
+target: $(prog)
+ 

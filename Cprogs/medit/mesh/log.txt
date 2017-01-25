@@ -1,0 +1,268 @@
+  -- Medit,  Release 3.0a (Nov. 30, 2007)
+     Copyright (c) LJLL, 1999-2007.
+     compiled:  Tue Dec 7 19:15:39 GMT 2010 .
+
+parsar: mesh[0] xxx
+animat: read file(s)
+getmesh: create mesh 1
+load xxx.1
+  Reading xxx.1.mesh
+allocate 112 points
+allocate 0 tria
+allocate 0 quad
+allocate 217 edges
+compute mesh box
+    Vertices        112
+    Edges           217
+    Bounding box:  x:[-2.293  34.058]  y:[-8.213  2.638]  z:[0  9.201]
+loadNextMesh: create 1 window(s)
+   Loading default options
+create palette 0.000000 0.000000
+    assign 127 references
+   Identifying sub-domains
+   Sorting 128 materials
+   Computing 3D scene
+    initCamera dmax 36.351
+    speed  0 0 -1
+    axe    -1 0 -0
+    sunpos 0 -0.5 -0.866025
+    eye   0 0 36.351
+    speed 0 0 -1
+    look  0 0 0
+create transformation
+create menus
+build display lists
+construct point list
+construct edge list
+create palette 0.000000 0.000000
+initGrafix
+
+ Rendering scene(s)
+reshape scene
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+debut sequence 1 a 10
+getmesh: create mesh 1
+load xxx.1
+  Loading xxx.1     allocate 112 points
+allocate 0 tria
+allocate 0 quad
+allocate 217 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+getmesh: create mesh 2
+load xxx.2
+  Loading xxx.2     allocate 102 points
+allocate 0 tria
+allocate 0 quad
+allocate 169 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+getmesh: create mesh 3
+load xxx.3
+  Loading xxx.3     allocate 112 points
+allocate 0 tria
+allocate 0 quad
+allocate 217 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+getmesh: create mesh 4
+load xxx.4
+  Loading xxx.4     allocate 84 points
+allocate 0 tria
+allocate 0 quad
+allocate 129 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+getmesh: create mesh 5
+load xxx.5
+  Loading xxx.5     allocate 98 points
+allocate 0 tria
+allocate 0 quad
+allocate 157 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+getmesh: create mesh 6
+load xxx.6
+  Loading xxx.6     allocate 108 points
+allocate 0 tria
+allocate 0 quad
+allocate 169 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+getmesh: create mesh 7
+load xxx.7
+  Loading xxx.7     allocate 78 points
+allocate 0 tria
+allocate 0 quad
+allocate 119 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+getmesh: create mesh 8
+load xxx.8
+  Loading xxx.8     allocate 114 points
+allocate 0 tria
+allocate 0 quad
+allocate 241 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+getmesh: create mesh 9
+load xxx.9
+  Loading xxx.9     allocate 112 points
+allocate 0 tria
+allocate 0 quad
+allocate 217 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+getmesh: create mesh 10
+load xxx.10
+  Loading xxx.10     allocate 110 points
+allocate 0 tria
+allocate 0 quad
+allocate 193 edges
+compute mesh box
+loadNextMesh: create 1 window(s)
+create palette 0.000000 0.000000
+    assign 127 references
+build display lists
+construct point list
+construct edge list
+setupView
+
+-- redraw scene 1, mesh 0
+hidden lines
+drawList 0x91d3b18 0 0
+drawList 0x91d3b18 0 0
+redrawStatusBar
+
+  Done.
+
+ Total running seconds:  0.13
+ Thank you for using Medit.

@@ -1,0 +1,28 @@
+Processing folder:  /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result
+output:  /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result
+1.Intrinsics analysis
+openMVG_main_SfMInit_ImageListing -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches -d /home/jonathan/data/linuxapps/openMVG/src/openMVG/exif/sensor_width_database/sensor_width_camera_database.txt -c 3
+2. OpenCV Compute features
+openMVG_main_ComputeFeatures_OpenCV -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches/sfm_data.json -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches -m SIFT_OPENCV -f 1
+2. Compute euclidean (L2) matches
+openMVG_main_ComputeMatches -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches/sfm_data.json -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches -f 1 -n ANNL2
+Matching time:0:00:00
+2. Compute matches (for the global SfM Pipeline)
+openMVG_main_ComputeMatches -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches/sfm_data.json -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches -r 0.8 -g e
+3. Do Global reconstruction
+openMVG_main_GlobalSfM -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches/sfm_data.json -m /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_global
+5. Colorize Structure
+openMVG_main_ComputeSfM_DataColor -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_global/sfm_data.bin -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_global/colorized.ply
+4. Structure from Known Poses (robust triangulation)
+openMVG_main_ComputeStructureFromKnownPoses -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_global/sfm_data.bin -m /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_global/robust.ply
+global time:0:00:00
+2. Compute matches
+openMVG_main_ComputeMatches -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches/sfm_data.json -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches -f 1 -n ANNL2
+3. Do Incremental/Sequential reconstruction
+openMVG_main_IncrementalSfM -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches/sfm_data.json -m /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_sequential
+5. Colorize Structure
+openMVG_main_ComputeSfM_DataColor -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_sequential/sfm_data.bin -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_sequential/colorized.ply
+4. Structure from Known Poses (robust triangulation)
+openMVG_main_ComputeStructureFromKnownPoses -i /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_sequential/sfm_data.bin -m /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_matches -o /home/jonathan/data/Jonathan/programs/openmvgscripts/morla2_result_result/sift_opencv_sequential/robust.ply
+sequential time:0:00:00
+total time:0:00:00

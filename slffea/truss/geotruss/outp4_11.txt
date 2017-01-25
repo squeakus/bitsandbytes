@@ -1,0 +1,156 @@
+What is the name of the file containing the 
+truss structural data? 
+number of elements:9 nodes:6 materials:1 dof:18 
+ 
+material (  0) Emod and Area  70000000000.0000    0.0004 
+ 
+connectivity for element (  0) 0 1  with matl   0
+connectivity for element (  1) 0 2  with matl   0
+connectivity for element (  2) 1 2  with matl   0
+connectivity for element (  3) 1 3  with matl   0
+connectivity for element (  4) 0 5  with matl   0
+connectivity for element (  5) 0 3  with matl   0
+connectivity for element (  6) 0 4  with matl   0
+connectivity for element (  7) 1 4  with matl   0
+connectivity for element (  8) 1 5  with matl   0
+
+node (0) coordinates    9.0000    9.0000    0.0000 
+node (1) coordinates    9.0000    0.0000    0.0000 
+node (2) coordinates    0.0000    0.0000    0.0000 
+node (3) coordinates    0.0000    9.0000    0.0000 
+node (4) coordinates    9.0000    9.0000    9.0000 
+node (5) coordinates    9.0000    0.0000    6.0000 
+
+node (   2) has an x prescribed displacement of:   0.000000e+00
+node (   3) has an x prescribed displacement of:   0.000000e+00
+node (   4) has an x prescribed displacement of:   0.000000e+00
+node (   5) has an x prescribed displacement of:   0.000000e+00
+node ( -10) has an x prescribed displacement of: 
+
+node (   2) has an y prescribed displacement of:   0.000000e+00
+node (   3) has an y prescribed displacement of:   0.000000e+00
+node (   4) has an y prescribed displacement of:   0.000000e+00
+node (   5) has an y prescribed displacement of:   0.000000e+00
+node ( -10) has an y prescribed displacement of: 
+
+node (   2) has an z prescribed displacement of:   0.000000e+00
+node (   3) has an z prescribed displacement of:   0.000000e+00
+node (   4) has an z prescribed displacement of:   0.000000e+00
+node (   5) has an z prescribed displacement of:   0.000000e+00
+node ( -10) has an z prescribed displacement of: 
+
+force vector for node: (   0)          0.0000      -50000.0000           0.0000 
+force vector for node: ( -10)
+
+stress for ele: ( -10)
+
+
+ This is the id matrix 
+
+ node(   0)    0      1      2  
+ node(   1)    3      4      5  
+ node(   2)   -1     -1     -1  
+ node(   3)   -1     -1     -1  
+ node(   4)   -1     -1     -1  
+ node(   5)   -1     -1     -1  
+
+ This is the lm matrix 
+
+ element(   0)    0       1       2       3       4       5   
+ element(   1)    0       1       2      -1      -1      -1   
+ element(   2)    3       4       5      -1      -1      -1   
+ element(   3)    3       4       5      -1      -1      -1   
+ element(   4)    0       1       2      -1      -1      -1   
+ element(   5)    0       1       2      -1      -1      -1   
+ element(   6)    0       1       2      -1      -1      -1   
+ element(   7)    3       4       5      -1      -1      -1   
+ element(   8)    3       4       5      -1      -1      -1   
+
+
+ This is the idiag matrix 
+
+dof     0       0
+dof     1       2
+dof     2       5
+dof     3       9
+dof     4      14
+dof     5      20
+
+
+ This is the force matrix 
+
+dof     0          0.00000
+dof     1     -50000.00000
+dof     2          0.00000
+dof     3          0.00000
+dof     4          0.00000
+dof     5          0.00000 
+
+ This is the solution to the problem 
+
+ node   0 x         0.003910 
+ node   0 y        -0.014970 
+ node   0 z        -0.004577 
+ node   1 x        -0.002527 
+ node   1 y        -0.009675 
+ node   1 z         0.001845  
+
+
+ These are the axial displacements and forces 
+
+ element (  0)  node   0       node   1
+ displacement    0.01497        0.00968
+ force       16474.42565   -16474.42565
+ element (  1)  node   0       node   2
+ displacement    0.00782        0.00000
+ force       17204.58145   -17204.58145
+ element (  2)  node   1       node   2
+ displacement    0.00253        0.00000
+ force        7862.29239    -7862.29239
+ element (  3)  node   1       node   3
+ displacement   -0.00505        0.00000
+ force      -11118.96053    11118.96053
+ element (  4)  node   0       node   5
+ displacement    0.00992        0.00000
+ force       25671.64303   -25671.64303
+ element (  5)  node   0       node   3
+ displacement   -0.00391        0.00000
+ force      -12165.47621    12165.47621
+ element (  6)  node   0       node   4
+ displacement   -0.00458        0.00000
+ force      -14240.06543    14240.06543
+ element (  7)  node   1       node   4
+ displacement   -0.00554        0.00000
+ force      -12179.39565    12179.39565
+ element (  8)  node   1       node   5
+ displacement    0.00185        0.00000
+ force        8612.13325    -8612.13325
+
+ These are the reaction forces 
+
+ node   2 x     2.002777e+04 
+ node   2 y     1.216548e+04 
+ node   2 z     0.000000e+00 
+ node   3 x    -2.002777e+04 
+ node   3 y     7.862292e+03 
+ node   3 z     0.000000e+00 
+ node   4 x     0.000000e+00 
+ node   4 y     8.612133e+03 
+ node   4 z     2.285220e+04 
+ node   5 x     0.000000e+00 
+ node   5 y     2.136010e+04 
+ node   5 z    -2.285220e+04 
+
+               These are the updated coordinates 
+
+                  x               y             z 
+
+ node   0    9.003910332    8.985029580   -0.004577164
+ node   1    8.997472835   -0.009675069    0.001845457
+ node   2    0.000000000    0.000000000    0.000000000
+ node   3    0.000000000    9.000000000    0.000000000
+ node   4    9.000000000    9.000000000    9.000000000
+ node   5    9.000000000    0.000000000    6.000000000 
+
+ elapsed CPU = 0.000000
+

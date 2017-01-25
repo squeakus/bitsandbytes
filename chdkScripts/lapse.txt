@@ -1,0 +1,26 @@
+This is yet another "accurate" intervalometer (that is, it uses
+get_tick_count to take frames at exact intervals rather than after
+specific delays, so small variances in shooting time don't affect the
+frame rate). Takes the frame delay (e.g. 5 seconds) and the shooting
+time (e.g. 1 hour 30 minutes), or "endless" to ignore the delay, the
+script will run until you press SET (or the shutter button) to stop
+it. For reasons outlined below, exit the script using SET, not the
+shutter button.  Extra features: During the inter-frame delays you can
+use the Display button (to turn it off to save power).  The script can
+"pre-focus" then lock the focus; this slightly speeds up shooting
+time, and avoids annoying focus changes during shooting. Press SET to
+end the script early and restore auto-focus. If you interrupt the
+script using the shutter button, you'll need to turn the camera off
+and on to restore autofocus. (So don't do that.) To enable pre-focus,
+set the "Focus" option to "Start" (1). To disable, set it to "Every"
+(0).  The script can optionally turn the display off after a set
+number of frames, to save power; as above you can turn the screen on
+again temporarily to see progress, and the script will turn it off
+again. For example, setting "Display off frame" to 3, the camera will
+turn the display off after the third frame. (Possibly the fourth,
+depending on how many display modes it has to cycle through). Press
+SET to exit cleanly and restore the display. If you interrupt the
+script using the shutter button, you'll need to turn the display back
+on manually. Set "Display off frame" to 0 to disable turning off the
+display.  Script Code (save as "lapse.lua" to your /CHDK/SCRIPTS/
+folder - note the .lua - this is a Lua script, not a uBasic script.)

@@ -1,0 +1,22 @@
+testGraph = mutant()
+analyser = analyser.Analyser('test',"moo",True)
+
+analyser.myGraph=testGraph
+analyser.parse_graph(testGraph)
+
+#using medit to show the graph
+meshName = "indiv.test.mesh"
+cmd = "ffmedit "+meshName
+process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+process.communicate()
+
+#using slffea to show the mesh
+analyser.apply_stresses()
+analyser.create_slf_file()
+analyser.test_slf_file()
+analyser.parse_results()
+analyser.print_stresses()
+analyser.show_analysis()
+
+#using matplot to show the graph
+#analyser.myGraph.show_picture()

@@ -1,0 +1,42 @@
+#jon_pylon.bnf first attempt at a pylon
+# Jonathan Byrne <jonathanbyrn@gmail.com>
+
+<S> ::= <program><call>
+<program> ::= def mutant():{<init><constants><define_funcs><make><rotate><return>}
+<define_funcs> ::= <centre><brace><arm><cross_brace><create_arm><make_section>
+<make> ::= <section1><section2><section3>
+
+<init> ::= pylon_graph = graph.graph(){}centre_ids = []{}all_brace_ids = []{}
+
+<constants> ::= max_width = 5000{}arm_width = max_width * 1.5{}mid_width = max_width * 0.3{}height = 55000{}
+
+<centre> ::= def centre(t):{pt_a, pt_b = section['base'], section['top']{}retval = (lambda t: interpolate(t, (pt_a, pt_b)))(t){}return retval}
+
+<brace> ::= def brace(t):{pt_a, pt_b = section['base_offset'], section['top_offset']{}retval = (lambda t: pt_plus_pt((lambda t: interpolate(t, (pt_a, pt_b)))(t),(lambda t: centre(t))(t)))(t){}return retval}
+
+<arm> ::= def arm(t):{retval = (lambda t: pt_plus_pt((lambda t: section['arm_offset'])(t),{}(lambda t: pt_plus_pt(centre(t),[0,0,0]))(t)))(t){}return retval}
+
+<cross_brace> ::= def cross_brace(base_id, t):{n = 2{}current_ids = []{}for j in range(n):{t_val = t + (j - (n - 1) / 2.0) / float(section['subsecs']){}if t_val > 1 : t_val = 1{}elif t_val < 0: t_val = 0{}xyz = brace(t_val){}if xyz[2] == 0:{new_id = pylon_graph.add_unique_node(xyz, 'base')}else:{new_id = pylon_graph.add_unique_node(xyz, 'crossbrace')}all_brace_ids.append(new_id){}current_ids.append(new_id){}pylon_graph.add_edge(base_id, new_id)}return current_ids}
+
+#<create_arm> ::= def create_arm(all_brace_ids, t):{if len(all_brace_ids) > 1:{xyz=arm(t){}arm_id=pylon_graph.add_unique_node(xyz,'line'){}for brace_id in all_brace_ids[0:2]:{pylon_graph.add_edge(arm_id, brace_id)}}}
+
+<create_arm> ::= def create_arm(all_brace_ids, t):{if len(all_brace_ids) > 1:{arm_ids = []{}startpoint = arm(t){}pylon_graph.add_unique_node(startpoint, 'line'){}for brace_id in all_brace_ids:{endpoint = pylon_graph.node[brace_id]['xyz']{}arm_points = subdivide_line(startpoint, endpoint, 2){}arm_ids.extend(pylon_graph.add_nodes(arm_points, 'arm', True))}pylon_graph.connect_neighbours(arm_ids, 5000, True)}}
+
+<make_section> ::= def make_section(add_lines=False):{brace_ids = []{}for i in range(section['subsecs'] + 1):{t = i / float(section['subsecs']){}node_id = pylon_graph.add_unique_node(centre(t), 'centre'){}centre_ids.append(node_id){}brace_ids.extend(cross_brace(node_id, t))}if add_lines:{lines = 3{}brace_set = brace_ids{}connectors = random.sample(brace_set, 6){}connectors.sort(){}connect_iter = iter(connectors){}for i in range(lines):{t = 0.3+i / float(lines){}link_a = connect_iter.next(){}link_b = connect_iter.next(){}create_arm([link_a, link_b], t)}}}
+
+<section1> ::= section = dict(base=[0, max_width, 0],top=[0, mid_width, height * 0.4],base_offset=[max_width,0,0],top_offset=[mid_width,0,0],arm_offset=[arm_width, -mid_width, 0.0],subsecs=<subsecs>){}make_section(){}
+
+<section2> ::= section = dict(base=[0 , mid_width, height * 0.4],top=[0, mid_width, height * 0.8],base_offset=[mid_width,0,0],top_offset=[mid_width,0,0],arm_offset=[arm_width, -mid_width, 0.0],subsecs=<subsecs>){}make_section(True){}
+
+<section3> ::= section = dict(base=[0 , mid_width, height * 0.8],top=[0, 0, height],base_offset=[mid_width,0,0], top_offset=[0,0,0],arm_offset=[arm_width, -mid_width, 0.0],subsecs=<subsecs>){}make_section(){}
+
+<rotate> ::= pylon_graph.connect_nodes(all_brace_ids){}rotated_graph = pylon_graph.copy_and_rotate_around_xy_plane(pylon_graph,180){}mirror_graph = pylon_graph.copy_and_offset_with_mirror(rotated_graph, [0, 0, 0], True){}full_graph = pylon_graph.copy_and_rotate_around_xy_plane(mirror_graph, 90){}final_graph = pylon_graph.sanitise_pylon(full_graph, mid_width){}pylon_graph.replace_graph(final_graph){}
+
+<fraction> ::= 0.1|0.2|0.3|0.4|0.5|0.6|0.7|0.8|0.9|1
+<subsecs> ::= 3|4|5 
+
+
+<return> ::= return pylon_graph{}
+<call> ::= XXXeval_or_exec_outputXXX = mutant()
+
+

@@ -1,0 +1,23 @@
+Index 	0	LIMB: 	NECK 
+Index 	1	LIMB: 	CHEST
+Index 	2	LIMB: 	LUMBAR 
+Index 	3	LIMB: 	ABS
+Index 	4	LIMB: 	R_PECS
+Index 	5	LIMB: 	R_SHOULDER
+Index 	6	LIMB: 	R_ELBOW
+Index 	7	LIMB: 	L_PECS
+Index 	8	LIMB: 	L_SHOULDER 
+Index 	9	LIMB: 	L_ELBOW
+Index 	10	LIMB: 	R_WRIST
+Index 	11	LIMB: 	L_WRIST
+Index 	12	LIMB: 	R_GLUTE
+Index 	13	LIMB: 	L_GLUTE
+Index 	14	LIMB: 	R_HIP
+Index 	15	LIMB: 	L_HIP
+Index 	16	LIMB: 	R_KNEE 
+Index 	17	LIMB: 	L_KNEE
+Index 	18	LIMB: 	R_ANKLE 
+Index 	19	LIMB: 	L_ANKLE
+
+
+

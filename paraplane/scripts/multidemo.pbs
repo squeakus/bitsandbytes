@@ -1,0 +1,32 @@
+#/bin/bash
+#PBS -l nodes=5:ppn=24
+#PBS -l walltime=00:30:00
+#PBS -N multitest
+#PBS -A ucd01
+#PBS -o out.log
+#PBS -e err.log
+
+echo "workdir $PBS_O_WORKDIR"
+echo "nodefile $PBS_NODEFILE"
+#cd $PBS_O_WORKDIR
+#cp $PBS_NODEFILE ./hostfile
+
+for k in `seq 5` ; do
+dirname=cfd`printf %03d $k` 
+echo "making dir: $dirname"
+mkdir $dirname
+cd $dirname
+
+# Run on first 24 hosts in hostfile (usually same node repeated 24 times):
+head -n 24 ../hostfile > ./hostfile
+#mpiexec -np 24 -machinefile hostfile simpleFoam -parallel &
+
+# Go back to original directory:
+cd ..
+
+# delete first 24 lines from hostile:
+# sed -i 1,24d ./hostfile
+
+# loop back to next k value:
+done
+

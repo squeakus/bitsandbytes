@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>OpenLayers Example</title>
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.12/proj4-src.js'></script>
+
+    </head>
+    <body>
+      <div style="width:100%; height:100%" id="map"></div>
+
+      <script defer="defer" type="text/javascript">
+	var lonlat = new OpenLayers.LonLat(-6.261489, 53.369717);
+	lonlat.transform('EPSG:4326', 'EPSG:900913');
+        var map = new OpenLayers.Map('map');
+        map.addLayer(new OpenLayers.Layer.OSM());
+	map.setCenter(lonlat, 15);
+
+        var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
+        var feature = new OpenLayers.Feature.Vector(
+        new OpenLayers.Geometry.Point(-6, 53),
+            {some:'data'},
+            {externalGraphic: 'img/marker.png', graphicHeight: 21, graphicWidth: 16});
+        vectorLayer.addFeatures(feature);
+        map.addLayer(vectorLayer);
+
+
+      </script>
+
+</body>
+</html>

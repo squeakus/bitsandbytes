@@ -1,0 +1,43 @@
+      numel numnp nmat nmode   This is the patch test 
+        4    9    1    0    1
+  matl no., E mod., Poiss. Ratio, mass, shear fac. 
+  0  30000000.0000    0.3000  2.292e4  0.8333
+ el no., connectivity, matl no 
+   0    0    3    4    1    0
+   1    1    4    5    2    0
+   2    3    6    7    4    0
+   3    4    7    8    5    0
+node no., coordinates 
+0    0.0000    0.0000   -0.5250
+1    0.1000    0.3000   -0.3500
+2   -0.2000    1.2000    0.4750
+3    0.3000    0.1000   -0.6000
+4    0.3000    0.5000   -0.3000
+5    0.5500    0.9000   -0.1250
+6    1.1000    0.0000   -1.0750
+7    0.8000    0.5000   -0.5500
+8    1.0000    1.0000   -0.2750
+The corresponding top nodes are:
+0    0.0000    0.0000   -0.4250
+1    0.1000    0.3000   -0.2500
+2   -0.2000    1.2000    0.5750
+3    0.3000    0.1000   -0.5000
+4    0.3000    0.5000   -0.2000
+5    0.5500    0.9000   -0.0250
+6    1.1000    0.0000   -0.9750
+7    0.8000    0.5000   -0.4500
+8    1.0000    1.0000   -0.1750
+prescribed displacement x: node  disp value
+    -10
+prescribed displacement y: node  disp value
+    -10
+prescribed displacement z: node  disp value
+    -10
+prescribed angle phi x: node angle value
+    -10
+prescribed angle phi y: node angle value
+    -10
+node with point load and 2 moments in z, phi x, phi y
+-10
+element and gauss pt. with stress and stress vector in lamina xx,yy,zz,yz,zx,xy
+-10

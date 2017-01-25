@@ -1,0 +1,13 @@
+#This creates a mesh, plots it and saves it
+<prog> ::=<import> <params> <borders> <panel> <buildMesh> <save>
+<import> ::= load "medit" include "cube.idp"
+<params> ::= int width=2,height=6,vert=1;int[int] Z=[0,width];
+<borders> ::= border base(t=0,width){x=t;y=0;};border sideA(t=0,height){x=width;y=t;};border top(t=width,0){x=t;y=height;};border sideB(t=height,0){x=0;y=t;};
+<panel> ::= mesh Th= buildmesh(base(<n>)+sideA(<n>)+sideB(<n>)+top(<n>));
+<adapt> ::= Th = adaptmesh(Th,1/<n>,IsMetric=1,nbvx=10000);
+<buildMesh> ::= mesh3 test=Cube(Th,Z,vert);
+<show> ::= medit("test",test,wait=1); 
+<save> ::= savemesh(test,"test.mesh");
+<flag> ::= 0|1|2|3|4|5
+<n> ::= 1|2|3|4|5|6|7|8|9|10
+

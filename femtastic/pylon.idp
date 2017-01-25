@@ -1,0 +1,42 @@
+load "msh3"
+load "medit"
+
+
+func mesh3 Pylon(int[int] &WIDTH,int[int] &HEIGHT,int[int] &DENSE,int height, int faces)
+{
+   int sections=3;
+   int width=WIDTH[0];
+   int s1d=DENSE[0],s2d=DENSE[1],s3d=DENSE[2];
+
+   //scaling the heights ratios to match the actual height
+   real total=HEIGHT[0]+HEIGHT[1]+HEIGHT[2];
+   real scale= height / total;
+   real s1h = HEIGHT[0]*scale,s2h=HEIGHT[1]*scale,s3h=HEIGHT[2]*scale;
+
+   //specify all the width changes
+   //int s1w = WIDTH[1],s2w = WIDTH[2],s3w = WIDTH[3],roof=WIDTH[3];
+   int s1w = (WIDTH[1]%width)+1,s2w=(WIDTH[2]%s1w)+1,s3w=(WIDTH[3]%s2w)+1,roof=s3w;
+//   cout  <<" width " << width << "roof " << roof  <<" s1 " << s1w <<" s2 " << s2w <<" s3 " << s3w <<"\n";
+   int s1delta = s1w-width;
+   int s2delta = s2w-s1w;
+   int s3delta = s3w-s2w;
+
+   //creating outline of the mesh
+   border base(t=0,width){x=t;y=0;};
+   border section1(t=0,s1h){x=width+(s1delta*(t/s1h));y=t;};
+   border section2(t=0,s2h){x=s1w+(s2delta*(t/s2h));y=s1h+t;};
+   border section3(t=0,s3h){x=s2w+(s3delta*(t/s3h));y=s1h+s2h+t;};
+   border roofSection(t=roof,0){x=t;y=height;};
+   border core(t=height,0){x=0;y=t;};
+   mesh test = buildmesh(base(1)+section1(s1d)+section2(s2d)+section3(s3d)+roofSection(1)+core(1));
+
+   //3D BUILD LAYERS STUFF
+   int MaxLayersT=(int(2*pi*faces/.5)/4)*4;
+   func zminT = 0;
+   func zmaxT = 2*pi;
+   func fx= x*cos(z);// / max( abs(cos(z) ), abs(sin(z)));
+   func fy= x*sin(z);// / max( abs(c5s(z) ), abs(sin(z)));
+   func fz= y;
+   mesh3 pylon =buildlayers(test,coef=.07, MaxLayersT,zbound=[zminT,zmaxT],transfo=[fx,fy,fz],facemerge=1,ptmerge=1);
+   return pylon;
+}

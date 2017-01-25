@@ -1,0 +1,19 @@
+   numel numnp nmat nmode  plane_stress_flag  This is the patch test 
+        4    9    1    0   0
+ matl no., E modulus and Poisson Ratio 
+  0  10000000.0000    0.3000  2.2383e3
+ el no., connectivity, matl no 
+   0    0    3    4    1    0
+   1    1    4    5    2    0
+   2    3    6    7    4    0
+   3    4    7    8    5    0
+node no., coordinates 
+0    0.0000    0.0000 
+1    0.1000    0.3000 
+2   -0.2000    1.2000 
+3    0.3000    0.1000 
+4    0.3000    0.5000 
+5    0.5500    0.9000 
+6    1.1000    0.0000 
+7    0.8000    0.5000 
+8    1.0000    1.0000 

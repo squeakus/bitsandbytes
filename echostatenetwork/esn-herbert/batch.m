@@ -1,0 +1,3 @@
+generateTrainTestData;
+generateNet;
+learnAndTest;

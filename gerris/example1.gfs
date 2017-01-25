@@ -1,0 +1,6 @@
+1 2 GfsSimulation GfsBox GfsGEdge {} {
+  GfsTime { end = 0 }
+}
+GfsBox {}
+1 1 right
+1 1 top

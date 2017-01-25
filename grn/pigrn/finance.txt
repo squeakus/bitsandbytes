@@ -1,0 +1,14 @@
+Money Market Fund: fancy savings account
+sharpe ratio: expected return - risk free rate / portfolio variance
+use of 2 sharpe ratios with an offset to handle sudden swings in the environment
+use of moving window for computing sharpe ratio.
+
+Sharpe alternatives: Jensen, Traynor
+market value: closing price * common shares outstanding
+drawdown: peak to trough decline during a specific period
+Null tags in DB: NA, NM, AF, SF,CF
+
+Estimated Asset risks affecting asset allocation
+
+how to annualize: 1.05^(1/12)-1
+

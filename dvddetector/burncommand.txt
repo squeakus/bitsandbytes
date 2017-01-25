@@ -1,0 +1,5 @@
+#using no compression
+mencoder dvd://1 -dvd-device /dev/sr0  -alang English -info srcform="DVD ripped by Exclusive Audio"  -oac mp3lame -lameopts abr:br=128  -ovc copy     -o "/home/jonathan/moulin_rouge.avi"
+
+#yusing some compression
+mencoder dvd://1 -dvd-device /dev/dvd  -alang English   -info srcform="DVD ripped by exclusive audio" -oac mp3lame -lameopts abr:br=128  -ovc lavc -lavcopts vcodec=mpeg4:vhq:v4mv:vqmin=2:vbitrate=844 -vf pp=de,crop=0:0:0:0,scale=480:-2    -o "/home/jonathan/kiss_kiss_bang_bang.avi"

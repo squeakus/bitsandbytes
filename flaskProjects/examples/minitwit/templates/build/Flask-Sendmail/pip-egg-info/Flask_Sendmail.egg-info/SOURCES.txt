@@ -1,0 +1,11 @@
+setup.cfg
+flask_sendmail/__init__.py
+flask_sendmail/connection.py
+flask_sendmail/mail.py
+flask_sendmail/message.py
+pip-egg-info/Flask_Sendmail.egg-info/PKG-INFO
+pip-egg-info/Flask_Sendmail.egg-info/SOURCES.txt
+pip-egg-info/Flask_Sendmail.egg-info/dependency_links.txt
+pip-egg-info/Flask_Sendmail.egg-info/not-zip-safe
+pip-egg-info/Flask_Sendmail.egg-info/requires.txt
+pip-egg-info/Flask_Sendmail.egg-info/top_level.txt

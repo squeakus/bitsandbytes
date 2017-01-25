@@ -1,0 +1,1103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!-- $Id: lex.html,v 1.2 2000/04/05 23:46:29 mib Exp $ -->
+<!-- $Source: /export/cvsroot/htdocs/overheads/lex_yacc/lex.html,v $ -->
+<!-- $Revision: 1.2 $ -->
+<!-- 
+     $Log: lex.html,v $
+     Revision 1.2  2000/04/05 23:46:29  mib
+     Add
+
+     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+               "http://www.w3.org/TR/html4/strict.dtd">
+
+     to start of all html documents.
+
+     Revision 1.1.1.1  1999/09/26 12:34:39  mib
+     LUV web site moved from previous hosting at Deakin.
+
+     Revision 1.8  1998/08/31 14:03:23  ghansper
+     Added "author" line.
+
+     Revision 1.7  1998/07/19 14:16:17  ghansper
+     Checked with weblint.
+
+     Revision 1.6  1998/07/13 13:33:01  ghansper
+     Added next/previous hyperlinks
+
+     Revision 1.5  1998/07/12 04:04:38  ghansper
+     Added example: squid-redirector
+     Added contents list with hyperlinks
+     2nd draft complete
+
+     Revision 1.4  1998/06/07 07:53:07  ghansper
+     1st draft completed.
+
+     Revision 1.3  1998/06/06 15:03:04  ghansper
+     Added chapter on actions, part of C-program interactions.
+
+     Revision 1.2  1998/06/06 12:12:58  ghansper
+     Added chapter Lex Patterns
+
+     Revision 1.1  1998/06/06 08:57:09  ghansper
+     Initial revision
+
+-->
+<HTML>
+<HEAD>
+   <TITLE>Lex - a text scanner</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H1>Lex - a text scanner</H1>
+<H2>Contents</H2>
+<UL>
+<LI><A href="#intro">Lex as a Stand-Alone tool</A>
+<LI><A href="#struct">Lex Program Structure</A>
+<LI><A href="#spec">The Lex Specification</A>
+<UL>
+<LI><A href="#patterns">Lex Patterns</A>
+<LI><A href="#actions">Lex Actions</A>
+<LI><A href="#prec">Precedence of Lex Patterns</A>
+<LI><A href="#longest">The "longest match" rule</A>
+</UL>
+<LI><A href="#lexc">Interaction between Lex and C</A>
+<UL>
+<LI><A href="#statemach">Lex is a State-Machine Generator</A>
+<LI><A href="#yylex">Lex generates yylex()</A>
+<LI><A href="#return">yylex() and return()</A>
+</UL>
+<LI><A href="#examples">Examples of Lex programs</A>
+<UL>
+<LI><A href="#squid">A Lex squid redirector</A>
+<LI><A href="#lex.parser">Using yylex() within a parser</A>
+</UL>
+<LI><A href="#make">Lex and make</A>
+</UL>
+<H2>Index to examples</H2>
+<UL>
+<LI><A href="#ripurl">rip-url - a URL extractor</A>
+<LI><A href="#striphtml">strip-html - remove HTML tags</A>
+<LI><A href="#ripurl2">rip-url for multiple files using yywrap()</A>
+<LI><A href="#redir">squid-redirector - a squid redirector</A>
+<LI><A href="#isitspam">isitspam - lex with a C-language parser</A>
+</UL>
+
+<H1><A name=intro>Lex as a Stand-Alone tool</A></H1>
+<P>Although Lex is often used as a front-end to a parser,
+it has been designed such that it can be used 
+stand-alone. Used in this fashion, Lex makes
+for a simple but very powerful text processing tool.
+<P>In the following discussion, we will be considering lex mostly in
+this role, without calling upon it's usual partner, <B><A href=yacc.html>yacc</A></B>.
+<H1><A name=struct>Lex Program Structure</A></H1>
+<P>A lex program has the following basic structure:
+<PRE>
+%{
+   <EM>C declarations and includes</EM>
+%}
+   <EM>Lex macro definitions and directives</EM>
+%%
+   <EM>Lex Specification
+   in the form of pattern/action statements like this:</EM>
+   keyword    { my_c_code(yytext); }
+%%
+   <EM>C language program (the rest)</EM>
+</PRE>
+<P>However, the only mandatory part is the first <CODE>%%</CODE>
+<P>The most important part of the Lex program is the 
+<EM>Lex Specification</EM>. This is a series of statements of the
+form:
+<PRE>
+<EM>pattern</EM>       <EM>action</EM>
+</PRE>
+<P>or to put it more practically:
+<PRE>
+<EM>regular_expression</EM>       <CODE>{ </CODE><EM>C-program statements</EM><CODE> }</CODE>
+</PRE>
+<P><A name=ripurl>The</A>
+simplest Lex program you can write would read the standard
+input, write to the standard output, and look something like this:
+<PRE>
+%%
+http:\/\/[^ \n&lt;&gt;&quot;]*	printf(&quot;%s\n&quot;,yytext);
+.|\n			;
+
+</PRE>
+<P>Which is a program which reads the standard input, extracts any
+hyper-text references, and writes then to the standard output.
+<P>To compile it, save it as <CODE>rip-url.l</CODE>
+and run the command:
+<PRE>
+	make LDLIBS=-ll rip-url
+</PRE>
+<P>
+And it's all done. Finished. You've just created an executable called <CODE>rip-url</CODE>. You can take the rest of the afternoon off.
+<P>That was <EM>too</EM> easy. So what did we <EM>really</EM> do?
+<HR>
+<H1><A name=spec>The Lex Specification</A></H1>
+<H2><A name=patterns>Lex Patterns</A></H2>
+<P>Lex Patterns are (more or less) standard Unix regular expressions,
+after the style of grep, sed, awk, perl etc. See the lex (or flex) man page for
+all the gory details, but here's a quick summary:
+<DL>
+<DT><CODE>alpha_numeric</CODE>
+<DD>Most characters are taken litterally, just like the "http" in
+our example. This includes all letter, digits, and _, plus several others
+They are, in effect, taken to be <B>single character</B> regular expressions
+<P>
+<DT><CODE>[abcde]</CODE>
+<DD>A <B>single character</B> regular expression consisting of any one of
+the characters in between the square backets <CODE>[&nbsp;]</CODE>
+<P>A range of characters may be specified by using a hyphen, like this
+<CODE>[A-Za-z]</CODE>
+<BR>To include the hyphen put it first or last in the group, like this
+<CODE>[-A-Za-z]</CODE>
+<BR>To include a <CODE>]</CODE>, put it first in the group, like this
+ <CODE>[]abc-]</CODE>
+<P>If the first character is <CODE>^</CODE>, it means any
+character <EM>except</EM> those listed.
+<P>So the second part of our example
+<BR><CODE>[^&nbsp;\n&lt;&gt;"]</CODE>
+<BR>means "anything <EM>but</EM> a space, newline,
+quote, less-than or greater-than" .
+<P>
+<DT><CODE>\</CODE>
+<DD>Any character following the <CODE>\</CODE> loses it's special
+meaning, and is taken litterally.
+So the <CODE>\/\/</CODE> in our example really means <CODE>//</CODE>
+<P>The <CODE>\</CODE> is also used to specify the following 
+special characters
+<TABLE BORDER=0 CELLPADDING=3>
+<TR><TD><CODE>\a</CODE><TD>0x7<TD>The alert (ie bell) character
+<TR><TD><CODE>\b</CODE><TD>0x8<TD>Backspace
+<TR><TD><CODE>\f</CODE><TD>0xC<TD>Form Feed
+<TR><TD><CODE>\n</CODE><TD>0xA<TD>New Line
+<TR><TD><CODE>\r</CODE><TD>0xD<TD>Carridge return
+<TR><TD><CODE>\t</CODE><TD>0x9<TD>Tab
+<TR><TD><CODE>\v</CODE><TD>0xB<TD>Vertical Tab
+<TR><TD><CODE>\0</CODE><TD>0x0<TD>Null character
+<TR><TD><CODE>\123</CODE><TD>0x53<TD>octal representation of a character
+<TR><TD><CODE>\x53</CODE><TD>0x53<TD>hexadecimal representation of a character
+</TABLE>
+<P>Caveat: Some of the above may be flex enhancements.
+<P>
+<DT><CODE>"text"</CODE>
+<DD>Characters between the quotes <CODE>""</CODE> lose their special
+meanings, and are intpreted litterally. So we could have written the
+first part of our pattern as
+<CODE>"http://"</CODE>
+instead of
+<CODE>http:\/\/</CODE>
+<P>
+<DT><CODE>^</CODE> and <CODE>$</CODE>
+<DD>The <CODE>^</CODE> and <CODE>$</CODE> characters constrain
+the regular expression to the start or end of the line,
+respectivelty.
+<P>
+<DT><CODE>+</CODE> and <CODE>*</CODE>
+<DD>The <CODE>+</CODE> and <CODE>*</CODE> imply repetition of the
+preceding <B>single character</B> regular expression.
+<P><CODE>+&nbsp;</CODE> means "one or more occurances of". 
+<BR><CODE>*&nbsp;</CODE> means "zero or more occurances of".
+<P>
+<DT><CODE>{3,5}</CODE>
+<DD>The range expression <CODE>{</CODE><EM>n1</EM><CODE>,</CODE><EM>n2</EM><CODE>}</CODE> 
+also implies repetition of the preceding regular expression.
+<P><CODE>{3,5}</CODE> means "3 to 5 occurances of".
+<BR><CODE>{2,} </CODE> means "2 or more occurances of".
+<BR><CODE>{3}  </CODE> means "exactly 3 occurances of".
+<P>
+<DT><CODE>?</CODE>
+<DD>The <CODE>?</CODE> implies that the preceding <B>single character</B>
+regular expression is optional.
+<BR>In effect, it means "zero or one occurances of".
+<P>
+<DT><CODE>(</CODE> and <CODE>)</CODE>
+<DD>The round backets imply grouping, such that the regular expression
+between the brackets is treated as if it was a <B>single character</B>
+(or nearly enough). See the discussion of precedence in the flex man-page for
+more information.
+<P>
+<DT><CODE>.</CODE>
+<DD>Any single character <EM>except</EM> a newline (\n)
+<P>
+<DT><CODE>|</CODE> 
+<DD>The <CODE>|</CODE> is used to specify a "logical OR" of two 
+regular expressions.
+The exact text which is OR'd is governed by the precedence
+rules, so it's best to use brackets, like this:
+<PRE>
+	(ftp|http|telnet):\/\/[^ \n&lt;&gt;&quot;]*
+</PRE>
+<P>
+<DT><CODE>/</CODE>
+<DD>The is <CODE>/</CODE> is used to specify a "trailing context".
+For example, the expression:
+<PRE>
+	C/-Program
+</PRE>
+<P>Matches the letter "C" iff it is followed by the text "-Program"
+Note that <EM>only</EM> the letter C is matched, and copied to yytext. 
+The "-Program" is not consumed by the rule, and will
+match subsequent regular expressions, too.
+<P>However, for the purposes of deciding the
+<A href="#longest">"longest match"</A>, the
+whole text "C-Program" is considered.
+<P>Putting <CODE>$</CODE> at the end of a regex is the same as
+putting <CODE>/\n</CODE>
+</DL>
+<HR>
+<P>Let's examine the 1st pattern in detail:
+<BR><CODE>http:\/\/[^ \n&lt;&gt;&quot;]*</CODE>
+<P>
+<TABLE BORDER=0 CELLPADDING=3>
+<TR VALIGN=TOP><TD>&nbsp;&nbsp;&nbsp;
+<TD><CODE>http:</CODE><TD>is taken litterally
+<TR VALIGN=TOP><TD>&nbsp;<TD><CODE>\/\/</CODE><TD>means two slashes <CODE>//</CODE>
+<TR VALIGN=TOP><TD>&nbsp;<TD><CODE>[^ \n&lt;&gt;&quot;]</CODE><TD>is a character-set, which 
+specifies the space, newline,quote or angle brackets. 
+However, since the 1st character is a caret ^, these characters are excluded
+from the set, and everything else is included.
+<TR VALIGN=TOP><TD>&nbsp;<TD><CODE>*</CODE><TD>means zero or more instances of the character-set 
+in the preceding <CODE>[...]</CODE>
+<TR VALIGN=TOP><TD>&nbsp;<TD><CODE>.|\n</CODE><TD>means everything else, one character 
+at a time. Since our action consists only of an empty statement ( <CODE>;</CODE> )
+the text is just discarded.
+</TABLE>
+<P>So our regular expression means:
+<DL><DT><DD>any string starting with "http://" and  which doesn't
+contain a space or <CODE>\n&lt;&gt;&quot;</CODE>
+</DL>
+<P>It is worth mentioning that, our reg-ex would not match
+<PRE>	HTTP://...</PRE>
+It is case-sensitive, unless we tell flex to build a case-insensitive
+lexer using the "-i" option.
+<P>The 2nd pattern-action statement is essential, because lex has
+a default action for any text which did not match <EM>any</EM> rule
+in the specification. The default action is to print it on the
+standard output.
+<P><A name=striphtml>This</A>
+ can be useful occasionally, if you just want to do a
+small modification on the input stream, such as stripping out
+html tags, and replacing text eg:
+<PRE>
+%%
+\&lt;[^&gt;]*\&gt;		;
+&amp;gt;			putchar('&gt;');
+&amp;lt;			putchar('&lt;');
+&amp;nbsp;			putchar(' ');
+&amp;amp;			putchar('&amp;');
+</PRE>
+<P>The above lex-specification will discard any text between
+angle-brackets (even multi-line text), and print the rest
+to the standard output. It is a working lex program, and
+you can compile it by saving it as <CODE>strip-html.l</CODE> and compiling it
+with:
+<PRE>
+	make LDLIBS=-ll strip-html
+</PRE>
+<P>The text matched by the first rule has an action statement which
+is simply <CODE>';'</CODE>  ie an empty statement. 
+This means that the text is read, but nothing else is done. The matched
+text is just 'swallowed' by the lexer.
+<P>The remainder of
+the text is copied to the output because it does
+<EM>not</EM> match <EM>any</EM> rule,
+and the default action takes over.
+<P>
+The above example might be a useful as a front-end to a program which indexes
+web-pages.
+<HR>
+<H2><A name=actions>Lex Actions</A></H2>
+<P>Lex Actions are typically just C-program statements.
+An action may be a single C-statement (as in our example), or
+multiple statements enclosed in curly braces <CODE>{ ... }</CODE>
+<P>An action within curly braces <CODE>{ ... }</CODE> can span
+multiple lines. No special continuation character is required,
+but each extra line should be indented by at least one tab
+from the start of the line, like this:
+<PRE>
+http:\/\/[^ \n&lt;&gt;&quot;]*	{
+			printf(&quot;%s\n&quot;,yytext);
+			}
+.|\n			;
+</PRE>
+<P>There are some other "special" actions which lex also
+understands.
+These can be invoked stand-alone, or from within the
+C-statements in curly braces <CODE>{ ... }</CODE>.
+<DL>
+<DT><CODE>ECHO;</CODE>
+<DD>print the matched text on the standard output
+<P>
+<DT><CODE>REJECT;</CODE>
+<DD>Do not consume the matched text. Re-interpret the input
+and use the "second best" match instead (see also
+the section <A href="#prec">Precedence of Lex Patterns</A>).
+<BR>This is a lot more complicated than it sounds! Use with caution.
+<P>
+<DT><CODE><A name=start>BEGIN <EM>state</EM>;</A></CODE>
+<DD>Set Lex into the named state (also know as a "start condition").
+<BR>Start conditions must be declared in the section
+<PRE>
+<EM>Lex macro definitions and directives</EM>
+</PRE>
+<P>Any pattern may be preceded with a start-condition of the
+form
+<PRE>
+	&lt;<EM>state</EM>&gt;
+	-- or --
+	&lt;<EM>state1</EM>,<EM>state2</EM>,<EM>etc</EM>&gt;
+</PRE>
+<P>The pattern is only applied when the appropriate state has
+been entered. States may be exclusive or inclusive.
+<P>An <B>exclusive</B> start-condition is where no other patterns are applied,
+except those with the appropriate start-condition.
+<BR>An <B>inclusive</B> start-condition is where the rule is
+applied <EM>together</EM>
+will any other rules which are not constrained by
+start-conditions.
+<P>Exclusive states are a feature of flex.
+<P>Start conditions are a powerful but easy to use feature of lex.
+See the man page for more information.
+<P>
+<DT><CODE>yymore()</CODE>
+<DD>Scan for the next pattern as usual, but prepend the
+text from this rule on the the yytext variable of the
+next rule.
+<P>
+<DT><CODE>yyless(<EM>n</EM>)</CODE>
+<DD>Retain the first <EM>n</EM> characters from this pattern,
+but return the rest to the input stream, such that they will be
+used in the next pattern-matching operation.
+</DL>
+<P>Lex also provides a number of variables which we can
+use within actions.
+<DL>
+<DT><CODE>(char *) yytext</CODE>
+<DD>This is a copy of the text which matched the current
+pattern, as a null-terminated string.
+<P>
+<DT><CODE>(int) yyleng</CODE>
+<DD>This is the length of <CODE>yytext</CODE>
+</DL>
+<P>Please read the man page on flex for other, more exotic
+ways of using actions, and their subtleties.
+<H2><A name=prec>Precedence of Lex Patterns</A></H2>
+<P>In most situations where we use regular expressions, there
+is only one regular expression active at a time.
+<P>In the case of a lex specificatoin, there are multiple regular
+expressions, all active <EM>at the same time</EM>.
+This leads to the situation where a particular piece of text
+may be legitimately interpreted by more than one lex pattern.
+<P>In order to resolve such ambiguities, lex uses the
+following rules of precedence:
+<UL>
+<LI>The longest possible match is chosen first
+(remember that any trailing context is considered part
+of the matched-length).
+<LI>If two patterns match the same length of text, the
+first pattern in the specification is used.
+</UL>
+<P>Please see the flex man page for further discussion of precedence,
+and discussions of the precedence of elements within a lex pattern.
+<H2><A name=longest>The "longest match" rule</A></H2>
+<P>As was mentioned in above in <A href="#prec"><B>Precedence of Lex Patterns</B></A>,
+lex patterns are to be considered "in parallel", and
+the longest match is the one which is eventaully chosen and it's
+action executed.
+<P>This point is worth stressing, as it is the most common cause
+of "unexpected behaviour" from a lex-generated program.
+<P>In particular, a rule like
+<PRE>
+	.*	{ ... }
+</PRE>
+<P>is usually a bad one to use, because <CODE>.*</CODE> would match an
+entire line of text, excluding only the trailing <CODE>\n</CODE>,
+for EVERY line in the input.
+<P>The net effect of this is that any other rules
+would not get a look-in. In those instances where <CODE>.*</CODE>
+is appropriate, it is best to precede it with a
+<A href="#start">start-condition</A>.
+<P>
+<HR>
+<H1><A name=lexc>Interaction between Lex and C</A></H1>
+<H2><A name=statemach>Lex is a State-Machine Generator</A></H2>
+<P>So far, we've discussed lex as if it interprets the regular expressions
+in our lex-specification at run-time, as sed or awk would do.
+However, this is not exactly true.
+<P>Lex is in reality a C-code generator, more like a compiler
+than an interpreter. Our Lex Specification is "compiled" into
+C-code.
+<P>The C-code Lex generates is in the form of a state-machine,
+which processed input character-by-character.
+Although this makes debugging tricky, is does have one important
+advantage: <EM>Pure, unadulterated, <B>speed</B></EM>.
+<P>Consider the case where you are trying to build a Web-Browser.
+If you did it the "traditional" way, using (for example)
+<CODE>scanf()</CODE> and <CODE>strcmp()</CODE>,
+you would get something like this:
+<PRE>
+while( (c=getchar()) != EOF ) {
+    if ( c != '&lt;' ) {
+	... write char to screen ...
+    } else {
+        char tag[20];
+       	scanf("%[A-Za-z]",tag);
+        if ( strcmp(tag,"HEAD") == 0 ) {
+    	    state = HEADER;
+        } else if ( strcmp(tag,"H1") == 0 ) {
+            ... change font to h1 ...
+        } else if ( strcmp(tag,"H2") == 0 ) {
+            ... change font to h2 ...
+        } else if ( strcmp(tag,"H3") == 0 ) {
+            ... change font to h3 ...
+        } else if ( strcmp( ...etc
+        }
+    }
+}
+</PRE>
+<P>So what's wrong with it? Readability for a start, but
+that's not our main concern.
+<P>Consider the code that is executed when the markup word
+&lt;H3&gt; is encountered.
+<UL>
+<LI>First, the statement:
+<BR><CODE>if ( c != '&lt;' )</CODE>
+<BR>detects that this
+is the start of a markup word.
+<LI>Now we scan the first part of the word in using <CODE>scanf()</CODE>
+So far, so good.
+<LI>Now we compare the string to the text "HEAD". The compare fails,
+but not until <CODE>strcmp()</CODE> has compared the 2nd character of the 2 strings
+<LI>We do the same again, using "H1". Again, we have to get
+to the second character of the strings to determine that
+our match has failed
+<LI>Eventually, we will get to the "H3" compare, but not before
+we have compared <CODE>'H'=='H'</CODE> three times, and discarded the subsequent result.
+</UL>
+<P>Given that there are dozens of possible markup words, we
+could be calling <CODE>strcmp()</CODE> dozens of times.
+Worse than than, <CODE>strcmp()</CODE> may have to get several characters into
+the compare before returning a negative result.
+<P>So it would be better if, instead, we did it like this:
+<PRE>
+        char tag[20];
+       	scanf("%[A-Za-z]",tag);
+        if ( tag[0] == 'H' ) {
+	    if( tag[1] == 'E' ) {
+		if (strcmp(tag,"HEAD") == 0 )
+    	            state = HEADER;
+	    } else if ( tag[1] == '1' && tag[2] == '\0' ) {
+                ... change font to h1 ...
+	    } else if ( tag[1] == '2' && tag[2] == '\0' ) {
+                ... change font to h2 ...
+	    } else if ( tag[1] == '3' && tag[2] == '\0' ) {
+                ... change font to h3 ...
+</PRE>
+<P>Now, we only do the comparision 'H'=='H' once, and go
+straight onto the second character. We have, without even
+realising it created a state-machine. When we scan the 
+character 'H', we go to a new 'state'. Each level of nested-if
+statements creates two, additional, sub-states of the 
+higher state.
+<P>But why settle for nested-if statements?
+We can create a top-level
+case-statement, with a case for each character A-Z, and have
+nested-case statements for processing the 2nd char...etc.
+<P>So we now have a high-performance scanner, but we've had to
+sacrifice what little readability of our original source-code
+still had.
+<P>Lex is designed to generate a suitable state-machine based
+text analyser, while maintaining readability at the source-level.
+<P>So we can have our cake, and eat it, too.
+
+<H2><A name=yylex>Lex generates yylex()</A></H2>
+<P>So far, we have been using lex in a "stand-alone" mode,
+and linking in the (hitherto mysterious) libl library
+using <CODE>LDLIBS=-ll</CODE>
+<P>In fact, lex does not generate a complete program.
+Lex generates a single function, 
+<BR><CODE>(int) yylex()</CODE>
+<BR>and some associated global variables.
+<P><CODE>yylex()</CODE> reads the input 
+indicated by the global variable
+<CODE>(FILE*) yyin</CODE>. 
+<BR><CODE>yyin</CODE> defaults to the standard input.
+<P>When lex reaches the end of the file it is reading, it
+calls a function <CODE>(int) yywrap()</CODE>
+If <CODE>yywrap()</CODE> returns non-zero, <CODE>yylex()</CODE>
+returns a zero value.
+If <CODE>yywrap()</CODE> returns zero,
+yylex() keeps scanning, from where it left off, with whatever
+input is available on <CODE>yyin</CODE>.
+This is only useful if <CODE>yywrap()</CODE>
+has changed <CODE>yyin</CODE> to provide for additional input.
+<P>The library libl (or libfl for flex) provides two functions which 
+are needed to complete our stand-alone lex program:
+<UL>
+<LI><CODE>main()</CODE>
+<BR>...which simply calls <CODE>yylex()</CODE>
+<LI><CODE>yywrap()</CODE>
+<BR>...which always returns non-zero.
+</UL>
+<P><A name=ripurl2>Let's</A>
+ rewrite rip-url such that we do not need the
+standard libl, and add a few more features along the way.
+<PRE>
+%{
+#include &lt;stdio.h&gt;
+#include &lt;errno.h&gt;
+int file_num;
+int file_num_max;
+char **files;
+extern int errno;
+%}
+%%
+(ftp|http):\/\/[^ \n&lt;&gt;"]*	printf("%s\n",yytext);
+.|\n			;
+%%
+int main(int argc, char *argv[]) {
+	file_num=1;
+	file_num_max = argc;
+	files = argv;
+	if ( argc &gt; 1 ) {
+		if ( (yyin = fopen(argv[file_num],"r")) == 0 ) {
+			perror(argv[file_num]);
+			exit(1);
+		}
+	}
+	while( yylex() )
+		;
+	return 0;
+}
+
+int yywrap() {
+	fclose(yyin);
+	if ( ++file_num &lt; file_num_max ) {
+		if ( (yyin = fopen(files[file_num],"r")) == 0 ) {
+			perror(files[file_num]);
+			exit(1);
+		}
+		return 0;
+	} else {
+		return 1;
+	}
+}
+</PRE>
+<P>We now have
+<UL>
+<LI>a function <CODE>main()</CODE> which opens the
+first file (if specified) and calls <CODE>yylex()</CODE>
+<LI>When <CODE>yylex()</CODE> finished with the first file, it
+calls <CODE>yywrap()</CODE>, which opens the next file,
+and <CODE>yylex()</CODE> continues.
+<LI>When <CODE>yywrap()</CODE> has exhausted all the command line arguments,
+it returns 1, and <CODE>yylex()</CODE> returns with value 0 (but we don't
+use the return value).
+</UL>
+<P>Moreover, since we have now provided both <CODE>main()</CODE> and
+<CODE>yywrap()</CODE>, we no longer need the libl library, and
+we can compile rip-url using simply:
+<PRE>
+	make rip-url
+</PRE>
+<P>Notice that the libl library (lex library) is required <EM>only</EM>
+if we do not provide <CODE>main()</CODE> or <CODE>yywrap()</CODE>. The libl library is not
+required for any of the text-processing - this is all done by the
+lex-generated C-code.
+
+<H2><A name=return>yylex() and return()</A></H2>
+<P>Although none of our examples have so far done so, it is
+valid to execute a <CODE>return()</CODE> statement within a lex rule.
+<P><CODE>yylex()</CODE> is of type <CODE>int</CODE>, so a non-zero
+integer value would normally be returned.
+Returning zero would be ambiguous, because the zero value is what is
+returned by <CODE>yylex()</CODE> when it encounters and end-of-file,
+<EM>and</EM>
+<CODE>yywrap()</CODE> returns a non-zero.
+<P>After <CODE>yylex()</CODE> has returned, it is possible to call it
+again and again, and the scanner will continue exactly where it
+left off each time. If any start-condition was in force when
+the <CODE>return()</CODE> was executed,
+it will still apply when <CODE>yylex()</CODE> is
+called again. 
+<P>This aspect of <CODE>yylex()</CODE> plays a key role 
+when lex is being used as a front-end
+to a parser, such as yacc.
+<P>When writing a stand-alone lex program, it is generally not required
+to have a <CODE>return()</CODE> statement within a lex rule.
+<HR>
+<H1><A name=examples>Examples of Lex programs</A></H1>
+<H2><A name=squid>A Lex squid redirector</A></H2>
+<P>If you are using the 
+<A href="http://www.nlanr.net/Squid/"><B>Squid</B></A>
+http proxy (and who doesn't?) you should be aware that it
+supports redirectors.
+<P>A squid redirector is a pipe, which is invoked by squid,
+fed a line of text at a time, like this:
+<PRE>
+	url ip-address/fqdn ident method
+</PRE>
+<P>Where:
+<DL>
+<DT><CODE>url</CODE>
+<DD>is the requested URL
+<DT><CODE>ip-address</CODE>
+<DD>is the IP-address of the host where the URL request came from
+<DT><CODE>fqdn</CODE>
+<DD>fully qualified domain-name of the host where the request came from,
+if available, otherwise '-'
+<DT><CODE>ident</CODE>
+<DD>Is the result of the ident_lookup, if enabled in the config file,
+otherwise '-'
+<DT><CODE>method</CODE>
+<DD>is GET, PUT, POST etc.
+</DL>
+<P>The redirector program writes either a blank line, or a new URL.
+In the later case, the new URL is fetched in lieu of the original
+(hence "redirector"). The most obvious application is for virtual-hosting,
+where a single squid proxy is made to look like serveral different
+servers.
+<P>Squid redirectors are typically implemented using regular expressions
+of some kind. The most obvious tools for implementing redirectors
+would be programs like sed, awk or perl.
+<P>All of these are really over-kill, in that they use a complex program
+to solve a simple problem. As such, they use more memory and CPU
+capacity than is strictly necessary.
+<P>If you have a busy squid proxy, you would probably want to use
+a special C-program to act as your redirector, such as <B>squirm</B> (see
+<A href="http://www.senet.com.au/squirm/">http://www.senet.com.au/squirm</A>).
+<P>Lex is designed with performance being a major goal. That makes
+lex an ideal candidate for implementing a squid-redirector for
+a performance-critical application.
+<P>The proof of whether or not lex is actually faster than it's
+alternatives is "left as an exercise
+to the reader" <CODE><B>:-)</B></CODE>
+<P><A name=redir>A </A>
+lex-based squid redirector would look something like this:
+<PRE>
+%x SKIP
+%x COPY
+%option always-interactive
+%%
+&quot;http://www.debian.org/&quot;	|
+&quot;http://www.yahoo.com/&quot;		{
+			yytext[yyleng-1] = '\0';
+			printf(&quot;%s.au/&quot;,yytext);
+			BEGIN COPY;
+			}
+&quot;http://&quot;(www.)?&quot;altavista.digital.com/&quot;	{
+			printf(&quot;http://www.altavista.yellowpages.com.au/&quot;);
+			BEGIN COPY;
+			}
+&quot;ftp://sunsite.anu.edu.au/pub/linux/&quot;	|
+&quot;ftp://sunsite.unc.edu/pub/Linux/&quot;	|
+&quot;ftp://ftp.funet.fi/pub/Linux/&quot;		{
+			printf(&quot;ftp://ftp.monash.edu.au/pub/linux/&quot;);
+			BEGIN COPY;
+			}
+&quot;http://weather/&quot;	{
+			printf(&quot;http://www.bom.gov.au/&quot;);
+			BEGIN COPY;
+			}
+&quot;http://bypass.&quot;	{ printf(&quot;http://&quot;); BEGIN COPY; }
+&quot;ftp://bypass.&quot;		{ printf(&quot;ftp://&quot;); BEGIN COPY; }
+&lt;COPY&gt;[^ \n]		ECHO;
+&lt;COPY&gt;&quot; &quot;		BEGIN SKIP;
+.			BEGIN SKIP;
+&lt;SKIP&gt;.			;
+&lt;*&gt;\n			{ putchar('\n'); fflush(stdout); BEGIN 0; }
+%%
+</PRE>
+<P>To build the above redirector, save it to a file such as
+<CODE>squid-redirector.l</CODE> and build it using:
+<PRE>
+	make LDLIBS=-ll squid-redirector 
+</PRE>
+<P>Note that it is vital that the redirector process does not
+buffer it's input or output by more than a single line at a time,
+otherwise squid will 'hang'.
+The line <CODE>%option&nbsp;always-interactive</CODE> takes care of the
+input, while the statement <CODE>fflush(stdout);</CODE> takes
+care of the output.
+<P>Some key features of the above program:
+<UL>
+<LI>In the first action, we actually modify <CODE>yytext</CODE> before
+writing it out. We are free to modify <CODE>yytext</CODE>
+as we would any string variable
+(with all the usual perils) provided that we do not use
+<CODE>yyless()</CODE> afterwards. Refer to the flex man page for
+more information. Note in particular the lex-directives
+<CODE>%array</CODE> and <CODE>%pointer</CODE> in the documentation,
+and how they impact <CODE>yyless()</CODE>
+<P>
+<LI>The directive <CODE>%option&nbsp;always-interactive</CODE>
+is essential in this case. Without it, flex will try to read an extra
+character ahead, even after the newline.
+In the absence of any character to read, this will result in
+the program going into a blocked state
+(waiting for input), before it writes out the result of the
+current line. This will cause squid to hang.
+<BR>The <CODE>%option&nbsp;always-interactive</CODE> tells
+flex to do the minimal look-ahead only. In this case, the rule
+which contains the newline is unambiguous, and there
+is no need for look-ahead. Hence this option prevents unwanted
+buffering on the input.
+<P>
+<LI>After writing the output, we must use <CODE>fflush()</CODE>
+to defeat unwanted buffering on the output. Otherwise,
+the output will just sit around in a buffer instead of being
+sent straight to the squid process. Again, this would cause
+squid to hang.
+<P>
+<LI>The (exclusive) start-condition <CODE>SKIP</CODE> is used to discard
+input. This happens when either
+<UL>
+<LI>the initial text does not match
+any of the explicit rules ("http://...").
+<LI>after the first space in a URL which is being modified
+</UL>
+<P>
+<LI>If none of our explicit rules (ie "http://...") match,
+we use the single-dot rule to put us straight into the state
+<CODE>SKIP</CODE>. We are relying on the "longest match"
+mechanisim to ensure that the explicit rules are given 
+preference over the default rule.
+<BR>In this case, we want to
+write a blank line instead of a modified URL.
+<P>
+<LI>If one of our explicit rules (ie "http://...") match,
+then we write the first part of the URL using <CODE>printf()</CODE>,
+and immediately invoke the
+(exclusive) start-condition <CODE>COPY</CODE>.
+From here on, 
+the rest of the modified URL is copied from the input to the
+output (up to the first space).
+<BR>The lex macro ECHO is used as a matter of convinience,
+<CODE>putchar()</CODE> would be just as good.
+<P>
+<LI>We could use a non-exclusive start-condition for SKIP,
+but then we would have to change the rule to:
+<BR><CODE>&lt;SKIP&gt;.*	;</CODE>
+<BR>to ensure that the SKIP rule takes precedence over
+the other rules, by virtue of being the "longest match" rule.
+It would have to appear <EM>before</EM> the other rules too, just to
+be safe. 
+<P>The same applies for <CODE>COPY</CODE>.
+<P>
+<LI>The statement <CODE>BEGIN 0;</CODE> is used at every newline
+to reset the start-condition to it's "normal" state (ie when no start-condition
+applies).
+<P>
+<LI>The start-condition <CODE>&lt;*&gt;</CODE> means that the
+rule <CODE>\n</CODE> applies for <EM>all</EM> start-conditions,
+even the exclusive ones <CODE>SKIP</CODE> and <CODE>COPY</CODE>.
+<P>
+<LI>The redirector creates a synonym "weather" for the
+site www.bom.gov.au
+<P>
+<LI>We have provided a feature whereby we can effectively
+bypass our redirector by using, eg http://bypass.www.yahoo.com/
+to refer to http://www.yahoo.com/
+</UL>
+<P>In order to realise the benefits of the lex state-based analysis,
+it is important to avoid things like <CODE>yyless(), REJECT</CODE> and any
+construct which may result in the lexer doing "backup".
+You should read carefully the section "Performance Considerations"
+in the flex man-page.
+<HR>
+<H2><A name=lex.parser>Using yylex() within a parser</A></H2>
+<P>Lex is actually designed to be used as a front-end for a
+parser. 
+Let's look at how a typical parser would use lex.
+<P>One statement which we have not considered so far in our
+lex actions is the <CODE>return</CODE> statement.
+In the simple examples we have considered so far,
+putting a <CODE>return</CODE> into an action
+would result in a premature end to the file processing.
+However, this need not be the case. After <CODE>yylex()</CODE>
+returns, we can simply call it again, and processing will
+continue exactly where it left off.
+<P>This feature of <CODE>yylex()</CODE> is what makes it
+suitable as a front-end to a parser.
+<P>Lets consider a simple parser, using just C-code.
+Our example will be a program which reads an e-mail message,
+analyses the headers, and tells us if it is likey to be spam, or not.
+<P>Let's use a 100-point check, based on the following
+criteria:
+<UL>
+<LI><CODE>Precedence:</CODE> if it's "bulk", we'll give
+it 10 points, if it's "junk" that's worth at least 20 points
+<P>
+<LI><CODE>From: To: Cc:</CODE> This is the biggest clue. If the
+<CODE>To:</CODE> address is the same as the <CODE>From:</CODE>
+address, let's add 30 points (if either <CODE>To:</CODE> or <CODE>From:</CODE>
+is missing, we'll ad the 30 points anyway).
+<P>
+<LI>If our user-name is in neither the To nor CC fields, 
+then let's add another 30 points.
+<P>
+<LI>Another clue is if there are lot of recipients.
+Lets add 10 points if there are more than 20 recipients.
+(Any message sent to more than 10 people
+probably isn't worth reading, anyway).
+<P>
+<LI>Lastly, let's consider the message size. Most
+people write reasonably short messages, typically
+less than 5k. Spam is often 10k or more.
+We'll add 10 points for any message %gt; 5k in size
+</UL>
+<P>Let's do the lexer first. 
+In this case it's fairly simple. It looks for the header
+fields <CODE>From From: To: Cc: Precedence: </CODE>
+and returns a specific code for each of these.
+Any other header-field is returned as "OTHER".
+<P>Our lexer is also made to find the e-mail addresses
+for us, and return them.
+<P>Any other text is returned word-by-word.
+<P>The message body is counted by the lexer, but nothing
+is returned to the parser.<A name=isitspam>&nbsp;</A>
+<PRE>
+%{
+#include &lt;unistd.h&gt;
+#include &lt;string.h&gt;
+typedef enum { START_OF_HEADER=256, FROM=257, TO=258, CC=259,
+                PRECEDENCE=260, OTHER=261, NAME=262,
+		END_OF_HEADER=263, EMAIL=264
+                } token_t;
+token_t token,hdr_field;
+char *token_txt;
+void is_it_spam(int points, int msgn);
+int get_email_address(char **user, char **host);
+void hdr_to();
+void hdr_cc();
+void hdr_from();
+int precedence();
+char *my_name;
+int   my_name_len;
+int to_me;
+char *to_addr1;
+char *from_addr;
+int body;
+%}
+%x BODY
+%%
+^From		return START_OF_HEADER;
+^From:          return FROM;
+^To:            return TO;
+^Cc:            return CC;
+^Precedence:    return PRECEDENCE;
+^[A-Za-z0-9-]+: return OTHER;
+[A-Za-z_0-9\.]+ {
+                token_txt = strdup(yytext);
+                return NAME;
+                }
+[A-Za-z_0-9\.]+@[A-Za-z_0-9\.]+ {
+                token_txt = strdup(yytext);
+                return EMAIL;
+                }
+^\n             { /* empty line */
+		BEGIN BODY;
+		body=0;
+		return END_OF_HEADER;
+		}
+.|\n            /* Ignore what we don't understand */ ;
+&lt;BODY&gt;.|\n      body++;
+&lt;BODY&gt;\nFrom	{ BEGIN 0; yyless(0); /* yyless() breaks the "^" mechanism */ }
+%%
+int main(int argc, char *argv[]) {
+        int points=0,msgn=0;
+	int receivers;
+        if ( argc &gt; 1 ) {
+                if ( (yyin = fopen(argv[1],"r")) == 0 ) {
+                        perror(argv[1]);
+                        exit(1);
+                }
+        }
+        my_name = getlogin();
+	my_name_len = strlen(my_name);
+
+        while ( (token = yylex()) ) {
+                switch(token) {
+                case START_OF_HEADER:
+			hdr_field=START_OF_HEADER;
+			if(body&gt;5000)
+				points+=10;
+                        if(msgn) is_it_spam(points,msgn);
+			to_addr1=from_addr=NULL;
+                        points=to_me=receivers=0;
+                        msgn++;
+			break;
+                case FROM:
+		case PRECEDENCE:
+		case TO:
+		case CC:
+			hdr_field=token;
+			break;
+		case END_OF_HEADER:
+			hdr_field=END_OF_HEADER;
+			if(to_addr1 == 0 )
+				points+=30;
+			else if(from_addr == 0)
+				points+=30;
+			else if( strcasecmp(to_addr1,from_addr)==0 )
+					points+=30;
+			if(!to_me)
+				points+=30;
+			if(receivers&gt;10)
+				points+=10;
+			break;
+		case NAME:
+			switch(hdr_field) {
+			case PRECEDENCE:
+				points+=precedence();
+				break;
+			default:
+			}
+			break;
+		case EMAIL:
+			switch(hdr_field) {
+			case TO:
+			case CC:
+				hdr_to(hdr_field);
+				receivers++;
+				break;
+			case FROM:
+				hdr_from();
+				break;
+			default:
+				break;
+			}
+			break;
+		case OTHER:
+			hdr_field=OTHER;
+			break;
+		default:
+                }
+			
+        }
+	if(msgn) is_it_spam(points,msgn);
+        return points;
+}
+
+int yywrap() {
+        return(1);
+}
+
+int precedence() {
+	if(strcasecmp("junk",token_txt)==0)
+		return 30;
+	if(strcasecmp("bulk",token_txt)==0)
+		return 10;
+	return 0;
+}
+
+void
+hdr_to(token_t hdr_field) {
+	if(strncasecmp(token_txt,my_name,my_name_len)==0) {
+		if(token_txt[my_name_len]=='\0' ||
+		   token_txt[my_name_len]=='@' ) {
+			to_me=1;
+		}
+	}
+	if ( to_addr1 == 0 && hdr_field==TO) 
+		to_addr1 = token_txt;
+}
+
+
+void
+hdr_from() {
+	from_addr = token_txt;
+}
+
+void is_it_spam(int points, int msgn) {
+        if ( points &gt;= 80 )
+                printf("Message %4d scored %2d, almost certainly spam\n",msgn,points);
+        else if ( points &gt;= 50 )
+                printf("Message %4d scored %2d, probably spam\n",msgn,points);
+        else if ( points &gt;= 30 )
+                printf("Message %4d scored %2d, possibly spam\n",msgn,points);
+        else
+                printf("Message %4d scored %2d, appears legitimate\n",msgn,points);
+}
+</PRE>
+<P>Since mail-headers and e-mail addresses are supposed to
+be case-insensitive, you should compile the above program using
+the case-insensitive option of flex:
+<PRE>
+	make LFLAGS=-i is_spam.l
+</PRE>
+<P>The parser is implemented in C-code.
+The main feature of the parser is the loop:
+<PRE>
+        while ( (token = yylex()) ) {
+                switch(token) {
+	...
+		}
+	}
+</PRE>
+
+<P>The parser calls <CODE>yylex()</CODE> repeatedly, processing each token
+in turn, tkaing whatever action is appropriate to that token.
+When lex reaches the end-of-file, <CODE>yylex()</CODE> returns 0, and the
+parser exits it's <CODE>while()</CODE> loop
+<P>Where addition information must be transferred between the
+lexer and the parser, this is done using global variables.
+For example, when the lexer encounters an e-mail address,
+it returns the token <CODE>EMAIL</CODE>, but it also places
+the actual text into the variable <CODE>token_txt</CODE>,
+where the parser can find it.
+<P>We will be using the above mechanisms later, when we start
+to employ Yacc.
+<P>Lex is designed to interwork with Yacc. However, as the
+above example tries to show, if we think Yacc may not be
+suitable to our needs, we are free to use whatever parser
+suits our needs.
+<P>By the way, the above program does a pretty poor job of
+detecting spam reliably. However, it does illustrate a few key
+points of a typical parser.
+<HR>
+<H1><A name=make>Lex and make</A></H1>
+<P>You may have noticed that we have been building our lex-programs
+using make, but without having to write a makefile.
+<P>This is because lex is on of the programs for which make
+has an "implicit rule".
+The default make rule for a file ending in ther extension ".l" is
+to invoke make on that file, and generate a ".c" file for that
+file. From there on, the better known implicit rules for compiling C programs
+take over.
+<P>The default rule for lex is:
+<PRE>
+.l.c:
+	$(LEX) $(LFLAGS) -t $&lt; &gt; $@
+</PRE>
+Which usually resolves to something like:
+<PRE>
+	lex -t file.l &gt; file.c
+</PRE>
+<HR>
+<DL>
+<DT><A name=note1>Note 1</A>
+<DD>Lex pattern-action statements should be separated by one or
+more <STRONG>TAB</STRONG> characters. Flex is not fussy, and will
+accept spaces, but some versions of lex need to see tabs as separators.
+<P>Similarly, actions which run over more than one line should be
+indented by at least one tab.
+<P>Also avoid putting blank lines within the lex specification.
+Although flex does not have a problem with this, some versions of lex do.
+</DL>
+<HR>
+<P>Author: <A href="mailto:George_Hansper@apana.org.au">George_Hansper@apana.org.au</A>
+<P>Last modified: $Date: 2000/04/05 23:46:29 $
+<HR>
+<TABLE BORDER=0 CELLPADDING=2 WIDTH="100%">
+<TR><TD>
+Previous: <A href="">Introduction</A>
+<TD>
+Next: <A href="yacc.html">Yacc - A parser generator</A>
+</TABLE>
+
+</BODY>
+</HTML>

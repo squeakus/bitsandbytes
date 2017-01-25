@@ -1,0 +1,106 @@
+# support.bnf
+# Jonathan Byrne <jonathanbyrn@gmail.com>
+# James McDermott <jamesmichaelmcdermott@gmail.com>
+#
+
+# Works like the blender3d_graph.bnf grammar, but uses curves defined
+# by HOFs. Starts with fixed points A and B indicating end-points of
+# the bridge and creates nodes and edges along the straight line
+# between them. Adds a curved handrail, with struts from walkway to
+# handrail. Then copies and offsets this into the 3rd dimension, and
+# adds crosspieces for the walkway between corresponding points in the
+# two copies.
+
+<S> ::= <fn_def><call>
+<fn_def> ::= def mutant():{<init><define_funcs><define_struts><walkway><add_edges><offset_copy><return>}
+
+<init> ::= g = graph.graph(){}handrail_node_ids=[]{}walkway_node_ids=[]{}support_node_ids=[]{}brace_node_ids=[]{}
+<define_funcs> ::= <handrail_def><walkway_def><support_def><const_defs>
+<handrail_def> ::= def handrail(t):{return <handrail_curve>(t)}
+<walkway_def> ::= def walkway(t):{retval=<walkway_curve>(t){}return(retval)}
+<support_def> ::= def support(t):{retval=<support_curve>(t){}return(retval)}
+<const_defs> ::= strut_multiple = <strut_multiple>{}npts = 20{}width=6{}pointA=[0, 0, 0]{}pointB = [20, 0, 0]{}p = <phase>{}
+
+<define_struts> ::= <handrail_strut><support_strut><brace_strut> 
+<handrail_strut> ::= def handrail_strut(i, t):{n=<nbranches>{}xyz=walkway(t){}xyz[2]=p*xyz[2]+(1-p)*handrail(t)[2]{}id=g.add_unique_node(xyz,'post'){}g.add_edge(i, id){}for j in range(n):{xyz=handrail(t+(j-(n-1)/2.0)/float(npts)){}id2=g.add_unique_node(xyz,'handrail'){}handrail_node_ids.append(id2){}g.add_edge(id, id2){}}}
+<support_strut> ::= <simple_support> | <curved_support>
+<simple_support> ::= def support_strut(i,t):{xyz = walkway(t){}xyz[2]= xyz[2]-5{}id=g.add_unique_node(xyz,<join>){}support_node_ids.append(id){}g.add_edge(i, id)}
+<curved_support> ::= def support_strut(i,t):{n=<sbranches>{}for j in range(n):{xyz=support(t+(j-(n-1)/5.0)/float(npts)){}xyz[2]=(xyz[2]*0.5)-10{}id=g.add_unique_node(xyz,'post'){}support_node_ids.append(id){}g.add_edge(i, id)}}
+<brace_strut> ::= <simple_brace>|<curved_brace>
+<simple_brace> ::=def brace_strut(i,t):{xyz = walkway(t){}xyz[1]=-3{}xyz[2]= xyz[2]-3{}id=g.add_unique_node(xyz,<join>){}brace_node_ids.append(id){}g.add_edge(i, id)}
+<curved_brace>::= def brace_strut(i,t):{n=<sbranches>{}for j in range(n):{xyz=support(t+(j-(n-1)/5.0)/float(npts)){}xyz[1]=-3{}xyz[2]=(xyz[2]*0.5)-5{}id=g.add_unique_node(xyz,'post'){}brace_node_ids.append(id){}g.add_edge(i, id)}}
+
+<add_edges> ::= <add_handrail_edges><add_walkway_edges><add_support_edges><add_brace_edges>
+<add_handrail_edges> ::= g.connect_nodes(handrail_node_ids){}
+<add_walkway_edges> ::= g.connect_nodes(walkway_node_ids){}
+<add_support_edges> ::= g.connect_nodes(support_node_ids){}
+<add_brace_edges> ::= g.connect_nodes(brace_node_ids){}g.connect_nodes(brace_node_ids+support_node_ids){}
+
+<make_strut> ::= <handrail><support><brace>|<handrail><support>|<handrail><brace>
+<handrail> ::= handrail_strut(id, t){}
+<support> ::= support_strut(id,t){}
+<brace> ::= brace_strut(id,t){}
+<walkway> ::= for i in range(npts+1):{t=i/float(npts){}id=g.add_unique_node(walkway(t),'walkway'){}walkway_node_ids.append(id){}if i % strut_multiple == 0:{<make_strut>}}
+
+<return> ::= return g
+<call> ::= XXXeval_or_exec_outputXXX = mutant()
+<offset_copy> ::= g.copy_and_offset_with_mirror((0.0,width, 0), True){}
+
+<bool> ::= True | False
+<join> ::= 'join' | 'post'
+
+# Functions which return a point, given a scalar.
+<scalar_point_func> ::= <add_scalar_point_funcs> | <bezier> | <xyzcos> | <xyzcos> | <expcurve>
+#<scalar_point_func> ::= <xyzsin>
+
+# Given a scalar t, return a point on a cubic bezier curve.
+<bezier> ::= lambda t: bezier_form(t, (<bpt>, <bpt>, <bpt>, <bpt>))
+
+<expcurve> ::= lambda t: [<xexp>, 0.0, 0.0] | lambda t: [0.0, <xexp>, 0.0] | lambda t: [0.0, 0.0, <xexp>]
+<xexp> ::= <sx> * exp(1.0 + 2 * <sx> * t)
+
+# 4ft seems a reasonable guess for desired handrail height
+<zoffset> ::= lambda t: [0, 0, 4]
+
+<walkway_curve> ::= (lambda t: pt_plus_pt((<interpolateAtoB>)(t), (<z_half_cycle_sin>)(t)))| (lambda t: interpolate(t, (pointA, pointB)))
+
+<interpolateAtoB> ::= lambda t: interpolate(t, (pointA, pointB))
+
+<handrail_curve> ::= (<add_scalar_point_func_and_offset>)
+
+<support_curve> ::= (<add_scalar_point_func_and_offset>)
+
+<walkway_plus_zoffset> ::= lambda t: pt_plus_pt(walkway(t), (<zoffset>)(t))
+
+# Given a scalar t, return a point on a diagonal between two points.
+<diagonal> ::= lambda t: interpolate(t, (<pt>, <pt>))
+
+<add_scalar_point_funcs> ::= lambda t: pt_plus_pt((<scalar_point_func>)(t), (<scalar_point_func>)(t))
+
+<add_scalar_point_func_and_offset> ::= lambda t: pt_plus_pt((<scalar_point_func>)(t), (<walkway_plus_zoffset>)(t))
+
+# allow any number (even not a multiple of 2pi) of revolutions
+<xyzcos> ::= lambda t: [<xcos>, 0.0, 0.0] | lambda t: [0.0, <xcos>, 0.0] | lambda t: [0.0, 0.0, <xcos>]
+<xyzsin> ::= lambda t: [<xsin>, 0.0, 0.0] | lambda t: [0.0, <xsin>, 0.0] | lambda t: [0.0, 0.0, <xsin>]
+
+# use 1.0 + cos() to keep it positive, avoid negative z values
+<xcos> ::= <sx> * (1.0 + cos(<ndoublerevs> * 4 * pi * t))
+<xsin> ::= <sx> * (1.0 + sin(<ndoublerevs> * 4 * pi * t))
+
+<z_half_cycle_sin> ::= lambda t: [0.0, 0.0, 4 * <sx> * sin(pi * t)]
+
+<ndoublerevs> ::= 5*<sx>
+# points are represented as tuples
+<pt> ::= [<sx>, <sx>, <sx>]
+<bpt> ::= [4*<sx>, 4*<sx>, 4*<sx>]
+# a small, floating point value: depends on scale.
+<sx> ::= <phase>
+# <dimension> indicates x, y or z
+<dimension> ::= 0 | 1 | 2
+<radius> ::= <sx>
+<phase> ::= 0.05|0.1|0.15|0.2|0.25|0.3|0.35|0.4|0.45|0.5|0.55|0.6|0.65|0.7|0.75|0.8|0.85|0.9|0.95|1.0
+<revs> ::= 1|2|3|4|5|6|7
+<n> ::= 5|6|7|8|9|10|11|12
+<strut_multiple> ::= 2|4|5
+<nbranches> ::= 1|2|3|4|5
+<sbranches> ::= 1|2|3

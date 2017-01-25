@@ -1,0 +1,22 @@
+at5iont-i deluxe  <- make of htpc
+cpu d525 atom 1.8ghz
+
+hdcp
+play movie 
+xbmc
+
+multiple chapters problem
+detect DVD Blueray and CD
+ignore play
+get DVD details (lsdvd): what about dvdvolume?
+decode video (libvidcss)
+check folder does not exist
+copy (all) contents into folder (30 mins)
+All parts or remove adverts?
+sensible naming, what about DVD_Volume, DVD
+multiple parts per dvd?
+google titlename
+GUI if name cannot be found
+download image
+rename to title
+eject

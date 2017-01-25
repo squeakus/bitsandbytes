@@ -1,0 +1,32 @@
+// file adaptsphere.edp
+load "msh3"
+load "tetgen"
+load "medit"
+
+mesh Th=square(10,20,[x*pi-pi/2,2*y*pi],flags=1);  //  $]\frac{-pi}{2},frac{-pi}{2}[\times]0,2\pi[ $
+cout << "X: " << pi-pi/2 << "\n";
+cout << "x: " << x*pi-pi/2 << " y: " << 2*y*pi << "\n";
+//  a parametrization of a sphere 
+//func f1 =cos(x)*cos(y);
+//func f2 =cos(x)*sin(y);
+//func f3 = sin(x);
+//func f = 2./10+x-1.5;
+//Th = adaptmesh(Th,f,IsMetric=1,nbvx=10000);
+plot(Th, wait =1);
+
+//plot(Th,wait=1);
+//mesh3 Th1=movemesh23(Th,transfo=[x,y,1]);
+//mesh3 Th2=movemesh23(Th,transfo=[1,y,x]);
+//mesh3 Th3=movemesh23(Th,transfo=[x,y,-1]);
+//mesh3 Th4=movemesh23(Th,transfo=[-1,y,x]);
+
+//plot(Th,wait=1);
+mesh3 Th1=movemesh23(Th,transfo=[x,1.57,y]);
+mesh3 Th2=movemesh23(Th,transfo=[x,-1.57,y]);
+mesh3 Th3=movemesh23(Th,transfo=[1.57,x,y]);
+mesh3 Th4=movemesh23(Th,transfo=[-1.57,x,y]);
+
+
+mesh3 Th5= Th1+Th2+Th3+Th4;
+medit("original",Th5);
+savemesh(Th5,"test.mesh");

@@ -1,0 +1,1 @@
+sudo apt-get install bluez bluez-alsa bluez-audio bluez-btsco bluez-compat bluez-cups bluez-dbg bluez-gstreamer bluez-hcidump bluez-pcmcia-support bluez-tools bluez-utils python-bluez bluewho indicator-bluetooth libbluetooth-dev libgnome-bluetooth11 libbluetooth3 python-gobject python-dbus

@@ -1,0 +1,65 @@
+//  example to build a mesh a cone 
+load "msh3"
+load "medit"
+
+int width=4,roof=1,sections = 3;
+
+int density=10; // affects density of mesh
+int nn=2; //affects sides
+real h=1./nn;
+
+int s1h = 5;
+int s2h = 6;
+int s3h = 10;
+int height= s1h+s2h+s3h;
+
+//vanilla structure
+//border a(t=0,width){x=t;y=0;};
+//border b(t=0,section){x=width-(t/section);y=t;};
+//border c(t=0,section){x=width-1-(t/section);y=section+t;};
+//border d(t=0,section){x=width-2-(t/section);y=section*2+t;};
+//border e(t=roof,0){x=t;y=height;};
+//border f(t=height,0){x=0;y=t;};
+
+//variable height
+//border base(t=0,width){x=t;y=0;};
+//border section1(t=0,s1h){x=width-(t/s1h);y=t;};
+//border section2(t=0,s2h){x=width-1-(t/s2h);y=s1h+t;};
+//border section3(t=0,s3h){x=width-2-(t/s3h);y=s1h+s2h+t;};
+//border roofSection(t=roof,0){x=t;y=height;};
+//border core(t=height,0){x=0;y=t;};
+
+int s1w = 3;
+int s2w = 2;
+int s3w = 1;
+int s1delta = s1w-width;
+int s2delta = s2w-s1w;
+int s3delta = s3w-s2w;
+
+//variable width and height
+border base(t=0,width){x=t;y=0;};
+border section1(t=0,s1h){x=width+(s1delta*(t/s1h));y=t;};
+border section2(t=0,s2h){x=s1w+(s2delta*(t/s2h));y=s1h+t;};
+border section3(t=0,s3h){x=s2w+(s3delta*(t/s3h));y=s1h+s2h+t;};
+border roofSection(t=roof,0){x=t;y=height;};
+border core(t=height,0){x=0;y=t;};
+
+mesh test = buildmesh(base(1)+section1(2)+section2(density)+section3(density)+roofSection(1)+core(1));
+
+plot(test,wait=1);
+
+//3D BUILD LAYERS STUFF
+int radius=4;
+int MaxLayersT=(int(2*pi*radius/h)/4)*4;
+func zminT = 0;
+func zmaxT = 2*pi;
+func fx= x*cos(z);// / max( abs(cos(z) ), abs(sin(z)));
+func fy= x*sin(z);// / max( abs(c5s(z) ), abs(sin(z)));
+func fz= y;
+
+//mesh3 Th3T=buildlayers(test,coef= max(.03,y/max(x/height,0.4) /radius), MaxLayersT,zbound=[zminT,zmaxT],transfo=[fx,fy,fz],facemerge=1);
+
+mesh3 pylon=buildlayers(test,coef=.07, MaxLayersT,zbound=[zminT,zmaxT],transfo=[fx,fy,fz],facemerge=1,ptmerge=1);
+
+medit("pylon",pylon,wait=1);
+savemesh(pylon,"test.mesh");

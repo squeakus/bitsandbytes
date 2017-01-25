@@ -1,0 +1,268 @@
+
+                             SLFFEA 1.5 DATA 
+
+                    Copyright (C) 1999, 2000, 2001 San Le
+
+                    email:     slffea@yahoo.com
+                    homepage:  http://slffea.sourceforge.net/
+
+
+Data Format:
+-----------
+
+I will use the input file for a 1 element brick to illustrate
+the typical input data format for an SLFFEA file.  Look at the data at
+the bottom.
+
+IMPORTANT!!
+-----------
+The C/C++ standard of numbering beginning with 0 rather than 1 is applied to
+the element and node numbering as well.  This is very important to keep in mind
+when setting up the input files.
+
+
+Here are the few things which are not obvious:
+
+1.0  -10 is used as a terminator flag for reading in quantities such as prescribed
+     displacements, loads, and pre-stresses.
+
+2.0 numel = number of elements
+    numnp = number of nodal points
+    nmat  = number of materials
+    nmode = number of eigen-modes (0 for static analysis)
+
+3.0 At the bottom is a line for:
+
+          node no. with stress and stress vector in xx,yy,zz,xy,zx,yz
+
+    The numbers below this line correspond to the pre-stress state of the mesh.
+    Most problems do not involve pre-stresses, and the only reason I included them
+    is because of the non-linear brick problem.  I wanted a user to be able to do
+    part of a non-linear analysis, stop after using up their CPU time, then continue
+    later.  This is only possible if he or she stores the stresses from the point
+    at which the calculation is stopped.  The pre-stresses discussed here are
+    actually for program consistency, and stresses stored on an element basis is
+    needed for continuing a non-linear analysis(more on this below).
+
+    The data for pre-stress looks like:
+
+   4   -6.219028e+04  -1.707142e+04  -2.233032e+04   4.822910e+04  -4.393879e+04  -3.497083e+04
+
+    where the first number represents the node number 4, and the next six are stresses xx,yy,zz,xy,zx,yz.
+
+    All my codes give the option of having pre-stress, but most people will not need it.
+
+4.0 After version 1.0 of SLFFEA, I began to do stress averaging for the nodes.
+    You can read more about it in ~/slffea-1.*/brick/brick2/README.  As explained
+    above, these are the stresses contained in the meshes' main input file.  So now
+    there is a separate file for storing stresses on an element basis.  This
+    is the file you need to use if you want to break up a non-linear brick
+    analysis.  The file names follow the format:
+
+          (filename).str
+
+    for input and:
+
+          (filename).str.obr
+
+    for output.  These two files exist independently of each other and you can have
+    an input file without an output or an output without an input.  Remember, the
+    input file is needed only if you require pre-stressed elements, and the output is
+    needed only if you require stress data on an element basis before nodal averaging. 
+    To tell SLFFEA to read from the input file, turn on the "element stress read flag"
+    in the "brinput" file located in the data directory ~/slffea-1.5/data/br.  To create
+    the output file, turn on the "element stress print flag".  This is true for every
+    element, all of which have their own "*input" file(more on this below).  The format
+    of an input file looks like:
+
+element no. and gauss pt. no. with stress and stress vector in xx,yy,zz,xy,zx,yz
+   6    0    1.398922e+03   3.460356e+03   1.128487e+03   1.728901e+03  -3.909697e+01   4.089708e+01
+   6    1    1.398922e+03   3.460356e+03   1.128487e+03   1.728901e+03   3.909697e+01  -4.089708e+01
+   6    2   -7.243903e+02  -2.500773e+03  -6.883296e+02   1.994948e+03   3.340920e+01   4.529935e+01
+   6    3   -7.243903e+02  -2.500773e+03  -6.883296e+02   1.994948e+03  -3.340920e+01  -4.529935e+01
+   6    4    1.268963e+03   2.229502e+03   2.596875e+02  -6.331143e+02  -1.459115e+02   2.397936e+01
+   6    5    1.268963e+03   2.229502e+03   2.596875e+02  -6.331143e+02   1.459115e+02  -2.397936e+01
+   6    6   -4.070330e+02  -3.124147e+03  -2.724520e+02  -2.344699e+01   1.246846e+02   5.975575e+01
+   6    7   -4.070330e+02  -3.124147e+03  -2.724520e+02  -2.344699e+01  -1.246846e+02  -5.975575e+01
+-10
+    
+    where the first number is for element 6, the second is the Gauss point(or node
+    point if desired), and the next six are stresses xx,yy,zz,xy,zx,yz.
+
+
+Data Begin
+____________________________________________________________________________
+
+   numel numnp nmat nmode  (This is for a brick "b1")
+        1   8  1   0
+matl no., E modulus, Poisson Ratio, mass
+0    3000000.0   0.29   2.77e3
+el no.,connectivity, matl no
+0        0   1   2   3   4   5   6   7    0
+node no. coordinates
+0      0.0  0.0  0.0
+1      0.0  0.0  1.0
+2      1.0  0.0  1.0
+3      1.0  0.0  0.0
+4      0.0  1.0  0.0
+5      0.0  1.0  1.0
+6      1.0  1.0  1.0
+7      1.0  1.0  0.0
+prescribed displacement x: node  disp value
+  4   0.000000e+00
+  5   0.000000e+00
+    -10
+prescribed displacement y: node  disp value
+  4   0.000000e+00
+  5   0.000000e+00
+  6   0.000000e+00
+  7   0.000000e+00
+    -10
+prescribed displacement z: node  disp value
+  7   0.000000e+00
+    -10
+node with point load and load vector in x,y,z
+   0          -0.0000            0.0000        10000.0000
+   1       10000.0000            0.0000           -0.0000
+   2           0.0000           -0.0000       -10000.0000
+   3      -10000.0000           -0.0000            0.0000
+-10
+node no. with stress and stress vector in xx,yy,zz,xy,zx,yz
+   5   -1.542099e+04  -2.879748e+03  -2.016279e+04   4.396514e+04   6.379705e+03  -3.369987e+04
+-10
+____________________________________________________________________________
+
+Data End
+
+
+****************************************************************************
+
+More on the *input files:
+------------------------
+
+There is now an input data file for every element called *input which gives
+parameters for calculation.  For instance, in the brick data directory, there
+is a file, "brinput", which contains the data:
+
+Data Begin
+____________________________________________________________________________
+
+Error tolerance   
+1.e-13
+Maximum number of iterations
+2000
+Amount of RAM in megabytes
+64.0
+element stress read flag
+1
+element stress print flag
+0
+node or gauss stress ( 0 = node, 1 = gauss )
+1
+eigen print flag
+0
+____________________________________________________________________________
+
+Data End
+
+
+   1. Error tolerance = convergence criteria if the Conjugate Gradient Method is
+      used. 
+   2. Maximum number of iterations = the maximum number of iterations if the
+      Conjugate Gradient Method is used.  This is good to specify to prevent the
+      problem from running forever if the error tolerance never gets reached.  An
+      example of where this may happen is if you don't prescribe enough boundary
+      conditions and there is rigid body motion.  You should be aware that a positive
+      definite system arising from properly prescribed problem should always
+      converge.  I also write out the status of convergence as the problem gets
+      solved using Conj. Grad., so you can see if a solution is forthcoming. 
+   3. Amount of RAM in megabytes = Amount of RAM your computer has. 
+   4. element stress read flag = If your problem has pre-stressed elements, setting
+      the flag to 1 will make SLFFEA search for the file (filename).str where
+      (filename) is the name of the main input data file.  I don't think most people will
+      have to deal with this.  I use it for when I need to break up a non-linear
+      calculation. 
+   5. element stress print flag = Print stress data on an element basis in the file
+      (filename).str.obr. 
+   6. node or gauss stress = If 0, calculate stresses and strains at nodes.  If 1,
+      calculate them at gauss points. 
+   7. eigen print flag = print eigenvalue data such as the resulting T matrix from a
+      Lanczos tri-diagonalization, Lanczos vectors, etc. 
+
+
+****************************************************************************
+
+The *view.dat files:
+-------------------
+
+A file called *view.dat is generated for every element type when you run the GUI
+code.  This file contains statistical data about the mesh and can be used to change
+the range of values over which the colors are displayed as well as other parameters. For
+instance, the code brpost will create the file, "brview.dat", which may look like:
+
+Data Begin
+____________________________________________________________________________
+
+                            node
+                          min  max       min            max
+displacement Ux          241   288    -1.455959e-02   1.104431e-03
+displacement Uy          304   224    -3.121945e-02   2.257350e-03
+displacement Uz           40   504    -2.665046e-02   1.041807e-02
+
+                            node
+                        min       max         min           max
+stress xx              319       464    -1.074572e+05   5.748157e+04
+stress yy              319       322    -1.281891e+05   3.899716e+04
+stress zz              319       352    -1.524211e+05   1.173545e+05
+stress xy              288       318    -4.334928e+04   5.155896e+04
+stress zx              353       287    -5.531986e+04   3.669674e+04
+stress yz              285       319    -3.467923e+04   5.424168e+04
+stress I               319       352    -2.970165e+05   1.684208e+05
+stress II              319       287    -9.161100e+04   7.808367e+04
+stress III             256       286    -2.286317e+04   3.348484e+04
+
+strain xx              288       464    -6.112643e-04   5.642356e-04
+strain yy              255       322    -9.511634e-04   5.649731e-04
+strain zz              354       352    -9.947623e-04   9.903023e-04
+strain xy              288       318    -1.101072e-03   1.309598e-03
+strain zx              353       287    -1.405124e-03   9.320973e-04
+strain yz              285       319    -8.808523e-04   1.377739e-03
+strain I               319       285    -4.212221e-03   1.975006e-03
+strain II              285       319    -1.714097e-03   2.412241e-03
+strain III             304       286    -3.215702e-04   5.934108e-04
+
+Orthographic viewport parameters(right, left, top, bootom, near, far)
+   3.948497e+00  -3.961972e+00   4.069726e+00  -3.840743e+00   2.947516e+00   1.000000e+03
+Perspective viewport parameters( mesh width and height)
+    320    320
+Step sizes in x, y, z
+   2.955235e-01   2.826411e-01   1.182283e+00
+Amplification size
+   5.605480e+00
+____________________________________________________________________________
+
+Data End
+
+The first sets of data dealing with displacement and stress are quite obvious.
+The nodal point with the maximum and minimum displacements and stresses are given
+along with their corresponding numerical value. 
+
+By changing these numerical values, you can change the limits of the range
+over which the colors represent.  For instance, if the min and max
+displacement Ux are -1.455959e-02 and 1.104431e-03, and you want to
+only view Ux between the values 0.0 and 1.0e-4, then you can change the
+max value to 1.0e-4 and the min value to 0.0, save the file, re-read in
+the data by pressing the hotkey "h", and brpost will display colors for
+Ux in this new range.
+
+The next data sets, "Orthographic viewport parameters" and "Perspective viewport
+parameters", give the values used to define the window of the mesh.  It
+is unlikely you will want to change these.  The next set, "Step sizes in x, y, z"
+are for how much you want the mesh to move when you press the arrow keys or for
+when you move the mesh through the GUI.  For SLFFEA-1.2 and higher, this also
+changes the movement size for the cutting planes.  The last number, "Amplification
+size", pertains to the amplification factor for when you amplify the deformation.
+Remember that after changing these numbers, you need to save the *view.dat file
+and then re-read it in using the hotkey "h".
+
+

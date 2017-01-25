@@ -1,0 +1,20 @@
+ 
+load "msh3"
+load "medit"
+// cone using buildlayers with a triangle 
+func mesh Pyr2D(int[int] & DENSE)
+{
+  real roof = 0.001;
+  real LX=1,LY=1,LXY=sqrt(LX*LX+LY*LY),HH=2; 
+  border Hypo(t=1,0){x=LX*t;y=LY*(1-t);};
+  border Vert(t=LY,roof){x=0;y=t;};
+  border Roof(t=0,roof){x=t;y=roof-t;};
+  border Hori(t=roof,LX){x=t;y=0;};
+
+  int nn=10;
+  real h= 1./nn;
+  mesh Th2=buildmesh(Vert(DENSE[0])+Hypo(DENSE[1])+Hori(DENSE[2])+Roof(DENSE[3]) ) ;
+  Th2 = Th2 + movemesh(Th2,[x,-y])+ movemesh(Th2,[-x,-y])+  movemesh(Th2,[-x,y]);
+  //plot(Th2,wait=1,ps="2dPyramid.eps");
+  return Th2;
+}

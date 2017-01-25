@@ -1,0 +1,21 @@
+h1 {
+  color:orange;
+  text-align:center;
+}
+
+p {
+  font-family: Georgia, times;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+body {
+  background-color: black;
+}
+
+center {
+  font-family: Georgia, times;
+  color: white;
+  font-size: 14px;
+}

@@ -1,0 +1,64 @@
+   numel numnp nmat nmode (This is for the beam mesh file: xxx)
+       2    3    1    0 
+ matl no., E mod, Poiss. Ratio, density, Area, Iy, Iz, AreaSy, AreaSz
+     0   1.000000e+07 0.000000e+00 5.300000e+00 2.000000e-02 1.666667e-05 6.666666e-05
+el no., connectivity, matl no., element type
+     0      0      1      0     2
+     1      0      2      0     2
+node no., coordinates 
+   0       0.000000      10.000000       2.000000
+   1       0.000000       9.988000       0.000000
+   2       0.000000       0.000000       4.000000
+element with specified local z axis: x, y, z component 
+   0     1.000000     0.000000     0.000000
+   1    -1.000000     0.000000     0.000000
+ -10 
+prescribed displacement x: node  disp value 
+   0   0.000000e+00
+   1   0.000000e+00
+   2   0.000000e+00
+ -10 
+prescribed displacement y: node  disp value 
+   0   1.000000e+01
+   1   9.988000e+00
+   2   0.000000e+00
+ -10 
+prescribed displacement z: node  disp value 
+   0   0.000000e+00
+   1   0.000000e+00
+   2   0.000000e+00
+ -10 
+prescribed angle phi x: node angle value 
+   0   0.000000e+00
+   1  -8.000001e-03
+   2   0.000000e+00
+ -10 
+prescribed angle phi y: node angle value 
+   0   0.000000e+00
+   1   0.000000e+00
+   2   0.000000e+00
+ -10 
+prescribed angle phi z: node angle value 
+   0   0.000000e+00
+   1   0.000000e+00
+   2   0.000000e+00
+ -10 
+node with point load x, y, z and 3 moments phi x, phi y, phi z 
+   0   0.000000e+00    1.000400e+04    0.000000e+00   -9.993332e+03    0.000000e+00    0.000000e+00 
+   1   0.000000e+00   -4.000000e+00    0.000000e+00    1.333333e+00    0.000000e+00    0.000000e+00 
+   2   0.000000e+00   -9.999999e+03    0.000000e+00   -9.999999e+03    0.000000e+00    0.000000e+00 
+ -10
+element with distributed load in local beam y and z coordinates 
+ -10
+element no. and nodal pt. no. with local stress xx,xy,zx and moment xx,yy,zz
+   0    0    0.000000e+00  -2.000000e+02   0.000000e+00   0.000000e+00   0.000000e+00  -6.666667e+00 
+   0    1    0.000000e+00  -2.000000e+02   0.000000e+00   0.000000e+00   0.000000e+00   1.333333e+00 
+   1    0    0.000000e+00  -4.999999e+05   0.000000e+00   0.000000e+00   0.000000e+00  -9.999999e+03 
+   1    1    0.000000e+00  -4.999999e+05   0.000000e+00   0.000000e+00   0.000000e+00   9.999999e+03 
+ -10 
+element no. and nodal pt. no. with local strain xx,xy,zx and curvature xx,yy,zz
+   0    0    0.000000e+00  -4.000000e-05   0.000000e+00   0.000000e+00   0.000000e+00  -1.000000e-02 
+   0    1    0.000000e+00  -4.000000e-05   0.000000e+00   0.000000e+00   0.000000e+00   2.000000e-03 
+   1    0    0.000000e+00  -9.999999e-02   0.000000e+00   0.000000e+00   0.000000e+00  -1.500000e+01 
+   1    1    0.000000e+00  -9.999999e-02   0.000000e+00   0.000000e+00   0.000000e+00   1.500000e+01 
+ -10 

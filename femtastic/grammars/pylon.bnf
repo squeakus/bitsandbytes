@@ -1,0 +1,15 @@
+#This creates a mesh, plots it and saves it
+<prog> ::=<import> <params> <buildMesh> <save>
+<import> ::= load "medit" include "pylon.idp"
+<params> ::= <width> <height> <dense> <faces> <arrays>
+<width> ::= int base=5,w1=<n>,w2=<n>,w3=<n>;
+<height> ::= int h1=<n>,h2=<n>,h3=<n>,height=20;
+<dense> ::= int d1=<n>,d2=<n>,d3=<n>;
+<arrays> ::= int[int] WIDTH=[base,w1,w2,w3];int[int] HEIGHT=[h1,h2,h3];int[int] DENSE=[d1,d2,d3];
+<faces> ::= int faces = <faceNo>;
+<buildMesh> ::= mesh3 test=Pylon(WIDTH,HEIGHT,DENSE,height,faces);
+<show> ::= medit("test",test,wait=1); 
+<save> ::= savemesh(test,"test.mesh");
+<n> ::= 1|2|3|4|5|6|7|8|9|10
+<flag> ::= 0|1|2|3|4|5
+<faceNo> ::= 3|4|5|6|7|8|9|10

@@ -1,0 +1,36 @@
+//  example to build a mesh a cone 
+load "msh3"
+load "medit"
+
+int height=9;
+int radius=4;
+int density=10; // affects density of mesh
+int nn=2; //affects sides
+real h=1./nn;
+
+
+//bullet
+border a(t=0,4){x=t;y=0;};
+border b(t=0,5){x=4-(t/5);y=t;};
+border c(t=0,5){x=3-(t/5);y=5+t;};
+border d(t=0,5){x=2-(t/5);y=10+t;};
+border e(t=1,0){x=t;y=15;};
+border f(t=15,0){x=0;y=t;};
+mesh test = buildmesh(a(1)+b(1)+c(1)+d(1)+e(1)+f(1));
+
+plot(test,wait=1);
+
+//3D BUILD LAYERS STUFF
+int MaxLayersT=(int(2*pi*radius/h)/4)*4;
+func zminT = 0;
+func zmaxT = 2*pi;
+func fx= x*cos(z);// / max( abs(cos(z) ), abs(sin(z)));
+func fy= y;
+func fz= x*sin(z);// / max( abs(c5s(z) ), abs(sin(z)));
+
+//mesh3 Th3T=buildlayers(test,coef= max(.03,y/max(x/height,0.4) /radius), MaxLayersT,zbound=[zminT,zmaxT],transfo=[fx,fy,fz],facemerge=1);
+
+mesh3 Th3T=buildlayers(test,coef=.07, MaxLayersT,zbound=[zminT,zmaxT],transfo=[fx,fy,fz],facemerge=1);
+
+medit("cone",Th3T,wait=1);
+savemesh(Th3T,"test.mesh");

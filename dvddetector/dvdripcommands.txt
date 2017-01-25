@@ -1,0 +1,48 @@
+uncompressed using acidrip:
+mencoder dvd://1 -dvd-device /dev/sr0  -alang English -info srcform="DVD ripped by Exclusive Audio"  -oac mp3lame -lameopts abr:br=128  -ovc copy     -o "/home/jonathan/moulin_rouge.avi"
+
+
+Probe Command:
+==============
+execflow tcprobe -H 10 -i /dev/dvd -T 1 && echo EXECFLOW_OK; execflow dvdxchap -t 1 /dev/dvd 2>/dev/null
+
+
+Rip Command:
+============
+rm -f /home/jonathan/dvdrip-data/singin/vob/001//singin-???.vob && execflow -n 19 tccat -t dvd -T 1,-1,1 -i \/dev\/dvd | dvdrip-splitpipe -f /home/jonathan/dvdrip-data/singin/tmp/singin-001-nav.log 1024 /home/jonathan/dvdrip-data/singin/vob/001//singin vob  | tcextract -a 0 -x ac3 -t vob | tcdecode -x ac3 | tcscan -x pcm && echo EXECFLOW_OK
+
+
+Grab Preview Image Command:
+===========================
+mkdir -m 0775 /home/jonathan/dvdrip-data/singin/tmp/dvdrip24835.snap; cd /home/jonathan/dvdrip-data/singin/tmp/dvdrip24835.snap; execflow tccat -i \/home\/jonathan\/dvdrip\-data\/singin\/vob\/001\/  -t vob -S 1077779 -d 0 | tcdemux -s 0x80 -x mpeg2 -S 0 -M 0 -d 0 -P /dev/null | tcextract -t vob -a 0 -x mpeg2 -d 0 | ffmpeg -r 25.000 -i - -an -r 1 -ss '0.640' -vframes 1 snapshot%03d.png  && execflow convert -size 720x576 /home/jonathan/dvdrip-data/singin/tmp/dvdrip24835.snap/snapshot*.png /home/jonathan/dvdrip-data/singin/tmp/singin-001-preview-orig.jpg && execflow convert -size 720x576 /home/jonathan/dvdrip-data/singin/tmp/dvdrip24835.snap/snapshot*.png gray:/home/jonathan/dvdrip-data/singin/tmp/singin-001-preview-orig.raw && rm -r /home/jonathan/dvdrip-data/singin/tmp/dvdrip24835.snap && echo EXECFLOW_OK
+
+
+Transcode Command:
+==================
+mkdir -m 0775 -p '/home/jonathan/dvdrip-data/singin/tmp' && cd /home/jonathan/dvdrip-data/singin/tmp && mkdir -p /home/jonathan/dvdrip-data/singin/avi/001 && execflow -n 19 transcode -H 10 -a 0 -x vob -i \/home\/jonathan\/dvdrip\-data\/singin\/vob\/001\/ -w 2120,50 -F 5,'-B 130 -I 0 -S 793  -g 6 -G 15' --export_asr 2 -b 128 -s 3.475 --a52_drc_off -J ivtc,32detect=force_mode=3,decimate -f 24,1 -B 12,10,8 -y mpeg2enc,mp2enc -E 44100 -o /home/jonathan/dvdrip-data/singin/avi/001/singin-001 --progress_meter 2 --progress_rate 25 && echo EXECFLOW_OK 
+
+execflow -n 19 mplex -f 4  -V -o /home/jonathan/dvdrip-data/singin/avi/001/singin-001-%d.mpg /home/jonathan/dvdrip-data/singin/avi/001/singin-001.m2v /home/jonathan/dvdrip-data/singin/avi/001/singin-001.mpa  && echo EXECFLOW_OK
+
+View DVD Command:
+=================
+mplayer dvd://1 -aid 128 -chapter 1 -dvdangle 1 -dvd-device \/dev\/dvd 
+
+
+View Files Command:
+===================
+mplayer movie.avi 
+
+
+CD image creation command:
+========================
+No files for image creation selected.
+
+
+CD burning command:
+==================
+No files for burning selected.
+
+
+WAV creation command:
+====================
+mkdir -p /home/jonathan/dvdrip-data/singin/avi/001 && execflow -n 19 transcode -a 0 --progress_meter 2 --progress_rate 200 -y null,wav -u 100 -o /home/jonathan/dvdrip-data/singin/avi/001/singin-001-00.wav -x null -i \/home\/jonathan\/dvdrip\-data\/singin\/vob\/001\/ && echo EXECFLOW_OK

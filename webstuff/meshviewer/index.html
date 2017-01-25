@@ -1,0 +1,73 @@
+<head>
+     <title>webGL Mesh Viewer</title>
+     <link rel="stylesheet" type="text/css" href="style.css" />
+
+     <script type="text/javascript">
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-33735516-1']);
+     _gaq.push(['_trackPageview']);
+    
+     (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+     </script>
+</head>
+
+<script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="webgl-utils.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+
+
+<!-- Shaders are in SGSL and so cannot be put in javascript -->
+<script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+    varying vec4 vColor;
+    void main(void) {
+        gl_FragColor = vColor;
+    }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec4 aVertexColor;
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    varying vec4 vColor;
+
+    void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+        vColor = aVertexColor;
+    }
+</script>
+
+<body>
+    <div class="navbar">
+	webGL Mesh Renderer <br>
+	<span class="rotateButton">
+	    <button>Rotate</button>
+	</span>
+	<span class="invertButton">
+	    <button>Invert</button>
+	</span>
+	<input type=button onClick="location.href='glmeshes.zip'" value='Download meshes'></input>
+    </div>
+
+    <div id="progress_bar"><div class="percent">0%</div></div>
+
+    <div id="main_frame" class="mainFrame">
+	<!-- this is where the canvases will go-->
+    </div>
+    
+    <div class="helpbar">
+	Drop meshes onto the page to render <br>
+	Click and hold to rotate designs, z and x to zoom
+    </div>
+</body>
+
+<script type="text/javascript" src="glObject.js"></script>
+<script type="text/javascript" src="initialpop.js"></script>
+<script type="text/javascript" src="meshRender.js"></script>
+
+    
