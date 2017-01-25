@@ -117,7 +117,7 @@ vi ~/.keras/keras.json
 
 build instructions for ffmpeg
 ./configure  --enable-pic --enable-shared
-ffmpeg -i rtsp://admin:moot1254@192.168.1.100:554  moo.avi
+ffmpeg <pass>@192.168.1.100:554  moo.avi
 rtsp://username:password@192.168.1.100:554/h264/ch1/sub/?tcp
 http://192.168.1.100/Streaming/Channels/1/picture
 

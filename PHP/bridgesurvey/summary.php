@@ -1,6 +1,6 @@
 <?PHP
 $user_name = "root";
-$password = "moot1254";
+$password = "";
 $database = "csisurvey";
 $server = "127.0.0.1";	
 $db_handle = mysql_connect($server, $user_name, $password);
