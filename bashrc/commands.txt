@@ -2273,7 +2273,6 @@ git push -u origin jonathanbyrn <- add upstream tracking for the branch
 
 #clone existing repository
 git clone ssh://git@galapagos.ucd.ie/Volumes/Users/git/ants.git
-password: darwinrocks
 
 pulling existing repo:
 git clone -v ssh://server:port/git/reponame
@@ -2543,7 +2542,7 @@ set the grid in your environment variables in .profile
 XGRID_CONTROLLER_HOSTNAME
 XGRID_CONTROLLER_PASSWORD
 find out what on the grid
-xgrid -h galapagos.ucd.ie -p darwinrocks -grid list
+xgrid -h galapagos.ucd.ie -p **** -grid list
 Submit a job		  
 Xgrid -job submit /usr/bin/cal 05 2007
 get the results

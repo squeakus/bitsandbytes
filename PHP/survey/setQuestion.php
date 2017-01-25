@@ -23,9 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		//============================================
 		//	OPEN A CONNECTION THE DATABASE
 		//============================================
-	$user_name = "root";
-	$password = "52215lab";
-	$database = "surveyTest";
+	$user_name = "";
+	$password = "";
+	$database = "";
 	$server = "127.0.0.1";
 
 	$db_handle = mysql_connect($server, $user_name, $password);
