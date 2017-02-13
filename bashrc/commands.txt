@@ -1,3 +1,6 @@
+Stop python buffering tee output:
+python -u laschunker.py | tee dublinchunked.log
+
 setting up update-alternatives for python:
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2
@@ -8,7 +11,7 @@ python --version
 How to use valgrind:
 valgrind --leak-check=yes <executable> <args>
 
-remove all c comments from command line:
+remove all c comments from command line, before putting online:
 sed 's,/\*\*,,g;s,\*/,,g;s,/\*,,g;s,//,,g' infile.cpp
 
 
