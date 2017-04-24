@@ -33,8 +33,6 @@ When pulling code always use:
 git pull --rebase
 
 
-c8e98a7bef78780b0e222862f43b2f11da24a998
-
 undo a stupid commit:
 git reset --hard HEAD~1
 
