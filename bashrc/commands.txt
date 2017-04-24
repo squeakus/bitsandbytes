@@ -1,3 +1,58 @@
+download EVERYTHING:
+(r)recursive, (k)convert links,(p) get all resources, (N) dont copy if local timestamps newer (continue)
+wget -rkpN -c -e robots=off http://www.example.com/
+
+just the dir:
+wget -rkpN -c --no-parent http://example.com/moo/blah
+
+show path in nautilus:
+ctrl+l 
+
+run ipython within a virtualenv:
+python -c 'import IPython;
+
+redirect output wtih sudo
+Run a shell with sudo and give the command to it by using the -c option:
+sudo sh -c 'ls -hal /root/ > /root/test.out'
+
+
+ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=byrnej" "all.geojson" -nln destination_table -append
+
+more wget fun:
+wget -q -O- reddit.com/r/thedonald | grep -o -i 'Trump' | wc -w
+
+grep a webpage:
+wget -q -O-
+
+
+
+get all links from a website:
+sed -n 's/.*href="\([^"]*\).*/\1/p' filename
+
+When pulling code always use:
+git pull --rebase
+
+
+c8e98a7bef78780b0e222862f43b2f11da24a998
+
+undo a stupid commit:
+git reset --hard HEAD~1
+
+
+read input from mouse
+cat /dev/input/mouseX
+
+
+fix yo code:
+find . -iname "*.py" | xargs -I filename autopep8 --in-place --aggressive --aggressive filename
+also use yapf -i
+
+grep for two things, for new york coordinates in this case:
+grep 73.99 `grep -l 40.72 *.txt`
+
+unzip multiple files to a directory
+unzip '*.zip' -d out/
+
 Stop python buffering tee output:
 python -u laschunker.py | tee dublinchunked.log
 
@@ -762,6 +817,15 @@ find . -not -path '.git' -iname '*.py' -exec sed -i 's/ *$//' '{}' ';'
 
 remove all trailing white space
 sed -i 's/[ \t]*$//' "$1"
+
+postgis 2017:
+CREATE USER postgres_user WITH PASSWORD 'password';
+CREATE DATABASE my_postgres_db OWNER postgres_user;
+psql my_postgres_db
+
+import geojson data:
+ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=byrnej" "all.geojson" -nln destination_table -append
+
 
 postgresql:
 get settings
