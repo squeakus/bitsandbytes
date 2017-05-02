@@ -1,3 +1,9 @@
+get the image DPI:
+identify -format "%w x %h %x x %y" image300.jpg
+
+resample the DPI
+convert -units PixelsPerInch image -density 300 resultimage
+
 Stop python buffering tee output:
 python -u laschunker.py | tee dublinchunked.log
 

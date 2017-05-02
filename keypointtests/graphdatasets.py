@@ -89,7 +89,7 @@ def boxplot_data(stats, filename):
     results = ['times', 'keypoints', 'matches', 'inliers', 'percentages']
     detectors = ['sift', 'surf', 'orb', 'akaze', 'brisk']
     fig = plt.gcf()
-    fig.set_size_inches(4, 3, forward=True)
+    fig.set_size_inches(8, 6, forward=True)
 
     for result in results:
         resultlist = []
@@ -117,7 +117,7 @@ def boxplot_data(stats, filename):
 
         plt.xticks([1, 2, 3, 4, 5], detectors)
 
-        plt.savefig(graphname)
+        plt.savefig(graphname, dpi=400)
 
 
 def ave(values):

@@ -106,7 +106,7 @@ def boxplot_data(stats, filename):
     results = ['times', 'keypoints', 'matches', 'inliers', 'percentages']
     detectors = ['sift', 'surf', 'orb', 'akaze', 'brisk']
     fig = plt.gcf()
-    fig.set_size_inches(4, 3, forward=True)
+    fig.set_size_inches(1, 3, forward=True)
 
     for result in results:
         resultlist = []
@@ -131,7 +131,7 @@ def boxplot_data(stats, filename):
             	plt.title('% False Inliers vs False Matches')
 
             plt.xticks([1, 2, 3, 4, 5], detectors)
-            plt.savefig(graphname)
+            plt.savefig(graphname, dpi=310)
 
 
 def ave(values):
