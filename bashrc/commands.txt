@@ -1,3 +1,34 @@
+
+get number of point records:
+find . -name "*.las" | xargs -I fname lasinfo fname | grep "Number of Point Records" 
+
+cut field2 using space delimiter:
+ cut -d' ' -f2-
+
+delete anything less than 5k (not accurate):
+find . -name "*.las" -size -5k -delete
+
+find and move svol files, dont recurse!!!!
+find . -maxdepth 1 -name "*.svol" | xargs -I fname mv fname sanfran/ 
+
+copy all the laz files:
+find /media/byrnej/Seagate\ Expansion\ Drive/sanfran/Bulk\ Order\ 775298/LIDAR/raw/tiles/ -name "ARRA-CA_GoldenGate_2010_000159_14_1*.laz" | xargs -I fname ./move.sh fname
+
+make postgres postgis:
+sudo -u postgres psql -d vola_db -c "CREATE EXTENSION postgis;"
+
+find . -name "*.laz" | xargs -n1 -P4 -I fname python laschunker.py fname 3 <CRS> -c 150
+
+when the arg list gets too long:
+ find -maxdepth 1 -name '*.svol' -exec cp -t ./svol {} +
+
+restart postgres server:
+
+/etc/init.d/postgresql restart
+
+parallelize converting sound files to mp3
+find sounddir -type f -name '*.wav' | parallel -j+0 lame {} -o {.}.mp3
+
 download EVERYTHING:
 (r)recursive, (k)convert links,(p) get all resources, (N) dont copy if local timestamps newer (continue)
 wget -rkpN -c -e robots=off http://www.example.com/
@@ -17,6 +48,7 @@ sudo sh -c 'ls -hal /root/ > /root/test.out'
 
 
 ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=byrnej" "all.geojson" -nln destination_table -append
+ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=byrnej" "all.geojson" -nln tiles -overwrite
 
 more wget fun:
 wget -q -O- reddit.com/r/thedonald | grep -o -i 'Trump' | wc -w
@@ -1141,6 +1173,11 @@ head -n -50 myfile.txt
 
 kill all processes with a given name (or use pkill if available)
 kill -9 `ps -e | grep GEVA | awk '{print $1}'`
+
+show and change java version:
+sudo update-alternatives --display java 
+sudo update-alternatives --config java
+java -version
 
 aptitude choose javac version
 sudo update-alternatives --config javac
