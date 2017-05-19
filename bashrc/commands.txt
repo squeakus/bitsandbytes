@@ -1,3 +1,9 @@
+
+
+
+ls -l | awk '{x=x+$5}; END {print "total bytes in directory: " x}'
+
+
 pdal noise filter:
 pdal pipeline noisefilter.json --writers.las.filename=output.laz --readers.las.filename=input.laz
 
