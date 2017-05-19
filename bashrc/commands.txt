@@ -1,3 +1,5 @@
+pdal noise filter:
+pdal pipeline noisefilter.json --writers.las.filename=output.laz --readers.las.filename=input.laz
 
 get number of point records:
 find . -name "*.las" | xargs -I fname lasinfo fname | grep "Number of Point Records" 
