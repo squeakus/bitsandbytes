@@ -1,5 +1,9 @@
+reload udev rules:
+sudo udevadm control --reload-rules && udevadm trigger
 
-
+switch from https to ssh:
+git remote -v
+git remote set-url origin git@github.com:squeakus/bitsandbytes.git
 
 ls -l | awk '{x=x+$5}; END {print "total bytes in directory: " x}'
 
