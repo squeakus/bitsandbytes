@@ -1,0 +1,12 @@
+for br in $(git branch --all|grep remotes/oldrepo)
+do
+  export newbr="$(echo $br|sed 's,remotes/oldrepo/,oldrepo_,')"
+  git checkout $br
+  git checkout -b $newbr
+  mkdir -p oldrepo
+  git mv $(ls|grep -v oldrepo) oldrepo/
+  git commit -m "moved tree under oldrepo"
+  git push newrepo $newbr
+  git checkout master
+  git branch -D $newbr
+done
