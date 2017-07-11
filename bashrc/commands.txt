@@ -1,9 +1,25 @@
+set up git proxy:
+git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
+
 reload udev rules:
 sudo udevadm control --reload-rules && udevadm trigger
 
 switch from https to ssh:
 git remote -v
 git remote set-url origin git@github.com:squeakus/bitsandbytes.git
+and to https:
+git remote set-url origin https://github.com/squeakus/bitsandbytes.git
+
+basic setup:
+git config --global user.email "jonathanbyrn@gmail.com"
+git config --global user.name "squeakus"
+git config --global push.default simple
+git config --global http.proxy http://proxy-chain.intel.com:911
+git config core.fileMode false
+
+change password timeout for github
+git config --global credential.helper 'cache --timeout=360000'
+
 
 ls -l | awk '{x=x+$5}; END {print "total bytes in directory: " x}'
 
@@ -241,10 +257,6 @@ echo $0
 
 history without the line numbers:
 history | cut -c 8-
-
-
-change password timeout for github
-git config --global credential.helper 'cache --timeout=360000'
 
 
 git diff:
