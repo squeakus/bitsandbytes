@@ -20,6 +20,26 @@ git config core.fileMode false
 change password timeout for github
 git config --global credential.helper 'cache --timeout=360000'
 
+When pulling code always use:
+git pull --rebase
+
+undo a stupid commit:
+git reset --hard HEAD~1
+
+git diff:
+git difftool  8a457cf14e453a6544c1d8b838b23a81402173c8  a6b27259ef16eaf88677a8
+
+after adding the following to .gitconfig
+[diff]
+    tool = meld
+    keepBackup = false
+[difftool "meld"]
+        path = /usr/bin/meld
+[merge]
+        tool = mymeld
+[mergetool "mymeld"]
+        cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
+
 
 ls -l | awk '{x=x+$5}; END {print "total bytes in directory: " x}'
 
@@ -28,7 +48,7 @@ pdal noise filter:
 pdal pipeline noisefilter.json --writers.las.filename=output.laz --readers.las.filename=input.laz
 
 get number of point records:
-find . -name "*.las" | xargs -I fname lasinfo fname | grep "Number of Point Records" 
+find . -name "*.las" | xargs -I fname lasinfo fname | grep "Number of Point Records"
 
 cut field2 using space delimiter:
  cut -d' ' -f2-
@@ -37,7 +57,7 @@ delete anything less than 5k (not accurate):
 find . -name "*.las" -size -5k -delete
 
 find and move svol files, dont recurse!!!!
-find . -maxdepth 1 -name "*.svol" | xargs -I fname mv fname sanfran/ 
+find . -maxdepth 1 -name "*.svol" | xargs -I fname mv fname sanfran/
 
 copy all the laz files:
 find /media/byrnej/Seagate\ Expansion\ Drive/sanfran/Bulk\ Order\ 775298/LIDAR/raw/tiles/ -name "ARRA-CA_GoldenGate_2010_000159_14_1*.laz" | xargs -I fname ./move.sh fname
@@ -65,7 +85,7 @@ just the dir:
 wget -rkpN -c --no-parent http://example.com/moo/blah
 
 show path in nautilus:
-ctrl+l 
+ctrl+l
 
 run ipython within a virtualenv:
 python -c 'import IPython;
@@ -85,21 +105,11 @@ grep a webpage:
 wget -q -O-
 
 
-
 get all links from a website:
 sed -n 's/.*href="\([^"]*\).*/\1/p' filename
 
-When pulling code always use:
-git pull --rebase
-
-
-undo a stupid commit:
-git reset --hard HEAD~1
-
-
 read input from mouse
 cat /dev/input/mouseX
-
 
 fix yo code:
 find . -iname "*.py" | xargs -I filename autopep8 --in-place --aggressive --aggressive filename
@@ -258,29 +268,12 @@ echo $0
 history without the line numbers:
 history | cut -c 8-
 
-
-git diff:
-git difftool  8a457cf14e453a6544c1d8b838b23a81402173c8  a6b27259ef16eaf88677a8
-
-after adding the following to .gitconfig
-[diff]
-    tool = meld
-    keepBackup = false
-[difftool "meld"]
-        path = /usr/bin/meld
-[merge]
-        tool = mymeld
-[mergetool "mymeld"]
-        cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
-
-
-
 How to fork an existing repo you have changed:
 Make a fork on github
 git remote add openCVopenMVG https://github.com/squeakus/openMVG.git
 git fetch openCVopenMVG
 git commit -am "now using an ORB 32 bit binary region"
-git push openCVopenMVG 
+git push openCVopenMVG
 
 change alternative compilers
 sudo update-alternatives --all
@@ -333,7 +326,7 @@ cmd + shift + \ <- open file tree
 ctrl+shft+p <- open command pallette
 pane:split <- split window
 or
-ctrl + k <arrowkey> 
+ctrl + k <arrowkey>
 
 
 HDR blending:
@@ -387,7 +380,7 @@ exiftool -filename -gpslatitude -gpslongitude -T DIR > out.txt
 exiftool -filename -gpslatitude -gpslongitude -n -T DIR > out.txt
 
 automatically pass all the libraries to c++ code:
-g++ chartest.cpp `pkg-config --cflags --libs opencv` 
+g++ chartest.cpp `pkg-config --cflags --libs opencv`
 
 run gnu debugger:
 gdb ../../bin/bundler
@@ -453,12 +446,12 @@ if you get a precision error then add an offset of the rough coords
 las2las --t_srs EPSG:4326 srs.las --scale 0.000001 0.000001 0.01 --offset 6,53,0
 
 show what is connected to the ports:
-netstat -na 
+netstat -na
 
 
 convert coordinates using gdal
 from irish transverse mercator to WGS:84
-echo -e "715830 734697" | gdaltransfor -s_srs EPSG:2157 -t_srs EPSG:4326 
+echo -e "715830 734697" | gdaltransfor -s_srs EPSG:2157 -t_srs EPSG:4326
 wgs:84 to irish grid coords
 echo -e "-6.26024777275666 53.3497939117992" | gdaltransform -s_srs EPSG:4326 -t_srs EPSG:29902
 wgs:84 to google spherical mercator
@@ -478,7 +471,7 @@ list all users:
 cut -d: -f1 /etc/passwd
 
 Building grassGIS
-./configure --with-liblas=yes --with-liblas-config=/usr/bin/liblas-config --with-freetype-includes=/usr/include/freetype2 
+./configure --with-liblas=yes --with-liblas-config=/usr/bin/liblas-config --with-freetype-includes=/usr/include/freetype2
 
 
 overlay gifs by keeping alpha, only png has alpha not jpg
@@ -505,7 +498,7 @@ identify --verbose image.jpg
 exif also good but not clear how to extract it.
 
 fixing a gpg key error:
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3C962022012520A0 
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3C962022012520A0
 sudo apt-get update
 
 sudo apt-get purge apport
@@ -570,7 +563,7 @@ sudo usermod -aG www-data jonathan
 sudo addgroup www-data
 
 sudo chown -R www-data:www-data public_html/
- 
+
 
 setting up apache2 virtualhost:
 sudo mkdir -p /var/www/test.com/public_html
@@ -589,7 +582,7 @@ create a .conf file:
 </VirtualHost>
 
 
-sudo a2ensite test.conf 
+sudo a2ensite test.conf
 sudo service apache2 reload
 
 add a line /etc/hosts to redirect to localhost:
@@ -599,8 +592,8 @@ add a line /etc/hosts to redirect to localhost:
 
 nodejs server stuff:
 npm <- package manager
-#install and write to package.json 
-npm install <package> --save 
+#install and write to package.json
+npm install <package> --save
 http-server <- serve pages from the command line
 
 installing a kernel module:
@@ -718,7 +711,7 @@ find executable files:
 find <dir> -executable -type f
 
 build github submodules:
-git submodule add <repo> 
+git submodule add <repo>
 git submodule init
 git submodule update
 you might still have to build it
@@ -734,7 +727,7 @@ When running kinect applications always use:
 sudo optirun
 
 show functions in a shared library
-nm -D /usr/lib/libcuda.so 
+nm -D /usr/lib/libcuda.so
 
 ssh-keygen -t rsa
 cat .ssh/id_rsa.pub | ssh backup@umg.ucd.ie 'cat >> .ssh/authorized_keys'
@@ -748,7 +741,7 @@ script to allow macports and homebrew to get along
 sudo use_ports.sh port install OpenSceneGraph-devel
 
 see where package contents are installed to:
-dpkg -L <packagename> 
+dpkg -L <packagename>
 
 webcam timelapse from the command line(t=number of frames, r=fps):
 streamer -o 0000.jpeg -s 300x200 -j 100 -t 2000 -r 1
@@ -884,7 +877,7 @@ ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=byrnej" "all.geojson" -nln desti
 postgresql:
 get settings
 select * from pg_settings where name = 'port';
-/etc/postgresql/9.3/main/postgresql.conf 
+/etc/postgresql/9.3/main/postgresql.conf
 where the dbs are physically stored:
 /var/lib/postgresql/9.3
 
@@ -904,7 +897,7 @@ set up a new postGIS DB:
 createdb -U postgres gis -O postgres
 psql -U postgres -d gis -c 'CREATE EXTENSION postgis; CREATE EXTENSION hstore;'
 import the data
-osm2pgsql -c -d gis -U postgres -W -H localhost dublin_ireland.osm.pbf 
+osm2pgsql -c -d gis -U postgres -W -H localhost dublin_ireland.osm.pbf
 and with style file:
 osm2pgsql -c -d gis -U postgres ./dublin_ireland.osm.pbf --style openstreetmap-carto.style
 
@@ -913,7 +906,7 @@ another way is by sudo-ing in as a different user:
 sudo adduser jon
 sudo -i -u jon
 sudo -u postgres createuser  <name>
-sudo -u postgres createdb testdb -O <name> 
+sudo -u postgres createdb testdb -O <name>
 normally -W used to add pword but not needed for localhost
 You need to change the control file to trust to gain access locally
 /etc/postgresql/9.3/main/pg_hba.conf
@@ -1101,7 +1094,7 @@ sudo update-alternatives --config javaws
 openvsp install missing packages: libxft-dev, libxinerama
 
 add this to opennurbs_array_defs.h:
-void ON_qsort( 
+void ON_qsort(
         void* base,
         size_t count,
         size_t sizeof_element,
@@ -1187,7 +1180,7 @@ grep plus one line:
 grep -C 1 'phrase' file.tex
 -B N (N lines before), -A N (N lines after).
 
-if testing stuff in bash check out: 
+if testing stuff in bash check out:
 man test
 
 trim the first 50 lines off a file:
@@ -1199,7 +1192,7 @@ kill all processes with a given name (or use pkill if available)
 kill -9 `ps -e | grep GEVA | awk '{print $1}'`
 
 show and change java version:
-sudo update-alternatives --display java 
+sudo update-alternatives --display java
 sudo update-alternatives --config java
 java -version
 
@@ -1289,7 +1282,7 @@ ctrl-w d <- detach the screen
 ctrl-w c <- ctrl-a n, ctrl-a p <- create, next, prev screen
 ctrl-w w <- show a window tab
 ctrl-w [ <- scrollback mode
-ctrl-w k / exit <- kill that screen 
+ctrl-w k / exit <- kill that screen
 
 What the .screenrc file should look like
 #change default scrollback value for new windows
@@ -1361,7 +1354,7 @@ sudo dmidecode -s bios-version <- get the bios version
 
 neo4j <- add repos and aptitude install
 sudo neo4j install
-service neo4j-service status 
+service neo4j-service status
 sudo neo4j start
 http://localhost:7474 <- see if it is up and running
 http://localhost:7474/db/data/ <- see the rest api
@@ -1501,7 +1494,7 @@ rpcbind mountd nfsd statd lockd rquotad : ALL
 and start the daemon:
 /etc/init.d/nfs-kernel-server restart
 
-cron commands for backing up stuff on 
+cron commands for backing up stuff on
 /usr/bin/mysqldump --opt -u <username> -p<pass> <database> > /var/www/html/backup.sql
 
 /bin/sh /usr/local/pem/vhosts/999/webspace/httpdocs/backup/backupdated.sh
@@ -1632,7 +1625,7 @@ if replacing something with a slash then you can use any delimiter:
 vi diff commands:
 svn diff test.py | view -
 svn diff test.py | vim -R -
-vimdiff test1.py test2.py 
+vimdiff test1.py test2.py
 
 watch <- ncurses script to check something out continuously
 
@@ -1686,7 +1679,7 @@ port select --set python python27 osx  <-set python version
 sudo port select --set ipython ipython27 <- set ipython version
 grep the ip address:
 /sbin/ifconfig $1 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'
- 
+
 
 python setup.py install --home=~  <- install python module to home dir
 
@@ -1764,7 +1757,7 @@ bt <- get the back trace
 
 alt+printscr+k <- restart xorg
 
-netstat -t -u -c <- show network traffic 
+netstat -t -u -c <- show network traffic
 netstat <- show open ports
 netstat -taup <- find out whats using all the bandwidth
 
@@ -1838,8 +1831,8 @@ convert -delay 100 -loop 0 image*.jpg animation.gif
 convert -dispose none -delay 0 -size 512x882 xc:SkyBlue +antialias -fill White  -dispose previous -delay 100 *.png anim.gif
 
 animated gif to avi:
-convert bridgeGen.gif image%05d.png  
-ffmpeg -i image%05d.png a.avi  
+convert bridgeGen.gif image%05d.png
+ffmpeg -i image%05d.png a.avi
 rm image*.png
 
 remove transparency on a png:
@@ -1941,7 +1934,7 @@ if there is a problem with the folders:cd /home
 ls -l
 mkdir scheiber
 chmod  0700 scheiber
-chown -R scheiber:scheiber scheiber 
+chown -R scheiber:scheiber scheiber
 
 
 # recursively find most recently edited files.
@@ -1997,7 +1990,7 @@ gcc -shared dist.o -o libdist.so  <- create lib
 move to /usr/lib et voila!
 
 run cProfile from the command line:
-python -m cProfile -o profile.pyprof -s 'time' myScript.py 
+python -m cProfile -o profile.pyprof -s 'time' myScript.py
 pyprof2calltree -i profile.pyprof -k
 
 cp build.{xml,bak} <- replace one with other
@@ -2009,13 +2002,13 @@ shorter walltime means it is more likely to be called
 
 gridengine <- batch processor for ichec nodes
 qsub <- submit job for gridengine
-quota <- show hd quota 
+quota <- show hd quota
 mybalance <- show remaining hours
 pbsnodes <- list all available nodes
 pbsnodes -l all <- show state
 pbsnodes -l free <- all free nodes
 pbsnodes -x <- stdout xml
-qdel jobid <- delete a job 
+qdel jobid <- delete a job
 qstat <- show jobs in queue
 qutil -j 42537 <- show how the job is getting on
 qselect -u $USER | xargs qdel  <- kill all of my jobs
@@ -2032,7 +2025,7 @@ qselect -u $USER | xargs qdel
 
 CRAN R STUFF:
 rscript <- better than batch
-R CMD BATCH <script> <- run a script from commandline 
+R CMD BATCH <script> <- run a script from commandline
 install.package('hmisc') <-cran install package from commandline
 R --no-save < filename
 messing with sound input:
@@ -2102,7 +2095,7 @@ outputting the contents of a directory to a file
 ls -l [directory]/ > [filename]
 lsof <- list open files, can check whats accessing a file
 
-only outputting columns 1 and 3 
+only outputting columns 1 and 3
 ls -l [directory] | awk '{print $1,$3}' > [filename]
 
 print out first col of last line of file
@@ -2112,7 +2105,7 @@ find . -name cmaresult* | xargs tail -n 1 | awk '{print $1}'
 diff -u(nified) -y(side by side) -q(uick)
 
 mv oldfilename newfilename  <-rename a file
-cp crap.txt ~\  <-copies it to your home folder 
+cp crap.txt ~\  <-copies it to your home folder
 tail/head <- get the top or bottom of a file
 tail -n 100 -f filename <- list last 100 and keep showing additions
 for i in *.dat; do echo $i;done  <- list all dat files\
@@ -2123,7 +2116,7 @@ http://www.youtube.com/watch?v=6s1K1Ja48h0#t=3m36s
 youtube-dl <name> <-download a video
 
 sudo !!  <- run last command as root
-python -m SimpleHTTPServer 8080 <-set up a python server in currentdir 
+python -m SimpleHTTPServer 8080 <-set up a python server in currentdir
 cd -   <- go to previous directory
 ^foo^bar^   <-run previous command replacing foo with bar
 !whatever:p  <- find last whatever command but dont run it
@@ -2136,7 +2129,7 @@ grep flags /proc/cpuinfo <- cpuflags
 
 
 crop an mp3:
-mp3splt file.mp3 mins.secs.milli mins.sec 
+mp3splt file.mp3 mins.secs.milli mins.sec
 split audio into multiple mp3s
 mp3splt -t 15.00 -a -d splt chaos1.mp3 <- -a find quiet part, -d directory
 split in a nicely ordered fashion
@@ -2218,12 +2211,12 @@ mencoder input.ogm -ovc xvid -oac mp3lame -xvidencopts pass=1 -o output.avi
 
 convert one video to another (use avidemux)
 mencoder -oac copy -ovc lavc -o video.avi video.flv
-mencoder <filename.avi> -ovc lavc -oac lavc -o <output.avi> 
+mencoder <filename.avi> -ovc lavc -oac lavc -o <output.avi>
 ffmpeg -i "yourvideo.flv" "new.avi"
 no audio:
 mencoder inputvideo.avi -nosound -ovc copy -o outputvideo.avi
 
-exiv2 <- read metadata from photos 
+exiv2 <- read metadata from photos
 
 aptitude why <- tellyou what installed something
 Aptitude flags:
@@ -2296,7 +2289,7 @@ setting up pink robot:
 make sure GAWK and PHP are installed
 turn on PHP in httpd.conf (loadmodule and addmodule)
 restart the server(apachectl)
-add gawk link from /var/opt to /usr/bin 
+add gawk link from /var/opt to /usr/bin
 change mods on grammar.txt and population.txt
 
 apache: /private/etc/apache2 <- on Leopard
@@ -2320,8 +2313,8 @@ alias hello="echo hello"
 source .profile  <- sets up that profile in the terminal
 
 locating a program:
-locate [filename] 
-which [filename] 
+locate [filename]
+which [filename]
 whereis [filename]
 
 send a mail from the command line:
@@ -2346,10 +2339,10 @@ min hour day month weekday
 0 19 * * * rm /tmp
 30 20 * * 1 /Users/jbyrne/ExperimentManager/scripts/sendReport.pl /Users/jbyrne/MutationTest
 
-File Location: 
+File Location:
 Java classpath in Leopard: /System/Library/Java/Extensions
 apache: /private/etc/apache2
-apache logs: /var/log/apache2 
+apache logs: /var/log/apache2
 default profile programs: /usr/bin
 macports: /opt/local/bin
 fink: /sw/bin
@@ -2417,7 +2410,7 @@ git commit --amend --reset-author
 show user settings:
 git config --get user.name
 
-git add <filename> 
+git add <filename>
 git commit -am "message" <- commit all and specify message
 #first push you have to specify the repo and branch
 git push -u origin master
@@ -2437,10 +2430,10 @@ git remote set-url origin https://github.com/squeakus/PODI.git
 once that is done then build a repos, go into folder and:
 git init <- initialises the repos
 git add readme.txt
-http://ncra.ucd.ie:8080/sbm/geva/GEVA/tags/git 
+http://ncra.ucd.ie:8080/sbm/geva/GEVA/tags/git
 commit readme.txt -m "blah"
 specify external repository and give it a name:
-git remote add origin git@github.com:squeakus/fungeble.git 
+git remote add origin git@github.com:squeakus/fungeble.git
 git push origin master <- push out your change
 man gittutorial <- a quick intro to git
 git commit -am "making a git commit" --dry-run <- a for all m for message
@@ -2449,7 +2442,7 @@ backups on NCRA:
 must be logged in to automount the mount points
 netinfo <- tool to automatically mount the network mount points(should be fstab)
 backup.sh <- in root
-auto sort out webserver and svn by adding lines to /Library/LaunchDaemon 
+auto sort out webserver and svn by adding lines to /Library/LaunchDaemon
 
 using meld with svn diff, the script:
 #!/bin/bash
@@ -2538,11 +2531,11 @@ ssh username@galapagos.ucd.ie
 you can even specify a port but you normally dont have to:
 ssh -p 8080 username@somerandomserver.ucd.ie
 logging on to a machine:
-ssh username@somerandomserver.ucd.ie 
+ssh username@somerandomserver.ucd.ie
 To log into galapagos its @galapagos.ucd.ie
 or you can also use their IP adresses:
 ssh username@192.168.2.1  <- galapagos
-Because floreana is on a separate network, you must first log in to galapagos and then 
+Because floreana is on a separate network, you must first log in to galapagos and then
 into floreana, also floreana's dns isnt set up correctly so you HAVE to use the IP
 ssh username@192.168.2.2  <- floreana
 copy files using scp:
@@ -2569,7 +2562,7 @@ SVN magic:
 log into ncra.ucd.ie as root (this is the webserver)
 The password is one of Andys friends
 places to know on the webserver:
-/usr/local/svn <- this is the main svn location, it has folders for all the 
+/usr/local/svn <- this is the main svn location, it has folders for all the
 repositories and the svn-access-file that specifies access for users
 /usr/local/bin/svn <- this is the exectuable for svn 1.3.1
 /opt/local/bin/svn <- this is the executable for svn 1.6.3 (macports)
@@ -2623,7 +2616,7 @@ the old one is installed in /sw/etc/apache2
 
 Installer directories:
 /opt/local  <-macports
-/sw/local  <- fink 
+/sw/local  <- fink
 
 script for backing up the repository:
 /var/root/svnCmds.sh
@@ -2646,7 +2639,7 @@ to manually mount the folders on the client:
 showmount -e galapagos.local
 mount -t nfs galapagos.local:/GEVA /GEVA
 To mount it permanently you can use utilities-> directory utility or maybe fstab??
-in snow leopard:	
+in snow leopard:
 now hidden in disk utility files: nfs://galapagos.ucd.ie/Volumes/userData/papers
 
 AWK and SED!
@@ -2654,7 +2647,7 @@ ls -l | awk '{n+=$5}END{print n}'  <-add up all the file sizes
 cat *.dat | awk '{print$2}'  <-concatenate files and read the second column
 svn status | awk '{print $2}' | xargs svn add
 sed s/day/night/ < moo.txt > new.txt <- replace day with night, write to file
-sed -e 's/day/night/g' moo.txt > blah.txt <- s(ubsitiute) g(lobal) e(add script) 
+sed -e 's/day/night/g' moo.txt > blah.txt <- s(ubsitiute) g(lobal) e(add script)
 sed -i 's/foo/bar/' * <- i(use same file)
 sed -i 's/foo/bar/g'  <- global, all matches in a line replaced
 replace and rename folders, check shellscripts
@@ -2676,7 +2669,7 @@ XGRID_CONTROLLER_HOSTNAME
 XGRID_CONTROLLER_PASSWORD
 find out what on the grid
 xgrid -h galapagos.ucd.ie -p **** -grid list
-Submit a job		  
+Submit a job
 Xgrid -job submit /usr/bin/cal 05 2007
 get the results
 xgrid -job results -id 1480
@@ -2737,10 +2730,10 @@ TRUNCATE TABLE tablename;
 ALTER TABLE tableName AUTO_INCREMENT = 1;
 
 load in data:
-LOAD DATA LOCAL INFILE '/importfile.csv' 
-INTO TABLE test_table 
-FIELDS TERMINATED BY ',' 
-LINES TERMINATED BY '\n' 
+LOAD DATA LOCAL INFILE '/importfile.csv'
+INTO TABLE test_table
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
 (field1, filed2, field3);
 load data local infile 'questions.csv' into table questions fields terminated by ',' lines terminated by '\n';
 
@@ -2756,7 +2749,7 @@ restoring the database:
 mysql -u [username] -p [password] [database_to_restore] < [backupfile]
 If it doesn't exist in the mySqlDaemon then you have to create the database first
 
-SQLITE!	   
+SQLITE!
 .tables <-list tables
 PRAGMA table_info(jobs);  <- whats in the table
 SELECT * FROM grids <- show everything in the table
@@ -2785,7 +2778,7 @@ C-X C-F *.*<-  Open all files in a directory
 C-X ->     <- Move back and forwards through buffer
 C-X D      <- show contents of a directory
 M-/        <-autocomplete word
-M-g        <- goto line 
+M-g        <- goto line
 C-S        <-search forward
 M-SHIFT-5  <-replace forward
 C-s C-w    <-search forward for the word under cursor***
@@ -2803,9 +2796,9 @@ M-\        <- remove all whitespace
 C-V        <- move forward a screen
 M-V        <- move back a screen
 M-backspace<- delete a word
-M-F	   <- move forward a word  
+M-F	   <- move forward a word
 M-B	   <- and back a word
-M->	   <- move to end of file 
+M->	   <- move to end of file
 M-<	   <- move to start of file
 region commands
 C-M-b      <- highlight region between brackets
@@ -2837,7 +2830,7 @@ M-x highlight phrase <- color a particular word
 
 
 HELP on various commands!
-C-h a      <- apropos, if you cannot remember a command 
+C-h a      <- apropos, if you cannot remember a command
 C-h f	   <- describe a function
 C-h v	   <- describe a variable
 C-h m      <- shows commands for the module your using
@@ -2898,4 +2891,3 @@ set softtabstop=4
 set shiftwidth=4
 filetype indent on
 set pastetoggle=<F2>
-
