@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "zipping all las files in folder"
+for file in *.las; do 
+    filename=`echo $file | sed s/las/laz/`
+    echo "zipping $file to $filename"
+    las2las $file $filename
+done 

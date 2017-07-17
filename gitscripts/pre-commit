@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# Hard limit: Reject commit entirely.
+# Soft limit: Don't reject commit but print a warning.
+hardLimit=$(git config hooks.filesizehardlimit)
+softLimit=$(git config hooks.filesizesoftlimit)
+: ${hardLimit:=1048576} # 1 MiB
+: ${softLimit:=524288}  # 512 KiB
+
+listChangedFiles()
+{
+	# git diff --staged --name-status output is in the form:
+	# <singleLetter> <fileName>
+	# Filter out deleted files indicated by single letter "D"
+	# TODO figure out what the replace pattern at the end does
+	git diff --staged --name-status | sed -e '/^D/ d; /^D/! s/.\s\+//'
+}
+
+unmunge()
+{
+	local result="${1#\"}"
+	result="${result%\"}"
+	env echo -e "$result"
+}
+
+checkFileSize()
+{
+	n=0
+	while read -r mungedFilename
+	do
+		f="$(unmunge "$mungedFilename")"
+		h=$(git ls-files -s "$f" | cut -d' ' -f 2) # Get file ID
+		s=$(git cat-file -s "$h") # Then get the file size from the ID
+
+		if [ "$s" -gt $hardLimit ]
+			then
+			env echo -E 1>&2 "ERROR: $mungedFilename ($s B) exceedes file size limit ($hardLimit B). Rejecting entire commit."
+			n=$((n+1))
+		elif [ "$s" -gt $softLimit ]
+			then
+			env echo -E 1>&2 "NOTICE: $mungedFilename ($s B) exceedes file size warning threshold ($softLimit B)."
+		fi
+	done
+	[ $n -eq 0 ]
+}
+
+listChangedFiles | checkFileSize

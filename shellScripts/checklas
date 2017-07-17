@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "checking all las files in folder"
+for file in *.las; do
+    pointcnt=$(lasinfo $file | grep "Number of Point Records" |  cut -d':' -f2-| xargs)
+    if [ $pointcnt -lt 1 ]; then
+	echo "$file has zero points"
+    fi
+done 
