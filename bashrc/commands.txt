@@ -1,3 +1,6 @@
+set blender to read a script and then render the scene:
+./blender -b --python gpurender.py trinity2.blend -o ./out --frame-start 1740 --frame-end 1899 -a 
+
 setting up gitignore and hooks:
 make a git_template folder and copy the scripts
 

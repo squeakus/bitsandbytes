@@ -52,7 +52,6 @@ export HISTSIZE=2048
 unset HISTFILE
 
 # This provides coloured grep results
-export GREP_OPTIONS='--color=auto'
 
 export FIGNORE=".o:~"
 
