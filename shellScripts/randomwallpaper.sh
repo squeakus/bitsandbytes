@@ -40,17 +40,25 @@ while [ $# -gt 0 ]; do
 done
 
 if $random; then
-	wpfile=$(ls "$WPDIR"/*.jpg | sort -R | head -n 1)
-	echo "chose $wpfile" >&2
+	wpfile1=$(ls "$WPDIR"/*.jpg | sort -R | head -n 1)
+	echo "chose $wpfile1" >&2
+fi
+
+if $random; then
+	wpfile2=$(ls "$WPDIR"/*.jpg | sort -R | head -n 1)
+	echo "chose $wpfile2" >&2
 fi
 
 cat >$HOME/.config/nitrogen/bg-saved.cfg <<EOF
-[:0.0]
-file=$wpfile
-mode=4
-bgcolor=# 0 0 0
-EOF
+[xin_0]
+file=$wpfile1
+mode=1
+bgcolor=#000000
 
-if $apply; then
-	nitrogen --restore
-fi
+[xin_1]
+file=$wpfile2
+mode=1
+bgcolor=#000000
+EOF
+/bin/sleep 2s
+nitrogen --restore
