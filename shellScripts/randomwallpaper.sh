@@ -52,12 +52,12 @@ fi
 cat >$HOME/.config/nitrogen/bg-saved.cfg <<EOF
 [xin_0]
 file=$wpfile1
-mode=1
+mode=5
 bgcolor=#000000
 
 [xin_1]
 file=$wpfile2
-mode=1
+mode=5
 bgcolor=#000000
 EOF
 /bin/sleep 2s

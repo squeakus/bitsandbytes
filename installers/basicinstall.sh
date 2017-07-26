@@ -10,6 +10,7 @@ git config --global user.email "jonathanbyrn@gmail.com"
 git config --global user.name "squeakus"
 git config --global push.default simple
 git config --global http.proxy http://proxy-chain.intel.com:911
+git config --global credential.helper 'cache --timeout=360000'
 git config core.fileMode false
 
 
