@@ -34,18 +34,34 @@ def main():
         print("treedepth", depth, "coordinate reference system", crs)
         print("Lat/lon of centroid", lat, )
         print("Two bits per voxel:" , twobits)
-        vols = []
-        while True:
-            data = f.read(8)
-            if not data:
-                break
-            bit64chunk = struct.unpack('Q', data)[0]
-            vols.append(bit64chunk)
 
-    # initialise levels
-    levels = []
-    if twobits:
+        # initialise levels
+        levels = []
         data = []
+        bitcnt = 1
+
+        # pull in the 64 bit chunks and assign to a level.
+        for d in range(depth):
+            levels.append([])
+            newcnt = 0
+            for i in range(bitcnt):
+                chunk = get_chunk(f)
+                newcnt += count_bits(chunk)
+                levels[d].append(chunk)
+            if twobits:
+                data.append([])
+                for i in range(bitcnt):
+                    chunk = get_chunk(f)
+                    newcnt += count_bits(chunk)
+                    data[d].append(chunk)
+            bitcnt = newcnt
+
+    #test code to make sure it is working!
+    vols = []
+    for level in levels:
+        vols.extend(level)
+    print(vols)
+    levels = []
 
     levels.append([get_indexes(vols[0])])
     vols = vols[1:]
@@ -60,15 +76,23 @@ def main():
             vols = vols[len(levels[d-1][b]):]
 
         print(levels[d])
-    
 
     l1cnt = 0
     for l0idx, l0val in enumerate(levels[0][0]):
+        indices = [l0val]
         for l1idx, l1val in enumerate(levels[1][l0idx]):
             for l2idx, l2val in enumerate(levels[2][l1cnt]):
                 print("point index:", l0val, l1val, l2val)
                 print("point xyz:", xyz_from_index([l0val, l1val, l2val]))
             l1cnt += 1
+
+def get_chunk(filereader):
+    data = filereader.read(8)
+    if not data:
+        print("prematurely hit end of file")
+        exit()
+    bit64chunk = struct.unpack('Q', data)[0]
+    return bit64chunk
 
 def xyz_from_index(indexes):
     """Generate coordinates from sparse index."""
@@ -79,6 +103,16 @@ def xyz_from_index(indexes):
         y += (index % 16 // 4) * mult
         z += (index // 16) * mult
     return (x, y, z)
+
+def count_bits(vol):
+    """Count all bits set to 1."""
+    count = 0
+    vol = np.uint64(vol)
+    for i in range(64):
+        bit = read_bit(vol, i)
+        if bit == 1:
+            count += 1
+    return count
 
 
 def get_indexes(vol):
