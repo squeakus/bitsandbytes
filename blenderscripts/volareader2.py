@@ -41,6 +41,7 @@ def main():
         bitcnt = 1
 
         # pull in the 64 bit chunks and assign to a level.
+        # If using twobits then extract that too!
         for d in range(depth):
             levels.append([])
             newcnt = 0
@@ -52,39 +53,47 @@ def main():
                 data.append([])
                 for i in range(bitcnt):
                     chunk = get_chunk(f)
-                    newcnt += count_bits(chunk)
                     data[d].append(chunk)
             bitcnt = newcnt
 
-    #test code to make sure it is working!
-    vols = []
-    for level in levels:
-        vols.extend(level)
-    print(vols)
-    levels = []
+    indexes = get_all_indexes(levels, data, depth)
+    indexes = traverse_indexes([], indexes, depth-1, [0] * depth)
+    print(indexes)
 
-    levels.append([get_indexes(vols[0])])
-    vols = vols[1:]
+def get_all_indexes(levels, data, depth):
+    bitcnt = 1
+    indexes = []
 
-    print(levels[0])
+    for d in range(depth):
+        newcnt = 0
+        indexes.append([])
+        for b in range(bitcnt):
+            chunk_indexes = get_indexes(levels[d][b])
+            newcnt += len(chunk_indexes)
+            indexes[d].append(chunk_indexes)
+        bitcnt = newcnt
 
-    for d in range(1,depth):
-        levels.append([])
-        for b in range(len(levels[d-1])):
-            for i in range(len(levels[d-1][b])):
-                levels[d].append(get_indexes(vols[i]))
-            vols = vols[len(levels[d-1][b]):]
+    for levidx in indexes:
+        print(levidx)
+    return indexes
 
-        print(levels[d])
+def traverse_indexes(prev, levels, depth, levelcnt):
+    #we are doing a depth first traversal but need to keep track of
+    # our BFS position because the breadth position is required!
+    traversed = []
+    if depth > 0:
+        block = levels[0][levelcnt[depth]]
+        for index in block:
+            lowerlist = prev + [index]
+            result = traverse_indexes(lowerlist, levels[1:], depth-1, levelcnt)
+            traversed.extend(result)
+    else:
+        block = levels[0][levelcnt[depth]]
+        for index in block:
+            traversed.append(prev + [index])
+    levelcnt[depth] += 1
+    return traversed
 
-    l1cnt = 0
-    for l0idx, l0val in enumerate(levels[0][0]):
-        indices = [l0val]
-        for l1idx, l1val in enumerate(levels[1][l0idx]):
-            for l2idx, l2val in enumerate(levels[2][l1cnt]):
-                print("point index:", l0val, l1val, l2val)
-                print("point xyz:", xyz_from_index([l0val, l1val, l2val]))
-            l1cnt += 1
 
 def get_chunk(filereader):
     data = filereader.read(8)
@@ -131,6 +140,11 @@ def read_bit(bit64, index):
     bit = (int(bit64) >> index) & 1
     return bit
 
+
+class IndexTree(object):
+    def __init__(self):
+        self.children = None
+        self.data = None
 
 if __name__ == '__main__':
     main()
