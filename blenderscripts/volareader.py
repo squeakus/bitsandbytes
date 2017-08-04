@@ -64,7 +64,7 @@ def get_coordinates(levels, data, depth):
     indexes = traverse_indexes([], indexes, depth-1, [0] * depth)
     for index in indexes:
         coordinates.append(xyz_from_index(index))
-    print coordinates
+    print(coordinates)
 
 def get_all_indexes(levels, data, depth):
     bitcnt = 1
