@@ -1,3 +1,27 @@
+python installer packages:
+pyinstaller --onefile --windowed laschunker.py
+with hooks:
+pyinstaller --onefile --windowed  --additional-hooks-dir hooks/
+
+
+rename svol to vol recursively:
+find . -iname "*svol*" -exec rename 's/.svol/.vol/' '{}' \;
+
+tmux enable mouse scroll:
+ctrl+b :
+setw -g mode-mouse on
+
+tmux new window
+ctrl+b c
+ctrl+b w
+
+tmux copy paste:
+ctrl+b [
+
+
+show what is running on the cards:
+nvidia-smi
+
 set blender to read a script and then render the scene:
 ./blender -b --python gpurender.py trinity2.blend -o ./out --frame-start 1740 --frame-end 1899 -a 
 
