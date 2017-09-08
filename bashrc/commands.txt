@@ -7,6 +7,9 @@ pyinstaller --onefile --windowed  --additional-hooks-dir hooks/
 rename svol to vol recursively:
 find . -iname "*svol*" -exec rename 's/.svol/.vol/' '{}' \;
 
+tmux ls <- show all the available sessions
+tum attach -t 3 <- attach to session 3
+
 tmux enable mouse scroll:
 ctrl+b :
 setw -g mode-mouse on
