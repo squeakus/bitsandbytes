@@ -10,7 +10,7 @@ import struct
 
 # Global parameters
 USE_GPU = False
-PRINT_IMG = False
+PRINT_IMG = True
 DIRECTORY = './'
 
 
