@@ -1,3 +1,7 @@
+Amazon ec2 instance:
+
+chmod 400 /path/my-key-pair.pem
+
 set blender to read a script and then render the scene:
 ./blender -b --python gpurender.py trinity2.blend -o ./out --frame-start 1740 --frame-end 1899 -a 
 
