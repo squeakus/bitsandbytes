@@ -13,7 +13,14 @@ sudo -i -u postgres
 createuser jonathan
 createdb vola_db
 exit
-psql -d vola_db
+#psql -d vola_db
+
+###SECURITY#### set superuser password and ensure no remote access in bg_hba.conf
+#/etc/postgresql/9.1/main/pg_hba.conf
+#https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
+
+sudo -u postgres psql -d vola_db -c "CREATE EXTENSION postgis;"
+sudo -u postgres psql -d vola_db -c "CREATE EXTENSION postgis_topology;"
 
 cd volamap/flask/bin
 sudo ln -s /usr/bin/python3 python
@@ -29,8 +36,7 @@ chmod +x run.py
 #/etc/postgresql/9.1/main/pg_hba.conf
 #https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
 
-sudo -u postgres psql -d vola_db -c "CREATE EXTENSION postgis;"
-sudo -u postgres psql -d vola_db -c "CREATE EXTENSION postgis_topology;"
+
 
 #geoserver setup: http://docs.geoserver.org/stable/en/user/installation/linux.html
 #download the binary: http://geoserver.org/download/
@@ -46,4 +52,3 @@ http://localhost:8080/geoserver
 DEFAULT = admin geoserver (don't forget to change!!)
 
 # if No 'Access-Control-Allow-Origin' header is present on the requested then it needs to be enabled in jetty
-

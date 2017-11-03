@@ -1,3 +1,9 @@
+aws configure
+aws s3api list-buckets
+aws s3 sync s3://bucketname .
+aws s3 cp moo.zip s3://bucketname
+
+
 python installer packages:
 pyinstaller --onefile --windowed laschunker.py
 with hooks:
