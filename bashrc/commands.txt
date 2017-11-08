@@ -105,17 +105,10 @@ find . -maxdepth 1 -name "*.svol" | xargs -I fname mv fname sanfran/
 copy all the laz files:
 find /media/byrnej/Seagate\ Expansion\ Drive/sanfran/Bulk\ Order\ 775298/LIDAR/raw/tiles/ -name "ARRA-CA_GoldenGate_2010_000159_14_1*.laz" | xargs -I fname ./move.sh fname
 
-make postgres postgis:
-sudo -u postgres psql -d vola_db -c "CREATE EXTENSION postgis;"
-
 find . -name "*.laz" | xargs -n1 -P4 -I fname python laschunker.py fname 3 <CRS> -c 150
 
 when the arg list gets too long:
  find -maxdepth 1 -name '*.svol' -exec cp -t ./svol {} +
-
-restart postgres server:
-
-/etc/init.d/postgresql restart
 
 parallelize converting sound files to mp3
 find sounddir -type f -name '*.wav' | parallel -j+0 lame {} -o {.}.mp3
@@ -933,6 +926,13 @@ psql <- log into db
 # create a new user:
 createuser --interactive
 
+make postgres postgis:
+psql -d vola_db -c "CREATE EXTENSION postgis;"
+psql -d vola_db -c "CREATE EXTENSION postgis_topology;"
+
+restart postgres server:
+/etc/init.d/postgresql restart
+
 set up a new postGIS DB:
 createdb -U postgres gis -O postgres
 psql -U postgres -d gis -c 'CREATE EXTENSION postgis; CREATE EXTENSION hstore;'
@@ -964,6 +964,13 @@ psql testdb <- log into db
 \? <- slash commands
 \set <- system variables
 \q <- quit
+\d+ tablename <- show column values
+\timing
+
+create a spatial index:
+CREATE INDEX tile_idx ON tiledata USING GIST (wkb_geometry);
+
+DROP INDEX nyc_census_blocks_geom_idx;
 
 dropdb <dbname> --interactive <- delete a database
 
