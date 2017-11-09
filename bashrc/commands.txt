@@ -1,8 +1,4 @@
-﻿:aws configure
-aws s3api list-buckets
-aws s3 sync s3://bucketname .
-aws s3 cp moo.zip s3://bucketname
-
+aws s3 cp awsinstall.sh s3://mapdata.vola.com
 
 python installer packages:
 pyinstaller --onefile --windowed laschunker.py
@@ -130,6 +126,8 @@ convert -units PixelsPerInch image -density 300 resultimage
 download EVERYTHING:
 (r)recursive, (k)convert links,(p) get all resources, (N) dont copy if local timestamps newer (continue)
 wget -rkpN -c -e robots=off http://www.example.com/
+
+just the dir:
 
 just the dir:
 wget -rkpN -c --no-parent http://example.com/moo/blah
@@ -2911,8 +2909,6 @@ C-c C-c    <- view your changes
 
 MACROS!!
 C-x (      <- start macro
-C-x )      <- stop macro
-C-x e	   <- run macro
 C-u num + command <- run command num amount of times
 M-x name-last-kyb-macro <-add it to current instance
 M-x insert-last-macro <- writes it to file, add it to elisp

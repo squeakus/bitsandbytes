@@ -10,6 +10,7 @@
 ## Standard aliases - security
 # "-i" asks for confirmation when deleting. This is good.
 # In the "dangerous" section there are aliases for non-confirmation.
+alias cmd='vi code/bitsandbytes/bashrc/commands.txt'
 alias rm='rm -v -i'
 alias cp='cp -v -i'
 alias mv='mv -v -i'
