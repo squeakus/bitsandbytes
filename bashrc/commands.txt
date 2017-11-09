@@ -1,4 +1,4 @@
-aws configure
+﻿:aws configure
 aws s3api list-buckets
 aws s3 sync s3://bucketname .
 aws s3 cp moo.zip s3://bucketname
@@ -18,21 +18,29 @@ tum attach -t 3 <- attach to session 3
 
 tmux enable mouse scroll:
 ctrl+b :
+tmux 2.1:
+set-option -g mouse on
+older tmux:
 setw -g mode-mouse on
 
 tmux new window
 ctrl+b c
+switch between windows
 ctrl+b w
+kill window:
+ctrl+b &
+detach:
+ctrl+b d
 
-tmux copy paste:
+tmux let you scroll up:
 ctrl+b [
-
+q to exit
 
 show what is running on the cards:
 nvidia-smi
 
 set blender to read a script and then render the scene:
-./blender -b --python gpurender.py trinity2.blend -o ./out --frame-start 1740 --frame-end 1899 -a 
+./blender -b --python gpurender.py trinity2.blend -o ./out --frame-start 1740 --frame-end 1899 -a
 
 setting up gitignore and hooks:
 make a git_template folder and copy the scripts
@@ -908,23 +916,21 @@ remove all trailing white space
 sed -i 's/[ \t]*$//' "$1"
 
 postgresql:
-get settings
-select * from pg_settings where name = 'port';
-/etc/postgresql/9.3/main/postgresql.conf
-where the dbs are physically stored:
-/var/lib/postgresql/9.3
 
-service postgresql status
-sudo service postgresql start
-sudo service postgresql restart <- after any changed to gp_hba
+
 
 # postgres uses roles, each role should have a matching system account
 # Postgres has default postgres account for setting up users
-sudo -u -i postgres
-psql <- log into db
-\q quit
-# create a new user:
+sudo -u -i postgres        <- logs you in as postgres (not into the database)
+# create a new user from the command line (logged in as postgres):
 createuser --interactive
+createuser username --password --createdb #force password allows create dbs
+createdb db_name
+
+psql <- log into db
+ALTER USER username WITH PASSWORD 'newpassword';
+DROP USER username;
+\q quit
 
 make postgres postgis:
 psql -d vola_db -c "CREATE EXTENSION postgis;"
@@ -990,6 +996,23 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO tester;
 SELECT * FROM cars;
 show tables:
 SELECT * FROM pg_catalog.pg_tables
+
+the login information is stored in /etc/postgres/9.55/hb-pga.conf
+It should be locked down to only allow access locally. Peer authentication
+(using linux login details) uis default for local users
+
+get settings:
+select * from pg_settings where name = 'port';
+/etc/postgresql/9.3/main/postgresql.conf
+where the dbs are physically stored:
+/var/lib/postgresql/9.3
+
+service postgresql status
+sudo service postgresql start
+sudo service postgresql restart <- after any changed to gp_hba
+
+
+
 
 get apache version
 /usr/sbin/apache2ctl status | grep Version

@@ -13,7 +13,7 @@
 alias rm='rm -v -i'
 alias cp='cp -v -i'
 alias mv='mv -v -i'
-
+alias cmd='vi ~/code/bitsandbytes/bashrc/commands.txt'
 ## Standard aliases - CPM/MSDOS heritage
 alias del='rm -v -i'
 alias cls='clear'
