@@ -1,4 +1,85 @@
-aws s3 cp awsinstall.sh s3://mapdata.vola.com
+#Set up Geoserver
+wget http://sourceforge.net/projects/geoserver/files/GeoServer/2.12.0/geoserver-2.12.0-bin.zip
+unzip geoserver-2.12.0-bin.zip
+sudo mv geoserver-2.12.0 /usr/share/geoserver
+rm geoserver-2.12.0-bin.zip
+
+echo "export GEOSERVER_HOME=/usr/share/geoserver" >> ~/.profile
+. ~/.profile
+printenv | sort -h
+sudo chown -R $USER /usr/share/geoserver/
+
+#set up CORS for it to work with flask
+#https://gis.stackexchange.com/questions/210109/enabling-cors-in-geoserver-jetty
+#check to see which version of jetty you are using
+#find $GEOSERVER_HOME -name "jetty*" | grep -E [[:digit:]]
+cd /usr/share/geoserver/webapps/geoserver/WEB-INF/lib/
+wget http://central.maven.org/maven2/org/eclipse/jetty/jetty-servlets/9.2.13.v20150730/jetty-servlets-9.2.13.v20150730.jar
+#vi /usr/share/geoserver/webapps/geoserver/WEB-INF/web.xml
+#uncomment CORS filter and filtermapper
+
+#start automatically at startup
+#/usr/share/geoserver/bin/startup.sh
+echo "USER=$USERNAME" | sudo tee -a /etc/default/geoserver
+echo "GEOSERVER_DATA_DIR=/usr/share/geoserver/data_dir" | sudo tee -a /etc/default/geoserver
+echo "GEOSERVER_HOME=/usr/share/geoserver"  | sudo tee -a /etc/default/geoserver
+echo "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/"  | sudo tee -a /etc/default/geoserver
+echo "JAVA_OPTS=\"-Xms128m -Xmx512m\""  | sudo tee -a /etc/default/geoserver
+
+wget http://docs.geoserver.org/latest/en/user/_downloads/geoserver_deb
+mv geoserver_deb geoserver
+chmod +x geoserver
+mv geoserver  /etc/init.d/
+sudo mv geoserver  /etc/init.d/
+sudo service geoserver start
+sudo update-rc.d geoserver defaults
+
+cp -r code/vola/VOLA/volamap .
+mv data ~/volamap/app/static/
+cd ~/volamap/app/static
+chmod +x datasetparser.py
+./updatemap.sh
+
+#Apache has access to port 80 and 443 for ssl
+sudo ufw app list
+sudo ufw allow 'Apache Full'
+sudo systemctl status apache2
+
+#setting up /var/www for apache server:
+sudo cp ~/volamap/001-volamap.conf /etc/apache2/sites-available
+sudo mv volamap /var/www
+sudo adduser $USERNAME www-data
+sudo chown -R $USERNAME:www-data /var/www
+sudo chmod -R g+rwX /var/www
+
+#setting up flask virtualenv, do not use venv
+cd /var/www/volamap
+virtualenv -p python3 flask
+source flask/bin/activate
+pip3 install --upgrade pip
+pip3 install pyproj sqlalchemy geoalchemy2 flask numpy ipython psycopg2
+# create a config file for flask:
+echo "SQLALCHEMY_DATABASE_URI=\"<dbtype>://$USER:<password>@localhost/<db_name>\" > ~/volamap/app/config.py"
+
+sudo service apache2 restart
+sudo a2enmod wsgi
+sudo a2ensite 001-volamap.conf
+sudo service apache2 reload
+
+S3 Buckets
+aws configure  #needs to be configured in IAM
+aws s3api list-buckets
+aws s3 sync s3://bucketname .
+aws s3 cp moo.zip s3://bucketname
+
+#get bucket of data
+aws configure
+aws s3api list-buckets
+aws s3 sync s3://mapdata.vola.com .
+unzip volamapdata.zip
+rm volamapdata.zip
+
+
 
 python installer packages:
 pyinstaller --onefile --windowed laschunker.py
@@ -128,8 +209,6 @@ download EVERYTHING:
 wget -rkpN -c -e robots=off http://www.example.com/
 
 just the dir:
-
-just the dir:
 wget -rkpN -c --no-parent http://example.com/moo/blah
 
 show path in nautilus:
@@ -141,10 +220,6 @@ python -c 'import IPython;
 redirect output wtih sudo
 Run a shell with sudo and give the command to it by using the -c option:
 sudo sh -c 'ls -hal /root/ > /root/test.out'
-
-
-ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=byrnej" "all.geojson" -nln destination_table -append
-ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=byrnej" "all.geojson" -nln tiles -overwrite
 
 more wget fun:
 wget -q -O- reddit.com/r/thedonald | grep -o -i 'Trump' | wc -w
@@ -913,50 +988,54 @@ find . -not -path '.git' -iname '*.py' -exec sed -i 's/ *$//' '{}' ';'
 remove all trailing white space
 sed -i 's/[ \t]*$//' "$1"
 
-postgresql:
-
-
-
+POSTGRES!!!
 # postgres uses roles, each role should have a matching system account
 # Postgres has default postgres account for setting up users
-sudo -u -i postgres        <- logs you in as postgres (not into the database)
-# create a new user from the command line (logged in as postgres):
-createuser --interactive
-createuser username --password --createdb #force password allows create dbs
-createdb db_name
-
+sudo -u -i postgres
 psql <- log into db
-ALTER USER username WITH PASSWORD 'newpassword';
-DROP USER username;
 \q quit
+# create a new user:
+createuser --interactive
+
+or if you want to do it automatically:
+sudo -i -u postgres  #log in as postgres to create db and user
+createuser $USER --password --createdb #force password allows create dbs
+createdb vola_db -O $USER
+exit
 
 make postgres postgis:
+sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 psql -d vola_db -c "CREATE EXTENSION postgis;"
 psql -d vola_db -c "CREATE EXTENSION postgis_topology;"
 
-restart postgres server:
-/etc/init.d/postgresql restart
+convert geojson to postgres:
+ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=<user>" "all.geojson" -nln tiles -overwrite -lco geometry_name=<geomname>
 
-set up a new postGIS DB:
-createdb -U postgres gis -O postgres
-psql -U postgres -d gis -c 'CREATE EXTENSION postgis; CREATE EXTENSION hstore;'
-import the data
+import data from pbf:
 osm2pgsql -c -d gis -U postgres -W -H localhost dublin_ireland.osm.pbf
 and with style file:
 osm2pgsql -c -d gis -U postgres ./dublin_ireland.osm.pbf --style openstreetmap-carto.style
 
+get settings:
+select * from pg_settings where name = 'port';
+/etc/postgresql/9.3/main/postgresql.conf
+where the dbs are physically stored:
+/var/lib/postgresql/9.3
 
-another way is by sudo-ing in as a different user:
-sudo adduser jon
-sudo -i -u jon
-sudo -u postgres createuser  <name>
-sudo -u postgres createdb testdb -O <name>
 normally -W used to add pword but not needed for localhost
 You need to change the control file to trust to gain access locally
 /etc/postgresql/9.3/main/pg_hba.conf
 
-set the password for a user:
-ALTER USER Postgres WITH PASSWORD '<newpassword>';
+#if need to set password for main user
+#the hb_pga only allows peer access but if you want to set a pasword postgres superuser:
+#sudo -u postgres psql
+#\password postgres
+
+service postgresql status
+sudo service postgresql start
+sudo service postgresql restart <- after any changed to gp_hba
+or
+/etc/init.d/postgresql restart
 
 psql testdb <- log into db
 \conninfo <- show db stats
@@ -985,32 +1064,17 @@ pg_size_pretty(pg_total_relation_size('points1'));
 create index xindex on points1 (xcoord);<- build an index
 size went from 3322 to 4415
 
-create, alter and grant for a user:
+create a user:
 CREATE USER tester WITH PASSWORD 'test_password';
+set the password for a user:
 ALTER USER Postgres WITH PASSWORD '<newpassword>';
+give them permissions:
 GRANT ALL PRIVILEGES ON DATABASE "testdb" to tester;
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO tester;
 
 SELECT * FROM cars;
 show tables:
 SELECT * FROM pg_catalog.pg_tables
-
-the login information is stored in /etc/postgres/9.55/hb-pga.conf
-It should be locked down to only allow access locally. Peer authentication
-(using linux login details) uis default for local users
-
-get settings:
-select * from pg_settings where name = 'port';
-/etc/postgresql/9.3/main/postgresql.conf
-where the dbs are physically stored:
-/var/lib/postgresql/9.3
-
-service postgresql status
-sudo service postgresql start
-sudo service postgresql restart <- after any changed to gp_hba
-
-
-
 
 get apache version
 /usr/sbin/apache2ctl status | grep Version
