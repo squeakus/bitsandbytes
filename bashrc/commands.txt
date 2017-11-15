@@ -108,6 +108,9 @@ kill window:
 ctrl+b &
 detach:
 ctrl+b d
+next window:
+ctrl+b n
+ctrl+b p
 
 tmux let you scroll up:
 ctrl+b [
