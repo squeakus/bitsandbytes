@@ -2388,6 +2388,22 @@ d} <- cut to end of paragraph
 d/foo <- cut forward to bar
 d?bar <- cut back to bar
 
+what should be in your vimrc file:
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+syntax on
+set tabstop=8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+filetype indent plugin on
+set modeline
+
+
+
+
+
 use env to check your environment variables
 you can add things to your classpath by:
 export PATH=$PATH:/opt/local/bin
