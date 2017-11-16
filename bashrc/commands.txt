@@ -1,3 +1,7 @@
+curling with a proxy:
+curl -v --noproxy localhost, -i "localhost:5000/droneapi/coord?lat=53.34&lon=-6.255"
+
+
 #Set up Geoserver
 wget http://sourceforge.net/projects/geoserver/files/GeoServer/2.12.0/geoserver-2.12.0-bin.zip
 unzip geoserver-2.12.0-bin.zip
@@ -1019,6 +1023,9 @@ osm2pgsql -c -d gis -U postgres -W -H localhost dublin_ireland.osm.pbf
 and with style file:
 osm2pgsql -c -d gis -U postgres ./dublin_ireland.osm.pbf --style openstreetmap-carto.style
 
+dump a postgis database:
+pg_dump --no-acl --no-owner vola_db -N topology -T spatial_ref_sys > dbexport.pgsql
+
 get settings:
 select * from pg_settings where name = 'port';
 /etc/postgresql/9.3/main/postgresql.conf
@@ -1063,6 +1070,9 @@ dropdb <dbname> --interactive <- delete a database
 show size of db table;
 pg_size_pretty(pg_relation_size('points1'));
 pg_size_pretty(pg_total_relation_size('points1'));
+
+Count number of rows:
+elect COUNT(*) from tiledata;
 
 create index xindex on points1 (xcoord);<- build an index
 size went from 3322 to 4415

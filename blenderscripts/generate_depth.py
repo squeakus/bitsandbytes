@@ -14,8 +14,8 @@ PRINT_IMG = True
 DIRECTORY = './'
 
 
-h_res = 640
-v_res = 480
+h_res = 600
+v_res = 400
 
 
 def render_frame(i):
