@@ -52,7 +52,7 @@ def render_frame(i):
     image_rgbd = pixels[:].reshape(bpy.context.scene.render.resolution_y,bpy.context.scene.render.resolution_x, 4)
 
     # scaling and inverting for slambench
-    depth = image_rgbd[:,:,3]
+    depth = image_rgbd[:,:,3] * 10
     depth = np.flipud(depth)
     for row in depth:
         print(row)
