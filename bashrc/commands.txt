@@ -1223,6 +1223,9 @@ montage -geometry 500x300 plane0*.png  cessnamontage.jpg
 check if package is installed:
 dpkg -l | grep packagename
 
+#pad with zeros:
+rename 's/\d+/sprintf("%05d",$&)/e' foo*
+
 pad files with zeros:
 for i in *.dat;do mv $i `./zeropad.sh $i`; done
 

@@ -14,8 +14,8 @@ PRINT_IMG = True
 DIRECTORY = './'
 
 
-h_res = 600
-v_res = 400
+h_res = 320
+v_res = 240
 
 
 def render_frame(i):
@@ -52,8 +52,10 @@ def render_frame(i):
     image_rgbd = pixels[:].reshape(bpy.context.scene.render.resolution_y,bpy.context.scene.render.resolution_x, 4)
 
     # scaling and inverting for slambench
-    depth = image_rgbd[:,:,3]*256
+    depth = image_rgbd[:,:,3]
     depth = np.flipud(depth)
+    for row in depth:
+        print(row)
     rgb = image_rgbd[:,:,:3]*256
     rgb = np.flipud(rgb)
 
