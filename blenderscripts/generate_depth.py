@@ -14,8 +14,8 @@ PRINT_IMG = True
 DIRECTORY = './'
 
 
-h_res = 320
-v_res = 240
+h_res = 640
+v_res = 480
 
 
 def render_frame(i):
@@ -54,8 +54,6 @@ def render_frame(i):
     # scaling and inverting for slambench
     depth = image_rgbd[:,:,3] * 10
     depth = np.flipud(depth)
-    for row in depth:
-        print(row)
     rgb = image_rgbd[:,:,:3]*256
     rgb = np.flipud(rgb)
 

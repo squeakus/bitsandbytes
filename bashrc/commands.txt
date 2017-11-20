@@ -1224,7 +1224,7 @@ check if package is installed:
 dpkg -l | grep packagename
 
 #pad with zeros:
-rename 's/\d+/sprintf("%05d",$&)/e' foo*
+rename 's/\d+/sprintf("%04d",$&)/e' img_*
 
 pad files with zeros:
 for i in *.dat;do mv $i `./zeropad.sh $i`; done
@@ -2315,6 +2315,8 @@ mencoder mf://@frames.txt -mf w=1920:h=1080:fps=20:type=jpg -ovc x264 -x264encop
 
 mencoder mf://@frames.txt -mf w=1920:h=1080:fps=20:type=png  -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
 
+
+mencoder mf://@frames.txt -mf w=1024:h=1024:fps=10:type=png -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
 
 check video integrity:
 ffmpeg -v error -i file.avi -f null - 2>error.log
