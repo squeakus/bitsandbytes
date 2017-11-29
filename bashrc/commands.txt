@@ -1,3 +1,6 @@
+setting up private keys on aws:
+aws iam upload-server-certificate --server-certificate-name vola_cert --certificate-body file://cert.pem --private-key file://privatekey.pem
+
 curling with a proxy:
 curl -v --noproxy localhost, -i "localhost:5000/droneapi/coord?lat=53.34&lon=-6.255"
 
@@ -1024,7 +1027,17 @@ and with style file:
 osm2pgsql -c -d gis -U postgres ./dublin_ireland.osm.pbf --style openstreetmap-carto.style
 
 dump a postgis database:
-pg_dump --no-acl --no-owner vola_db -N topology -T spatial_ref_sys > dbexport.pgsql
+pg_dump --no-acl --no-owner vola_db -N topology -T spatial_ref_sys > vola_db.pgsql
+
+how to restore:
+psql -U USERNAME DBNAME < dbexport.pgsql
+
+if you want to use pg_restore you have to output it in a different format (it is also compressed!):
+pg_dump --no-acl --no-owner vola_db -N topology -T spatial_ref_sys -Fc > vola_db.pgsql
+
+And to restore cleanly:
+pg_restore --no-owner --clean -d vola_db vola_db.pgsql
+
 
 get settings:
 select * from pg_settings where name = 'port';
@@ -1060,7 +1073,10 @@ psql testdb <- log into db
 \d+ tablename <- show column values
 \timing
 
-create a spatial index:
+create a regular btree index
+CREATE INDEX index_name on tablename(columnname);
+
+create a spatial index (maybe use SP-GIST):
 CREATE INDEX tile_idx ON tiledata USING GIST (wkb_geometry);
 
 DROP INDEX nyc_census_blocks_geom_idx;
