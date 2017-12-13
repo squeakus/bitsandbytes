@@ -1,3 +1,17 @@
+Export the private key file from the pfx file
+openssl pkcs12 -in filename.pfx -nocerts -out key.pem
+
+Export the certificate file from the pfx file
+openssl pkcs12 -in filename.pfx -clcerts -nokeys -out cert.pem
+
+Remove the passphrase from the private key
+openssl rsa -in key.pem -out server.key
+
+compare the keys:
+openssl x509 -noout -modulus -in server.crt | openssl md5
+openssl rsa -noout -modulus -in server.key | openssl md5
+
+
 setting up private keys on aws:
 aws iam upload-server-certificate --server-certificate-name vola_cert --certificate-body file://cert.pem --private-key file://privatekey.pem
 
@@ -103,6 +117,15 @@ tum attach -t 3 <- attach to session 3
 tmux enable mouse scroll:
 ctrl+b :
 tmux 2.1:
+set-option -g mouse on
+older tmux:
+setw -g mode-mouse on
+
+tmux new window
+ctrl+b c
+switch between windows
+ctrl+b w
+kill window:
 set-option -g mouse on
 older tmux:
 setw -g mode-mouse on
@@ -2982,15 +3005,6 @@ M-F	   <- move forward a word
 M-B	   <- and back a word
 M->	   <- move to end of file
 M-<	   <- move to start of file
-region commands
-C-M-b      <- highlight region between brackets
-C-<space>  <- highlight region
-C-x        <- move between start and end ofregion
-
-COMMANDS!
-when you set a command it remembers it next time
-M-x replace-regexp <-replace stuff
-M-x wdired <- go into mode where you can edit folders and files
 USE aspell as it ingores comments and crap
 M-x ispell <- run a spellcheck
 M-!        <-execute a shell command(current directory)
