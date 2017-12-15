@@ -11,6 +11,11 @@ compare the keys:
 openssl x509 -noout -modulus -in server.crt | openssl md5
 openssl rsa -noout -modulus -in server.key | openssl md5
 
+how to branch and pull request:
+git checkout -b branchname
+commit 
+git push --set-upstream origin branchname
+git request-pull  origin/master https:/repo
 
 setting up private keys on aws:
 aws iam upload-server-certificate --server-certificate-name vola_cert --certificate-body file://cert.pem --private-key file://privatekey.pem
