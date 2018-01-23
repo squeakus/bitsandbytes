@@ -1,3 +1,5 @@
+pdal split --length 100 liffey.laz moo.laz
+
 Export the private key file from the pfx file
 openssl pkcs12 -in filename.pfx -nocerts -out key.pem
 
@@ -15,6 +17,8 @@ how to branch and pull request:
 git checkout -b branchname
 commit 
 git push --set-upstream origin branchname
+
+# This doesn't work with github, need to manually pull using the wbe interface
 git request-pull  origin/master https:/repo
 
 setting up private keys on aws:
