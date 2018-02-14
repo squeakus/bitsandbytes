@@ -1,3 +1,8 @@
+convert wiki to pdf:
+git clone moo.wiki.git
+sudo npm install -g github-wikito-converter
+gwtc ./github-wikito-converter.wiki
+
 pdal split --length 100 liffey.laz moo.laz
 
 Export the private key file from the pfx file
@@ -125,7 +130,7 @@ rename svol to vol recursively:
 find . -iname "*svol*" -exec rename 's/.svol/.vol/' '{}' \;
 
 tmux ls <- show all the available sessions
-tum attach -t 3 <- attach to session 3
+tmux attach -t 3 <- attach to session 3
 
 tmux enable mouse scroll:
 ctrl+b :

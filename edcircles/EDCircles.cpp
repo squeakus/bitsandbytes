@@ -2,9 +2,9 @@
 
 #define line_squares 1
 #define pi 3.141592653
-#define mag_threshold 10
+#define mag_threshold 50
 #define arc_squares 2
-int shortestline = 10;
+int shortestline = 50;
 
 using namespace cv;
 using namespace std;
@@ -1126,10 +1126,12 @@ int main(int argc, char* argv[])
 
 	GaussianBlur(gray, gray, Size(5, 5), 1);
 
+	//calculate the gradient
 	Mat sobelx, sobely;
 	Sobel(gray, sobelx, CV_16S, 1, 0, 3);
 	Sobel(gray, sobely, CV_16S, 0, 1, 3);
 
+	//gradient direction
 	Mat dir(image.size(), CV_8U);
 	for (int i = 0; i < image.rows; i++)
 	{
@@ -1141,7 +1143,7 @@ int main(int argc, char* argv[])
 				dir.at<uchar>(i, j) = 0;
 		}
 	}
-
+	//gradient size
 	Mat mag = abs(sobelx) + abs(sobely);
 	for (int i = 0; i < image.rows; i++)
 	{
@@ -1153,18 +1155,20 @@ int main(int argc, char* argv[])
 	}
 	rectangle(mag, Point(0, 0), Point(mag.cols, mag.rows), Scalar(0), 2, 8);
 
+
+	//find anchor
 	Mat edge(image.size(), CV_8U, Scalar(0));
 	for (int i = 1; i < mag.rows - 1; i = i + 1)
 	{
 		for (int j = 1; j < mag.cols - 1; j = j + 1)
 		{
-			if (dir.at<uchar>(i, j) == 255)
+			if (dir.at<uchar>(i, j) == 255) // longitudinal edge
 			{
 				if (mag.at<short>(i, j) > mag.at<short>(i, j - 1) + 3
 					&& mag.at<short>(i, j) > mag.at<short>(i, j + 1) + 3)
 					edge.at<uchar>(i, j) = 128;
 			}
-			else                                        //������Ե
+			else                                        // Lateral Edge
 			{
 				if (mag.at<short>(i, j) > mag.at<short>(i - 1, j) + 3
 					&& mag.at<short>(i, j) > mag.at<short>(i + 1, j) + 3)
@@ -1174,6 +1178,7 @@ int main(int argc, char* argv[])
 	}
 
 
+	Mat edge = image.clone();
 	link_seg* seg_head, *seg_now;
 	link_pix* pix_now = NULL;
 
@@ -1227,6 +1232,7 @@ int main(int argc, char* argv[])
 		} while (pix_now->ifend != 0);
 		seg_now->pix_chain = pix_chain;
 	}
+
 
 	imshow("image_edge", edge);           //��ʾ��Ե
 	waitKey(0);
