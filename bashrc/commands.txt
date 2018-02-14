@@ -17,6 +17,10 @@ how to branch and pull request:
 git checkout -b branchname
 commit 
 git push --set-upstream origin branchname
+git pull --rebase
+git push origin branchname
+
+add pullrequest through github webpage
 
 # This doesn't work with github, need to manually pull using the wbe interface
 git request-pull  origin/master https:/repo
