@@ -473,11 +473,6 @@ compile sfm for opencv:
 g++ scene_reconstruction.cpp `pkg-config --cflags --libs opencv` -I/usr/include/eigen3/
 
 
-reduce to 4k (there is a script for this in the folder):
-mencoder <filename> -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -vf scale=1920:1080 -oac copy -o reduced<filename>
-
-
-copy, rename and overwrite command:
 for file in *.asift; do /bin/cp -rf $file ${file/asift/sift}; done
 
 
@@ -2368,12 +2363,16 @@ ffmpeg -i input.avi image%d.jpg
 cut clip:
 
 High quality 1080p video:
-mencoder mf://@frames.txt -mf w=1920:h=1080:fps=20:type=jpg -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
+mencoder mf://@frames.txt -mf w=1920:h=1080:fps=30:type=jpg -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
 
-mencoder mf://@frames.txt -mf w=1920:h=1080:fps=20:type=png  -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
-
+mencoder mf://@frames.txt -mf w=1920:h=1080:fps=30:type=png  -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
 
 mencoder mf://@frames.txt -mf w=1024:h=1024:fps=10:type=png -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
+
+reduce to 4k (there is a script for this in the folder):
+mencoder <filename> -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -vf scale=1920:1080 -oac copy -o reduced<filename>
+
+copy, rename and overwrite command:
 
 check video integrity:
 ffmpeg -v error -i file.avi -f null - 2>error.log
