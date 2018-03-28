@@ -10,42 +10,64 @@ import socket
 import sys
 import time
 
+HOST = ''
+PORT = 9000
+LOCADDR = (HOST, PORT)
+SOCK = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # Create a UDP socket
+TELLO_ADDRESS = ('192.168.10.1', 8889)
+SOCK.bind(LOCADDR)
 
-host = ''
-port = 9000
-locaddr = (host,port)
+def main():
+    command('command', 1)
+    batlevel = int(command('battery?', 1))
+    if batlevel < 45:
+        print("battery level too low")
+        exit()
+
+    command('takeoff', 5)
+    command('forward 100', 3)
+    command('back 200', 4)
+    command('forward 100', 3)
+    command('left 100', 3)
+    command('right 200', 4)
+    command('left 100', 3)
+    command('flip r', 2)
+    command('flip f', 2)
+    command('flip b', 2)
+    command('flip l', 2)
+    command('cw 360', 5)
+    command('land', 5)
+    print('Closing connection...')
+    SOCK.close()
 
 
-# Create a UDP socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-tello_address = ('192.168.10.1', 8889)
-
-sock.bind(locaddr)
 
 def recv():
     try:
-        data, server = sock.recvfrom(1518)
+        data, server = SOCK.recvfrom(1518)
         response = data.decode(encoding="utf-8")
-        if response == "ERROR":
-            raise Exception("Low light or low battery")
         return response
     except Exception as error:
         print("Error:", repr(error))
-        sock.sendto('land'.encode(encoding="utf-8"), tello_address)
+        sock.sendto('land'.encode(encoding="utf-8"), TELLO_ADDRESS)
         print('Landing . . .')
 
 def command(command, delay=5):
     try:
-        sent = sock.sendto(command.encode(encoding="utf-8"), tello_address)
+        sent = SOCK.sendto(command.encode(encoding="utf-8"), TELLO_ADDRESS)
         response = recv()
         print(command, response)
         time.sleep(delay)
+
+        if response == "ERROR":
+            SOCK.sendto('land'.encode(encoding="utf-8"), TELLO_ADDRESS)
+        if response == "OUT OF RANGE":
+            print("Input value too low or too high")
+
         return response
     except KeyboardInterrupt:
-        sock.sendto('land'.encode(encoding="utf-8"), tello_address)
-        print ('\n . . .\n')
-        sock.close()
+        print ('Keyboard Interrupt. . .\n')
+        SOCK.close()
 
 
 
@@ -55,18 +77,5 @@ instructions = ['command', 'takeoff', 'flip l', 'flip r', 'flip f', 'flip b',
                 'land', 'battery?', 'speed?', 'time?']
 
 
-command('command', 1)
-batlevel = command('battery?', 1)
-print("batstring", type(batlevel))
-# if batlevel < 45:
-#     print("battery level too low")
-#     exit()
-
-command('takeoff', 5)
-command('flip r', 2)
-command('flip f', 2)
-command('flip b', 2)
-command('flip l', 2)
-command('land', 5)
-print('Closing connection...')
-sock.close()
+if __name__ == "__main__":
+    main()
