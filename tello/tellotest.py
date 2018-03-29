@@ -28,15 +28,15 @@ def main():
     command('forward 100', 3)
     command('back 200', 4)
     command('forward 100', 3)
-    command('left 100', 3)
-    command('right 200', 4)
-    command('left 100', 3)
-    command('flip r', 2)
-    command('flip f', 2)
-    command('flip b', 2)
-    command('flip l', 2)
-    command('cw 360', 5)
-    command('land', 5)
+    # command('left 100', 3)
+    # command('right 200', 4)
+    # command('left 100', 3)
+    # command('flip r', 2)
+    # command('flip f', 2)
+    # command('flip b', 2)
+    # command('flip l', 2)
+    # command('cw 360', 5)
+    # command('land', 5)
     print('Closing connection...')
     SOCK.close()
 
@@ -49,7 +49,7 @@ def recv():
         return response
     except Exception as error:
         print("Error:", repr(error))
-        sock.sendto('land'.encode(encoding="utf-8"), TELLO_ADDRESS)
+        SOCK.sendto('land'.encode(encoding="utf-8"), TELLO_ADDRESS)
         print('Landing . . .')
 
 def command(command, delay=5):
@@ -57,6 +57,7 @@ def command(command, delay=5):
         sent = SOCK.sendto(command.encode(encoding="utf-8"), TELLO_ADDRESS)
         response = recv()
         print(command, response)
+        print("sleeping")
         time.sleep(delay)
 
         if response == "ERROR":
@@ -71,11 +72,10 @@ def command(command, delay=5):
 
 
 
-print ('\r\n\r\nTello Flip Demo.\r\n')
+print ('\r\n\r\nTello API Demo.\r\n')
 instructions = ['command', 'takeoff', 'flip l', 'flip r', 'flip f', 'flip b',
-                'up', 'down', 'left', 'right', 'forward', 'back', 'cw', 'ccw',
                 'land', 'battery?', 'speed?', 'time?']
-
+directions = ['up', 'down', 'left', 'right', 'forward', 'back', 'cw', 'ccw']
 
 if __name__ == "__main__":
     main()

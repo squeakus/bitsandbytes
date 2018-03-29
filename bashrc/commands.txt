@@ -1,3 +1,5 @@
+sudo nmap -sU 192.168.10.1 -p 8000-8500
+
 convert wiki to pdf:
 git clone moo.wiki.git
 sudo npm install -g github-wikito-converter
