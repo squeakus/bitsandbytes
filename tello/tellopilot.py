@@ -27,8 +27,7 @@ def main():
     if batlevel < 40:
         print("battery level too low")
         exit()
-    command('takeoff', 3)
-
+    command('takeoff', 4)
     command('flip r', 2)
     command('flip f', 2)
     command('flip b', 2)
@@ -70,6 +69,7 @@ def command(command, delay=5):
         if response == "ERROR" or response =="error":
             print("Something has gone wrong, landing")
             SOCK.sendto('land'.encode(encoding="utf-8"), TELLO_ADDRESS)
+            recv()
         if response == "OUT OF RANGE":
             print("Input value too low or too high")
 
