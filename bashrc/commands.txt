@@ -1,3 +1,5 @@
+mavproxy.py --master=tcp:192.168.1.21:5760 --quadcopter
+
 sudo nmap -sU 192.168.10.1 -p 8000-8500
 
 convert wiki to pdf:
