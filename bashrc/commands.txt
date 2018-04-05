@@ -1,9 +1,178 @@
-Amazon ec2 instance:
+mavproxy.py --master=tcp:192.168.1.21:5760 --quadcopter
 
-chmod 400 /path/my-key-pair.pem
+sudo nmap -sU 192.168.10.1 -p 8000-8500
+
+convert wiki to pdf:
+git clone moo.wiki.git
+sudo npm install -g github-wikito-converter
+gwtc ./github-wikito-converter.wiki
+
+pdal split --length 100 liffey.laz moo.laz
+
+Export the private key file from the pfx file
+openssl pkcs12 -in filename.pfx -nocerts -out key.pem
+
+Export the certificate file from the pfx file
+openssl pkcs12 -in filename.pfx -clcerts -nokeys -out cert.pem
+
+Remove the passphrase from the private key
+openssl rsa -in key.pem -out server.key
+
+compare the keys:
+openssl x509 -noout -modulus -in server.crt | openssl md5
+openssl rsa -noout -modulus -in server.key | openssl md5
+
+how to branch and pull request:
+git checkout -b branchname
+commit 
+git push --set-upstream origin branchname
+git pull --rebase
+git push origin branchname
+
+add pullrequest through github webpage
+
+# This doesn't work with github, need to manually pull using the wbe interface
+git request-pull  origin/master https:/repo
+
+setting up private keys on aws:
+aws iam upload-server-certificate --server-certificate-name vola_cert --certificate-body file://cert.pem --private-key file://privatekey.pem
+
+curling with a proxy:
+curl -v --noproxy localhost, -i "localhost:5000/droneapi/coord?lat=53.34&lon=-6.255"
+
+
+#Set up Geoserver
+wget http://sourceforge.net/projects/geoserver/files/GeoServer/2.12.0/geoserver-2.12.0-bin.zip
+unzip geoserver-2.12.0-bin.zip
+sudo mv geoserver-2.12.0 /usr/share/geoserver
+rm geoserver-2.12.0-bin.zip
+
+echo "export GEOSERVER_HOME=/usr/share/geoserver" >> ~/.profile
+. ~/.profile
+printenv | sort -h
+sudo chown -R $USER /usr/share/geoserver/
+
+#set up CORS for it to work with flask
+#https://gis.stackexchange.com/questions/210109/enabling-cors-in-geoserver-jetty
+#check to see which version of jetty you are using
+#find $GEOSERVER_HOME -name "jetty*" | grep -E [[:digit:]]
+cd /usr/share/geoserver/webapps/geoserver/WEB-INF/lib/
+wget http://central.maven.org/maven2/org/eclipse/jetty/jetty-servlets/9.2.13.v20150730/jetty-servlets-9.2.13.v20150730.jar
+#vi /usr/share/geoserver/webapps/geoserver/WEB-INF/web.xml
+#uncomment CORS filter and filtermapper
+
+#start automatically at startup
+#/usr/share/geoserver/bin/startup.sh
+echo "USER=$USERNAME" | sudo tee -a /etc/default/geoserver
+echo "GEOSERVER_DATA_DIR=/usr/share/geoserver/data_dir" | sudo tee -a /etc/default/geoserver
+echo "GEOSERVER_HOME=/usr/share/geoserver"  | sudo tee -a /etc/default/geoserver
+echo "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/"  | sudo tee -a /etc/default/geoserver
+echo "JAVA_OPTS=\"-Xms128m -Xmx512m\""  | sudo tee -a /etc/default/geoserver
+
+wget http://docs.geoserver.org/latest/en/user/_downloads/geoserver_deb
+mv geoserver_deb geoserver
+chmod +x geoserver
+mv geoserver  /etc/init.d/
+sudo mv geoserver  /etc/init.d/
+sudo service geoserver start
+sudo update-rc.d geoserver defaults
+
+cp -r code/vola/VOLA/volamap .
+mv data ~/volamap/app/static/
+cd ~/volamap/app/static
+chmod +x datasetparser.py
+./updatemap.sh
+
+#Apache has access to port 80 and 443 for ssl
+sudo ufw app list
+sudo ufw allow 'Apache Full'
+sudo systemctl status apache2
+
+#setting up /var/www for apache server:
+sudo cp ~/volamap/001-volamap.conf /etc/apache2/sites-available
+sudo mv volamap /var/www
+sudo adduser $USERNAME www-data
+sudo chown -R $USERNAME:www-data /var/www
+sudo chmod -R g+rwX /var/www
+
+#setting up flask virtualenv, do not use venv
+cd /var/www/volamap
+virtualenv -p python3 flask
+source flask/bin/activate
+pip3 install --upgrade pip
+pip3 install pyproj sqlalchemy geoalchemy2 flask numpy ipython psycopg2
+# create a config file for flask:
+echo "SQLALCHEMY_DATABASE_URI=\"<dbtype>://$USER:<password>@localhost/<db_name>\" > ~/volamap/app/config.py"
+
+sudo service apache2 restart
+sudo a2enmod wsgi
+sudo a2ensite 001-volamap.conf
+sudo service apache2 reload
+
+S3 Buckets
+aws configure  #needs to be configured in IAM
+aws s3api list-buckets
+aws s3 sync s3://bucketname .
+aws s3 cp moo.zip s3://bucketname
+
+#get bucket of data
+aws configure
+aws s3api list-buckets
+aws s3 sync s3://mapdata.vola.com .
+unzip volamapdata.zip
+rm volamapdata.zip
+
+
+
+python installer packages:
+pyinstaller --onefile --windowed laschunker.py
+with hooks:
+pyinstaller --onefile --windowed  --additional-hooks-dir hooks/
+
+
+rename svol to vol recursively:
+find . -iname "*svol*" -exec rename 's/.svol/.vol/' '{}' \;
+
+tmux ls <- show all the available sessions
+tmux attach -t 3 <- attach to session 3
+
+tmux enable mouse scroll:
+ctrl+b :
+tmux 2.1:
+set-option -g mouse on
+older tmux:
+setw -g mode-mouse on
+
+tmux new window
+ctrl+b c
+switch between windows
+ctrl+b w
+kill window:
+set-option -g mouse on
+older tmux:
+setw -g mode-mouse on
+
+tmux new window
+ctrl+b c
+switch between windows
+ctrl+b w
+kill window:
+ctrl+b &
+detach:
+ctrl+b d
+next window:
+ctrl+b n
+ctrl+b p
+
+tmux let you scroll up:
+ctrl+b [
+q to exit
+
+show what is running on the cards:
+nvidia-smi
 
 set blender to read a script and then render the scene:
-./blender -b --python gpurender.py trinity2.blend -o ./out --frame-start 1740 --frame-end 1899 -a 
+./blender -b --python gpurender.py trinity2.blend -o ./out --frame-start 1740 --frame-end 1899 -a
 
 setting up gitignore and hooks:
 make a git_template folder and copy the scripts
@@ -76,17 +245,10 @@ find . -maxdepth 1 -name "*.svol" | xargs -I fname mv fname sanfran/
 copy all the laz files:
 find /media/byrnej/Seagate\ Expansion\ Drive/sanfran/Bulk\ Order\ 775298/LIDAR/raw/tiles/ -name "ARRA-CA_GoldenGate_2010_000159_14_1*.laz" | xargs -I fname ./move.sh fname
 
-make postgres postgis:
-sudo -u postgres psql -d vola_db -c "CREATE EXTENSION postgis;"
-
 find . -name "*.laz" | xargs -n1 -P4 -I fname python laschunker.py fname 3 <CRS> -c 150
 
 when the arg list gets too long:
  find -maxdepth 1 -name '*.svol' -exec cp -t ./svol {} +
-
-restart postgres server:
-
-/etc/init.d/postgresql restart
 
 parallelize converting sound files to mp3
 find sounddir -type f -name '*.wav' | parallel -j+0 lame {} -o {.}.mp3
@@ -113,10 +275,6 @@ python -c 'import IPython;
 redirect output wtih sudo
 Run a shell with sudo and give the command to it by using the -c option:
 sudo sh -c 'ls -hal /root/ > /root/test.out'
-
-
-ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=byrnej" "all.geojson" -nln destination_table -append
-ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=byrnej" "all.geojson" -nln tiles -overwrite
 
 more wget fun:
 wget -q -O- reddit.com/r/thedonald | grep -o -i 'Trump' | wc -w
@@ -319,11 +477,6 @@ compile sfm for opencv:
 g++ scene_reconstruction.cpp `pkg-config --cflags --libs opencv` -I/usr/include/eigen3/
 
 
-reduce to 4k (there is a script for this in the folder):
-mencoder <filename> -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -vf scale=1920:1080 -oac copy -o reduced<filename>
-
-
-copy, rename and overwrite command:
 for file in *.asift; do /bin/cp -rf $file ${file/asift/sift}; done
 
 
@@ -885,17 +1038,7 @@ find . -not -path '.git' -iname '*.py' -exec sed -i 's/ *$//' '{}' ';'
 remove all trailing white space
 sed -i 's/[ \t]*$//' "$1"
 
-postgresql:
-get settings
-select * from pg_settings where name = 'port';
-/etc/postgresql/9.3/main/postgresql.conf
-where the dbs are physically stored:
-/var/lib/postgresql/9.3
-
-service postgresql status
-sudo service postgresql start
-sudo service postgresql restart <- after any changed to gp_hba
-
+POSTGRES!!!
 # postgres uses roles, each role should have a matching system account
 # Postgres has default postgres account for setting up users
 sudo -u -i postgres
@@ -904,26 +1047,58 @@ psql <- log into db
 # create a new user:
 createuser --interactive
 
-set up a new postGIS DB:
-createdb -U postgres gis -O postgres
-psql -U postgres -d gis -c 'CREATE EXTENSION postgis; CREATE EXTENSION hstore;'
-import the data
+or if you want to do it automatically:
+sudo -i -u postgres  #log in as postgres to create db and user
+createuser $USER --password --createdb #force password allows create dbs
+createdb vola_db -O $USER
+exit
+
+make postgres postgis:
+sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
+psql -d vola_db -c "CREATE EXTENSION postgis;"
+psql -d vola_db -c "CREATE EXTENSION postgis_topology;"
+
+convert geojson to postgres:
+ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=<user>" "all.geojson" -nln tiles -overwrite -lco geometry_name=<geomname>
+
+import data from pbf:
 osm2pgsql -c -d gis -U postgres -W -H localhost dublin_ireland.osm.pbf
 and with style file:
 osm2pgsql -c -d gis -U postgres ./dublin_ireland.osm.pbf --style openstreetmap-carto.style
 
+dump a postgis database:
+pg_dump --no-acl --no-owner vola_db -N topology -T spatial_ref_sys > vola_db.pgsql
 
-another way is by sudo-ing in as a different user:
-sudo adduser jon
-sudo -i -u jon
-sudo -u postgres createuser  <name>
-sudo -u postgres createdb testdb -O <name>
+how to restore:
+psql -U USERNAME DBNAME < dbexport.pgsql
+
+if you want to use pg_restore you have to output it in a different format (it is also compressed!):
+pg_dump --no-acl --no-owner vola_db -N topology -T spatial_ref_sys -Fc > vola_db.pgsql
+
+And to restore cleanly:
+pg_restore --no-owner --clean -d vola_db vola_db.pgsql
+
+
+get settings:
+select * from pg_settings where name = 'port';
+/etc/postgresql/9.3/main/postgresql.conf
+where the dbs are physically stored:
+/var/lib/postgresql/9.3
+
 normally -W used to add pword but not needed for localhost
 You need to change the control file to trust to gain access locally
 /etc/postgresql/9.3/main/pg_hba.conf
 
-set the password for a user:
-ALTER USER Postgres WITH PASSWORD '<newpassword>';
+#if need to set password for main user
+#the hb_pga only allows peer access but if you want to set a pasword postgres superuser:
+#sudo -u postgres psql
+#\password postgres
+
+service postgresql status
+sudo service postgresql start
+sudo service postgresql restart <- after any changed to gp_hba
+or
+/etc/init.d/postgresql restart
 
 psql testdb <- log into db
 \conninfo <- show db stats
@@ -935,6 +1110,16 @@ psql testdb <- log into db
 \? <- slash commands
 \set <- system variables
 \q <- quit
+\d+ tablename <- show column values
+\timing
+
+create a regular btree index
+CREATE INDEX index_name on tablename(columnname);
+
+create a spatial index (maybe use SP-GIST):
+CREATE INDEX tile_idx ON tiledata USING GIST (wkb_geometry);
+
+DROP INDEX nyc_census_blocks_geom_idx;
 
 dropdb <dbname> --interactive <- delete a database
 
@@ -942,12 +1127,17 @@ show size of db table;
 pg_size_pretty(pg_relation_size('points1'));
 pg_size_pretty(pg_total_relation_size('points1'));
 
+Count number of rows:
+elect COUNT(*) from tiledata;
+
 create index xindex on points1 (xcoord);<- build an index
 size went from 3322 to 4415
 
-create, alter and grant for a user:
+create a user:
 CREATE USER tester WITH PASSWORD 'test_password';
+set the password for a user:
 ALTER USER Postgres WITH PASSWORD '<newpassword>';
+give them permissions:
 GRANT ALL PRIVILEGES ON DATABASE "testdb" to tester;
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO tester;
 
@@ -1088,6 +1278,9 @@ montage -geometry 500x300 plane0*.png  cessnamontage.jpg
 
 check if package is installed:
 dpkg -l | grep packagename
+
+#pad with zeros:
+rename 's/\d+/sprintf("%04d",$&)/e' img_*
 
 pad files with zeros:
 for i in *.dat;do mv $i `./zeropad.sh $i`; done
@@ -2174,10 +2367,16 @@ ffmpeg -i input.avi image%d.jpg
 cut clip:
 
 High quality 1080p video:
-mencoder mf://@frames.txt -mf w=1920:h=1080:fps=20:type=jpg -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
+mencoder mf://@frames.txt -mf w=1920:h=1080:fps=30:type=jpg -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
 
-mencoder mf://@frames.txt -mf w=1920:h=1080:fps=20:type=png  -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
+mencoder mf://@frames.txt -mf w=1920:h=1080:fps=30:type=png  -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
 
+mencoder mf://@frames.txt -mf w=1024:h=1024:fps=10:type=png -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
+
+reduce to 4k (there is a script for this in the folder):
+mencoder <filename> -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -vf scale=1920:1080 -oac copy -o reduced<filename>
+
+copy, rename and overwrite command:
 
 check video integrity:
 ffmpeg -v error -i file.avi -f null - 2>error.log
@@ -2266,6 +2465,22 @@ d`a <- delete/cut from mark
 d} <- cut to end of paragraph
 d/foo <- cut forward to bar
 d?bar <- cut back to bar
+
+what should be in your vimrc file:
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+syntax on
+set tabstop=8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+filetype indent plugin on
+set modeline
+
+
+
+
 
 use env to check your environment variables
 you can add things to your classpath by:
@@ -2811,15 +3026,6 @@ M-F	   <- move forward a word
 M-B	   <- and back a word
 M->	   <- move to end of file
 M-<	   <- move to start of file
-region commands
-C-M-b      <- highlight region between brackets
-C-<space>  <- highlight region
-C-x        <- move between start and end ofregion
-
-COMMANDS!
-when you set a command it remembers it next time
-M-x replace-regexp <-replace stuff
-M-x wdired <- go into mode where you can edit folders and files
 USE aspell as it ingores comments and crap
 M-x ispell <- run a spellcheck
 M-!        <-execute a shell command(current directory)
@@ -2852,8 +3058,6 @@ C-c C-c    <- view your changes
 
 MACROS!!
 C-x (      <- start macro
-C-x )      <- stop macro
-C-x e	   <- run macro
 C-u num + command <- run command num amount of times
 M-x name-last-kyb-macro <-add it to current instance
 M-x insert-last-macro <- writes it to file, add it to elisp

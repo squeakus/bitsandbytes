@@ -8,7 +8,7 @@ renderWindow = vtk.vtkRenderWindow()
 def main():
     #points = parse_asc('building.asc')
     #points = parse_asc('richview.asc')
-    points = parse_asc('centralbank.asc')
+    points = parse_asc('church.asc')
     
     stats = get_stats(points)
     
