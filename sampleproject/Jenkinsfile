@@ -1,0 +1,110 @@
+pipeline {
+  agent any
+  stages {
+    stage('Preparation') {
+      steps {
+        deleteDir()
+        checkout scm
+      }
+    }
+
+    stage('Doxygen') {
+      steps {
+        sh 'doxygen doxygen.cfg 2> doxygenlog.txt'
+        warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', parserConfigurations: [[parserName: 'Doxygen', pattern: 'doxygenlog.txt']], unHealthy: '', unstableTotalAll: '0'
+
+        script {
+            if (currentBuild.result.equals("FAILURE")) {
+              error 'Doxygen detected warnings or missing documentation'
+            }
+          }
+      }
+      post {
+        always {
+          archiveArtifacts '**/*doxygenlog.txt'
+        }
+      }
+    }
+
+    stage('CppLint') {
+      steps {
+        sh 'cpplint.py --output=vs7 $( find src include -name *.h -or -name *.cpp) 2> cpplint.txt'
+        warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', messagesPattern: '', parserConfigurations: [[parserName: 'CppLint', pattern: 'cpplint.txt']], unHealthy: ''
+        script {
+            if (currentBuild.result.equals("FAILURE")) {
+              error 'CppLint detected errors or warnings'
+            }
+          }
+      }
+      post {
+        always {
+          archiveArtifacts '**/*cpplint.txt'
+        }
+      }
+    }
+
+    stage('CppChecker') {
+      /* parser and regex need to be added to compiler warnings in configure
+      ^(.+),(\d+),(error|warning|style|performance|portability|information),(.*)
+      import hudson.plugins.warnings.parser.Warning
+      String fileName = matcher.group(1)
+      String lineNumber = matcher.group(2)
+      String category = matcher.group(3)
+      String message = matcher.group(4)
+      return new Warning(fileName, Integer.parseInt(lineNumber), "Dynamic Parser", category, message);
+      */
+      steps {
+        sh 'cppcheck --template="{file},{line},{severity},{message}" src/ include/ 2> cppcheck.txt'
+        
+        warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', parserConfigurations: [[parserName: 'CppCheck', pattern: 'cppcheck.txt']], unHealthy: ''
+
+        script {
+            if (currentBuild.result.equals("FAILURE")) {
+              error 'CppChecker detected errors or warnings'
+            }
+          }
+      }
+      post {
+        always {
+          archiveArtifacts '**/*cppcheck.txt'
+        }
+      }
+    }
+
+    stage('Build') {
+      steps {
+        dir('build') {
+          deleteDir()
+          writeFile file:'dummy', text:''
+          sh 'cmake ../'
+          sh 'make 2> buildlog.txt'
+          warnings canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', defaultEncoding: '', excludePattern: '', failedTotalAll: '0', healthy: '', includePattern: '', messagesPattern: '', parserConfigurations: [[parserName: 'GNU C Compiler 4 (gcc)', pattern: '*buildlog.txt']], unHealthy: ''
+          script {
+            if (currentBuild.result.equals("FAILURE")) {
+              error 'Build contains errors or warnings'
+            }
+          }
+        }
+      }
+    post {
+        always {
+          archiveArtifacts '**/*buildlog.txt'
+        }
+      }      
+    }
+
+    stage('UnitTests') {
+      steps {
+        dir('build') {
+        sh 'for f in *test; do ./$f --gtest_output=xml:$f.xml; done'
+        junit '*test.xml'
+        }
+      }
+      post {
+        always {
+          archiveArtifacts '**/*test.xml'
+        }
+      }
+    }
+  }
+}
