@@ -2976,6 +2976,7 @@ mysql -u [username] -p [password] [database_to_restore] < [backupfile]
 If it doesn't exist in the mySqlDaemon then you have to create the database first
 
 SQLITE!
+.open "test.db"
 .tables <-list tables
 PRAGMA table_info(jobs);  <- whats in the table
 SELECT * FROM grids <- show everything in the table

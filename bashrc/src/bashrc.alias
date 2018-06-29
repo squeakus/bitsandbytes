@@ -10,6 +10,9 @@
 ## Standard aliases - security
 # "-i" asks for confirmation when deleting. This is good.
 # In the "dangerous" section there are aliases for non-confirmation.
+alias python='python3'
+alias pip='pip3'
+alias open='xdg-open'
 alias rm='rm -v -i'
 alias cp='cp -v -i'
 alias mv='mv -v -i'
@@ -28,6 +31,9 @@ if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
 fi
+LS_COLORS="ow=01;34:di=01;34"
+export LS_COLORS
+
 
 # Typicaly "more" does not allow you to use the arrow keys/etc for navigation.
 # Thus, we try to use "less", if it exists. Some distros do not put the
