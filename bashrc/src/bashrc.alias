@@ -11,6 +11,7 @@
 # "-i" asks for confirmation when deleting. This is good.
 # In the "dangerous" section there are aliases for non-confirmation.
 alias python='python3'
+alias ipython='ipython3'
 alias pip='pip3'
 alias open='xdg-open'
 alias rm='rm -v -i'
