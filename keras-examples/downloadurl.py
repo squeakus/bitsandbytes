@@ -2,9 +2,10 @@
 # // pull down jquery into the JavaScript console
 # var script = document.createElement('script');
 # script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";
+# document.getElementsByTagName('head')[0].appendChild(script);
+
 # var urls = $('.rg_di .rg_meta').map(function() { return JSON.parse($(this).text()).ou; });
 # document.getElementsByTagName('head')[0].appendChild(script);
-# // write the URls to file (one per line)
 # var textToSave = urls.toArray().join('\n');
 # var hiddenElement = document.createElement('a');
 # hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
@@ -33,6 +34,10 @@ args = vars(ap.parse_args())
 rows = open(args["urls"]).read().strip().split("\n")
 total = 0
 
+# create output folder if it doesnt exist
+
+if not os.path.exists(args["output"]):
+    os.makedirs(args["output"])
 # loop the URLs
 for url in rows:
 	try:
