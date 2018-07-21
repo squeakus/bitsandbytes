@@ -1,6 +1,7 @@
 from keras.datasets import cifar10 # subroutines for fetching the CIFAR-10 dataset
 from keras.models import Model # basic class for specifying and training a neural network
 from keras.layers import Input, Convolution2D, MaxPooling2D, Dense, Dropout, Flatten
+from keras.callbacks import TensorBoard
 from keras.utils import np_utils # utilities for one-hot encoding of ground truth values
 import numpy as np
 
@@ -13,6 +14,9 @@ conv_depth_2 = 64 # ...switching to 64 after the first pooling layer
 drop_prob_1 = 0.25 # dropout after pooling with probability 0.25
 drop_prob_2 = 0.5 # dropout in the FC layer with probability 0.5
 hidden_size = 512 # the FC layer will have 512 neurons
+tensor_board = TensorBoard(log_dir='./Graph', histogram_freq=0,  
+          					write_graph=True, write_images=True)
+checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 
 (X_train, y_train), (X_test, y_test) = cifar10.load_data() # fetch CIFAR-10 data
 
@@ -53,6 +57,6 @@ model.compile(loss='categorical_crossentropy', # using the cross-entropy loss fu
 
 model.fit(X_train, Y_train,                # Train the model using the training set...
           batch_size=batch_size, epochs=num_epochs,
-          verbose=1, validation_split=0.1) # ...holding out 10% of the data for validation
+          verbose=1, validation_split=0.1, callbacks=[tensor_board]) # ...holding out 10% of the data for validation
 model.evaluate(X_test, Y_test, verbose=1)  # Evaluate the trained model on the test set!
 
