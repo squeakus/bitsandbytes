@@ -82,8 +82,8 @@ def main():
 		labels, test_size=0.25, random_state=42)
 	 
 	# convert the labels from integers to vectors
-	trainY = to_categorical(trainY, num_classes=2)
-	testY = to_categorical(testY, num_classes=2)
+	trainY = to_categorical(trainY, num_classes=len(categories))
+	testY = to_categorical(testY, num_classes=len(categories))
 
 	# construct the image generator for data augmentation
 	aug = ImageDataGenerator(rotation_range=30, width_shift_range=0.1,

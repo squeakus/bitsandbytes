@@ -31,7 +31,7 @@ def show_imgs(datapath, model):
         if label not in categories:
             categories.append(label)
 
-    random.seed(42)
+    # random.seed(42)
     random.shuffle(imagePaths)
 
     for imagePath in imagePaths:
@@ -42,7 +42,6 @@ def show_img(imgname, model, categories):
     # load the image
     image = cv2.imread(imgname)
     orig = image.copy()
-    print("the categories are:", categories)
     # pre-process the image for classification
     image = cv2.resize(image, (28, 28))
     image = image.astype("float") / 255.0
