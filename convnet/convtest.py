@@ -1,6 +1,6 @@
-import theano
-from theano import tensor as T
-from theano.tensor.nnet import conv
+import tensorflow as tf
+from tensorflow import Tensor as T
+from tensorflow.nn import conv2d
 
 import numpy
 
@@ -12,7 +12,7 @@ input = T.tensor4(name='input')
 # initialize shared variable for weights.
 w_shp = (2, 3, 9, 9)
 w_bound = numpy.sqrt(3 * 9 * 9)
-W = theano.shared( numpy.asarray(
+W = tf.shared( numpy.asarray(
                 rng.uniform(
                                     low=-1.0 / w_bound,
                                                     high=1.0 / w_bound,
@@ -25,12 +25,12 @@ W = theano.shared( numpy.asarray(
 # an image without learning the parameters. We therefore initialize
 # them to random values to "simulate" learning.
 b_shp = (2,)
-b = theano.shared(numpy.asarray(
+b = tf.shared(numpy.asarray(
                 rng.uniform(low=-.5, high=.5, size=b_shp),
                             dtype=input.dtype), name ='b')
 
 # build symbolic expression that computes the convolution of input with filters in w
-conv_out = conv.conv2d(input, W)
+conv_out = conv2d(input, W)
 
 # build symbolic expression to add bias and apply activation function, i.e. produce neural net layer output
 # A few words on ``dimshuffle`` :
@@ -57,7 +57,7 @@ conv_out = conv.conv2d(input, W)
 output = T.nnet.sigmoid(conv_out + b.dimshuffle('x', 0, 'x', 'x'))
 
 # create theano function to compute filtered images
-f = theano.function([input], output)
+f = tf.function([input], output)
 
 
 
