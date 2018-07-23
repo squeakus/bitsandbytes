@@ -7,11 +7,11 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 from keras.preprocessing.image import img_to_array
-from keras.applications.inception_v3 import InceptionV3
-from keras.applications.inception_v3 import preprocess_input
-from keras.applications.inception_v3 import decode_predictions
+# from keras.applications.inception_v3 import InceptionV3
+# from keras.applications.inception_v3 import preprocess_input
+# from keras.applications.inception_v3 import decode_predictions
+from keras_inceptionv3 import inception_v3_model
 from keras.utils import to_categorical
-from santa_lenet import LeNet
 from imutils import paths
 import matplotlib.pyplot as plt
 import numpy as np
@@ -52,7 +52,7 @@ def main():
 		if label not in categories:
 			categories.append(label)
 
-	print(categories)
+	print("Categories:", categories)
 	random.seed(42)
 	random.shuffle(imagePaths)
 
@@ -98,8 +98,10 @@ def main():
 	# initialize the model
 	print("[INFO] compiling model...")
 	print("number of categories", len(categories))
-	model = InceptionV3(weights='imagenet', include_top=False,
-						input_shape=(img_width, img_height, 3))
+	model = inception_v3_model(img_width, img_height, 3, len(categories))
+
+	# InceptionV3(weights='imagenet', include_top=False,
+	# 					input_shape=(img_width, img_height, 3))
 
 
 	# # old lenet model
