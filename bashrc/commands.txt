@@ -133,6 +133,9 @@ pyinstaller --onefile --windowed  --additional-hooks-dir hooks/
 rename svol to vol recursively:
 find . -iname "*svol*" -exec rename 's/.svol/.vol/' '{}' \;
 
+rename a string in all files:
+find ./ -type f -exec sed -i 's/string1/string2/g' {} \;
+
 tmux ls <- show all the available sessions
 tmux attach -t 3 <- attach to session 3
 
@@ -2078,7 +2081,13 @@ gphoto2 --auto-detect <- pick up device
 --capture-image <- save to sdcard
 --capture-image-and-download <- save to hard drive
 
+imagemagick magic:
+crop bottom 20%
+convert test.jpg -gravity north -crop 100x85%  testout.png
+
 import -window root blah.png <- imagemagick screenshot
+
+
 
 stderr to dev null:
  blah 2> /dev/null
@@ -2683,6 +2692,7 @@ show a summary of all svn file changes:
 svn diff --summarize -c 1750
 
 replace all tabs with spaces:
+find . -name *.cpp -exec sed -i.orig 's/\t/    /g' {} +
 grep -PL "\t" -r . | grep -v ".svn" | xargs sed -i 's/\t/ /g'
 
 fix subversion 'out of date' error:
