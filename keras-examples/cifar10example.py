@@ -14,7 +14,7 @@ conv_depth_2 = 64 # ...switching to 64 after the first pooling layer
 drop_prob_1 = 0.25 # dropout after pooling with probability 0.25
 drop_prob_2 = 0.5 # dropout in the FC layer with probability 0.5
 hidden_size = 512 # the FC layer will have 512 neurons
-tensor_board = TensorBoard(log_dir='./Graph', histogram_freq=0,  
+tensor_board = TensorBoard(log_dir='./graph', histogram_freq=0,  
           					write_graph=True, write_images=True)
 checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 
