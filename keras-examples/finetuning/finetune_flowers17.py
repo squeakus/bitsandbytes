@@ -6,10 +6,6 @@
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-from pyimagesearch.preprocessing import ImageToArrayPreprocessor
-from pyimagesearch.preprocessing import AspectAwarePreprocessor
-from pyimagesearch.datasets import SimpleDatasetLoader
-from pyimagesearch.nn.conv import FCHeadNet
 from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import RMSprop
 from keras.optimizers import SGD
@@ -17,6 +13,10 @@ from keras.applications import VGG16
 from keras.layers import Input
 from keras.models import Model
 from imutils import paths
+from imagetoarraypreprocessor import ImageToArrayPreprocessor
+from aspectawarepreprocessor import AspectAwarePreprocessor
+from simpledatasetloader import SimpleDatasetLoader
+from fcheadnet import FCHeadNet
 import numpy as np
 import argparse
 import os
