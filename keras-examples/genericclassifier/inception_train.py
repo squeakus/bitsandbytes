@@ -7,10 +7,10 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 from keras.preprocessing.image import img_to_array
-# from keras.applications.inception_v3 import InceptionV3
-# from keras.applications.inception_v3 import preprocess_input
-# from keras.applications.inception_v3 import decode_predictions
-from keras_inceptionv3 import inception_v3_model
+from keras.applications.inception_v3 import InceptionV3
+from keras.applications.inception_v3 import preprocess_input
+from keras.applications.inception_v3 import decode_predictions
+# from keras_inceptionv3 import inception_v3_model
 from keras.utils import to_categorical
 from imutils import paths
 import matplotlib.pyplot as plt
@@ -34,8 +34,8 @@ def main():
 	EPOCHS = 250
 	INIT_LR = 1e-3
 	BS = 32
-	img_width = 28
-	img_height = 28
+	img_width = 224
+	img_height = 224
 	 
 	# initialize the data and labels
 	print("[INFO] loading images...")
@@ -98,11 +98,11 @@ def main():
 	# initialize the model
 	print("[INFO] compiling model...")
 	print("number of categories", len(categories))
-	model = inception_v3_model(img_width, img_height, 3, len(categories))
-
-	# InceptionV3(weights='imagenet', include_top=False,
-	# 					input_shape=(img_width, img_height, 3))
-
+	
+	model = InceptionV3(weights='imagenet', include_top=True,
+	 					input_shape=(img_width, img_height, 3))
+	print("model structure: ", model.summary())
+	exit()
 
 	# # old lenet model
 	# model = LeNet.build(width=img_width, height=img_height, depth=3, classes=len(categories))
