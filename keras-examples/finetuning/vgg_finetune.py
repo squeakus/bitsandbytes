@@ -22,6 +22,8 @@ import argparse
 import os
 
 IM_WIDTH, IM_HEIGHT = 224, 224
+TL_EPOCHS = 25
+FT_EPOCHS = 100
 
 def main():
 	# construct the argument parse and parse the arguments
@@ -93,9 +95,9 @@ def main():
 	# start to become initialized with actual "learned" values
 	# versus pure random
 	print("[INFO] training head...")
-	model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
-		validation_data=(testX, testY), epochs=25,
-		steps_per_epoch=len(trainX) // 32, verbose=1)
+	history_tl = model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
+									 validation_data=(testX, testY), epochs=TL_EPOCHS,
+									 steps_per_epoch=len(trainX) // 32, verbose=1)
 
 	# evaluate the network after initialization
 	print("[INFO] evaluating after initialization...")
@@ -103,6 +105,7 @@ def main():
 	print(classification_report(testY.argmax(axis=1),
 		predictions.argmax(axis=1), target_names=classNames))
 
+	plot(history_tl, TL_EPOCHS, "vgg_tl_plot.png")
 	# now that the head FC layers have been trained/initialized, lets
 	# unfreeze the final set of CONV layers and make them trainable
 	for layer in baseModel.layers[15:]:
@@ -118,10 +121,10 @@ def main():
 	# train the model again, this time fine-tuning *both* the final set
 	# of CONV layers along with our set of FC layers
 	print("[INFO] fine-tuning model...")
-	model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
-		validation_data=(testX, testY), epochs=100,
+	history_tf = model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
+		validation_data=(testX, testY), epochs=FT_EPOCHS,
 		steps_per_epoch=len(trainX) // 32, verbose=1)
-
+	plot(history_ft, FT_EPOCHS, "vgg_ft_plot.png")
 	# evaluate the network on the fine-tuned model
 	print("[INFO] evaluating after fine-tuning...")
 	predictions = model.predict(testX, batch_size=32)
@@ -131,6 +134,23 @@ def main():
 	# save the model to disk
 	print("[INFO] serializing model...")
 	model.save(args["model"])
+
+def plot(H, epochs, filename="plot.png")
+  # plot the training loss and accuracy
+  plt.style.use("ggplot")
+  plt.figure()
+  N = epochs
+  plt.plot(np.arange(0, N), H.history["loss"], label="train_loss")
+  plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
+  plt.plot(np.arange(0, N), H.history["acc"], label="train_acc")
+  plt.plot(np.arange(0, N), H.history["val_acc"], label="val_acc")
+  plt.title("Training Loss and Accuracy on " + " ".join(categories))
+  plt.xlabel("Epoch #")
+  plt.ylabel("Loss/Accuracy")
+  plt.legend(loc="lower left")
+  plt.savefig(filename)
+
+
 
 if __name__ == "__main__":
 	main()

@@ -24,6 +24,8 @@ from sklearn.model_selection import train_test_split
 IM_WIDTH, IM_HEIGHT = 299, 299 #fixed size for InceptionV3
 FC_SIZE = 1024
 NB_IV3_LAYERS_TO_FREEZE = 172
+TL_EPOCHS = 50
+FT_EPOCHS = 200
 
 def main():
   """Use transfer learning and fine-tuning to train a network on a new dataset"""
@@ -77,15 +79,14 @@ def main():
   # transfer learning by turning off all conv layers
   setup_to_transfer_learn(model, base_model)
 
-
   # train the head of the network for a few epochs (all other
   # layers are frozen) -- this will allow the new FC layers to
   # start to become initialized with actual "learned" values
   # versus pure random
   print("[INFO] training head...")
-  model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
-    validation_data=(testX, testY), epochs=25,
-    steps_per_epoch=len(trainX) // 32, verbose=1)
+  history_tl = model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
+               validation_data=(testX, testY), epochs=TL_EPOCHS,
+               steps_per_epoch=len(trainX) // 32, verbose=1)
 
   # evaluate the network after initialization
   print("[INFO] evaluating after initialization...")
@@ -93,6 +94,8 @@ def main():
   print(classification_report(testY.argmax(axis=1),
     predictions.argmax(axis=1), target_names=classNames))
 
+  #
+  plot(history_tl, TL_EPOCHS, "inc_tl_plot.png")
   # fine-tuning
   setup_to_finetune(model)
 
@@ -106,9 +109,10 @@ def main():
   # train the model again, this time fine-tuning *both* the final set
   # of CONV layers along with our set of FC layers
   print("[INFO] fine-tuning model...")
-  model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
-    validation_data=(testX, testY), epochs=100,
-    steps_per_epoch=len(trainX) // 32, verbose=1)
+  history_ft = model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
+                                   validation_data=(testX, testY), epochs=FT_EPOCHS,
+                                   steps_per_epoch=len(trainX) // 32, verbose=1)
+  plot(history_ft, FT_EPOCHS, "inc_ft_plot.png")
 
   # evaluate the network on the fine-tuned model
   print("[INFO] evaluating after fine-tuning...")
@@ -124,7 +128,8 @@ def setup_to_transfer_learn(model, base_model):
   """Freeze all layers and compile the model"""
   for layer in base_model.layers:
     layer.trainable = False
-  model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+  opt = RMSprop(lr=0.001)
+  model.compile(optimizer='opt', loss='categorical_crossentropy', metrics=['accuracy'])
 
 
 def add_new_last_layer(base_model, nb_classes):
@@ -160,22 +165,20 @@ def setup_to_finetune(model):
   model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy', metrics=['accuracy'])
 
 
-def plot_training(history):
-  acc = history.history['acc']
-  val_acc = history.history['val_acc']
-  loss = history.history['loss']
-  val_loss = history.history['val_loss']
-  epochs = range(len(acc))
-
-  plt.plot(epochs, acc, 'r.')
-  plt.plot(epochs, val_acc, 'r')
-  plt.title('Training and validation accuracy')
-
+def plot(H, epochs, filename="plot.png")
+  # plot the training loss and accuracy
+  plt.style.use("ggplot")
   plt.figure()
-  plt.plot(epochs, loss, 'r.')
-  plt.plot(epochs, val_loss, 'r-')
-  plt.title('Training and validation loss')
-  plt.show()
+  N = epochs
+  plt.plot(np.arange(0, N), H.history["loss"], label="train_loss")
+  plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
+  plt.plot(np.arange(0, N), H.history["acc"], label="train_acc")
+  plt.plot(np.arange(0, N), H.history["val_acc"], label="val_acc")
+  plt.title("Training Loss and Accuracy on " + " ".join(categories))
+  plt.xlabel("Epoch #")
+  plt.ylabel("Loss/Accuracy")
+  plt.legend(loc="lower left")
+  plt.savefig(filename)
 
 
 if __name__=="__main__":
