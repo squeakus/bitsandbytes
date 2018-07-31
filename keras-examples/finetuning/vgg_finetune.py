@@ -135,7 +135,7 @@ def main():
 	print("[INFO] serializing model...")
 	model.save(args["model"])
 
-def plot(H, epochs, filename="plot.png")
+def plot(H, epochs, filename="plot.png"):
   # plot the training loss and accuracy
   plt.style.use("ggplot")
   plt.figure()

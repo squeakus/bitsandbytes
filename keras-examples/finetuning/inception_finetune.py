@@ -13,6 +13,7 @@ from keras.optimizers import SGD
 # borrowed from pyimagesearch code
 import numpy as np
 from imutils import paths
+import matplotlib.pyplot as plt
 from utils.imagetoarraypreprocessor import ImageToArrayPreprocessor
 from utils.aspectawarepreprocessor import AspectAwarePreprocessor
 from utils.simpledatasetloader import SimpleDatasetLoader
@@ -165,7 +166,7 @@ def setup_to_finetune(model):
   model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy', metrics=['accuracy'])
 
 
-def plot(H, epochs, filename="plot.png")
+def plot(H, epochs, filename="plot.png"):
   # plot the training loss and accuracy
   plt.style.use("ggplot")
   plt.figure()
