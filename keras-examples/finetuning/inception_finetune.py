@@ -10,25 +10,115 @@ from keras.models import Model
 from keras.layers import Dense, GlobalAveragePooling2D
 from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import SGD
+# borrowed from pyimagesearch code
+import numpy as np
+from imutils import paths
+from utils.imagetoarraypreprocessor import ImageToArrayPreprocessor
+from utils.aspectawarepreprocessor import AspectAwarePreprocessor
+from utils.simpledatasetloader import SimpleDatasetLoader
+from sklearn.metrics import classification_report
+from sklearn.preprocessing import LabelBinarizer
+from sklearn.model_selection import train_test_split
 
 
 IM_WIDTH, IM_HEIGHT = 299, 299 #fixed size for InceptionV3
-NB_EPOCHS = 3
-BAT_SIZE = 32
 FC_SIZE = 1024
 NB_IV3_LAYERS_TO_FREEZE = 172
 
+def main():
+  """Use transfer learning and fine-tuning to train a network on a new dataset"""
+  a = argparse.ArgumentParser()
+  a.add_argument("-d", "--dataset", required=True,
+                 help="path to input dataset")
+  a.add_argument("-m", "--model", required=True, help="output model file")
+  a.add_argument("--plot", action="store_true")
 
-def get_nb_files(directory):
-  """Get number of files by searching directory recursively"""
-  if not os.path.exists(directory):
-    return 0
-  cnt = 0
-  for r, dirs, files in os.walk(directory):
-    for dr in dirs:
-      cnt += len(glob.glob(os.path.join(r, dr + "/*")))
-  return cnt
+  args = a.parse_args()
 
+  if (not os.path.exists(args.dataset)):
+    print("directories do not exist")
+    sys.exit(1)
+
+  # construct the image generator for data augmentation
+  aug = ImageDataGenerator(rotation_range=30, width_shift_range=0.1,
+    height_shift_range=0.1, shear_range=0.2, zoom_range=0.2,
+    horizontal_flip=True, fill_mode="nearest")
+
+  # grab the list of images that we'll be describing, then extract
+  # the class label names from the image paths
+  print("[INFO] loading images...")
+  imagePaths = list(paths.list_images(args.dataset))
+  classNames = [pt.split(os.path.sep)[-2] for pt in imagePaths]
+  classNames = [str(x) for x in np.unique(classNames)]
+
+  # initialize the image preprocessors
+  aap = AspectAwarePreprocessor(IM_WIDTH, IM_HEIGHT)
+  iap = ImageToArrayPreprocessor()
+
+  # load the dataset from disk then scale the raw pixel intensities to
+  # the range [0, 1]
+  sdl = SimpleDatasetLoader(preprocessors=[aap, iap])
+  (data, labels) = sdl.load(imagePaths, verbose=500)
+  data = data.astype("float") / 255.0
+
+  # partition the data into training and testing splits using 75% of
+  # the data for training and the remaining 25% for testing
+  (trainX, testX, trainY, testY) = train_test_split(data, labels,
+    test_size=0.25, random_state=42)
+
+  # convert the labels from integers to vectors
+  trainY = LabelBinarizer().fit_transform(trainY)
+  testY = LabelBinarizer().fit_transform(testY)
+
+  # setup model
+  base_model = InceptionV3(weights='imagenet', include_top=False) #include_top=False excludes final FC layer
+  model = add_new_last_layer(base_model, len(classNames))
+
+  # transfer learning by turning off all conv layers
+  setup_to_transfer_learn(model, base_model)
+
+
+  # train the head of the network for a few epochs (all other
+  # layers are frozen) -- this will allow the new FC layers to
+  # start to become initialized with actual "learned" values
+  # versus pure random
+  print("[INFO] training head...")
+  model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
+    validation_data=(testX, testY), epochs=25,
+    steps_per_epoch=len(trainX) // 32, verbose=1)
+
+  # evaluate the network after initialization
+  print("[INFO] evaluating after initialization...")
+  predictions = model.predict(testX, batch_size=32)
+  print(classification_report(testY.argmax(axis=1),
+    predictions.argmax(axis=1), target_names=classNames))
+
+  # fine-tuning
+  setup_to_finetune(model)
+
+  # for the changes to the model to take affect we need to recompile
+  # the model, this time using SGD with a *very* small learning rate
+  print("[INFO] re-compiling model...")
+  opt = SGD(lr=0.001)
+  model.compile(loss="categorical_crossentropy", optimizer=opt,
+    metrics=["accuracy"])
+
+  # train the model again, this time fine-tuning *both* the final set
+  # of CONV layers along with our set of FC layers
+  print("[INFO] fine-tuning model...")
+  model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
+    validation_data=(testX, testY), epochs=100,
+    steps_per_epoch=len(trainX) // 32, verbose=1)
+
+  # evaluate the network on the fine-tuned model
+  print("[INFO] evaluating after fine-tuning...")
+  predictions = model.predict(testX, batch_size=32)
+  print(classification_report(testY.argmax(axis=1),
+    predictions.argmax(axis=1), target_names=classNames))
+
+  # save the model to disk
+  print("[INFO] serializing model...")
+  model.save(args.model)
 
 def setup_to_transfer_learn(model, base_model):
   """Freeze all layers and compile the model"""
@@ -70,78 +160,6 @@ def setup_to_finetune(model):
   model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy', metrics=['accuracy'])
 
 
-def train(args):
-  """Use transfer learning and fine-tuning to train a network on a new dataset"""
-  nb_train_samples = get_nb_files(args.train_dir)
-  nb_classes = len(glob.glob(args.train_dir + "/*"))
-  nb_val_samples = get_nb_files(args.val_dir)
-  nb_epoch = int(args.nb_epoch)
-  batch_size = int(args.batch_size)
-
-  # data prep
-  train_datagen =  ImageDataGenerator(
-      preprocessing_function=preprocess_input,
-      rotation_range=30,
-      width_shift_range=0.2,
-      height_shift_range=0.2,
-      shear_range=0.2,
-      zoom_range=0.2,
-      horizontal_flip=True
-  )
-  test_datagen = ImageDataGenerator(
-      preprocessing_function=preprocess_input,
-      rotation_range=30,
-      width_shift_range=0.2,
-      height_shift_range=0.2,
-      shear_range=0.2,
-      zoom_range=0.2,
-      horizontal_flip=True
-  )
-
-  train_generator = train_datagen.flow_from_directory(
-    args.train_dir,
-    target_size=(IM_WIDTH, IM_HEIGHT),
-    batch_size=batch_size,
-  )
-
-  validation_generator = test_datagen.flow_from_directory(
-    args.val_dir,
-    target_size=(IM_WIDTH, IM_HEIGHT),
-    batch_size=batch_size,
-  )
-
-  # setup model
-  base_model = InceptionV3(weights='imagenet', include_top=False) #include_top=False excludes final FC layer
-  model = add_new_last_layer(base_model, nb_classes)
-
-  # transfer learning
-  setup_to_transfer_learn(model, base_model)
-
-  history_tl = model.fit_generator(
-    train_generator,
-    nb_epoch=nb_epoch,
-    samples_per_epoch=nb_train_samples,
-    validation_data=validation_generator,
-    nb_val_samples=nb_val_samples,
-    class_weight='auto')
-
-  # fine-tuning
-  setup_to_finetune(model)
-
-  history_ft = model.fit_generator(
-    train_generator,
-    samples_per_epoch=nb_train_samples,
-    nb_epoch=nb_epoch,
-    validation_data=validation_generator,
-    nb_val_samples=nb_val_samples,
-    class_weight='auto')
-
-  model.save(args.output_model_file)
-
-  if args.plot:
-    plot_training(history_ft)
-
-
 def plot_training(history):
   acc = history.history['acc']
   val_acc = history.history['val_acc']
@@ -161,22 +179,6 @@ def plot_training(history):
 
 
 if __name__=="__main__":
-  a = argparse.ArgumentParser()
-  a.add_argument("--train_dir")
-  a.add_argument("--val_dir")
-  a.add_argument("--nb_epoch", default=NB_EPOCHS)
-  a.add_argument("--batch_size", default=BAT_SIZE)
-  a.add_argument("--output_model_file", default="inceptionv3-ft.model")
-  a.add_argument("--plot", action="store_true")
+  main()
 
-  args = a.parse_args()
-  if args.train_dir is None or args.val_dir is None:
-    a.print_help()
-    sys.exit(1)
-
-  if (not os.path.exists(args.train_dir)) or (not os.path.exists(args.val_dir)):
-    print("directories do not exist")
-    sys.exit(1)
-
-  train(args)
 
