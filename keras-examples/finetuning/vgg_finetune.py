@@ -13,10 +13,10 @@ from keras.applications import VGG16
 from keras.layers import Input
 from keras.models import Model
 from imutils import paths
-from imagetoarraypreprocessor import ImageToArrayPreprocessor
-from aspectawarepreprocessor import AspectAwarePreprocessor
-from simpledatasetloader import SimpleDatasetLoader
-from fcheadnet import FCHeadNet
+from utils.imagetoarraypreprocessor import ImageToArrayPreprocessor
+from utils.aspectawarepreprocessor import AspectAwarePreprocessor
+from utils.simpledatasetloader import SimpleDatasetLoader
+from utils.fcheadnet import FCHeadNet
 import numpy as np
 import argparse
 import os

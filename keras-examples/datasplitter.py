@@ -38,7 +38,7 @@ def main():
 def splitdir(src, split):
     src= os.path.join(src, '') # add trailing slash if missing
     X = y= os.listdir(src)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=split, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=splitls, random_state=0)
     label = src.split('/')[-2]
     if not (os.path.isdir('train/'+label)):
         os.makedirs('train/'+label)
