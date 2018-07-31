@@ -13,6 +13,7 @@ from keras.applications import VGG16
 from keras.layers import Input
 from keras.models import Model
 from imutils import paths
+import matplotlib.pyplot as plt
 from utils.imagetoarraypreprocessor import ImageToArrayPreprocessor
 from utils.aspectawarepreprocessor import AspectAwarePreprocessor
 from utils.simpledatasetloader import SimpleDatasetLoader

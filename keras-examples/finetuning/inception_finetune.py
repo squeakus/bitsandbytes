@@ -10,6 +10,7 @@ from keras.models import Model
 from keras.layers import Dense, GlobalAveragePooling2D
 from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import SGD
+from keras.optimizers import RMSprop
 # borrowed from pyimagesearch code
 import numpy as np
 from imutils import paths
@@ -130,7 +131,7 @@ def setup_to_transfer_learn(model, base_model):
   for layer in base_model.layers:
     layer.trainable = False
   opt = RMSprop(lr=0.001)
-  model.compile(optimizer='opt', loss='categorical_crossentropy', metrics=['accuracy'])
+  model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
 
 
 def add_new_last_layer(base_model, nb_classes):
@@ -147,7 +148,7 @@ def add_new_last_layer(base_model, nb_classes):
   x = GlobalAveragePooling2D()(x)
   x = Dense(FC_SIZE, activation='relu')(x) #new FC layer, random init
   predictions = Dense(nb_classes, activation='softmax')(x) #new softmax layer
-  model = Model(input=base_model.input, output=predictions)
+  model = Model(inputs=base_model.input, outputs=predictions)
   return model
 
 
