@@ -145,7 +145,7 @@ def plot(H, epochs, filename="plot.png"):
   plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
   plt.plot(np.arange(0, N), H.history["acc"], label="train_acc")
   plt.plot(np.arange(0, N), H.history["val_acc"], label="val_acc")
-  plt.title("Training Loss and Accuracy on " + " ".join(categories))
+  plt.title("Training Loss and Accuracy")
   plt.xlabel("Epoch #")
   plt.ylabel("Loss/Accuracy")
   plt.legend(loc="lower left")
