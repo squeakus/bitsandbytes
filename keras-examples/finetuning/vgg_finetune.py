@@ -46,7 +46,6 @@ def main():
 	imagePaths = list(paths.list_images(args["dataset"]))
 	classNames = [pt.split(os.path.sep)[-2] for pt in imagePaths]
 	classNames = [str(x) for x in np.unique(classNames)]
-
 	# initialize the image preprocessors
 	aap = AspectAwarePreprocessor(IM_WIDTH, IM_HEIGHT)
 	iap = ImageToArrayPreprocessor()
