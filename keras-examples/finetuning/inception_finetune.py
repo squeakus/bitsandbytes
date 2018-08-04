@@ -26,8 +26,8 @@ from sklearn.model_selection import train_test_split
 IM_WIDTH, IM_HEIGHT = 299, 299 #fixed size for InceptionV3
 FC_SIZE = 1024
 NB_IV3_LAYERS_TO_FREEZE = 172
-TL_EPOCHS = 100
-FT_EPOCHS = 300
+TL_EPOCHS = 25
+FT_EPOCHS = 100
 
 def main():
   """Use transfer learning and fine-tuning to train a network on a new dataset"""
@@ -76,7 +76,7 @@ def main():
 
   # setup model
   base_model = InceptionV3(weights='imagenet', include_top=False) #include_top=False excludes final FC layer
-  model = add_new_last_layer(base_model, len(classNames))
+  model = add_new_fc_layer(base_model, len(classNames))
 
   # transfer learning by turning off all conv layers
   setup_to_transfer_learn(model, base_model)
@@ -134,7 +134,7 @@ def setup_to_transfer_learn(model, base_model):
   model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
 
 
-def add_new_last_layer(base_model, nb_classes):
+def add_new_fc_layer(base_model, nb_classes):
   """Add last layer to the convnet
 
   Args:
@@ -164,7 +164,9 @@ def setup_to_finetune(model):
      layer.trainable = False
   for layer in model.layers[NB_IV3_LAYERS_TO_FREEZE:]:
      layer.trainable = True
-  model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy', metrics=['accuracy'])
+  oldopt =SGD(lr=0.0001, momentum=0.9)
+  opt = SGD(lr=0.001)
+  model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
 
 
 def plot(H, epochs, filename="plot.png"):

@@ -1,3 +1,6 @@
+copy files of a type and keep subdirectory structure
+find . -name '*FHC*' | cpio -pdm  ./target
+
 mavproxy.py --master=tcp:192.168.1.21:5760 --quadcopter
 
 sudo nmap -sU 192.168.10.1 -p 8000-8500
@@ -906,8 +909,11 @@ show functions in a shared library
 nm -D /usr/lib/libcuda.so
 
 ssh-keygen -t rsa
-cat .ssh/id_rsa.pub | ssh backup@umg.ucd.ie 'cat >> .ssh/authorized_keys'
+cat ~/.ssh/id_rsa.pub | ssh backup@umg.ucd.ie 'cat >> .ssh/authorized_keys'
 15 21 * * *  /usr/bin/rsync --progress -avhe ssh /Users/jonathan/backups backup@umg.ucd.ie:/backup/Jonathan/macbrew
+
+setting up ssh server:
+make sure authorized_keys is turn on in /etc/ssh/sshd_config
 
 cloudcompare commandline:
 CloudCompare -O col.ply -SS RANDOM 10000
