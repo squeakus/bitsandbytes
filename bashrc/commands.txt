@@ -908,6 +908,17 @@ sudo optirun
 show functions in a shared library
 nm -D /usr/lib/libcuda.so
 
+No password ssh (from a to b):
+if you have not generated a key then (ONLY IF NO KEY):
+alwyas use RSA
+ssh-keygen -t rsa <- generate key for autologin on machine a
+otherwise just do this
+ssh-copy-id -i ~/.ssh/id_rsa.pub name@server <- copy file across from machine a
+cat .ssh/id_rsa.pub | ssh b@B 'cat >> .ssh/authorized_keys' <- alternative way
+if it doesnt work immediately then type:
+ssh-add on machine a to register the keys
+
+# Copying your public key to a remote server
 ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub | ssh backup@umg.ucd.ie 'cat >> .ssh/authorized_keys'
 15 21 * * *  /usr/bin/rsync --progress -avhe ssh /Users/jonathan/backups backup@umg.ucd.ie:/backup/Jonathan/macbrew
@@ -2193,15 +2204,7 @@ nohup some_command > nohup2.out 2>&1&   <- specify the output file
 error with known hosts:
 sed -i '6d' ~/.ssh/known_hosts <- delete sixth line from file
 
-No password ssh (from a to b):
-if you have not generated a key then (ONLY IF NO KEY):
-Be careful of DSA vs RSA
-ssh-keygen -t rsa <- generate key for autologin on machine a
-otherwise just do this
-ssh-copy-id -i ~/.ssh/id_rsa.pub name@server <- copy file across from machine a
-cat .ssh/id_rsa.pub | ssh b@B 'cat >> .ssh/authorized_keys' <- alternative way
-if it doesnt work immediately then type:
-ssh-add on machine a to register the keys
+
 
 write a c shared object for python:
 gcc -fPIC -c dist.c <- flag position independent content
