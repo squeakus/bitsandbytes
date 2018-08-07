@@ -1051,12 +1051,15 @@ du -h --max-depth=1 | sort -h
 in osx:
 du -h --max-depth=1 | gsort -h
 
+remove trailing whitespace from a file:
+sed --in-place 's/[[:space:]]\+$//' <filename>
 
 remove all trailing whitespace from git files
 find . -not -path '.git' -iname '*.py' -exec sed -i 's/ *$//' '{}' ';'
 
 remove all trailing white space
 sed -i 's/[ \t]*$//' "$1"
+
 
 POSTGRES!!!
 # postgres uses roles, each role should have a matching system account
