@@ -1,3 +1,13 @@
+update git fork to latest:
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+git fetch upstream
+git checkout master
+git merge upstream/master
+
+sublime shortcuts:
+ctrl+k, ctrl+b <- hide sidebar
+ctrl+shift+p <- run packages 
+
 copy files of a type and keep subdirectory structure
 find . -name '*FHC*' | cpio -pdm  ./target
 

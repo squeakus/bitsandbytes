@@ -13,6 +13,7 @@
 alias python='python3'
 alias ipython='ipython3'
 alias pip='pip3'
+alias pylint='pylint3'
 alias open='xdg-open'
 alias rm='rm -v -i'
 alias cp='cp -v -i'
