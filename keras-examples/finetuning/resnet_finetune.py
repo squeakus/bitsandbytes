@@ -145,17 +145,24 @@ def add_new_fc_layer(baseModel, classes):
     # the base, then add a FC layer
     x = baseModel.output
     x = GlobalAveragePooling2D()(x)
-    # headModel = Flatten(name="flatten")(headModel)
-    x = Dense(FC_UNITS, activation="relu")(x)
-    # headModel = Dropout(0.5)(headModel)
+    x = Flatten(name="flatten_1")(x)
     # add a softmax layer
     predictions = Dense(classes, activation="softmax")(x)
 
     # place the head FC model on top of the base model -- this will
     # become the actual model we will train
     model = Model(inputs=baseModel.input, outputs=predictions)
+    print_model(model)
     # return the model
     return model
+
+
+def print_model(model):
+    print("[INFO] network overview...")
+    print(model.summary())
+    print("[INFO] showing layers...")
+    for (i, layer) in enumerate(model.layers):
+        print("[INFO] {}\t{}".format(i, layer.__class__.__name__))
 
 
 def freeze_for_transfer(model, base_model):

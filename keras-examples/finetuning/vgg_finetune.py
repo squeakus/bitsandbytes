@@ -23,6 +23,7 @@ import os
 IM_WIDTH, IM_HEIGHT = 224, 224
 TL_EPOCHS = 25
 FT_EPOCHS = 100
+FC_UNITS = 256
 
 def main():
     # construct the argument parse and parse the arguments
@@ -45,31 +46,19 @@ def main():
     baseModel = VGG16(weights="imagenet", include_top=False,
         input_tensor=Input(shape=(IM_WIDTH, IM_HEIGHT, 3)))
 
-	# load the dataset from disk then scale the raw pixel intensities to
-	# the range [0, 1]
-	sdl = SimpleDatasetLoader(preprocessors=[aap, iap])
-	(data, labels) = sdl.load(imagePaths, verbose=500)
-	data = data.astype("float") / 255.0
+    # # load the dataset from disk then scale the raw pixel intensities to
+    # # the range [0, 1]
+    # sdl = SimpleDatasetLoader(preprocessors=[aap, iap])
+    # (data, labels) = sdl.load(imagePaths, verbose=500)
+    # data = data.astype("float") / 255.0
 
     # place the head FC model on top of the base model -- this will
     # become the actual model we will train
-    model = add_new_fc_layer(baseModel, len(classNames), 256)
+    model = add_new_fc_layer(baseModel, len(classNames), FC_UNITS)
 
     # loop over all layers in the base model and freeze them so they
     # will *not* be updated during the training process
     model = freeze_for_transfer(model, baseModel)
-
-    # # loop over all layers in the base model and freeze them so they
-    # # will *not* be updated during the training process
-    # for layer in baseModel.layers:
-    #   layer.trainable = False
-
-    # # compile our model (this needs to be done after our setting our
-    # # layers to being non-trainable
-    # print("[INFO] compiling model...")
-    # opt = RMSprop(lr=0.001)
-    # model.compile(loss="categorical_crossentropy", optimizer=opt,
-    #   metrics=["accuracy"])
 
     # train the head of the network for a few epochs (all other
     # layers are frozen) -- this will allow the new FC layers to
@@ -133,7 +122,8 @@ def process_folder(args):
     sdl = SimpleDatasetLoader(preprocessors=[aap, iap])
     (data, labels) = sdl.load(imagePaths, verbose=500)
     data = data.astype("float") / 255.0
-
+    print(len(data))
+    print(labels)
     # partition the data into training and testing splits using 75% of
     # the data for training and the remaining 25% for testing
     (trainX, testX, trainY, testY) = train_test_split(data, labels,
