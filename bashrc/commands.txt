@@ -8,6 +8,12 @@ sublime shortcuts:
 ctrl+k, ctrl+b <- hide sidebar
 ctrl+shift+p <- run packages 
 
+indent settings:
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "translate_tabs_to_spaces": true,
+    "detect_indentation": false
+
 copy files of a type and keep subdirectory structure
 find . -name '*FHC*' | cpio -pdm  ./target
 
