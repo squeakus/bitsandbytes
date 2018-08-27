@@ -1,3 +1,6 @@
+$ /opt/movidius/NCSDK/ncsdk-x86_64/tk/mvNCCheck.py conv_with_regression/graph.frozen.pb  -in imgs -on e2/Relu
+
+
 update git fork to latest:
 git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 git fetch upstream
@@ -13,6 +16,23 @@ indent settings:
     "translate_tabs_to_spaces": true,
     "translate_tabs_to_spaces": true,
     "detect_indentation": false
+
+Setting up remote access for sublime files:
+On server install rsub:
+# wget -O /usr/local/bin/rsub \https://raw.github.com/aurora/rmate/master/rmate
+# chmod a+x /usr/local/bin/rsub
+On local
+
+Install rsub Sublime3 package:
+On Sublime Text 3, open Package Manager (Ctrl-Shift-P on Linux/Win, Cmd-Shift-P on Mac, Install Package), and search for rsub and install it
+
+Open command line and connect to remote server:
+# ssh -R 52698:localhost:52698 server_user@server_address
+
+after connect to server run this command on server:
+# rsub path_to_file/file.txt
+
+
 
 copy files of a type and keep subdirectory structure
 find . -name '*FHC*' | cpio -pdm  ./target
