@@ -1,3 +1,8 @@
+shink a gif into a video:
+ffmpeg -f gif -i hatdots.gif hatdots.mp4
+ <video src="images/hatdots.mp4" autoplay muted loop />
+
+
 $ /opt/movidius/NCSDK/ncsdk-x86_64/tk/mvNCCheck.py conv_with_regression/graph.frozen.pb  -in imgs -on e2/Relu
 
 
