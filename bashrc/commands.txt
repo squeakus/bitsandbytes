@@ -1,3 +1,9 @@
+Turn off the monitor now
+sleep 3; xset dpms force off
+
+turn off monitor after 5 minutes if dpms compliant:
+xset dpms 300 600
+
 shink a gif into a video:
 ffmpeg -f gif -i hatdots.gif hatdots.mp4
  <video src="images/hatdots.mp4" autoplay muted loop />
