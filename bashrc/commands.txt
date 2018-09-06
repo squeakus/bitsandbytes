@@ -21,7 +21,7 @@ git merge upstream/master
 sublime shortcuts:
 ctrl+k, ctrl+b <- hide sidebar
 ctrl+shift+p <- run packages 
-
+alt+shift+2 <- two columns
 indent settings:
     "tab_size": 4,
     "translate_tabs_to_spaces": true,
