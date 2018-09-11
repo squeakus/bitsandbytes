@@ -1,3 +1,6 @@
+convert werbm to mp4
+ffmpeg -i video.webm -crf 26 video.mp4
+
 Turn off the monitor now
 sleep 3; xset dpms force off
 
