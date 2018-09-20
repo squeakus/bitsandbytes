@@ -86,13 +86,13 @@ def main():
   # start to become initialized with actual "learned" values
   # versus pure random
   print("[INFO] training head...")
-  history_tl = model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
+  history_tl = model.fit_generator(aug.flow(trainX, trainY, batch_size=16),
                validation_data=(testX, testY), epochs=TL_EPOCHS,
                steps_per_epoch=len(trainX) // 32, verbose=1)
 
   # evaluate the network after initialization
   print("[INFO] evaluating after initialization...")
-  predictions = model.predict(testX, batch_size=32)
+  predictions = model.predict(testX, batch_size=16)
   print(classification_report(testY.argmax(axis=1),
     predictions.argmax(axis=1), target_names=classNames))
 
@@ -111,13 +111,13 @@ def main():
   # train the model again, this time fine-tuning *both* the final set
   # of CONV layers along with our set of FC layers
   print("[INFO] fine-tuning model...")
-  history_ft = model.fit_generator(aug.flow(trainX, trainY, batch_size=32),
+  history_ft = model.fit_generator(aug.flow(trainX, trainY, batch_size=16),
                                    validation_data=(testX, testY), epochs=FT_EPOCHS,
-                                   steps_per_epoch=len(trainX) // 32, verbose=1)
+                                   steps_per_epoch=len(trainX) // 16, verbose=1)
 
   # evaluate the network on the fine-tuned model
   print("[INFO] evaluating after fine-tuning...")
-  predictions = model.predict(testX, batch_size=32)
+  predictions = model.predict(testX, batch_size=16)
   print(classification_report(testY.argmax(axis=1),
     predictions.argmax(axis=1), target_names=classNames))
   plot(history_ft, FT_EPOCHS, "inc_ft_plot.png")

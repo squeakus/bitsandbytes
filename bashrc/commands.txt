@@ -859,7 +859,7 @@ history man-chat-lolz 100000
 use tee to output it to a file:
 ./telegram-cli | tee all.txt
 remove color codes:
-cat moo.txt | sed -r "s:\x1B\[[0-9;]*[mK]::g"
+cat all.txt | sed -r "s:\x1B\[[0-9;]*[mK]::g"
 
 stream radio
 rtl_fm -W -f 99.5M | play -r 32k -t raw -e signed-integer -b 16 -c 1 -V1 -

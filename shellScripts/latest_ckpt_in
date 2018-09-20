@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "$#" -ne 1 ]; then
+    echo "Usage: latest_ckpt_in foldername"
+    exit 1
+fi
+ls -Art $1 | tail -n 1 | cut -f 1 -d '.'
+
+
