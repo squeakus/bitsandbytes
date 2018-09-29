@@ -1,3 +1,6 @@
+resize image with nearest neighbour:
+convert from.png -interpolate Nearest -filter point -resize
+
 convert werbm to mp4
 ffmpeg -i video.webm -crf 26 video.mp4
 
