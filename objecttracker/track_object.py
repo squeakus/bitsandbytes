@@ -21,7 +21,6 @@ ap.add_argument("-c", "--confidence", type=float, default=0.2,
 	help="minimum probability to filter weak detections")
 args = vars(ap.parse_args())
 
-
 # initialize the list of class labels MobileNet SSD was trained to
 # detect
 CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
@@ -63,6 +62,10 @@ while True:
 		fourcc = cv2.VideoWriter_fourcc(*"MJPG")
 		writer = cv2.VideoWriter(args["output"], fourcc, 30,
 			(frame.shape[1], frame.shape[0]), True)
+<<<<<<< 027d6860ffd633c1a50166f5af96fd367dc0551b
+=======
+
+>>>>>>> adding object tracker and ssim mearurer
 	# if our correlation object tracker is None we first need to
 	# apply an object detector to seed the tracker with something
 	# to actually track
@@ -75,6 +78,10 @@ while True:
 		# and predictions
 		net.setInput(blob)
 		detections = net.forward()
+<<<<<<< 027d6860ffd633c1a50166f5af96fd367dc0551b
+=======
+
+>>>>>>> adding object tracker and ssim mearurer
 		# ensure at least one detection is made
 		if len(detections) > 0:
 			# find the index of the detection with the largest
@@ -108,6 +115,10 @@ while True:
 					(0, 255, 0), 2)
 				cv2.putText(frame, label, (startX, startY - 15),
 					cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 0), 2)
+<<<<<<< 027d6860ffd633c1a50166f5af96fd367dc0551b
+=======
+
+>>>>>>> adding object tracker and ssim mearurer
 	# otherwise, we've already performed detection so let's track
 	# the object
 	else:
@@ -115,13 +126,21 @@ while True:
 		# object
 		tracker.update(rgb)
 		pos = tracker.get_position()
+<<<<<<< 027d6860ffd633c1a50166f5af96fd367dc0551b
 
+=======
+ 
+>>>>>>> adding object tracker and ssim mearurer
 		# unpack the position object
 		startX = int(pos.left())
 		startY = int(pos.top())
 		endX = int(pos.right())
 		endY = int(pos.bottom())
+<<<<<<< 027d6860ffd633c1a50166f5af96fd367dc0551b
 
+=======
+ 
+>>>>>>> adding object tracker and ssim mearurer
 		# draw the bounding box from the correlation object tracker
 		cv2.rectangle(frame, (startX, startY), (endX, endY),
 			(0, 255, 0), 2)
