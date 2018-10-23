@@ -9,10 +9,8 @@ import numpy as np
 def main():
     # construct the argument parse and parse the arguments
     ap = argparse.ArgumentParser()
-    ap.add_argument("-f", "--folder", required=True,
-        help="path to be OCR'd")
-    ap.add_argument("-p", "--preprocess", type=str, default="thresh",
-        help="type of preprocessing to be done")
+    ap.add_argument("folder", help="path to be OCR'd")
+
     args = vars(ap.parse_args())
 
     imgcnt = 0
@@ -20,8 +18,7 @@ def main():
 
     extensions = [".tif",".jpg", ".png"]
     print("folder", args["folder"])
-    for f in os.listdir(args["folder"]):
-        print("opening ", f)
+    for f in sorted(os.listdir(args["folder"])):
         ext = os.path.splitext(f)[1]
         if ext.lower() in extensions:
             imgcnt += 1
@@ -30,49 +27,94 @@ def main():
                 correct += 1
     print(correct, "correct out of", imgcnt)
 
+def preprocess(gray):
+    # check to see if we should apply thresholding to preprocess the
+    # image
+    # gray = cv2.threshold(gray, 0, 255,
+    #     cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+     
+    # # median blur to remove noise
+    # # gray = cv2.medianBlur(gray, 3)
+
+    # dilate to shrink the blobs and highlight the letters
+    gray = keepCharsOnly(gray)
+    gray = cv2.copyMakeBorder(gray,300,300,300,300,cv2.BORDER_CONSTANT,value=[255,255,255])
+
+    # kernel = np.ones((3, 3), np.uint8)
+    # gray = cv2.dilate(gray, kernel, iterations=3)
+    #show(gray)
+    return gray
+
+def keepCharsOnly(inputImage):
+    # Get the bounding boxes that we think are characters.
+    # Get the extreme corners
+    # Crop the image minX, maxY - maxX, minY
+
+    minCharHeight = 80
+    maxCharHeight = 150
+
+    maxX = 0
+    maxY = 0
+    minX, minY = inputImage.shape
+
+    #workingImage = cv2.cvtColor(inputImage, cv2.COLOR_BGR2GRAY)
+    ret, thresh = cv2.threshold(inputImage, 127, 255, 0)
+    thresh = cv2.bitwise_not(thresh)
+    workingImage, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+    for contour in contours:
+        currentContourBoundingRectExceeded = False
+        currentContourMinRectExceeded = False
+        currentContourRadiusExceeded = False
+
+        #Characters tend to have:
+        # w = 80
+        # h = 140
+
+        # get the bounding rect
+        x, y, w, h = cv2.boundingRect(contour)  # tl
+        # print("contour", cv2.boundingRect(contour))
+        areaBoundingRect = w * h
+        # logger.info("Bounding rectWidth %s, Height %s", w, h)
+        if h > minCharHeight and h < maxCharHeight:
+            maxX = x+w if x+w > maxX else maxX
+            maxY = y+h if y+h > maxY else maxY
+            minX = x if x < minX else minX
+            minY = y if y < minY else minY
+            # show(workingImage[minY:maxY,minX:maxX])
+
+    #Crop image
+    return inputImage[minY:maxY,minX:maxX]
+
 def ocr(foldername, imgname, args):
     # load the example image and convert it to grayscale
     fullname = os.path.join(foldername, imgname)
     image = cv2.imread(fullname)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-     
-    # check to see if we should apply thresholding to preprocess the
-    # image
-    if args["preprocess"] == "thresh":
-        gray = cv2.threshold(gray, 0, 255,
-            cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
-     
-    # make a check to see if median blurring should be done to remove
-    # noise
-    elif args["preprocess"] == "blur":
-        gray = cv2.medianBlur(gray, 3)
+    gray = preprocess(gray)
 
-    #kernel = np.ones((3, 3), np.uint8)
-    # gray = cv2.dilate(gray, kernel, iterations=2)
      
     # write the grayscale image to disk as a temporary file so we can
     # apply OCR to it
     filename = "{}.png".format(os.getpid())
     cv2.imwrite(filename, gray)
     # config = ('-l eng --oem --psm 3')
-    config = ('-l eng --oem 1')
+    config = ('-l eng --oem 1 -c tessedit_char_whitelist=jJ0123456789')
     # the temporary file
-    text = pytesseract.image_to_string(Image.open(filename))
+    text = pytesseract.image_to_string(Image.open(filename), config=config)
     os.remove(filename)
-    actual = imgname.rstrip(".tif")
-    actual = actual.rstrip('b')
+    text = text.replace(" ","")
+    actual = imgname.split('_')[0]
 
-    # show(gray)
-    #show the output images
-    # cv2.imshow("Image", image)
-    # cv2.imshow("Output", gray)
-    # cv2.waitKey(0)
+    if actual == "blank":
+        actual = ""
 
     if actual == text:
         print(actual,":",text, "match!")
         return True
     else:
         print(actual,":",text)
+        show(gray)
         return False
      
 
