@@ -1,3 +1,43 @@
+## List Docker CLI commands
+docker
+docker container --help
+
+## Display Docker version and info
+docker --version
+docker version
+docker info
+
+## Execute Docker image
+docker run hello-world
+
+## List Docker images
+docker image ls
+
+## List Docker containers (running, all, all in quiet mode)
+docker container ls
+docker container ls --all
+docker container ls -aq
+
+Show all containers:
+docker ps -a
+
+docker start 9b0db8a30a
+docker stop youthful_roentgen
+docker rm youthful_roentgen
+
+docker commit -m "What did you do to the image" -a "Author Name" container-id repository/new_image_name
+docker commit -m "added node.js" -a "sammy" d9b100f2f636 sammy/ubuntu-nodejs
+
+find and open container
+docker search ubuntu
+docker pull ubuntu
+docker run ubuntu
+
+interactive run
+docker run -it ubuntu
+run interactive, remave when finished, mount folder run python command
+docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
+exit to exit
 new multiload indicator:
 sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0
 https://extensions.gnome.org/extension/120/system-monitor/
