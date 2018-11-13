@@ -7,6 +7,10 @@ docker --version
 docker version
 docker info
 
+##compile an image from a Dockerfile
+FROM ubuntu:18.04
+
+docker build -t my_image .
 ## Execute Docker image
 docker run hello-world
 
@@ -38,6 +42,9 @@ docker run -it ubuntu
 run interactive, remave when finished, mount folder run python command
 docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
 exit to exit
+
+
+
 new multiload indicator:
 sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0
 https://extensions.gnome.org/extension/120/system-monitor/
@@ -123,6 +130,11 @@ openssl x509 -noout -modulus -in server.crt | openssl md5
 openssl rsa -noout -modulus -in server.key | openssl md5
 
 how to branch and pull request:
+git checkout -b branchname
+commit 
+git push --set-upstream origin branchname
+git pull --rebase
+git push origin branchname
 git checkout -b branchname
 commit 
 git push --set-upstream origin branchname
@@ -3129,11 +3141,6 @@ C-S        <-search forward
 M-SHIFT-5  <-replace forward
 C-s C-w    <-search forward for the word under cursor***
 M-backspace<-go back a whole word
-M-X occur  <-get all occurences of word
-C-W        <-cut
-M-W        <-copy
-C-Y	   <-paste
-C-X C-S    <-save
 C-M-\      <- autoindent region
 C-c > 	   <-indent in python only
 C-x TAB    <- indent by one space
