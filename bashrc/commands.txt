@@ -1,3 +1,5 @@
+
+
 ## List Docker CLI commands
 docker
 docker container --help
@@ -16,6 +18,18 @@ docker run hello-world
 
 ## List Docker images
 docker image ls
+
+#push docker image
+docker tag af299672bfd3 jonathanbyrn/dockertest:deepviz
+docker login
+docker push jonathanbyrn/deepviz
+
+## setting up config file:
+vi /etc/docker/daemon.json
+{
+"max-concurrent-uploads":1
+}
+ 
 
 ## List Docker containers (running, all, all in quiet mode)
 docker container ls
