@@ -1,63 +1,59 @@
+# DOCKER!
+## build from Dockerfile
+docker build -t <imgname> .
 
+## run interactive, remove when finished, mount folder, python command
+docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
+exit to exit
+
+## Get docker to run with X11 window
+xhost +
+docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix <imagname> <cmd>
+
+## Add support for webcam
+--device=/dev/video0:/dev/video0
+
+## tidy up docker shite:
+docker system prune
+##delete danglers:
+docker rmi $(docker images -f "dangling=true" -q)
+
+## Link to existing dockerfile
+FROM ubuntu:18.04
 
 ## List Docker CLI commands
 docker
 docker container --help
-
-## Display Docker version and info
 docker --version
 docker version
 docker info
 
-##compile an image from a Dockerfile
-FROM ubuntu:18.04
-
-docker build -t my_image .
-## Execute Docker image
-docker run hello-world
-
-## List Docker images
-docker image ls
-
-#push docker image
-docker tag af299672bfd3 jonathanbyrn/dockertest:deepviz
+# push docker image to docker hub
 docker login
-docker push jonathanbyrn/deepviz
+docker tag af299672bfd3 jonathanbyrn/<imgname>:<tag>
+docker push jonathanbyrn/<imgname>
 
 ## setting up config file:
 vi /etc/docker/daemon.json
 {
 "max-concurrent-uploads":1
 }
- 
 
+## List Docker images
+docker image ls
+ 
 ## List Docker containers (running, all, all in quiet mode)
 docker container ls
 docker container ls --all
 docker container ls -aq
 
-Show all containers:
-docker ps -a
-
+## start container separately
 docker start 9b0db8a30a
 docker stop youthful_roentgen
 docker rm youthful_roentgen
 
 docker commit -m "What did you do to the image" -a "Author Name" container-id repository/new_image_name
 docker commit -m "added node.js" -a "sammy" d9b100f2f636 sammy/ubuntu-nodejs
-
-find and open container
-docker search ubuntu
-docker pull ubuntu
-docker run ubuntu
-
-interactive run
-docker run -it ubuntu
-run interactive, remave when finished, mount folder run python command
-docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
-exit to exit
-
-
 
 new multiload indicator:
 sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0
@@ -466,7 +462,8 @@ groups <username>
 rotate screen and touchscreen on pi:
 vi /boot/config.txt
 display_rotate=1
-
+To rotate the touchscreen too:
+lcd_rotate=2
 
 Resizing a partition within an image file
 For this, we're going to use gparted. If you don't have gparted installed:
@@ -1561,6 +1558,8 @@ touch .hushlogin
 raspberry timelapse:
 raspistill -ex auto -t 9999999999 -tl 300000 -o a%04d.jpg
 
+raspicam picture:
+raspicam -o pic.jpg
 
 encrypt a file
 gpg -c moo.txt
