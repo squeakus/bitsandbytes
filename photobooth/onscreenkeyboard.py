@@ -9,10 +9,11 @@ from tkinter import Entry
 
 
 def main():
-    kb = OnscreenKeyboard()
+    """Create a keyboard and output the submission"""
+    keyboard = OnscreenKeyboard()
 
     print("hello!")
-    print(kb.username)
+    print(keyboard.username)
 
 
 class OnscreenKeyboard:
@@ -21,18 +22,18 @@ class OnscreenKeyboard:
     """
 
     def __init__(self):
-        self.kb = tk.Tk()
-        self.kb.title("Enter User Name:")
+        self.keyboard = tk.Tk()
+        self.keyboard.title("Enter User Name:")
         self.username = ""
-        self.kb.resizable(0, 0)
-        self.entry = Entry(self.kb, width=50)
+        self.keyboard.resizable(0, 0)
+        self.entry = Entry(self.keyboard, width=50)
         self.entry.grid(row=0, columnspan=15)
 
         self.buttons = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'BACK',
                         'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'CANCEL',
                         'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '_', 'DONE']
         self.create_keyboard()
-        self.kb.mainloop()
+        self.keyboard.mainloop()
 
     def select(self, value):
         """
@@ -43,10 +44,10 @@ class OnscreenKeyboard:
             self.entry.delete(len(self.entry.get())-1, tk.END)
 
         elif value == "CANCEL":
-            self.kb.destroy()
+            self.keyboard.destroy()
         elif value == 'DONE':
             self.username = self.entry.get()
-            self.kb.destroy()
+            self.keyboard.destroy()
         else:
             self.entry.insert(tk.END, value)
 
@@ -57,16 +58,18 @@ class OnscreenKeyboard:
 
         for button in self.buttons:
 
-            def command(x=button): return self.select(x)
+            def command(x=button):
+                """mapping button to function"""
+                return self.select(x)
 
             if button == "CANCEL" or button == "DONE" or button == "BACK":
-                tk.Button(self.kb, text=button, width=6, bg="#3c4987", fg="#ffffff",
+                tk.Button(self.keyboard, text=button, width=6, bg="#3c4987", fg="#ffffff",
                           activebackground="#ffffff", activeforeground="#3c4987",
                           relief='raised', padx=1, pady=1, bd=1,
                           command=command).grid(row=row, column=col)
 
             else:
-                tk.Button(self.kb, text=button, width=4, bg="#3c4987", fg="#ffffff",
+                tk.Button(self.keyboard, text=button, width=4, bg="#3c4987", fg="#ffffff",
                           activebackground="#ffffff", activeforeground="#3c4987",
                           relief='raised', padx=1, pady=1, bd=1,
                           command=command).grid(row=row, column=col)
