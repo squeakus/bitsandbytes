@@ -59,6 +59,9 @@ new multiload indicator:
 sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0
 https://extensions.gnome.org/extension/120/system-monitor/
 
+ssh pi@raspberrypi.local
+rpi_cam moot
+
 resize image with nearest neighbour:
 convert from.png -interpolate Nearest -filter point -resize
 
@@ -94,6 +97,12 @@ indent settings:
     "translate_tabs_to_spaces": true,
     "translate_tabs_to_spaces": true,
     "detect_indentation": false
+
+Setting up pylint:
+ctrl+shift+p install package
+sublimelinter
+sublimelinter-pylint
+rename /usr/bin/pylint to pylint2
 
 Setting up remote access for sublime files:
 On server install rsub:

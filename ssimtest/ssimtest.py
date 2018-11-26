@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from skimage import data, img_as_float
 from skimage.io import imread
 from skimage.measure import compare_ssim as ssim
+from skimage.transform import resize
 
 def main():
     ap = argparse.ArgumentParser()
@@ -20,11 +21,10 @@ def main():
     targ = img_as_float(targ)
 
     if not orig.shape == targ.shape:
-        print("image sizes do not match!", orig.shape, targ.shape)
-        exit()
-        image_resized = resize(image, (image.shape[0] / 4, image.shape[1] / 4),
-                       anti_aliasing=True)
-
+        targ = resize(targ, (orig.shape[0] , orig.shape[1]),
+                      anti_aliasing=True)
+        # print("image sizes do not match!", orig.shape, targ.shape)
+        # exit()
 
     mse_error = mse(orig, targ)
     ssim_error = ssim(orig, targ, multichannel=True)
