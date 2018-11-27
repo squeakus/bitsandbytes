@@ -1,3 +1,5 @@
+alt . get last argument
+
 # DOCKER!
 ## build from Dockerfile
 docker build -t <imgname> .
@@ -6,12 +8,9 @@ docker build -t <imgname> .
 docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
 exit to exit
 
-## Get docker to run with X11 window
+## Get docker to run with X11 window with webcam support
 xhost +
-docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix <imagname> <cmd>
-
-## Add support for webcam
---device=/dev/video0:/dev/video0
+docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/video0:/dev/video0 <imagname> <cmd>
 
 ## tidy up docker shite:
 docker system prune
