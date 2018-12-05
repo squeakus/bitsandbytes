@@ -12,6 +12,7 @@ def main():
     """Create a keyboard and output the submission"""
     keyboard = OnscreenKeyboard()
 
+    keyboard.keyboard.mainloop()
     print("hello!")
     print(keyboard.username)
 
@@ -33,7 +34,6 @@ class OnscreenKeyboard:
                         'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'CANCEL',
                         'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '_', 'DONE']
         self.create_keyboard()
-        self.keyboard.mainloop()
 
     def select(self, value):
         """

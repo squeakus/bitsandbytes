@@ -1,3 +1,7 @@
+run openvino modelOptimizer directly:
+$ ${INTEL_CVSDK_DIR}/deployment_tools/model_optimizer/mo.py --input_proto faster_cnn.prototxt --input_model ZF_faster_rcnn_final.caffemodel --output_dir moo --data_type FP16
+
+
 alt . get last argument
 
 # DOCKER!
@@ -316,6 +320,11 @@ git config --global core.excludesfile ~/.git_template/.gitignore
 
 set up git proxy:
 git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
+
+or add this to your ssh:
+Host github.com
+  ProxyCommand connect-proxy -S proxy-ir.intel.com:1080 %h %p
+
 
 reload udev rules:
 sudo udevadm control --reload-rules && udevadm trigger
