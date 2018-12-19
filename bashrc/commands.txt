@@ -1,8 +1,24 @@
-run openvino modelOptimizer directly:
-$ ${INTEL_CVSDK_DIR}/deployment_tools/model_optimizer/mo.py --input_proto faster_cnn.prototxt --input_model ZF_faster_rcnn_final.caffemodel --output_dir moo --data_type FP16
+# Setting up the proxy.
+## in the environment
+http_proxy=
+HTTP_proxy=
+https_proxy=
+HTTPS_PROXY=
+no_proxy=
 
+## ssh proxy in config:
+Host github.com
+  ProxyCommand connect-proxy -S proxy-ir.intel.com:1080 %h %p
 
-alt . get last argument
+# run openvino modelOptimizer directly:
+${INTEL_CVSDK_DIR}/deployment_tools/model_optimizer/mo.py --input_proto faster_cnn.prototxt --input_model ZF_faster_rcnn_final.caffemodel --output_dir moo --data_type FP16
+${INTEL_CVSDK_DIR}/deployment_tools/model_optimizer/mo.py  --input_model det1test.caffemodel --output_dir FP16test --data_type FP16
+
+# run the network with classifier code:
+python classification_sample.py -d CPU -m squeezenet1.1.xml -i car.png --labels ../squeezenet1.1.labels
+
+# get last argument
+alt .
 
 # DOCKER!
 ## build from Dockerfile
