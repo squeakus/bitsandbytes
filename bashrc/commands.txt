@@ -1,10 +1,17 @@
 # Setting up the proxy.
-## in the environment
+## in the /etc/environment
 http_proxy=
 HTTP_proxy=
 https_proxy=
 HTTPS_PROXY=
+ftp_proxy=
+socks_proxy=
 no_proxy=
+
+##wget proxy can also be set:
+/etc/wgetrc
+~/.wgetrc
+
 
 ## ssh proxy in config:
 Host github.com
