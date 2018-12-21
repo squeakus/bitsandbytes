@@ -35,9 +35,15 @@ docker build -t <imgname> .
 docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
 exit to exit
 
-## Get docker to run with X11 window with webcam support
+## Get docker to run with X11 window
 xhost +
-docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/video0:/dev/video0 <imagname> <cmd>
+docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix <imagname> <cmd>
+
+## Docker command for picking up NCS:
+sudo docker run --rm --net=host -it -v /etc/apt/apt.conf:/etc/apt/apt.conf:ro --privileged -v /dev:/dev:shared -v /media/data2/NCS/:/media/data2/NCS/ ncsdk2 /bin/bash
+
+## Add support for webcam
+--device=/dev/video0:/dev/video0
 
 ## tidy up docker shite:
 docker system prune
@@ -343,11 +349,6 @@ git config --global core.excludesfile ~/.git_template/.gitignore
 
 set up git proxy:
 git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
-
-or add this to your ssh:
-Host github.com
-  ProxyCommand connect-proxy -S proxy-ir.intel.com:1080 %h %p
-
 
 reload udev rules:
 sudo udevadm control --reload-rules && udevadm trigger
