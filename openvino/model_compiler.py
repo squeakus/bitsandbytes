@@ -1,18 +1,13 @@
 import os
 import subprocess
-from utils import run_cmd
+from utils import run_cmd, check_cvsdk
 
 def main():
     model_dir = "./classification"
     datatype = "FP16"
-   
-    # check the environment is set
-    if 'INTEL_CVSDK_DIR' in os.environ.keys():
-        ov_dir = os.environ['INTEL_CVSDK_DIR']
-        print("The openvino path is", ov_dir)
-    else:
-        print("please intia OpenVINO environment,run setupvars!")
-        exit()
+
+    # ensure openvino environment is set up
+    check_cvsdk()
 
     # Find the models
     models = []

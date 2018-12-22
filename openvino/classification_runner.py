@@ -79,6 +79,7 @@ def main():
     net.batch_size = len(args.input)
 
     # Read and pre-process input images
+    print("dont forget to subtract the mean from the images!")
     n, c, h, w = net.inputs[input_blob].shape
     images = np.ndarray(shape=(n, c, h, w))
     for i in range(n):

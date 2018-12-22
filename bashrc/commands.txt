@@ -34,6 +34,19 @@ python model_runner.py -m FP16/googlenet-v1.xml -i images/* -d MYRIAD --labels i
 # get last argument
 alt .
 
+#NCSDK2 commands:
+## compile a caffe model
+mvNCCompile network.prototxt [-w network.caffemodel] [-s max_number_of_shaves] [-in input_node_name] [-on output_node_name] [-is input_width input_height] [-o output_graph_filename] [-ec]
+-ec	Skip certain compiler optimizations for concatenation; this may correct some issues with invalid results from concat layers or compile failures.
+## NCS1
+mvNCCompile alexnet.prototxt -s 12 -o alexnet.graph
+## NCS2 on shaves
+mvNCCompile alexnet.prototxt -s 16 -o alexnet.graph
+## NCS2 on NCE
+mvNCCompile alexnet.prototxt -o alexnet.graph --ma2480
+## tensorflow
+mvNCCompile network.meta [-s max_number_of_shaves] [-in input_node_name] [-on output_node_name] [-is input_width input_height] [-o output_graph_filename] [-ec]
+
 # DOCKER!
 ## build from Dockerfile
 docker build -t <imgname> .
@@ -118,7 +131,7 @@ ffmpeg -f gif -i hatdots.gif hatdots.mp4
  <video src="images/hatdots.mp4" autoplay muted loop />
 
 
-$ /opt/movidius/NCSDK/ncsdk-x86_64/tk/mvNCCheck.py conv_with_regression/graph.frozen.pb  -in imgs -on e2/Relu
+/opt/movidius/NCSDK/ncsdk-x86_64/tk/mvNCCheck.py conv_with_regression/graph.frozen.pb  -in imgs -on e2/Relu
 
 
 update git fork to latest:
