@@ -1,7 +1,14 @@
 import subprocess
-import sys
+import os
 
 def main():
+    # check the environment is set
+    if 'INTEL_CVSDK_DIR' in os.environ.keys():
+        ov_dir = os.environ['INTEL_CVSDK_DIR']
+        print("The openvino path is", ov_dir)
+    else:
+        print("please intialise the OpenVINO environment,run setupvars!")
+        exit()
     models = ['densenet-121',
               'densenet-161',
               'densenet-169',
@@ -17,19 +24,18 @@ def main():
               'ssd512',
               'ssd300',
               'inception-resnet-v2',
-              'dilation',
               'googlenet-v1',
               'googlenet-v2',
               'googlenet-v4',
               'alexnet',
-              'ssd_mobilenet_v2_coco',
               'resnet-50',
               'resnet-101',
               'resnet-152',
               'googlenet-v3']
 
+    download = ov_dir + "/deployment_tools/model_downloader/downloader.py --name "
     for model in models:
-        cmd = "python3 downloader.py --name " + model
+        cmd = download + model
         run_cmd(cmd)
 
 
@@ -39,7 +45,6 @@ def run_cmd(cmd):
                                stdout=subprocess.PIPE,
                                stdin=subprocess.PIPE)
     result = process.communicate()
-    print(result)
     return result
 
 if __name__ == "__main__":
