@@ -28,6 +28,7 @@ from openvino.inference_engine import IENetwork, IEPlugin
 def build_argparser():
     parser = ArgumentParser()
     parser.add_argument("-m", "--model", help="Path to an .xml file with a trained model.", required=True, type=str)
+    parser.add_argument("-r", "--results", help="Write out the results to a file.", type=str)
     parser.add_argument("-i", "--input", help="Path to a folder with images or path to an image files", required=True,
                         type=str, nargs="+")
     parser.add_argument("-l", "--cpu_extension",
@@ -72,7 +73,6 @@ def main():
 
     assert len(net.inputs.keys()) == 1, "Sample supports only single input topologies"
     assert len(net.outputs) == 1, "Sample supports only single output topologies"
-
     log.info("Preparing input blobs")
     input_blob = next(iter(net.inputs))
     out_blob = next(iter(net.outputs))
@@ -106,6 +106,7 @@ def main():
     fps = int(1000 / avg_time)
     log.info("Average running time of one iteration: {:.03f} ms".format(avg_time))
     log.info("FPS: {}".format(fps))
+
     if args.perf_counts:
         perf_counts = exec_net.requests[0].get_perf_counts()
         log.info("Performance counters:")
@@ -118,19 +119,38 @@ def main():
     log.info("Processing output blob")
     res = res[out_blob]
     log.info("Top {} results: ".format(args.number_top))
+
     if args.labels:
         with open(args.labels, 'r') as f:
             labels_map = [x.split(sep=' ', maxsplit=1)[-1].strip() for x in f]
     else:
         labels_map = None
+
+    guesses = []
     for i, probs in enumerate(res):
         probs = np.squeeze(probs)
         top_ind = np.argsort(probs)[-args.number_top:][::-1]
         print("Image {}\n".format(args.input[i]))
         for id in top_ind:
             det_label = labels_map[id] if labels_map else "#{}".format(id)
+            guesses.append(det_label)
             print("{:.7f} label {}".format(probs[id], det_label))
         print("\n")
+
+    if args.results:
+        print("results", args.results)
+        outfile = open(args.results, 'a')
+        result = "{\"arch\": \"" + str(args.device) + "\", "
+        result += "\"network\": \"" + str(model_xml) + "\", "
+        result += "\"image\": \"" + str(args.input[0]) + "\", "
+        result += "\"guess\": \"" + str(guesses[0]) + "\", "
+        result += "\"inftime\": " + str(avg_time) + ", " 
+        result += "\"fps\": " + str(fps) + ", "
+        result += "\"iters\": " + str(args.number_iter) + "}"
+        print(result)
+        outfile.write(result + '\n')
+        outfile.close
+        x = {"arch": "MYRIAD", "network": "FP16/googlenet-v1.xml", "image": "images/cat.jpg", "guess": "cat", "inftime": 39.0134572983, "fps": 25, "iters": 10}
 
     del exec_net
     del plugin

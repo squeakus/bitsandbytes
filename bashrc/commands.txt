@@ -28,6 +28,9 @@ ${INTEL_CVSDK_DIR}/deployment_tools/model_optimizer/mo.py  --input_model det1tes
 # run the network with classifier code:
 python ${INTEL_CVSDK_DIR}/inference_engine/samples/python_samples/classification_sample.py -d CPU -m squeezenet1.1.xml -i car.png --labels ../squeezenet1.1.labels
 
+# pass multiple images to openvino:
+python model_runner.py -m FP16/googlenet-v1.xml -i images/* -d MYRIAD --labels imagenet_slim_labels.txt -ni 1000
+
 # get last argument
 alt .
 
