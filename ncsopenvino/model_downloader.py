@@ -1,5 +1,6 @@
 import subprocess
 import os
+from utils import run_cmd
 
 def main():
     # check the environment is set
@@ -9,6 +10,7 @@ def main():
     else:
         print("please intialise the OpenVINO environment,run setupvars!")
         exit()
+
     models = ['densenet-121',
               'densenet-161',
               'densenet-169',
@@ -38,14 +40,6 @@ def main():
         cmd = download + model
         run_cmd(cmd)
 
-
-def run_cmd(cmd):
-    print(cmd)
-    process = subprocess.Popen(cmd, shell=True,
-                               stdout=subprocess.PIPE,
-                               stdin=subprocess.PIPE)
-    result = process.communicate()
-    return result
 
 if __name__ == "__main__":
     main()

@@ -24,6 +24,7 @@ import logging as log
 from time import time
 from openvino.inference_engine import IENetwork, IEPlugin
 
+
 def build_argparser():
     parser = ArgumentParser()
     parser.add_argument("-m", "--model", help="Path to an .xml file with a trained model.", required=True, type=str)
@@ -57,7 +58,7 @@ def main():
         plugin.add_cpu_extension(args.cpu_extension)
     # Read IR
     log.info("Loading network files:\n\t{}\n\t{}".format(model_xml, model_bin))
-    net = IENetwork.from_ir(model=model_xml, weights=model_bin)
+    net = IENetwork(model=model_xml, weights=model_bin)
 
     if plugin.device == "CPU":
         supported_layers = plugin.get_supported_layers(net)
@@ -110,8 +111,8 @@ def main():
         log.info("Performance counters:")
         print("{:<70} {:<15} {:<15} {:<15} {:<10}".format('name', 'layer_type', 'exet_type', 'status', 'real_time, us'))
         for layer, stats in perf_counts.items():
-            print ("{:<70} {:<15} {:<15} {:<15} {:<10}".format(layer, stats['layer_type'], stats['exec_type'],
-                                                               stats['status'], stats['real_time']))
+            print("{:<70} {:<15} {:<15} {:<15} {:<10}".format(layer, stats['layer_type'], stats['exec_type'],
+                                                              stats['status'], stats['real_time']))
 
     # Processing output blob
     log.info("Processing output blob")

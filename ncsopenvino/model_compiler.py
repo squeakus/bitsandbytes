@@ -1,5 +1,6 @@
 import os
 import subprocess
+from utils import run_cmd
 
 def main():
     model_dir = "./classification"
@@ -19,28 +20,17 @@ def main():
         for filename in files:
             if filename.endswith('.caffemodel'):
                 caffemodel = os.path.join(root, filename)
-                print(caffemodel)
                 models.append(caffemodel)
 
-
-
+    # generate openvino models
     for model in models:
         cmd = ov_dir + "/deployment_tools/model_optimizer/mo.py" \
              + "  --input_model " + model \
              + " --output_dir " + datatype \
              + " --data_type " + datatype
-
+        print("generating openvino IR for", model)
         run_cmd(cmd)
 
-
-def run_cmd(cmd):
-    print(cmd)
-    process = subprocess.Popen(cmd, shell=True,
-                               stdout=subprocess.PIPE,
-                               stdin=subprocess.PIPE)
-    result = process.communicate()
-    print(result)
-    return result
 
 if __name__ == '__main__':
     main()
