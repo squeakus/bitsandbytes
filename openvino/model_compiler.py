@@ -4,10 +4,10 @@ from utils import run_cmd, check_cvsdk
 
 def main():
     model_dir = "./classification"
-    datatype = "FP16"
+    datatype = "FP32"
 
     # ensure openvino environment is set up
-    check_cvsdk()
+    ov_dir = check_cvsdk()
 
     # Find the models
     models = []
