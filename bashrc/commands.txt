@@ -8,10 +8,11 @@ ftp_proxy=
 socks_proxy=
 no_proxy=
 
-##wget proxy can also be set:
+##proxy can also be set:
 /etc/wgetrc
 ~/.wgetrc
-
+~/.gitconfig
+~/ssh/config
 
 ## ssh proxy in config:
 Host github.com
