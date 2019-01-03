@@ -30,6 +30,7 @@ def main():
               'resnet-152',
               'googlenet-v3']
 
+    ov_dir = os.environ['INTEL_CVSDK_DIR']
     download = ov_dir + "/deployment_tools/model_downloader/downloader.py --name "
     for model in models:
         cmd = download + model

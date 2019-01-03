@@ -147,11 +147,10 @@ def main():
         result += "\"guess\": \"" + str(guesses[0]) + "\", "
         result += "\"inftime\": " + str(avg_time) + ", " 
         result += "\"fps\": " + str(fps) + ", "
-        result += "\"iters\": " + str(args.number_iter) + "}"
+        result += "\"iters\": " + str(args.num_iter) + "}"
         print(result)
         outfile.write(result + '\n')
-        outfile.close
-        x = {"arch": "MYRIAD", "network": "FP16/googlenet-v1.xml", "image": "images/cat.jpg", "guess": "cat", "inftime": 39.0134572983, "fps": 25, "iters": 10}
+        outfile.close()
 
     del exec_net
     del plugin
