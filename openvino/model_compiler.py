@@ -1,10 +1,15 @@
 import os
 import subprocess
 from utils import run_cmd, check_cvsdk
+from argparse import ArgumentParser
 
 def main():
-    model_dir = "./classification"
-    datatype = "FP32"
+    parser = ArgumentParser()
+    parser.add_argument("-m", "--model_dir", help="Path to caffe models", required=True, type=str)
+    parser.add_argument("-d", "--datatype", help="output datatype FP16 or FP32", required=True, type=str)
+    args = parser.parse_args()
+    model_dir = args.model_dir
+    datatype = args.datatype
 
     # ensure openvino environment is set up
     ov_dir = check_cvsdk()

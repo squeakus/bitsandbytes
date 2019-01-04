@@ -27,7 +27,7 @@ def main():
     # generate openvino models
     for model in models:
 
-        cmd = "python3 classification_runner.py -m " + model + " -i images/cat.jpg -d CPU " + \
+        cmd = "python3 classification_runner.py -m " + model + " -i images/cat.jpg -d MYRIAD " + \
               "--labels " + label_file + " -ni 1000 -nt 1 -r " + result_file
         print("testing network", model)
         run_cmd(cmd)

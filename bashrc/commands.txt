@@ -48,8 +48,11 @@ mvNCCompile alexnet.prototxt --ma2480 -o alexnet_nce.graph
 ## tensorflow
 mvNCCompile network.meta [-s max_number_of_shaves] [-in input_node_name] [-on output_node_name] [-is input_width input_height] [-o output_graph_filename] [-ec]
 
-#command to find ncs bus location:
+# command to find ncs bus location:
 lsusb | grep 03e7 | sed s/://g | awk '{print "/dev/bus/usb/"$2"/"$4}'
+# check if using usb2 usb3
+lsusb -D /dev/bus/usb/001/013
+
 
 # DOCKER!
 ## build from Dockerfile
