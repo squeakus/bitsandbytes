@@ -40,8 +40,8 @@ def build_argparser():
                              "will look for a suitable plugin for device specified (CPU by default)", default="CPU",
                         type=str)
     parser.add_argument("--labels", help="Labels mapping file", default=None, type=str)
-    parser.add_argument("-nt", "--number_top", help="Number of top results", default=10, type=int)
-    parser.add_argument("-ni", "--number_iter", help="Number of inference iterations", default=1, type=int)
+    parser.add_argument("-nt", "--num_top", help="Number of top results", default=10, type=int)
+    parser.add_argument("-ni", "--num_iter", help="Number of inference iterations", default=1, type=int)
     parser.add_argument("-pc", "--perf_counts", help="Report performance counters", default=False, action="store_true")
 
     return parser
@@ -97,9 +97,9 @@ def main():
     del net
 
     # Start sync inference
-    log.info("Starting inference ({} iterations)".format(args.number_iter))
+    log.info("Starting inference ({} iterations)".format(args.num_iter))
     infer_time = []
-    for i in range(args.number_iter):
+    for i in range(args.num_iter):
         t0 = time()
         res = exec_net.infer(inputs={input_blob: images})
         infer_time.append((time()-t0)*1000)
@@ -119,7 +119,7 @@ def main():
     # Processing output blob
     log.info("Processing output blob")
     res = res[out_blob]
-    log.info("Top {} results: ".format(args.number_top))
+    log.info("Top {} results: ".format(args.num_top))
 
     if args.labels:
         with open(args.labels, 'r') as f:
@@ -130,13 +130,18 @@ def main():
     guesses = []
     for i, probs in enumerate(res):
         probs = np.squeeze(probs)
-        top_ind = np.argsort(probs)[-args.number_top:][::-1]
-        print("Image {}\n".format(args.input[i]))
-        for id in top_ind:
-            det_label = labels_map[id] if labels_map else "#{}".format(id)
-            guesses.append(det_label)
-            print("{:.7f} label {}".format(probs[id], det_label))
-        print("\n")
+
+        # if it returns guesses
+        if probs.ndim == 1:
+            top_ind = np.argsort(probs)[-args.num_top:][::-1]
+            print("Image {}\n".format(args.input[i]))
+            for id in top_ind:
+                det_label = labels_map[id] if labels_map else "#{}".format(id)
+                guesses.append(det_label)
+                print("{:.7f} label {}".format(probs[id], det_label))
+                print("\n")
+        else:
+            guesses = ["bboxes"]
 
     if args.results:
         print("results", args.results)

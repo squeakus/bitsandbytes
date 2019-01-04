@@ -51,8 +51,10 @@ mvNCCompile network.meta [-s max_number_of_shaves] [-in input_node_name] [-on ou
 # command to find ncs bus location:
 lsusb | grep 03e7 | sed s/://g | awk '{print "/dev/bus/usb/"$2"/"$4}'
 # check if using usb2 usb3
+lsusb  for NCS1 03e7:2150 or 03e7:f63b
 lsusb -D /dev/bus/usb/001/013
-
+# show device tree, 480mb usb2 5000 usb3
+lsusb -t 
 
 # DOCKER!
 ## build from Dockerfile
