@@ -140,9 +140,13 @@ def main():
 
     if args.results:
         print("results", args.results)
+        networkname = model_xml.lstrip('FP16/')
+        networkname = model_xml.lstrip('FP32/')
+        networkname = model_xml.lstrip('.xml')
+
         outfile = open(args.results, 'a')
         result = "{\"arch\": \"" + str(args.device) + "\", "
-        result += "\"network\": \"" + str(model_xml) + "\", "
+        result += "\"network\": \"" + str(networkname) + "\", "
         result += "\"image\": \"" + str(args.input[0]) + "\", "
         result += "\"guess\": \"" + str(guesses[0]) + "\", "
         result += "\"inftime\": " + str(avg_time) + ", " 
