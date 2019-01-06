@@ -146,8 +146,8 @@ def main():
     if args.results:
         print("results", args.results)
         networkname = model_xml.lstrip('FP16/')
-        networkname = model_xml.lstrip('FP32/')
-        networkname = model_xml.lstrip('.xml')
+        networkname = networkname.lstrip('FP32/')
+        networkname = networkname.rstrip('.xml')
 
         outfile = open(args.results, 'a')
         result = "{\"arch\": \"" + str(args.device) + "\", "
