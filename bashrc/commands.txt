@@ -1,3 +1,27 @@
+# mounting an encrypted file system:
+udisksctl unlock -b /dev/sdb5
+sudo mkdir /mnt/data
+sudo mount /dev/dm-1 /mnt/data
+
+# if you get: unknown filesystem type 'LVM2_member' do the commands below
+
+sudo bash
+vgdisplay
+vgrename <VG UUID> new_name
+modprobe dm-mod
+vgchange -ay
+lvscan
+mount /dev/new_name/root /mnt/data/
+
+# another way to open ann encrypted system
+sudo cryptsetup luksOpen /dev/sda1 my_encrypted_volume
+sudo mkdir /media/my_device
+sudo mount /dev/mapper/my_encrypted_volume /media/my_device
+sudo umount /media/my_device
+sudo cryptsetup luksClose my_encrypted_volume
+# To automatically put it in the /media location, use the udisks tool
+sudo udisks --mount /dev/mapper/my_encrypted_volume
+
 # Setting up the proxy.
 ## in the /etc/environment
 http_proxy=
@@ -12,11 +36,22 @@ no_proxy=
 /etc/wgetrc
 ~/.wgetrc
 ~/.gitconfig
-~/ssh/config
+~/.ssh/config
+
+and the apt proxy:
+/etc/apt/apt.conf
+#Acquire::http::Proxy "http://proxy-ir.intel.com:911";
+#Acquire::ftp::Proxy "http://proxy-ir.intel.com:911";
 
 ## ssh proxy in config:
 Host github.com
   ProxyCommand connect-proxy -S proxy-ir.intel.com:1080 %h %p
+
+## pip proxy:
+/etc/pip.conf
+[global]
+proxy = http://proxy-ir.intel.com:911
+
 
 # Set up an alias to the openvino command:
 alias ov='source /home/jonathan/intel/computer_vision_sdk/bin/setupvars.sh'
