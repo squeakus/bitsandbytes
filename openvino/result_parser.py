@@ -15,6 +15,8 @@ def main():
     experiments = load_result(
         'ncs2ovusb2', 'usb2results/ncs2_ovresult.txt', experiments)
     experiments = load_result(
+        'ncesdk210', 'results/nce_sdk210result.txt', experiments)
+    experiments = load_result(
         'ncs1sdk', 'results/ncs1_sdkresult.txt', experiments)
     experiments = load_result(
         'ncesdk', 'results/nce_sdkresult.txt', experiments)
@@ -35,7 +37,14 @@ def main():
     explist = ['ncs1ov', 'ncs1ovusb2', 'speedup', 'ncs2ov', 'ncs2ovusb2', 'speedup']
     headers = ["Network", "NCS1 USB3", "NCS1 USB2", "slowdown",  "NCS2 USB3", "NCS2 USB2", "slowdown"]
     
-
+    # NCSDK difference
+    explist = ['ncesdk','ncesdk210','speedup']
+    headers = ["Network",  "NCSDK 2.9", "NCSDK 2.10", "speedup"]
+    
+    # NCSDK difference
+    explist = ['ncs1ov']
+    headers = ["Network",  "NCS1 FPS"]
+    print(experiments)
     table_results(experiments, explist, headers)
 
 
