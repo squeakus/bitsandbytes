@@ -20,14 +20,10 @@
 #define SCK 5 // GPIO5 - SX1278's SCK serial clock
 #define MISO 19 // GPIO19 - SX1278's MISO
 #define MOSI 27 // GPIO27 - SX1278's MOSI
-#define SS 18 // GPIO18 - SX1278's CS chip select
-#define RST 14 // GPIO14 - SX1278's RESET
-#define DI0 26 // GPIO26 - SX1278's IRQ (interrupt request)
+#define CS 18 // GPIO18 - SX1278's CS Radio chip select
+#define RST 14 // GPIO14 - SX1278's LoRa radio reset
+#define DI0 26 // GPIO26 - SX1278's IRQ (interrupt request) change for your board; must be a hardware interrupt pin
 #define BAND 868E6 // Frequencxy band to operate on.
-
-const int csPin = SS;          // LoRa radio chip select
-const int resetPin = RST;       // LoRa radio reset
-const int irqPin = DI0;         // change for your board; must be a hardware interrupt pin
 
 String outgoing;              // outgoing message
 byte msgCount = 0;            // count of outgoing messages
@@ -35,6 +31,13 @@ byte localAddress = 0xAA;     // address of this device
 byte destination = 0xFF;      // destination to send to
 long lastSendTime = 0;        // last send time
 int interval = 2000;          // interval between sends
+int recipient = 0;          // recipient address
+byte sender;            // sender address
+byte incomingMsgId;     // incoming msg ID
+byte incomingLength;    // incoming msg length
+String incoming = "";                 // payload of packet
+
+
 SSD1306 display (0x3c, 4, 15); // OLED Screen 
 
 void init_display() {
@@ -63,7 +66,7 @@ void setup() {
   init_display();
  
   // override the default CS, reset, and IRQ pins (optional)
-  LoRa.setPins(csPin, resetPin, irqPin);// set CS, reset, IRQ pin
+  LoRa.setPins(CS, RST, DI0);// set CS, reset, IRQ pin
 
   if (!LoRa.begin(BAND)) {             // initialize ratio at 868 MHz
     Serial.println("LoRa init failed. Check your connections.");
@@ -76,14 +79,25 @@ void setup() {
 }
 
 void loop() {
+  display.clear();
   if (millis() - lastSendTime > interval) {
     String message = "HeLoRa Server!";   // send a message
     sendMessage(message);
-    display.clear();
+    
 
-    draw_msg("Adr: " +String(localAddress),0);
+    draw_msg("Adr: " +String(localAddress, HEX) + " To: " + String(destination, HEX),0);
     draw_msg("Msg:" + message, 1);
-    draw_msg("To: " + String(destination), 2);
+    if (incoming != ""){
+      draw_msg("From: " + String(sender, HEX) + " MsgID: " + String(incomingMsgId),3);
+      draw_msg("Msg:" + incoming, 4);
+      draw_msg("RSSI: " + String(LoRa.packetRssi()) + " S/N: " +  String(LoRa.packetSnr()), 5);
+    } 
+    else {
+      draw_msg("From: ",3);
+      draw_msg("Msg:", 4);
+      draw_msg("RSSI: S/N:", 5);
+    }
+ 
     display.display();
     Serial.println("Sending " + message);
     lastSendTime = millis();            // timestamp the message
@@ -107,12 +121,11 @@ void onReceive(int packetSize) {
   if (packetSize == 0) return;          // if there's no packet, return
 
   // read packet header bytes:
-  int recipient = LoRa.read();          // recipient address
-  byte sender = LoRa.read();            // sender address
-  byte incomingMsgId = LoRa.read();     // incoming msg ID
-  byte incomingLength = LoRa.read();    // incoming msg length
-
-  String incoming = "";                 // payload of packet
+  recipient = LoRa.read();          // recipient address
+  sender = LoRa.read();            // sender address
+  incomingMsgId = LoRa.read();     // incoming msg ID
+  incomingLength = LoRa.read();    // incoming msg length
+  incoming = "";                 // payload of packet
 
   while (LoRa.available()) {            // can't use readString() in callback, so
     incoming += (char)LoRa.read();      // add bytes one by one
@@ -120,6 +133,7 @@ void onReceive(int packetSize) {
 
   if (incomingLength != incoming.length()) {   // check length for error
     Serial.println("error: message length does not match length");
+    
     return;                             // skip rest of function
   }
 
@@ -138,4 +152,5 @@ void onReceive(int packetSize) {
   Serial.println("RSSI: " + String(LoRa.packetRssi()));
   Serial.println("Snr: " + String(LoRa.packetSnr()));
   Serial.println();
+
 }
