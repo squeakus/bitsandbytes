@@ -1,5 +1,5 @@
 /*
-  LoRa Server communication wth callback and time info
+  LoRa Duplex communication wth callback
 
   Sends a message every half second, and uses callback
   for new incoming messages. Implements a one-byte addressing scheme,
@@ -14,10 +14,8 @@
 */
 #include <SPI.h>              // include libraries
 #include <LoRa.h>
-#include <WiFi.h>
 #include<Arduino.h>
 #include "SSD1306.h"
-#include "time.h"
 
 #define SCK 5 // GPIO5 - SX1278's SCK serial clock
 #define MISO 19 // GPIO19 - SX1278's MISO
@@ -38,12 +36,9 @@ byte sender;            // sender address
 byte incomingMsgId;     // incoming msg ID
 byte incomingLength;    // incoming msg length
 String incoming = "";                 // payload of packet
-const char* ssid       = "the compound";
-const char* password   = "0863257989";
+
+
 SSD1306 display (0x3c, 4, 15); // OLED Screen 
-const char* ntpServer = "pool.ntp.org";
-const long  gmtOffset_sec = 3600;
-const int   daylightOffset_sec = 3600;
 
 void init_display() {
   pinMode (16, OUTPUT);
@@ -60,45 +55,16 @@ void init_display() {
   display.display();
   delay(1500);
 }
-
 void draw_msg(String msg, int line) {
   int spacing = line * 10;
   display.drawString (0, spacing, msg);
 }
-
-String get_time() {
-  struct tm timeinfo;
-  if(!getLocalTime(&timeinfo)){
-    Serial.println("Failed to obtain time");
-    return "";
-  }
-  char timeStringBuff[50]; //50 chars should be enough
-  strftime(timeStringBuff, sizeof(timeStringBuff), " %d/%m/%y %H:%M:%S", &timeinfo);
-  //print like "const char*"
-  Serial.println(timeStringBuff);
-  //Optional: Construct String object 
-  String curTime(timeStringBuff);
-  return curTime;
-}
-
 void setup() {
   Serial.begin(9600);                   // initialize serial
   while (!Serial);
 
   init_display();
-
-  // connect to wifi and set up time server
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    draw_msg("Connecting: "+ String(ssid), 2);
-    display.display();
-    delay(500);
-    Serial.print(".");
-  }
-
-  //init and get the time
-  configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
-  
+ 
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(CS, RST, DI0);// set CS, reset, IRQ pin
 
@@ -115,8 +81,7 @@ void setup() {
 void loop() {
   display.clear();
   if (millis() - lastSendTime > interval) {
-    String message = get_time();
-    Serial.println("message" + message);
+    String message = "HeLoRa Server!";   // send a message
     sendMessage(message);
     
 
