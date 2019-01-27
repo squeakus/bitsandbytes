@@ -1,16 +1,13 @@
 /*
-  LoRa Duplex communication wth callback
+  LoRa Client communicator
 
-  Sends a message every half second, and uses callback
-  for new incoming messages. Implements a one-byte addressing scheme,
-  with 0xFF as the broadcast address.
 
   Note: while sending, LoRa radio is not listening for incoming messages.
   Note2: when using the callback method, you can't use any of the Stream
   functions that rely on the timeout, such as readString, parseInt(), etc.
 
   created 28 April 2017
-  by Tom Igoe
+  adapted from the code provided by Tom Igoe
 */
 #include <SPI.h>              // include libraries
 #include <LoRa.h>
@@ -25,10 +22,9 @@
 #define DI0 26 // GPIO26 - SX1278's IRQ (interrupt request) change for your board; must be a hardware interrupt pin
 #define BAND 868E6 // Frequencxy band to operate on.
 
-String outgoing;              // outgoing message
 byte msgCount = 0;            // count of outgoing messages
-byte localAddress = 0xAA;     // address of this device
-byte destination = 0xFF;      // destination to send to
+byte localAddress = 0xBB;     // address of this device
+byte destination = 0xAA;      // destination to send to
 long lastSendTime = 0;        // last send time
 int interval = 2000;          // interval between sends
 int recipient = 0;          // recipient address
@@ -36,9 +32,9 @@ byte sender;            // sender address
 byte incomingMsgId;     // incoming msg ID
 byte incomingLength;    // incoming msg length
 String incoming = "";                 // payload of packet
+String message = "None";
 
-
-SSD1306 display (0x3c, 4, 15); // OLED Screen 
+SSD1306 display (0x3c, 4, 15); // OLED Screen
 
 void init_display() {
   pinMode (16, OUTPUT);
@@ -51,20 +47,23 @@ void init_display() {
   display.setFont (ArialMT_Plain_10);
   delay(1500);
   display.clear();
-  draw_msg("LoRa Server",0);
+  draw_msg("LoRa Client", 0);
   display.display();
   delay(1500);
 }
+
 void draw_msg(String msg, int line) {
   int spacing = line * 10;
   display.drawString (0, spacing, msg);
 }
+
+
 void setup() {
   Serial.begin(9600);                   // initialize serial
   while (!Serial);
 
   init_display();
- 
+
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(CS, RST, DI0);// set CS, reset, IRQ pin
 
@@ -80,39 +79,29 @@ void setup() {
 
 void loop() {
   display.clear();
-  if (millis() - lastSendTime > interval) {
-    String message = "HeLoRa Server!";   // send a message
-    sendMessage(message);
-    
-
-    draw_msg("Adr: " +String(localAddress, HEX) + " To: " + String(destination, HEX),0);
-    draw_msg("Msg:" + message, 1);
-    if (incoming != ""){
-      draw_msg("From: " + String(sender, HEX) + " MsgID: " + String(incomingMsgId),3);
-      draw_msg("Msg:" + incoming, 4);
-      draw_msg("RSSI: " + String(LoRa.packetRssi()) + " S/N: " +  String(LoRa.packetSnr()), 5);
-    } 
-    else {
-      draw_msg("From: ",3);
-      draw_msg("Msg:", 4);
-      draw_msg("RSSI: S/N:", 5);
-    }
- 
-    display.display();
-    Serial.println("Sending " + message);
-    lastSendTime = millis();            // timestamp the message
-    interval = random(2000) + 1000;     // 2-3 seconds
-    LoRa.receive();                     // go back into receive mode
+  draw_msg("Client: " + String(localAddress, HEX), 0);
+  if (incoming != "") {
+    String outgoing = "Ack"  + incoming; 
+    draw_msg("Received: " + String(sender, HEX) + " MsgID: " + String(incomingMsgId), 1);
+    draw_msg("Msg:" + incoming, 2);
+    draw_msg("Ret:" + outgoing, 3);
+    draw_msg("RSSI: " + String(LoRa.packetRssi()) + " S/N: " +  String(LoRa.packetSnr()), 5);
+    sendMessage(outgoing);
+    incoming = "";
   }
+
+  display.display();
+  LoRa.receive();                     // go back into receive mode
+  delay(5000);
 }
 
-void sendMessage(String outgoing) {
+void sendMessage(String message) {
   LoRa.beginPacket();                   // start packet
   LoRa.write(destination);              // add destination address
   LoRa.write(localAddress);             // add sender address
   LoRa.write(msgCount);                 // add message ID
-  LoRa.write(outgoing.length());        // add payload length
-  LoRa.print(outgoing);                 // add payload
+  LoRa.write(message.length());        // add payload length
+  LoRa.print(message);                 // add payload
   LoRa.endPacket();                     // finish packet and send it
   msgCount++;                           // increment message ID
 }
@@ -133,7 +122,7 @@ void onReceive(int packetSize) {
 
   if (incomingLength != incoming.length()) {   // check length for error
     Serial.println("error: message length does not match length");
-    
+
     return;                             // skip rest of function
   }
 
@@ -142,7 +131,7 @@ void onReceive(int packetSize) {
     Serial.println("This message is not for me.");
     return;                             // skip rest of function
   }
-
+  
   // if message is for this device, or broadcast, print details:
   Serial.println("Received from: 0x" + String(sender, HEX));
   Serial.println("Sent to: 0x" + String(recipient, HEX));
@@ -151,6 +140,4 @@ void onReceive(int packetSize) {
   Serial.println("Message: " + incoming);
   Serial.println("RSSI: " + String(LoRa.packetRssi()));
   Serial.println("Snr: " + String(LoRa.packetSnr()));
-  Serial.println();
-
 }

@@ -1,6 +1,7 @@
 /*
   LoRa Server communication wth callback and time info
 
+  connects to the wifi
   Sends a message every half second, and uses callback
   for new incoming messages. Implements a one-byte addressing scheme,
   with 0xFF as the broadcast address.
@@ -38,9 +39,9 @@ byte sender;            // sender address
 byte incomingMsgId;     // incoming msg ID
 byte incomingLength;    // incoming msg length
 String incoming = "";                 // payload of packet
-const char* ssid       = "the compound";
-const char* password   = "0863257989";
-SSD1306 display (0x3c, 4, 15); // OLED Screen 
+const char* ssid       = "";
+const char* password   = "";
+SSD1306 display (0x3c, 4, 15); // OLED Screen
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 3600;
 const int   daylightOffset_sec = 3600;
@@ -56,7 +57,7 @@ void init_display() {
   display.setFont (ArialMT_Plain_10);
   delay(1500);
   display.clear();
-  draw_msg("LoRa Server",0);
+  draw_msg("LoRa Server", 0);
   display.display();
   delay(1500);
 }
@@ -68,7 +69,7 @@ void draw_msg(String msg, int line) {
 
 String get_time() {
   struct tm timeinfo;
-  if(!getLocalTime(&timeinfo)){
+  if (!getLocalTime(&timeinfo)) {
     Serial.println("Failed to obtain time");
     return "";
   }
@@ -76,9 +77,26 @@ String get_time() {
   strftime(timeStringBuff, sizeof(timeStringBuff), " %d/%m/%y %H:%M:%S", &timeinfo);
   //print like "const char*"
   Serial.println(timeStringBuff);
-  //Optional: Construct String object 
+  //Optional: Construct String object
   String curTime(timeStringBuff);
   return curTime;
+}
+
+void update_info(String message){
+  display.clear();
+  draw_msg("Server: " + String(localAddress, HEX) + " To: " + String(destination, HEX), 0);
+  draw_msg("Msg:" + message, 1);
+  if (incoming != "") {
+    draw_msg("From: " + String(sender, HEX) + " MsgID: " + String(incomingMsgId), 3);
+    draw_msg("Msg:" + incoming, 4);
+    draw_msg("RSSI: " + String(LoRa.packetRssi()) + " S/N: " +  String(LoRa.packetSnr()), 5);
+  }
+  else {
+    draw_msg("From: ", 3);
+    draw_msg("Msg:", 4);
+    draw_msg("RSSI: S/N:", 5);
+  }
+  display.display();
 }
 
 void setup() {
@@ -90,7 +108,7 @@ void setup() {
   // connect to wifi and set up time server
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
-    draw_msg("Connecting: "+ String(ssid), 2);
+    draw_msg("Connecting: " + String(ssid), 2);
     display.display();
     delay(500);
     Serial.print(".");
@@ -98,7 +116,7 @@ void setup() {
 
   //init and get the time
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
-  
+
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(CS, RST, DI0);// set CS, reset, IRQ pin
 
@@ -113,30 +131,12 @@ void setup() {
 }
 
 void loop() {
-  display.clear();
   if (millis() - lastSendTime > interval) {
     String message = get_time();
-    Serial.println("message" + message);
     sendMessage(message);
-    
-
-    draw_msg("Adr: " +String(localAddress, HEX) + " To: " + String(destination, HEX),0);
-    draw_msg("Msg:" + message, 1);
-    if (incoming != ""){
-      draw_msg("From: " + String(sender, HEX) + " MsgID: " + String(incomingMsgId),3);
-      draw_msg("Msg:" + incoming, 4);
-      draw_msg("RSSI: " + String(LoRa.packetRssi()) + " S/N: " +  String(LoRa.packetSnr()), 5);
-    } 
-    else {
-      draw_msg("From: ",3);
-      draw_msg("Msg:", 4);
-      draw_msg("RSSI: S/N:", 5);
-    }
- 
-    display.display();
+    update_info(message);
     Serial.println("Sending " + message);
     lastSendTime = millis();            // timestamp the message
-    interval = random(2000) + 1000;     // 2-3 seconds
     LoRa.receive();                     // go back into receive mode
   }
 }
@@ -168,7 +168,7 @@ void onReceive(int packetSize) {
 
   if (incomingLength != incoming.length()) {   // check length for error
     Serial.println("error: message length does not match length");
-    
+
     return;                             // skip rest of function
   }
 
