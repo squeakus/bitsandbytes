@@ -11,9 +11,9 @@
   functions that rely on the timeout, such as readString, parseInt(), etc.
 
   created 28 April 2017
-  by Tom Igoe
+  based on code by Tom Igoe
 */
-#include <SPI.h>              // include libraries
+//#include <SPI.h>              // include libraries
 #include <LoRa.h>
 #include <WiFi.h>
 #include<Arduino.h>
@@ -39,8 +39,8 @@ byte sender;            // sender address
 byte incomingMsgId;     // incoming msg ID
 byte incomingLength;    // incoming msg length
 String incoming = "";                 // payload of packet
-const char* ssid       = "";
-const char* password   = "";
+const char* ssid       = "the compound";
+const char* password   = "0863257989";
 SSD1306 display (0x3c, 4, 15); // OLED Screen
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 3600;
