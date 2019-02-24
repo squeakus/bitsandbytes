@@ -13,7 +13,7 @@ LAWN = np.array(
        [0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
        [0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
        [0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
-       [0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,16,2,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
+       [0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,32,2,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
        [0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
        [0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
        [0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
@@ -54,11 +54,12 @@ def main():
                 print ("charger is ",i,",",j)
                 charger = (i, j)
 
-    for charges in range(10): 
+    for charge in range(100):
+        print("run:", charge)
         coord = charger
         direction  = np.array((uniform(-1,1), uniform(-1,1)))
         for i in range(1000):
-            coord = mow(coord, direction, i)
+            coord, direction = mow(coord, direction, i+ (charge* 1000))
 
 
 def mow(coord, direction, i):
@@ -72,35 +73,31 @@ def mow(coord, direction, i):
         newpos =  newpos.astype(int)
 
         if check_limits(newpos, rows, columns):
-            before = np.sum(direction)
-            print("coord:", np.round(coord,2),"position:", newpos, "direction:", direction, "norm:", np.linalg.norm(direction))
+            #print("coord:", np.round(coord,2),"position:", newpos, "direction:", direction, "norm:", np.linalg.norm(direction))
             x, y = newpos
             if LAWN[x][y] == 0:
-                print(i, ": hit a zero!")
                 coord = lastpos
                 direction  = np.array((uniform(-1,1), uniform(-1,1)))
                 direction = direction / np.linalg.norm(direction)
             
             elif LAWN[x][y] > 0:
-                if LAWN[x][y] < 16:
+                if LAWN[x][y] < 32:
                     LAWN[x][y] += 1
             same = np.allclose(lastpos, newpos)
         else:
-            print("overstepping the boundary!")
             coord = lastpos
             direction = np.array((uniform(-1,1), uniform(-1,1)))
             direction = direction / np.linalg.norm(direction)
 
-    if i % 10 == 0:
+    if i % 99999 == 0:
         plt.imshow(LAWN)
         filename  = "frames/lawn{:05d}.png".format(i)
         plt.savefig(filename)
         plt.clf()
-    return coord
+    return coord, direction
     #plt.imshow(LAWN, interpolation='none', origin='upper')
 
 def check_limits(pos, rows, columns):
-    print("pos", pos, rows, columns)
     within = True
     if pos[0] <= 0:
         within = False
