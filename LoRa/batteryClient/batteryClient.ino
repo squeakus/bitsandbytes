@@ -1,6 +1,5 @@
 /*
-  LoRa Client communicator
-
+  LoRa Client Battery Test
 
   Note: while sending, LoRa radio is not listening for incoming messages.
   Note2: when using the callback method, you can't use any of the Stream
@@ -25,7 +24,7 @@
 int lastSleepTime = 0;
 int sleepInterval = 30000;
 #define uS_TO_S_FACTOR 1000000  /* Conversion factor for micro seconds to seconds */
-#define TIME_TO_SLEEP  900        /* Time ESP32 will go to sleep (in seconds) */
+#define TIME_TO_SLEEP  30        /* Time ESP32 will go to sleep (in seconds) */
 
 byte msgCount = 0;            // count of outgoing messages
 byte localAddress = 0xBB;     // address of this device
@@ -34,6 +33,7 @@ long lastSendTime = 0;        // last send time
 int interval = 2000;          // interval between sends
 int recipient = 0;          // recipient address
 byte sender;            // sender address
+float vBat = 0;
 byte incomingMsgId;     // incoming msg ID
 byte incomingLength;    // incoming msg length
 String incoming = "";                 // payload of packet
@@ -62,12 +62,14 @@ void draw_msg(String msg, int line) {
   display.drawString (0, spacing, msg);
 }
 
-
+byte battery_level() {
+  byte vByte = int(255 * (float(analogRead(34)) / 4096.0f));
+  return vByte;
+}
 void setup() {
   Serial.begin(9600);                   // initialize serial
   while (!Serial);
-  
-
+  pinMode (34, INPUT); // pin for measuring battery
   init_display();
 
   // override the default CS, reset, and IRQ pins (optional)
@@ -87,13 +89,17 @@ void setup() {
 
 void loop() {
   display.clear();
-  draw_msg("Client: " + String(localAddress, HEX), 0);
-  
+  byte vByte = battery_level();
+  vBat= (4.2 * float(vByte)) / 255.0f; 
+  draw_msg("Client " + String(localAddress, HEX) + " is listening", 0);
+  draw_msg("battery: " + String(vBat) + "v", 1);
+
   if (incoming != "") {
-    String outgoing = "Ack"  + incoming; 
-    draw_msg("Received: " + String(sender, HEX) + " MsgID: " + String(incomingMsgId), 1);
-    draw_msg("Msg:" + incoming, 2);
-    draw_msg("Ret:" + outgoing, 3);
+    String outgoing = "Ack"  + incoming;
+
+    draw_msg("Received: " + String(sender, HEX) + " MsgID: " + String(incomingMsgId), 2);
+    draw_msg("Msg:" + incoming, 3);
+    draw_msg("Ret:" + outgoing, 4);
     draw_msg("RSSI: " + String(LoRa.packetRssi()) + " S/N: " +  String(LoRa.packetSnr()), 5);
     sendMessage(outgoing);
     incoming = "";
@@ -131,6 +137,8 @@ void sendMessage(String message) {
   LoRa.beginPacket();                   // start packet
   LoRa.write(destination);              // add destination address
   LoRa.write(localAddress);             // add sender address
+  vBat = battery_level();
+  LoRa.write(vBat);
   LoRa.write(msgCount);                 // add message ID
   LoRa.write(message.length());        // add payload length
   LoRa.print(message);                 // add payload
@@ -165,14 +173,5 @@ void onReceive(int packetSize) {
   else if (recipient != 0xFF){
     Serial.println("This message is not for me.");
     return;
-  }// skip rest of function
-  
-  // if message is for this device, or broadcast, print details:
-  Serial.println("Received from: 0x" + String(sender, HEX));
-  Serial.println("Sent to: 0x" + String(recipient, HEX));
-  Serial.println("Message ID: " + String(incomingMsgId));
-  Serial.println("Message length: " + String(incomingLength));
-  Serial.println("Message: " + incoming);
-  Serial.println("RSSI: " + String(LoRa.packetRssi()));
-  Serial.println("Snr: " + String(LoRa.packetSnr()));
+  }
 }

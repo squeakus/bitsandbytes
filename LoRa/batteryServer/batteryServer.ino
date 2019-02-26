@@ -1,5 +1,5 @@
 /*
-  LoRa Server communication wth callback and time info
+  LoRa Battery Server
 
   connects to the wifi
   Sends a message every half second, and uses callback
@@ -13,11 +13,11 @@
   created 28 April 2017
   based on code by Tom Igoe
 */
-//#include <SPI.h>              // include libraries
 #include <LoRa.h>
 #include <WiFi.h>
 #include<Arduino.h>
 #include "SSD1306.h"
+#include "ThingSpeak.h"
 #include "time.h"
 
 #define SCK 5 // GPIO5 - SX1278's SCK serial clock
@@ -39,8 +39,15 @@ byte sender;            // sender address
 byte incomingMsgId;     // incoming msg ID
 byte incomingLength;    // incoming msg length
 String incoming = "";                 // payload of packet
+String lastMessage = "";
+byte vByte = 0;
+float vBat = 0;
 const char* ssid       = "the compound";
 const char* password   = "0863257989";
+unsigned long myChannelNumber = 712195;
+const char * myWriteAPIKey = "IMJYA8MKP2E282BS";
+WiFiClient  client;
+
 SSD1306 display (0x3c, 4, 15); // OLED Screen
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 3600;
@@ -57,9 +64,22 @@ void init_display() {
   display.setFont (ArialMT_Plain_10);
   delay(1500);
   display.clear();
-  draw_msg("LoRa Server", 0);
+  draw_msg("LoRa Battery Server", 0);
   display.display();
   delay(1500);
+}
+
+void thing_update(float value){
+  // Write value to Field 1 of a ThingSpeak Channel
+  Serial.println("Channel write starting.");
+  int httpCode = ThingSpeak.writeField(myChannelNumber, 1, 20, myWriteAPIKey);
+
+  if (httpCode == 200) {
+    Serial.println("Channel write successful.");
+  }
+  else {
+    Serial.println("Problem writing to channel. HTTP error code " + String(httpCode));
+  }
 }
 
 void draw_msg(String msg, int line) {
@@ -84,17 +104,18 @@ String get_time() {
 
 void update_info(String message){
   display.clear();
-  draw_msg("BattServe: " + String(localAddress, HEX) + " To: " + String(destination, HEX), 0);
+  draw_msg("Server: " + String(localAddress, HEX) + " To: " + String(destination, HEX), 0);
   draw_msg("Msg:" + message, 1);
-  if (incoming != "") {
+  if (lastMessage != "") {
+    vBat= 4.2 * (float(vByte) / 255);
     draw_msg("From: " + String(sender, HEX) + " MsgID: " + String(incomingMsgId), 3);
-    draw_msg("Msg:" + incoming, 4);
-    draw_msg("RSSI: " + String(LoRa.packetRssi()) + " S/N: " +  String(LoRa.packetSnr()), 5);
+    draw_msg("Msg:" + lastMessage, 4);
+    draw_msg("Battery: " + String(vBat) + "byte: "+ String(vByte), 5);
   }
   else {
     draw_msg("From: ", 3);
     draw_msg("Msg:", 4);
-    draw_msg("RSSI: S/N:", 5);
+    draw_msg("Battery:", 5);
   }
   display.display();
 }
@@ -114,8 +135,13 @@ void setup() {
     Serial.print(".");
   }
 
+
   //init and get the time
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+
+  // Turn on thingspeak
+  WiFi.mode(WIFI_STA);
+  ThingSpeak.begin(client);
 
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(CS, RST, DI0);// set CS, reset, IRQ pin
@@ -132,18 +158,19 @@ void setup() {
 }
 
 void loop() {
+  // check if we have received a message
   if (incoming != ""){
     String out = "received:"  + get_time();
     update_info(out);
-    Serial.println("Returning"out);
     sendMessage(out, destination);
+    thing_update(vBat);
+    lastMessage = incoming;
     incoming = "";
   }
 
-    
-  
+  // Send a message out
   if (millis() - lastSendTime > interval) {
-    destination = 0xFF;
+    destination = 0xFF; // reset to broadcast
     String message = get_time();
     sendMessage(message, destination);
     update_info(message);
@@ -169,8 +196,9 @@ void onReceive(int packetSize) {
   if (packetSize == 0) return;          // if there's no packet, return
 
   // read packet header bytes:
-  recipient = LoRa.read();          // recipient address
+  recipient = LoRa.read();         // recipient address
   sender = LoRa.read();            // sender address
+  vByte = LoRa.read();             // Byte representation of battery level
   incomingMsgId = LoRa.read();     // incoming msg ID
   incomingLength = LoRa.read();    // incoming msg length
   incoming = "";                 // payload of packet
@@ -181,7 +209,6 @@ void onReceive(int packetSize) {
 
   if (incomingLength != incoming.length()) {   // check length for error
     Serial.println("error: message length does not match length");
-
     return;                             // skip rest of function
   }
 
@@ -190,15 +217,6 @@ void onReceive(int packetSize) {
     Serial.println("This message is not for me.");
     return;                             // skip rest of function
   }
-
-  // if message is for this device, or broadcast, print details:
-  Serial.println("Received from: 0x" + String(sender, HEX));
-  Serial.println("Sent to: 0x" + String(recipient, HEX));
-  Serial.println("Message ID: " + String(incomingMsgId));
-  Serial.println("Message length: " + String(incomingLength));
-  Serial.println("Message: " + incoming);
-  Serial.println("RSSI: " + String(LoRa.packetRssi()));
-  Serial.println("Snr: " + String(LoRa.packetSnr()));
-  Serial.println();
+  
   destination = sender;
 }
