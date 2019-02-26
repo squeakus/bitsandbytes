@@ -31,13 +31,9 @@
 String outgoing;              // outgoing message
 byte msgCount = 0;            // count of outgoing messages
 byte localAddress = 0xAA;     // address of this device
-byte destination = 0xFF;      // destination to send to
+byte destination = 0xFF;
 long lastSendTime = 0;        // last send time
 int interval = 2000;          // interval between sends
-int lastSleepTime = 0;
-int sleepInterval = 30000;
-#define uS_TO_S_FACTOR 1000000  /* Conversion factor for micro seconds to seconds */
-#define TIME_TO_SLEEP  30        /* Time ESP32 will go to sleep (in seconds) */
 int recipient = 0;          // recipient address
 byte sender;            // sender address
 byte incomingMsgId;     // incoming msg ID
@@ -88,7 +84,7 @@ String get_time() {
 
 void update_info(String message){
   display.clear();
-  draw_msg("Server: " + String(localAddress, HEX) + " To: " + String(destination, HEX), 0);
+  draw_msg("BattServe: " + String(localAddress, HEX) + " To: " + String(destination, HEX), 0);
   draw_msg("Msg:" + message, 1);
   if (incoming != "") {
     draw_msg("From: " + String(sender, HEX) + " MsgID: " + String(incomingMsgId), 3);
@@ -131,25 +127,34 @@ void setup() {
 
   LoRa.onReceive(onReceive);
   LoRa.receive();
-  esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
+
   Serial.println("LoRa init succeeded.");
 }
 
 void loop() {
+  if (incoming != ""){
+    String out = "received:"  + get_time();
+    update_info(out);
+    Serial.println("Returning"out);
+    sendMessage(out, destination);
+    incoming = "";
+  }
+
+    
+  
   if (millis() - lastSendTime > interval) {
+    destination = 0xFF;
     String message = get_time();
-    sendMessage(message);
+    sendMessage(message, destination);
     update_info(message);
     Serial.println("Sending " + message);
     lastSendTime = millis();            // timestamp the message
     LoRa.receive();                     // go back into receive mode
   }
-  if (millis() - lastSleepTime > sleepInterval) {
-    esp_deep_sleep_start();
-  }
+
 }
 
-void sendMessage(String outgoing) {
+void sendMessage(String outgoing, byte destination) {
   LoRa.beginPacket();                   // start packet
   LoRa.write(destination);              // add destination address
   LoRa.write(localAddress);             // add sender address
@@ -195,5 +200,5 @@ void onReceive(int packetSize) {
   Serial.println("RSSI: " + String(LoRa.packetRssi()));
   Serial.println("Snr: " + String(LoRa.packetSnr()));
   Serial.println();
-
+  destination = sender;
 }
