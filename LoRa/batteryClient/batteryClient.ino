@@ -24,7 +24,7 @@
 int lastSleepTime = 0;
 int sleepInterval = 30000;
 #define uS_TO_S_FACTOR 1000000  /* Conversion factor for micro seconds to seconds */
-#define TIME_TO_SLEEP  30        /* Time ESP32 will go to sleep (in seconds) */
+#define TIME_TO_SLEEP  900        /* Time ESP32 will go to sleep (in seconds) */
 
 byte msgCount = 0;            // count of outgoing messages
 byte localAddress = 0xBB;     // address of this device
@@ -125,7 +125,7 @@ void loop() {
 }
 
 void gotoSleep(){
-  delay(1000);
+  delay(2000);
 //  display.sendCommand(0x8D); //into charger pump set mode
 //  display.sendCommand(0x10); //turn off charger pump
 //  display.sendCommand(0xAE); //set OLED sleep

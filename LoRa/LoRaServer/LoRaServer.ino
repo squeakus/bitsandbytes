@@ -19,6 +19,7 @@
 #include<Arduino.h>
 #include "SSD1306.h"
 #include "time.h"
+#include "secrets.h"
 
 #define SCK 5 // GPIO5 - SX1278's SCK serial clock
 #define MISO 19 // GPIO19 - SX1278's MISO
@@ -43,8 +44,8 @@ byte sender;            // sender address
 byte incomingMsgId;     // incoming msg ID
 byte incomingLength;    // incoming msg length
 String incoming = "";                 // payload of packet
-const char* ssid       = "the compound";
-const char* password   = "0863257989";
+const char* ssid       = SECRET_SSID;
+const char* password   = SECRET_PASS;
 SSD1306 display (0x3c, 4, 15); // OLED Screen
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 3600;

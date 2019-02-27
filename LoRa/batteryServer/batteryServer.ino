@@ -19,7 +19,7 @@
 #include "SSD1306.h"
 #include "ThingSpeak.h"
 #include "time.h"
-
+#include "secrets.h"
 #define SCK 5 // GPIO5 - SX1278's SCK serial clock
 #define MISO 19 // GPIO19 - SX1278's MISO
 #define MOSI 27 // GPIO27 - SX1278's MOSI
@@ -42,10 +42,10 @@ String incoming = "";                 // payload of packet
 String lastMessage = "";
 byte vByte = 0;
 float vBat = 0;
-const char* ssid       = "the compound";
-const char* password   = "0863257989";
-unsigned long myChannelNumber = 712195;
-const char * myWriteAPIKey = "IMJYA8MKP2E282BS";
+const char* ssid       = SECRET_SSID;
+const char* password   = SECRET_PASS;
+unsigned long myChannelNumber = SECRET_CH_ID;
+const char * myWriteAPIKey = SECRET_WRITE_APIKEY;
 WiFiClient  client;
 
 SSD1306 display (0x3c, 4, 15); // OLED Screen
@@ -72,7 +72,7 @@ void init_display() {
 void thing_update(float value){
   // Write value to Field 1 of a ThingSpeak Channel
   Serial.println("Channel write starting.");
-  int httpCode = ThingSpeak.writeField(myChannelNumber, 1, 20, myWriteAPIKey);
+  int httpCode = ThingSpeak.writeField(myChannelNumber, 2, value, myWriteAPIKey);
 
   if (httpCode == 200) {
     Serial.println("Channel write successful.");
