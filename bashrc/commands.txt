@@ -1760,6 +1760,9 @@ datetime <- date and time from the luxury of the commandline
 grep and replace using sed
 grep -l add_gene *.py | xargs sed -i 's/add_gene/add_extra/g'
 
+replace instance in all files:
+find ./src -type f | xargs sed -i 's/CV_FOURCC/cv2.CV_FOURCC/g'
+
 remove amazon results from search:
 sudo apt-get remove unity-lens-shopping
 sudo apt-get purge unity-webapps-common
