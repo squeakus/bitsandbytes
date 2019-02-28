@@ -91,6 +91,23 @@ lsusb -D /dev/bus/usb/001/013
 # show device tree, 480mb usb2 5000 usb3
 lsusb -t 
 
+# replacing stuff
+replace every occurence of a word with another:
+grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g'
+
+grep and replace using sed
+grep -l add_gene *.py | xargs sed -i 's/add_gene/add_extra/g'
+
+replace instance in all files:
+find ./src -type f | xargs sed -i 's/CV_FOURCC/cv2.CV_FOURCC/g'
+
+vi replace commands:
+:s/moo/blah/g <- global replace LINE moo with line blah
+:%s/moo/blah/g <- global replace INSTANCE moo with blah
+:%s/moo/blah/c <- confirm each replacement
+if replacing something with a slash then you can use any delimiter:
+:%s#/bin#/usr/bin#g
+
 # DOCKER!
 ## build from Dockerfile
 docker build -t <imgname> .
@@ -544,10 +561,6 @@ valgrind --leak-check=yes <executable> <args>
 
 remove all c comments from command line, before putting online:
 sed 's,/\*\*,,g;s,\*/,,g;s,/\*,,g;s,//,,g' infile.cpp
-
-
-replace every occurence of a word with another:
-grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g'
 
 
 c list packages and libraries:
@@ -1757,12 +1770,6 @@ screen -S readlog -dm sh -c "less /var/log; exec bash"
 ls /usr/bin/?? | more <- get all 2 char files in a folder
 datetime <- date and time from the luxury of the commandline
 
-grep and replace using sed
-grep -l add_gene *.py | xargs sed -i 's/add_gene/add_extra/g'
-
-replace instance in all files:
-find ./src -type f | xargs sed -i 's/CV_FOURCC/cv2.CV_FOURCC/g'
-
 remove amazon results from search:
 sudo apt-get remove unity-lens-shopping
 sudo apt-get purge unity-webapps-common
@@ -2071,13 +2078,6 @@ ctrl-w arrowkey
 :only <- close all other windows
 :ls <- show buffers
 :b 2 <- goto second buffer
-
-vi replace commands:
-:s/moo/blah/g <- global replace LINE moo with line blah
-:%s/moo/blah/g <- global replace INSTANCE moo with blah
-:%s/moo/blah/c <- confirm each replacement
-if replacing something with a slash then you can use any delimiter:
-:%s#/bin#/usr/bin#g
 
 vi diff commands:
 svn diff test.py | view -
