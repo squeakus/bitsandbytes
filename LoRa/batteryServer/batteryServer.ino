@@ -159,8 +159,16 @@ void setup() {
 
 void loop() {
   // check if we have received a message
+  String out;
   if (incoming != ""){
-    String out = "received:"  + get_time();
+    if (incoming.startsWith("Ack")){
+      out = "received";      
+    }
+    else {
+      out = "received";
+      incoming = "junk";
+    }
+    
     update_info(out);
     sendMessage(out, destination);
     thing_update(vBat);

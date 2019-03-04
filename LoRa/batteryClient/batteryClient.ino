@@ -20,11 +20,11 @@
 #define RST 14 // GPIO14 - SX1278's LoRa radio reset
 #define DI0 26 // GPIO26 - SX1278's IRQ (interrupt request) change for your board; must be a hardware interrupt pin
 #define BAND 868E6 // Frequencxy band to operate on.
+#define uS_TO_S_FACTOR 1000000  /* Conversion factor for micro seconds to seconds */
 
 int lastSleepTime = 0;
 int sleepInterval = 30000;
-#define uS_TO_S_FACTOR 1000000  /* Conversion factor for micro seconds to seconds */
-#define TIME_TO_SLEEP  900        /* Time ESP32 will go to sleep (in seconds) */
+int time_to_sleep = 900;      /* Time ESP32 will go to sleep (in seconds) */
 
 byte msgCount = 0;            // count of outgoing messages
 byte localAddress = 0xBB;     // address of this device
@@ -62,8 +62,29 @@ void draw_msg(String msg, int line) {
   display.drawString (0, spacing, msg);
 }
 
+float average (float * array, int len)  // assuming array is int.
+{
+  long sum = 0L ;  // sum will be larger than an item, long for safety.
+  for (int i = 0 ; i < len ; i++)
+    sum += array [i] ;
+  return  ((float) sum) / len ;  // average will be fractional, so float may be appropriate.
+}
+
 byte battery_level() {
-  byte vByte = int(255 * (float(analogRead(34)) / 4096.0f));
+//  float sampleArray[10];
+//  int samples = 0;
+//
+//  while (samples < 10) {
+//    delay(100);
+//    float val = float(analogRead(34));
+//    if (val > 0 ){
+//      sampleArray[samples] = val;
+//      samples += 1;
+//    }
+//  }
+//  float vAverage = average(sampleArray, 10);
+  float vAverage = 1000.0f;
+  byte vByte = int(255 * ( vAverage / 4096.0f));
   return vByte;
 }
 void setup() {
@@ -75,7 +96,7 @@ void setup() {
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(CS, RST, DI0);// set CS, reset, IRQ pin
   lastSleepTime = millis();
-  esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
+  esp_sleep_enable_timer_wakeup(time_to_sleep * uS_TO_S_FACTOR);
   
   if (!LoRa.begin(BAND)) {             // initialize ratio at 868 MHz
     Serial.println("LoRa init failed. Check your connections.");
@@ -85,12 +106,13 @@ void setup() {
   LoRa.onReceive(onReceive);
   LoRa.receive();
   Serial.println("LoRa init succeeded.");
+  byte vByte = battery_level();
+  vBat= (4.2 * float(vByte)) / 255.0f; 
 }
 
 void loop() {
   display.clear();
-  byte vByte = battery_level();
-  vBat= (4.2 * float(vByte)) / 255.0f; 
+  
   draw_msg("Client " + String(localAddress, HEX) + " is listening", 0);
   draw_msg("battery: " + String(vBat) + "v", 1);
 
@@ -107,7 +129,6 @@ void loop() {
 
   display.display();
   LoRa.receive();                     // go back into receive mode
-  delay(5000);
   if (millis() - lastSleepTime > sleepInterval) {
     display.clear();
     draw_msg("No response from server",0);
@@ -116,11 +137,23 @@ void loop() {
     gotoSleep();
   }
   if(beddybyes){
-    display.clear();
-    draw_msg("Server responded!",0);
-    draw_msg("Going to sleep",1);
-    display.display();
-    gotoSleep();
+    Serial.println("incoming" + incoming);
+    Serial.println(String(incoming == "received"));
+    if(incoming == "received"){
+      display.clear();
+      draw_msg("Server responded!",0);
+      draw_msg("Going to sleep",1);
+      display.display();
+      gotoSleep();
+    }
+    else {
+        display.clear();
+        time_to_sleep = 9000;
+        draw_msg("i'm drunk.....",0);
+        draw_msg("Going to sleep",1);
+        display.display();
+        gotoSleep();  
+    }
   }
 }
 
