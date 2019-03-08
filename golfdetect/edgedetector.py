@@ -3,7 +3,7 @@ import numpy as np
 
 def main():
     if len(sys.argv) < 2:
-        print "usage: python golfdetect.py <imagename>"
+        print "usage: python edgedetector.py <imagename>"
         exit()
 
     # read in the image as color and greyscale
