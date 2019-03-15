@@ -29,8 +29,9 @@ item {
   label: 1
   display_name: "person"
 } 
-- use the create_data.sh script in data/localData to create the training vals
+- call createtrainvals on the dataset to create the trainvals
 - copy trainval.txt to test.txt ?!?
+- use the create_data.sh script in data/localData to create the training vals
 - clone chuanqi305's mobilenet version to the ./examples folder
 ..- git clone --depth 1 https://github.com/chuanqi305/MobileNet-SSD
 
@@ -38,4 +39,4 @@ item {
 ..- ln -s ../../raccoons/labelmap.prototxt .
 ..- ln -s ../../raccoons/raccoons/lmdb/raccoons_trainval_lmdb trainval_lmdb
 ..- ln -s ../../raccoons/raccoons/lmdb/raccoons_test_lmdb test_lmdb
-- call gen_model with the number of classes: ./gen_model.sh 2
+- call gen_model with the number of classes (background counts as a class): ./gen_model.sh 2
