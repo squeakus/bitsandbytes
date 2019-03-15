@@ -1,3 +1,10 @@
+# convert tensorflow model to openvino model:
+$INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo_tf.py --input_model graph.pbtxt --input_model_is_text --output_dir FP16 --data_type FP16
+
+# check if images are corrupted:
+$ find . -iname "*.jpg" -exec jpeginfo -c {} \; | grep -E "WARNING|ERROR"
+
+
 # mounting an encrypted file system:
 udisksctl unlock -b /dev/sdb5
 sudo mkdir /mnt/data
@@ -51,6 +58,27 @@ Host github.com
 /etc/pip.conf
 [global]
 proxy = http://proxy-ir.intel.com:911
+
+## docker proxy:
+add /etc/systemd/system/docker.service.d/http-proxy.conf
+[Service]
+Environment="HTTP_PROXY=http://proxy-ir.intel.com:911/"
+Environment="HTTPS_PROXY=http://proxy-ir.intel.com:912/"
+Environment="NO_PROXY=localhost,127.0.0.1,.intel.com"
+
+and in your local .docker/config.json:
+{
+ "proxies":
+ {
+   "default":
+   {
+     "httpProxy": "http://proxy-ir.intel.com:911",
+     "httpsProxy": "http://proxy-ir.intel.com:912",
+     "ftpProxy": "http://proxy-ir.intel.com:911",
+     "noProxy": "intel.com,.intel.com,10.0.0.0/8,192.168.0.0/16,localhost,.local,127.0.0.0/8,134.134.0.0/16"
+   }
+ }
+}
 
 
 # Set up an alias to the openvino command:
