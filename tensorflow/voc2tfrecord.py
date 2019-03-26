@@ -1,12 +1,11 @@
 """
 Create tfrecords from VOC datasets, automatically partiition into train and test records
 This assumes the images are in an image folder and the labels are in annotations
-Usage:
-  # From tensorflow/models/
-  # Create train data:
-  python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record
-  # Create test data:
-  python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record
+Please update the classes list before running
+
+This is based on the tensorflow tutorial:
+https://becominghuman.ai/tensorflow-object-detection-api-tutorial-training-and-evaluating-custom-object-detector-ed2594afcf73
+the script does most of the dataset preparation so you can skip to step 3.
 """
 from __future__ import division
 from __future__ import print_function
@@ -25,11 +24,7 @@ from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
 from random import random
 
-flags = tf.app.flags
-flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
-flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
-flags.DEFINE_string('image_dir', '', 'Path to images')
-FLAGS = flags.FLAGS
+CLASSES = ['raccoon']
 
 def main(_):
     test = 0.2 # percentage of data for test
@@ -47,7 +42,15 @@ def main(_):
     create_folder("./data")
     create_tfrecord("./train/train.csv", "./data/train.tfrecord", "./train/")
     create_tfrecord("./test/test.csv", "./data/test.tfrecord", "./test/")
-    exit()
+    write_pbtxt()
+
+def write_pbtxt():
+    outfile = open('object_detection.pbtxt', 'w')
+    for idx, item in enumerate(CLASSES):
+        outfile.write("item { \n")
+        outfile.write("  id: " + str(idx+1) + "\n")
+        outfile.write("  name:" + item + "\n")
+        outfile.write("}\n")
 
 def create_tfrecord(csvfile, outdir, imagedir):
     writer = tf.python_io.TFRecordWriter(outdir)
@@ -72,8 +75,8 @@ def create_folder(foldername):
 
 # TO-DO replace this with label map
 def class_text_to_int(row_label):
-    if row_label == 'raccoon':
-        return 1
+    if row_label in CLASSES:
+        return CLASSES.index(row_label) + 1
     else:
         None
 

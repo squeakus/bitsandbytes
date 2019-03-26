@@ -22,7 +22,7 @@ while(True):
         '''
         #lists of ids and the corners beloning to each id
     corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, aruco_dict, parameters=parameters)
-    print(corners)
+    print(corners, ids)
  
     #It's working.
     # my problem was that the cellphone put black all around it. The alrogithm
