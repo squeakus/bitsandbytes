@@ -45,7 +45,7 @@ def main(_):
     write_pbtxt()
 
 def write_pbtxt():
-    outfile = open('object_detection.pbtxt', 'w')
+    outfile = open('data/object_detection.pbtxt', 'w')
     for idx, item in enumerate(CLASSES):
         outfile.write("item { \n")
         outfile.write("  id: " + str(idx+1) + "\n")
