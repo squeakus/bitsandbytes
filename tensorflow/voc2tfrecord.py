@@ -28,8 +28,8 @@ CLASSES = ['raccoon']
 
 def main(_):
     test = 0.2 # percentage of data for test
-    imagepath = "/home/jonathan/data/raccoons/images"
-    labelpath = "/home/jonathan/data/raccoons/annotations"
+    imagepath = "/home/jonathan/Downloads/see-the-bees/JPEGImages"
+    labelpath = "/home/jonathan/Downloads/see-the-bees/Annotations"
 
     train_test_split(imagepath, labelpath, test)
 
