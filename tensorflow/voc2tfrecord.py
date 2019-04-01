@@ -1,7 +1,7 @@
 """
 Create tfrecords from VOC datasets, automatically partiition into train and test records
 This assumes the images are in an image folder and the labels are in annotations
-Please update the classes list before running
+Please update the classes list before running and run setup.py  in the models/research folder
 
 This is based on the tensorflow tutorial:
 https://becominghuman.ai/tensorflow-object-detection-api-tutorial-training-and-evaluating-custom-object-detector-ed2594afcf73
@@ -24,7 +24,7 @@ from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
 from random import random
 
-CLASSES = ['raccoon']
+CLASSES = ['bee']
 
 def main(_):
     test = 0.2 # percentage of data for test
@@ -49,7 +49,7 @@ def write_pbtxt():
     for idx, item in enumerate(CLASSES):
         outfile.write("item { \n")
         outfile.write("  id: " + str(idx+1) + "\n")
-        outfile.write("  name:" + item + "\n")
+        outfile.write("  name: \"" + item + "\"\n")
         outfile.write("}\n")
 
 def create_tfrecord(csvfile, outdir, imagedir):
@@ -131,6 +131,7 @@ def create_tf_example(group, path):
 def train_test_split(imagepath, labelpath, test):
     create_folder("train")
     create_folder("test")
+    create_folder("images")
 
     train_list = []
     test_list = []
@@ -146,6 +147,8 @@ def train_test_split(imagepath, labelpath, test):
 
         copy(image_file, dst)
         copy(xml_file, dst)
+        copy(image_file, "./images")
+
 
 def xml_to_csv(path):
     xml_list = []
