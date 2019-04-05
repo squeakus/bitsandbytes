@@ -1,5 +1,5 @@
 import numpy as np
-
+import cv2
 arr = np.array([[1, 1, 1, 1, 1, 1, 1],
                 [2, 2, 2, 2, 2, 2, 2],
                 [3, 3, 3, 3, 3, 3, 3],
@@ -8,9 +8,11 @@ arr = np.array([[1, 1, 1, 1, 1, 1, 1],
                 [6, 6, 6, 6, 6, 6, 6],
                 [7, 7, 7, 7, 7, 7, 7]])
 
-kernel = np.array([[1, 1, 1],
-                   [1, 1, 1],
-                   [1, 1, 1]])
+kernel = np.array([[1, 1, 1, 1, 1],
+                   [1, 1, 1, 1, 1],
+                   [1, 1, 1, 1, 1],
+                   [1, 1, 1, 1, 1],
+                   [1, 1, 1, 1, 1]])
 
 
 def stride_conv(array, kernel, s):
@@ -30,6 +32,13 @@ def stride_conv(array, kernel, s):
 
     return np.array(final)
 
+image = cv2.imread('threshold.PNG', 0)
+normed = image / 255
 
-result = stride_conv(arr, kernel, 3)
-print(result)
+result = stride_conv(normed, kernel, 5)
+cv2.imsave('out.png', result)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
+
+for row in result:
+    print(row)
