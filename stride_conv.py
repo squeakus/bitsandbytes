@@ -14,6 +14,7 @@ kernel = np.array([[1, 1, 1, 1, 1],
                    [1, 1, 1, 1, 1],
                    [1, 1, 1, 1, 1]])
 
+kernel = np.ones((77,77))
 
 def stride_conv(array, kernel, s):
     width, height = array.shape
@@ -32,11 +33,11 @@ def stride_conv(array, kernel, s):
 
     return np.array(final)
 
-image = cv2.imread('threshold.PNG', 0)
+image = cv2.imread('resized.png', 0)
 normed = image / 255
 
-result = stride_conv(normed, kernel, 5)
-cv2.imsave('out.png', result)
+result = stride_conv(normed, kernel, 77)
+cv2.imwrite('out.png', result)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 
