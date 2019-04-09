@@ -32,9 +32,6 @@ tensorboard --logdir=training/`
 
 ## Conversion steps:
 1. Convert the frozen graph to fp16 intermediate format using the config pipeline:
-`#To visualize the eval results
-tensorboard --logdir=eval/
-#TO visualize the training results
-tensorboard --logdir=training/`
+`$INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo_tf.py --input_model=frozen_inference_graph.pb --tensorflow_use_custom_operations_config $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --output_dir FP16 --data_type FP16`
 
-2. use scripts from this repo to execute the IR on the NCS.
+3. use openvino_ssd_image.py and openvino_ssd_video.py scripts from this repo to execute the IR on the NCS.
