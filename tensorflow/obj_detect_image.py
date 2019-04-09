@@ -24,7 +24,13 @@ PATH_TO_CKPT = '/home/jonathan/code/models/research/object_detection/training/fr
 PATH_TO_LABELS = '/home/jonathan/code/models/research/object_detection/data/object_detection.pbtxt'
 
 # Number of classes to detect
-NUM_CLASSES = 1
+NUM_CLASSES = 6
+
+# Image
+IMAGE = '/home/jonathan/Downloads/98C7A46F-7B00-4D90-9C80-4E536B1AB185.jpg'
+
+# BGR or RGB
+BGR = True
 
 # Load a (frozen) Tensorflow model into memory.
 detection_graph = tf.Graph()
@@ -56,15 +62,14 @@ with detection_graph.as_default():
     with tf.Session(graph=detection_graph) as sess:
     
         # Read frame from camera
-        image_np = cv2.imread('/home/jonathan/code/models/research/object_detection/images/beetop00011.jpg')
-        image_np = cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB)
-        cv2.imshow('bgr', image_np)
-        cv2.waitKey(0)
-        # image_np = cv2.resize(image_np, (300, 300))
-        print(image_np.shape)
+        original = cv2.imread(IMAGE)
+
+        if BGR:
+            image_np = cv2.cvtColor(original, cv2.COLOR_BGR2RGB)
+        else:
+            image_np = original
         # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
         image_np_expanded = np.expand_dims(image_np, axis=0)
-        print(image_np.shape)
         # Extract image tensor
         image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
         # Extract detection boxes
@@ -82,16 +87,17 @@ with detection_graph.as_default():
             feed_dict={image_tensor: image_np_expanded})
         # Visualization of the results of a detection.
         vis_util.visualize_boxes_and_labels_on_image_array(
-            image_np,
+            original,
             np.squeeze(boxes),
             np.squeeze(classes).astype(np.int32),
             np.squeeze(scores),
             category_index,
             use_normalized_coordinates=True,
-            line_thickness=8)
+            line_thickness=4)
 
         # Display output
-        cv2.imshow('object detection', cv2.resize(image_np, (800, 600)))
-        cv2.imwrite("done.jpg",cv2.resize(image_np, (800, 600)))
+        cv2.imshow('object detection', cv2.resize(original, (800, 600)))
+        cv2.waitKey(0)
         if cv2.waitKey(25) & 0xFF == ord('q'):
             cv2.destroyAllWindows()
+        cv2.imwrite("out.jpg",cv2.resize(original, (800, 600)))
