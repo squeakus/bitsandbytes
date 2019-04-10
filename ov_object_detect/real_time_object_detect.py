@@ -43,7 +43,8 @@ print("[INFO] starting video stream...")
 vs = VideoStream(usePiCamera=True).start()
 time.sleep(2.0)
 fps = FPS().start()
-
+framecnt = 0
+starttime = time.time()
 # loop over the frames from the video stream
 while True:
 	# grab the frame from the threaded video stream and resize it
@@ -84,6 +85,14 @@ while True:
 			y = startY - 15 if startY - 15 > 15 else startY + 15
 			cv2.putText(frame, label, (startX, y),
 				cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
+	
+	framecnt += 1
+	current = time.time - starttime
+	if currenttime > 10:
+		framerate = framecnt / currenttime
+		print("fps:", framecnt)
+		framecnt = 0
+		starttime = time.time()
 
 	# show the output frame
 	cv2.imshow("Frame", frame)
