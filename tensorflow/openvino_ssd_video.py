@@ -23,18 +23,19 @@ import cv2
 import time
 import logging as log
 from openvino.inference_engine import IENetwork, IEPlugin
+from imutils.video import VideoStream
 
 
 def build_argparser():
     parser = ArgumentParser()
     parser.add_argument("-m", "--model", help="Path to an .xml file with a trained model.", required=True, type=str)
     parser.add_argument("-i", "--input",
-                        help="Path to video file or image. 'cam' for capturing video stream from camera", required=True,
+                        help="Path to video file or image. 'cam' or 'picam' for camera", required=True,
                         type=str)
     parser.add_argument("-l", "--cpu_extension",
                         help="MKLDNN (CPU)-targeted custom layers.Absolute path to a shared library with the kernels "
                              "impl.", type=str, default=None)
-    parser.add_argument("-pp", "--plugin_dir", help="Path to a plugin folder", type=str, default=None)
+    parser.add_argument("-p", "--plugin_dir", help="Path to a plugin folder", type=str, default=None)
     parser.add_argument("-d", "--device",
                         help="Specify the target device to infer on; CPU, GPU, FPGA or MYRIAD is acceptable. Demo "
                              "will look for a suitable plugin for device specified (CPU by default)", default="CPU",
@@ -78,18 +79,23 @@ def main():
     # Read and pre-process input image
     n, c, h, w = net.inputs[input_blob].shape
     del net
+    cap = None
     if args.input == 'cam':
         input_stream = 0
+        cap = VideoStream().start()
+    elif args.input == 'picam':
+        cap = VideoStream(usePiCamera=True).start()
     else:
         input_stream = args.input
         assert os.path.isfile(args.input), "Specified input file doesn't exist"
+        cap = VideoStream(src=input_stream).start()
     if args.labels:
         with open(args.labels, 'r') as f:
             labels_map = [x.strip() for x in f]
     else:
         labels_map = None
 
-    cap = cv2.VideoCapture(input_stream)
+    
 
     cur_request_id = 0
     next_request_id = 1
@@ -99,16 +105,14 @@ def main():
     log.info("To stop the demo execution press Esc button")
     is_async_mode = False
     render_time = 0
-    ret, frame = cap.read()
-    while cap.isOpened():
+    frame = cap.read()
+    while frame is not None:
         if is_async_mode:
-            ret, next_frame = cap.read()
+            next_frame = cap.read()
         else:
-            ret, frame = cap.read()
-        if not ret:
-            break
-        initial_w = cap.get(3)
-        initial_h = cap.get(4)
+            frame = cap.read()
+
+        initial_h, initial_w, depth = frame.shape
         # Main sync point:
         # in the truly Async mode we start the NEXT infer request, while waiting for the CURRENT to complete
         # in the regular mode we start the CURRENT request and immediately wait for it's completion
