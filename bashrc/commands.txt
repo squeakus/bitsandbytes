@@ -1,3 +1,11 @@
+# Get gui to run in raspbian after boot
+add a desktop file to .config/autostart
+
+[Desktop Entry]
+Type=Application
+Name=FoodCounter
+Exec=xterm -hold -e '/home/pi/foodFP16/run.sh'
+
 # Set up tensorflow  model api
 # From tensorflow/models/research/
 
