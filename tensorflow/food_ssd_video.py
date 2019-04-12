@@ -149,7 +149,7 @@ def main():
                     ymax = int(obj[6] * initial_h)
                     class_id = int(obj[1])
                     # Draw box and label\class_id
-                    color = (min(class_id * 12.5, 255), min(class_id * 7, 255), min(class_id * 5, 255))
+                    color = (min((7-class_id) * 12.5, 255), min((7-class_id) * 7, 255), min((7-class_id) * 5, 255))
                     cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), color, 2)
                     det_label = labels_map[class_id] if labels_map else str(class_id)
                     cv2.putText(frame, det_label + ' ' + str(round(obj[2] * 100, 1)) + ' %', (xmin, ymin - 7),
