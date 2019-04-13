@@ -1,7 +1,18 @@
 # Tensorflow object detectors to NCS library
-The aim of these scripts is to help take images you have labelled and train a tensorflow graph to run on the Neural compute stick. It is based on the original [raccoon object detector tutorial](https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9) and the much clearer [tensorflow object detection tutorial](https://becominghuman.ai/tensorflow-object-detection-api-tutorial-training-and-evaluating-custom-object-detector-ed2594afcf73)
+The aim of these scripts is take data you have labelled and train a tensorflow graph to run on the Neural compute stick. It is based on the this detailed tutorial [tensorflow object detection tutorial](https://becominghuman.ai/tensorflow-object-detection-api-tutorial-training-and-evaluating-custom-object-detector-ed2594afcf73)
 
-I recommend following the latter tutorial as your primary guide. If you don't want to manually split up your dataset and instead want to generate the tfrecords for training automatically you can use [this script](https://github.com/squeakus/bitsandbytes/blob/master/tensorflow/voc2tfrecord.py) which will allow you to skip to step 3 and will generate the tfrecords and the pbtxt files. Detailed instructions are given below.
+# Overview
+- Use [labelImg](https://github.com/tzutalin/labelImg) to label your images
+- Install the [tensorflow models repository](https://github.com/tensorflow/models)
+
+- Split the images into train and test datasets either manually or using [this script](https://github.com/squeakus/bitsandbytes/blob/master/tensorflow/voc2tfrecord.py)
+- Download a pretrained model
+- Edit the pipeline.config file for your dataset
+- Retrain the model
+- Freeze the network
+- Convert to openvino IR
+- Run IR on the stick
+
 
 If you want to try and do this on a windows machine (may god have mercy on your soul), you can follow [this tutorial](https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10)
 
