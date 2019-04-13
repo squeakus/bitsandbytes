@@ -1,11 +1,13 @@
 """
+This is based on the tensorflow tutorial:
+https://becominghuman.ai/tensorflow-object-detection-api-tutorial-training-and-evaluating-custom-object-detector-ed2594afcf73
+This script will automatically covert to CSV, create tfrecords and generate a pbtxt file
+Once you have run it you can skip to step 3.
+
 Create tfrecords from VOC datasets, automatically partiition into train and test records
 This assumes the images are in an image folder and the labels are in annotations
 Please update the classes list before running and run setup.py  in the models/research folder
 
-This is based on the tensorflow tutorial:
-https://becominghuman.ai/tensorflow-object-detection-api-tutorial-training-and-evaluating-custom-object-detector-ed2594afcf73
-the script does most of the dataset preparation so you can skip to step 3.
 """
 from __future__ import division
 from __future__ import print_function
