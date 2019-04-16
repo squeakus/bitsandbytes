@@ -30,7 +30,7 @@ $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo_tf.py --input_model=frozen_
 python3 $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo.py --framework tf --input_model frozen_inference_graph.pb --tensorflow_use_custom_operations_config $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/extensions/front/tf/faster_rcnn_support.json --tensorflow_object_detection_api_pipeline_config pipeline.config --data_type FP16
 
 # run faster RCNN:
-./object_detection_sample_ssd -i ~/models_share/img/480x270/office/CES_FD_FR_High_view_original_01904.bmp -m ~/models_share/frcnn/resnet50/faster_rcnn_resnet50_coco_2018_01_28/vpu/frozen_inference_graph.xml -pc -d MYRIAD
+./object_detection_sample_ssd -i ~/Downloads/test.jpg -m frozen_inference_graph.xml -pc -d MYRIAD
 
 
 
