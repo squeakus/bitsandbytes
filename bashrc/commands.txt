@@ -1,3 +1,8 @@
+# see internals of rpm
+rpm -qlp intel-openvino-ie-rt-vpu-ubuntu-bionic-2019.1.094-2019.1-094.x86_64.rpm
+# extract contents
+rpm2cpio intel-openvino-ie-rt-vpu-ubuntu-bionic-2019.1.094-2019.1-094.x86_64.rpm | cpio -idmv
+
 # Get gui to run in raspbian after boot
 add a desktop file to .config/autostart
 
