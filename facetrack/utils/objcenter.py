@@ -6,6 +6,8 @@ class ObjCenter:
 	def __init__(self, haarPath):
 		# load OpenCV's Haar cascade face detector
 		self.detector = cv2.CascadeClassifier(haarPath)
+		self.color = (0,0, 255)
+		self.testcoord = (0, 100)
 
 	def update(self, frame, frameCenter):
 		# convert the frame to grayscale
@@ -18,6 +20,7 @@ class ObjCenter:
  
 		# check to see if a face was found
 		if len(rects) > 0:
+			self.color = (255, 0, 0)
 			# extract the bounding box coordinates of the face and
 			# use the coordinates to determine the center of the
 			# face
