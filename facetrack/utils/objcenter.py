@@ -13,7 +13,7 @@ class ObjCenter:
 	def update(self, frame, frameCenter):
 		# convert the frame to grayscale
 		gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-	return (320,240, None)
+		return (320,240, None)
 		# if self.flip:
 		# 	self.testcoord[0] -= 1
 		# else:
