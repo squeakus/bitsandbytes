@@ -47,11 +47,13 @@ def obj_center(args, objX, objY, centerX, centerY):
 		# calculate the center of the frame as this is where we will
 		# try to keep the object
 		(H, W) = frame.shape[:2]
+		print(H,W)
 		centerX.value = W // 2
 		centerY.value = H // 2
  
 		# find the object's location
 		objectLoc = obj.update(frame, (centerX.value, centerY.value))
+
 		((objX.value, objY.value), rect) = objectLoc
  
 		# extract the bounding box and draw it
@@ -113,6 +115,11 @@ if __name__ == "__main__":
 		help="path to input Haar cascade for face detection")
 	args = vars(ap.parse_args())
 
+	#set up lights:
+	pth.light_mode(pth.WS2812)
+    pth.light_type(pth.RGB)
+	pth.set_all(0,0,255)
+	pth.show()
 	# start a manager for managing process-safe variables
 	with Manager() as manager:
 		# enable the servos
