@@ -55,7 +55,7 @@ def main():
 	pid = PID(1,0.0,0)
 	pid.initialize()
 
-	for i in range(0, -10, -1):
+	for i in [0,0,0,160,160,160,0,0,0]:
 		result = pid.update(i, sleep=0.1)
 		print("value", i, " = ", result)
 

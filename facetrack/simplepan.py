@@ -80,7 +80,8 @@ def pid_process(output, p, i, d, objCoord, centerCoord):
     while True:
         # calculate the error
         error = centerCoord.value - objCoord.value
-        print("err:", error)
+        print("center:", centerCoord.value, "object", objCoord.value,
+               "err:", error)
         # update the value
         output.value = p.update(error)
 
@@ -91,12 +92,17 @@ def in_range(val, start, end):
 def set_servos(pan, tlt):
     # signal trap to handle keyboard interrupt
     signal.signal(signal.SIGINT, signal_handler)
-
+    panAngle = 0
+    tiltAngle = 0
     # loop indefinitely
     while True:
         # the pan and tilt angles are reversed
-        panAngle = -1 * pan.value
-        tiltAngle = -1 * tlt.value
+        if pan.value > 0:
+            panAngle -= 1
+        elif pan.value < 0:
+            panAngle += 1
+        # panAngle = -1 * pan.value
+        # tiltAngle = -1 * tlt.value
 
         # if the pan angle is within the range, pan
         if in_range(panAngle, servoRange[0], servoRange[1]):
@@ -105,6 +111,7 @@ def set_servos(pan, tlt):
         # if the tilt angle is within the range, tilt
         if in_range(tiltAngle, servoRange[0], servoRange[1]):
             pth.tilt(tiltAngle)
+        time.sleep(0.1)
         print("pantilt", panAngle, tiltAngle)
 # check to see if this is the main body of execution
 if __name__ == "__main__":
