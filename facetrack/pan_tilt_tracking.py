@@ -106,7 +106,7 @@ def set_servos(pan, tlt):
         # if the tilt angle is within the range, tilt
         if in_range(tiltAngle, servoRange[0], servoRange[1]):
             pth.tilt(tiltAngle)
-
+        print("pantilt", panAngle, tiltAngle)
 # check to see if this is the main body of execution
 if __name__ == "__main__":
     # construct the argument parser and parse the arguments
@@ -163,14 +163,14 @@ if __name__ == "__main__":
  
         # start all 4 processes
         processObjectCenter.start()
-        # processPanning.start()
-        processTilting.start()
+        processPanning.start()
+        # processTilting.start()
         processSetServos.start()
  
         # join all 4 processes
         processObjectCenter.join()
-        # processPanning.join()
-        processTilting.join()
+        processPanning.join()
+        # processTilting.join()
         processSetServos.join()
  
         # disable the servos
