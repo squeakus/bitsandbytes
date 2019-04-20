@@ -13,10 +13,10 @@ class ObjCenter:
 		# convert the frame to grayscale
 		gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 		
-		testcoord[0] += 1
-		if testcoord[0] > 100:
-			testcoord[0] = 0 
-		return (testcoord, (testcoord[0], testcoord[1], 10, 10))
+		self.testcoord[0] += 1
+		if self.testcoord[0] > 100:
+			self.testcoord[0] = 0 
+		return (self.testcoord, (self.testcoord[0], self.testcoord[1], 10, 10))
 		# # detect all faces in the input frame
 		# rects = self.detector.detectMultiScale(gray, scaleFactor=1.05,
 		# 	minNeighbors=9, minSize=(30, 30),
