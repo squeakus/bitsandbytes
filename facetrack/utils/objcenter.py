@@ -7,14 +7,14 @@ class ObjCenter:
 		# load OpenCV's Haar cascade face detector
 		self.detector = cv2.CascadeClassifier(haarPath)
 		self.color = (0,0, 255)
-		self.testcoord = [600, 0]
+		self.testcoord = [0, 120]
 
 	def update(self, frame, frameCenter):
 		# convert the frame to grayscale
 		gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 		
 		self.testcoord[0] += 1
-		if self.testcoord[0] > 600:
+		if self.testcoord[0] > 320:
 			self.testcoord[0] = 0
 		print(self.testcoord)
 		return (self.testcoord, (self.testcoord[0], self.testcoord[1], 10, 10))
