@@ -22,6 +22,7 @@ from argparse import ArgumentParser
 import cv2
 import time
 import logging as log
+import glob
 from openvino.inference_engine import IENetwork, IEPlugin
 
 
@@ -29,7 +30,7 @@ def build_argparser():
     parser = ArgumentParser()
     parser.add_argument("-m", "--model", help="Path to an .xml file with a trained model.", required=True, type=str)
     parser.add_argument("-i", "--input",
-                        help="Path to video file or image. 'cam' for capturing video stream from camera", required=True,
+                        help="Path to image. Please specify regex for multiple images, e.g.; images/*jpg", required=True,
                         type=str)
     parser.add_argument("-l", "--cpu_extension",
                         help="MKLDNN (CPU)-targeted custom layers.Absolute path to a shared library with the kernels "
@@ -78,7 +79,7 @@ def main():
     # Read and pre-process input image
     n, c, h, w = net.inputs[input_blob].shape
     del net
-    assert os.path.isfile(args.input), "Specified input file doesn't exist"
+
     
     if args.labels:
         with open(args.labels, 'r') as f:
@@ -86,73 +87,85 @@ def main():
     else:
         labels_map = None
 
-    img = cv2.imread(args.input)
+    
+    if "*" in args.input:
+        images =glob.glob(args.input)
+    else:
+        images = [args.input]
 
+    print(images)
+    for imgname in images:
+        assert os.path.isfile(imgname), "Specified input file doesn't exist"
+        img = cv2.imread(imgname)
 
-    cur_request_id = 0
-    next_request_id = 1
+        cur_request_id = 0
+        next_request_id = 1
 
-    log.info("Starting inference in async mode...")
-    log.info("To switch between sync and async modes press Tab button")
-    log.info("To stop the demo execution press Esc button")
-    is_async_mode = False
-    render_time = 0
+        log.info("Starting inference in sync mode...")
+        log.info("To switch between sync and async modes press Tab button")
+        log.info("To stop the demo execution press Esc button")
+        is_async_mode = False
+        render_time = 0
 
-    initial_h, initial_w, channels = img.shape
-    # Main sync point:
-    # in the truly Async mode we start the NEXT infer request, while waiting for the CURRENT to complete
-    # in the regular mode we start the CURRENT request and immediately wait for it's completion
+        initial_h, initial_w, channels = img.shape
+        # Main sync point:
+        # in the truly Async mode we start the NEXT infer request, while waiting for the CURRENT to complete
+        # in the regular mode we start the CURRENT request and immediately wait for it's completion
 
-    inf_start = time.time()
-    in_img = cv2.resize(img, (w, h))
-    in_img = in_img.transpose((2, 0, 1))  # Change data layout from HWC to CHW
-    in_img = in_img.reshape((n, c, h, w))
-    exec_net.start_async(request_id=cur_request_id, inputs={input_blob: in_img})
+        inf_start = time.time()
+        in_img = cv2.resize(img, (w, h))
+        in_img = in_img.transpose((2, 0, 1))  # Change data layout from HWC to CHW
+        in_img = in_img.reshape((n, c, h, w))
+        exec_net.start_async(request_id=cur_request_id, inputs={input_blob: in_img})
 
-    if exec_net.requests[cur_request_id].wait(-1) == 0:
-        inf_end = time.time()
-        det_time = inf_end - inf_start
+        if exec_net.requests[cur_request_id].wait(-1) == 0:
+            inf_end = time.time()
+            det_time = inf_end - inf_start
 
-        # Parse detection results of the current request
-        res = exec_net.requests[cur_request_id].outputs[out_blob]
-        for obj in res[0][0]:
-            # Draw only objects when probability more than specified threshold
-            if obj[2] > args.prob_threshold:
-                xmin = int(obj[3] * initial_w)
-                ymin = int(obj[4] * initial_h)
-                xmax = int(obj[5] * initial_w)
-                ymax = int(obj[6] * initial_h)
-                class_id = int(obj[1])
-                # Draw box and label\class_id
-                color = (min(class_id * 12.5, 255), min(class_id * 7, 255), min(class_id * 5, 255))
-                cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, 2)
-                det_label = labels_map[class_id] if labels_map else str(class_id)
-                cv2.putText(img, det_label + ' ' + str(round(obj[2] * 100, 1)) + ' %', (xmin, ymin - 7),
-                            cv2.FONT_HERSHEY_COMPLEX, 0.6, color, 1)
+            # Parse detection results of the current request
+            res = exec_net.requests[cur_request_id].outputs[out_blob]
+            print("detected: ", len(res[0][0]))
 
-        # Draw performance stats
-        inf_time_message = "Inference time: N\A for async mode" if is_async_mode else \
-            "Inference time: {:.3f} ms".format(det_time * 1000)
-        render_time_message = "OpenCV rendering time: {:.3f} ms".format(render_time * 1000)
-        async_mode_message = "Async mode is on. Processing request {}".format(cur_request_id) if is_async_mode else \
-            "Async mode is off. Processing request {}".format(cur_request_id)
+            for obj in res[0][0]:
+                # Draw only objects when probability more than specified threshold
+                if obj[2] > args.prob_threshold:
+                    xmin = int(obj[3] * initial_w)
+                    ymin = int(obj[4] * initial_h)
+                    xmax = int(obj[5] * initial_w)
+                    ymax = int(obj[6] * initial_h)
+                    class_id = int(obj[1])
+                    # Draw box and label\class_id
+                    color = (0, 0, 255)
+                    cv2.rectangle(img, (xmin, ymin), (xmax, ymax), color, 2)
+                    det_label = labels_map[class_id] if labels_map else str(class_id)
+                    cv2.putText(img, det_label + ' ' + str(round(obj[2] * 100, 1)) + ' %', (xmin, ymin - 7),
+                                cv2.FONT_HERSHEY_COMPLEX, 0.6, color, 1)
 
-        cv2.putText(img, inf_time_message, (15, 15), cv2.FONT_HERSHEY_COMPLEX, 0.5, (200, 10, 10), 1)
-        cv2.putText(img, render_time_message, (15, 30), cv2.FONT_HERSHEY_COMPLEX, 0.5, (10, 10, 200), 1)
-        cv2.putText(img, async_mode_message, (10, int(initial_h - 20)), cv2.FONT_HERSHEY_COMPLEX, 0.5,
-                    (10, 10, 200), 1)
+            # Draw performance stats
+            inf_time_message = "Inference time: N\A for async mode" if is_async_mode else \
+                "Inference time: {:.3f} ms".format(det_time * 1000)
+            render_time_message = "OpenCV rendering time: {:.3f} ms".format(render_time * 1000)
+            async_mode_message = "Async mode is on. Processing request {}".format(cur_request_id) if is_async_mode else \
+                "Async mode is off. Processing request {}".format(cur_request_id)
 
-    #
-    render_start = time.time()
-    cv2.imshow("Detection Results", img)
-    cv2.imwrite("out.png", img)
-    render_end = time.time()
-    render_time = render_end - render_start
+            cv2.putText(img, inf_time_message, (15, 15), cv2.FONT_HERSHEY_COMPLEX, 0.5, (200, 10, 10), 1)
+            cv2.putText(img, render_time_message, (15, 30), cv2.FONT_HERSHEY_COMPLEX, 0.5, (10, 10, 200), 1)
+            cv2.putText(img, async_mode_message, (10, int(initial_h - 20)), cv2.FONT_HERSHEY_COMPLEX, 0.5,
+                        (10, 10, 200), 1)
 
-    key = cv2.waitKey(1)
-    cv2.destroyAllWindows()
+        img = cv2.resize(img,(500,500))
+        cv2.imshow("Detection Results", img)
+        key = cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        if key == 27:    # Esc key to stop
+            break
+    
     del exec_net
     del plugin
+
+    # cv2.imwrite("out.png", img)
+
+
 
 
 if __name__ == '__main__':
