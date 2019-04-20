@@ -7,7 +7,7 @@ class ObjCenter:
 		# load OpenCV's Haar cascade face detector
 		self.detector = cv2.CascadeClassifier(haarPath)
 		self.color = (0,0, 255)
-		self.testcoord = [0, 0]
+		self.testcoord = [-100, 0]
 
 	def update(self, frame, frameCenter):
 		# convert the frame to grayscale
@@ -15,7 +15,7 @@ class ObjCenter:
 		
 		self.testcoord[0] += 1
 		if self.testcoord[0] > 100:
-			self.testcoord[0] = 0 
+			self.testcoord[0] = -100 
 		return (self.testcoord, (self.testcoord[0], self.testcoord[1], 10, 10))
 		# # detect all faces in the input frame
 		# rects = self.detector.detectMultiScale(gray, scaleFactor=1.05,
