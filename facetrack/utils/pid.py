@@ -21,7 +21,7 @@ class PID:
 		self.cI = 0
 		self.cD = 0
 
-	def update(self, error, sleep=0.2):
+	def update(self, error, sleep=0.1):
 		# pause for a bit
 		time.sleep(sleep)
  
@@ -52,7 +52,7 @@ class PID:
 			self.kD * self.cD])
 
 def main():
-	pid = PID(1,0.0,0)
+	pid = PID(1,0.1,0)
 	pid.initialize()
 
 	for i in [0,0,0,160,160,160,0,0,0]:

@@ -1,7 +1,8 @@
 # import necessary packages
 import imutils
 import cv2
- 
+import pantilthat as pth
+
 class ObjCenter:
     def __init__(self, haarPath):
         # load OpenCV's Haar cascade face detector
@@ -40,18 +41,37 @@ class ObjCenter:
 
         # check to see if a face was found
         if len(rects) > 0:
-            self.color = (255, 0, 0)
             # extract the bounding box coordinates of the face and
             # use the coordinates to determine the center of the
             # face
             (x, y, w, h) = rects[0]
             faceX = int(x + (w / 2))
             faceY = int(y + (h / 2))
-            print("face detected at", x,y, "centroid", faceX, faceY)
+
+            # color the error
+            pth.set_all(255,0,0)
+            if (faceX - frameCenter[0]) > 10:
+                pth.set_pixel(0, 255, 255, 255)
+            if (faceX - frameCenter[0]) > 30:
+                pth.set_pixel(1, 255, 255, 255)
+            if (faceX - frameCenter[0]) > 50:
+                pth.set_pixel(2, 255, 255, 255)
+            if (faceX - frameCenter[0]) < -10:
+                pth.set_pixel(7, 255, 255, 255)
+            if (faceX - frameCenter[0]) < -30:
+                pth.set_pixel(6, 255, 255, 255)
+            if (faceX - frameCenter[0]) < -50:
+                pth.set_pixel(5, 255, 255, 255)
+
+            pth.show()
+
+
+            # print("face detected centroid", faceX, faceY)
             # return the center (x, y)-coordinates of the face
             return ((faceX, faceY), rects[0])
  
         # otherwise no faces were found, so return the center of the
         # frame
-
+        pth.clear()
+        pth.show()
         return (frameCenter, None)
