@@ -31,9 +31,6 @@ class ObjCenter:
 
         rects = []
         if self.exec_net.requests[self.cur_request_id].wait(-1) == 0:
-            inf_end = time.time()
-            det_time = inf_end - inf_start
-
             # Parse detection results of the current request
             res = self.exec_net.requests[self.cur_request_id].outputs[self.out_blob]
             for obj in res[0][0]:
