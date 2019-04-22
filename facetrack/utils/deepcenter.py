@@ -27,15 +27,15 @@ class ObjCenter:
         in_frame = cv2.resize(next_frame, (self.w, self.h))
         in_frame = in_frame.transpose((2, 0, 1))  # Change data layout from HWC to CHW
         in_frame = in_frame.reshape((self.n, self.c, self.h, self.w))
-        self.exec_net.start_async(request_id=next_request_id, inputs={input_blob: in_frame})
+        self.exec_net.start_async(request_id=self.next_request_id, inputs={input_blob: in_frame})
 
         rects = []
-        if self.exec_net.requests[cur_request_id].wait(-1) == 0:
+        if self.exec_net.requests[self.cur_request_id].wait(-1) == 0:
             inf_end = time.time()
             det_time = inf_end - inf_start
 
             # Parse detection results of the current request
-            res = self.exec_net.requests[cur_request_id].outputs[out_blob]
+            res = self.exec_net.requests[self.cur_request_id].outputs[out_blob]
             for obj in res[0][0]:
                 # Draw only objects when probability more than specified threshold
                 if obj[2] > args.prob_threshold:
@@ -45,7 +45,7 @@ class ObjCenter:
                     ymax = int(obj[6] * initial_h)
                     rects.append([xmin, ymin, xmax - xmin, ymax - ymin]) 
 
-        cur_request_id, next_request_id = next_request_id, cur_request_id
+        self.cur_request_id, self.next_request_id = self.next_request_id, self.cur_request_id
         # check to see if a face was found
         if len(rects) > 0:
             # extract the bounding box coordinates of the face and
