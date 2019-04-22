@@ -9,7 +9,7 @@ from openvino.inference_engine import IENetwork, IEPlugin
 class ObjCenter:
     def __init__(self, model_xml):
         model_bin = os.path.splitext(model_xml)[0] + ".bin"
-        plugin = IEPlugin(device=args.device, plugin_dirs=args.plugin_dir)
+        plugin = IEPlugin(device="MYRIAD")
 
         net = IENetwork(model=model_xml, weights=model_bin)
         input_blob = next(iter(net.inputs))
