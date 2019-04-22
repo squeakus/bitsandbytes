@@ -80,9 +80,10 @@ def pid_process(output, p, i, d, objCoord, centerCoord):
     while True:
         # calculate the error
         error = centerCoord.value - objCoord.value
-        print("err:", error)
+        
         # update the value
         output.value = p.update(error)
+        print("err:", error, "correction:", output.value)
 
 def in_range(val, start, end):
     # determine the input value is in the supplied range
@@ -103,9 +104,9 @@ def set_servos(pan, tlt):
             pth.pan(panAngle)
 
         # if the tilt angle is within the range, tilt
-        if in_range(tiltAngle, servoRange[0], servoRange[1]):
-            pth.tilt(tiltAngle)
-        print("pantilt", panAngle, tiltAngle)
+        if in_range(tiltAngle, servoRange[0]+20, servoRange[1] ):
+            pth.tilt(tiltAngle-20)
+        # time.sleep(0.1)
 # check to see if this is the main body of execution
 if __name__ == "__main__":
     # construct the argument parser and parse the arguments
@@ -138,13 +139,13 @@ if __name__ == "__main__":
         tlt = manager.Value("i", 0)
 
         # set PID values for panning
-        panP = manager.Value("f", 0.5)
-        panI = manager.Value("f", 0.0)
-        panD = manager.Value("f", 0.00)
+        panP = manager.Value("f", 0.1)
+        panI = manager.Value("f", 0.001)
+        panD = manager.Value("f", 0.002)
  
         # set PID values for tilting
-        tiltP = manager.Value("f", 0.11)
-        tiltI = manager.Value("f", 0.10)
+        tiltP = manager.Value("f", 0.1)
+        tiltI = manager.Value("f", 0.001)
         tiltD = manager.Value("f", 0.002)
         # we have 4 independent processes
         # 1. objectCenter  - finds/localizes the object
@@ -163,13 +164,13 @@ if __name__ == "__main__":
         # start all 4 processes
         processObjectCenter.start()
         processPanning.start()
-        # processTilting.start()
+        processTilting.start()
         processSetServos.start()
  
         # join all 4 processes
         processObjectCenter.join()
         processPanning.join()
-        # processTilting.join()
+        processTilting.join()
         processSetServos.join()
  
         # disable the servos
