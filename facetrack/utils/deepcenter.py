@@ -12,11 +12,11 @@ class ObjCenter:
         plugin = IEPlugin(device="MYRIAD")
 
         net = IENetwork(model=model_xml, weights=model_bin)
-        input_blob = next(iter(net.inputs))
-        out_blob = next(iter(net.outputs))
+        self.input_blob = next(iter(net.inputs))
+        self.out_blob = next(iter(net.outputs))
         self.exec_net = plugin.load(network=net, num_requests=2)
 
-        self.n, self.c, self.h, self.w = net.inputs[input_blob].shape
+        self.n, self.c, self.h, self.w = net.inputs[self.input_blob].shape
         self.cur_request_id = 0
         self.next_request_id = 1
         del net
@@ -27,7 +27,7 @@ class ObjCenter:
         in_frame = cv2.resize(next_frame, (self.w, self.h))
         in_frame = in_frame.transpose((2, 0, 1))  # Change data layout from HWC to CHW
         in_frame = in_frame.reshape((self.n, self.c, self.h, self.w))
-        self.exec_net.start_async(request_id=self.next_request_id, inputs={input_blob: in_frame})
+        self.exec_net.start_async(request_id=self.next_request_id, inputs={self.input_blob: in_frame})
 
         rects = []
         if self.exec_net.requests[self.cur_request_id].wait(-1) == 0:
@@ -35,7 +35,7 @@ class ObjCenter:
             det_time = inf_end - inf_start
 
             # Parse detection results of the current request
-            res = self.exec_net.requests[self.cur_request_id].outputs[out_blob]
+            res = self.exec_net.requests[self.cur_request_id].outputs[self.out_blob]
             for obj in res[0][0]:
                 # Draw only objects when probability more than specified threshold
                 if obj[2] > args.prob_threshold:
