@@ -1,8 +1,10 @@
 # import necessary packages
+import os
 import imutils
 import cv2
 import pantilthat as pth
 from openvino.inference_engine import IENetwork, IEPlugin
+
 
 class ObjCenter:
     def __init__(self, model_xml):
@@ -12,7 +14,7 @@ class ObjCenter:
         net = IENetwork(model=model_xml, weights=model_bin)
         input_blob = next(iter(net.inputs))
         out_blob = next(iter(net.outputs))
-        exec_net = plugin.load(network=net, num_requests=2)
+        self.exec_net = plugin.load(network=net, num_requests=2)
 
         self.n, self.c, self.h, self.w = net.inputs[input_blob].shape
         self.cur_request_id = 0
@@ -25,15 +27,15 @@ class ObjCenter:
         in_frame = cv2.resize(next_frame, (self.w, self.h))
         in_frame = in_frame.transpose((2, 0, 1))  # Change data layout from HWC to CHW
         in_frame = in_frame.reshape((self.n, self.c, self.h, self.w))
-        exec_net.start_async(request_id=next_request_id, inputs={input_blob: in_frame})
+        self.exec_net.start_async(request_id=next_request_id, inputs={input_blob: in_frame})
 
         rects = []
-        if exec_net.requests[cur_request_id].wait(-1) == 0:
+        if self.exec_net.requests[cur_request_id].wait(-1) == 0:
             inf_end = time.time()
             det_time = inf_end - inf_start
 
             # Parse detection results of the current request
-            res = exec_net.requests[cur_request_id].outputs[out_blob]
+            res = self.exec_net.requests[cur_request_id].outputs[out_blob]
             for obj in res[0][0]:
                 # Draw only objects when probability more than specified threshold
                 if obj[2] > args.prob_threshold:
