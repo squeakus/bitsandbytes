@@ -93,7 +93,6 @@ def main():
     else:
         images = [args.input]
 
-    print(images)
     for imgname in images:
         assert os.path.isfile(imgname), "Specified input file doesn't exist"
         img = cv2.imread(imgname)
@@ -124,7 +123,6 @@ def main():
 
             # Parse detection results of the current request
             res = exec_net.requests[cur_request_id].outputs[out_blob]
-            print("detected: ", len(res[0][0]))
 
             for obj in res[0][0]:
                 # Draw only objects when probability more than specified threshold
@@ -142,6 +140,7 @@ def main():
                                 cv2.FONT_HERSHEY_COMPLEX, 0.6, color, 1)
 
             # Draw performance stats
+            print("Inference time: {:.3f} ms".format(det_time * 1000))
             inf_time_message = "Inference time: N\A for async mode" if is_async_mode else \
                 "Inference time: {:.3f} ms".format(det_time * 1000)
             render_time_message = "OpenCV rendering time: {:.3f} ms".format(render_time * 1000)
