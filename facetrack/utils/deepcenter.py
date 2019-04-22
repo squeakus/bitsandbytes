@@ -22,7 +22,7 @@ class ObjCenter:
         del net
 
 
-    def update(self, frame, frameCenter):
+    def update(self, next_frame, frameCenter):
         initial_h, initial_w, depth = frame.shape
         in_frame = cv2.resize(next_frame, (self.w, self.h))
         in_frame = in_frame.transpose((2, 0, 1))  # Change data layout from HWC to CHW
@@ -45,6 +45,7 @@ class ObjCenter:
                     ymax = int(obj[6] * initial_h)
                     rects.append([xmin, ymin, xmax - xmin, ymax - ymin]) 
 
+        cur_request_id, next_request_id = next_request_id, cur_request_id
         # check to see if a face was found
         if len(rects) > 0:
             # extract the bounding box coordinates of the face and
