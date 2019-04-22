@@ -35,7 +35,7 @@ def obj_center(args, objX, objY, centerX, centerY):
     time.sleep(2.0)
  
     # initialize the object center finder
-    obj = ObjCenter(args["cascade"])
+    obj = ObjCenter(args["model"])
  
     # loop indefinitely
     while True:
@@ -111,8 +111,8 @@ def set_servos(pan, tlt):
 if __name__ == "__main__":
     # construct the argument parser and parse the arguments
     ap = argparse.ArgumentParser()
-    ap.add_argument("-c", "--cascade", type=str, required=True,
-        help="path to input Haar cascade for face detection")
+    ap.add_argument("-m", "--model", type=str, required=True,
+        help="path to openvino model for face detection")
     args = vars(ap.parse_args())
 
     #set up lights:
