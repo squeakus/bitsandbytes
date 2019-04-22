@@ -83,7 +83,7 @@ def pid_process(output, p, i, d, objCoord, centerCoord):
         
         # update the value
         output.value = p.update(error)
-        print("err:", error, "correction:", output.value)
+        # print("err:", error, "correction:", output.value)
 
 def in_range(val, start, end):
     # determine the input value is in the supplied range
