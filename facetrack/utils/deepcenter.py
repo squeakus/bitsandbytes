@@ -35,7 +35,7 @@ class ObjCenter:
             res = self.exec_net.requests[self.cur_request_id].outputs[self.out_blob]
             for obj in res[0][0]:
                 # Draw only objects when probability more than specified threshold
-                if obj[2] > args.prob_threshold:
+                if obj[2] > 70:
                     xmin = int(obj[3] * initial_w)
                     ymin = int(obj[4] * initial_h)
                     xmax = int(obj[5] * initial_w)
