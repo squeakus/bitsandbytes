@@ -23,7 +23,7 @@ class ObjCenter:
 
 
     def update(self, next_frame, frameCenter):
-        initial_h, initial_w, depth = frame.shape
+        initial_h, initial_w, depth = next_frame.shape
         in_frame = cv2.resize(next_frame, (self.w, self.h))
         in_frame = in_frame.transpose((2, 0, 1))  # Change data layout from HWC to CHW
         in_frame = in_frame.reshape((self.n, self.c, self.h, self.w))
