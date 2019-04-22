@@ -152,7 +152,7 @@ def main():
             cv2.putText(img, async_mode_message, (10, int(initial_h - 20)), cv2.FONT_HERSHEY_COMPLEX, 0.5,
                         (10, 10, 200), 1)
 
-        img = cv2.resize(img,(500,500))
+        #img = cv2.resize(img,(500,500))
         cv2.imshow("Detection Results", img)
         key = cv2.waitKey(0)
         cv2.destroyAllWindows()
