@@ -25,8 +25,8 @@
 /***************************************
     WiFi
  **************************************/
-#define WIFI_SSID   "the compound"
-#define WIFI_PASSWD "0863257989"
+#define WIFI_SSID   ""
+#define WIFI_PASSWD ""
 
 
 
