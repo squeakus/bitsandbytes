@@ -4,7 +4,16 @@ rpm -qlp intel-openvino-ie-rt-vpu-ubuntu-bionic-2019.1.094-2019.1-094.x86_64.rpm
 rpm2cpio intel-openvino-ie-rt-vpu-ubuntu-bionic-2019.1.094-2019.1-094.x86_64.rpm | cpio -idmv
 
 # Get gui to run in raspbian after boot
-add a desktop file to .config/autostart
+either add a line to the file .config/lxsession/LXDE-pi/autostart
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreensaver -no-splash
+@point-rpi
+
+I think this needs to exist before it will check the autostart folder
+
+
+or add a desktop entry to .config/autostart
 
 [Desktop Entry]
 Type=Application

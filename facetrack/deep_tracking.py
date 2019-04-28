@@ -146,7 +146,7 @@ if __name__ == "__main__":
         # set PID values for tilting
         tiltP = manager.Value("f", 0.1)
         tiltI = manager.Value("f", 0.001)
-        tiltD = manager.Value("f", 0.002)
+        tiltD = manager.Value("f", 0.005)
         # we have 4 independent processes
         # 1. objectCenter  - finds/localizes the object
         # 2. panning       - PID control loop determines panning angle
