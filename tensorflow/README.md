@@ -26,7 +26,8 @@ If you want to try and do this on a windows machine (may god have mercy on your 
  python3.6 setup.py build
  python3 setup.py install
  # Add the command below to your .bashrc file to permanently add TF to your pythonpath
- export PYTHONPATH=$PYTHONPATH:<research_folder>:<research_folder>/slim
+ export PYTHONPATH=$PYTHONPATH:<Your Home>/models/tensorflow/research/:<Your Home>/models/tensorflow/research/slim
+
  ```
 
 4. if you are using python 3 you may get a [unicode error](https://stackoverflow.com/questions/19877306/nameerror-global-name-unicode-is-not-defined-in-python-3), replace any unicode cast with str e.g.; unicode(blah) -> str(blah)
@@ -35,7 +36,7 @@ If you want to try and do this on a windows machine (may god have mercy on your 
  - [faster RCNN](http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz) can also run on openvino but it takes a long time to load the model
 6. Copy the folder containing the network to models/research/object_detection
 7. Now that tensorflow object detection code is set up, follow one of the tutorials above on labelling your dataset and converting it to the tfrecord format
-8. Once you have a folder of images and labels you can use the voc2tfrecord.py script in this repo to automatically generate the tfrecords and the pbtxt file. 
+8. Once you have a folder of images and labels you can use the voc2tfrecord.py script in this repo to automatically generate the tfrecords and the pbtxt file.
 9. Take the output of the converted dataset (tfrecords, pbtxt) and copy it to the object detector folder.
 10. We are going to use the train.py and eval.py in the legacy folder to execute the network. Copy them from the legacy folder to the object_detection folder
 11. Train the network with the following command:
@@ -44,9 +45,10 @@ python train.py --logtostderr --train_dir=training/ --pipeline_config_path=train
 ```
 12. Check the performance of the network with eval.py:
  ```bash
- python eval.py --logtostderr --pipeline_config_path=pipelinev2.config --checkpoint_dir=training/ --eval_dir=eval/
+ python eval.py --logtostderr --pipeline_config_path=training/pipelinev2.config --checkpoint_dir=training/ --eval_dir=eval/
  ```
-13. View the results using tensorboard: 
+  If you get unicode error - Please change ```unicode``` to ```str```
+13. View the results using tensorboard:
 ```bash
 #To visualize the eval results
 tensorboard --logdir=eval/
