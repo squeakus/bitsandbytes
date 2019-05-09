@@ -1,3 +1,6 @@
+# delete blank lines in a file:
+sed -i '/^$/d' file.txt
+
 # see internals of rpm
 rpm -qlp intel-openvino-ie-rt-vpu-ubuntu-bionic-2019.1.094-2019.1-094.x86_64.rpm
 # extract contents
