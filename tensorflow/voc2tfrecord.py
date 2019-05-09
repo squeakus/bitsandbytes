@@ -26,12 +26,21 @@ from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
 from random import random
 
-CLASSES = ['bee']
+
+FILEENDING = 'JPEG'
+CLASSES = []
+
+with open('classes.txt', 'r') as infile:
+    for line in infile:
+        classname = line.rstrip()
+        CLASSES.append(classname)
 
 def main(_):
     test = 0.2 # percentage of data for test
-    imagepath = "/home/jonathan/data/see-the-bees/JPEGImages"
-    labelpath = "/home/jonathan/data/see-the-bees/Annotations"
+    # imagepath = "/home/jonathan/lpirc/partial_192/training_data"
+    # labelpath = "/home/jonathan/lpirc/partial_192/annotations/training_annotations"
+    imagepath = "/home/jonathan/lpirc/partial_192/imtest"
+    labelpath = "/home/jonathan/lpirc/partial_192/anntest"
 
     train_test_split(imagepath, labelpath, test)
 
@@ -90,7 +99,8 @@ def split(df, group):
 
 
 def create_tf_example(group, path):
-    with tf.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
+    filename = os.path.join(path, '{}'.format(group.filename))
+    with tf.gfile.GFile(filename, 'rb') as fid:
         encoded_jpg = fid.read()
     encoded_jpg_io = io.BytesIO(encoded_jpg)
     image = Image.open(encoded_jpg_io)
@@ -140,7 +150,7 @@ def train_test_split(imagepath, labelpath, test):
     print("processing" + labelpath + '/*.xml')
     for xml_file in glob.glob(labelpath + '/*.xml'):
         path = pathlib.PurePath(xml_file)
-        image_file = os.path.join(imagepath, path.name.replace('xml', 'jpg'))
+        image_file = os.path.join(imagepath, path.name.replace('xml', FILEENDING))
 
         if random() > test:
             dst = "./train"
@@ -158,14 +168,17 @@ def xml_to_csv(path):
         tree = ET.parse(xml_file)
         root = tree.getroot()
         for member in root.findall('object'):
-            value = (root.find('filename').text,
-                     int(root.find('size')[0].text),
-                     int(root.find('size')[1].text),
-                     member[0].text,
-                     int(member[4][0].text),
-                     int(member[4][1].text),
-                     int(member[4][2].text),
-                     int(member[4][3].text)
+            filename = root.find('filename').text
+            if not FILEENDING in filename:
+                filename = filename + '.' + FILEENDING
+            value = (filename,
+                     int(root.find('size').find('width').text),
+                     int(root.find('size').find('height').text),
+                     member.find('name').text,
+                     int(member.find('bndbox').find('xmin').text),
+                     int(member.find('bndbox').find('ymin').text),
+                     int(member.find('bndbox').find('xmax').text),
+                     int(member.find('bndbox').find('ymax').text)
                      )
             xml_list.append(value)
     column_name = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax']
