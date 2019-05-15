@@ -218,7 +218,7 @@ void setup()
   Serial.setDebugOutput(true);
   Serial.println();
 
-
+  
   pinMode(AS312_PIN, INPUT);
 
   Wire.begin(I2C_SDA, I2C_SCL);
@@ -230,6 +230,7 @@ void setup()
 
 #ifdef ENABLE_SSD1306
   oled.init();
+  oled.flipScreenVertically();
   Wire.setClock(100000);  //! Reduce the speed and prevent the speed from being too high, causing the screen
   oled.setFont(ArialMT_Plain_16);
   oled.setTextAlignment(TEXT_ALIGN_CENTER);
