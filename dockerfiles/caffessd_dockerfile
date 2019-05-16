@@ -3,8 +3,10 @@
 # add /usr/include/hdf5/serial/ to the include folder in the makefile.config
 FROM nvidia/cuda:8.0-cudnn7-devel-ubuntu16.04
 WORKDIR /workspace
-RUN apt update && apt install -y aptitude cmake git cmake-curses-gui vim build-essential libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler python-pip libopenblas-dev python-numpy
+RUN apt update && apt install -y aptitude cmake git cmake-curses-gui vim build-essential libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler python-pip libopenblas-dev python-numpy python-skimage ipython
 RUN apt install -y --no-install-recommends libboost-all-dev
+RUN pip install protobuf
+
 
 RUN ln -s /usr/lib/x86_64-linux-gnu/libhdf5_serial_hl.so.10 /usr/lib/x86_64-linux-gnu/libhdf5_hl.so
 RUN ln -s /usr/lib/x86_64-linux-gnu/libhdf5_serial.so.10 /usr/lib/x86_64-linux-gnu/libhdf5.so
