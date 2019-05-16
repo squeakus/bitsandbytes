@@ -37,10 +37,8 @@ with open('classes.txt', 'r') as infile:
 
 def main(_):
     test = 0.2 # percentage of data for test
-    # imagepath = "/home/jonathan/lpirc/partial_192/training_data"
-    # labelpath = "/home/jonathan/lpirc/partial_192/annotations/training_annotations"
-    imagepath = "/home/jonathan/lpirc/partial_192/imtest"
-    labelpath = "/home/jonathan/lpirc/partial_192/anntest"
+    imagepath = "/home/jonathan/lpirc/partial_192/training_data"
+    labelpath = "/home/jonathan/lpirc/partial_192/annotations/training_annotations"
 
     train_test_split(imagepath, labelpath, test)
 

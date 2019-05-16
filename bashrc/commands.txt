@@ -1,3 +1,19 @@
+ZSH with ohmyzsh:
+git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+
+plugins+=(git zsh-autosuggestions k  zsh-syntax-highlighting)
+
+
+
+
+#object detection in caffe:
+cd /usr/lib/x86_64-linux-gnu
+sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
+sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
+
 # delete blank lines in a file:
 sed -i '/^$/d' file.txt
 
