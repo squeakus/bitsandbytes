@@ -10,9 +10,8 @@ RUN pip install protobuf
 
 RUN ln -s /usr/lib/x86_64-linux-gnu/libhdf5_serial_hl.so.10 /usr/lib/x86_64-linux-gnu/libhdf5_hl.so
 RUN ln -s /usr/lib/x86_64-linux-gnu/libhdf5_serial.so.10 /usr/lib/x86_64-linux-gnu/libhdf5.so
-RUN git clone git clone https://user:pass@gitlab.devtools.intel.com/ccheron/caffe-ssd.git
-WORKDIR /workspace/caffe
-RUN git checkout ssd
+RUN git clone https://user:pass@gitlab.devtools.intel.com/ccheron/caffe-ssd.git
+WORKDIR /workspace/caffe-ssd
 RUN cp Makefile.config.example Makefile.config
 RUN echo "INCLUDE_DIRS := \$(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/" >> Makefile.config
 RUN make -j4

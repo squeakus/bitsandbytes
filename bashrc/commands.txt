@@ -192,7 +192,7 @@ docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
 exit to exit
 run docker with nvidia:
 docker run --runtime=nvidia --rm -it <blah>
-
+docker run --runtime=nvidia --rm -it -v/home/jonathan/data/ssdvgg:/data caffessd
 
 
 ## Get docker to run with X11 window
