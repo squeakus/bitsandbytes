@@ -2,8 +2,15 @@ ZSH with ohmyzsh:
 git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-
+#9k shell theme
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+sed -i '/ZSH_THEME/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
+mkdir .local/share/fonts
+mv PowerlineSymbols.otf ~/.local/share/fonts/
+fc-cache -vf ~/.local/share/fonts/
+mkdir .config/fontconfig
+mkdir .config/fontconfig/conf.d
+mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 plugins+=(git zsh-autosuggestions k  zsh-syntax-highlighting)
 
 
@@ -193,7 +200,7 @@ exit to exit
 run docker with nvidia:
 docker run --runtime=nvidia --rm -it <blah>
 docker run --runtime=nvidia --rm -it -v/home/jonathan/data/ssdvgg:/data caffessd
-
+docker run --runtime=nvidia --rm -it -v/home/jonathan/data/:/data jonathanbyrn/coryssd:base
 
 ## Get docker to run with X11 window
 xhost +
@@ -223,7 +230,7 @@ docker info
 docker login
 docker tag af299672bfd3 jonathanbyrn/<imgname>:<tag>
 docker push jonathanbyrn/<imgname>
-
+docker pull jonathanbyrn/<imgname>:tagname
 ## setting up config file:
 vi /etc/docker/daemon.json
 {
