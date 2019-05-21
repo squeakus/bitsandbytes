@@ -200,7 +200,7 @@ exit to exit
 run docker with nvidia:
 docker run --runtime=nvidia --rm -it <blah>
 docker run --runtime=nvidia --rm -it -v/home/jonathan/data/ssdvgg:/data caffessd
-docker run --runtime=nvidia --rm -it -v/home/jonathan/data/:/data jonathanbyrn/coryssd:base
+docker run --runtime=nvidia --rm -it -v/home/jonathan/data/:/data jonathanbyrn/coryssd
 
 ## Get docker to run with X11 window
 xhost +
@@ -228,8 +228,18 @@ docker info
 
 # push docker image to docker hub
 docker login
+
+# optional add tag
 docker tag af299672bfd3 jonathanbyrn/<imgname>:<tag>
+
+
+docker commit -m "What did you do to the image" -a "Author Name" container-id repository/new_image_name
+docker commit -m "added node.js" -a "sammy" d9b100f2f636 sammy/ubuntu-nodejs
+# redefine a variable
+docker commit --change='WORKDIR /workspace/caffe-ssd' 2f2635794002 /jonathanbyrn/coryssd
+
 docker push jonathanbyrn/<imgname>
+# optional tagname
 docker pull jonathanbyrn/<imgname>:tagname
 ## setting up config file:
 vi /etc/docker/daemon.json
@@ -249,9 +259,8 @@ docker container ls -aq
 docker start 9b0db8a30a
 docker stop youthful_roentgen
 docker rm youthful_roentgen
-
-docker commit -m "What did you do to the image" -a "Author Name" container-id repository/new_image_name
-docker commit -m "added node.js" -a "sammy" d9b100f2f636 sammy/ubuntu-nodejs
+#simple docker commit 
+docker commit -m "hello" container-id  reponame
 
 ## docker proxy:
 add /etc/systemd/system/docker.service.d/http-proxy.conf
