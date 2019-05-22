@@ -1,3 +1,17 @@
+
+# How to circumnavigate irregular crashes by tensorflow
+while true ; do python train.py --train_dir training_v1_331K --pipeline_config_path training_v1_331K/pipelinev1.config --logtostderr; echo "Will restart training in 60s..."; sleep 60; done
+python eval.py --pipeline_config_path training_v1_331K/pipelinev1.config --checkpoint_dir training_v1_331K --eval_dir eval_v1_331K
+
+# how to compile tensorflow models to tflite for the coral board:
+tflite_convert --output_file tflite_graph.tflite --graph_def_file tflite_graph.pb --inference_type=QUANTIZED_UINT8 --input_arrays=normalized_input_image_tensor
+--output_arrays='TFLite_Detection_PostProcess','TFLite_Detection_PostProcess:1','TFLite_Detection_PostProcess:2','TFLite_Detection_PostProcess:3'
+--mean_values=128 --std_dev_values=128
+--change_concat_input_ranges=false --allow_custom_ops
+--input_shapes=1,300,300,3
+
+
+
 ZSH with ohmyzsh:
 git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -12,7 +26,7 @@ mkdir .config/fontconfig
 mkdir .config/fontconfig/conf.d
 mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 plugins+=(git zsh-autosuggestions k  zsh-syntax-highlighting)
-
+the fx skin is nice on boring computers
 
 
 
@@ -201,6 +215,7 @@ run docker with nvidia:
 docker run --runtime=nvidia --rm -it <blah>
 docker run --runtime=nvidia --rm -it -v/home/jonathan/data/ssdvgg:/data caffessd
 docker run --runtime=nvidia --rm -it -v/home/jonathan/data/:/data jonathanbyrn/coryssd
+docker run --env DISPLAY=unix$DISPLAY --privileged --volume $XAUTH:/root/.Xauthority --volume /tmp/.X11-unix:/tmp/.X11-unix --runtime=nvidia --rm -it -v /home/jonathan/data/ssdvgg:/data jonathanbyrn/coryssd
 
 ## Get docker to run with X11 window
 xhost +
