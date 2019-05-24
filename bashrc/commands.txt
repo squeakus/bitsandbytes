@@ -1,7 +1,39 @@
+# send email from command line:
+sudo apt-get update
+sudo apt-get install ssmtp
+
+/etc/ssmtp/ssmtp.conf
+root=rpi3abc@gmail.com
+mailhub=smtp.gmail.com:465
+FromLineOverride=YES
+AuthUser=rpi3abc@gmail.com
+AuthPass=testing123
+UseTLS=YES
+
+echo "Testing...1...2...3" | ssmtp mooo@gmail.com
+#with subject
+printf "Subject: hello1\n\nTesting...1...2...3" | ssmtp jonathanbyrn@gmail.com
+
+# Fixing the eval_util.py
+  if save_graph and not save_graph_dir:
+    raise ValueError('`save_graph_dir` must be defined.')
+
+  session_config = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)
+  session_config.gpu_options.per_process_gpu_memory_fraction=0.2
+  sess = tf.Session(master, graph=tf.get_default_graph(), config=session_config)
+
+# and in legacy/trainer.py
+    # Soft placement allows placing on CPU ops without GPU implementation.
+    session_config = tf.ConfigProto(allow_soft_placement=True,
+                                    log_device_placement=False)
+
+    session_config.gpu_options.per_process_gpu_fraction=0.75
+
+
 
 # How to circumnavigate irregular crashes by tensorflow
 while true ; do python train.py --train_dir training_v1_331K --pipeline_config_path training_v1_331K/pipelinev1.config --logtostderr; echo "Will restart training in 60s..."; sleep 60; done
-python eval.py --pipeline_config_path training_v1_331K/pipelinev1.config --checkpoint_dir training_v1_331K --eval_dir eval_v1_331K
+python eval.py --pipeline_config_path training/pipeline.config --checkpoint_dir training --eval_dir eval
 
 # how to compile tensorflow models to tflite for the coral board:
 tflite_convert --output_file tflite_graph.tflite --graph_def_file tflite_graph.pb --inference_type=QUANTIZED_UINT8 --input_arrays=normalized_input_image_tensor
@@ -89,10 +121,11 @@ python3 $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo.py --framework tf -
 # run faster RCNN:
 ./object_detection_sample_ssd -i ~/Downloads/test.jpg -m frozen_inference_graph.xml -pc -d MYRIAD
 
-
-
 # convert tensorflow model to openvino model:
 $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo_tf.py --input_model graph.pbtxt --input_model_is_text --output_dir FP16 --data_type FP16
+
+# benchmark the network
+python benchmark_app.py -i ~/Downloads/img20190521191433.jpg -m ~/code/models/research/object_detection/training/frozen/FP16/frozen_inference_graph.xml -api async -nireq 8 -d MYRIAD
 
 # check if images are corrupted:
 $ find . -iname "*.jpg" -exec jpeginfo -c {} \; | grep -E "WARNING|ERROR"
