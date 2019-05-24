@@ -24,8 +24,8 @@ sudo apt-get install -y powerline fonts-powerline
 #mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
 #update .zshrc
-sed -i '/ZSH_THEME/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
-echo "plugins+=(git zsh-autosuggestions k  zsh-syntax-highlighting)" >> ~/.zshrc
+sed -i '/ZSH_THEME/c\ZSH_THEME="agnoster"' ~/.zshrc
+sed -i '1i "plugins+=(git zsh-autosuggestions k  zsh-syntax-highlighting)' ~/.zshrc
 
 #set as default shell
 MYUSER=`whoami`
