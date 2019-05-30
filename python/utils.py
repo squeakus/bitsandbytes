@@ -6,6 +6,13 @@ import glob
 def main():
     print('a utility class of static functions')
 
+def cartesian2polar(x, y):
+    r = math.sqrt(x**2 + y**2)
+    theta = np.arctan2(x, y)
+    xback = r * math.cos(theta);
+    yback = r * math.sin(theta);
+    return r, theta
+
 def run_cmd(cmd):
     print(cmd)
     process = subprocess.Popen(cmd, shell=True,
