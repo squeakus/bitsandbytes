@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ping_targets="raspberrypi.local"
+ping_targets="raspberrypi.local moo.blah"
 failed_hosts=""
 
 for i in $ping_targets
