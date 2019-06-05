@@ -1,5 +1,5 @@
 import os, subprocess
-from Tkinter import *
+from tkinter import *
 
 class AutoScrollbar(Scrollbar):
     # a scrollbar that hides itself if it's not needed.  only
@@ -12,9 +12,9 @@ class AutoScrollbar(Scrollbar):
             self.grid()
         Scrollbar.set(self, lo, hi)
     def pack(self, **kw):
-        raise TclError, "cannot use pack with this widget"
+        raise (TclError, "cannot use pack with this widget")
     def place(self, **kw):
-        raise TclError, "cannot use place with this widget"
+        raise (TclError, "cannot use place with this widget")
 
 class GUI:
     def __init__(self,root):
@@ -48,7 +48,7 @@ class GUI:
         for ppmName in os.listdir(os.getcwd()):
             if ppmName.endswith('.ppm'):
                 name = ppmName.strip('.ppm')
-                print "adding",name
+                print("adding",name)
                 self.images[name] = PhotoImage(file=ppmName)
                 self.buttons[name] = Button(self.frame,command=lambda 
                                             x=name:self.buttonHandler(x), 
@@ -76,16 +76,16 @@ class GUI:
     def buttonHandler(self,name):
         self.buttons[name].focus_force()
         if self.buttons[name]['background']=="green":
-            print "defCol:",self.defCol
+            print("defCol:",self.defCol)
             self.buttons[name]['background']=self.defCol
             self.buttons[name]['relief']="raised"
         else:
             self.buttons[name]['background']="green"
             self.buttons[name]['relief']="sunken"
-        print "the name of the button is",name
+        print("the name of the button is",name)
 
     def right_click(self,event,name):
-        print "button name",name
+        print("button name",name)
         self.lastButton = name
         self.show_popup(event)
         
@@ -96,7 +96,7 @@ class GUI:
             self.popup.grab_release()
 
     def run_command(self,cmd):
-        print "executing command ",cmd,"on individual",self.lastButton
+        print("executing command ",cmd,"on individual",self.lastButton)
         cmd = cmd+" "+self.lastButton
         process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
         process.communicate()
