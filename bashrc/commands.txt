@@ -1,3 +1,10 @@
+#rename files and fix contents
+find . -iname "* (14)*" -exec rename 's/ \(14\)//' '{}' \; &&
+grep -l ' (14)' *.xml | xargs sed -i 's/ (14)//g'
+
+find . -iname "* (8)*" -exec rename 's/ \(8\)//' '{}' \;
+grep -l ' (6)' *.xml | xargs sed -i 's/ (6)//g'
+
 # send email from command line:
 sudo apt-get update
 sudo apt-get install ssmtp
