@@ -1,3 +1,7 @@
+#manim examples
+python3 -m manim example_scenes.py UpdatersExample  -pl
+manim example_scenes.py WarpSquare -pl
+
 #rename files and fix contents
 find . -iname "* (14)*" -exec rename 's/ \(14\)//' '{}' \; &&
 grep -l ' (14)' *.xml | xargs sed -i 's/ (14)//g'
