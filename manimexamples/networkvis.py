@@ -178,8 +178,8 @@ class NetworkMobject(VGroup):
 
 class NetworkScene(Scene):
     CONFIG = {
-        #"layer_sizes" : [10, 9, 8,7,6,6,6,5,4],
-        "layer_sizes" : [6,5,4],
+        "layer_sizes" : [10, 9, 8,7,6,6,6,5,4],
+        #"layer_sizes" : [5,4],
         "network_mob_config" : {},
     }
     def setup(self):
@@ -234,7 +234,7 @@ class LayOutPlan(NetworkScene, ThreeDScene):
         self.remove(self.network_mob)
 
     def construct(self):
-        text1 = TextMobject("Network Fine Grained Sparsity Visualisation")
+        text1 = TextMobject("Fine Grained Sparsity Visualisation")
         text2 = TextMobject("Create the network and compute the weights")
         text2.move_to(3*UP)
         self.play(ShowCreation(text1))
@@ -251,18 +251,19 @@ class LayOutPlan(NetworkScene, ThreeDScene):
         text1.move_to(3*UP)
         text2 = TextMobject(" to optimise fine grained sparsity")
         text2.next_to(text1,DOWN)
-        self.play(ShowCreation(text1), showCreation(text2))
+        text3 = TextMobject("Visualisation helps us understand")
+        text3.move_to(3*UP)
+        text4 = TextMobject("How it works")
+        text4.next_to(text3,DOWN)
+        
+        self.play(ShowCreation(text1), ShowCreation(text2))
         #self.move_camera(gamma=0,run_time=1)  #currently broken in manim
         self.move_camera(phi=1/4*PI, theta=-PI/2)
         self.begin_ambient_camera_rotation(rate=0.1)
         self.wait(3)
-        text3 = TextMobject("Visualisation helps us understand")
-        text3.move_to(3*UP)
-        text4 = sTextMobject("How it works")
-        text4.next_to(text3,DOWN)
         self.play(FadeOut(text1), FadeOut(text2))
-        self.play(ShowCreation(text3), showCreation(text3))
-        self.wait(3)
+        self.play(Transform(text1, text3), Transform(text2,text4))
+        self.wait(5)
 
     def show_network(self):
         network_mob = self.network_mob
