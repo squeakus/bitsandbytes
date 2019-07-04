@@ -178,7 +178,8 @@ class NetworkMobject(VGroup):
 
 class NetworkScene(Scene):
     CONFIG = {
-        "layer_sizes" : [10, 6, 6,6,6,6,6,6,4],
+        #"layer_sizes" : [10, 9, 8,7,6,6,6,5,4],
+        "layer_sizes" : [6,5,4],
         "network_mob_config" : {},
     }
     def setup(self):
@@ -227,14 +228,41 @@ class NetworkScene(Scene):
                 if np.random.random() < prop:
                     edge_group.remove(edge)
 
-class LayOutPlan(NetworkScene):
+class LayOutPlan(NetworkScene, ThreeDScene):
     def setup(self):
         NetworkScene.setup(self)
         self.remove(self.network_mob)
 
     def construct(self):
+        text1 = TextMobject("Network Fine Grained Sparsity Visualisation")
+        text2 = TextMobject("Create the network and compute the weights")
+        text2.move_to(3*UP)
+        self.play(ShowCreation(text1))
+        self.play(ApplyMethod(text1.move_to, 3*UP)) # move display_text2
+        self.play(Transform(text1,text2))
+        self.wait(1)
+        self.play(FadeOut(text1))
         self.show_network()
+        self.show_learning()
+        self.threeD()
 
+    def threeD(self):
+        text1 = TextMobject("Only Movidius has the hardware")
+        text1.move_to(3*UP)
+        text2 = TextMobject(" to optimise fine grained sparsity")
+        text2.next_to(text1,DOWN)
+        self.play(ShowCreation(text1), showCreation(text2))
+        #self.move_camera(gamma=0,run_time=1)  #currently broken in manim
+        self.move_camera(phi=1/4*PI, theta=-PI/2)
+        self.begin_ambient_camera_rotation(rate=0.1)
+        self.wait(3)
+        text3 = TextMobject("Visualisation helps us understand")
+        text3.move_to(3*UP)
+        text4 = sTextMobject("How it works")
+        text4.next_to(text3,DOWN)
+        self.play(FadeOut(text1), FadeOut(text2))
+        self.play(ShowCreation(text3), showCreation(text3))
+        self.wait(3)
 
     def show_network(self):
         network_mob = self.network_mob
@@ -247,6 +275,40 @@ class LayOutPlan(NetworkScene):
             run_time = 2,
             rate_func=linear,
         ))
+        text1 = TextMobject("Run the network and threshold weights that can be removed")
+        text1.move_to(3*UP)
+        self.play(ShowCreation(text1))
         in_vect = np.random.random(self.network.sizes[0])
-        print("invect",in_vect)
         self.feed_forward(in_vect)
+        self.play(FadeOut(text1))
+
+
+    def show_learning(self):
+        self.network_mob.neuron_fill_color = YELLOW
+
+        layer = self.network_mob.layers[-1]
+        activation = np.zeros(len(layer.neurons))
+        activation[1] = 1.0
+        activation[2] = 1.0
+        activation[3] = 1.0
+
+        active_layer = self.network_mob.get_active_layer(
+            -1, activation)
+        self.play(
+            Transform(layer, active_layer),
+        )
+
+        text1 = TextMobject("Prune the network by setting unused weights to zero")
+        text1.move_to(3*UP)
+        self.play(ShowCreation(text1))
+
+        for edge_group in reversed(self.network_mob.edge_groups):
+            edge_group.generate_target()
+            for edge in edge_group.target:
+                edge.set_stroke(
+                    YELLOW, 
+                    width = 4*np.random.random()**2
+                )
+            self.play(MoveToTarget(edge_group))
+        self.wait()
+        self.play(FadeOut(text1))
