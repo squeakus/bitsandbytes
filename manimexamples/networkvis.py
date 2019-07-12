@@ -178,7 +178,7 @@ class NetworkMobject(VGroup):
 
 class NetworkScene(Scene):
     CONFIG = {
-        "layer_sizes" : [10, 9, 8,7,6,6,6,5,4],
+        "layer_sizes" : [10, 8, 7,7,6,6,6,5,4],
         #"layer_sizes" : [5,4],
         "network_mob_config" : {},
     }
@@ -261,7 +261,6 @@ class LayOutPlan(NetworkScene, ThreeDScene):
         self.move_camera(phi=1/4*PI, theta=-PI/2)
         self.begin_ambient_camera_rotation(rate=0.1)
         self.wait(3)
-        self.play(FadeOut(text1), FadeOut(text2))
         self.play(Transform(text1, text3), Transform(text2,text4))
         self.wait(5)
 
@@ -289,6 +288,7 @@ class LayOutPlan(NetworkScene, ThreeDScene):
 
         layer = self.network_mob.layers[-1]
         activation = np.zeros(len(layer.neurons))
+        activation[0] = 1.0
         activation[1] = 1.0
         activation[2] = 1.0
         activation[3] = 1.0
