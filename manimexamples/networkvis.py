@@ -288,7 +288,6 @@ class LayOutPlan(NetworkScene, ThreeDScene):
 
         layer = self.network_mob.layers[-1]
         activation = np.zeros(len(layer.neurons))
-        activation[0] = 1.0
         activation[1] = 1.0
         activation[2] = 1.0
         activation[3] = 1.0
