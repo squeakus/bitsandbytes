@@ -38,7 +38,7 @@ for x in range(x_max):
         if img[x,y,0] == 255: continue
         for itheta in range(theta_dim):
             theta = 1.0 * itheta * theta_max / theta_dim
-            r = x * math.cos(theta) + y * math.sin(theta)
+            r = x * math.cos(theta) + y * math.sin(theta)            
             ir = r_dim * ( 1.0 * r ) / r_max
             hough_space[int(ir),int(itheta)] += 1
 
