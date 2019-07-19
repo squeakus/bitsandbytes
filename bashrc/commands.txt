@@ -184,17 +184,24 @@ no_proxy=
 
 and the apt proxy:
 /etc/apt/apt.conf
-#Acquire::http::Proxy "http://proxy-ir.intel.com:911";
-#Acquire::ftp::Proxy "http://proxy-ir.intel.com:911";
+#Acquire::http::Proxy "http://proxy-ir.blah.com:port";
+#Acquire::ftp::Proxy "http://proxy-ir.blah.com:port";
 
 ## ssh proxy in config:
 Host github.com
-  ProxyCommand connect-proxy -S proxy-ir.intel.com:1080 %h %p
+  ProxyCommand connect-proxy -S proxy-ir.blah.com:<port> %h %p
+
+## for windows:
+Host github.com
+ ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -S proxy-ir.blah.com:port %h %p
+ IdentityFile ~/.ssh/id_rsa
+ Hostname github.com
+
 
 ## pip proxy:
 /etc/pip.conf
 [global]
-proxy = http://proxy-ir.intel.com:911
+proxy = http://proxy-ir.blah.com:911
 
 # Set up an alias to the openvino command:
 alias ov='source /home/jonathan/intel/computer_vision_sdk/bin/setupvars.sh'
