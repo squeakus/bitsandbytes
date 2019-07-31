@@ -1,3 +1,7 @@
+# text detection
+./text_detection_demo -i text.jpg -m_td text-detection-0004.xml -m_tr
+
+
 #manim examples
 python3 -m manim example_scenes.py UpdatersExample  -pl
 manim example_scenes.py WarpSquare -pl

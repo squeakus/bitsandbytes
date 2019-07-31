@@ -3,19 +3,19 @@ from PIL import Image
 import numpy as np
 import cv2
  
-def hough(image, theta_x=360, rho_y=360):
+def hough(image, theta_x=600, rho_y=600):
     "Calculate Hough transform."
     print(image.shape)
     height, width = image.shape
     rho_y = int(rho_y/2)*2          #Make sure that this is even
     him = np.zeros((theta_x, rho_y))
-    modval = 50
     rmax = hypot(width, height)
     dr = rmax / (rho_y/2)
     dth = pi / theta_x
     frame = 0
-    once = False
-
+    spincnt = 0
+    modval = 50
+    fast = False
     print("drho", dr, "dtheta", dth)
     for x in range(height):
         for y in range(width):
@@ -23,19 +23,28 @@ def hough(image, theta_x=360, rho_y=360):
             
             # set up a frame for drawing on.
             frame += 1
-            imagename = "img{:05}.png".format(frame)
+            imagename = "img{:07}.png".format(frame)
             new = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
             
             if col == 255: 
-                if frame % modval == 0:
+                if frame % modval * 3 == 0 and not fast:
                     new = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)    
                     cv2.circle(new,(y, x), 3, (0,255,0), -1)
-                    new = cv2.resize(new, (360,360))
+                    new = cv2.resize(new, (600,600))
                     a = np.expand_dims(him, axis = 2)
                     newhough = np.concatenate((a,a,a), axis = 2)
                     vis = np.concatenate((new, newhough), axis=1)
                     cv2.imwrite(imagename, vis)
                 continue
+
+            if fast:
+                if frame % (modval/5) == 0:
+                    cv2.circle(new,(y, x), 3, (255,0, 0), -1)
+                    new = cv2.resize(new, (600,600))
+                    a = np.expand_dims(him, axis = 2)
+                    newhough = np.concatenate((a,a,a), axis = 2)
+                    vis = np.concatenate((new, newhough), axis=1)
+                    cv2.imwrite(imagename, vis)
 
             for tx in range(theta_x):
                 th = dth * tx
@@ -45,29 +54,28 @@ def hough(image, theta_x=360, rho_y=360):
                 #
                 #cv2.waitKey(5)
                 iry = rho_y/2 + int(r/dr+0.5)
-                print("tx", tx, "th", th, "r", r, "iry", iry)
-                him[int(iry),int(tx)] += 1
-
+                him[int(iry),int(tx)] += 5
 
                 frame += 1
-                if (once == False and frame % 3 == 0) or (once == True and frame % 50 == 0):
-                    if frame > 50000 and modval < 150:
-                        modval += 1
-                    once = True
-                    imagename = "img{:05}.png".format(frame)
+                if (spincnt == 0 and frame % 3 == 0) or (spincnt > 1 and frame % modval == 0):
+                    if spincnt > 20:
+                        fast = True
+                        continue
+                    imagename = "img{:07}.png".format(frame)
                     new = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
                     cv2.circle(new,(y, x), 3, (255,0, 0), -1)
                     cv2.line(new, (x1, y1), (x2, y2), (255, 0, 0), 1)
 
                     a = np.expand_dims(him, axis = 2)
                     newhough = np.concatenate((a,a,a), axis = 2)
-                    new = cv2.resize(new, (360,360))
+                    new = cv2.resize(new, (600,600))
                     cv2.circle(newhough, (int(tx),int(iry)), 3, (0,0,255), -1)
                     vis = np.concatenate((new, newhough), axis=1)
 
                     cv2.imwrite(imagename, vis)
                     print(imagename)
 
+            spincnt += 1
 
             #exit()
 
@@ -83,7 +91,7 @@ def findline(image, x,y, th):
  
 def test():
     "Test Hough transform with pentagon."
-    im = cv2.imread("pentagon.png", 0)
+    im = cv2.imread("pentagon2.png", 0)
     him = hough(im)
     cv2.imwrite("houghspace.png", him)
  
