@@ -33,7 +33,7 @@ def highlight_word(tweet, search_term, pattern):
                                text_colored)
    
     # now output our tweet
-    print "(%s) @%s %s" % (time_colored, user_colored, text_colored)
+    print("(%s) @%s %s" % (time_colored, user_colored, text_colored))
 
 def get_location(tweet):
     username = tweet["user"]["screen_name"]
@@ -41,7 +41,7 @@ def get_location(tweet):
 
     result = requests.get(user_query,auth=queryoauth)
     user_info = result.json
-    print user_info['name'], user_info['location']
+    print(user_info['name'], user_info['location'])
 
 def get_user_tweets(tweet, count):
     username = tweet["user"]["screen_name"]
@@ -49,7 +49,7 @@ def get_user_tweets(tweet, count):
     result = requests.get(tweet_query,auth=queryoauth)
     tweet_list = result.json
     for tweet in tweet_list:
-        print tweet['text']
+        print(tweet['text'])
     return tweet_list
     
 def quick_print(tweet):
@@ -58,19 +58,19 @@ def quick_print(tweet):
     langtest = langid.classify(tweet['text'])
     language = langtest[0]
     if language == 'en':
-        print colored(tweet['text'],"green")
+        print(colored(tweet['text'],"green"))
     else:
-        print colored(tweet['text'],"red")
+        print(colored(tweet['text'],"red"))
         #get_user_tweets(tweet, 5)
     get_location(tweet)
 
     
 def dictionary_check(tweet, d):
-    print tweet['text']
+    print(tweet['text'])
     word_list = tweet['text'].split(' ')
     total_words = len(word_list)
     #english_words = sum([d.check(word) for word in word_list]
-    print  total_words
+    print(total_words)
         
 search_term = "and"
 #pattern = re.compile(search_term, re.IGNORECASE)
