@@ -51,5 +51,5 @@ for tweet in tweet_iter:
 		text_colored = fill(text_colored, 80, initial_indent = indent, subsequent_indent = indent)
 
 		# now output our tweet
-		print("(%s) @%s" % (time_colored, user_colored))
-		print("%s" % (text_colored))
+		print(("(%s) @%s" % (time_colored, user_colored)))
+		print(("%s" % (text_colored)))
