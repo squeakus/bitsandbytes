@@ -12,13 +12,6 @@ from email.utils import parsedate
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-#setting up openid header
-consumer_key = u'y8KlfLYrBdjCKAMIWPt91Q'
-consumer_secret = u'ApV8s1Hg4WsR7jAY0vKXmePiGc8BuCBMbrkky55iehQ'
-access_key = u'182309114-zBJTzx72PGS3p5yTikSMi6lTXPEIR3f92Ky8KsLU'
-access_secret = u'2R9TwGSfvH7z8eDpMaHsoHFwRLA2r7bMixG4wfIhJU'
-url = u'https://api.twitter.com/1/account/settings.json'
-
 queryoauth = OAuth1(consumer_key, consumer_secret,
                     access_key, access_secret,
                     signature_type='query')

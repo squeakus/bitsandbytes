@@ -18,12 +18,7 @@ from time import strftime
 from textwrap import fill
 from termcolor import colored
 from email.utils import parsedate
-
-# these tokens are necessary for user authentication
-consumer_key = u'y8KlfLYrBdjCKAMIWPt91Q'
-consumer_secret = u'ApV8s1Hg4WsR7jAY0vKXmePiGc8BuCBMbrkky55iehQ'
-access_key = u'182309114-zBJTzx72PGS3p5yTikSMi6lTXPEIR3f92Ky8KsLU'
-access_secret = u'2R9TwGSfvH7z8eDpMaHsoHFwRLA2r7bMixG4wfIhJU'
+from config import *
 
 # create twitter API object
 auth = OAuth1(consumer_key, consumer_secret,access_key, access_secret, signature_type='query')
@@ -56,5 +51,5 @@ for tweet in tweet_iter:
 		text_colored = fill(text_colored, 80, initial_indent = indent, subsequent_indent = indent)
 
 		# now output our tweet
-		print "(%s) @%s" % (time_colored, user_colored)
-		print "%s" % (text_colored)
+		print("(%s) @%s" % (time_colored, user_colored))
+		print("%s" % (text_colored))
