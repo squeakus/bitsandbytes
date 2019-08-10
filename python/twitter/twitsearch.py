@@ -1,6 +1,8 @@
 import urllib.request, urllib.error, urllib.parse, json, pprint
 HASHTAG = "garda"
-u = urllib.request.urlopen('http://search.twitter.com/search.json?q='+HASHTAG+'&rpp=25')
+query = 'https://api.twitter.com/1.1/search/tweets.json?q='+HASHTAG+'&rpp=25'
+print("search:", query)
+u = urllib.request.urlopen(query)
 resultdict = json.load(u)
 
 pprint.pprint(resultdict)
