@@ -31,7 +31,9 @@ wordcloud = WordCloud(max_font_size=40).generate(text)
 plt.figure()
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
+plt.savefig('cloud.png')
 plt.show()
+
 
 # The pil way (if you don't have matplotlib)
 # image = wordcloud.to_image()
