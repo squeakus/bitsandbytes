@@ -36,6 +36,9 @@ def obj_center(args, objX, objY, centerX, centerY):
  
     # initialize the object center finder
     obj = ObjCenter(args["model"])
+    
+    #print ("obj is ", obj)
+    
  
     # loop indefinitely
     while True:
