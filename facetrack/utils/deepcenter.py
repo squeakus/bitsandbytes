@@ -6,7 +6,8 @@ import pantilthat as pth
 from openvino.inference_engine import IENetwork, IEPlugin
 
 #import colorsys
-import math
+from utils.pid import PID
+#import math
 import time
 
 
@@ -71,12 +72,22 @@ class ObjCenter:
             # if we have no faces
             if len(faces) == 0:
                 # do something
-                print ("no face ")
-                
-
+                ##print ("no face ")
+                #p = PID(0.1, 0.001, 0.002)
+                #p.initialize()
+                #pth.pan(0)
+                #pth.tilt(0)
+                #time.sleep(0.2)
+                pth.servo_enable(1, False)
+                pth.servo_enable(2, False)
+                ##time.sleep(1.0)
+                #pth.servo_enable(1, True)
+                #pth.servo_enable(2, True)
                 
             # but if we have faces
             else:
+                pth.servo_enable(1, True)
+                pth.servo_enable(2, True)
                 # for each object in our list of faces, do calculations for center
                 # we know each object is a face and do not need to compare to probability again
                 for obj in faces:                
