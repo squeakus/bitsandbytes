@@ -1,3 +1,38 @@
+# Turtlebot burger setup
+make sure the ip addresses are set correctly in .bashrc
+
+## for turtlebot
+ROS_MASTER_URl = http:lllP_OF_REMOTE_PC:11 31 1
+ROS HOSTNAME =IP OF TURTLEBOT
+
+# for remote pc:
+ROS_MASTER_URl = 'tllp:,/,/|_Or_REMOTE_ :1 '1 31 '1
+ROS HOSTNAME =IP QF RMOTE PC
+export TURTLEBOT3_MODEL=burger
+##setup remote pc
+roscore
+#setup turtlebot
+roslaunch turtlebot3_bringup turtlebot3_robot.launch
+or
+roslaunch turtlebot3_bringup turtlebot3_lidar.launch
+
+# launch rvis on remotepc:
+roslaunch turtlebot3_bringup turtlebot3_remote.launch
+rosrun rviz rviz -d `rospack find turtlebot3_description`/rviz/model.rviz
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+
+
+./smart_classroom_demo -m_act person-detection-action-recognition-0005.xml \
+                       -m_fd face-detection-adas-0001.xml \              
+                       -m_reid face-reidentification-retail-0095.xml \   
+                       -m_lm landmarks-regression-retail-0009.xml \   
+                       -fg <path to faces_gallery.json> \                 
+                       -teacher_id <ID of a teacher in the face gallery> \
+                       -i <path_to_video>
+
+
+
 # text detection
 ./text_detection_demo -i text.jpg -m_td text-detection-0004.xml -m_tr
 
