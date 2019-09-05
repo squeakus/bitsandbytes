@@ -103,7 +103,6 @@ class ObjCenter:
 
         self.cur_request_id, self.next_request_id = self.next_request_id, self.cur_request_id
         # check to see if a face was found
-        print("rects", len(rects))
         if len(rects) > 0:
             # reassign name to object's center
             faceX = self.midx
@@ -132,6 +131,7 @@ class ObjCenter:
         
         pth.clear()
         pth.show()
+        
         # if there is no face, return the frame center and no rectangle (to stay still)
         return (frameCenter, None)
 
