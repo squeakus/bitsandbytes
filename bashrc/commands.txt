@@ -1,3 +1,31 @@
+# AT commands:
+AT -> OK
+AT+CIMI -> show network
+ATH -> hang up
+ATD08*******;  -> call a number
+
+# send a message:
+you need to use ctrl+z to send message so use screen as the serial monitor
+screen /dev/ttyUSB0 115200
+AT+CMGF=1
+AT+CMGS="+31628870634"
+>This is the text message
+CTRL+Z <- cannot be done directly in arduino serial monitor
+
+# Minicom serial monitor:
+https://www.tldp.org/HOWTO/Remote-Serial-Console-HOWTO/modem-minicom.html
+A -    Serial Device      : /dev/ttyS0
+B - Lockfile Location     : /var/lock
+C -   Callin Program      : 
+D -  Callout Program      :  
+E -    Bps/Par/Bits       : 115200 8N1
+F - Hardware Flow Control : No 
+G - Software Flow Control : No
+
+ctrl+a, e <- turn on echo mode
+ctrl+a, a <- add line return
+
+
 # Turtlebot burger setup
 make sure the ip addresses are set correctly in .bashrc
 
