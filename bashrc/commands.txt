@@ -1,3 +1,6 @@
+# run commands:
+alias ng="make -j8 -f newMakefile.mk"
+ng run MV_SOC=ma2085
 # AT commands:
 AT -> OK
 AT+CIMI -> show network
