@@ -12,7 +12,7 @@
 const char apn[]      = "prepay.tesco-mobile.com"; // Your APN
 const char gprsUser[] = "tescowap"; // User
 const char gprsPass[] = "password"; // Password
-const char simPIN[]   = "8225"; // SIM card PIN code, if any
+const char simPIN[]   = "xxxx"; // SIM card PIN code, if any
 
 // TTGO T-Call pin definitions
 #define MODEM_RST            5
