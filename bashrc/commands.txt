@@ -6,6 +6,18 @@ AT -> OK
 AT+CIMI -> show network
 ATH -> hang up
 ATD08*******;  -> call a number
+AT+CLIP=1 <- (Calling Line Identification Presentation) show call id
+AT+CHUP <- hang up even if call has not been answered
+AT+CSQ <- signal strength <9 bad; 10->14 okay; 15->19 good; 20->30 excellent
+AT+CPAS <- status
+ATS0=1 <- automatically answer after ring
+0 ready
+1 unavailable
+2 unknown
+3 ringing
+4 call in progress
+5 asleep
+
 
 # send a message:
 you need to use ctrl+z to send message so use screen as the serial monitor
