@@ -1,6 +1,9 @@
-# run commands:
 alias ng="make -j8 -f newMakefile.mk"
 ng run MV_SOC=ma2085
+ng debug MV_SOC_REV=ma2480
+ng menuconfig
+find -name "mvbuild" -exec echo rm -r {} \;
+
 # AT commands:
 AT -> OK
 AT+CIMI -> show network
@@ -125,6 +128,8 @@ printf "Subject: hello1\n\nTesting...1...2...3" | ssmtp jonathanbyrn@gmail.com
 
 
 # How to circumnavigate irregular crashes by tensorflow
+
+# How to circumnavigate irregular crashes by tensorflow
 while true ; do python train.py --train_dir training_v1_331K --pipeline_config_path training_v1_331K/pipelinev1.config --logtostderr; echo "Will restart training in 60s..."; sleep 60; done
 python eval.py --pipeline_config_path training/pipeline.config --checkpoint_dir training --eval_dir eval
 
@@ -138,13 +143,23 @@ tflite_convert --output_file tflite_graph.tflite --graph_def_file tflite_graph.p
 
 
 ZSH with ohmyzsh:
+change the default shell:
+chsh -s $(which zsh)
+install oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 #9k shell theme
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-sed -i '/ZSH_THEME/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
-mkdir .local/share/fonts
+#git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+#sed -i '/ZSH_THEME/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
+
+# I now prefer agnoster:
+sed -i '/ZSH_THEME/c\ZSH_THEME="agnoster"' ~/.zshrc
+
+mkdir -p .local/share/fonts
 mv PowerlineSymbols.otf ~/.local/share/fonts/
 fc-cache -vf ~/.local/share/fonts/
 mkdir .config/fontconfig
@@ -198,14 +213,11 @@ https://stackoverflow.com/questions/19877306/nameerror-global-name-unicode-is-no
 # Train the network using the config file
 python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/pipeline.config
 
-#evaluate the graph:
 python eval.py --logtostderr --pipeline_config_path=training/pipeline.config --checkpoint_dir=training/ --eval_dir=eval/
-
 # Freeze the graph
 python export_inference_graph.py --input_type image_tensor     --pipeline_config_path training/pipelinev2.config --trained_checkpoint_prefix training/model.ckpt-6227 --output_directory training/frozen
 
 
-#convert object detector that uses config pipelines to openvino model:
 $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo_tf.py --input_model=frozen_inference_graph.pb --tensorflow_use_custom_operations_config $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --output_dir FP16 --data_type FP16
 
 #convert faster RCNN object detector:
@@ -3542,11 +3554,6 @@ M-F	   <- move forward a word
 M-B	   <- and back a word
 M->	   <- move to end of file
 M-<	   <- move to start of file
-USE aspell as it ingores comments and crap
-M-x ispell <- run a spellcheck
-M-!        <-execute a shell command(current directory)
-M-x compile<- set the compile command
-M-x grep   <- configure the grep command for your file
 M-x occur <- grep inside a file
 M-x desktop-save <- save your buffer
 M-x desktop-read <- read your buffer
