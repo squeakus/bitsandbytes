@@ -20,6 +20,12 @@ alias cp='cp -v -i'
 alias mv='mv -v -i'
 alias cmd='vi ~/code/bitsandbytes/bashrc/commands.txt'
 alias hist='history | cut -c 8-'
+
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+
 ## Standard aliases - CPM/MSDOS heritage
 alias del='rm -v -i'
 alias cls='clear'
