@@ -1,21 +1,44 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import csv
+import pygraphviz
+from networkx.drawing.nx_agraph import write_dot
+try:
+    import pygraphviz
+    from networkx.drawing.nx_agraph import graphviz_layout
+except ImportError:
+    try:
+        import pydot
+        from networkx.drawing.nx_pydot import graphviz_layout
+    except ImportError:
+        raise ImportError("This example needs Graphviz and either "
+                          "PyGraphviz or pydot")
+
 
 def main():
-    G = nx.DiGraph()
-    org = read_org('Bob.txt')
-    ann = read_org("AnnKelleher.csv")
-    peter = read_org("PeterCharvat.csv")
+    G = nx.Graph()
+    org = read_org('Bob.csv')
+    # ann = read_org("AnnKelleher.csv")
+    #org = read_org("PeterCharvat.csv")
 
-    for uid in peter.keys():
-        if uid not  in ann:
-            print(peter[uid]['name'], " is missing")
-
-
-    # labels = {}
+    labels = {}
     
-    # for idx, emp in enumerate(org):
+    for uid in org.keys():
+        G.add_node(uid)
+        labels[uid] = org[uid]['name']
+        if org[uid]['parent'] is not '':
+            G.add_edge(org[uid]['parent'], uid)
+
+    # #nx.draw_circular(G, node_size=10)
+    # plt.figure(figsize=(30, 30))
+    # pos = graphviz_layout(G, prog='twopi', args='')
+    # nx.draw(G, pos, node_size=5, alpha=0.5, node_color="blue", with_labels=False)
+    # plt.axis('equal')
+    # plt.show()
+
+
+    #for idx, emp in enumerate(org):
+    #
     #     G.add_node(emp['uid'])
     #     labels['uid'] = emp['name']
     #     if emp['parent'] is not '':
@@ -50,8 +73,8 @@ def main():
     # # max_clique_size = nx.algorithms.clique.graph_clique_number(G)
     # # print(depth, diameter, max_clique_size)
     
-    # nx.write_gexf(G, "test.gexf")
-    # print("written gxf")
+    nx.write_gexf(G, "test2.gexf")
+    print("written gxf")
     # #pos=nx.spring_layout(G)
     # print("spring")
     # nx.draw(G)
@@ -63,6 +86,25 @@ def main():
     # nx.draw_networkx_edges(G, pos)
     # nx.draw_networkx_labels(G, pos, labels, font_size=16)
 
+def find(regex, folder='./'):
+    found = []
+    for filename in glob.iglob(folder+'**/'+regex, recursive=True):
+        found.append(filename)
+    return found
+
+def read_csvs():    
+    org = {}
+    csv_files = find("*.csv")
+
+    print("found csv files:", csv_files)
+    for csv in csv_files:
+        tmp_org = read_org(csv)
+
+        for uid in tmp_org.keys():
+            if uid not in org:
+                org[uid] = tmp_org[uid]
+                missing += 1
+
 def read_org(filename):
     org = {}
 
@@ -71,7 +113,7 @@ def read_org(filename):
         line_count = 0
         for row in csv_reader:
             if line_count == 0:
-                print('Column names are '.join(row))
+                print('Column names are:', row)
                 line_count += 1
             name = row["Name"].split('(')[0]
             parent = row["Reports To"]
