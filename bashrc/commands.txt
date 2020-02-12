@@ -1,8 +1,30 @@
-alias ng="make -j8 -f newMakefile.mk"
+Keembay commands:
+screen /dev/ttyUSB0 115200
+sudo minicom -D /dev/ttyUSB0 -b 115200
+
+
+flush -> write cache back to memory
+invalidate <- read from memory to cache
+
+alias ng="make -j8 -f newMakefile.mk MV_SOC_REV=ma2480"
+alias ngprism="make -j8 -f newMakefile.mk MV_SOC_REV=ma2085 DDR_DEVICE=MICRON_TYPE_2"
+
+export MV_TOOLS_DIR=/home/jonathan/code/mdk-$1/tools
+export MDK_INSTALL_DIR=/home/jonathan/code/mdk-$1/mdk/common
+export MV_COMMON_BASE=/home/jonathan/code/mdk-$1/mdk/common
+echo "Path is now: $MV_TOOLS_DIR"
+
 ng run MV_SOC=ma2085
 ng debug MV_SOC_REV=ma2480
 ng menuconfig
 find -name "mvbuild" -exec echo rm -r {} \;
+git clean  -d  -f .
+git submodule update --init --recursive
+
+
+
+#set variables when switching mdk
+. switchmdk.sh r9
 
 # AT commands:
 AT -> OK
@@ -22,7 +44,7 @@ ATS0=1 <- automatically answer after ring
 5 asleep
 
 
-# send a message:
+#screen for serial monitor:
 you need to use ctrl+z to send message so use screen as the serial monitor
 screen /dev/ttyUSB0 115200
 AT+CMGF=1
@@ -664,8 +686,6 @@ tmux ls <- show all the available sessions
 tmux attach -t 3 <- attach to session 3
 
 tmux enable mouse scroll:
-ctrl+b :
-tmux 2.1:
 set-option -g mouse on
 older tmux:
 setw -g mode-mouse on
@@ -674,15 +694,8 @@ tmux new window
 ctrl+b c
 switch between windows
 ctrl+b w
-kill window:
-set-option -g mouse on
-older tmux:
-setw -g mode-mouse on
-
-tmux new window
-ctrl+b c
-switch between windows
-ctrl+b w
+switch sessions
+ctrl+b S
 kill window:
 ctrl+b &
 detach:

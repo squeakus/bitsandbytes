@@ -26,6 +26,9 @@ sudo apt-get install -y powerline fonts-powerline
 #update .zshrc
 sed -i '/ZSH_THEME/c\ZSH_THEME="agnoster"' ~/.zshrc
 sed -i '1i "plugins+=(git zsh-autosuggestions k  zsh-syntax-highlighting)' ~/.zshrc
+alias ng="make -j8 -f newMakefile.mk MV_SOC_REV=ma2480"
+alias ngprism="make -j8 -f newMakefile.mk MV_SOC_REV=ma2085 DDR_DEVICE=MICRON_TYPE_2"
+
 
 #set as default shell
 MYUSER=`whoami`
