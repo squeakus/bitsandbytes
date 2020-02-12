@@ -9,7 +9,9 @@ then
     echo "please specify mdk version: switchmdk.sh <rx><r9><dev>"
     exit 0
 fi
+
 echo "setting path to /home/jonathan/code/mdk-$1"
 export MV_TOOLS_DIR=/home/jonathan/code/mdk-$1/tools
 export MDK_INSTALL_DIR=/home/jonathan/code/mdk-$1/mdk/common
 export MV_COMMON_BASE=/home/jonathan/code/mdk-$1/mdk/common
+echo "Path is now: $MV_TOOLS_DIR"
