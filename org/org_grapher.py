@@ -19,15 +19,15 @@ except ImportError:
 
 def main():
     G = nx.DiGraph()
-    org = read_csvs()
-    #read_org(filename)
+    #org = read_csvs()
+    org = read_org('MurthyRenduchintala.csv')
     
     for name in org.keys():
         G.add_node(name)
-        if name  == "Bob Swan (11637976)":
-            print(name, org[name]['parent'])
-        elif org[name]['parent'] is '':
-            G.add_edge("Bob Swan (11637976)", name)
+        # if name  == "Bob Swan (11637976)":
+        #     print(name, org[name]['parent'])
+        # elif org[name]['parent'] is '':
+        #     G.add_edge("Bob Swan (11637976)", name)
         if org[name]['parent'] is not '':
             G.add_edge(org[name]['parent'], name)
     # output JSON file
@@ -39,17 +39,17 @@ def main():
     # #json.dump("org.json", data)
 
     # Plot circular layout
-    # plt.figure(figsize=(30, 30))
-    # pos = graphviz_layout(G, prog='twopi', args='')
-    # nx.draw(G, pos, node_size=5, alpha=0.5, node_color="blue", with_labels=False)
-    # plt.axis('equal')
-    # plt.show()
+    plt.figure(figsize=(10, 10))
+    pos = graphviz_layout(G, prog='twopi', args='')
+    nx.draw(G, pos, node_size=5, alpha=0.5, node_color="blue", with_labels=False)
+    plt.axis('equal')
+    plt.show()
 
     # use digraph for computing number of employees
     nodes = list(G.nodes)
     print("total", len(nodes))
-    get_level_employees(G, nodes)
-    #get_employees(G, nodes)
+    # get_level_employees(G, nodes)
+    get_employees(G, nodes)
 
     # depths_graph = nx.shortest_path_length(G, nodes[0])
     # print(depths_graph)
