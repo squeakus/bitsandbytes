@@ -15,9 +15,10 @@ def subtract_images():
 	prev_image = None
 	pouring = False
 	prev_frames = []
-	save_dripdiff = True
-	dripdiff_frame = None
+	save_nozzle = True
+	nozzle_frame = None
 	timeout = 0
+	moving = False
 
 	for imagename in images:
 		img = cv2.imread(imagename, 0)
@@ -30,49 +31,49 @@ def subtract_images():
 			# result[result >= 25] = 255
 			# result[result < 25] = 0
 
-			dripdiff = result[240:280, 354:364]
+			nozzle = result[240:280, 354:364]
+			pourtest = np.sum(nozzle) > 10000
+			
 			drip = img[240:280, 354:364]
 			mask = np.copy(result)
 
 			#dont count changes in the nozzle area when checking movement
 			mask[240:280, 95:625] = 0
 
-			movement = np.sum(mask)
-			if movement > 2100000 and not pouring:
+			if moving and not pouring:
 				prev_frames = []
 				cv2.putText(result,"moving", (100,100), cv2.FONT_HERSHEY_SIMPLEX, 1, 255)
 
-			elif movement > 2100000 and pouring:
-					if timeout < 30:
-						save_dripdiff = True
-						timeout += 1
-					else:
-						save_dripdiff = False
-						timeout = 0
-						pouring = False
-
-			elif movement <= 2100000 and not pouring:
-				prev_frames.append(img)
-				if np.sum(dripdiff) > 10000:
-					pouring = True
-					dripdiff_frame = prev_frames[0]
-
-			elif movement <= 2100000 and pouring:
-				save_dripdiff = True
+			elif not moving and not pouring:
+				save_nozzle = True
 				cv2.putText(result,"stopped", (100,100), cv2.FONT_HERSHEY_SIMPLEX, 1, 255)
-			print(imagename, "pouring:", pouring, "dripdiff:", save_dripdiff)
-			if save_dripdiff:
-				dripdiffname = imagename.replace("med", "sub")
-				dripdiffname = dripdiffname.replace('img', "dripdiff")
-				print(dripdiffname, np.sum(dripdiff))
-				cv2.imwrite(dripdiffname, dripdiff)
+				prev_frames.append(img)
+				if pourtest:
+					pouring = True
+					pourtest = False
+					nozzle_frame = prev_frames[0]
+
+			if pouring:
+				print("img:", imagename, "pouring:", np.sum(nozzle))
+				save_nozzle = True
+				cv2.putText(result,"pouring", (100,100), cv2.FONT_HERSHEY_SIMPLEX, 1, 255)
+				#draw rectangle for pour
+				cv2.rectangle(marked, (354,240), (364,280), 255, 2)
+				if pourtest:
+					pouring = False
+					print("STOPPED POURING")		
+
+			moving = np.sum(mask) > 2100000
+
+			if save_nozzle:
+				nozzlename = imagename.replace("med", "sub")
+				nozzlename = nozzlename.replace('img', "nozzle")
+				cv2.imwrite(nozzlename, nozzle)
 
 			subname = imagename.replace("med", "sub")
 			cv2.imwrite(subname, result)
 
-			if pouring:
-				#draw rectangle for pour
-				cv2.rectangle(marked, (354,240), (364,280), 255, 2)
+
 				
 
 		outname = imagename.replace("med", "out")
