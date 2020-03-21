@@ -1,3 +1,6 @@
+Tensorflow 2 force cpu:
+env CUDA_VISIBLE_DEVICES=0
+
 Keembay commands:
 screen /dev/ttyUSB0 115200
 sudo minicom -D /dev/ttyUSB0 -b 115200
