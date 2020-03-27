@@ -16,18 +16,18 @@ kernel = np.array([[1, 1, 1, 1, 1],
 
 kernel = np.ones((77,77))
 
-def stride_conv(array, kernel, s):
+def stride_conv(array, kernel, stride):
     width, height = array.shape
     kernw, kernh = kernel.shape
     beg = 0
     end = kernw
     final = []
     xlim = (width - (width % kernw)) - 1
-    for i in range(0, xlim, s):
+    for i in range(0, xlim, stride):
         k = []
 
         ylim = (height - (height % kernh)) - 1
-        for j in range(0, ylim, s):
+        for j in range(0, ylim, stride):
             k.append(np.sum(array[beg+i: end+i, beg+j:end+j] * (kernel)))
         final.append(k)
 
