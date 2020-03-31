@@ -1,7 +1,8 @@
 #calibrate with 3d printed case
-python3 calibrate.py  -s 2.51 \
--co '{"board_config": {"left_to_right_distance_cm": 7.5}}'
+python3 calibrate.py  -s 2.51 -co '{"board_config": {"left_to_right_distance_cm": 7.5}}'
 
+
+python3 test.py -co '{"streams": ["previewout", "metaout", "depth_sipp"]}'
 
 Tensorflow 2 force cpu:
 env CUDA_VISIBLE_DEVICES=0
