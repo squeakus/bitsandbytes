@@ -99,6 +99,8 @@ rosrun rviz rviz -d `rospack find turtlebot3_description`/rviz/model.rviz
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
 
+python3 face_recognition_demo.py -fg images -m_fd ~/intel/openvino_2020.2.120/deployment_tools/open_model_zoo/tools/downloader/intel/face-detection-retail-0004/FP32/face-detection-retail-0004.xml -m_lm ~/intel/openvino_2020.2.120/deployment_tools/open_model_zoo/tools/downloader/intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009.xml -m_reid ~/intel/openvino_2020.2.120/deployment_tools/open_model_zoo/tools/downloader/intel/face-reidentification-retail-0095/FP16/face-reidentification-retail-0095.xml
+
 
 ./smart_classroom_demo -m_act person-detection-action-recognition-0005.xml \
                        -m_fd face-detection-adas-0001.xml \              
