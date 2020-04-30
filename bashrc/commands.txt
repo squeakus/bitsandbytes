@@ -386,6 +386,11 @@ if replacing something with a slash then you can use any delimiter:
 :%s#/bin#/usr/bin#g
 
 # DOCKER!
+
+## delete all docker images
+docker image prune
+docker system prune
+
 ## build from Dockerfile
 docker build -t <imgname> .
 
