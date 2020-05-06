@@ -178,7 +178,7 @@ class NetworkMobject(VGroup):
 
 class NetworkScene(Scene):
     CONFIG = {
-        "layer_sizes" : [8,7,7,6,6,6,5,4],
+        "layer_sizes" : [8,7,7,6,6,5,4],
         #"layer_sizes" : [5,4],
         "network_mob_config" : {},
     }
@@ -234,35 +234,13 @@ class LayOutPlan(NetworkScene, ThreeDScene):
         self.remove(self.network_mob)
 
     def construct(self):
-        text1 = TextMobject("Fine Grained Sparsity Visualisation")
-        text2 = TextMobject("Create the network and compute the weights")
-        text2.move_to(3*UP)
-        self.play(ShowCreation(text1))
-        self.play(ApplyMethod(text1.move_to, 3*UP)) # move display_text2
-        self.play(Transform(text1,text2))
-        self.wait(1)
-        self.play(FadeOut(text1))
         self.show_network()
         self.show_learning()
         self.threeD()
 
     def threeD(self):
-        text1 = TextMobject("Only Movidius has the hardware")
-        text1.move_to(3*UP)
-        text2 = TextMobject(" to optimise fine grained sparsity")
-        text2.next_to(text1,DOWN)
-        text3 = TextMobject("Visualisation helps us understand")
-        text3.move_to(3*UP)
-        text4 = TextMobject("How it works")
-        text4.next_to(text3,DOWN)
-        
-        self.play(ShowCreation(text1), ShowCreation(text2))
-        #self.move_camera(gamma=0,run_time=1)  #currently broken in manim
-        self.move_camera(phi=1/4*PI, theta=-PI/2)
-        self.begin_ambient_camera_rotation(rate=0.1)
+        self.begin_ambient_camera_rotation(rate=0.6)
         self.wait(3)
-        self.play(Transform(text1, text3), Transform(text2,text4))
-        self.wait(5)
 
     def show_network(self):
         network_mob = self.network_mob
@@ -275,13 +253,9 @@ class LayOutPlan(NetworkScene, ThreeDScene):
             run_time = 2,
             rate_func=linear,
         ))
-        text1 = TextMobject("Run the network and threshold weights that can be removed")
-        text1.move_to(3*UP)
-        self.play(ShowCreation(text1))
+
         in_vect = np.random.random(self.network.sizes[0])
         self.feed_forward(in_vect)
-        self.play(FadeOut(text1))
-
 
     def show_learning(self):
         self.network_mob.neuron_fill_color = YELLOW
@@ -298,10 +272,6 @@ class LayOutPlan(NetworkScene, ThreeDScene):
             Transform(layer, active_layer),
         )
 
-        text1 = TextMobject("Prune the network by setting unused weights to zero")
-        text1.move_to(3*UP)
-        self.play(ShowCreation(text1))
-
         for edge_group in reversed(self.network_mob.edge_groups):
             edge_group.generate_target()
             for edge in edge_group.target:
@@ -311,4 +281,4 @@ class LayOutPlan(NetworkScene, ThreeDScene):
                 )
             self.play(MoveToTarget(edge_group))
         self.wait()
-        self.play(FadeOut(text1))
+
