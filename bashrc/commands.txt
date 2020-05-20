@@ -1,9 +1,30 @@
 #call manim graph command:
-manim graphing.py GraphScene Plot
+manim graphing.py GraphScene Plot -c white
+
+etch a sketch docker reset:
+sudo apt-get install bridge-utils
+sudo pkill docker
+sudo iptables -t nat -F
+sudo ifconfig docker0 down
+sudo brctl delbr docker0
+sudo service docker restart
+
+# running realsense docker
+#!/bin/bash 
+xhost +local:root
+docker run --name="ros_gazebo_demo" --rm -it \
+--env="DISPLAY"  \
+--env="QT_X11_NO_MITSHM=1"  \
+--volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+--privileged -v /dev:/dev:rw \
+--network=host \
+dockerforintel/ros-realsense-docker
+xhost -local:root
+
+roslaunch realsense2_camera opensource_tracking.launch
 
 #calibrate with 3d printed case
 python3 calibrate.py  -s 2.51 -co '{"board_config": {"left_to_right_distance_cm": 7.5}}'
-
 
 python3 test.py -co '{"streams": ["previewout", "metaout", "depth_sipp"]}'
 
@@ -13,7 +34,6 @@ env CUDA_VISIBLE_DEVICES=0
 Keembay commands:
 screen /dev/ttyUSB0 115200
 sudo minicom -D /dev/ttyUSB0 -b 115200
-
 
 flush -> write cache back to memory
 invalidate <- read from memory to cache
