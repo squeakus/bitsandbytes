@@ -1,3 +1,6 @@
+#where pytorch keeps its models
+.cache/torch/checkpoints/
+
 #call manim graph command:
 manim graphing.py GraphScene Plot -c white
 
