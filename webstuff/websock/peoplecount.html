@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket demo</title>
+    </head>
+    <body>
+        <script>
+            var ws = new WebSocket("ws://127.0.0.1:5678/"),
+                message = document.createElement('P');
+            document.body.appendChild(message);
+
+
+            ws.onmessage = function (event) {
+                var message = document.getElementsByTagName('P')[0],
+                    count = document.createTextNode(event.data);
+
+                message.innerText = count.data + " out of 5 People in lab";
+            };
+            
+        </script>
+    </body>
+</html>
