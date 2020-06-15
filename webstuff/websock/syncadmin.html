@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>People Count Admin</title>
+        <style type="text/css">
+            body {
+                font-family: "Courier New", sans-serif;
+                text-align: center;
+            }
+            .buttons {
+                font-size: 4em;
+                display: flex;
+                justify-content: center;
+            }
+            .button, .current, .maximum {
+                line-height: 1;
+                padding: 2rem;
+                margin: 2rem;
+                border: medium solid;
+                min-height: 1em;
+                min-width: 1em;
+            }
+            .button {
+                cursor: pointer;
+                user-select: none;
+            }
+            .minus {
+                color: red;
+            }
+            .plus {
+                color: green;
+            }
+            .current, .maximum{
+                min-width: 2em;
+            }
+            .state {
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class=state>
+            Current User Count
+        </div>
+        <div class="buttons">
+            <div class="minus button", id="curminus">-</div>
+            <div class="current">?</div>
+            <div class="plus button" id="curplus">+</div>
+        </div>
+        <div class=state>
+            Maximum Allowed
+        </div>
+
+        <div class="buttons">
+            <div class="minus button" id="maxminus">-</div>
+            <div class="maximum">?</div>
+            <div class="plus button" id="maxplus">+</div>
+        </div>
+        <div class="state">
+            <span class="users">?</span> 
+        </div>
+        <script>
+            var curminus = document.querySelector('#curminus'),
+                curplus = document.querySelector('#curplus'),
+                maxminus = document.querySelector('#maxminus'),
+                maxplus = document.querySelector('#maxplus'),
+                current = document.querySelector('.current'),
+                maximum = document.querySelector('.maximum'),
+                users = document.querySelector('.users'),
+                websocket = new WebSocket("ws://127.0.0.1:6789/");
+            curminus.onclick = function (event) {
+                websocket.send(JSON.stringify({action: 'curminus'}));
+            }
+            curplus.onclick = function (event) {
+                websocket.send(JSON.stringify({action: 'curplus'}));
+            }
+            maxminus.onclick = function (event) {
+                websocket.send(JSON.stringify({action: 'maxminus'}));
+            }
+            maxplus.onclick = function (event) {
+                websocket.send(JSON.stringify({action: 'maxplus'}));
+            }
+            websocket.onmessage = function (event) {
+                data = JSON.parse(event.data);
+                switch (data.type) {
+                    case 'state':
+                        current.textContent = data.current;
+                        maximum.textContent = data.maximum;
+                        break;
+                    case 'users':
+                        users.textContent = (
+                            data.count.toString() + " user" +
+                            (data.count == 1 ? "" : "s") + " online");
+                        break;
+                    default:
+                        console.error(
+                            "unsupported event", data);
+                }
+            };
+        </script>
+    </body>
+</html>
