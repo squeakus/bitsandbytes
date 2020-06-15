@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>People Counter</title>
+        <style type="text/css">
+            body {
+                font-family: "Courier New", sans-serif;
+                text-align: center;
+            }
+            .buttons {
+                font-size: 4em;
+                display: flex;
+                justify-content: center;
+            }
+            .button, .current{
+                line-height: 1;
+                padding: 2rem;
+                margin: 2rem;
+                border: medium solid;
+                min-height: 1em;
+                min-width: 1em;
+            }
+            .button {
+                cursor: pointer;
+                user-select: none;
+            }
+            .minus {
+                color: red;
+            }
+            .plus {
+                color: green;
+            }
+            .current{
+                min-width: 2em;
+            }
+
+            .state {
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="buttons">
+            <div class="current">?</div> 
+        </div>
+
+        <script>
+            var minus = document.querySelector('.minus'),
+                plus = document.querySelector('.plus'),
+                current = document.querySelector('.current'),
+                maximum = document.querySelector('.maximum'),
+                users = document.querySelector('.users'),
+                websocket = new WebSocket("ws://127.0.0.1:6789/");
+            // minus.onclick = function (event) {
+            //     websocket.send(JSON.stringify({action: 'minus'}));
+            // }
+            // plus.onclick = function (event) {
+            //     websocket.send(JSON.stringify({action: 'plus'}));
+            // }
+            websocket.onmessage = function (event) {
+                data = JSON.parse(event.data);
+                switch (data.type) {
+                    case 'state':
+                        current.textContent = data.current + " out of " + data.maximum + " in the lab";
+                        break;
+                    case 'users':
+                        users.textContent = (
+                            data.count.toString() + " admin" +
+                            (data.count == 1 ? "" : "s"));
+                        break;
+                    default:
+                        console.error(
+                            "unsupported event", data);
+                }
+            };
+        </script>
+    </body>
+</html>
