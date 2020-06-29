@@ -71,12 +71,8 @@ rgb_color = np.uint8([[[255, 0, 0]]]) #here insert the bgr values which you want
 hsv_color = cv2.cvtColor(rgb_color, cv2.COLOR_BGR2HSV)
 
 
-hsv_lower = hsv_color[0][0][0] - 10, 100, 100
-hsv_upper = hsv_color[0][0][0] + 10, 250, 250
-hsv_lower = light_blue
-hsv_upper = dark_blue
-print(type(light_blue))
-print(type(hsv_upper))
+hsv_lower = np.array([hsv_color[0][0][0] - 10, 50, 50])
+hsv_upper = np.array([hsv_color[0][0][0] + 10, 255, 255])
 
 print(hsv_color)
 print(hsv_lower)
