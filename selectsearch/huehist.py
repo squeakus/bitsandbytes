@@ -59,15 +59,17 @@ from matplotlib.colors import hsv_to_rgb
 # color picket https://toolstud.io/color/rgb.php
 # light_orange = (1, 190, 200)
 # dark_orange = (18, 255, 255)
-
 light_blue = (94,80,2)
 dark_blue = (126,150,250)
-
-
 light_blue = (110, 50, 50)
 dark_blue = (130, 255, 255)
 
+#blue
 rgb_color = np.uint8([[[255, 0, 0]]]) #here insert the bgr values which you want to convert to hsv
+
+#pcb_green
+rgb_color = np.uint8([[[69, 71, 42]]]) #here insert the bgr values which you want to convert to hsv
+
 hsv_color = cv2.cvtColor(rgb_color, cv2.COLOR_BGR2HSV)
 
 
@@ -96,33 +98,32 @@ plt.subplot(1, 2, 2)
 plt.imshow(result)
 plt.show()
 
-light_white = (0, 0, 200)
-dark_white = (145, 60, 255)
+# light_white = (0, 0, 200)
+# dark_white = (145, 60, 255)
 
+# mask_white = cv2.inRange(hsv_image, light_white, dark_white)
+# result_white = cv2.bitwise_and(image, image, mask=mask_white)
 
-mask_white = cv2.inRange(hsv_image, light_white, dark_white)
-result_white = cv2.bitwise_and(image, image, mask=mask_white)
+# print("showing second masks")
+# plt.subplot(1, 2, 1)
+# plt.imshow(mask_white, cmap="gray")
+# plt.subplot(1, 2, 2)
+# plt.imshow(result_white)
+# plt.show()
 
-print("showing second masks")
-plt.subplot(1, 2, 1)
-plt.imshow(mask_white, cmap="gray")
-plt.subplot(1, 2, 2)
-plt.imshow(result_white)
-plt.show()
+# final_mask = mask + mask_white
+# print("showing final combo")
 
-final_mask = mask + mask_white
-print("showing final combo")
+# final_result = cv2.bitwise_and(image, image, mask=final_mask)
+# plt.subplot(1, 2, 1)
+# plt.imshow(final_mask, cmap="gray")
+# plt.subplot(1, 2, 2)
+# plt.imshow(final_result)
+# plt.show()
 
-final_result = cv2.bitwise_and(image, image, mask=final_mask)
-plt.subplot(1, 2, 1)
-plt.imshow(final_mask, cmap="gray")
-plt.subplot(1, 2, 2)
-plt.imshow(final_result)
-plt.show()
-
-blur = cv2.GaussianBlur(final_result, (7, 7), 0)
-plt.imshow(blur)
-plt.show()
+# blur = cv2.GaussianBlur(final_result, (7, 7), 0)
+# plt.imshow(blur)
+# plt.show()
 
 
 
