@@ -32,108 +32,117 @@ from matplotlib.colors import hsv_to_rgb
 from mpl_toolkits.mplot3d import Axes3D
 
 def main():
-	# Read args and load the input image
-	ap = argparse.ArgumentParser()
-	ap.add_argument("-i", "--image", required=True,
-		help="path to the input image")
-	args = vars(ap.parse_args())
-	image = cv2.imread(args["image"])
-	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    # Read args and load the input image
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-i", "--image", required=True,
+        help="path to the input image")
+    args = vars(ap.parse_args())
+    image = cv2.imread(args["image"])
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 
-	# Taking a matrix of size 5 as the kernel 
-	kernel = np.ones((5,5), np.uint8) 
-	#plt.imshow(image)
-	# plt.show()
-	# show_color_plots(image)
-	hsv_range = compute_hsv_range([43,62,60], False)
-	#hsv_range = [(30, 0, 200), (145, 60, 255)]
-	#check_color(hsv_range[0], hsv_range[1])
-	mask = compute_region(image, hsv_range)
-	mask = cv2.erode(mask, kernel, iterations=2) 
-	mask = cv2.dilate(mask, kernel, iterations=4) 
-	mask = cv2.erode(mask, kernel, iterations=2) 
+    # Taking a matrix of size 5 as the kernel 
+    kernel = np.ones((5,5), np.uint8) 
+    #plt.imshow(image)
+    # plt.show()
+    # show_color_plots(image)
+    hsv_range = compute_hsv_range([43,62,60], False)
+    #hsv_range = [(30, 0, 200), (145, 60, 255)]
+    #check_color(hsv_range[0], hsv_range[1])
+    mask = compute_region(image, hsv_range)
+    mask = cv2.erode(mask, kernel, iterations=2) 
+    mask = cv2.dilate(mask, kernel, iterations=4) 
+    mask = cv2.erode(mask, kernel, iterations=2) 
 
-	# Find contours:
-	ret,thresh = cv2.threshold(mask,40,255,0)
-	contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-	contours = sorted(contours, key=cv2.contourArea)
-	for contour in contours:
-		print("LEN", len(contour))
-	
-	result = extract_region(image, mask)
-	show_mask(result, mask)
 
-	cv2.drawContours(result, contours,-1,(255,255,0),-1)
-	plt.imshow(result)
-	plt.show()
+    result = extract_region(image, mask)
+    # show_mask(result, mask)
+    # plt.imshow(result)
+    # plt.show()
+
+    # Find contours:
+    ret,thresh = cv2.threshold(mask,127,255,0)
+    contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    contours = sorted(contours, key=cv2.contourArea, reverse=True)
+    M = cv2.moments(contours[0])
+    print(M)
+
+    # use contours to make new mask
+    cv2.drawContours(result, contours,-1,(255,255,0), -1)
+    c = contours[0]
+    x,y,w,h = cv2.boundingRect(c)
+    contourmask = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
+    result = extract_region(image, contourmask)
+    cv2.rectangle(result,(x,y),(x+w,y+h),(0,255,0),2)
+    plt.imshow(result)
+    plt.show()
 
 def show_color_plots(image):
-	r, g, b = cv2.split(image)
-	fig = plt.figure()
-	axis = fig.add_subplot(1, 1, 1, projection="3d")
+    r, g, b = cv2.split(image)
+    fig = plt.figure()
+    axis = fig.add_subplot(1, 1, 1, projection="3d")
 
-	pixel_colors = image.reshape((np.shape(image)[0]*np.shape(image)[1], 3))
-	norm = colors.Normalize(vmin=-1.,vmax=1.)
-	norm.autoscale(pixel_colors)
-	pixel_colors = norm(pixel_colors).tolist()
+    pixel_colors = image.reshape((np.shape(image)[0]*np.shape(image)[1], 3))
+    norm = colors.Normalize(vmin=-1.,vmax=1.)
+    norm.autoscale(pixel_colors)
+    pixel_colors = norm(pixel_colors).tolist()
 
-	axis.scatter(r.flatten(), g.flatten(), b.flatten(), facecolors=pixel_colors, marker=".")
-	axis.set_xlabel("Red")
-	axis.set_ylabel("Green")
-	axis.set_zlabel("Blue")
-	plt.show()
+    axis.scatter(r.flatten(), g.flatten(), b.flatten(), facecolors=pixel_colors, marker=".")
+    axis.set_xlabel("Red")
+    axis.set_ylabel("Green")
+    axis.set_zlabel("Blue")
+    plt.show()
 
-	hsv_image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
-	h, s, v = cv2.split(hsv_image)
-	fig = plt.figure()
-	axis = fig.add_subplot(1, 1, 1, projection="3d")
+    hsv_image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
+    h, s, v = cv2.split(hsv_image)
+    fig = plt.figure()
+    axis = fig.add_subplot(1, 1, 1, projection="3d")
 
-	axis.scatter(h.flatten(), s.flatten(), v.flatten(), facecolors=pixel_colors, marker=".")
-	axis.set_xlabel("Hue")
-	axis.set_ylabel("Saturation")
-	axis.set_zlabel("Value")
-	plt.show()
+    axis.scatter(h.flatten(), s.flatten(), v.flatten(), facecolors=pixel_colors, marker=".")
+    axis.set_xlabel("Hue")
+    axis.set_ylabel("Saturation")
+    axis.set_zlabel("Value")
+    plt.show()
 
 def compute_hsv_range(rgbcolor, colorcheck=True):
-	rgb_color = np.uint8([[rgbcolor]]) #here insert the bgr values which you want to convert to hsv
-	hsv_color = cv2.cvtColor(rgb_color, cv2.COLOR_RGB2HSV)
-	hsv_light = np.array([hsv_color[0][0][0] - 10, 50, 50])
-	if hsv_light[0] < 0:
-		hsv_light[0] = 0
-	hsv_dark = np.array([hsv_color[0][0][0] + 10, 255, 255])
+    rgb_color = np.uint8([[rgbcolor]]) #here insert the bgr values which you want to convert to hsv
+    hsv_color = cv2.cvtColor(rgb_color, cv2.COLOR_RGB2HSV)
+    hsv_light = np.array([hsv_color[0][0][0] - 10, 50, 50])
+    if hsv_light[0] < 0:
+        hsv_light[0] = 0
+    hsv_dark = np.array([hsv_color[0][0][0] + 10, 255, 255])
 
-	if colorcheck:
-		check_color(hsv_light, hsv_dark)
+    if colorcheck:
+        check_color(hsv_light, hsv_dark)
 
-	return [hsv_light, hsv_dark]
+    return [hsv_light, hsv_dark]
 
 def check_color(hsv_light, hsv_dark):
-	dark_square = np.full((10, 10, 3), hsv_light, dtype=np.uint8) / 255.0
-	light_square = np.full((10, 10, 3), hsv_dark, dtype=np.uint8) / 255.0
-	ax1 = plt.subplot(1, 2, 1)
-	ax1.title.set_text('Light')
-	plt.imshow(hsv_to_rgb(light_square))
-	ax2 = plt.subplot(1, 2, 2)
-	ax2.title.set_text('Dark')
-	plt.imshow(hsv_to_rgb(dark_square))
+    dark_square = np.full((10, 10, 3), hsv_light, dtype=np.uint8) / 255.0
+    light_square = np.full((10, 10, 3), hsv_dark, dtype=np.uint8) / 255.0
+    ax1 = plt.subplot(1, 2, 1)
+    ax1.title.set_text('Light')
+    plt.imshow(hsv_to_rgb(light_square))
+    ax2 = plt.subplot(1, 2, 2)
+    ax2.title.set_text('Dark')
+    plt.imshow(hsv_to_rgb(dark_square))
 
-	plt.show()
+    plt.show()
 
 def compute_region(image, hsv_range):
-	hsv_image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
-	mask = cv2.inRange(hsv_image,hsv_range[0], hsv_range[1])
-	return mask
+    hsv_image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
+    mask = cv2.inRange(hsv_image,hsv_range[0], hsv_range[1])
+    return mask
 
 def extract_region(image, mask):
-	return cv2.bitwise_and(image, image, mask=mask)
+    return cv2.bitwise_and(image, image, mask=mask)
 
 def show_mask(result, mask):
-	plt.subplot(1, 2, 1)
-	plt.imshow(mask)
-	plt.subplot(1, 2, 2)
-	plt.imshow(result)
-	plt.show()
+    plt.subplot(1, 2, 1)
+    plt.imshow(mask)
+    plt.subplot(1, 2, 2)
+    plt.imshow(result)
+    plt.show()
 
 if __name__=='__main__':
-	main()
+    main()
