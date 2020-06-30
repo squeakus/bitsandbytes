@@ -37,7 +37,9 @@ def main():
     ap.add_argument("-i", "--image", required=True,
         help="path to the input image")
     args = vars(ap.parse_args())
-    image = cv2.imread(args["image"])
+    imagename = args["image"]
+    outname = imagename.replace(".jpg", "_trimmed.jpg")
+    image = cv2.imread(imagename)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 
@@ -62,20 +64,22 @@ def main():
 
     # Find contours:
     ret,thresh = cv2.threshold(mask,127,255,0)
+    
     contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     contours = sorted(contours, key=cv2.contourArea, reverse=True)
-    M = cv2.moments(contours[0])
-    print(M)
+    # M = cv2.moments(contours[0])
+    # print(M)
 
     # use contours to make new mask
-    cv2.drawContours(result, contours,-1,(255,255,0), -1)
+    cv2.drawContours(result, [contours[0]],-1,(255,255,0), -1)
     c = contours[0]
     x,y,w,h = cv2.boundingRect(c)
     contourmask = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
     result = extract_region(image, contourmask)
     cv2.rectangle(result,(x,y),(x+w,y+h),(0,255,0),2)
-    plt.imshow(result)
-    plt.show()
+    # plt.imshow(result)
+    # plt.show()
+    cv2.imwrite(outname, cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
 
 def show_color_plots(image):
     r, g, b = cv2.split(image)
