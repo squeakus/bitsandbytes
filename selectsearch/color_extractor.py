@@ -1,0 +1,119 @@
+"""
+Converts an RGB image and value to the HSV colorspace and then builds masks based on color ranges
+
+If manually trying to find colors I found these the best:
+https://alloyui.com/examples/color-picker/hsv.html
+https://toolstud.io/color/rgb.php
+Remember that most of these have a range 360,100,100 for HSV whereas opencv has 255 255 255.
+
+Some sample ranges: 
+light_orange = (1, 190, 200)
+dark_orange = (18, 255, 255)
+
+light_blue = (110, 50, 50)
+dark_blue = (126,150,250)
+
+light_white = (0, 0, 200)
+dark_white = (145, 60, 255)
+
+Based on the tutorial:
+https://realpython.com/python-opencv-color-spaces/
+"""
+
+import cv2
+import argparse
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import cm
+from matplotlib import colors
+from matplotlib.colors import hsv_to_rgb
+from mpl_toolkits.mplot3d import Axes3D
+
+def main():
+	# Read args and load the input image
+	ap = argparse.ArgumentParser()
+	ap.add_argument("-i", "--image", required=True,
+		help="path to the input image")
+	args = vars(ap.parse_args())
+	image = cv2.imread(args["image"])
+	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+	#plt.imshow(image)
+	# plt.show()
+	# show_color_plots(image)
+	# hsv_range = compute_hsv_range([255,255,255])
+	hsv_range = [(30, 0, 200), (145, 60, 255)]
+	check_color(hsv_range[0], hsv_range[1])
+	result, mask = extract_region(image, hsv_range)
+	# plt.imshow(result
+	# plt.show()
+	show_mask(result, mask)
+
+def show_color_plots(image):
+	r, g, b = cv2.split(image)
+	fig = plt.figure()
+	axis = fig.add_subplot(1, 1, 1, projection="3d")
+
+	pixel_colors = image.reshape((np.shape(image)[0]*np.shape(image)[1], 3))
+	norm = colors.Normalize(vmin=-1.,vmax=1.)
+	norm.autoscale(pixel_colors)
+	pixel_colors = norm(pixel_colors).tolist()
+
+	axis.scatter(r.flatten(), g.flatten(), b.flatten(), facecolors=pixel_colors, marker=".")
+	axis.set_xlabel("Red")
+	axis.set_ylabel("Green")
+	axis.set_zlabel("Blue")
+	plt.show()
+
+	hsv_image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
+	h, s, v = cv2.split(hsv_image)
+	fig = plt.figure()
+	axis = fig.add_subplot(1, 1, 1, projection="3d")
+
+	axis.scatter(h.flatten(), s.flatten(), v.flatten(), facecolors=pixel_colors, marker=".")
+	axis.set_xlabel("Hue")
+	axis.set_ylabel("Saturation")
+	axis.set_zlabel("Value")
+	plt.show()
+
+def compute_hsv_range(rgbcolor, colorcheck=True):
+	rgb_color = np.uint8([[rgbcolor]]) #here insert the bgr values which you want to convert to hsv
+	hsv_color = cv2.cvtColor(rgb_color, cv2.COLOR_RGB2HSV)
+	hsv_light = np.array([hsv_color[0][0][0] - 10, 50, 50])
+	print(hsv_light[0])
+	if hsv_light[0] < 0:
+		hsv_light[0] = 0
+	print(hsv_light[0])
+	hsv_dark = np.array([hsv_color[0][0][0] + 10, 255, 255])
+
+	if colorcheck:
+		check_color(hsv_light, hsv_dark)
+
+	return [hsv_light, hsv_dark]
+
+def check_color(hsv_light, hsv_dark):
+	dark_square = np.full((10, 10, 3), hsv_light, dtype=np.uint8) / 255.0
+	light_square = np.full((10, 10, 3), hsv_dark, dtype=np.uint8) / 255.0
+	ax1 = plt.subplot(1, 2, 1)
+	ax1.title.set_text('Light')
+	plt.imshow(hsv_to_rgb(light_square))
+	ax2 = plt.subplot(1, 2, 2)
+	ax2.title.set_text('Dark')
+	plt.imshow(hsv_to_rgb(dark_square))
+
+	plt.show()
+
+def extract_region(image, hsv_range):
+	hsv_image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
+	mask = cv2.inRange(hsv_image,hsv_range[0], hsv_range[1])
+	result = cv2.bitwise_and(image, image, mask=mask)
+	return result, mask
+
+def show_mask(result, mask):
+	plt.subplot(1, 2, 1)
+	plt.imshow(mask, cmap="gray")
+	plt.subplot(1, 2, 2)
+	plt.imshow(result)
+	plt.show()
+
+if __name__=='__main__':
+	main()
