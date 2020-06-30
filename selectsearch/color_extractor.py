@@ -16,6 +16,8 @@ dark_blue = (126,150,250)
 light_white = (0, 0, 200)
 dark_white = (145, 60, 255)
 
+circuitboard green:[(30, 0, 200), (145, 60, 255)]
+
 Based on the tutorial:
 https://realpython.com/python-opencv-color-spaces/
 """
@@ -37,16 +39,34 @@ def main():
 	args = vars(ap.parse_args())
 	image = cv2.imread(args["image"])
 	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+
+	# Taking a matrix of size 5 as the kernel 
+	kernel = np.ones((5,5), np.uint8) 
 	#plt.imshow(image)
 	# plt.show()
 	# show_color_plots(image)
-	# hsv_range = compute_hsv_range([255,255,255])
-	hsv_range = [(30, 0, 200), (145, 60, 255)]
-	check_color(hsv_range[0], hsv_range[1])
-	result, mask = extract_region(image, hsv_range)
-	# plt.imshow(result
-	# plt.show()
+	hsv_range = compute_hsv_range([43,62,60], False)
+	#hsv_range = [(30, 0, 200), (145, 60, 255)]
+	#check_color(hsv_range[0], hsv_range[1])
+	mask = compute_region(image, hsv_range)
+	mask = cv2.erode(mask, kernel, iterations=2) 
+	mask = cv2.dilate(mask, kernel, iterations=4) 
+	mask = cv2.erode(mask, kernel, iterations=2) 
+
+	# Find contours:
+	ret,thresh = cv2.threshold(mask,40,255,0)
+	contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+	contours = sorted(contours, key=cv2.contourArea)
+	for contour in contours:
+		print("LEN", len(contour))
+	
+	result = extract_region(image, mask)
 	show_mask(result, mask)
+
+	cv2.drawContours(result, contours,-1,(255,255,0),-1)
+	plt.imshow(result)
+	plt.show()
 
 def show_color_plots(image):
 	r, g, b = cv2.split(image)
@@ -79,10 +99,8 @@ def compute_hsv_range(rgbcolor, colorcheck=True):
 	rgb_color = np.uint8([[rgbcolor]]) #here insert the bgr values which you want to convert to hsv
 	hsv_color = cv2.cvtColor(rgb_color, cv2.COLOR_RGB2HSV)
 	hsv_light = np.array([hsv_color[0][0][0] - 10, 50, 50])
-	print(hsv_light[0])
 	if hsv_light[0] < 0:
 		hsv_light[0] = 0
-	print(hsv_light[0])
 	hsv_dark = np.array([hsv_color[0][0][0] + 10, 255, 255])
 
 	if colorcheck:
@@ -102,15 +120,17 @@ def check_color(hsv_light, hsv_dark):
 
 	plt.show()
 
-def extract_region(image, hsv_range):
+def compute_region(image, hsv_range):
 	hsv_image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
 	mask = cv2.inRange(hsv_image,hsv_range[0], hsv_range[1])
-	result = cv2.bitwise_and(image, image, mask=mask)
-	return result, mask
+	return mask
+
+def extract_region(image, mask):
+	return cv2.bitwise_and(image, image, mask=mask)
 
 def show_mask(result, mask):
 	plt.subplot(1, 2, 1)
-	plt.imshow(mask, cmap="gray")
+	plt.imshow(mask)
 	plt.subplot(1, 2, 2)
 	plt.imshow(result)
 	plt.show()
