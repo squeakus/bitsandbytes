@@ -16,7 +16,7 @@ dark_blue = (126,150,250)
 light_white = (0, 0, 200)
 dark_white = (145, 60, 255)
 
-circuitboard green:[(30, 0, 200), (145, 60, 255)]
+circuitboard green:[(57, 50, 0), (117, 255, 255)]
 
 Based on the tutorial:
 https://realpython.com/python-opencv-color-spaces/
@@ -41,12 +41,13 @@ def main():
     outname = imagename.replace(".jpg", "_trimmed.jpg")
     image = cv2.imread(imagename)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    hsv_range = compute_hsv_range([43,62,60], False)
-
+    #hsv_range = compute_hsv_range([43,62,60], False)
+    hsv_range = [(57, 50, 0), (117, 255, 255)]
+    #check_color(hsv_range)
     result = contour_mask(image, hsv_range)
-    plt.imshow(result)
-    plt.show()
-    # cv2.imwrite(outname, cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
+    # plt.imshow(result)
+    # plt.show()
+    cv2.imwrite(outname, cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
 
 
 
@@ -76,13 +77,17 @@ def contour_mask(image, hsv_range):
     # print(M)
 
     # use contours to make new mask
-    cv2.drawContours(result, [contours[0]],-1,(255,255,0), -1)
-    c = contours[0]
-    x,y,w,h = cv2.boundingRect(c)
-    contourmask = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
-    result = extract_region(image, contourmask)
-    cv2.rectangle(result,(x,y),(x+w,y+h),(0,255,0),2)
-    return result
+    if len(contours) > 0:
+        cv2.drawContours(result, [contours[0]],-1,(255,255,0), -1)
+        c = contours[0]
+        x,y,w,h = cv2.boundingRect(c)
+        contourmask = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
+        result = extract_region(image, contourmask)
+        cv2.rectangle(result,(x,y),(x+w,y+h),(0,255,0),2)
+        return result
+    else:
+        print("no contours found!")
+        exit()
 
 def show_color_plots(image):
     r, g, b = cv2.split(image)
@@ -112,19 +117,22 @@ def show_color_plots(image):
     plt.show()
 
 def compute_hsv_range(rgbcolor, colorcheck=True):
+    sensitivity = 30
     rgb_color = np.uint8([[rgbcolor]]) #here insert the bgr values which you want to convert to hsv
     hsv_color = cv2.cvtColor(rgb_color, cv2.COLOR_RGB2HSV)
-    hsv_light = np.array([hsv_color[0][0][0] - 10, 50, 50])
+    
+    hsv_light = np.array([hsv_color[0][0][0] - sensitivity, 50, 50])
     if hsv_light[0] < 0:
         hsv_light[0] = 0
-    hsv_dark = np.array([hsv_color[0][0][0] + 10, 255, 255])
+    hsv_dark = np.array([hsv_color[0][0][0] + sensitivity, 255, 255])
 
     if colorcheck:
         check_color(hsv_light, hsv_dark)
-
+    print("HSV:", [hsv_light, hsv_dark])
     return [hsv_light, hsv_dark]
 
-def check_color(hsv_light, hsv_dark):
+def check_color(hsv_range):
+    hsv_light, hsv_dark = hsv_range[0], hsv_range[1]
     dark_square = np.full((10, 10, 3), hsv_light, dtype=np.uint8) / 255.0
     light_square = np.full((10, 10, 3), hsv_dark, dtype=np.uint8) / 255.0
     ax1 = plt.subplot(1, 2, 1)
