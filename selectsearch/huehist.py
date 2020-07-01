@@ -17,7 +17,6 @@ def main():
     outname = imagename.replace(".jpg", "_trimmed.jpg")
     image = cv2.imread(imagename)
 
-
     # lets plot the hsv colormap
     hsvcolors = []
     # iterate over saturation values
@@ -33,18 +32,17 @@ def main():
 
     # hist, xbins, ybins = np.histogram2d(h.ravel(),s.ravel(),[180,256],[[0,180],[0,256]])
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-    hist = cv2.calcHist( [hsv], [0, 1], None, [180, 256], [0, 180, 0, 256] )
-    plt.imshow(hist,interpolation = 'nearest')
-    plt.show()
-    plt.imshow(image,interpolation = 'nearest')
+    hist = cv2.calcHist( [hsv], [0, 2], None, [180, 256], [0, 180, 0, 256] )
+    plt.imshow(hist)
     plt.show()
 
-    hist = cv2.calcHist([hsv], [0], None, [180], [0, 180])
+    h, s, v = hsv[:, :, 0], hsv[:, :, 1], hsv[:, :, 2]
+    
     ax1 = plt.subplot(1, 2, 1)
     ax1.title.set_text('Hue Histogram')
-    plt.hist(hist)
+    plt.hist(h.ravel(),18,[0,180]) 
     ax2 = plt.subplot(1, 2, 2)
-    ax2.title.set_text('Hue / Lightness')
+    ax2.title.set_text('Hue / Saturation')
     plt.imshow(hsvstrip)
     plt.show()
 
