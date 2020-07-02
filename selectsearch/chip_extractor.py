@@ -17,7 +17,7 @@ light_white = (0, 0, 200)
 dark_white = (145, 60, 255)
 
 circuitboard green:[(57, 50, 0), (117, 255, 255)]
-
+dark colors: [(0, 0, 0), (255, 255, 60)]
 Based on the tutorial:
 https://realpython.com/python-opencv-color-spaces/
 """
@@ -42,12 +42,18 @@ def main():
     image = cv2.imread(imagename)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     #hsv_range = compute_hsv_range([43,62,60], False)
-    hsv_range = [(57, 50, 0), (117, 255, 255)]
-    #check_color(hsv_range)
-    result = contour_mask(image, hsv_range)
-    # plt.imshow(result)
-    # plt.show()
-    cv2.imwrite(outname, cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
+    chip_range = [(0, 0, 0), (255, 255, 50)]
+    green_range =  [(57, 50, 0), (117, 255, 255)]    
+    chip_mask = compute_region(image, chip_range)
+    green_mask = compute_region(image, green_range)
+    mask = chip_mask + green_mask
+    mask = 255 - mask
+    result = extract_region(image, mask)
+    show_mask(result, mask)
+    #result = contour_mask(image, hsv_range)
+    plt.imshow(result)
+    plt.show()
+#    cv2.imwrite(outname, cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
 
 
 
