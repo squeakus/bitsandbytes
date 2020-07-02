@@ -42,22 +42,54 @@ def main():
     image = cv2.imread(imagename)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     #hsv_range = compute_hsv_range([43,62,60], False)
-    chip_range = [(0, 0, 0), (255, 255, 50)]
+    chip_range = [(0, 0, 0), (255, 255, 15)]
     green_range =  [(57, 50, 0), (117, 255, 255)]    
     chip_mask = compute_region(image, chip_range)
     green_mask = compute_region(image, green_range)
-    mask = chip_mask + green_mask
-    mask = 255 - mask
-    result = extract_region(image, mask)
-    show_mask(result, mask)
-    #result = contour_mask(image, hsv_range)
+    #mask = chip_mask + green_mask
+    # mask = 255 - mask
+    result = extract_region(image, chip_mask)
+    show_mask(result, chip_mask)
+
+    contours = get_contours(chip_mask)
+    contour_to_mask(image,contours[0])
+    # #result = contour_mask(image, hsv_range)
     plt.imshow(result)
     plt.show()
 #    cv2.imwrite(outname, cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
 
 
 
-def contour_mask(image, hsv_range):
+
+def get_contours(image):
+    # Use 5x5 kernel with erode and dialate to remove noise
+    kernel = np.ones((5,5), np.uint8) 
+    image = cv2.erode(image, kernel, iterations=2) 
+    image = cv2.dilate(image, kernel, iterations=4) 
+    image = cv2.erode(image, kernel, iterations=2) 
+    result = extract_region(image, image)
+
+    # Find contours:
+    ret,thresh = cv2.threshold(image,127,255,0)
+    contours, hierarchy = cv2.findContours(image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    contours = sorted(contours, key=cv2.contourArea, reverse=True)
+    return contours
+
+
+def contour_to_mask(image, contour):
+    height, width, depth = image.shape
+    blank = np.zeros((height, width, depth), np.uint8)
+    cv2.drawContours(blank, [contour],-1,(255,255,0), -1)
+    hull = cv2.convexHull(contour)
+    cv2.drawContours(blank, [hull], 0, (255,255,255), 3)
+    print("convex hull has ",len(hull),"points")
+    plt.imshow(blank)
+    plt.show()
+
+
+
+
+def chip_contour_mask(image, hsv_range):
     """
     Create a mask, smooth it, find the contour
     use the contour as a mask to extract everything in the mask.
@@ -67,34 +99,15 @@ def contour_mask(image, hsv_range):
     mask = compute_region(image, hsv_range)
 
 
-    # Use 5x5 kernel with erode and dialate to remove noise
-    kernel = np.ones((5,5), np.uint8) 
-    mask = cv2.erode(mask, kernel, iterations=2) 
-    mask = cv2.dilate(mask, kernel, iterations=4) 
-    mask = cv2.erode(mask, kernel, iterations=2) 
-    result = extract_region(image, mask)
+
     # show_mask(result, mask)
 
-    # Find contours:
-    ret,thresh = cv2.threshold(mask,127,255,0)
-    contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-    contours = sorted(contours, key=cv2.contourArea, reverse=True)
+
     # M = cv2.moments(contours[0])
     # print(M)
 
     # use contours to make new mask
-    if len(contours) > 0:
-        cv2.drawContours(result, [contours[0]],-1,(255,255,0), -1)
-        c = contours[0]
-        x,y,w,h = cv2.boundingRect(c)
-        contourmask = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
-        result = extract_region(image, contourmask)
-        cv2.rectangle(result,(x,y),(x+w,y+h),(0,255,0),2)
-        cropped =  result[y:y+h, x:x+w]
-        return cropped
-    else:
-        print("no contours found!")
-        exit()
+
 
 def show_color_plots(image):
     r, g, b = cv2.split(image)
