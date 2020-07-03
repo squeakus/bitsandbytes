@@ -46,20 +46,27 @@ def main():
     green_range =  [(57, 50, 0), (117, 255, 255)]    
     chip_mask = compute_region(image, chip_range)
     green_mask = compute_region(image, green_range)
-    #mask = chip_mask + green_mask
+    # mask = chip_mask + green_mask
     # mask = 255 - mask
-    result = extract_region(image, chip_mask)
-    show_mask(result, chip_mask)
+    
 
-    contours = get_contours(chip_mask)
-    contour_to_mask(image,contours[0])
+
+    for i in range(50,0,-1):
+        print("i", i)
+        chip_range = [(0, 0, 0), (255, 255, i)]
+        chip_mask = compute_region(image, chip_range)
+        contours = get_contours(chip_mask)
+
+        if len(contours) > 0:
+            contour_to_poly(image,contours[0],i)
+        else:
+            print("no contours!")
+
     # #result = contour_mask(image, hsv_range)
-    plt.imshow(result)
-    plt.show()
+    # result = extract_region(image, chip_mask)
+    # plt.imshow(result)
+    # plt.show()
 #    cv2.imwrite(outname, cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
-
-
-
 
 def get_contours(image):
     # Use 5x5 kernel with erode and dialate to remove noise
@@ -76,17 +83,24 @@ def get_contours(image):
     return contours
 
 
-def contour_to_mask(image, contour):
+def contour_to_poly(image, contour):
     height, width, depth = image.shape
     blank = np.zeros((height, width, depth), np.uint8)
     cv2.drawContours(blank, [contour],-1,(255,255,0), -1)
-    hull = cv2.convexHull(contour)
-    cv2.drawContours(blank, [hull], 0, (255,255,255), 3)
-    print("convex hull has ",len(hull),"points")
-    plt.imshow(blank)
-    plt.show()
 
+    #compute convex hull
+    # hull = cv2.convexHull(contour)
+    # cv2.drawContours(blank, [hull], 0, (255,255,255), 3)
+    # print("convex hull has ",len(hull),"points")
 
+    # compute approx polynomial
+    epsilon = 0.001*cv2.arcLength(contour,True)
+    approx = cv2.approxPolyDP(contour,epsilon,True)
+    cv2.drawContours(blank, [approx], 0, (0,0,255), 3)
+    print("Poly has ",len(approx),"points")
+    return len(approx)
+    # plt.imshow(blank)
+    # plt.show()
 
 
 def chip_contour_mask(image, hsv_range):
