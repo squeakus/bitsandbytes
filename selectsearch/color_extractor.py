@@ -41,6 +41,7 @@ def main():
     outname = imagename.replace(".jpg", "_crop.jpg")
     image = cv2.imread(imagename)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
     #hsv_range = compute_hsv_range([43,62,60], False)
     hsv_range = [(57, 50, 0), (117, 255, 255)]
     #check_color(hsv_range)
@@ -56,10 +57,9 @@ def contour_mask(image, hsv_range):
     Create a mask, smooth it, find the contour
     use the contour as a mask to extract everything in the mask.
     """
-    #hsv_range = [(30, 0, 200), (145, 60, 255)]
-    #check_color(hsv_range[0], hsv_range[1])
     mask = compute_region(image, hsv_range)
-
+    # plt.imshow(mask, cmap='gray', vmin=0, vmax=255)
+    # plt.show()
 
     # Use 5x5 kernel with erode and dialate to remove noise
     kernel = np.ones((5,5), np.uint8) 
