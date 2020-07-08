@@ -79,8 +79,7 @@ def contour_mask(image, hsv_range):
     # use contours to make new mask
     if len(contours) > 0:
         cv2.drawContours(result, [contours[0]],-1,(255,255,0), -1)
-        c = contours[0]
-        x,y,w,h = cv2.boundingRect(c)
+        x,y,w,h = cv2.boundingRect(contours[0])
         contourmask = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
         result = extract_region(image, contourmask)
         cv2.rectangle(result,(x,y),(x+w,y+h),(0,255,0),2)
