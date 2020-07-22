@@ -43,19 +43,42 @@ void motor_right(int power){
 void joystick_read(){
   int x = analogRead(A0); 
   int y = analogRead(A1);  
-  Serial.println("x:"+String(x)+" y:"+String(y));          // debug value
+  int power = ((float(x) / 1024)* 500) -255;
+  int compass = ((float(y) / 1024)* 500) -255;
+  Serial.println("power:"+String(power));
+
+  
+  if (abs(power) > 50){
+    motor_left(power);
+    motor_right(power);
+  }
+  else if (abs(compass) > 50){
+    if (compass > 0){
+    motor_left(-abs(compass));
+    motor_right(abs(compass));      
+    }
+   if (compass < 0){
+    motor_left(abs(compass));
+    motor_right(-abs(compass));      
+    }
+  }
+  else{
+    motor_left(0);
+    motor_right(0);    
+  }
+
 }
 
 void loop() {
+//  motor_left(100);
+//  delay(5000);
+//  motor_left(-100);
+//  delay(5000);
+//  motor_right(100);
+//  delay(5000);
+//  motor_right(-100);
+//  delay(5000);
+  
   joystick_read();
-  delay(50);
-//    motor_left(100);
-//    delay(5000);
-//    motor_left(-100);
-//    delay(5000);
-//    motor_right(100);
-//    delay(5000);
-//    motor_right(-100);
-//    delay(5000);
-
+  delay(100);
 }
