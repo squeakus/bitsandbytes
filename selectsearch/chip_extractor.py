@@ -51,19 +51,20 @@ def main():
     cv2.drawContours(image, [contours[0]],-1,(255,255,0), 3)
     x,y,w,h = cv2.boundingRect(contours[0])
     #result = extract_region(image, chip_mask)
-    cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
-    plt.imshow(chip_mask)
-    plt.show()
+
     #cropped =  result[y:y+h, x:x+w]
     #return cropped
 
 
-    # green_mask = compute_region(image, green_range)
-    # green_mask = clean_image(green_mask)
+    green_mask = compute_region(image, green_range)
+    green_mask = clean_image(green_mask)
 
-    # mask = chip_mask + green_mask
-    # mask = 255 - mask
-    # contours = get_contours(mask)
+    mask = chip_mask + green_mask
+    mask = 255 - mask
+
+    cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
+    plt.imshow(mask)
+    plt.show()
 
     # cv2.drawContours(image, [contours[0]],-1,(0,255,0), 3)
     # plt.imshow(image)
