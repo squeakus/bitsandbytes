@@ -89,13 +89,13 @@ class LabelUI():
         opt = self.open_img(newimg)
 
         self.optpanel = Label(self.root, image=opt)
-        self.optpanel.grid(row=0, columnspan=2)
+        self.optpanel.grid(row=0, columnspan=4)
         current_label = self.get_current_label()
         self.labelpanel = Label(
             self.root, text="Current label: " + current_label)
-        self.labelpanel.grid(row=2, columnspan=4)
+        self.labelpanel.grid(row=1, columnspan=4)
 
-        row = 3
+        row = 2
         col = 0
 
         # Create buttons for all the labels
