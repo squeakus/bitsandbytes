@@ -6,6 +6,15 @@ import glob
 def main():
     print('a utility class of static functions')
 
+
+def yes_or_no(question):
+    while "the answer is invalid":
+        reply = str(raw_input(question+' (y/n): ')).lower().strip()
+        if reply[0] == 'y':
+            return True
+        if reply[0] == 'n':
+            return False
+
 def cartesian2polar(x, y):
     r = math.sqrt(x**2 + y**2)
     theta = np.arctan2(x, y)
