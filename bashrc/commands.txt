@@ -1,3 +1,6 @@
+#add sublime to git bash:
+alias subl="/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
+
 #where pytorch keeps its models
 .cache/torch/checkpoints/
 
