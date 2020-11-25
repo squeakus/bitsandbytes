@@ -141,6 +141,9 @@ python3 face_recognition_demo.py -fg images -m_fd ~/intel/openvino/deployment_to
 
 
 # text detection
+
+./text_detect -i images/1.jpg -m_td text-detection-0004.xml -m_tr text-recognition-0012.xml -loop
+
 ./text_detection_demo -i text.jpg -m_td text-detection-0004.xml -m_tr
 
 

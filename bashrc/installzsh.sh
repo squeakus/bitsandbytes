@@ -1,5 +1,7 @@
 #!/bin/bash
-#do not run as sudo!
+#DO NOT RUN WITH SUDO!!
+#You need to reboot to reload default terminal settings
+MYUSER=`whoami`
 sudo apt install -y zsh
 
 # install the plugins
@@ -30,9 +32,6 @@ sed -i '1i plugins+=(git zsh-autosuggestions k  zsh-syntax-highlighting)' ~/.zsh
 alias ng="make -j8 -f newMakefile.mk MV_SOC_REV=ma2480"
 alias ngprism="make -j8 -f newMakefile.mk MV_SOC_REV=ma2085 DDR_DEVICE=MICRON_TYPE_2"
 
-
-#set as default shell
-MYUSER=`whoami`
 sudo -s
 chsh -s /bin/zsh root
 chsh -s /bin/zsh
