@@ -1,6 +1,14 @@
 #add sublime to git bash:
 alias subl="/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
 
+
+#ifttt webhook trigger using maker.ifttt.com:
+curl -X POST https://maker.ifttt.com/trigger/{temp_norm}/with/key/
+
+#User experience, developer experience
+tim plowman
+codeplay
+
 #where pytorch keeps its models
 .cache/torch/checkpoints/
 
@@ -141,9 +149,6 @@ python3 face_recognition_demo.py -fg images -m_fd ~/intel/openvino/deployment_to
 
 
 # text detection
-
-./text_detect -i images/1.jpg -m_td text-detection-0004.xml -m_tr text-recognition-0012.xml -loop
-
 ./text_detection_demo -i text.jpg -m_td text-detection-0004.xml -m_tr
 
 
