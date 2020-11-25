@@ -8,10 +8,12 @@
 void setup() {
   //monitor logger and motor driver
   Serial.begin(9600);
+  pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(9, OUTPUT);
+  digitalWrite(2, LOW);
 }
 
 void motor_left(int power){
@@ -54,12 +56,12 @@ void joystick_read(){
   }
   else if (abs(compass) > 50){
     if (compass > 0){
-    motor_left(-abs(compass));
-    motor_right(abs(compass));      
-    }
-   if (compass < 0){
     motor_left(abs(compass));
     motor_right(-abs(compass));      
+    }
+   if (compass < 0){
+    motor_left(-abs(compass));
+    motor_right(abs(compass));      
     }
   }
   else{
