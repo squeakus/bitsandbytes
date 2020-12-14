@@ -1,3 +1,11 @@
+# just pad with black
+mogrify -background black -gravity center -extent 1280x720 *.jpg
+
+# resize and pad to keep aspect:
+convert image -resize 1000x1500 -background somecolor -gravity center -extent 1000x1500 resultimage
+
+mogrify -resize 1000x1500 -background somecolor -gravity center -extent 1000x1500 *
+:
 #add sublime to git bash:
 alias subl="/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
 
