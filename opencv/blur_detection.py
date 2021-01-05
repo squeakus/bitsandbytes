@@ -36,11 +36,13 @@ def main():
     cv2.imshow("Output", image)
     cv2.waitKey(0)
 
+    count = 0
     # check to see if are going to test our FFT blurriness detector using
     # various sizes of a Gaussian kernel
     if args["test"] > 0:
         # loop over various blur radii
         for radius in range(1, 30, 2):
+            count += 1
             # clone the original grayscale image
             image = gray.copy()
             # check to see if the kernel radius is greater than zero
@@ -49,7 +51,9 @@ def main():
                 # Gaussian kernel
                 image = cv2.GaussianBlur(image, (radius, radius), 0)
                 # apply our blur detector using the FFT
-                (mean, blurry) = detect_blur_fft(image, size=60, thresh=args["thresh"], vis=args["vis"] > 0)
+                (mean, blurry) = detect_blur_fft(
+                    image, size=60, save=count, thresh=args["thresh"], vis=args["vis"] > 0
+                )
                 # draw on the image, indicating whether or not it is
                 # blurry
                 image = np.dstack([image] * 3)
@@ -58,12 +62,12 @@ def main():
                 text = text.format(mean)
                 cv2.putText(image, text, (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
                 print("[INFO] Kernel: {}, Result: {}".format(radius, text))
-            # show the image
-            cv2.imshow("Test Image", image)
-            cv2.waitKey(0)
+            # # show the image
+            # cv2.imshow("Test Image", image)
+            # cv2.waitKey(0)
 
 
-def detect_blur_fft(image, size=60, thresh=10, vis=False):
+def detect_blur_fft(image, size=60, save=0, thresh=10, vis=False):
     # grab the dimensions of the image and use the dimensions to
     # derive the center (x, y)-coordinates
     (h, w) = image.shape
@@ -96,6 +100,27 @@ def detect_blur_fft(image, size=60, thresh=10, vis=False):
         ax[1].set_yticks([])
         # show our plots
         plt.show()
+
+    fftShift[cY - size : cY + size, cX - size : cX + size] = 0
+    if save > 0:
+        # compute the magnitude spectrum of the transform
+        magnitude = 20 * np.log(np.abs(fftShift))
+        (fig, ax) = plt.subplots(
+            1,
+            2,
+        )
+        filename = "img{:03d}.png".format(save)
+        print("saving to:", filename)
+        ax[0].imshow(image, cmap="gray")
+        ax[0].set_title("Input")
+        ax[0].set_xticks([])
+        ax[0].set_yticks([])
+        # display the magnitude image
+        ax[1].imshow(magnitude, cmap="gray")
+        ax[1].set_title("Magnitude Spectrum")
+        ax[1].set_xticks([])
+        ax[1].set_yticks([])
+        plt.savefig(filename)
 
     # zero-out the center of the FFT shift (i.e., remove low
     # frequencies), apply the inverse shift such that the DC
