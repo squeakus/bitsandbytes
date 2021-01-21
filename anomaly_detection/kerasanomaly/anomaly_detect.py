@@ -22,8 +22,6 @@ import os
 
 
 def main():
-    print("hello!")
-
     X, attr = load_lfw_dataset(use_raw=True, dimx=32, dimy=32)
     X = X.astype("float32") / 255.0 - 0.5
     print(X.max(), X.min())
@@ -41,6 +39,7 @@ def main():
     autoencoder.compile(optimizer="adamax", loss="mse")
 
     print(autoencoder.summary())
+    history = autoencoder.fit(x=X_train, y=X_train, epochs=20, validation_data=(X_test, X_test))
 
     for i in range(5):
         img = X_test[i]
@@ -53,13 +52,14 @@ def visualize(img, encoder, decoder):
     code = encoder.predict(img[None])[0]
     reco = decoder.predict(code[None])[0]
 
+    rescale = int(code.shape[0] / 8)
     plt.subplot(1, 3, 1)
     plt.title("Original")
     show_image(img)
 
     plt.subplot(1, 3, 2)
     plt.title("Code")
-    plt.imshow(code.reshape([code.shape[-1] // 2, -1]))
+    plt.imshow(code.reshape([code.shape[-1] // rescale, -1]))
 
     plt.subplot(1, 3, 3)
     plt.title("Reconstructed")
@@ -109,7 +109,7 @@ def load_lfw_dataset(use_raw=False, dx=80, dy=80, dimx=45, dimy=45):
     # tqdm in used to show progress bar while reading the data in a notebook here, you can change
     # tqdm_notebook to use it outside a notebook
     with tarfile.open(RAW_IMAGES_NAME if use_raw else IMAGES_NAME) as f:
-        print(f.getmembers())
+
         for m in f.getmembers():
             # Only process image files from the compressed data
             if m.isfile() and m.name.endswith(".jpg"):
