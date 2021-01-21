@@ -13,9 +13,17 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from keras.layers import Dense, Flatten, Reshape, Input, InputLayer
 from keras.models import Sequential, Model
+import pandas as pd
+import tarfile
+
+# import tqdm
+import cv2
+import os
 
 
 def main():
+    print("hello!")
+
     X, attr = load_lfw_dataset(use_raw=True, dimx=32, dimy=32)
     X = X.astype("float32") / 255.0 - 0.5
     print(X.max(), X.min())
@@ -34,10 +42,9 @@ def main():
 
     print(autoencoder.summary())
 
-
-for i in range(5):
-    img = X_test[i]
-    visualize(img, encoder, decoder)
+    for i in range(5):
+        img = X_test[i]
+        visualize(img, encoder, decoder)
 
 
 def visualize(img, encoder, decoder):
@@ -102,7 +109,8 @@ def load_lfw_dataset(use_raw=False, dx=80, dy=80, dimx=45, dimy=45):
     # tqdm in used to show progress bar while reading the data in a notebook here, you can change
     # tqdm_notebook to use it outside a notebook
     with tarfile.open(RAW_IMAGES_NAME if use_raw else IMAGES_NAME) as f:
-        for m in tqdm.tqdm_notebook(f.getmembers()):
+        print(f.getmembers())
+        for m in f.getmembers():
             # Only process image files from the compressed data
             if m.isfile() and m.name.endswith(".jpg"):
                 # Prepare image
