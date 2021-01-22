@@ -15,6 +15,7 @@ from keras.layers import Dense, Flatten, Reshape, Input, InputLayer
 from keras.models import Sequential, Model
 import pandas as pd
 import tarfile
+from math import sqrt
 
 # import tqdm
 import cv2
@@ -26,7 +27,8 @@ def main():
     X = X.astype("float32") / 255.0 - 0.5
     print(X.max(), X.min())
     show_image(X[6])
-    X_train, X_test = train_test_split(X, test_size=0.1, random_state=42)
+    # X_train, X_test = train_test_split(X, test_size=0.1, random_state=42)
+    X_train, X_test = X[100:], X[:100]
     # Same as (32,32,3), we neglect the number of instances from shape
     IMG_SHAPE = X.shape[1:]
     encoder, decoder = build_autoencoder(IMG_SHAPE, 32)
@@ -41,9 +43,19 @@ def main():
     print(autoencoder.summary())
     history = autoencoder.fit(x=X_train, y=X_train, epochs=20, validation_data=(X_test, X_test))
 
-    for i in range(5):
-        img = X_test[i]
-        visualize(img, encoder, decoder)
+    # for i in range(5):
+    #     img = X_test[i]
+    #     print("testimg", img.shape)
+    #     print(img)
+    #     visualize(img, encoder, decoder)
+
+    jonimg = cv2.imread("jon.png")
+
+    jonimg = cv2.cvtColor(jonimg, cv2.COLOR_BGR2RGB)
+    jonimg = cv2.resize(jonimg, (32, 32))
+    jonimg = jonimg.astype("float32") / 255.0 - 0.5
+    print(jonimg)
+    visualize(jonimg, encoder, decoder)
 
 
 def visualize(img, encoder, decoder):
@@ -51,8 +63,9 @@ def visualize(img, encoder, decoder):
     # img[None] will have shape of (1, 32, 32, 3) which is the same as the model input
     code = encoder.predict(img[None])[0]
     reco = decoder.predict(code[None])[0]
+    rescale = 4
+    print(f"latent space shape: {code.shape} {code.shape[0]} rescale ro {rescale}")
 
-    rescale = int(code.shape[0] / 8)
     plt.subplot(1, 3, 1)
     plt.title("Original")
     show_image(img)
@@ -109,15 +122,18 @@ def load_lfw_dataset(use_raw=False, dx=80, dy=80, dimx=45, dimy=45):
     # tqdm in used to show progress bar while reading the data in a notebook here, you can change
     # tqdm_notebook to use it outside a notebook
     with tarfile.open(RAW_IMAGES_NAME if use_raw else IMAGES_NAME) as f:
-
+        mcount = 0
         for m in f.getmembers():
             # Only process image files from the compressed data
             if m.isfile() and m.name.endswith(".jpg"):
+                mcount += 1
+                if mcount < 100:
+                    print(m)
                 # Prepare image
                 img = decode_image_from_raw_bytes(f.extractfile(m).read())
 
                 # Crop only faces and resize it
-                img = img[dy:-dy, dx:-dx]
+                # img = img[dy:-dy, dx:-dx]
                 img = cv2.resize(img, (dimx, dimy))
 
                 # Parse person and append it to the collected data
@@ -130,6 +146,7 @@ def load_lfw_dataset(use_raw=False, dx=80, dy=80, dimx=45, dimy=45):
                     photo_ids.append({"person": person_id, "imagenum": photo_number})
 
     photo_ids = pd.DataFrame(photo_ids)
+    print(photo_ids.head())
     all_photos = np.stack(all_photos).astype("uint8")
 
     # Preserve photo_ids order!
