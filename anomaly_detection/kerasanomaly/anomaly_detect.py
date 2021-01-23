@@ -1,13 +1,5 @@
-# http://www.cs.columbia.edu/CAVE/databases/pubfig/download/lfw_attributes.txt
-ATTRS_NAME = "lfw_attributes.txt"
-
-# http://vis-www.cs.umass.edu/lfw/lfw-deepfunneled.tgz
-IMAGES_NAME = "lfw-deepfunneled.tgz"
-
-# http://vis-www.cs.umass.edu/lfw/lfw.tgz
-RAW_IMAGES_NAME = "lfw.tgz"
-
-
+import cv2
+import os
 from matplotlib import image
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,14 +11,13 @@ import tarfile
 from math import sqrt
 from pathlib import Path
 
-# import tqdm
-import cv2
-import os
-
 
 def main():
-    anomaly = Autoencoder("test1", 500, 50, 50)
-    anomaly.train("lfw", 20)
+    if not os.path.exists("out"):
+        os.makedirs("out")
+
+    anomaly = Autoencoder("test1", 2000, 75, 75)
+    anomaly.train("lfw", 30)
 
 
 class Autoencoder:
@@ -48,7 +39,6 @@ class Autoencoder:
         X = self.load_dataset(dataset)
         X_train, X_test = train_test_split(X, test_size=0.1, random_state=42)
         img_shape = X.shape[1:]
-        print(f"image shape: {img_shape}")
         self.build_autoencoder(img_shape)
         inp = Input(img_shape)
         code = self.encoder(inp)
@@ -57,16 +47,15 @@ class Autoencoder:
         self.autoencoder.compile(optimizer="adamax", loss="mse")
         print(self.autoencoder.summary())
 
-        # for i in range(epochs):
-        history = self.autoencoder.fit(x=X_train, y=X_train, epochs=10, validation_data=(X_test, X_test))
+        for i in range(epochs):
+            history = self.autoencoder.fit(x=X_train, y=X_train, epochs=1, validation_data=(X_test, X_test))
+            jon = self.load_image("jon.png", True)
+            imagename = f"out/jon{i:02}.png"
+            self.visualize(imagename, f"Iteration: {i}", jon)
 
-        jon = self.load_image("jon.png", True)
-        imagename = f"out/jon00.png"
-        self.visualize(imagename, jon)
-
-        cat = self.load_image("cat.jpg", True)
-        imagename = f"out/cat00.png"
-        self.visualize(imagename, cat)
+            cat = self.load_image("cat.jpg", True)
+            imagename = f"out/cat{i:02}.png"
+            self.visualize(imagename, f"Iteration: {i}", cat)
 
         self.autoencoder.save(self.savename)
 
@@ -88,14 +77,13 @@ class Autoencoder:
         images = images.astype("float32") / 255.0 - 0.5
         return images
 
-    def visualize(self, imagename, img):
+    def visualize(self, imagename, title, img):
         """Draws original, encoded and decoded images"""
         # img[None] will have the same shape as the model input
         code = self.encoder.predict(img[None])[0]
         reco = self.decoder.predict(code[None])[0]
 
-        print(f"latent space shape: {code.shape} {code.shape[0]} rescale to {self.rescale}")
-
+        plt.suptitle(title)
         plt.subplot(1, 3, 1)
         plt.title("Original")
         show_image(img)
@@ -109,6 +97,7 @@ class Autoencoder:
         show_image(reco)
 
         plt.savefig(imagename)
+        plt.clf()
 
     def build_autoencoder(self, img_shape):
         # The encoder
