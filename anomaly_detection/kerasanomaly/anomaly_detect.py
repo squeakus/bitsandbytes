@@ -16,6 +16,7 @@ from keras.models import Sequential, Model
 import pandas as pd
 import tarfile
 from math import sqrt
+from pathlib import Path
 
 # import tqdm
 import cv2
@@ -23,7 +24,10 @@ import os
 
 
 def main():
-    X, attr = load_lfw_dataset(use_raw=True, dimx=32, dimy=32)
+    for path in Path("lfw").rglob("*.jpg"):
+        print(path)
+    exit()
+    X, attr = load_lfw_dataset(use_raw=True, dimx=50, dimy=50)
     X = X.astype("float32") / 255.0 - 0.5
     print(X.max(), X.min())
     show_image(X[6])
@@ -31,39 +35,36 @@ def main():
     X_train, X_test = X[100:], X[:100]
     # Same as (32,32,3), we neglect the number of instances from shape
     IMG_SHAPE = X.shape[1:]
-    encoder, decoder = build_autoencoder(IMG_SHAPE, 32)
+    epochs = 20
 
+    encoder, decoder = build_autoencoder(IMG_SHAPE, 1000)
     inp = Input(IMG_SHAPE)
     code = encoder(inp)
     reconstruction = decoder(code)
 
     autoencoder = Model(inp, reconstruction)
     autoencoder.compile(optimizer="adamax", loss="mse")
+    for i in range(epochs):
+        print(autoencoder.summary())
+        history = autoencoder.fit(x=X_train, y=X_train, epochs=1, validation_data=(X_test, X_test))
 
-    print(autoencoder.summary())
-    history = autoencoder.fit(x=X_train, y=X_train, epochs=20, validation_data=(X_test, X_test))
+        # for i in range(5):
+        #     img = X_test[i]
+        #     visualize(img, encoder, decoder)
 
-    # for i in range(5):
-    #     img = X_test[i]
-    #     print("testimg", img.shape)
-    #     print(img)
-    #     visualize(img, encoder, decoder)
-
-    jonimg = cv2.imread("jon.png")
-
-    jonimg = cv2.cvtColor(jonimg, cv2.COLOR_BGR2RGB)
-    jonimg = cv2.resize(jonimg, (32, 32))
-    jonimg = jonimg.astype("float32") / 255.0 - 0.5
-    print(jonimg)
-    visualize(jonimg, encoder, decoder)
+        jonimg = cv2.imread("jon.png")
+        jonimg = cv2.cvtColor(jonimg, cv2.COLOR_BGR2RGB)
+        jonimg = cv2.resize(jonimg, (50, 50))
+        jonimg = jonimg.astype("float32") / 255.0 - 0.5
+        visualize(i, jonimg, encoder, decoder)
 
 
-def visualize(img, encoder, decoder):
+def visualize(count, img, encoder, decoder):
     """Draws original, encoded and decoded images"""
     # img[None] will have shape of (1, 32, 32, 3) which is the same as the model input
     code = encoder.predict(img[None])[0]
     reco = decoder.predict(code[None])[0]
-    rescale = 4
+    rescale = 25
     print(f"latent space shape: {code.shape} {code.shape[0]} rescale ro {rescale}")
 
     plt.subplot(1, 3, 1)
@@ -77,7 +78,8 @@ def visualize(img, encoder, decoder):
     plt.subplot(1, 3, 3)
     plt.title("Reconstructed")
     show_image(reco)
-    plt.show()
+    filename = f"iter{count:02}.png"
+    plt.savefig(filename)
 
 
 def build_autoencoder(img_shape, code_size):
@@ -127,8 +129,7 @@ def load_lfw_dataset(use_raw=False, dx=80, dy=80, dimx=45, dimy=45):
             # Only process image files from the compressed data
             if m.isfile() and m.name.endswith(".jpg"):
                 mcount += 1
-                if mcount < 100:
-                    print(m)
+
                 # Prepare image
                 img = decode_image_from_raw_bytes(f.extractfile(m).read())
 
@@ -153,6 +154,13 @@ def load_lfw_dataset(use_raw=False, dx=80, dy=80, dimx=45, dimy=45):
     all_attrs = photo_ids.merge(df_attrs, on=("person", "imagenum")).drop(["person", "imagenum"], axis=1)
 
     return all_photos, all_attrs
+
+
+def find(regex, folder="./"):
+    found = []
+    for filename in glob.iglob(folder + "**/" + regex, recursive=True):
+        found.append(filename)
+    return found
 
 
 if __name__ == "__main__":
