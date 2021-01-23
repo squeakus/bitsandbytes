@@ -8,6 +8,7 @@ IMAGES_NAME = "lfw-deepfunneled.tgz"
 RAW_IMAGES_NAME = "lfw.tgz"
 
 
+from matplotlib import image
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
@@ -24,12 +25,13 @@ import os
 
 
 def main():
-    for path in Path("lfw").rglob("*.jpg"):
-        print(path)
-    exit()
-    X, attr = load_lfw_dataset(use_raw=True, dimx=50, dimy=50)
-    X = X.astype("float32") / 255.0 - 0.5
-    print(X.max(), X.min())
+
+    # X, attr = load_lfw_dataset(use_raw=True, dimx=50, dimy=50)
+    # X = X.astype("float32") / 255.0 - 0.5
+    # print(X.max(), X.min())
+
+    X = load_dataset("lfw", 50, 50)
+
     show_image(X[6])
     # X_train, X_test = train_test_split(X, test_size=0.1, random_state=42)
     X_train, X_test = X[100:], X[:100]
@@ -101,6 +103,7 @@ def build_autoencoder(img_shape, code_size):
 
 
 def show_image(x):
+    print(type(x))
     plt.imshow(np.clip(x + 0.5, 0, 1))
 
 
@@ -110,8 +113,24 @@ def decode_image_from_raw_bytes(raw_bytes):
     return img
 
 
-def load_lfw_dataset(use_raw=False, dx=80, dy=80, dimx=45, dimy=45):
+def load_image(filename, dimx, dimy):
+    img = cv2.imread(filename)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img = cv2.resize(img, (dimx, dimy))
+    return img
 
+
+def load_dataset(folder, dimx, dimy):
+    images = []
+    for path in Path(folder).rglob("*.jpg"):
+        images.append(load_image(str(path), dimx, dimy))
+
+    images = np.stack(images).astype("uint8")
+    images = images.astype("float32") / 255.0 - 0.5
+    return images
+
+
+def load_lfw_dataset(use_raw=False, dx=80, dy=80, dimx=45, dimy=45):
     # Read attrs
     df_attrs = pd.read_csv(ATTRS_NAME, sep="\t", skiprows=1)
     df_attrs = pd.DataFrame(df_attrs.iloc[:, :-1].values, columns=df_attrs.columns[1:])
