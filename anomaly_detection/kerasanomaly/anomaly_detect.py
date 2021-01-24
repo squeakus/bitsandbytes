@@ -16,8 +16,8 @@ def main():
     if not os.path.exists("out"):
         os.makedirs("out")
 
-    anomaly = Autoencoder("test1", 2000, 75, 75)
-    anomaly.train("lfw", 30)
+    anomaly = Autoencoder("test1", 5000, 100, 100)
+    anomaly.train("lfw", 200)
 
 
 class Autoencoder:
@@ -57,6 +57,14 @@ class Autoencoder:
             imagename = f"out/cat{i:02}.png"
             self.visualize(imagename, f"Iteration: {i}", cat)
 
+            guitar = self.load_image("guitar.jpg", True)
+            imagename = f"out/guitar{i:02}.png"
+            self.visualize(imagename, f"Iteration: {i}", guitar)
+
+            cheney = self.load_image("lfw/Dick_Cheney/Dick_Cheney_0011.jpg", True)
+            imagename = f"out/cheney{i:02}.png"
+            self.visualize(imagename, f"Iteration: {i}", cheney)
+
         self.autoencoder.save(self.savename)
 
     def load_image(self, filename, rescale=False):
@@ -92,8 +100,9 @@ class Autoencoder:
         plt.title("Code")
         plt.imshow(code.reshape([code.shape[-1] // self.rescale, -1]))
 
+        loss = int(np.sum(np.absolute(img - reco)))
         plt.subplot(1, 3, 3)
-        plt.title("Reconstructed")
+        plt.title(f"Loss {loss}")
         show_image(reco)
 
         plt.savefig(imagename)
