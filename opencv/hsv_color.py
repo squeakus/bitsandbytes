@@ -8,7 +8,7 @@ def nothing(x):
 
 
 # Load in image
-image = cv2.imread("out/wafer_01_rotated.jpg")
+image = cv2.imread("median.jpg")
 
 # Create a window
 cv2.namedWindow("image")
@@ -54,14 +54,7 @@ while 1:
     output = cv2.bitwise_and(image, image, mask=mask)
 
     # Print if there is a change in HSV value
-    if (
-        (phMin != hMin)
-        | (psMin != sMin)
-        | (pvMin != vMin)
-        | (phMax != hMax)
-        | (psMax != sMax)
-        | (pvMax != vMax)
-    ):
+    if (phMin != hMin) | (psMin != sMin) | (pvMin != vMin) | (phMax != hMax) | (psMax != sMax) | (pvMax != vMax):
         print(
             "(hMin = %d , sMin = %d, vMin = %d), (hMax = %d , sMax = %d, vMax = %d)"
             % (hMin, sMin, vMin, hMax, sMax, vMax)
