@@ -59,7 +59,7 @@ def create_folder(foldername):
 
 def find(regex, folder="./"):
     found = []
-    for filename in glob.iglob(folder + "**/" + regex, recursive=True):
+    for filename in glob.iglob(folder + "/**/" + regex, recursive=True):
         found.append(filename)
     return found
 
