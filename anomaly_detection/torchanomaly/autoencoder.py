@@ -21,8 +21,8 @@ def main():
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
     test_train = 0.1
-    batch = 128
-    transform = T.Compose([T.CenterCrop(224), T.Resize(32), T.ToTensor()])  # should
+    batch = 1
+    transform = T.Compose([T.CenterCrop(224), T.Resize(32), T.ToTensor()])
 
     dataset = datasets.ImageFolder(data_dir, transform=transform)
     train_loader, test_loader = load_data(dataset, test_train, batch)
@@ -38,15 +38,15 @@ def main():
     for epoch in range(epochs):
         ep_start = time.time()
         running_loss = 0.0
-        for label, (data) in enumerate(train_loader):
-            print(data)
-            sample = model(data.to(device))
+        for label, data in enumerate(train_loader):
+            print(data[0].shape)
+            sample = model(data[0].to(device))
             loss = criterion(data.to(device), sample)
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
             running_loss += loss.item()
-        epoch_loss = running_loss / len(tdataset)
+        epoch_loss = running_loss / len(dataset)
         metrics["train_loss"].append(epoch_loss)
         ep_end = time.time()
         print("-----------------------------------------------")
@@ -97,50 +97,50 @@ class AE(nn.Module):
         return decode
 
 
-class ConvAE(nn.Module):
-    def __init__(self):
-        super(AE, self).__init__()
-        self.enc = nn.Sequential(
-            nn.Conv2d(in_channels=3, out_channels=12, kernel_size=3, stride=2, padding=1),
-            nn.ReLU(),
-            nn.Conv2d(in_channels=12, out_channels=24, kernel_size=3, stride=2, padding=1),
-            nn.ReLU(),
-            nn.Linear(784, 512),
-            nn.ReLU(),
-            nn.Linear(512, 256),
-            nn.ReLU(),
-            nn.Linear(256, 128),
-            nn.ReLU(),
-            nn.Linear(128, 64),
-            nn.ReLU(),
-            nn.Linear(64, 32),
-            nn.ReLU(),
-            nn.Linear(32, 16),
-            nn.ReLU(),
-        )
-        self.dec = nn.Sequential(
-            nn.Linear(16, 32),
-            nn.ReLU(),
-            nn.Linear(32, 64),
-            nn.ReLU(),
-            nn.Linear(64, 128),
-            nn.ReLU(),
-            nn.Linear(128, 256),
-            nn.ReLU(),
-            nn.Linear(256, 512),
-            nn.ReLU(),
-            nn.Linear(512, 784),
-            nn.ReLU(),
-            nn.ConvTranspose2d(in_channels=24, out_channels=12, kernel_size=3, stride=2, padding=1),
-            nn.ReLU(),
-            nn.ConvTranspose2d(in_channels=12, out_channels=3, kernel_size=3, stride=2, padding=1),
-            nn.ReLU(),
-        )
+# class ConvAE(nn.Module):
+#     def __init__(self):
+#         super(ConvAE, self).__init__()
+#         self.enc = nn.Sequential(
+#             nn.Conv2d(in_channels=3, out_channels=12, kernel_size=3, stride=2, padding=1),
+#             nn.ReLU(),
+#             nn.Conv2d(in_channels=12, out_channels=24, kernel_size=3, stride=2, padding=1),
+#             nn.ReLU(),
+#             nn.Linear(784, 512),
+#             nn.ReLU(),
+#             nn.Linear(512, 256),
+#             nn.ReLU(),
+#             nn.Linear(256, 128),
+#             nn.ReLU(),
+#             nn.Linear(128, 64),
+#             nn.ReLU(),
+#             nn.Linear(64, 32),
+#             nn.ReLU(),
+#             nn.Linear(32, 16),
+#             nn.ReLU(),
+#         )
+#         self.dec = nn.Sequential(
+#             nn.Linear(16, 32),
+#             nn.ReLU(),
+#             nn.Linear(32, 64),
+#             nn.ReLU(),
+#             nn.Linear(64, 128),
+#             nn.ReLU(),
+#             nn.Linear(128, 256),
+#             nn.ReLU(),
+#             nn.Linear(256, 512),
+#             nn.ReLU(),
+#             nn.Linear(512, 784),
+#             nn.ReLU(),
+#             nn.ConvTranspose2d(in_channels=24, out_channels=12, kernel_size=3, stride=2, padding=1),
+#             nn.ReLU(),
+#             nn.ConvTranspose2d(in_channels=12, out_channels=3, kernel_size=3, stride=2, padding=1),
+#             nn.ReLU(),
+#         )
 
-    def forward(self, x):
-        encode = self.enc(x)
-        decode = self.dec(encode)
-        return decode
+#     def forward(self, x):
+#         encode = self.enc(x)
+#         decode = self.dec(encode)
+#         return decode
 
 
 def load_data(dataset, test_split, batch_size):
