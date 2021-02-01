@@ -126,6 +126,7 @@ def train():
         ep_start = time.time()
         running_loss = 0.0
         for bx, (data) in enumerate(train_):
+            print(data)
             sample = model(data.to(device))
             loss = criterion(data.to(device), sample)
             optimizer.zero_grad()

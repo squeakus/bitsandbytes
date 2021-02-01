@@ -1,3 +1,7 @@
+"""
+Should I scale, normalize it? -0.5 0.5
+"""
+
 from torch.utils.data import DataLoader, random_split
 import torchvision.transforms as T
 from torchvision import datasets
@@ -8,16 +12,18 @@ from torchvision.utils import save_image
 from IPython.display import Image
 import matplotlib.pyplot as plt
 import numpy as np
-import random
+import time
 
 
 def main():
     data_dir = "/home/jonathan/code/bitsandbytes/anomaly_detection/kerasanomaly/lfw/all"
     epochs = 100
-    lr = 1e-3
+    lr = 1e-2  # learning rate
+    w_d = 1e-5  # weight decay
     test_train = 0.1
     batch = 128
-    transform = T.Compose([T.Resize(250), T.CenterCrop(224), T.ToTensor()])  # should
+    transform = T.Compose([T.CenterCrop(224), T.Resize(32), T.ToTensor()])  # should
+
     dataset = datasets.ImageFolder(data_dir, transform=transform)
     train_loader, test_loader = load_data(dataset, test_train, batch)
 
@@ -32,16 +38,66 @@ def main():
     for epoch in range(epochs):
         ep_start = time.time()
         running_loss = 0.0
-        for bx, (data) in enumerate(train_):
+        for label, (data) in enumerate(train_loader):
+            print(data)
             sample = model(data.to(device))
             loss = criterion(data.to(device), sample)
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
             running_loss += loss.item()
+        epoch_loss = running_loss / len(tdataset)
+        metrics["train_loss"].append(epoch_loss)
+        ep_end = time.time()
+        print("-----------------------------------------------")
+        print("[EPOCH] {}/{}\n[LOSS] {}".format(epoch + 1, epochs, epoch_loss))
+        print("Epoch Complete in {}".format(timedelta(seconds=ep_end - ep_start)))
+    end = time.time()
+    print("-----------------------------------------------")
+    print("[System Complete: {}]".format(timedelta(seconds=end - start)))
+
+    _, ax = plt.subplots(1, 1, figsize=(15, 10))
+    ax.set_title("Loss")
+    ax.plot(metrics["train_loss"])
+    plt.show()
+    return model
 
 
 class AE(nn.Module):
+    def __init__(self):
+        super(AE, self).__init__()
+        self.enc = nn.Sequential(
+            nn.Linear(3072, 1024),
+            nn.ReLU(),
+            nn.Linear(1024, 784),
+            nn.ReLU(),
+            nn.Linear(784, 512),
+            nn.ReLU(),
+            nn.Linear(512, 256),
+            nn.ReLU(),
+            nn.Linear(256, 128),
+            nn.ReLU(),
+        )
+        self.dec = nn.Sequential(
+            nn.Linear(128, 256),
+            nn.ReLU(),
+            nn.Linear(256, 512),
+            nn.ReLU(),
+            nn.Linear(512, 784),
+            nn.ReLU(),
+            nn.Linear(784, 1024),
+            nn.ReLU(),
+            nn.Linear(1024, 3072),
+            nn.ReLU(),
+        )
+
+    def forward(self, x):
+        encode = self.enc(x)
+        decode = self.dec(encode)
+        return decode
+
+
+class ConvAE(nn.Module):
     def __init__(self):
         super(AE, self).__init__()
         self.enc = nn.Sequential(
@@ -97,3 +153,7 @@ def load_data(dataset, test_split, batch_size):
     test_loader = DataLoader(test_dataset.dataset, batch_size=batch_size, shuffle=True)
 
     return train_loader, test_loader
+
+
+if __name__ == "__main__":
+    main()
