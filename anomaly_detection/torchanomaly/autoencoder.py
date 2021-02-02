@@ -9,15 +9,17 @@ import torch
 import torch.nn as nn
 from torchvision.utils import make_grid
 from torchvision.utils import save_image
+from collections import defaultdict
 from IPython.display import Image
 import matplotlib.pyplot as plt
 import numpy as np
 import time
+from datetime import timedelta
 
 
 def main():
     data_dir = "/home/jonathan/code/bitsandbytes/anomaly_detection/kerasanomaly/lfw/all"
-    epochs = 100
+    epochs = 10
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
     test_train = 0.1
@@ -27,7 +29,9 @@ def main():
     dataset = datasets.ImageFolder(data_dir, transform=transform)
     train_loader, test_loader = load_data(dataset, test_train, batch)
 
+    metrics = defaultdict(list)
     device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"running on {device}")
     model = AE()
     model.to(device)
     criterion = nn.MSELoss(reduction="mean")
@@ -39,9 +43,8 @@ def main():
         ep_start = time.time()
         running_loss = 0.0
         for label, data in enumerate(train_loader):
-            print(data[0].shape)
             sample = model(data[0].to(device))
-            loss = criterion(data.to(device), sample)
+            loss = criterion(data[0].to(device), sample)
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
@@ -92,8 +95,11 @@ class AE(nn.Module):
         )
 
     def forward(self, x):
+        orig_shape = x.size()
+        x = x.flatten()
         encode = self.enc(x)
         decode = self.dec(encode)
+        decode = decode.reshape(orig_shape)
         return decode
 
 
