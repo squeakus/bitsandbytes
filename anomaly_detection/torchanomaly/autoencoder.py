@@ -1,5 +1,6 @@
 """
 Should I scale, normalize it? -0.5 0.5
+Why save to state dict?
 """
 
 from torch.utils.data import DataLoader, random_split
@@ -15,41 +16,97 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 from datetime import timedelta
+import cv2
 
 
 def main():
     data_dir = "/home/jonathan/code/bitsandbytes/anomaly_detection/kerasanomaly/lfw/all"
+    model_name = "autoenc.pth"
+    model = AE()
     epochs = 10
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
     test_train = 0.1
     batch = 1
+
+    # set up data
     transform = T.Compose([T.CenterCrop(224), T.Resize(32), T.ToTensor()])
+    train_loader, test_loader, train_size, test_size = load_data(data_dir, transform, test_train, batch)
 
-    dataset = datasets.ImageFolder(data_dir, transform=transform)
-    train_loader, test_loader = load_data(dataset, test_train, batch)
+    # model = train(model, epochs, lr, w_d, train_loader, train_size)
+    # torch.save(model, model_name)
+    test(model_name, test_loader)
 
+
+def test(model_name, dataloader):
+    model = torch.load(model_name)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    for batch, label in dataloader:
+        model.eval()
+
+        with torch.no_grad():
+            original = batch[0]
+            orig_shape = original.size()
+            flat = original.flatten()
+
+            encode = model.enc(flat.to(device))
+            decode = model.dec(encode)
+            decode = decode.reshape(orig_shape)
+
+            image = original.numpy().transpose(1, 2, 0)
+            decode_image = decode.cpu().numpy().transpose(1, 2, 0)
+            visualize("test.png", "original", image, decode_image)
+            exit()
+
+
+def visualize(imagename, title, original, recon):
+    """Draws original, encoded and decoded images"""
+    plt.suptitle(title)
+    plt.subplot(1, 3, 1)
+    plt.title("Original")
+    show_image(original)
+
+    # plt.subplot(1, 3, 2)
+    # plt.title("Code")
+    # plt.imshow(code.reshape([code.shape[-1] // self.rescale, -1]))
+
+    # loss = int(np.sum(np.absolute(img - reco)))
+    plt.subplot(1, 3, 3)
+    plt.title(f"moo")
+    show_image(recon)
+
+    plt.savefig(imagename)
+    plt.clf()
+
+
+def show_image(x):
+    plt.imshow(np.clip(x, 0, 1))
+
+
+def train(model, epochs, lr, w_d, dataloader, datasize):
     metrics = defaultdict(list)
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"running on {device}")
-    model = AE()
     model.to(device)
     criterion = nn.MSELoss(reduction="mean")
     optimizer = torch.optim.SGD(model.parameters(), lr=lr, weight_decay=w_d)
 
+    print(model)
+    total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(f"number of params: {total_params}")
     model.train()
     start = time.time()
     for epoch in range(epochs):
         ep_start = time.time()
         running_loss = 0.0
-        for label, data in enumerate(train_loader):
-            sample = model(data[0].to(device))
-            loss = criterion(data[0].to(device), sample)
+        for image, label in dataloader:
+            sample = model(image.to(device))
+            loss = criterion(image.to(device), sample)
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
             running_loss += loss.item()
-        epoch_loss = running_loss / len(dataset)
+        epoch_loss = running_loss / datasize
         metrics["train_loss"].append(epoch_loss)
         ep_end = time.time()
         print("-----------------------------------------------")
@@ -149,7 +206,8 @@ class AE(nn.Module):
 #         return decode
 
 
-def load_data(dataset, test_split, batch_size):
+def load_data(data_dir, transform, test_split, batch_size):
+    dataset = datasets.ImageFolder(data_dir, transform=transform)
     # Create indices for the split
     dataset_size = len(dataset)
     test_size = int(test_split * dataset_size)
@@ -158,7 +216,7 @@ def load_data(dataset, test_split, batch_size):
     train_loader = DataLoader(train_dataset.dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset.dataset, batch_size=batch_size, shuffle=True)
 
-    return train_loader, test_loader
+    return (train_loader, test_loader, train_size, test_size)
 
 
 if __name__ == "__main__":
