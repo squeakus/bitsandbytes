@@ -8,7 +8,7 @@ def nothing(x):
 
 
 # Load in image
-image = cv2.imread("median.jpg")
+image = cv2.imread("median.jpg")[700:, :]
 
 # Create a window
 cv2.namedWindow("image")

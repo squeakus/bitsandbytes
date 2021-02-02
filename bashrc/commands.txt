@@ -764,6 +764,11 @@ next window:
 ctrl+b n
 ctrl+b p
 
+Tmux panes:
+ctrl-b "  vertical pane
+ctrl-b &  horizontal pane
+ctrl b arrowkeys move around
+
 tmux let you scroll up:
 ctrl+b [
 q to exit
