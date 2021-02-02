@@ -1,6 +1,9 @@
 """
 Should I scale, normalize it? -0.5 0.5
 Why save to state dict?
+how do I pass variables into module
+relu order
+conv mult
 """
 
 from torch.utils.data import DataLoader, random_split
@@ -16,18 +19,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 from datetime import timedelta
-import cv2
 
 
 def main():
     data_dir = "/home/jonathan/code/bitsandbytes/anomaly_detection/kerasanomaly/lfw/all"
     model_name = "autoenc.pth"
     model = AE()
-    epochs = 10
+    epochs = 30
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
     test_train = 0.1
-    batch = 1
+    batch = 32
 
     # set up data
     transform = T.Compose([T.CenterCrop(224), T.Resize(32), T.ToTensor()])
@@ -35,6 +37,7 @@ def main():
 
     # model = train(model, epochs, lr, w_d, train_loader, train_size)
     # torch.save(model, model_name)
+
     test(model_name, test_loader)
 
 
@@ -45,26 +48,24 @@ def test(model_name, dataloader):
         model.eval()
 
         with torch.no_grad():
-            original = batch[0]
-            orig_shape = original.size()
-            flat = original.flatten()
-
-            encode = model.enc(flat.to(device))
+            encode = model.enc(batch.to(device))
             decode = model.dec(encode)
-            decode = decode.reshape(orig_shape)
 
-            image = original.numpy().transpose(1, 2, 0)
-            decode_image = decode.cpu().numpy().transpose(1, 2, 0)
-            visualize("test.png", "original", image, decode_image)
-            exit()
+            for (idx, image) in enumerate(batch):
+                visualize(f"test{idx:02d}.png", "batch", image, decode[idx])
+        exit()
 
 
-def visualize(imagename, title, original, recon):
+def visualize(imagename, title, original, decode):
     """Draws original, encoded and decoded images"""
+
+    image = original.numpy().transpose(1, 2, 0)
+    decode_image = decode.cpu().numpy().transpose(1, 2, 0)
+
     plt.suptitle(title)
     plt.subplot(1, 3, 1)
     plt.title("Original")
-    show_image(original)
+    show_image(image)
 
     # plt.subplot(1, 3, 2)
     # plt.title("Code")
@@ -73,7 +74,7 @@ def visualize(imagename, title, original, recon):
     # loss = int(np.sum(np.absolute(img - reco)))
     plt.subplot(1, 3, 3)
     plt.title(f"moo")
-    show_image(recon)
+    show_image(decode_image)
 
     plt.savefig(imagename)
     plt.clf()
@@ -126,38 +127,91 @@ def train(model, epochs, lr, w_d, dataloader, datasize):
 class AE(nn.Module):
     def __init__(self):
         super(AE, self).__init__()
+
         self.enc = nn.Sequential(
+            #        orig_shape = x.size()
+            nn.Flatten(),
             nn.Linear(3072, 1024),
             nn.ReLU(),
             nn.Linear(1024, 784),
             nn.ReLU(),
-            nn.Linear(784, 512),
-            nn.ReLU(),
-            nn.Linear(512, 256),
-            nn.ReLU(),
-            nn.Linear(256, 128),
-            nn.ReLU(),
         )
         self.dec = nn.Sequential(
-            nn.Linear(128, 256),
-            nn.ReLU(),
-            nn.Linear(256, 512),
-            nn.ReLU(),
-            nn.Linear(512, 784),
-            nn.ReLU(),
             nn.Linear(784, 1024),
             nn.ReLU(),
             nn.Linear(1024, 3072),
             nn.ReLU(),
+            nn.Unflatten(1, (3, 32, 32)),
         )
 
     def forward(self, x):
         orig_shape = x.size()
-        x = x.flatten()
         encode = self.enc(x)
         decode = self.dec(encode)
-        decode = decode.reshape(orig_shape)
+        # decode = decode.reshape(orig_shape)
         return decode
+
+
+# class AE(nn.Module):
+#     def __init__(self):
+#         super(AE, self).__init__()
+
+#         self.enc = nn.Sequential(
+#             #        orig_shape = x.size()
+#             nn.Flatten(),
+#             nn.Linear(3072, 1024),
+#             nn.ReLU(),
+#             nn.Linear(1024, 784),
+#             nn.ReLU(),
+#             nn.Linear(784, 512),
+#             nn.ReLU(),
+#             nn.Linear(512, 256),
+#             nn.ReLU(),
+#         )
+#         self.dec = nn.Sequential(
+#             nn.Linear(256, 512),
+#             nn.ReLU(),
+#             nn.Linear(512, 784),
+#             nn.ReLU(),
+#             nn.Linear(784, 1024),
+#             nn.ReLU(),
+#             nn.Linear(1024, 3072),
+#             nn.ReLU(),
+#             nn.Unflatten(1, (3, 32, 32)),
+#         )
+
+# def forward(self, x):
+#     orig_shape = x.size()
+#     encode = self.enc(x)
+#     decode = self.dec(encode)
+#     # decode = decode.reshape(orig_shape)
+#     return decode
+
+
+# https://www.cs.toronto.edu/~lczhang/360/lec/w05/autoencoder.html
+# class ConvEncoder(nn.Module):
+#     def __init__(self):
+#         super(Autoencoder, self).__init__()
+#         self.encoder = nn.Sequential( # like the Composition layer you built
+#             nn.Conv2d(1, 16, 3, stride=2, padding=1),
+#             nn.ReLU(),
+#             nn.Conv2d(16, 32, 3, stride=2, padding=1),
+#             nn.ReLU(),
+#             nn.Conv2d(32, 64, 7)
+#         )
+#         self.decoder = nn.Sequential(
+#             nn.ConvTranspose2d(64, 32, 7),
+#             nn.ReLU(),
+#             nn.ConvTranspose2d(32, 16, 3, stride=2, padding=1, output_padding=1),
+#             nn.ReLU(),
+#             nn.ConvTranspose2d(16, 1, 3, stride=2, padding=1, output_padding=1),
+#             nn.Sigmoid()
+#         )
+
+#     def forward(self, x):
+#         x = self.encoder(x)
+#         x = self.decoder(x)
+#         return x
 
 
 # class ConvAE(nn.Module):
