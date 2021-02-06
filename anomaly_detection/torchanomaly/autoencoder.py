@@ -18,27 +18,35 @@ from IPython.display import Image
 import matplotlib.pyplot as plt
 import numpy as np
 import time
+import sys
 from datetime import timedelta
 
 
-def main():
+def main(args):
     data_dir = "/home/jonathan/code/bitsandbytes/anomaly_detection/kerasanomaly/lfw/all"
-    model_name = "autoenc.pth"
-    model = AE()
-    epochs = 30
+    action = args[1]
+    model_name = args[2]
+    imsize = 64
+    model = AE((3, imsize, imsize))
+    epochs = 10
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
     test_train = 0.1
     batch = 32
+    torch.manual_seed(42)
 
     # set up data
-    transform = T.Compose([T.CenterCrop(224), T.Resize(32), T.ToTensor()])
+    transform = T.Compose([T.CenterCrop(224), T.Resize(imsize), T.ToTensor()])
     train_loader, test_loader, train_size, test_size = load_data(data_dir, transform, test_train, batch)
 
-    # model = train(model, epochs, lr, w_d, train_loader, train_size)
-    # torch.save(model, model_name)
-
-    test(model_name, test_loader)
+    if action == "train":
+        model = train(model, epochs, lr, w_d, train_loader, train_size)
+        torch.save(model, model_name)
+    elif action == "test":
+        test(model_name, test_loader)
+    else:
+        print("unrecognised action, use either train or test")
+        exit()
 
 
 def test(model_name, dataloader):
@@ -51,8 +59,9 @@ def test(model_name, dataloader):
             encode = model.enc(batch.to(device))
             decode = model.dec(encode)
 
-            for (idx, image) in enumerate(batch):
-                visualize(f"test{idx:02d}.png", "batch", image, decode[idx])
+        for idx, image in enumerate(batch):
+            visualize(f"test{idx:02d}.png", "batch", image, decode[idx])
+
         exit()
 
 
@@ -125,24 +134,13 @@ def train(model, epochs, lr, w_d, dataloader, datasize):
 
 
 class AE(nn.Module):
-    def __init__(self):
+    def __init__(self, size):
         super(AE, self).__init__()
+        self.size = size
+        self.flatsize = size[0] * size[1] * size[2]
 
-        self.enc = nn.Sequential(
-            #        orig_shape = x.size()
-            nn.Flatten(),
-            nn.Linear(3072, 1024),
-            nn.ReLU(),
-            nn.Linear(1024, 784),
-            nn.ReLU(),
-        )
-        self.dec = nn.Sequential(
-            nn.Linear(784, 1024),
-            nn.ReLU(),
-            nn.Linear(1024, 3072),
-            nn.ReLU(),
-            nn.Unflatten(1, (3, 32, 32)),
-        )
+        self.enc = nn.Sequential(nn.Flatten(), nn.Linear(self.flatsize, 5000), nn.ReLU())
+        self.dec = nn.Sequential(nn.Linear(5000, self.flatsize), nn.ReLU(), nn.Unflatten(1, self.size))
 
     def forward(self, x):
         orig_shape = x.size()
@@ -214,50 +212,33 @@ class AE(nn.Module):
 #         return x
 
 
-# class ConvAE(nn.Module):
-#     def __init__(self):
-#         super(ConvAE, self).__init__()
-#         self.enc = nn.Sequential(
-#             nn.Conv2d(in_channels=3, out_channels=12, kernel_size=3, stride=2, padding=1),
-#             nn.ReLU(),
-#             nn.Conv2d(in_channels=12, out_channels=24, kernel_size=3, stride=2, padding=1),
-#             nn.ReLU(),
-#             nn.Linear(784, 512),
-#             nn.ReLU(),
-#             nn.Linear(512, 256),
-#             nn.ReLU(),
-#             nn.Linear(256, 128),
-#             nn.ReLU(),
-#             nn.Linear(128, 64),
-#             nn.ReLU(),
-#             nn.Linear(64, 32),
-#             nn.ReLU(),
-#             nn.Linear(32, 16),
-#             nn.ReLU(),
-#         )
-#         self.dec = nn.Sequential(
-#             nn.Linear(16, 32),
-#             nn.ReLU(),
-#             nn.Linear(32, 64),
-#             nn.ReLU(),
-#             nn.Linear(64, 128),
-#             nn.ReLU(),
-#             nn.Linear(128, 256),
-#             nn.ReLU(),
-#             nn.Linear(256, 512),
-#             nn.ReLU(),
-#             nn.Linear(512, 784),
-#             nn.ReLU(),
-#             nn.ConvTranspose2d(in_channels=24, out_channels=12, kernel_size=3, stride=2, padding=1),
-#             nn.ReLU(),
-#             nn.ConvTranspose2d(in_channels=12, out_channels=3, kernel_size=3, stride=2, padding=1),
-#             nn.ReLU(),
-#         )
+class ConvAE(nn.Module):
+    def __init__(self, size):
+        super(ConvAE, self).__init__()
+        self.size = size
+        self.flatsize = size[0] * size[1] * size[2]
 
-#     def forward(self, x):
-#         encode = self.enc(x)
-#         decode = self.dec(encode)
-#         return decode
+        self.enc = nn.Sequential(
+            nn.Conv2d(in_channels=3, out_channels=12, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(in_channels=12, out_channels=24, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(in_channels=24, out_channels=48, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+        )
+        self.dec = nn.Sequential(
+            nn.ConvTranspose2d(in_channels=48, out_channels=24, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.ConvTranspose2d(in_channels=24, out_channels=12, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.ConvTranspose2d(in_channels=12, out_channels=3, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+        )
+
+    def forward(self, x):
+        encode = self.enc(x)
+        decode = self.dec(encode)
+        return decode
 
 
 def load_data(data_dir, transform, test_split, batch_size):
@@ -274,4 +255,8 @@ def load_data(data_dir, transform, test_split, batch_size):
 
 
 if __name__ == "__main__":
-    main()
+    if not len(sys.argv) == 3:
+
+        print(f"{len(sys.argv)} usage: python autoencoder.py test/train <modelname>")
+        exit()
+    main(sys.argv)
