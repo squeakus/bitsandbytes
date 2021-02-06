@@ -27,7 +27,7 @@ def main(args):
     action = args[1]
     model_name = args[2]
     imsize = 64
-    model = AE((3, imsize, imsize))
+    model = ConvAE((3, imsize, imsize))
     epochs = 10
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
@@ -82,7 +82,7 @@ def visualize(imagename, title, original, decode):
 
     # loss = int(np.sum(np.absolute(img - reco)))
     plt.subplot(1, 3, 3)
-    plt.title(f"moo")
+    plt.title(f"Decode")
     show_image(decode_image)
 
     plt.savefig(imagename)
