@@ -61,9 +61,12 @@ def classify(model_name, image_name, transform):
 
     model.eval()
     with torch.no_grad():
-        encode = model(image)
+        encode = model.enc(image)
         decode = model.dec(encode)
-    visualize(f"classified.png", "batch", image, decode)
+    image = torch.squeeze(image)
+    decode = torch.squeeze(decode)
+
+    visualize(f"classified.png", "batch", image.cpu().detach(), decode)
 
 
 def image_loader(image_name, transform):
@@ -71,9 +74,8 @@ def image_loader(image_name, transform):
     image = Image.open(image_name)
     image = transform(image).float()
     image = Variable(image, requires_grad=True)
-    print(f"size before: {image.size()}")
-    # image = image.unsqueeze(0)  # this is for VGG, may not be needed for ResNet
-    print(f"size after: {image.size()}")
+
+    image = image.unsqueeze(0)  # this is for VGG, may not be needed for ResNet
     return image.cuda()  # assumes that you're using GPU
 
 
@@ -283,9 +285,7 @@ def load_data(data_dir, transform, test_split, batch_size):
 
 
 if __name__ == "__main__":
-    print(f"args: {sys.argv}")
     if not len(sys.argv) > 2:
-
         print(
             f"{len(sys.argv)} usage: python autoencoder.py test/train <modelname> or python autoencoder.py classify <modelname> <image_name>"
         )
