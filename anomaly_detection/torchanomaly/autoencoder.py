@@ -1,6 +1,7 @@
 """
 Should I scale, normalize it? -0.5 0.5
 Why save to state dict?
+BCELoss
 how do I pass variables into module
 relu order
 conv mult
@@ -11,10 +12,11 @@ import torchvision.transforms as T
 from torchvision import datasets
 import torch
 import torch.nn as nn
+from torch.autograd import Variable
 from torchvision.utils import make_grid
 from torchvision.utils import save_image
 from collections import defaultdict
-from IPython.display import Image
+from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
 import time
@@ -23,12 +25,12 @@ from datetime import timedelta
 
 
 def main(args):
-    data_dir = "/home/jonathan/code/bitsandbytes/anomaly_detection/kerasanomaly/lfw/all"
+    data_dir = "/home/jonathan/code/bitsandbytes/anomaly_detection/kerasanomaly/lfw/random"
     action = args[1]
     model_name = args[2]
     imsize = 64
     model = ConvAE((3, imsize, imsize))
-    epochs = 10
+    epochs = 50
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
     test_train = 0.1
@@ -44,9 +46,35 @@ def main(args):
         torch.save(model, model_name)
     elif action == "test":
         test(model_name, test_loader)
+    elif action == "classify":
+        classify(model_name, args[3], transform)
+
     else:
-        print("unrecognised action, use either train or test")
+        print("unrecognised action, use either train, test or classify")
         exit()
+
+
+def classify(model_name, image_name, transform):
+    model = torch.load(model_name)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    image = image_loader(image_name, transform)
+
+    model.eval()
+    with torch.no_grad():
+        encode = model(image)
+        decode = model.dec(encode)
+    visualize(f"classified.png", "batch", image, decode)
+
+
+def image_loader(image_name, transform):
+    """load image, returns cuda tensor"""
+    image = Image.open(image_name)
+    image = transform(image).float()
+    image = Variable(image, requires_grad=True)
+    print(f"size before: {image.size()}")
+    # image = image.unsqueeze(0)  # this is for VGG, may not be needed for ResNet
+    print(f"size after: {image.size()}")
+    return image.cuda()  # assumes that you're using GPU
 
 
 def test(model_name, dataloader):
@@ -65,7 +93,7 @@ def test(model_name, dataloader):
         exit()
 
 
-def visualize(imagename, title, original, decode):
+def visualize(image_name, title, original, decode):
     """Draws original, encoded and decoded images"""
 
     image = original.numpy().transpose(1, 2, 0)
@@ -85,7 +113,7 @@ def visualize(imagename, title, original, decode):
     plt.title(f"Decode")
     show_image(decode_image)
 
-    plt.savefig(imagename)
+    plt.savefig(image_name)
     plt.clf()
 
 
@@ -255,8 +283,11 @@ def load_data(data_dir, transform, test_split, batch_size):
 
 
 if __name__ == "__main__":
-    if not len(sys.argv) == 3:
+    print(f"args: {sys.argv}")
+    if not len(sys.argv) > 2:
 
-        print(f"{len(sys.argv)} usage: python autoencoder.py test/train <modelname>")
+        print(
+            f"{len(sys.argv)} usage: python autoencoder.py test/train <modelname> or python autoencoder.py classify <modelname> <image_name>"
+        )
         exit()
     main(sys.argv)
