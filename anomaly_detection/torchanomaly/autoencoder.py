@@ -31,6 +31,7 @@ def main(args):
     model_name = args[2]
     imsize = 64
     model = StridedConvAE((3, imsize, imsize))
+    print(model)
     epochs = 5
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
