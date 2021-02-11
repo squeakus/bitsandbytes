@@ -74,9 +74,7 @@ class StridedAutoEncoder(nn.Module):
 
     def forward(self, x):
         encode = self.encoder(x)
-        print(f"encode: {encode.shape}")
         decode = self.decoder(encode)
-        print(f"decode: {decode.shape}")
         return decode
 
 
@@ -87,27 +85,21 @@ class StridedConvAE(nn.Module):
         self.flatsize = size[0] * size[1] * size[2]
 
         self.enc = nn.Sequential(
-            nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3, stride=2, padding=2),
+            nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3, stride=2),
             nn.ReLU(),
-            # nn.Conv2d(in_channels=16, out_channels=32, kernel_size=3, stride=2, padding=0),
-            # nn.ReLU(),
-            # nn.Conv2d(in_channels=24, out_channels=48, kernel_size=3, stride=2, padding=6),
-            # nn.ReLU(),
+            nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=2),
+            nn.ReLU(),
         )
         self.dec = nn.Sequential(
-            # nn.ConvTranspose2d(in_channels=48, out_channels=24, kernel_size=3, stride=2, padding=6),
-            # nn.ReLU(),
-            # nn.ConvTranspose2d(in_channels=32, out_channels=16, kernel_size=3, stride=2, padding=0),
-            # nn.ReLU(),
-            nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=3, stride=2, padding=2),
+            nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=3, stride=2),
+            nn.ReLU(),
+            nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=3, stride=2, output_padding=1),
             nn.ReLU(),
         )
 
     def forward(self, x):
         encode = self.enc(x)
-        print(f"encode: {encode.shape}")
         decode = self.dec(encode)
-        print(f"decode: {decode.shape}")
         return decode
 
 

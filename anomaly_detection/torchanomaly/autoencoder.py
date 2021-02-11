@@ -30,7 +30,7 @@ def main(args):
     action = args[1]
     model_name = args[2]
     imsize = 64
-    model = StridedAutoEncoder((3, imsize, imsize))
+    model = StridedConvAE((3, imsize, imsize))
     epochs = 5
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
