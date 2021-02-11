@@ -16,6 +16,7 @@ import torch.nn as nn
 from torch.autograd import Variable
 from torchvision.utils import make_grid
 from torchvision.utils import save_image
+from torchsummary import summary
 from collections import defaultdict
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -30,8 +31,7 @@ def main(args):
     action = args[1]
     model_name = args[2]
     imsize = 64
-    model = StridedConvAE((3, imsize, imsize))
-    print(model)
+    model = StridedAutoEncoder((3, imsize, imsize))
     epochs = 5
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
@@ -44,7 +44,7 @@ def main(args):
     train_loader, test_loader, train_size, test_size = load_data(data_dir, transform, test_train, batch)
 
     if action == "train":
-        model = train(model, epochs, lr, w_d, train_loader, train_size)
+        model = train(model, epochs, lr, w_d, train_loader, train_size, imsize)
         torch.save(model, model_name)
     elif action == "test":
         test(model_name, test_loader)
@@ -56,7 +56,7 @@ def main(args):
         exit()
 
 
-def train(model, epochs, lr, w_d, dataloader, datasize):
+def train(model, epochs, lr, w_d, dataloader, datasize, imsize):
     metrics = defaultdict(list)
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"running on {device}")
@@ -64,7 +64,7 @@ def train(model, epochs, lr, w_d, dataloader, datasize):
     criterion = nn.MSELoss(reduction="mean")
     optimizer = torch.optim.SGD(model.parameters(), lr=lr, weight_decay=w_d)
 
-    print(model)
+    summary(model, input_size=(3, imsize, imsize))
     total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"number of params: {total_params}")
     model.train()
