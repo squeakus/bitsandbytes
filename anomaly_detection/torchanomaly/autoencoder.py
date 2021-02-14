@@ -31,8 +31,8 @@ def main(args):
     action = args[1]
     model_name = args[2]
     imsize = 64
-    model = StridedAutoEncoder((3, imsize, imsize))
-    epochs = 5
+    model = StridedConvAE((3, imsize, imsize))
+    epochs = 20
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
     test_train = 0.1
@@ -103,8 +103,8 @@ def classify(model_name, image_name, transform):
 
     model.eval()
     with torch.no_grad():
-        encode = model.enc(image)
-        decode = model.dec(encode)
+        encode = model.encoder(image)
+        decode = model.decoder(encode)
     image = torch.squeeze(image)
     decode = torch.squeeze(decode)
 
@@ -118,8 +118,8 @@ def test(model_name, dataloader):
         model.eval()
 
         with torch.no_grad():
-            encode = model.enc(batch.to(device))
-            decode = model.dec(encode)
+            encode = model.encoder(batch.to(device))
+            decode = model.decoder(encode)
 
         for idx, image in enumerate(batch):
             visualize(f"test{idx:02d}.png", "batch", image, decode[idx])

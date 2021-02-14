@@ -7,7 +7,7 @@ class ConvLinearAE(nn.Module):
         self.size = size
         self.flatsize = size[0] * size[1] * size[2]
 
-        self.enc = nn.Sequential(
+        self.encoder = nn.Sequential(
             nn.Conv2d(in_channels=3, out_channels=12, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.Conv2d(in_channels=12, out_channels=24, kernel_size=3, stride=1, padding=1),
@@ -18,7 +18,7 @@ class ConvLinearAE(nn.Module):
             nn.Linear(98304, 1024),
             nn.ReLU(),
         )
-        self.dec = nn.Sequential(
+        self.decoder = nn.Sequential(
             nn.Linear(1024, 98304),
             nn.ReLU(),
             nn.Unflatten(1, (24, 64, 64)),
@@ -31,9 +31,9 @@ class ConvLinearAE(nn.Module):
         )
 
     def forward(self, x):
-        encode = self.enc(x)
+        encode = self.encoder(x)
         print(encode.shape)
-        decode = self.dec(encode)
+        decode = self.decoder(encode)
         return decode
 
 
@@ -84,13 +84,13 @@ class StridedConvAE(nn.Module):
         self.size = size
         self.flatsize = size[0] * size[1] * size[2]
 
-        self.enc = nn.Sequential(
+        self.encoder = nn.Sequential(
             nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3, stride=2),
             nn.ReLU(),
             nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=2),
             nn.ReLU(),
         )
-        self.dec = nn.Sequential(
+        self.decoder = nn.Sequential(
             nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=3, stride=2),
             nn.ReLU(),
             nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=3, stride=2, output_padding=1),
@@ -98,8 +98,8 @@ class StridedConvAE(nn.Module):
         )
 
     def forward(self, x):
-        encode = self.enc(x)
-        decode = self.dec(encode)
+        encode = self.encoder(x)
+        decode = self.decoder(encode)
         return decode
 
 
@@ -109,7 +109,7 @@ class ConvAE(nn.Module):
         self.size = size
         self.flatsize = size[0] * size[1] * size[2]
 
-        self.enc = nn.Sequential(
+        self.encoder = nn.Sequential(
             nn.Conv2d(in_channels=3, out_channels=12, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.Conv2d(in_channels=12, out_channels=24, kernel_size=3, stride=1, padding=1),
@@ -117,7 +117,7 @@ class ConvAE(nn.Module):
             nn.Conv2d(in_channels=24, out_channels=48, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
         )
-        self.dec = nn.Sequential(
+        self.decoder = nn.Sequential(
             nn.ConvTranspose2d(in_channels=48, out_channels=24, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.ConvTranspose2d(in_channels=24, out_channels=12, kernel_size=3, stride=1, padding=1),
@@ -127,9 +127,9 @@ class ConvAE(nn.Module):
         )
 
     def forward(self, x):
-        encode = self.enc(x)
+        encode = self.encoder(x)
         print(encode.shape)
-        decode = self.dec(encode)
+        decode = self.decoder(encode)
         return decode
 
 
@@ -139,13 +139,13 @@ class SimpleAE(nn.Module):
         self.size = size
         self.flatsize = size[0] * size[1] * size[2]
 
-        self.enc = nn.Sequential(nn.Flatten(), nn.Linear(self.flatsize, 5000), nn.ReLU())
-        self.dec = nn.Sequential(nn.Linear(5000, self.flatsize), nn.ReLU(), nn.Unflatten(1, self.size))
+        self.encoder = nn.Sequential(nn.Flatten(), nn.Linear(self.flatsize, 5000), nn.ReLU())
+        self.decoder = nn.Sequential(nn.Linear(5000, self.flatsize), nn.ReLU(), nn.Unflatten(1, self.size))
 
     def forward(self, x):
         orig_shape = x.size()
-        encode = self.enc(x)
-        decode = self.dec(encode)
+        encode = self.encoder(x)
+        decode = self.decoder(encode)
         # decode = decode.reshape(orig_shape)
         return decode
 
@@ -154,7 +154,7 @@ class LinearAE(nn.Module):
     def __init__(self):
         super(AE, self).__init__()
 
-        self.enc = nn.Sequential(
+        self.encoder = nn.Sequential(
             #        orig_shape = x.size()
             nn.Flatten(),
             nn.Linear(3072, 1024),
@@ -166,7 +166,7 @@ class LinearAE(nn.Module):
             nn.Linear(512, 256),
             nn.ReLU(),
         )
-        self.dec = nn.Sequential(
+        self.decoder = nn.Sequential(
             nn.Linear(256, 512),
             nn.ReLU(),
             nn.Linear(512, 784),
@@ -181,8 +181,8 @@ class LinearAE(nn.Module):
 
 def forward(self, x):
     orig_shape = x.size()
-    encode = self.enc(x)
-    decode = self.dec(encode)
+    encode = self.encoder(x)
+    decode = self.decoder(encode)
     # decode = decode.reshape(orig_shape)
     return decode
 
