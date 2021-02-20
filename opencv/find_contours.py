@@ -55,6 +55,7 @@ def parse_layers(images, bumps, debug=True):
             outname = imagename.replace(".jpg", "_out.jpg")
 
             for bump in bumps:
+                x, y, w, h = bump["bbox"]
                 layer = bump["layers"].iloc[layer_cnt]
                 circ_x = int(layer.circ_x)
                 circ_y = int(layer.circ_y)
