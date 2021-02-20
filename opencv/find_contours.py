@@ -2,24 +2,25 @@ import numpy as np
 import pandas as pd
 import cv2
 import glob
+from tqdm import tqdm
 
 
 def main():
-    columns = ["area", "perimeter", "circle", "cnt_count"]
-    bumps = find_bumps("template.jpg", columns)
+    columns = ["area", "perimeter", "circ_x", "circ_y", "radius", "cnt_count"]
+    dtype = ["int", "int", "int", "int", "int", "int"]
+    bumps = find_bumps("template.jpg", columns, dtype)
     images = glob.glob("*thresh.jpg")
     bumps = parse_layers(images, bumps)
 
     with open("result.txt", "w") as outfile:
-        outfile.write(bumps)
+        outfile.write(str(bumps))
 
 
-def parse_layers(images, bumps, debug=False):
-    for imagename in images:
+def parse_layers(images, bumps, debug=True):
+    for imagename in tqdm(images):
         layer_cnt = int(imagename.split("_")[0])
         image = cv2.imread(imagename, 0)
-        print(f"processing layer {layer_cnt}")
-
+        output = cv2.imread(imagename)
         for bump in bumps:
             x, y, w, h = bump["bbox"]
             layers = bump["layers"]
@@ -29,25 +30,36 @@ def parse_layers(images, bumps, debug=False):
 
             # calc those contours!
             contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-            area = cv2.contourArea(cnt)
-            perimeter = cv2.arcLength(cnt, True)
-            (circ_x, circ_y), radius = cv2.minEnclosingCircle(cnt)
+            # only compute for maximum contour
+            maxarea, maxcnt = 0, 0
+            for contour in contours:
+                cv2.drawContours(output, [contour], 0, (255, 255, 0), 3)
+                area = cv2.contourArea(contour)
+                if area > maxarea:
+                    maxarea = area
+                    maxcnt = contour
+
+            area = cv2.contourArea(maxcnt)
+            perimeter = cv2.arcLength(maxcnt, True)
+            (circ_x, circ_y), radius = cv2.minEnclosingCircle(maxcnt)
 
             # update the dataframe
             layer.area = area
             layer.perimeter = perimeter
-            layer.circle = (int(x + circ_x), int(y + circ_y), int(radius))
+            layer.circ_x = int(x + circ_x)
+            layer.circ_y = int(y + circ_y)
+            layer.radius = int(radius)
             layer.cnt_count = len(contours)
 
         if debug:
             outname = imagename.replace(".jpg", "_out.jpg")
-            output = cv2.imread(filename)
 
             for bump in bumps:
                 layer = bump["layers"].iloc[layer_cnt]
-                circ_x, circ_y, radius = layer.circle
-
-                cv2.drawContours(output, [cnt], 0, (0, 255, 0), 3)
+                circ_x = int(layer.circ_x)
+                circ_y = int(layer.circ_y)
+                radius = int(layer.radius)
+                cv2.drawContours(output, [maxcnt], 0, (0, 255, 0), 3)
                 output = cv2.circle(output, (circ_x, circ_y), radius, (0, 0, 255), 2)
                 output = cv2.rectangle(output, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
@@ -56,7 +68,7 @@ def parse_layers(images, bumps, debug=False):
     return bumps
 
 
-def find_bumps(filename, columns):
+def find_bumps(filename, columns, dtypes):
     image = cv2.imread(filename, 0)
     bboxes = []
     bumps = []
@@ -79,6 +91,7 @@ def find_bumps(filename, columns):
 
     for bbox in bboxes:
         df = pd.DataFrame(np.nan, index=range(0, 193), columns=columns)
+        # df.astype(dtypes)
         bump = {"bbox": (x, y, w, h), "layers": df}
         bumps.append(bump)
     return bumps
