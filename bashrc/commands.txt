@@ -1438,6 +1438,67 @@ ALTERNATIVELY add this line:
 LS_COLORS="ow=01;34:di=01;34"
 export LS_COLORS
 
+#add this to zshrc:
+
+if [[ -f ~/.dircolors ]] ; then
+            eval $(dircolors -b ~/.dircolors)
+    elif [[ -f /etc/DIR_COLORS ]] ; then
+                eval $(dircolors -b /etc/DIR_COLORS)
+fi
+
+alias codefolder="cd /mnt/c/Users/Jonathan/Desktop/code"
+alias cmd="vi /mnt/c/Users/Jonathan/Desktop/code/bitsandbytes/bashrc/commands.txt"
+alias open="explorer.exe"
+
+also add this git to /usr/local/bin:
+#!/bin/sh
+
+if pwd | grep /mnt/c > /dev/null; then
+            exec git.exe "$@"
+    else
+                exec /usr/bin/git "$@"
+fi
+
+windows terminal use powerline fonts
+            {
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "hidden": false,
+                "name": "Ubuntu-20.04",
+                "source": "Windows.Terminal.Wsl",
+                "colorScheme" : "wsl",
+                "fontFace" : "DejaVu Sans Mono for Powerline",
+                "startingDirectory": "~/",
+            }
+        ]
+    },
+
+    // Add custom color schemes to this array.
+    // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
+    "schemes": [
+        {
+            "background" : "#002B36",
+            "black" : "#002B36",
+            "blue" : "#268BD2",
+            "brightBlack" : "#657B83",
+            "brightBlue" : "#839496",
+            "brightCyan" : "#D33682",
+            "brightGreen" : "#B58900",
+            "brightPurple" : "#EEE8D5",
+            "brightRed" : "#CB4B16",
+            "brightWhite" : "#FDF6E3",
+            "brightYellow" : "#586E75",
+            "cyan" : "#2AA198",
+            "foreground" : "#93A1A1",
+            "green" : "#859900",
+            "name" : "wsl",
+            "purple" : "#6C71C4",
+            "red" : "#DC322F",
+            "white" : "#93A1A1",
+            "yellow" : "#B58900"
+        }
+    ],
+grub2 vimex is a nice gui for grub
+
 /usr/share/images/grub
 GRUB_BACKGROUND="/usr/share/images/grub/TulipStair_QueensHouse_Greenwich.tga"
 
