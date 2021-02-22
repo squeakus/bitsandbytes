@@ -3,17 +3,38 @@ import pandas as pd
 import cv2
 import glob
 from tqdm import tqdm
+import os
+import psutil
 
 
 def main():
-    columns = ["area", "perimeter", "circ_x", "circ_y", "radius", "cnt_count"]
-    dtype = ["int", "int", "int", "int", "int", "int"]
-    bumps = find_bumps("template.jpg", columns, dtype)
     images = glob.glob("*thresh.jpg")
-    bumps = parse_layers(images, bumps)
+    process = psutil.Process(os.getpid())
 
-    with open("result.txt", "w") as outfile:
-        outfile.write(str(bumps))
+    columns = ["area", "perimeter", "circ_x", "circ_y", "radius", "cnt_count"]
+    print(f"before: {round(process.memory_info().rss/ (1024*1024),3)} megabytes")
+    bumps = find_bumps("template.jpg", columns)
+    # bumps = parse_layers(images, bumps)
+
+    vol = volumize(images)
+    print(f"Memory used: {round(process.memory_info().rss/ (1024*1024),3)} megabytes")
+
+    with open("volume.npy", "wb") as f:
+        np.save(f, vol)
+
+    # with open("result.txt", "w") as outfile:
+    #     outfile.write(str(bumps))
+
+
+def volumize(images):
+    layers = []
+    for imagename in tqdm(images):
+        image = cv2.imread(imagename, 0)
+        ret, thresh = cv2.threshold(image, 127, 255, 0)
+        layers.append(thresh)
+
+    vol = np.stack(layers, axis=0)
+    print(f"Loaded volume  {vol.shape}  {vol.dtype}")
 
 
 def parse_layers(images, bumps, debug=True):
@@ -79,7 +100,7 @@ def parse_layers(images, bumps, debug=True):
     return bumps
 
 
-def find_bumps(filename, columns, dtypes):
+def find_bumps(filename, columns):
     image = cv2.imread(filename, 0)
     bboxes = []
     bumps = []
