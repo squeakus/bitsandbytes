@@ -5,6 +5,7 @@ import glob
 from tqdm import tqdm
 import os
 import psutil
+import pyvista as pv
 
 
 def main():
@@ -17,10 +18,19 @@ def main():
     # bumps = parse_layers(images, bumps)
 
     vol = volumize(images)
-    print(f"Memory used: {round(process.memory_info().rss/ (1024*1024),3)} megabytes")
+    x, y, w, h = 90, 1467, 113, 116
+    bump = vol[:, y : y + h, x : x + w]
 
-    with open("volume.npy", "wb") as f:
-        np.save(f, vol)
+    print(f"Memory used: {round(process.memory_info().rss/ (1024*1024),3)} megabytes")
+    # with open("volume.npy", "wb") as f:
+
+    data = pv.wrap(bump)
+    p = pv.Plotter()
+    #opacity = [0, 0, 0, 0.1, 0.3, 0.6, 1]
+    p.add_volume(data, cmap="bone", shade=True)
+    p.show()
+    # np.save("volume.npy", vol)
+    # print(bumps[30].values())
 
     # with open("result.txt", "w") as outfile:
     #     outfile.write(str(bumps))
@@ -35,6 +45,7 @@ def volumize(images):
 
     vol = np.stack(layers, axis=0)
     print(f"Loaded volume  {vol.shape}  {vol.dtype}")
+    return vol
 
 
 def parse_layers(images, bumps, debug=True):
