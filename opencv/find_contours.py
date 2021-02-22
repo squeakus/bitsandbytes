@@ -33,22 +33,27 @@ def parse_layers(images, bumps, debug=True):
             # only compute for maximum contour
             maxarea, maxcnt = 0, 0
             for contour in contours:
-                cv2.drawContours(output, [contour], 0, (255, 255, 0), 3)
                 area = cv2.contourArea(contour)
                 if area > maxarea:
                     maxarea = area
                     maxcnt = contour
 
-            area = cv2.contourArea(maxcnt)
-            perimeter = cv2.arcLength(maxcnt, True)
-            (circ_x, circ_y), radius = cv2.minEnclosingCircle(maxcnt)
+            bump["contours"] = contours
+            bump["maxcnt"] = maxcnt
+
+            if maxarea == 0:
+                area, perimeter, circ_x, circ_y, radius = 0, 0, 0, 0, 0
+            else:
+                area = cv2.contourArea(maxcnt)
+                perimeter = cv2.arcLength(maxcnt, True)
+                (circ_x, circ_y), radius = cv2.minEnclosingCircle(maxcnt)
 
             # update the dataframe
             layer.area = area
             layer.perimeter = perimeter
-            layer.circ_x = int(x + circ_x)
-            layer.circ_y = int(y + circ_y)
-            layer.radius = int(radius)
+            layer.circ_x = x + circ_x
+            layer.circ_y = y + circ_y
+            layer.radius = radius
             layer.cnt_count = len(contours)
 
         if debug:
@@ -56,14 +61,19 @@ def parse_layers(images, bumps, debug=True):
 
             for bump in bumps:
                 x, y, w, h = bump["bbox"]
+                maxcnt = bump["maxcnt"]
                 layer = bump["layers"].iloc[layer_cnt]
-                circ_x = int(layer.circ_x)
-                circ_y = int(layer.circ_y)
-                radius = int(layer.radius)
-                cv2.drawContours(output, [maxcnt], 0, (0, 255, 0), 3)
-                output = cv2.circle(output, (circ_x, circ_y), radius, (0, 0, 255), 2)
-                output = cv2.rectangle(output, (x, y), (x + w, y + h), (255, 0, 0), 2)
-
+                circ_x = layer.circ_x
+                circ_y = layer.circ_y
+                radius = layer.radius
+                if (radius * 2) < w:
+                    # output = cv2.circle(output, (circ_x, circ_y), radius, (0, 0, 255), 2)
+                    output = cv2.rectangle(output, (x, y), (x + w, y + h), (255, 0, 0), 2)
+                    # if layer.area > 0:
+                    #    for coord in maxcnt:
+                    #        coord[0][0] += x
+                    #        coord[0][1] += y
+                    #    cv2.drawContours(output, [maxcnt], 0, (255, 255, 0), 2)
             cv2.imwrite(outname, output)
 
     return bumps
@@ -91,7 +101,8 @@ def find_bumps(filename, columns, dtypes):
                 bboxes.append((x, y, w, h))
 
     for bbox in bboxes:
-        df = pd.DataFrame(np.nan, index=range(0, 193), columns=columns)
+        x, y, w, h = bbox
+        df = pd.DataFrame(0, index=range(0, 193), columns=columns, dtype=int)
         # df.astype(dtypes)
         bump = {"bbox": (x, y, w, h), "layers": df}
         bumps.append(bump)
