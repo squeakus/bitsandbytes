@@ -13,7 +13,7 @@ import transforms as T
 
 
 def main():
-    data_folder = "./"
+    data_folder = "/home/jonathan/tmp/labelled"
     csv_file = os.path.join(data_folder, "out.csv")
     # test(data_folder, csv_file)
     train(data_folder, csv_file)
@@ -217,8 +217,6 @@ class ObjectDataset(torch.utils.data.Dataset):
     def parse_one_annot(self, filename):
         data = self.annotations
         boxes_array = data[data["filename"] == filename][["xmin", "ymin", "xmax", "ymax"]].values
-        print("filename", filename)
-        print(boxes_array)
         return boxes_array
 
     def __len__(self):
