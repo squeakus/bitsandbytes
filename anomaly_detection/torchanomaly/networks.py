@@ -1,4 +1,58 @@
-import torch.nn as nn
+from torch import nn, cat
+
+
+class UNET(nn.Module):
+    def __init__(self, in_channels, out_channels):
+        super().__init__()
+
+        self.conv1 = self.contract_block(in_channels, 32, 7, 3)
+        self.conv2 = self.contract_block(32, 64, 3, 1)
+        self.conv3 = self.contract_block(64, 128, 3, 1)
+
+        self.upconv3 = self.expand_block(128, 64, 3, 1)
+        self.upconv2 = self.expand_block(64 * 2, 32, 3, 1)
+        self.upconv1 = self.expand_block(32 * 2, out_channels, 3, 1)
+
+    def __call__(self, x):
+
+        # downsampling part
+        conv1 = self.conv1(x)
+        conv2 = self.conv2(conv1)
+        conv3 = self.conv3(conv2)
+
+        upconv3 = self.upconv3(conv3)
+
+        upconv2 = self.upconv2(cat([upconv3, conv2], 1))
+        upconv1 = self.upconv1(cat([upconv2, conv1], 1))
+
+        return upconv1
+
+    def contract_block(self, in_channels, out_channels, kernel_size, padding):
+
+        contract = nn.Sequential(
+            nn.Conv2d(in_channels, out_channels, kernel_size=kernel_size, stride=1, padding=padding),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(),
+            nn.Conv2d(out_channels, out_channels, kernel_size=kernel_size, stride=1, padding=padding),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=3, stride=2, padding=1),
+        )
+
+        return contract
+
+    def expand_block(self, in_channels, out_channels, kernel_size, padding):
+
+        expand = nn.Sequential(
+            nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=padding),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(),
+            nn.Conv2d(out_channels, out_channels, kernel_size, stride=1, padding=padding),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(),
+            nn.ConvTranspose2d(out_channels, out_channels, kernel_size=3, stride=2, padding=1, output_padding=1),
+        )
+        return expand
 
 
 class ConvLinearAE(nn.Module):
@@ -135,12 +189,22 @@ class ConvAE(nn.Module):
 
 class SimpleAE(nn.Module):
     def __init__(self, size):
-        super(AE, self).__init__()
+        super(SimpleAE, self).__init__()
         self.size = size
         self.flatsize = size[0] * size[1] * size[2]
 
-        self.encoder = nn.Sequential(nn.Flatten(), nn.Linear(self.flatsize, 5000), nn.ReLU())
-        self.decoder = nn.Sequential(nn.Linear(5000, self.flatsize), nn.ReLU(), nn.Unflatten(1, self.size))
+        self.encoder = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(self.flatsize, 5000),
+            # nn.ReLU()
+            nn.Sigmoid(),
+        )
+        self.decoder = nn.Sequential(
+            nn.Linear(5000, self.flatsize),
+            # nn.ReLU(),
+            nn.Sigmoid(),
+            nn.Unflatten(1, self.size),
+        )
 
     def forward(self, x):
         orig_shape = x.size()
@@ -178,13 +242,12 @@ class LinearAE(nn.Module):
             nn.Unflatten(1, (3, 32, 32)),
         )
 
-
-def forward(self, x):
-    orig_shape = x.size()
-    encode = self.encoder(x)
-    decode = self.decoder(encode)
-    # decode = decode.reshape(orig_shape)
-    return decode
+    def forward(self, x):
+        orig_shape = x.size()
+        encode = self.encoder(x)
+        decode = self.decoder(encode)
+        # decode = decode.reshape(orig_shape)
+        return decode
 
 
 # https://www.cs.toronto.edu/~lczhang/360/lec/w05/autoencoder.html

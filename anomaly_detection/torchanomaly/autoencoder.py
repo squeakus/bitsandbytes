@@ -10,7 +10,7 @@ conv mult
 from torch.utils.data import DataLoader, random_split
 import torchvision.transforms as T
 from torchvision import datasets
-from networks import ConvAE, ConvLinearAE, StridedConvAE, StridedAutoEncoder
+from networks import ConvAE, ConvLinearAE, StridedConvAE, StridedAutoEncoder, UNET, SimpleAE
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
@@ -28,11 +28,14 @@ from datetime import timedelta
 
 def main(args):
     data_dir = "/home/jonathan/data/lfw"
+    # data_dir = "/home/jonathan/Downloads/seg_train/seg_train"
     action = args[1]
     model_name = args[2]
-    imsize = 64
-    model = StridedConvAE((3, imsize, imsize))
-    epochs = 20
+    imsize = 128
+    model = SimpleAE((3, imsize, imsize))
+    # model = StridedConvAE((3, imsize, imsize))
+    # model = UNET(3, 3)
+    epochs = 50
     lr = 1e-2  # learning rate
     w_d = 1e-5  # weight decay
     test_train = 0.1
@@ -118,8 +121,9 @@ def test(model_name, dataloader):
         model.eval()
 
         with torch.no_grad():
-            encode = model.encoder(batch.to(device))
-            decode = model.decoder(encode)
+            # encode = model.encoder(batch.to(device))
+            # decode = model.decoder(encode)
+            decode = model(batch.to(device))
 
         for idx, image in enumerate(batch):
             visualize(f"test{idx:02d}.png", "batch", image, decode[idx])
