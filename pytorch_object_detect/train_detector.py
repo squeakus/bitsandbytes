@@ -14,15 +14,19 @@ import transforms as T
 
 def main():
     data_folder = "/home/jonathan/tmp/labelled"
-    csv_file = os.path.join(data_folder, "out.csv")
-    # test(data_folder, csv_file)
-    train(data_folder, csv_file)
+    if not os.path.exists("models"):
+        print("creating model dir")
+        os.makedirs("models")
+
+    csv_file = os.path.join(data_folder, "annotations.csv")
+    test(data_folder, csv_file)
+    # train(data_folder, csv_file)
     # classify(data_folder)
 
 
 def classify(data_folder):
     loaded_model = get_model(num_classes=2)
-    loaded_model.load_state_dict(torch.load("out/model"))
+    loaded_model.load_state_dict(torch.load("models/model.pth"))
     dataset_classify = ObjectDataset(data_folder=data_folder, csv_file=None, transforms=get_transform(train=False))
     for idx in range(len(dataset_classify)):
         img, _ = dataset_classify[idx]
@@ -57,7 +61,7 @@ def classify(data_folder):
 
 def test(data_folder, csv_file):
     loaded_model = get_model(num_classes=2)
-    loaded_model.load_state_dict(torch.load("out/model"))
+    loaded_model.load_state_dict(torch.load("models/model.pth"))
     dataset_test = ObjectDataset(data_folder=data_folder, csv_file=csv_file, transforms=get_transform(train=False))
     # split the dataset in train and test set
     torch.manual_seed(1)
@@ -143,7 +147,7 @@ def train(data_folder, csv_file, train_test_split=0.1):
     # evaluate on the test dataset
     evaluate(model, data_loader_test, device=device)
 
-    torch.save(model.state_dict(), "out/model")
+    torch.save(model.state_dict(), "models/model.pth")
 
 
 def get_model(num_classes):
