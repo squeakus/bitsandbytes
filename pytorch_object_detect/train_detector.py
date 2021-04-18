@@ -19,9 +19,29 @@ def main():
         os.makedirs("models")
 
     csv_file = os.path.join(data_folder, "annotations.csv")
-    test(data_folder, csv_file)
+    export_onnx(data_folder, csv_file)
+    # test(data_folder, csv_file)
     # train(data_folder, csv_file)
     # classify(data_folder)
+
+
+def export_onnx(data_folder, csv_file):
+    loaded_model = get_model(num_classes=2)
+    loaded_model.load_state_dict(torch.load("models/model.pth"))
+    dataset_classify = ObjectDataset(data_folder=data_folder, csv_file=csv_file, transforms=get_transform(train=False))
+    image, _ = dataset_classify[0]
+
+    # Export the model
+    torch.onnx.export(
+        loaded_model,  # model being run
+        image,  # model input (or a tuple for multiple inputs)
+        "models/model.onnx",  # where to save the model (can be a file or file-like object)
+        export_params=True,  # store the trained parameter weights inside the model file
+        do_constant_folding=True,  # whether to execute constant folding for optimization
+        input_names=["input"],  # the model's input names
+        output_names=["output"],  # the model's output names
+        dynamic_axes={"input": {0: "batch_size"}, "output": {0: "batch_size"}},  # variable length axes
+    )
 
 
 def classify(data_folder):
@@ -148,6 +168,7 @@ def train(data_folder, csv_file, train_test_split=0.1):
     evaluate(model, data_loader_test, device=device)
 
     torch.save(model.state_dict(), "models/model.pth")
+    torch
 
 
 def get_model(num_classes):
@@ -181,8 +202,13 @@ class ObjectDataset(torch.utils.data.Dataset):
             self.csv_file = csv_file
             self.training = True
         self.transforms = transforms
-        self.annotations = pd.read_csv(csv_file)
-        self.imgs = sorted(self.annotations.filename.tolist())
+        if csv_file is not None:
+            self.annotations = pd.read_csv(csv_file)
+            self.imgs = sorted(self.annotations.filename.tolist())
+        else:
+            self.annotations = None
+            print("how to pass in single images?")
+            exit()
 
     def __getitem__(self, idx):
         # load images and bounding boxes

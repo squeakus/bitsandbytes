@@ -12,6 +12,7 @@ def main():
     loaded_model = get_model(num_classes=2)
     loaded_model.load_state_dict(torch.load("models/model.pth"))
     image = image_loader("0.jpg")
+    print("hello!")
     # Export the model
     torch.onnx.export(
         loaded_model,  # model being run
@@ -19,6 +20,7 @@ def main():
         "models/model.onnx",  # where to save the model (can be a file or file-like object)
         export_params=True,  # store the trained parameter weights inside the model file
         do_constant_folding=True,  # whether to execute constant folding for optimization
+        opset_version=11,
         input_names=["input"],  # the model's input names
         output_names=["output"],  # the model's output names
         dynamic_axes={"input": {0: "batch_size"}, "output": {0: "batch_size"}},  # variable length axes
@@ -32,7 +34,9 @@ def image_loader(image_name):
     image = Image.open(image_name)
     image = loader(image).float()
     image = Variable(image, requires_grad=True)
+
     image = image.unsqueeze(0)  # this is for VGG, may not be needed for ResNet
+    return image
     return image.cuda()  # assumes that you're using GPU
 
 
