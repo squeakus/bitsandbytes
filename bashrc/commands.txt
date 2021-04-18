@@ -1,3 +1,6 @@
+sudo docker run -it --rm --runtime nvidia --network host -v /home/jonathan/code:/code nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
+
+
 # Stream the video from a pi
 sudo modprobe bcm2835-v4l2
 cvlc v4l2:///dev/video0 --v4l2-width 1920 --v4l2-height 1080 --v4l2-chroma h264 --sout '#standard{access=http,mux=ts,dst=0.0.0.0:12345}'
