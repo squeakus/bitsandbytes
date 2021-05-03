@@ -73,4 +73,10 @@ def std(values, ave):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        main(sys.argv[1])
+    else:
+        print(f"usage: python {sys.argv[0]} <foldername>")
+
+if __name__ == "__main__":
     main()
