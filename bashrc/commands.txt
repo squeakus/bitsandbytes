@@ -1,5 +1,6 @@
 sudo docker run -it --rm --runtime nvidia --network host -v /home/jonathan/code:/code nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
-
+#find and copy a file:
+find . -name "*scalebox.jpg" -exec cp {} ./scales \;
 
 # Stream the video from a pi
 sudo modprobe bcm2835-v4l2
