@@ -1,0 +1,3781 @@
+<<<<<<< HEAD
+sudo docker run -it --rm --runtime nvidia --network host -v /home/jonathan/code:/code nvcr.io/nvidia/l4t-pytorch:r32.5.0-pth1.7-py3
+=======
+>>>>>>> new commands
+#find and copy a file:
+find . -name "*scalebox.jpg" -exec cp {} ./scales \;
+
+# Stream the video from a pi
+sudo modprobe bcm2835-v4l2
+cvlc v4l2:///dev/video0 --v4l2-width 1920 --v4l2-height 1080 --v4l2-chroma h264 --sout '#standard{access=http,mux=ts,dst=0.0.0.0:12345}'
+
+# just pad with black
+mogrify -background black -gravity center -extent 1280x720 *.jpg
+
+# resize and pad to keep aspect:
+convert image -resize 1000x1500 -background somecolor -gravity center -extent 1000x1500 resultimage
+
+mogrify -resize 1000x1500 -background somecolor -gravity center -extent 1000x1500 *
+:
+#add sublime to git bash:
+alias subl="/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
+
+
+#ifttt webhook trigger using maker.ifttt.com:
+curl -X POST https://maker.ifttt.com/trigger/{temp_norm}/with/key/
+
+#User experience, developer experience
+tim plowman
+codeplay
+
+#where pytorch keeps its models
+.cache/torch/checkpoints/
+
+#call manim graph command:
+manim graphing.py GraphScene Plot -c white
+
+etch a sketch docker reset:
+sudo apt-get install bridge-utils
+sudo pkill docker
+sudo iptables -t nat -F
+sudo ifconfig docker0 down
+sudo brctl delbr docker0
+sudo service docker restart
+
+# running realsense docker
+#!/bin/bash 
+xhost +local:root
+docker run --name="ros_gazebo_demo" --rm -it \
+--env="DISPLAY"  \
+--env="QT_X11_NO_MITSHM=1"  \
+--volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+--privileged -v /dev:/dev:rw \
+--network=host \
+dockerforintel/ros-realsense-docker
+xhost -local:root
+
+roslaunch realsense2_camera opensource_tracking.launch
+
+#calibrate with 3d printed case
+python3 calibrate.py  -s 2.51 -co '{"board_config": {"left_to_right_distance_cm": 7.5}}'
+
+python3 test.py -co '{"streams": ["previewout", "metaout", "depth_sipp"]}'
+
+Tensorflow 2 force cpu:
+env CUDA_VISIBLE_DEVICES=0
+
+Keembay commands:
+screen /dev/ttyUSB0 115200
+sudo minicom -D /dev/ttyUSB0 -b 115200
+
+flush -> write cache back to memory
+invalidate <- read from memory to cache
+
+alias ng="make -j8 -f newMakefile.mk MV_SOC_REV=ma2480"
+alias ngprism="make -j8 -f newMakefile.mk MV_SOC_REV=ma2085 DDR_DEVICE=MICRON_TYPE_2"
+
+export MV_TOOLS_DIR=/home/jonathan/code/mdk-$1/tools
+export MDK_INSTALL_DIR=/home/jonathan/code/mdk-$1/mdk/common
+export MV_COMMON_BASE=/home/jonathan/code/mdk-$1/mdk/common
+echo "Path is now: $MV_TOOLS_DIR"
+
+ng run MV_SOC=ma2085
+ng debug MV_SOC_REV=ma2480
+ng menuconfig
+find -name "mvbuild" -exec echo rm -r {} \;
+git clean  -d  -f .
+git submodule update --init --recursive
+
+
+
+#set variables when switching mdk
+. switchmdk.sh r9
+
+# AT commands:
+AT -> OK
+AT+CIMI -> show network
+ATH -> hang up
+ATD08*******;  -> call a number
+AT+CLIP=1 <- (Calling Line Identification Presentation) show call id
+AT+CHUP <- hang up even if call has not been answered
+AT+CSQ <- signal strength <9 bad; 10->14 okay; 15->19 good; 20->30 excellent
+AT+CPAS <- status
+ATS0=1 <- automatically answer after ring
+0 ready
+1 unavailable
+2 unknown
+3 ringing
+4 call in progress
+5 asleep
+
+
+#screen for serial monitor:
+you need to use ctrl+z to send message so use screen as the serial monitor
+screen /dev/ttyUSB0 115200
+AT+CMGF=1
+AT+CMGS="+31628870634"
+>This is the text message
+CTRL+Z <- cannot be done directly in arduino serial monitor
+
+# Minicom serial monitor:
+https://www.tldp.org/HOWTO/Remote-Serial-Console-HOWTO/modem-minicom.html
+A -    Serial Device      : /dev/ttyS0
+B - Lockfile Location     : /var/lock
+C -   Callin Program      : 
+D -  Callout Program      :  
+E -    Bps/Par/Bits       : 115200 8N1
+F - Hardware Flow Control : No 
+G - Software Flow Control : No
+
+ctrl+a, e <- turn on echo mode
+ctrl+a, a <- add line return
+
+
+# Turtlebot burger setup
+make sure the ip addresses are set correctly in .bashrc
+
+## for turtlebot
+ROS_MASTER_URl = http:lllP_OF_REMOTE_PC:11 31 1
+ROS HOSTNAME =IP OF TURTLEBOT
+
+# for remote pc:
+ROS_MASTER_URl = 'tllp:,/,/|_Or_REMOTE_ :1 '1 31 '1
+ROS HOSTNAME =IP QF RMOTE PC
+export TURTLEBOT3_MODEL=burger
+##setup remote pc
+roscore
+#setup turtlebot
+roslaunch turtlebot3_bringup turtlebot3_robot.launch
+or
+roslaunch turtlebot3_bringup turtlebot3_lidar.launch
+
+# launch rvis on remotepc:
+roslaunch turtlebot3_bringup turtlebot3_remote.launch
+rosrun rviz rviz -d `rospack find turtlebot3_description`/rviz/model.rviz
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+
+python3 face_recognition_demo.py -fg images -m_fd ~/intel/openvino/deployment_tools/open_model_zoo/tools/downloader/intel/face-detection-retail-0004/FP32/face-detection-retail-0004.xml -m_lm ~/intel/openvino/deployment_tools/open_model_zoo/tools/downloader/intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009.xml -m_reid ~/intel/openvino/deployment_tools/open_model_zoo/tools/downloader/intel/face-reidentification-retail-0095/FP16/face-reidentification-retail-0095.xml --run_detector
+
+./smart_classroom_demo -m_act person-detection-action-recognition-0005.xml \
+                       -m_fd face-detection-adas-0001.xml \              
+                       -m_reid face-reidentification-retail-0095.xml \   
+                       -m_lm landmarks-regression-retail-0009.xml \   
+                       -fg <path to faces_gallery.json> \                 
+                       -teacher_id <ID of a teacher in the face gallery> \
+                       -i <path_to_video>
+
+
+
+# text detection
+./text_detection_demo -i text.jpg -m_td text-detection-0004.xml -m_tr
+
+
+#manim examples
+python3 -m manim example_scenes.py UpdatersExample  -pl
+manim example_scenes.py WarpSquare -pl
+
+#rename files and fix contents
+find . -iname "* (14)*" -exec rename 's/ \(14\)//' '{}' \; &&
+grep -l ' (14)' *.xml | xargs sed -i 's/ (14)//g'
+
+find . -iname "* (8)*" -exec rename 's/ \(8\)//' '{}' \;
+grep -l ' (6)' *.xml | xargs sed -i 's/ (6)//g'
+
+# send email from command line:
+sudo apt-get update
+sudo apt-get install ssmtp
+
+/etc/ssmtp/ssmtp.conf
+root=rpi3abc@gmail.com
+mailhub=smtp.gmail.com:465
+FromLineOverride=YES
+AuthUser=rpi3abc@gmail.com
+AuthPass=testing123
+UseTLS=YES
+
+echo "Testing...1...2...3" | ssmtp mooo@gmail.com
+#with subject
+printf "Subject: hello1\n\nTesting...1...2...3" | ssmtp jonathanbyrn@gmail.com
+
+# Fixing the eval_util.py
+  if save_graph and not save_graph_dir:
+    raise ValueError('`save_graph_dir` must be defined.')
+
+  session_config = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)
+  session_config.gpu_options.per_process_gpu_memory_fraction=0.2
+  sess = tf.Session(master, graph=tf.get_default_graph(), config=session_config)
+
+# and in legacy/trainer.py
+    # Soft placement allows placing on CPU ops without GPU implementation.
+    session_config = tf.ConfigProto(allow_soft_placement=True,
+                                    log_device_placement=False)
+
+    session_config.gpu_options.per_process_gpu_fraction=0.75
+
+
+
+# How to circumnavigate irregular crashes by tensorflow
+
+# How to circumnavigate irregular crashes by tensorflow
+while true ; do python train.py --train_dir training_v1_331K --pipeline_config_path training_v1_331K/pipelinev1.config --logtostderr; echo "Will restart training in 60s..."; sleep 60; done
+python eval.py --pipeline_config_path training/pipeline.config --checkpoint_dir training --eval_dir eval
+
+# how to compile tensorflow models to tflite for the coral board:
+tflite_convert --output_file tflite_graph.tflite --graph_def_file tflite_graph.pb --inference_type=QUANTIZED_UINT8 --input_arrays=normalized_input_image_tensor
+--output_arrays='TFLite_Detection_PostProcess','TFLite_Detection_PostProcess:1','TFLite_Detection_PostProcess:2','TFLite_Detection_PostProcess:3'
+--mean_values=128 --std_dev_values=128
+--change_concat_input_ranges=false --allow_custom_ops
+--input_shapes=1,300,300,3
+
+
+
+ZSH with ohmyzsh:
+change the default shell:
+chsh -s $(which zsh)
+install oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+#9k shell theme
+#git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+#sed -i '/ZSH_THEME/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
+
+# I now prefer agnoster:
+sed -i '/ZSH_THEME/c\ZSH_THEME="agnoster"' ~/.zshrc
+
+mkdir -p .local/share/fonts
+mv PowerlineSymbols.otf ~/.local/share/fonts/
+fc-cache -vf ~/.local/share/fonts/
+mkdir .config/fontconfig
+mkdir .config/fontconfig/conf.d
+mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+plugins+=(git zsh-autosuggestions k  zsh-syntax-highlighting)
+the fx skin is nice on boring computers
+
+
+
+#object detection in caffe:
+cd /usr/lib/x86_64-linux-gnu
+sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
+sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
+
+# delete blank lines in a file:
+sed -i '/^$/d' file.txt
+
+# see internals of rpm
+rpm -qlp intel-openvino-ie-rt-vpu-ubuntu-bionic-2019.1.094-2019.1-094.x86_64.rpm
+# extract contents
+rpm2cpio intel-openvino-ie-rt-vpu-ubuntu-bionic-2019.1.094-2019.1-094.x86_64.rpm | cpio -idmv
+
+# Get gui to run in raspbian after boot
+either add a line to the file .config/lxsession/LXDE-pi/autostart
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreensaver -no-splash
+@point-rpi
+
+I think this needs to exist before it will check the autostart folder
+
+
+or add a desktop entry to .config/autostart
+
+[Desktop Entry]
+Type=Application
+Name=FoodCounter
+Exec=xterm -hold -e '/home/pi/foodFP16/run.sh'
+
+# Set up tensorflow  model api
+# From tensorflow/models/research/
+
+protoc object_detection/protos/*.proto --python_out=.
+python3.6 setup.py build
+python3 setup.py install
+
+#python3 unicode
+https://stackoverflow.com/questions/19877306/nameerror-global-name-unicode-is-not-defined-in-python-3
+ 
+# Train the network using the config file
+python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/pipeline.config
+
+python eval.py --logtostderr --pipeline_config_path=training/pipeline.config --checkpoint_dir=training/ --eval_dir=eval/
+# Freeze the graph
+python export_inference_graph.py --input_type image_tensor     --pipeline_config_path training/pipelinev2.config --trained_checkpoint_prefix training/model.ckpt-6227 --output_directory training/frozen
+
+
+$INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo_tf.py --input_model=frozen_inference_graph.pb --tensorflow_use_custom_operations_config $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --output_dir FP16 --data_type FP16
+
+#convert faster RCNN object detector:
+python3 $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo.py --framework tf --input_model frozen_inference_graph.pb --tensorflow_use_custom_operations_config $INTEL_CVSDK_DIR/deployment_tools/model_optimizer/extensions/front/tf/faster_rcnn_support.json --tensorflow_object_detection_api_pipeline_config pipeline.config --data_type FP16
+
+# run faster RCNN:
+./object_detection_sample_ssd -i ~/Downloads/test.jpg -m frozen_inference_graph.xml -pc -d MYRIAD
+
+# convert tensorflow model to openvino model:
+$INTEL_CVSDK_DIR/deployment_tools/model_optimizer/mo_tf.py --input_model graph.pbtxt --input_model_is_text --output_dir FP16 --data_type FP16
+
+# benchmark the network
+python benchmark_app.py -i ~/Downloads/img20190521191433.jpg -m ~/code/models/research/object_detection/training/frozen/FP16/frozen_inference_graph.xml -api async -nireq 8 -d MYRIAD
+
+# check if images are corrupted:
+$ find . -iname "*.jpg" -exec jpeginfo -c {} \; | grep -E "WARNING|ERROR"
+
+
+# mounting an encrypted file system:
+udisksctl unlock -b /dev/sdb5
+sudo mkdir /mnt/data
+sudo mount /dev/dm-1 /mnt/data
+
+# if you get: unknown filesystem type 'LVM2_member' do the commands below
+
+sudo bash
+vgdisplay
+vgrename <VG UUID> new_name
+modprobe dm-mod
+vgchange -ay
+lvscan
+mount /dev/new_name/root /mnt/data/
+
+# another way to open ann encrypted system
+sudo cryptsetup luksOpen /dev/sda1 my_encrypted_volume
+sudo mkdir /media/my_device
+sudo mount /dev/mapper/my_encrypted_volume /media/my_device
+sudo umount /media/my_device
+sudo cryptsetup luksClose my_encrypted_volume
+# To automatically put it in the /media location, use the udisks tool
+sudo udisks --mount /dev/mapper/my_encrypted_volume
+
+# Setting up the proxy.
+## in the /etc/environment
+http_proxy=
+HTTP_proxy=
+https_proxy=
+HTTPS_PROXY=
+ftp_proxy=
+socks_proxy=
+no_proxy=
+
+##proxy can also be set:
+/etc/wgetrc
+~/.wgetrc
+~/.gitconfig
+~/.ssh/config
+
+and the apt proxy:
+/etc/apt/apt.conf
+#Acquire::http::Proxy "http://proxy-ir.blah.com:port";
+#Acquire::ftp::Proxy "http://proxy-ir.blah.com:port";
+
+## ssh proxy in config:
+Host github.com
+  ProxyCommand connect-proxy -S proxy-ir.blah.com:<port> %h %p
+
+## for windows:
+Host github.com
+ ProxyCommand "C:/Program Files/Git/mingw64/bin/connect.exe" -S proxy-ir.blah.com:port %h %p
+ IdentityFile ~/.ssh/id_rsa
+ Hostname github.com
+
+
+## pip proxy:
+/etc/pip.conf
+[global]
+proxy = http://proxy-ir.blah.com:911
+
+# Set up an alias to the openvino command:
+alias ov='source /home/jonathan/intel/computer_vision_sdk/bin/setupvars.sh'
+
+
+# run openvino modelOptimizer directly:
+${INTEL_CVSDK_DIR}/deployment_tools/model_optimizer/mo.py --input_proto faster_cnn.prototxt --input_model ZF_faster_rcnn_final.caffemodel --output_dir moo --data_type FP16
+${INTEL_CVSDK_DIR}/deployment_tools/model_optimizer/mo.py  --input_model det1test.caffemodel --output_dir FP16test --data_type FP16
+
+# run the network with classifier code:
+python ${INTEL_CVSDK_DIR}/inference_engine/samples/python_samples/classification_sample.py -d CPU -m squeezenet1.1.xml -i car.png --labels ../squeezenet1.1.labels
+
+# pass multiple images to openvino:
+python model_runner.py -m FP16/googlenet-v1.xml -i images/* -d MYRIAD --labels imagenet_slim_labels.txt -ni 1000
+
+# get last argument
+alt .
+
+#NCSDK2 commands:
+## compile a caffe model
+mvNCCompile network.prototxt [-w network.caffemodel] [-s max_number_of_shaves] [-in input_node_name] [-on output_node_name] [-is input_width input_height] [-o output_graph_filename] [-ec]
+-ec	Skip certain compiler optimizations for concatenation; this may correct some issues with invalid results from concat layers or compile failures.
+## NCS1
+mvNCCompile alexnet.prototxt -s 12 -o alexnet_ncs.graph
+## NCS2 on shaves
+mvNCCompile alexnet.prototxt -s 16 -o alexnet_ncs2.graph
+## NCS2 on NCE
+mvNCCompile alexnet.prototxt --ma2480 -o alexnet_nce.graph
+## tensorflow
+mvNCCompile network.meta [-s max_number_of_shaves] [-in input_node_name] [-on output_node_name] [-is input_width input_height] [-o output_graph_filename] [-ec]
+
+# command to find ncs bus location:
+lsusb | grep 03e7 | sed s/://g | awk '{print "/dev/bus/usb/"$2"/"$4}'
+# check if using usb2 usb3
+lsusb  for NCS1 03e7:2150 or 03e7:f63b
+lsusb -D /dev/bus/usb/001/013
+# show device tree, 480mb usb2 5000 usb3
+lsusb -t 
+
+# replacing stuff
+replace every occurence of a word with another:
+grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g'
+
+grep and replace using sed
+grep -l add_gene *.py | xargs sed -i 's/add_gene/add_extra/g'
+
+replace instance in all files:
+find ./src -type f | xargs sed -i 's/CV_FOURCC/cv2.CV_FOURCC/g'
+
+vi replace commands:
+:s/moo/blah/g <- global replace LINE moo with line blah
+:%s/moo/blah/g <- global replace INSTANCE moo with blah
+:%s/moo/blah/c <- confirm each replacement
+if replacing something with a slash then you can use any delimiter:
+:%s#/bin#/usr/bin#g
+
+# DOCKER!
+
+## delete all docker images
+docker image prune
+docker system prune
+
+## build from Dockerfile
+docker build -t <imgname> .
+
+## run interactive, remove when finished, mount folder, python command
+docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
+exit to exit
+run docker with nvidia:
+docker run --runtime=nvidia --rm -it <blah>
+docker run --runtime=nvidia --rm -it -v/home/jonathan/data/ssdvgg:/data caffessd
+docker run --runtime=nvidia --rm -it -v/home/jonathan/data/:/data jonathanbyrn/coryssd
+docker run --env DISPLAY=unix$DISPLAY --privileged --volume $XAUTH:/root/.Xauthority --volume /tmp/.X11-unix:/tmp/.X11-unix --runtime=nvidia --rm -it -v /home/jonathan/data/ssdvgg:/data jonathanbyrn/coryssd
+
+## Get docker to run with X11 window
+xhost +
+docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix <imagname> <cmd>
+## Docker command for picking up NCS:
+sudo docker run --rm --net=host -it -v /etc/apt/apt.conf:/etc/apt/apt.conf:ro --privileged -v /dev:/dev:shared -v /media/data2/NCS/:/media/data2/NCS/ ncsdk2 /bin/bash
+
+## Add support for webcam
+--device=/dev/video0:/dev/video0
+
+## tidy up docker shite:
+docker system prune
+##delete danglers:
+docker rmi $(docker images -f "dangling=true" -q)
+
+## Link to existing dockerfile
+FROM ubuntu:18.04
+
+## List Docker CLI commands
+docker
+docker container --help
+docker --version
+docker version
+docker info
+
+# push docker image to docker hub
+docker login
+
+# optional add tag
+docker tag af299672bfd3 jonathanbyrn/<imgname>:<tag>
+
+
+docker commit -m "What did you do to the image" -a "Author Name" container-id repository/new_image_name
+docker commit -m "added node.js" -a "sammy" d9b100f2f636 sammy/ubuntu-nodejs
+# redefine a variable
+docker commit --change='WORKDIR /workspace/caffe-ssd' 2f2635794002 /jonathanbyrn/coryssd
+
+docker push jonathanbyrn/<imgname>
+# optional tagname
+docker pull jonathanbyrn/<imgname>:tagname
+## setting up config file:
+vi /etc/docker/daemon.json
+{
+"max-concurrent-uploads":1
+}
+
+## List Docker images
+docker image ls
+ 
+## List Docker containers (running, all, all in quiet mode)
+docker container ls
+docker container ls --all
+docker container ls -aq
+
+## start container separately
+docker start 9b0db8a30a
+docker stop youthful_roentgen
+docker rm youthful_roentgen
+#simple docker commit 
+docker commit -m "hello" container-id  reponame
+
+## docker proxy:
+add /etc/systemd/system/docker.service.d/http-proxy.conf
+[Service]
+Environment="HTTP_PROXY=http://proxy-ir.intel.com:911/"
+Environment="HTTPS_PROXY=http://proxy-ir.intel.com:912/"
+Environment="NO_PROXY=localhost,127.0.0.1,.intel.com"
+
+and in your local .docker/config.json:
+{
+ "proxies":
+ {
+   "default":
+   {
+     "httpProxy": "http://proxy-ir.intel.com:911",
+     "httpsProxy": "http://proxy-ir.intel.com:912",
+     "ftpProxy": "http://proxy-ir.intel.com:911",
+     "noProxy": "intel.com,.intel.com,10.0.0.0/8,192.168.0.0/16,localhost,.local,127.0.0.0/8,134.134.0.0/16"
+   }
+ }
+}
+
+
+
+new multiload indicator:
+sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0
+https://extensions.gnome.org/extension/120/system-monitor/
+
+ssh pi@raspberrypi.local
+rpi_cam moot
+
+resize image with nearest neighbour:
+convert from.png -interpolate Nearest -filter point -resize
+
+convert werbm to mp4
+ffmpeg -i video.webm -crf 26 video.mp4
+
+Turn off the monitor now
+sleep 3; xset dpms force off
+
+turn off monitor after 5 minutes if dpms compliant:
+xset dpms 300 600
+
+shink a gif into a video:
+ffmpeg -f gif -i hatdots.gif hatdots.mp4
+ <video src="images/hatdots.mp4" autoplay muted loop />
+
+
+/opt/movidius/NCSDK/ncsdk-x86_64/tk/mvNCCheck.py conv_with_regression/graph.frozen.pb  -in imgs -on e2/Relu
+
+
+update git fork to latest:
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+git fetch upstream
+git checkout master
+git merge upstream/master
+
+sublime shortcuts:
+ctrl+k, ctrl+b <- hide sidebar
+ctrl+shift+p <- run packages 
+alt+shift+2 <- two columns
+indent settings:
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "translate_tabs_to_spaces": true,
+    "detect_indentation": false
+
+Setting up pylint:
+ctrl+shift+p install package
+sublimelinter
+sublimelinter-pylint
+rename /usr/bin/pylint to pylint2
+
+Setting up remote access for sublime files:
+On server install rsub:
+# wget -O /usr/local/bin/rsub \https://raw.github.com/aurora/rmate/master/rmate
+# chmod a+x /usr/local/bin/rsub
+On local
+
+Install rsub Sublime3 package:
+On Sublime Text 3, open Package Manager (Ctrl-Shift-P on Linux/Win, Cmd-Shift-P on Mac, Install Package), and search for rsub and install it
+
+Open command line and connect to remote server:
+# ssh -R 52698:localhost:52698 server_user@server_address
+
+after connect to server run this command on server:
+# rsub path_to_file/file.txt
+
+
+
+copy files of a type and keep subdirectory structure
+find . -name '*FHC*' | cpio -pdm  ./target
+
+mavproxy.py --master=tcp:192.168.1.21:5760 --quadcopter
+
+sudo nmap -sU 192.168.10.1 -p 8000-8500
+
+convert wiki to pdf:
+git clone moo.wiki.git
+sudo npm install -g github-wikito-converter
+gwtc ./github-wikito-converter.wiki
+
+pdal split --length 100 liffey.laz moo.laz
+
+Export the private key file from the pfx file
+openssl pkcs12 -in filename.pfx -nocerts -out key.pem
+
+Export the certificate file from the pfx file
+openssl pkcs12 -in filename.pfx -clcerts -nokeys -out cert.pem
+
+Remove the passphrase from the private key
+openssl rsa -in key.pem -out server.key
+
+compare the keys:
+openssl x509 -noout -modulus -in server.crt | openssl md5
+openssl rsa -noout -modulus -in server.key | openssl md5
+
+how to branch and pull request:
+git checkout -b branchname
+commit 
+git push --set-upstream origin branchname
+git pull --rebase
+git push origin branchname
+git checkout -b branchname
+commit 
+git push --set-upstream origin branchname
+git pull --rebase
+git push origin branchname
+
+add pullrequest through github webpage
+
+# This doesn't work with github, need to manually pull using the wbe interface
+git request-pull  origin/master https:/repo
+
+setting up private keys on aws:
+aws iam upload-server-certificate --server-certificate-name vola_cert --certificate-body file://cert.pem --private-key file://privatekey.pem
+
+curling with a proxy:
+curl -v --noproxy localhost, -i "localhost:5000/droneapi/coord?lat=53.34&lon=-6.255"
+
+
+#Set up Geoserver
+wget http://sourceforge.net/projects/geoserver/files/GeoServer/2.12.0/geoserver-2.12.0-bin.zip
+unzip geoserver-2.12.0-bin.zip
+sudo mv geoserver-2.12.0 /usr/share/geoserver
+rm geoserver-2.12.0-bin.zip
+
+echo "export GEOSERVER_HOME=/usr/share/geoserver" >> ~/.profile
+. ~/.profile
+printenv | sort -h
+sudo chown -R $USER /usr/share/geoserver/
+
+#set up CORS for it to work with flask
+#https://gis.stackexchange.com/questions/210109/enabling-cors-in-geoserver-jetty
+#check to see which version of jetty you are using
+#find $GEOSERVER_HOME -name "jetty*" | grep -E [[:digit:]]
+cd /usr/share/geoserver/webapps/geoserver/WEB-INF/lib/
+wget http://central.maven.org/maven2/org/eclipse/jetty/jetty-servlets/9.2.13.v20150730/jetty-servlets-9.2.13.v20150730.jar
+#vi /usr/share/geoserver/webapps/geoserver/WEB-INF/web.xml
+#uncomment CORS filter and filtermapper
+
+#start automatically at startup
+#/usr/share/geoserver/bin/startup.sh
+echo "USER=$USERNAME" | sudo tee -a /etc/default/geoserver
+echo "GEOSERVER_DATA_DIR=/usr/share/geoserver/data_dir" | sudo tee -a /etc/default/geoserver
+echo "GEOSERVER_HOME=/usr/share/geoserver"  | sudo tee -a /etc/default/geoserver
+echo "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/"  | sudo tee -a /etc/default/geoserver
+echo "JAVA_OPTS=\"-Xms128m -Xmx512m\""  | sudo tee -a /etc/default/geoserver
+
+wget http://docs.geoserver.org/latest/en/user/_downloads/geoserver_deb
+mv geoserver_deb geoserver
+chmod +x geoserver
+mv geoserver  /etc/init.d/
+sudo mv geoserver  /etc/init.d/
+sudo service geoserver start
+sudo update-rc.d geoserver defaults
+
+cp -r code/vola/VOLA/volamap .
+mv data ~/volamap/app/static/
+cd ~/volamap/app/static
+chmod +x datasetparser.py
+./updatemap.sh
+
+#Apache has access to port 80 and 443 for ssl
+sudo ufw app list
+sudo ufw allow 'Apache Full'
+sudo systemctl status apache2
+
+#setting up /var/www for apache server:
+sudo cp ~/volamap/001-volamap.conf /etc/apache2/sites-available
+sudo mv volamap /var/www
+sudo adduser $USERNAME www-data
+sudo chown -R $USERNAME:www-data /var/www
+sudo chmod -R g+rwX /var/www
+
+#setting up flask virtualenv, do not use venv
+cd /var/www/volamap
+virtualenv -p python3 flask
+source flask/bin/activate
+pip3 install --upgrade pip
+pip3 install pyproj sqlalchemy geoalchemy2 flask numpy ipython psycopg2
+# create a config file for flask:
+echo "SQLALCHEMY_DATABASE_URI=\"<dbtype>://$USER:<password>@localhost/<db_name>\" > ~/volamap/app/config.py"
+
+sudo service apache2 restart
+sudo a2enmod wsgi
+sudo a2ensite 001-volamap.conf
+sudo service apache2 reload
+
+S3 Buckets
+aws configure  #needs to be configured in IAM
+aws s3api list-buckets
+aws s3 sync s3://bucketname .
+aws s3 cp moo.zip s3://bucketname
+
+#get bucket of data
+aws configure
+aws s3api list-buckets
+aws s3 sync s3://mapdata.vola.com .
+unzip volamapdata.zip
+rm volamapdata.zip
+
+
+
+python installer packages:
+pyinstaller --onefile --windowed laschunker.py
+with hooks:
+pyinstaller --onefile --windowed  --additional-hooks-dir hooks/
+
+
+rename svol to vol recursively:
+find . -iname "*svol*" -exec rename 's/.svol/.vol/' '{}' \;
+
+rename a string in all files:
+find ./ -type f -exec sed -i 's/string1/string2/g' {} \;
+
+tmux ls <- show all the available sessions
+tmux attach -t 3 <- attach to session 3
+
+tmux enable mouse scroll:
+set-option -g mouse on
+older tmux:
+setw -g mode-mouse on
+
+tmux new window
+ctrl+b c
+switch between windows
+ctrl+b w
+switch sessions
+ctrl+b S
+kill window:
+ctrl+b &
+detach:
+ctrl+b d
+next window:
+ctrl+b n
+ctrl+b p
+
+Tmux panes:
+ctrl-b "  vertical pane
+ctrl-b &  horizontal pane
+ctrl b arrowkeys move around
+
+tmux let you scroll up:
+ctrl+b [
+q to exit
+
+show what is running on the cards:
+nvidia-smi
+
+set blender to read a script and then render the scene:
+./blender -b --python gpurender.py trinity2.blend -o ./out --frame-start 1740 --frame-end 1899 -a
+
+setting up gitignore and hooks:
+make a git_template folder and copy the scripts
+
+git config --global init.templatedir '~/.git_template'
+git config --global core.excludesfile ~/.git_template/.gitignore
+
+
+set up git proxy:
+git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080
+
+reload udev rules:
+sudo udevadm control --reload-rules && udevadm trigger
+
+switch from https to ssh:
+git remote -v
+git remote set-url origin git@github.com:squeakus/bitsandbytes.git
+and to https:
+git remote set-url origin https://github.com/squeakus/bitsandbytes.git
+
+basic setup:
+git config --global user.email "jonathanbyrn@gmail.com"
+git config --global user.name "squeakus"
+git config --global push.default simple
+git config --global http.proxy http://proxy-chain.intel.com:911
+git config core.fileMode false
+
+change password timeout for github
+git config --global credential.helper 'cache --timeout=360000'
+
+When pulling code always use:
+git pull --rebase
+
+undo a stupid commit:
+git reset --hard HEAD~1
+
+git diff:
+git difftool  8a457cf14e453a6544c1d8b838b23a81402173c8  a6b27259ef16eaf88677a8
+
+after adding the following to .gitconfig
+[diff]
+    tool = meld
+    keepBackup = false
+[difftool "meld"]
+        path = /usr/bin/meld
+[merge]
+        tool = mymeld
+[mergetool "mymeld"]
+        cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
+
+
+ls -l | awk '{x=x+$5}; END {print "total bytes in directory: " x}'
+
+
+pdal noise filter:
+pdal pipeline noisefilter.json --writers.las.filename=output.laz --readers.las.filename=input.laz
+
+get number of point records:
+find . -name "*.las" | xargs -I fname lasinfo fname | grep "Number of Point Records"
+
+cut field2 using space delimiter:
+ cut -d' ' -f2-
+
+delete anything less than 5k (not accurate):
+find . -name "*.las" -size -5k -delete
+
+find and move svol files, dont recurse!!!!
+find . -maxdepth 1 -name "*.svol" | xargs -I fname mv fname sanfran/
+
+copy all the laz files:
+find /media/byrnej/Seagate\ Expansion\ Drive/sanfran/Bulk\ Order\ 775298/LIDAR/raw/tiles/ -name "ARRA-CA_GoldenGate_2010_000159_14_1*.laz" | xargs -I fname ./move.sh fname
+
+find . -name "*.laz" | xargs -n1 -P4 -I fname python laschunker.py fname 3 <CRS> -c 150
+
+when the arg list gets too long:
+ find -maxdepth 1 -name '*.svol' -exec cp -t ./svol {} +
+
+parallelize converting sound files to mp3
+find sounddir -type f -name '*.wav' | parallel -j+0 lame {} -o {.}.mp3
+
+get the image DPI:
+identify -format "%w x %h %x x %y" image300.jpg
+
+resample the DPI
+convert -units PixelsPerInch image -density 300 resultimage
+
+download EVERYTHING:
+(r)recursive, (k)convert links,(p) get all resources, (N) dont copy if local timestamps newer (continue)
+wget -rkpN -c -e robots=off http://www.example.com/
+
+just the dir:
+wget -rkpN -c --no-parent http://example.com/moo/blah
+
+show path in nautilus:
+ctrl+l
+
+run ipython within a virtualenv:
+python -c 'import IPython;
+
+redirect output wtih sudo
+Run a shell with sudo and give the command to it by using the -c option:
+sudo sh -c 'ls -hal /root/ > /root/test.out'
+
+more wget fun:
+wget -q -O- reddit.com/r/thedonald | grep -o -i 'Trump' | wc -w
+
+grep a webpage:
+wget -q -O-
+
+
+get all links from a website:
+sed -n 's/.*href="\([^"]*\).*/\1/p' filename
+
+read input from mouse
+cat /dev/input/mouseX
+
+fix yo code:
+find . -iname "*.py" | xargs -I filename autopep8 --in-place --aggressive --aggressive filename
+also use yapf -i
+
+grep for two things, for new york coordinates in this case:
+grep 73.99 `grep -l 40.72 *.txt`
+
+unzip multiple files to a directory
+unzip '*.zip' -d out/
+
+Stop python buffering tee output:
+python -u laschunker.py | tee dublinchunked.log
+
+setting up update-alternatives for python:
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2
+update-alternatives --list python
+python --version
+
+
+How to use valgrind:
+valgrind --leak-check=yes <executable> <args>
+
+remove all c comments from command line, before putting online:
+sed 's,/\*\*,,g;s,\*/,,g;s,/\*,,g;s,//,,g' infile.cpp
+
+
+c list packages and libraries:
+ldconfig -p | grep gl
+
+check out a specific branch
+git clone git@github.com:userid/project.git
+# now I have master branch
+git co -b production
+git pull origin production
+
+
+
+check groups a user is in:
+groups <username>
+
+rotate screen and touchscreen on pi:
+vi /boot/config.txt
+display_rotate=1
+To rotate the touchscreen too:
+lcd_rotate=2
+
+Resizing a partition within an image file
+For this, we're going to use gparted. If you don't have gparted installed:
+
+The Raspbian operating system has two partitions. 1 is the boot partition, which is tiny and doesn't need shrinking. Partition 2 is where everything else is stored, and typically has lots of free space. Let's have a look at these partitions:
+
+sudo fdisk -l imagename.img
+This should show something like:
+        Device Boot      Start         End      Blocks   Id  System
+imagename.img1            8192      122879       57344    c  W95 FAT32 (LBA)
+imagename.img2          122880    15415295     7646208   83  Linux
+Take a note of the START sector for the second partition. In the above example, this is 122880. Write it down because we're going to use it later on in this tutorial, as well as right now. Let's mount that partition:
+
+sudo losetup /dev/loop0 imagename.img -o $((START*512))
+Replace the word START with the start sector number of your second partition; in my case, 122880. If you get a message that the device is busy, this is probably because you've previously instanced it incorrectly; remove the existing loop0 with sudo losetup -d /dev/loop0 and try again.
+
+By default, gparted won't read loopback devices, so we need to start it with the loopback parameter:
+
+sudo gparted /dev/loop0
+gparted should start in a desktop window and show the second partition. Click the /dev/loop0 partition and select Partition menu, Resize/Move . Change the value of "New Size" so that it is slightly above "Minimum Size". I suggest allowing 20MB extra space. Click the Resize/Move button when done.
+
+Now click Edit menu, Apply All Operations. The data will be moved to fit into the new size.
+
+When complete, it will display the new size. Make sure you note down the new size before you exit.
+
+If the size is not displayed, click the triangle icon next to Details, and the triangle icons that appear nested below them, until you can see the new size. Eventually you'll see a line like "resize2fs -p /dev/loop0 1410048K" where the number in K is the new size in kilobytes.
+
+No, really, note down the new size before you exit.
+
+Now remove the loopback device for the second partition, create a new loopback device for the whole image and edit the partition table to reflect the new smaller size:
+
+sudo losetup -d /dev/loop0
+sudo losetup /dev/loop0 imagename.img
+sudo fdisk /dev/loop0
+fdisk is rather basic to use.
+
+Enter d 2 to delete the table entry for the second partition
+Enter n p 2 to create a new second partition entry
+Enter the START sector number that you used earlier, as the start sector. In my example it was 122880.
+Enter +NEWSIZE as the new size. Don't forget the plus at the start. This is the new size that you noted down before exiting gparted. If your number was in K (kilobytes) or M (megabytes) then type that letter in too (for example +1410048K ).
+Enter w to write the new partition table and exit
+You may see a message telling you that the new partition table can't be used until the next reboot - don't worry about this message; it doesn't really apply to the loopback devices which we're creating and destroying.
+
+That's the partition resized, and the partition table updated. Now we can remove the loopback device, then we just need to trim the empty space from the end of the image file. Let's look at the new partition table and then destroy the loopback device:
+
+sudo fdisk -l /dev/loop0
+sudo losetup -d /dev/loop0
+Note down the END sector of the second partition. In my case this is 8615936. Now let's trim down the file to this length, replacing END with your end sector number:
+
+truncate -s $(((END+1)*512)) imagename.img
+And you're done. For extra marks, you can fill any empty space with zeroes to make it slightly better to compress and a teeny, tiny bit faster to write to in use:
+
+sudo losetup /dev/loop0 imagename.img -o $((START*512))
+sudo mkdir -p /mnt/imageroot
+sudo mount /dev/loop0 /mnt/imageroot
+sudo dcfldd if=/dev/zero of=/mnt/imageroot/zero.txt
+sudo rm /mnt/imageroot/zero.txt
+sudo umount /mnt/imageroot
+sudo rmdir /mnt/imageroot
+sudo losetup -d /dev/loop0
+If you're keeping the image for backup or archival purposes, you can now compress the file with:
+zip imagename.zip imagename.img
+
+
+
+sudo pip install virtualenv virtualenvwrapper
+vi ~/.bashrc.alias
+
+add the following to bashrc
+source .bashrc.alias
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
+
+mkvirtualenv keras
+workon keras
+pip install numpy scipy
+pip install scikit-learn
+pip install pillow
+pip install h5py
+pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+git clone https://github.com/Theano/Theano
+cd Theano
+python setup.py install
+pip install keras
+
+# point it at tensorflow or theano
+vi ~/.keras/keras.json
+
+build instructions for ffmpeg
+./configure  --enable-pic --enable-shared
+ffmpeg <pass>@192.168.1.100:554  moo.avi
+rtsp://username:password@192.168.1.100:554/h264/ch1/sub/?tcp
+http://192.168.1.100/Streaming/Channels/1/picture
+
+turn off 3 finger click:
+synclient ClickFinger3=2
+synclient TapButton3=2
+
+
+instead of gnome-open use:
+gvfx-open or xdg-open
+
+check which terminal you are using:
+echo $0
+
+history without the line numbers:
+history | cut -c 8-
+
+How to fork an existing repo you have changed:
+Make a fork on github
+git remote add openCVopenMVG https://github.com/squeakus/openMVG.git
+git fetch openCVopenMVG
+git commit -am "now using an ORB 32 bit binary region"
+git push openCVopenMVG
+
+change alternative compilers
+sudo update-alternatives --all
+
+list by size
+ls -lhS
+list all folders in a directory:
+ls -d */
+
+list all files with absolute path:
+ls -d $PWD/*.png >allfiles.txt
+
+how to fix visualsfm files for opening in ubuntu:
+find . -name "*.nvm" -exec dos2unix {} \;
+if you want to run them all as a single command:
+find . -name "*.nvm" -exec dos2unix {} +
+
+exiftool -trailer:all= input.mpo -o R.jpg
+exiftool input.mpo -mpimage2 -b > L.jpg
+
+
+compile sfm for opencv:
+g++ scene_reconstruction.cpp `pkg-config --cflags --libs opencv` -I/usr/include/eigen3/
+
+
+for file in *.asift; do /bin/cp -rf $file ${file/asift/sift}; done
+
+
+setting up qt nonsense:
+qtchooser -l to list versions
+if it is not appearing add a new conf file in:
+/usr/lib/x86_64-linux-gnu/qtchooser
+then tell it to always use this version
+export QT_SELECT=qt56
+
+
+view older svn version:
+svn cat -r 666 file | less
+
+convert to mov command
+ffmpeg -i input_file.mp4 -acodec copy -vcodec copy -f mov output_file.mov
+
+atom editor:
+cmd + shift + \ <- open file tree
+ctrl+shft+p <- open command pallette
+pane:split <- split window
+or
+ctrl + k <arrowkey>
+
+
+HDR blending:
+open as layers,
+duplicate light layer
+color -> desaturate
+right-click -> color -> invert
+change mode to overlay
+
+simple vertical blend:
+add layer mask
+then use blend to fill in mask
+
+layer masking (https://www.youtube.com/watch?v=Jle81ofRLok):
+layer -> add transparency
+duplicate layer
+colors -> desaturate
+colors -> brightness and contrast ->. make as dark as possible
+anything that is black will disappear, anything that is white will be kept
+colors -> invert
+paint any additional pieces you want to keep
+edit -> cut
+now on the original
+add layer mask
+paste image (it will be a float layer)
+anchor floating layer
+
+
+=======
+atom setup:
+sudo pip install flake8 flake8-docstrings
+apm install linter minimap linter-flake8 autocomplete-python
+
+get kernel number:
+uname -a
+
+to show you which devices need drivers, and their corresponding package names:
+sudo ubuntu-drivers devices
+
+show driver packages which apply to your current system:
+sudo ubuntu-drivers list
+
+library id:
+20011001474199
+
+show image capture height:
+exiftool *.JPG | grep 'File Name\|Relative Altitude'
+
+pull gps from directory of image:
+exiftool -filename -gpslatitude -gpslongitude -T DIR > out.txt
+exiftool -filename -gpslatitude -gpslongitude -n -T DIR > out.txt
+
+automatically pass all the libraries to c++ code:
+g++ chartest.cpp `pkg-config --cflags --libs opencv`
+
+run gnu debugger:
+gdb ../../bin/bundler
+run list.txt --input_file blah
+
+
+find executable files:
+find . -type f -executable -print
+on OSX:
+find . -type f -perm +111 -print
+show greyscale level:
+convert image -format "%[mean]" info:
+
+copy but dont overwrite existing files:
+cp -n blah* folder
+
+find cmake libraries for opencv:
+pkg-config opencv --libs
+
+
+three top up:
+*106#  <- cancel current add on
+*105#  <- add new internet add on
+
+wsgi woes
+first make it readable
+chmod o+r moo.wsgi
+
+
+How to change the URL of an svn repo:
+svn relocate http://blah.com/svn/sourcefolder
+
+potree converter:
+./PotreeConverter --source ~/Datasets/Bandon/bandondense.0.ply --outdir ~/Datasets/Bandon/ -l 5 -p
+
+get heights from all the images:
+exiftool *.JPG | grep -w 'GPS Altitude\|File Name' | grep -v 'Ref'
+
+tell me about the install and possible options:
+brew info
+
+install liblas with laszip support:
+brew install liblas --with-laszip
+
+matahn install instructions:
+psql -d testdb -c 'CREATE EXTENSION postgis; CREATE EXTENSION hstore;'
+
+
+
+assign a coordinate system (something buggy):
+las2las filename.las --a_srs EPSG:29902
+
+manually assign a projection:
+las2las nether.laz --a_srs "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.417,50.3319,465.552,-0.398957,0.343988,-1.8774,4.0725 +units=m +no_defs"
+
+change to irish coordinates:
+las2las oconnell.laz --a_srs "+proj=tmerc +lat_0=53.5 +lon_0=-8 +k=1.000035 +x_0=200000 +y_0=250000 +ellps=mod_airy +towgs84=482.5,-130.6,564.6,-1.042,-0.214,-0.631,8.15 +units=m +no_defs "
+
+change target coordinate system
+las2las filename.las --t_srs EPSG:4326
+las2las --t_srs EPSG:4326 srs.las --scale 0.000001 0.000001 0.01
+if you get a precision error then add an offset of the rough coords
+las2las --t_srs EPSG:4326 srs.las --scale 0.000001 0.000001 0.01 --offset 6,53,0
+
+show what is connected to the ports:
+netstat -na
+
+
+convert coordinates using gdal
+from irish transverse mercator to WGS:84
+echo -e "715830 734697" | gdaltransfor -s_srs EPSG:2157 -t_srs EPSG:4326
+wgs:84 to irish grid coords
+echo -e "-6.26024777275666 53.3497939117992" | gdaltransform -s_srs EPSG:4326 -t_srs EPSG:29902
+wgs:84 to google spherical mercator
+ echo -e "-6.26024777275666 53.3497939117992" | gdaltransform -s_srs EPSG:4326 -t_srs EPSG:3857
+
+
+git install at branch:
+pip install git+https://github.com/tudelft3d/matahn.git@branchname
+
+setting up with virtualenv:
+http://flask.pocoo.org/docs/0.10/installation/
+go into project folder:
+virtualenv venv
+. venv/bin/activate <- to run it
+
+list all users:
+cut -d: -f1 /etc/passwd
+
+Building grassGIS
+./configure --with-liblas=yes --with-liblas-config=/usr/bin/liblas-config --with-freetype-includes=/usr/include/freetype2
+
+
+overlay gifs by keeping alpha, only png has alpha not jpg
+convert *.png +repage moo2.gif
+
+if you want a persistent background:
+convert +repage \( -background none stephensgood00*.png stephensgood0000.png -flatten \) stephensgood00*.png +repage -delete 1 -dither floydsteinberg -trim -verbose forward.gif
+
+how to copy exif info:
+exiftool -TagsFromFile A.tif A.jpg
+
+Hugin process linear:
+cpfind --linearmatch -o bourne.pto bourne.pto
+
+Hugin ridiculously good quality:
+--multirow  --fullscale --sieve1width 50 --sieve1height 50 --sieve1size 300 --ransaciter 5000 -o %o %s
+
+Change the timestamp on a file:
+touch -t 200805101024
+
+gps info on photo
+exiftool
+identify --verbose image.jpg
+exif also good but not clear how to extract it.
+
+fixing a gpg key error:
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3C962022012520A0
+sudo apt-get update
+
+sudo apt-get purge apport
+sudo apt-get autoremove
+sudo apt-get clean
+sudo apt-get install apport
+
+only copy specific files:
+rsync -avm --include='*.jar' -f 'hide,! */' . /destination_dir
+
+setting up smokeping:
+sudo mv ../../smokeping/apache2.conf smokeping.conf
+sudo a2enconf smokeping
+sudo a2enmod cgid
+
+
+fixing nvidia prime problems
+also if you see mit magic key:
+ mv .Xauthority .XauthorityBak
+sudo service lightdm stop
+sudo prime-select intel
+sudo service lightdm start
+
+set up remote desktop:
+export DISPLAY=:0.0
+gsettings set org.gnome.Vino enabled true
+gsettings set org.gnome.Vino require-encryption false
+
+now the tricky bit, getting vino-preferences to open on your machine:
+on the server:
+vi /etc/ssh/sshd_config
+set x11forwarding to yes
+restart the xserver and then run:
+ssh -X jo@umgviz.ucd.ie vino-preferences
+/usr/lib/vino/vino-server
+
+Redirect through another machine
+ssh -R 5900:localhost:5900 guest@joes-pc
+
+set up remote desktop:
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -on -clientopts -setvnclegacy -vnclegacy yes -clientopts -setvncpw -vncpw mypasswd -restart -agent -privs -all
+
+Reroute to port 80
+/sbin/iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
+do iptables-save to file and then run iptables-restore from rc.local
+also add that command minus sudo to /etc/rc.local to keep running forever
+
+fix the damn clock:
+sudo service ntp stop
+sudo ntpdate ntp.ubuntu.com
+sudo service ntp start
+
+find if device has a driver
+usb-devices
+
+Fix the matlab mcase event nonsense
+synclient HorizEdgeScroll=0 HorizTwoFingerScroll=0
+matlab -desktop
+
+make a folder writeable by www-data, first add yourself:
+sudo usermod -aG www-data jonathan
+sudo addgroup www-data
+
+sudo chown -R www-data:www-data public_html/
+
+
+setting up apache2 virtualhost:
+sudo mkdir -p /var/www/test.com/public_html
+sudo chown -R $USER:$USER /var/www/test.com/public_html
+sudo chmod -R 755 /var/www
+cd /etc/apache2/sites-available/
+
+create a .conf file:
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+    ServerName test.com
+    ServerAlias www.test.com
+    DocumentRoot /var/www/test.com/public_html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+sudo a2ensite test.conf
+sudo service apache2 reload
+
+add a line /etc/hosts to redirect to localhost:
+127.0.0.1 test.com
+
+
+
+nodejs server stuff:
+npm <- package manager
+#install and write to package.json
+npm install <package> --save
+http-server <- serve pages from the command line
+
+installing a kernel module:
+sudo install rp_usbdisplay.ko "/lib/modules/`uname -r`/kernel/rp_usbdisplay.ko"
+sudo depmod -a
+sudo modprobe rp_usbdisplay <- check it is working, nothing is good
+sudo echo rp_usbdisplay>>/etc/modules < add it to start at boot
+
+adding the framebuffer device name (reboot first to ensure correct order):
+cat /proc/fb | grep rpusbdisp-fb
+sudo cp xserver_conf/10-disp.conf /usr/share/X11/xorg.conf.d/
+edit the file to make sure it has the correct number
+
+To reset desktop environment:
+sudo service lightdm stop
+rm ~/.config/dconf/user
+sudo service lightdm start
+
+find out nvidia graphics card:
+lspci -vnn | grep -i VGA -A 12
+
+purge the old ones and add the new ones:
+sudo add-apt-repository ppa:xorg-edgers/ppa -y
+sudo apt-get purge nvidia-current
+sudo apt-get remove nvidia-current-updates
+
+encrypting a folder:
+encfs ~/.encrypted ~/visible
+
+telegram:
+install the cli
+get key from my.telegram.org and add it to /etc/telegram-cli/server.pub
+history man-chat-lolz 100000
+use tee to output it to a file:
+./telegram-cli | tee all.txt
+remove color codes:
+cat all.txt | sed -r "s:\x1B\[[0-9;]*[mK]::g"
+
+stream radio
+rtl_fm -W -f 99.5M | play -r 32k -t raw -e signed-integer -b 16 -c 1 -V1 -
+play a synth sound!
+play -n -c1 synth sin %-12 sin %-9 sin %-5 sin %-2 fade h 0.1 1 0.1
+
+Nooelec sdr:
+make sure to unload the dvb driver
+sudo rmmod dvb_usb_rtl28xxu
+this can then be added to /etc/modprobe.d/no-rtl.conf to remove permanently
+
+
+openfoam:
+remember bashrc simeos aliases do not play nicely with it
+
+find the name for a unity launcher app:
+vi ~/.local/share/applications/nameoflauncher.desktop
+
+fix ntfs windows folder colors:
+dircolors --print-database > ~/.mydircolors
+then change the following
+STICKY_OTHER_WRITABLE 01;34 # dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE 01;34 # dir that is other-writable (o+w) and not stick
+then edit bashrc and change:
+eval dircolors -b
+to:
+dircolors ~/.mydircolors
+
+ALTERNATIVELY add this line:
+LS_COLORS="ow=01;34:di=01;34"
+export LS_COLORS
+
+#add this to zshrc:
+
+if [[ -f ~/.dircolors ]] ; then
+            eval $(dircolors -b ~/.dircolors)
+    elif [[ -f /etc/DIR_COLORS ]] ; then
+                eval $(dircolors -b /etc/DIR_COLORS)
+fi
+
+alias codefolder="cd /mnt/c/Users/Jonathan/Desktop/code"
+alias cmd="vi /mnt/c/Users/Jonathan/Desktop/code/bitsandbytes/bashrc/commands.txt"
+alias open="explorer.exe"
+
+also add this git to /usr/local/bin:
+#!/bin/sh
+
+if pwd | grep /mnt/c > /dev/null; then
+            exec git.exe "$@"
+    else
+                exec /usr/bin/git "$@"
+fi
+
+windows terminal use powerline fonts
+            {
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "hidden": false,
+                "name": "Ubuntu-20.04",
+                "source": "Windows.Terminal.Wsl",
+                "colorScheme" : "wsl",
+                "fontFace" : "DejaVu Sans Mono for Powerline",
+                "startingDirectory": "~/",
+            }
+        ]
+    },
+
+    // Add custom color schemes to this array.
+    // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
+    "schemes": [
+        {
+            "background" : "#002B36",
+            "black" : "#002B36",
+            "blue" : "#268BD2",
+            "brightBlack" : "#657B83",
+            "brightBlue" : "#839496",
+            "brightCyan" : "#D33682",
+            "brightGreen" : "#B58900",
+            "brightPurple" : "#EEE8D5",
+            "brightRed" : "#CB4B16",
+            "brightWhite" : "#FDF6E3",
+            "brightYellow" : "#586E75",
+            "cyan" : "#2AA198",
+            "foreground" : "#93A1A1",
+            "green" : "#859900",
+            "name" : "wsl",
+            "purple" : "#6C71C4",
+            "red" : "#DC322F",
+            "white" : "#93A1A1",
+            "yellow" : "#B58900"
+        }
+    ],
+grub2 vimex is a nice gui for grub
+
+/usr/share/images/grub
+GRUB_BACKGROUND="/usr/share/images/grub/TulipStair_QueensHouse_Greenwich.tga"
+
+
+get screen size:
+xdpyinfo  | grep 'dimensions:'
+
+check what cpu and ram are being used:
+cat /proc/meminfo
+cat /proc/cpuinfo
+
+more detailed ram info:
+dmidecode -t 16
+and clock speed:
+dmidecode -t 17
+
+
+rawstudio is a good way of handling raw files
+
+
+install updates from command line:
+sudo apt-get update        # Fetches the list of available updates
+sudo apt-get upgrade       # Strictly upgrades the current packages
+sudo apt-get dist-upgrade  # Installs updates (new ones)
+
+sudo unattended-upgrade
+sudo dpkg-reconfigure -plow unattended-upgrades
+this will write a file:
+/etc/apt/apt.conf.d/50unattended-upgrades
+
+
+test and fix for shellshock:
+env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
+sudo apt-get install --only-upgrade bash
+sudo port upgrade outdated
+
+grep multiple strings:
+ exiftool *.jpg | grep 'Create\|File Name'
+
+
+add prefix:
+rename 's/^/wide/' *
+for a in *; do mv $a wide${a}; done
+
+find executable files:
+find <dir> -executable -type f
+
+build github submodules:
+git submodule add <repo>
+git submodule init
+git submodule update
+you might still have to build it
+
+sudo dkms install -m nvidia-340-uvm/340.32
+
+video to frames images:
+avconv -i GOPR4832.MP4 img%05d.jpg
+take 10 frames a second
+ffmpeg -i GOPR4832.MP4 -r 10 img%05d.jpg
+
+When running kinect applications always use:
+sudo optirun
+
+show functions in a shared library
+nm -D /usr/lib/libcuda.so
+
+No password ssh (from a to b):
+if you have not generated a key then (ONLY IF NO KEY):
+alwyas use RSA
+ssh-keygen -t rsa <- generate key for autologin on machine a
+otherwise just do this
+ssh-copy-id -i ~/.ssh/id_rsa.pub name@server <- copy file across from machine a
+cat .ssh/id_rsa.pub | ssh b@B 'cat >> .ssh/authorized_keys' <- alternative way
+if it doesnt work immediately then type:
+ssh-add on machine a to register the keys
+
+# Copying your public key to a remote server
+ssh-keygen -t rsa
+cat ~/.ssh/id_rsa.pub | ssh backup@umg.ucd.ie 'cat >> .ssh/authorized_keys'
+15 21 * * *  /usr/bin/rsync --progress -avhe ssh /Users/jonathan/backups backup@umg.ucd.ie:/backup/Jonathan/macbrew
+
+setting up ssh server:
+make sure authorized_keys is turn on in /etc/ssh/sshd_config
+
+cloudcompare commandline:
+CloudCompare -O col.ply -SS RANDOM 10000
+CloudCompare -SILENT -O briantop.ply -O brianbase.ply -C_EXPORT_FMT PLY -ICP -FARTHEST_REMOVAL
+
+script to allow macports and homebrew to get along
+sudo use_ports.sh port install OpenSceneGraph-devel
+
+see where package contents are installed to:
+dpkg -L <packagename>
+
+webcam timelapse from the command line(t=number of frames, r=fps):
+streamer -o 0000.jpeg -s 300x200 -j 100 -t 2000 -r 1
+
+remove background from image:
+grabcut.py
+
+view pcl pcd point cloud:
+pcl_viewer
+
+installing hadoop:
+ssh-keygen -t rsa -P ""
+cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+
+how to disable ssh from remote computer:
+vi /etc/ssh/sshd_config
+ListenAddress 127.0.0.1
+
+
+add user to sudoers list:
+sudo adduser <username> sudo
+sudo /usr/sbin/visudo
+sudo userdel <name>
+
+
+disable ipv6 in /etc/sysctl.conf (already done in env):
+# disable ipv6
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+
+setting up a hdfs folder:
+sudo mkdir -p /app/hadoop/tmp
+sudo chown hduser:hadoop /app/hadoop/tmp
+sudo chmod 750 /app/hadoop/tmp
+change the xml files:
+/usr/local/hadoop/bin/hadoop namenode -format
+
+
+
+
+show all installed packages
+dpkg --get-selections | grep -v deinstall
+
+if scp fails to copy then you can resume it, the -u only copies new files:
+rsync -u --partial --progress --rsh=ssh user@host:remote_file local_file
+
+
+
+installing hydra ROS on 13:10:
+http://wiki.ros.org/hydro/Installation/Ubuntu
+error with catkin:
+./src/catkin/bin/catkin_make_isolated --install
+sudo ln -s /usr/bin/gcc-4.4 /usr/local/cuda/bin/gcc
+http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes
+
+roslocate info packagename
+rosinstall location http://externalloc
+
+rosecore <- set up server
+rosnode list
+rosnode info <package>
+rosrun turtlesim turtlesim_node
+specify name from commandline:
+rosrun turtlesim turtlesim_node __name:=my_turtle
+rosrun rqt_graph rqt_graph <- show topic graphs
+rosrun rqt_plot rqt_plot <- graph values
+rosrun rqt_console rqt_console <- debug console
+
+messages to different nodes are published on topics.
+The nodes subscribe to a topic to listen:
+rostopic echo /turtle1/cmd_vel
+topic list -v <- list all topics
+rostopic type /turtle1/cmd_vel <- what type of command
+rosmsg show geometry_msgs/Twist
+rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.8]'
+rostopic hz /turtle1/pose <- show frequency of updates
+roslaunch beginner_tutorial turtlemimic
+rosmsg show beginner_tutorials/Num
+srv show AddTwoInts
+
+services use request/response to talk to other nodes:
+rosservice list
+rosservice type clear
+rosservice call clear
+rosservice type spawn| rossrv show
+rosservice type spawn
+rosservice call spawn 2 2 0.2 ""
+
+rosparam list
+rosparam set background_r 150
+rosservice call clear
+rosparam get background_g
+rosparam get /
+rosparam dump params.yaml
+rosparam load params.yaml copy <- load it into copy workspace
+rosparam get /
+
+more debugging information:
+rosbag record -a
+rosbag info <bagname>
+rosbag play <bagname>
+roswtf
+
+remove first two chars from each line of a text file.
+sed 's/^..//' file1.txt > file2.txt
+sed -i 's/\(.\{2\}\)//' file
+sed  's .\{2\}  ' infile
+
+sort by first 3 columns:
+sort -t' ' -k 1,1n -k 2,2n -k 3,3n simple.xyz
+sort by human readable values 1G 2K:
+du -h --max-depth=1 | sort -h
+in osx:
+du -h --max-depth=1 | gsort -h
+
+remove trailing whitespace from a file:
+sed --in-place 's/[[:space:]]\+$//' <filename>
+
+remove all trailing whitespace from git files
+find . -not -path '.git' -iname '*.py' -exec sed -i 's/ *$//' '{}' ';'
+
+remove all trailing white space
+sed -i 's/[ \t]*$//' "$1"
+
+
+POSTGRES!!!
+# postgres uses roles, each role should have a matching system account
+# Postgres has default postgres account for setting up users
+sudo -u -i postgres
+psql <- log into db
+\q quit
+# create a new user:
+createuser --interactive
+
+or if you want to do it automatically:
+sudo -i -u postgres  #log in as postgres to create db and user
+createuser $USER --password --createdb #force password allows create dbs
+createdb vola_db -O $USER
+exit
+
+make postgres postgis:
+sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
+psql -d vola_db -c "CREATE EXTENSION postgis;"
+psql -d vola_db -c "CREATE EXTENSION postgis_topology;"
+
+convert geojson to postgres:
+ogr2ogr -f "PostgreSQL" PG:"dbname=vola_db user=<user>" "all.geojson" -nln tiles -overwrite -lco geometry_name=<geomname>
+
+import data from pbf:
+osm2pgsql -c -d gis -U postgres -W -H localhost dublin_ireland.osm.pbf
+and with style file:
+osm2pgsql -c -d gis -U postgres ./dublin_ireland.osm.pbf --style openstreetmap-carto.style
+
+dump a postgis database:
+pg_dump --no-acl --no-owner vola_db -N topology -T spatial_ref_sys > vola_db.pgsql
+
+how to restore:
+psql -U USERNAME DBNAME < dbexport.pgsql
+
+if you want to use pg_restore you have to output it in a different format (it is also compressed!):
+pg_dump --no-acl --no-owner vola_db -N topology -T spatial_ref_sys -Fc > vola_db.pgsql
+
+And to restore cleanly:
+pg_restore --no-owner --clean -d vola_db vola_db.pgsql
+
+
+get settings:
+select * from pg_settings where name = 'port';
+/etc/postgresql/9.3/main/postgresql.conf
+where the dbs are physically stored:
+/var/lib/postgresql/9.3
+
+normally -W used to add pword but not needed for localhost
+You need to change the control file to trust to gain access locally
+/etc/postgresql/9.3/main/pg_hba.conf
+
+#if need to set password for main user
+#the hb_pga only allows peer access but if you want to set a pasword postgres superuser:
+#sudo -u postgres psql
+#\password postgres
+
+service postgresql status
+sudo service postgresql start
+sudo service postgresql restart <- after any changed to gp_hba
+or
+/etc/init.d/postgresql restart
+
+psql testdb <- log into db
+\conninfo <- show db stats
+\list  <- show databases
+\dt <- show tables
+\c dbname <- connect to database
+\d tablename <- get table details
+\h <- help
+\? <- slash commands
+\set <- system variables
+\q <- quit
+\d+ tablename <- show column values
+\timing
+
+create a regular btree index
+CREATE INDEX index_name on tablename(columnname);
+
+create a spatial index (maybe use SP-GIST):
+CREATE INDEX tile_idx ON tiledata USING GIST (wkb_geometry);
+
+DROP INDEX nyc_census_blocks_geom_idx;
+
+dropdb <dbname> --interactive <- delete a database
+
+show size of db table;
+pg_size_pretty(pg_relation_size('points1'));
+pg_size_pretty(pg_total_relation_size('points1'));
+
+Count number of rows:
+elect COUNT(*) from tiledata;
+
+create index xindex on points1 (xcoord);<- build an index
+size went from 3322 to 4415
+
+create a user:
+CREATE USER tester WITH PASSWORD 'test_password';
+set the password for a user:
+ALTER USER Postgres WITH PASSWORD '<newpassword>';
+give them permissions:
+GRANT ALL PRIVILEGES ON DATABASE "testdb" to tester;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO tester;
+
+SELECT * FROM cars;
+show tables:
+SELECT * FROM pg_catalog.pg_tables
+
+get apache version
+/usr/sbin/apache2ctl status | grep Version
+
+gksudo lshw | less <- show everything about hardware
+sudo apt-get install hardinfo
+
+show events for a particular object:
+import cv2
+events = [i for i in dir(cv2) if 'EVENT' in i]
+print events
+
+VisualSFM sfm+pairs input.txt output.nvm @4 <- sequence match images
+to install you need pmvs cmvs you need to copy the mylapack library and edit the make file
+Install guide for visualsfm:
+http://www.10flow.com/2012/08/15/building-visualsfm-on-ubuntu-12-04-precise-pangolin-desktop-64-bit/
+you must get mylapack.o
+also NB the make depend!!!
+also build graclus as 64 bit
+set an ld_library_path
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/jonathan/Applications/vsfm/bin:/usr/lib/gcc/x86_64-linux-gnu/4.8
+youn can skip the pmvs step.
+step the ld_path in the cmvs makefile to point at graclus1.2 for multilevel to build
+
+
+Slice video into image frames:
+convert cup.mp4 image%05d.jpg
+
+multiple jpg to pdf:
+convert *.jpg pictures.pdf
+
+pbcopy | pbpaste <- pasteboard copy form the command line
+
+a nice way to add a header to a file:
+cat header.txt | cat - moo.txt | sponge moo.txt
+
+add it to all source files:
+for item in $(find . -name '*.py') ;do cat header.txt |cat - $item | sponge $item; done
+
+dpkg-reconfigure resolvconf <- if the dns starts acting up
+
+inkscape commandline commands:
+inkscape moo.svg --export-png=my.png
+inkscape --verb-list | grep xtensi
+inkscape -x show extension folder
+inkscape --shell <- interactive env
+/.config/inkscape/extensions <- extra extension folder
+inkscape Aphex_Twin_Logo.svg --verb command.extrude.svgtoscad --verb FileSave --verb FileQuit
+
+Eoins leet way of check if applications installed on multiple machines:
+for i in {2..10}; do ssh 192.168.1.$i -C 'hostname; ls /Applications | grep VirtualBox'; done
+
+#show opengl libs and headers
+ls /usr/lib/lib{GL,GLU}.so.*
+ls /usr/include/GL/{gl,glu}.h
+
+#show glut
+ls /usr/lib/libglut.*
+ls /usr/include/GL/glut.h
+
+cmake --help-module FindOpenGL <- how it gets linking info
+
+get generalisation score:
+wc -l el_9_2_*-bestOne-pinta.local-cart.dat | grep -c '1001'
+
+!<command> <- run last command that started with <command>
+if problem with shared library then list dependencies
+ldd <- list dependencies
+ldconfig <- setup ld_library_paths and other such nonsense
+/etc/ld.so.conf <- place where all the paths are specified
+
+ichec stuff:
+qutil -a show memory usage
+mybalance <- show number of hours left
+show fionn modules:
+module load apps
+module avail
+module load openfoam/intel/2.2.2
+load the boost and cuda libraries:
+module load libs boost/intel/1.55.0
+module load dev cuda/5.5
+module load libs gsl/intel/1.16
+module load libs intel-runtime/2013-sp1
+
+netstat, ifup
+save webpage
+cutycapt --url=http://www.reddit.com --out=example.png
+
+commit to redmine:
+git commit -a -m "sensible message. Refs #377 @4h00"
+fix a commit message
+git commit -a --amend
+
+setting up a github repo:
+create it on github
+git init the folder
+specify the remote repo:
+git remote add origin https://github.com/squeakus/<reponame>
+git pull origin master
+git add .
+git commit -am "mesg"
+git push
+
+
+if github chmod permissions are too open:
+chmod 0600 filename
+
+get my clock back:
+killall unity-panel-service
+
+show all things in autostart:
+cd /etc/xdg/autostart/
+sudo sed --in-place 's/NoDisplay=true/NoDisplay=false/g' *.desktop
+sudo sed --in-place 's/NoDisplay=false/NoDisplay=true/g' *.desktop
+
+mplayer -vo aa xxxxx.avi < play video in ascii
+
+patch -p1 < [patchfile]  <- the p1 strips the topmost directory
+patch -R < [patchfile]   <- undo
+
+rpm -ivh <packagename> (install verbose hashloading)
+
+dos2unix <- fix ^M ending newline
+
+check operating system:
+cat /proc/version
+
+sudo apt-get install fail2ban  <- stop login attempts
+sudo ufw allow 22 <- open port 22 on ubuntu firewall
+
+montage -geometry 500x300 plane0*.png  cessnamontage.jpg
+
+check if package is installed:
+dpkg -l | grep packagename
+
+#pad with zeros:
+rename 's/\d+/sprintf("%04d",$&)/e' img_*
+
+pad files with zeros:
+for i in *.dat;do mv $i `./zeropad.sh $i`; done
+
+chmod and move to sun jdk to /usr/lib/jvm:
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-1.7.0/bin/javac 1
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-1.7.0/bin/java 1
+sudo update-alternatives --install /usr/bin/javaws java /usr/lib/jvm/java-1.7.0/bin/javaws 1
+sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/java-1.7.0/bin/javaws 1
+sudo update-alternatives --config javac
+sudo update-alternatives --config java
+sudo update-alternatives --config javaws
+
+
+openvsp install missing packages: libxft-dev, libxinerama
+
+add this to opennurbs_array_defs.h:
+void ON_qsort(
+        void* base,
+        size_t count,
+        size_t sizeof_element,
+        int (*compare)(const void*,const void*)
+        );
+
+change the vsp build script
+vi src/vsp/CMakeLists.txt
+add the follow to TARGET_LINK_LIBRARIES:
+${CMAKE_DL_LIBS}
+pthread
+
+
+return to recovery menu: ctrl-d or exit
+
+system_profiler | grep -i core
+
+sysctl -n hw.ncpu <- check number of physical cores on a mac
+sw_vers <- get system version
+
+ssh -X   <- cant open display when using ssh
+Fix up nautilus in 13.04:
+sudo add-apt-repository ppa:webupd8team/experiments
+sudo apt-get update
+sudo apt-get dist-upgrade
+killall nautilus
+
+Manually delete a python install
+sudo python setup.py install --record files.txt
+cat files.txt | xargs rm -rf
+
+copy files in a textfile
+cat frames.txt | xargs -I filename cp filename ../zoom/
+
+surfaceMeshInfo or admesh to find stl area, volume, etc
+
+email when server starts
+echo server reset at `date` | mailx -s "galapagos reset" jonathanbyrn@gmail.com
+
+osx add command to startup
+sudo launchctl submit -l name_of_startup_item -- command [args]
+
+output every mesh under the sun, use script for specific type
+vsp -batch plane.vsp -cfdmesh 1.0 -tri
+
+generate lovely pic with parafoam:
+pvbatch --use-offscreen-rendering batchimage.py
+
+how to truncate multiple files using bash and head
+for item in $(find . -name *.blah) ;do head -n -150 $item > moo ; cat moo > $item ;done
+
+xrandr --output LVDS1 --off <- turn off laptop screen (auto to restart)
+
+/etc/skel <- where all the standard files are kept for new users
+
+printenv <- show all environment variables
+sudo dhclient eth0  <- see what happens when I connect
+get driver name from lsmod and then grep it in dmesg and the kernel log
+
+Rscript plot.r PoleBalance 50 5 varsync "Variable" sync1 "Sync 1" sync10 "Sync 10" sync100 "Sync 100" sync500 "Sync 500" sync1000 "Sync 1000"
+
+rehash <- reload environment variables
+hash -r
+
+rename multiple files
+rename -n 's/Pop/rand/' *.dat <- s subs, y does something else, n-noaction
+remove whitespace nonsense:
+rename 's/ /_/g' *
+
+sudo visudo  <- edit users who can sudo
+ALL = (ALL) ALL  <-let them do everything
+ALL = (ALL) NOPASSWD: ALL <- no need to type in password for running app
+
+fg  <- bring job back to the fore
+jobs <- show ID if multiple jobs in the background
+
+find out which os is running:
+uname -a
+or
+cat /proc/version
+
+grep plus one line:
+grep -C 1 'phrase' file.tex
+-B N (N lines before), -A N (N lines after).
+
+if testing stuff in bash check out:
+man test
+
+trim the first 50 lines off a file:
+sed -i '1,50d' filename
+truncate last 50 lines:
+head -n -50 myfile.txt
+
+kill all processes with a given name (or use pkill if available)
+kill -9 `ps -e | grep GEVA | awk '{print $1}'`
+
+show and change java version:
+sudo update-alternatives --display java
+sudo update-alternatives --config java
+java -version
+
+aptitude choose javac version
+sudo update-alternatives --config javac
+
+#change java version
+update-java-alternatives -l
+sudo update-java-alternatives -s java-1.6.0-openjdk-amd64
+
+quiet the from raspberry loading screen
+add console=tty9 loglevel=3 to /boot/cmdline.txt
+user ctrl+alt+f9 to access that terminals in case of errors
+touch .hushlogin
+
+raspberry timelapse:
+raspistill -ex auto -t 9999999999 -tl 300000 -o a%04d.jpg
+
+raspicam picture:
+raspicam -o pic.jpg
+
+encrypt a file
+gpg -c moo.txt
+gpg moo.gpg
+
+#!/bin/bash
+fswebcam -d /dev/video0 -l 10 test-%Y-%m-%d--%H-%M-%S.jpg
+fswebcam -r 1280x960 -S 15 --no-title -l 10 test.jpg
+fswebcam -r 1280x960 -S 15 -d /dev/video0 -l 10 test-%Y-%m-%d--%H-%M-%S.jpg
+
+
+sudo touch /var/mail/pi
+
+change owner:group of mail
+sudo chown pi:mail /var/mail/pi
+sudo chmod o-r /var/mail/pi
+sudo chmod g+rw /var/mail/pi
+
+chown :jonathan getdata.py <- only change group
+
+run script at startup:
+edit /etc/rc.local
+set up raspberrypi for emails:
+install ssmtp:
+edit /etc/ssmtp/ssmtp.conf
+root=postmaster
+mailhub=smtp.gmail.com:587
+hostname=raspberrypi
+AuthUser=YourGMailUserName@gmail.com
+AuthPass=YourGMailPassword
+UseSTARTTLS=YES
+ chmod 774 ssmtp.conf
+
+
+check which process is hogging the ram:
+ps -e -o pid,vsz,comm= | sort -n -k 2
+sort by second column:
+sort -k 2
+sort by multiple columns
+sort -t' ' -k 1,1n -k 2,2n -k 3,3n simple.xyz
+iwconfig <- get wifi details
+
+run ipscan of the network:
+sudo arp-scan -l
+sudo arp-scan 192.168.1.0/24
+
+search for raspberrypi mac address:
+sudo arp-scan 192.168.1.0/24| grep 'b8:27:eb'
+
+
+stream webcam from mplayer:
+mplayer tv:// -tv outfmt=0x34363248:width=1280:height=720:norm=NTSC:device=/dev/video1
+
+take a single frame:
+mplayer tv:// -tv device=/dev/video1 -vo png -frames 1
+
+
+location for unity dash search:
+.local/share/applications
+ctrl-a if no screenrc exists
+screen <- after ssh-ing in, start new screen
+screen -ls <- list all screens that are currently running
+screen -r <psname> <- return to that screen  if disconnected
+screen -d -r <psname> <- disconnect and reattach screen
+screen -S <name> <- give the screen a name
+screen -x sessionname <- connect to screen using name
+ctrl-w ? <- list all commands
+ctrl-w d <- detach the screen
+ctrl-w c <- ctrl-a n, ctrl-a p <- create, next, prev screen
+ctrl-w w <- show a window tab
+ctrl-w [ <- scrollback mode
+ctrl-w k / exit <- kill that screen
+
+What the .screenrc file should look like
+#change default scrollback value for new windows
+defscrollback 5000
+# look and feel
+caption always "%{= bb}%{+b w}%n %t %h %=%l %H %c"
+hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+activity "Activity in %t(%n)"
+escape ^Ww
+
+run command in screen and detach when finished
+screen -S readlog -d -m less /var/log/weekly.out
+run a command in a new window of an existing screen:
+screen -S readlog -X screen ping example.com
+if you want it to stay running, start an interactive terminal:
+screen -S readlog -dm sh -c "less /var/log; exec bash"
+
+ls /usr/bin/?? | more <- get all 2 char files in a folder
+datetime <- date and time from the luxury of the commandline
+
+remove amazon results from search:
+sudo apt-get remove unity-lens-shopping
+sudo apt-get purge unity-webapps-common
+go into privacy setting and turn off online results
+
+
+command line gmail:
+sudo apt-get install msmtp-mta heirloom-mailx
+edit ~/.msmtprc, change to chmod 600 and add:
+defaults
+logfile ~/msmtp.log
+account gmail
+auth on
+host smtp.gmail.com
+from your_address@gmail.com
+auth on
+tls on
+tls_trust_file /usr/share/ca-certificates/mozilla/Equifax_Secure_CA.crt
+user your_address@gmail.com
+password your_gmail_password
+port 587
+account default : gmail
+edit ~/.mailrc:
+set sendmail="/usr/bin/msmtp"
+set message-sendmail-extra-arguments="-a gmail"
+and to send:
+mail -s "hey it worked" jonathanbyrn@gmail.com
+
+
+realpath <- show fully qualified path and filename
+
+synergyc server.ucd.ie <- start synergy client
+
+showing optimus cards:
+lspci -nn | grep '\[030[02]\]':
+install gdm <- fix the bullshit with lightdm
+
+how to get the network connected from bare commandline:
+service networking start
+dhclient eth0
+dhclient wlan0 <- never got this to work
+ip <- new ifconfig
+
+xev <- show keypress events
+sudo dmidecode -s bios-version <- get the bios version
+
+neo4j <- add repos and aptitude install
+sudo neo4j install
+service neo4j-service status
+sudo neo4j start
+http://localhost:7474 <- see if it is up and running
+http://localhost:7474/db/data/ <- see the rest api
+print all nodes:
+START n=node(*)
+RETURN n
+node:1 <- show node 1
+rel:0 <- show relationship
+
+automount internal drive:
+go to disk utility under volumes click setup
+edit mount options
+disable auto and select startup
+
+automount windows partition:
+sudo blkid <- get the id
+
+add to /etc/fstab:
+UUID=446EC2586EC24302 /mnt/windows ntfs users,defaults 0 0
+mkdir /mnt/windows
+chown jonathan /mnt/windows
+
+malcolm gladwell: anecdotes dressed up as information
+
+print from the commandline:
+lpstat -p -d <- list printers and show default
+lpoptions -l <- show printer options
+lpr -o landscape -o scaling=75 -o media=A4 filename.jpg
+
+compiling with math library in c:
+gcc file.c -lm -o program
+the header file <math.h> allows an object to be created but it must link to the library to create an exectuable.
+
+ps hax -o user | sort | uniq -c <- find users on a machine
+getting openelec to detect new movies:
+services -> library watchdog -> turn on polling
+artwork downloader, run in background
+
+echo -e '' <- handle newline in echo, single quotes better
+watch -ls <- show what is happening in a folder
+
+reinstalling ubuntu:
+when making bootable pen, turn off doc storage
+run ubuntu live and start gparted
+
+turn off swap (right click-> swapoff)
+delete partition and delete swap
+reinstall icon on desktop
+
+dpkg --get-selections <- show installed packages
+dpkg -S libGLU.so  <- find package for missing library
+mount -o remount,rw /flash <- remount openelec as rw
+
+point it at the correct storage:
+edit /flash/extlinux and change:
+APPEND boot=LABEL=System disk=/dev/sda1  ssh quiet
+
+find . -name "*.jpg" | xargs rm  <- recursively delete files
+find . -name *onflict* -printf '"%p"\n' | xargs rm
+
+recursively copy all files of type to single folder:
+find . -name "*.jpg" -type f -exec cp {} ./sorted/ \;
+
+delete all except a particular file type (rm ignore)
+ls *| grep -v .dat | xargs rm -rf
+
+htop <- A nicer version of top
+iftop <- monitor network traffic and usage:
+
+remove annoying email indicator and amazon:
+sudo apt-get remove indicator-messages
+sudo apt-get remove unity-lens-shopping
+check out /etc/xdg/autostart/ to show autostart unity apps.
+
+
+add system monitor
+sudo aptitude install indicator-multiload
+
+set nameserver for connman:
+/usr/lib/connman/set-nameservers ethernet_bcaec5b3e032_cable 8.8.8.8
+
+avahi-browse -all <- show devices on the network
+cat /proc/net/wireless <- get wireless strength
+
+debugging network
+ifconfig
+route -n
+cat /etc/resolv.conf
+ping 8.8.8.8
+ping google-public-dns-a.google.com
+
+add default gateway:
+route add default gw 192.168.1.1 eth0
+
+setting up nfs share, openelec:
+ssh root@openelec pass=openelec
+mount -t nfs 192.168.1.16:/export/videos /storage/sharedlibrary -o nolock;
+
+to automate process add .config/autostart.sh
+#!/bin/sh
+ (sleep 30; \
+ mount -t nfs 192.168.1.17:/export/videos /storage/shared -o nolock; \
+ )&
+
+setting up share linux:
+showmount -e <- show all points
+sudo mkdir /share
+sudo mount -o soft,intr,rsize=8192,wsize=8192 192.168.1.13:/export/videos /share
+df -h
+
+setting up office in wine: http://craigacgomez.blogspot.ie/2012/09/installing-microsoft-office-2010-in.html
+install libgl stuff
+export WINEPREFIX="/home/jonathan/.wineprefixes/office2010/"
+export WINEARCH="win32"
+winecfg -> dotnet20 -> msxml6
+fonts ->corefonts
+libraries -> existing override -> set to (native)
+add riched20 and gdiplus
+install it!
+
+adding an nfs share point:
+sudo mount --bind /home/jonathan/Videos/ /home/jonathan/ShareVid/
+add it permanently to /etc/fstab:
+/home/jonathan/videotest /export/videos none    bind  0  0
+permanent nfs edit /etc/fstab:
+/home/users    /export/users   none    bind  0  0
+
+add permissions to /etc/export
+For Full Read Write Permissions from 192.168.1.1 through 192.168.1.255
+/files 192.168.1.0/24(rw,no_root_squash,async)
+Or for Read Only from a single machine
+/files 192.168.1.2 (ro,async)
+/home/jon/sharevid 192.168.1.0/24(rw,fsid=0,insecure,no_subtree_check,async)
+
+lock down portmapping in /etc/host.deny
+rpcbind mountd nfsd statd lockd rquotad : ALL
+and start the daemon:
+/etc/init.d/nfs-kernel-server restart
+
+cron commands for backing up stuff on
+/usr/bin/mysqldump --opt -u <username> -p<pass> <database> > /var/www/html/backup.sql
+
+/bin/sh /usr/local/pem/vhosts/999/webspace/httpdocs/backup/backupdated.sh
+
+xwininfo -tree -root <- info on all windows
+dconf-editor <- tool for turning off automount
+org -> gnome -> desktop -> media-handling
+dconf write /org/gnome/desktop/media-handling/automount false
+if dconf read is returning blank, it might be a default value
+
+/etc/apt/apt.conf.d/10periodic <- turn off auto updates
+
+mount | grep ^'/dev' <- find mount point (^ means start of string)
+mv -- -72 _72 <- the double dash stops it parsing
+
+changing grub splash screen:
+install grub2-splashimages
+create tga and copy it to /usr/share/images/grub
+edit /etc/default/grub
+GRUB_BACKGROUND=/usr/share/images/grub/YOUR-IMAGE.tga
+change boot order is also in /etc/default/grub
+and sudo update-grub to take effect
+
+xdpyinfo  | grep dimensions <- get screen dimensions
+xgridctl stop <- take a machine off the grid
+
+grep '[0-9]*[24680]\.png'
+
+mount -o remount, rw /  <- tmp is not mounted fix
+
+/etc/udev/rules.d/ <- where device detect rules go
+KERNEL=="sr[0-9]", ACTION=="change", RUN+="/opt/udev-sh/sr-cd_dvd.sh"
+udevtest / udevadm test for debugging
+service udev restart <- pick up udev changes
+
+get mounted device info:
+udevinfo -a -p $(udevinfo -q path -n /dev/sdd)
+alternative:
+udevadm info -q all -n /dev/sda1
+udevadm test /dev/sr0 <- test a udev rule
+udevadm monitor <- show changes when events happen
+
+#sorting dvd css library issue:
+sudo apt-get install libdvdread4
+sudo /usr/share/doc/libdvdread4/install-css.sh
+
+M-x ediff directories <- diff whole folders
+meld <- an ubuntu diff tool
+*/10 * * * * /Users/jonathanbyrne/tmp/nanopond/bmp2png.sh <- every ten minutes
+
+add-apt-repository --remove <- remove a repo
+
+make a jpeg with some text:
+convert -size 200x200 -gravity center -background white -fill black \
+        label:"text goes here" canvas.png
+
+
+
+he enjoyed all the vices fully before he gave them up
+https://www.googleapis.com/customsearch/v1?key=AIzaSyBUts7RpJt7CvITxv1WP0NAlgMQJ6TjLwA&cx=004163519135800887416:2b9zuir4iuy&q=THE_RIGHT_STUFF&alt=json
+
+lsdvd <- show dvd contents
+rip a chapter from a DVD:
+mplayer dvd://1 -dumpstream -dumpfile firsttrack.mpg
+
+
+bring up chrome console/ task manager:
+shift+esc
+
+find . -name .#* | xargs rm <- find and remove a particular file
+
+edit wp-config.php
+change webspace location
+run wp-admin/install.php
+change permalinks (add a new .htaccess)
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+
+problems with analytics:
+make sure there is no www. in your profile settings
+add it at the end of the header
+gadebugger can give some useful info
+failing that use the old code
+
+install:
+askismet
+exclude pages
+exploit scanner
+google analyticator
+google xml sitemaps
+login lockdown
+my page order
+maybe subpages extended
+maybe wordpress mobile pack
+change permissions on wp-content to 777
+reset plugins permissions to prevent write access
+create child theme
+
+bc <- command line calculator
+cal <- show current date
+
+vi window commands:
+:set number <- show line numbers
+:split <fname>
+:vsplit <fname>
+ctrl-w ctrl-w <- change window
+ctrl-w arrowkey
+:hide <- close current window
+:only <- close all other windows
+:ls <- show buffers
+:b 2 <- goto second buffer
+
+vi diff commands:
+svn diff test.py | view -
+svn diff test.py | vim -R -
+vimdiff test1.py test2.py
+
+watch <- ncurses script to check something out continuously
+
+get temperature of cores:
+aptitude lm-sensors
+sensor-detect
+sensors
+cat /proc/cpuinfo
+system_profiler <- on the mac
+list jobs /processes:
+for node in `pbsnodes -l free | awk '{print $1}'`; do jobcnt=`pbsnodes -a $node | grep 'jobs ' | tr ' ' '\n' | grep -c compute`; proccnt=`pbsnodes -a $node | grep 'np ' | awk '{print $3}'`; echo $node $jobcnt "/" $proccnt; done
+
+
+see how busy each node is:
+for node in `pbsnodes -l free | awk '{print $1}'`; do echo -n $node "jobs: "; pbsnodes -a $node | grep 'jobs ' | tr ' ' '\n' | grep -c compute; done
+
+
+
+tr <- translate and delete
+pbsnodes -l free | awk '{print $1}' | xargs -I node pbsnodes -a node | grep 'jobs ' <- list nodes and jobs
+
+blender:
+building a landscape:
+make sureimage is square + inverted
+import as plane
+subdivide x 300
+add modifier -> displace
+add modifier -> smooth
+get edge loop -> shift+alt+ rclick
+assign group vertex (vertex tab) make group first
+extrude on z axis
+scale to 0 (s,z,0)
+add face -> ctrl f
+
+alt + c <- turn curve into mesh
+alt + edge <- select edge loop
+CCSM ▸ General ▸ General options ▸ Key bindings ▸ "Window Menu" <- fix right click
+
+recursively search multiple file types
+grep -r --include="*.php" --include="*.py" 'grn' .
+find . -name "*.php" -o -name "*.py" | xargs grep "grn"
+
+compiling and running mpi
+mpirun -np 8 ./hellompi
+mpicc -o hellompi hellompi.c
+
+5% annual interest
+((1.05)^1/12)-1 = 0.4% interest per month
+
+port select --set python python27 osx  <-set python version
+sudo port select --set ipython ipython27 <- set ipython version
+grep the ip address:
+/sbin/ifconfig $1 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'
+
+
+python setup.py install --home=~  <- install python module to home dir
+
+find location for python module:
+import blah
+blah.__file__
+
+results[:,-1] <- get last col out of a numpy array
+%save moo.py 0-100 <- output lines 0-100 to file
+ipython history:
+%history
+ipython notebook --pylab inline <- start a new notebook
+# The awesomeness of iPython and pylab
+ipython  --pylab
+hist(randn(1000), 100)
+close()
+import urllib
+url = "http://ichart.finance.yahoo.com/table.csv?s=ISEC&a=07&b=18&c=1997&d=09&e=9&f=2012&g=d&ignore=.csv"
+fname, message = urllib.urlretrieve(url)
+r = mlab.csv2rec(fname)
+len(r)
+r.dtype
+dv = r.close * volume
+dv = r.close * r.volume
+dv.mean()
+dv.std()
+hist(dv)
+import datetime
+mask = r.date >= datetime.date(2008,1,1)
+rslice = r[mask]
+len(rslice)
+clf()
+plot(r.date, r.adj_close)
+title("moo")
+fig = gcf()
+fig.autofmt_xdate()
+draw()
+title(r'$\mu=%1.1f, \sigma=%1.1f$' % dv.mean(), dv.std())
+title(r'$\mu=%1.1f, \sigma=%1.1f$' % (dv.mean(), dv.std()))
+savefig("test.eps")
+savefig("test.pdf")
+savefig("test.svg")
+!pwd
+! cd tmp
+!pwd
+%hist
+
+import this <- the zen of python
+
+hold button for 4 seconds
+fwflash for any firmware
+./nxjflash for lejos
+remember to use sudo to get it working in eclipse and netbeans
+
+installing raspian:
+get id using df -h and remove the p1 from the end (partition number) if sdc1 remove the 1
+unmount the device
+
+use dd to copy the image:
+sudo dd bs=4M if=~/Downloads/2012-09-18-wheezy-raspbian.img of=/dev/mmcblk0
+use this command to see the progress of the copy
+sudo dcfldd bs=4M if=~/Downloads/2012-09-18-wheezy-raspbian.img of=/dev/mmcblk0
+
+pkill -USR1 -n -x dd < show the progress of dd
+
+backup:
+dd if=/dev/sdb of=sd.img bs=4M
+restore:
+dd if=sd.img of=/dev/sdb bs=4M
+
+
+gdb ./progname  <- start c debugging
+run <- execute program
+bt <- get the back trace
+
+alt+printscr+k <- restart xorg
+
+netstat -t -u -c <- show network traffic
+netstat <- show open ports
+netstat -taup <- find out whats using all the bandwidth
+
+watch -d ls -l <- show differences in a new terminal
+
+rename "s/ *//g" *.mp3 <- remove all whitespace
+
+sudo iwconfig <- show wireless settings
+sudo iwconfig wlan0 power off <- turn off power management
+
+basename ~/Pictures/rain.gif .gif  <- only show the name part
+
+identify <- give file size/type of an image file
+check for corrupted image:
+identify -verbose moo.png
+
+ln -s lib{Open,}Kinect.so  <- replace
+
+uname -r <- revision number for kernel
+
+crontab updating svn:
+/usr/bin/svn update ~/Jonathan/ > /dev/null 2>&1
+/usr/bin/svn update ~/Jonathan/ > /dev/null 2>&1
+/bin/kill $(/usr/local/bin/pgrep Chrome) > /dev/null 2>&1
+
+
+kill processes by name:
+kill $(pgrep irssi)
+killall -v irssi
+pkill irssi
+
+
+js2coffee meshRender.js > meshRender.coffee
+
+lsb_release -a <- get ubuntu version info
+lsb_release -cs <- get ubuntu name
+
+
+ctrl+alt+f1 <- get to commandline when x11 crashes
+ctrl+alt+backspace <- restart xserver
+
+sudo /etc/init.d/dns-clean start <- flush dns
+
+setting up a website on localhost:
+add site to /etc/hosts
+a2ensite / a2dissite <- enable sites in the /etc/apache/available folder
+sudo a2enmod rewrite <- enable a mod
+
+Fix to allow screenshot shortcut:
+sh -c "sleep 0.02; gnome-screenshot --area"
+
+set up a simple webserver:
+python -m SimpleHTTPServer 8080 &> /dev/null &
+open http://localhost:8080/
+
+cat /proc/acpi/battery/BAT0/info <- battery info
+upower -i /org/freedesktop/UPower/devices/battery_BAT0
+
+upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|to\ full|percentage"
+acpi -b <- battry info: adv config and power interface
+
+detect usb:
+fdisk -l lsusb
+
+format usbkey to fat32 with label:
+sudo mkdosfs -F32 -v -n "B04C-206F" /dev/sdd1
+
+make an animated gif:
+convert -delay 100 -loop 0 image*.jpg animation.gif
+
+convert -dispose none -delay 0 -size 512x882 xc:SkyBlue +antialias -fill White  -dispose previous -delay 100 *.png anim.gif
+
+animated gif to avi:
+convert bridgeGen.gif image%05d.png
+ffmpeg -i image%05d.png a.avi
+rm image*.png
+
+remove transparency on a png:
+convert target6.ps -background white -flatten +matte test.png
+
+keylogger:
+logkeys
+
+sign a release apk:
+g-format custom project.log -s 0.02 --stop-at-end --highlight-all-users
+go into the android directory
+keytool -genkey -v -keystore swarm-release-key.keystore -alias jonathan -keyalg RSA -keysize 2048 -validity 10000
+ant release
+jarsigner -verbose -keystore swarm-release-key.keystore ~/Jonathan/programs/processingSketches/swarm/android/bin/swarm-release-unsigned.apk jonathan
+jarsigner -verify ./bin/swarm-release-unsigned.apk
+zipalign -v 4 ./bin/swarm-release-unsigned.apk swarm.apk
+
+use dmesg to see if arduino alive
+
+bash random numbers
+for i in {1..5}; do echo $RANDOM; done
+od -An -N2 -i /dev/random  octal dump from urandom
+
+lscpu <- show the number and type of the processors
+cat /proc/cpuinfo <- show all info on CPU
+grep -c ^processor /proc/cpuinfo
+
+check a module version from the commandline:
+python -c 'import matplotlib; print matplotlib.__version__'
+python -c 'import numpy; numpy.test()' <-test it
+
+If pointing at the wrong python module/package:
+echo $PYTHONPATH
+print sys.path
+
+libgphoto commands
+gphoto2 --list-cameras <- all compatible cameras
+gphoto2 --auto-detect <- pick up device
+--capture-image <- save to sdcard
+--capture-image-and-download <- save to hard drive
+
+imagemagick magic:
+crop bottom 20%
+convert test.jpg -gravity north -crop 100x85%  testout.png
+
+import -window root blah.png <- imagemagick screenshot
+
+
+
+stderr to dev null:
+ blah 2> /dev/null
+
+get word count from pdf
+pdftotext filename.pdf - | tr -d '.' | wc -w
+
+turn pdf into pngs:
+convert 1.pdf -background white +matte out%03d.png
+
+diff -y <- get side by side diff
+blah > out.txt 2>&1  <- pipe stderr to stdout
+
+leet way of removing characters:
+for f in vort-\ *; do echo mv `echo $f | awk '{ print $1 "\\\ " $2}'` `echo $f | awk '{ print $1 0 $2}'` >> tmp.sh; done
+
+change knife on 3D printer:
+pop out knife with hand underneath to catch it
+remove back and take out the blade
+remove silver top
+replace back of knife and turn twice
+add new blade
+replace silver top
+turn veeeeeerrry slowly until knife cuts 1 page and scores the second
+
+ssh -fND 5555 username@ip-address-of-ssh-server <- set up ssh tunnel
+ssh -fND 5555 jonathan@galapagos.local
+or
+ssh -f user@blah.com -L 2000:blah.com:25 -N
+f <- background N <- dont execute reomtely local:server:remote
+
+then choose socks5 from manual proxy ->localhost 5555
+
+get 32 char hexname from urandom:
+cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32 <- linux
+cat /dev/urandom | env LC_CTYPE=C tr -cd 'a-f0-9' | head -c 32 <-osx
+cat /dev/input/event4 | tr -cd 'a-f0-9' <- read from keyboard
+/var/log/Xorg.0.log <- explains events are attached
+
+List all partitions:
+sudo fdisk -l
+sudo mount -t ntfs -o nls=utf8,umask=0222 /dev/sda2 /media/tmp/
+
+jobs <- show jobs running in background
+fg %1 <- reopen first job
+
+update-grub <- redo the boot menu
+
+find all unused header files:
+dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
+
+add new user:
+useradd -m -s /bin/bash userName <- m creates home folder s specifies shell
+passwd userName
+
+if there is a problem with the folders:cd /home
+ls -l
+mkdir scheiber
+chmod  0700 scheiber
+chown -R scheiber:scheiber scheiber
+
+
+# recursively find most recently edited files.
+find . -type f -printf '%TY-%Tm-%Td %TT %p\n' | sort
+
+mounting an iso (must create folder first!)
+sudo mount -o loop name.iso /media/tmp
+
+
+
+setting up port forwarding
+ssh -l jonathan -L 7777:dhcp-892b9acb.ucd.ie:22 mikeserver.ucd.ie cat -
+
+sudo shutdown -r now <- restart from the commandline
+
+montage *.ppm -geometry 400x400 -tile 4x4  montage.gif <- stitch images together
+for FILE in *; do echo $FILE; done <- simpler way of doing xargs
+binwalk, hexdump -C, stings -n <- cool methods for looking at binaries
+
+sudo dpkg --install blah.deb <- debian package
+gnome-screenshot -a <- select area for screenshot
+
+cloc <- perl line count and code analyser
+sudo update-grub2 <- update grub menu
+generating letter size with embedded fonts:
+dvips -P pdf -t letter -Pdownload35 -o paper.ps paper.dvi
+ps2pdf paper.ps
+pdffonts paper.pdf <- check the fonts are embedded
+
+
+
+SSH STUFF
+set proxycommand in .ssh/config for tunnelling
+nohup cmd args & <- start separate ssh process
+nohup some_command > nohup2.out 2>&1&   <- specify the output file
+
+error with known hosts:
+sed -i '6d' ~/.ssh/known_hosts <- delete sixth line from file
+
+
+
+write a c shared object for python:
+gcc -fPIC -c dist.c <- flag position independent content
+gcc -shared dist.o -o libdist.so  <- create lib
+move to /usr/lib et voila!
+
+run cProfile from the command line:
+python -m cProfile -o profile.pyprof -s 'time' myScript.py
+pyprof2calltree -i profile.pyprof -k
+
+cp build.{xml,bak} <- replace one with other
+C-z bg <- stick process in the background`
+
+HPC Stuff on the cluster:
+specify shortq in pbs script
+shorter walltime means it is more likely to be called
+
+gridengine <- batch processor for ichec nodes
+qsub <- submit job for gridengine
+quota <- show hd quota
+mybalance <- show remaining hours
+pbsnodes <- list all available nodes
+pbsnodes -l all <- show state
+pbsnodes -l free <- all free nodes
+pbsnodes -x <- stdout xml
+qdel jobid <- delete a job
+qstat <- show jobs in queue
+qutil -j 42537 <- show how the job is getting on
+qselect -u $USER | xargs qdel  <- kill all of my jobs
+showq <- all jobs in the queue
+showstart <jobid> <- estimate time remaining for a job
+checkjob -vv <jobid> <- give the stats of a job
+diagnose -p <jobid> <- check for problems
+fuser <- what processes are using a file
+rename -n 's/foo/foobar/' *.exe <-rename all foo files(-n is a test)
+check HD quota:
+lfs quota -g ndcom002c /ichec/work
+kill all my jobs:
+qselect -u $USER | xargs qdel
+
+CRAN R STUFF:
+rscript <- better than batch
+R CMD BATCH <script> <- run a script from commandline
+install.package('hmisc') <-cran install package from commandline
+R --no-save < filename
+messing with sound input:
+gstreamer-properties
+adding multiple wallpapers:
+gconf-editor <- gnome desktop editor
+gconftool-2 -S <name> <- find key
+gconftool-2 -get <fullname> <-get value
+hide wallpaper:
+gconftool-2 -t bool -s /apps/nautilus/preferences/show_desktop true
+apps -> nautilus->preferences-> show desktop
+lsinput <- show all input devices and IDs
+hcitool scan <- check for bluetooth devices
+hidd --connect <hex> <- connect to device
+
+!<cmd> <- run previous instance of this command
+searching for something in a file:
+grep pattern filename
+eg: grep mooo *.*
+or: grep "hey you" *.*
+
+check for the, space after citep, double space, hyphen usage, full stops
+grep '\. [a-z]' *.tex <- check for capitalisation
+
+
+grep -r mooo . <-specify directory not files
+grep -r --exclude-dir=.svb "blah" .
+grep -r setMaxInt . --exclude-dir=.svb --exclude=*.html
+find . -type f | xargs grep <phrase>
+find / -name blah 2> /dev/null <- stop permission denied error
+grep -H <- shows filename
+grep -i <- ignore case
+find and copy all files of a type to a folder
+find . -name *.jpg | xargs -I file cp file  ~/Pictures/Photos/
+cat del.txt | xargs -I file svb rm file <- delete files in file
+you can also use -J flag for multiple arguments
+ls | wc <- check how many items are in a folder
+wc -l how many lines are in a file
+ls | less <- break up ls output
+:h <- get instructions for less
+
+lspci <- list all hardware installed
+
+download a whole website, links and all with browser hiding
+wget  -r -p -U Mozilla http://www.blah.com/moo.html
+wget -l1 -x -kK -pH -E http://
+wget \
+    --save-cookies ~/.cookies/rapidshare \
+    --post-data "login=NAME&password=PASSWORD" \
+    -O - \
+    https://ssl.rapidshare.com/cgi-bin/premiumzone.cgi \
+    > /dev/null
+wget -c --load-cookies ~/.cookies/rapidshare
+wget -c <- if it fails start from last good point
+ps aux <- list processes in BSD format
+ps -ef <- list info on threads
+
+kill -9 <psNo> <- maximum killage
+killall <psName>  <- kill all processes of this type
+
+ls | grep -c <pattern><- gets no. of occurences
+ls -R <-recursive list
+ls -l(ist)t(ime)h(umanreadable) | head <- only show latest at top
+ls -lthr(everse)
+ls -lSrh <-show size of items in a folder, biggest at the bottom
+outputting the contents of a directory to a file
+ls -l [directory]/ > [filename]
+lsof <- list open files, can check whats accessing a file
+
+only outputting columns 1 and 3
+ls -l [directory] | awk '{print $1,$3}' > [filename]
+
+print out first col of last line of file
+find . -name cmaresult* | xargs tail -n 1 | awk '{print $1}'
+
+
+diff -u(nified) -y(side by side) -q(uick)
+
+mv oldfilename newfilename  <-rename a file
+cp crap.txt ~\  <-copies it to your home folder
+tail/head <- get the top or bottom of a file
+tail -n 100 -f filename <- list last 100 and keep showing additions
+for i in *.dat; do echo $i;done  <- list all dat files\
+
+youtube cut to a point:
+http://www.youtube.com/watch?v=6s1K1Ja48h0#t=3m36s
+
+youtube-dl <name> <-download a video
+
+sudo !!  <- run last command as root
+python -m SimpleHTTPServer 8080 <-set up a python server in currentdir
+cd -   <- go to previous directory
+^foo^bar^   <-run previous command replacing foo with bar
+!whatever:p  <- find last whatever command but dont run it
+
+echo "moooo" | md5sum <- get md5 for phrase
+
+uname -m <- check architecture i386 i686=32 x86_64=64
+uname -a <- check if ubuntu 32 or 64
+grep flags /proc/cpuinfo <- cpuflags
+
+
+crop an mp3:
+mp3splt file.mp3 mins.secs.milli mins.sec
+split audio into multiple mp3s
+mp3splt -t 15.00 -a -d splt chaos1.mp3 <- -a find quiet part, -d directory
+split in a nicely ordered fashion
+mp3splt -t 5.00 -o @f_@n3 -a -d split
+
+combine mp3s together:
+cat chaos1.mp3 chaos2.mp3 > chaos.mp3
+
+VIDEO STUFF:
+if you have to convert it from m4a use ffmpeg
+ffmpeg -i file.m4a -vn -acodec libmp3lame file.mp3
+
+add audio:
+ffmpeg -r 1 -i frame%03d.jpg -i beethoven.mp3 -acodec copy -map 0:0 -map 1:0 -vcodec libx264 -preset ultrafast -qp 0 output.mkv
+
+make 264 video:
+ffmpeg -i frame%03d.jpg -vcodec libx264 -preset ultrafast -qp 0 output.mkv
+
+pixelate image:
+convert -scale 10% -scale 1000% original.jpg out.jpg
+ffmpeg [input options] -i [input file] [output options] [output file]
+
+cut clip from video:
+ffmpeg -i unknown.avi -ss 00:00:00 -t 00:02:10 clip.avi
+record desktop
+ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq ~/tmp/out.mpg <- record desktop
+cat $(cat list.txt) | ffmpeg -r 30 -f image2pipe -vcodec mjpeg -i - test.flv
+ffmpeg -f image2 -i img%03d.jpg text.mpg <-seq images to mpg
+chop vid into jpgs
+ffmpeg -i input.avi image%d.jpg
+cut clip:
+
+High quality 1080p video:
+mencoder mf://@frames.txt -mf w=1920:h=1080:fps=30:type=jpg -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
+
+mencoder mf://@frames.txt -mf w=1920:h=1080:fps=30:type=png  -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
+
+mencoder mf://@frames.txt -mf w=1024:h=1024:fps=10:type=png -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -o a.avi
+
+reduce to 4k (there is a script for this in the folder):
+mencoder <filename> -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -vf scale=1920:1080 -oac copy -o reduced<filename>
+
+copy, rename and overwrite command:
+
+check video integrity:
+ffmpeg -v error -i file.avi -f null - 2>error.log
+reindex the video:
+mencoder -forceidx -oac copy -ovc copy subtract.mp4 -o after.mp4
+
+4k to 1080:
+ffmpeg -i orig.mp4 -vf scale=1920:1080 -c:v libx264 -crf 20 -preset slow smaller.mp4
+
+a much better way to 4k:
+ mencoder test.mp4 -ovc x264 -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b -vf scale=1920:1080 -oac copy -o output.mp4
+
+
+
+use mencoder to save webcam video:
+mencoder tv:// -tv driver=v4l2:width=800:height=600:fps=30:device=/dev/video1 -nosound -ovc lavc -lavcopts vcodec=mjpeg -o test.avi
+
+mencoder -ss 00:00:00 -endpos 00:00:32 -ovc copy -oac copy in.avi -o out.avi
+join together avi files:
+mencoder -forceidx -ovc copy -oac copy -o file.avi p1.avi p2.avi
+concat jpgs:
+
+add a sound file
+mencoder mf://@frames.txt -mf w=1920:h=1080:fps=24:type=png -audiofile beethoven.mp3 -oac copy -ovc xvid -ovc x264 -x264encopts bitrate=3000:pass=1:nr=2000 -o a.avi
+
+
+mencoder mf//@frames.txt -mf w=800:h=600:fps=24:type=jpg -audiofile shortElephant.mp3 -oac copy -ovc xvid -ovc x264 -x264encopts bitrate=3000:pass=1:nr=2000 -o a.avi
+
+1080p hopefully
+mencoder mf://@frames.txt -mf w=1920:h=1080:fps=24:type=png -ovc xvid -ovc x264 -x264encopts bitrate=3000:pass=1:nr=2000 -o a.avi
+
+
+800 by 600
+mencoder mf://@frames.txt -mf w=800:h=600:fps=30:type=jpg -ovc xvid -ovc x264 -x264encopts bitrate=3000:pass=1:nr=2000 -o a.avi
+
+mencoder mf://@frames.txt -mf w=800:h=600:fps=60:type=jpg -ovc xvid -xvidencopts pass=1:trellis:bitrate=800 -o a.divx
+
+mencoder mf://@frames.txt -mf w=800:h=600:fps=25:type=jpg -ovc lavc -lavcopts vcodec=mpeg4:mbd=2:trell -oac copy -o output.avi
+
+ogv to avi
+mencoder input.ogm -ovc xvid -oac mp3lame -xvidencopts pass=1 -o output.avi
+
+convert one video to another (use avidemux)
+mencoder -oac copy -ovc lavc -o video.avi video.flv
+mencoder <filename.avi> -ovc lavc -oac lavc -o <output.avi>
+ffmpeg -i "yourvideo.flv" "new.avi"
+no audio:
+mencoder inputvideo.avi -nosound -ovc copy -o outputvideo.avi
+
+exiv2 <- read metadata from photos
+
+aptitude why <- tellyou what installed something
+Aptitude flags:
+i — installed: successfully installed to system
+c — config: package not installed, but configuration files remain
+p — purged: package has no files on system
+v — virtual: package does not exist, but another "Provides" it
+
+df -h <- show space on hard drives
+du -h <- show sizes of EVERYTHING!
+du -d 1 <- only go to certain depth
+du --max-depth=1 <- show only depth 1 (linux)
+du -sh <- show summary for the folder
+
+check out the mac help for "key symbols" if the confusion reigns
+
+latex -q <- quit after error
+
+opening a new instance of an app from the command line:
+open -n appname.app
+
+send a command line text:
+o2sms -u0863257989 -ppanda1 -m "I just texted myself" 08...
+
+VI Stuff:
+ctrl-n <- autocomplete
+:w !sudo tee %   <- save a write protected file in VIM
+\/c <- ignore case search
+set ic <- set it to ignore case for any search
+:wq or ZZ <- quit from vim.
+ma-mz <- create a mark
+`a  <- go to mark a
+d`a <- delete/cut from mark
+{ } <- move to start end of paragraph
+{d}i <- cut a paragraph
+d} <- cut to end of paragraph
+d/foo <- cut forward to bar
+d?bar <- cut back to bar
+
+what should be in your vimrc file:
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+syntax on
+set tabstop=8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+filetype indent plugin on
+set modeline
+
+
+
+
+
+use env to check your environment variables
+you can add things to your classpath by:
+export PATH=$PATH:/opt/local/bin
+echo $PATH
+check that your .profile file has been run if things are acting up
+
+jars:
+jar tf jar-file <- view contents of jar file
+
+compiling a jar:
+javac to make all the class files
+jar cf moo.jar *.class <- c(create jar) f(output to file)
+jar cfm moo.jar manifest.txt *.class <- manifest specifying main class
+Main-Class: MooMainClass  <- contents of manifest.txt
+
+joining PDF files together:
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=finished.pdf file1.pdf file2.pdf
+concat multiple pdfs:
+pdftk *.pdf cat output onelargepdfile.pdf
+
+crop pdf:
+pdfcrop --margins '0 0 0 -50' --clip report.pdf
+
+extracting pages from a pdf:
+gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage=8 -dLastPage=9 -sOutputFile=def.pdf chapter.pdf
+
+passwd <- change current user password
+yppasswd <- change network password
+
+setting up pink robot:
+make sure GAWK and PHP are installed
+turn on PHP in httpd.conf (loadmodule and addmodule)
+restart the server(apachectl)
+add gawk link from /var/opt to /usr/bin
+change mods on grammar.txt and population.txt
+
+apache: /private/etc/apache2 <- on Leopard
+apache logs: /var/log/apache2 <-on Leopard
+
+tar and untar:
+tar -cvpf file.tar archive folder <- c-reate v-erbose p-reservepermission f-ile
+tar -xzvf file.tar.gz  x-tract z-ip v-erbose f-ile take out the z for .tar
+
+untar multiple files:
+find . -name "*.tar" -exec tar xf {} \;
+
+
+find a file:
+find pathname -name filename
+eg: find /usr -name *.rtf
+or: find . -name *.txt
+
+messing with profiles:
+alias hello="echo hello"
+source .profile  <- sets up that profile in the terminal
+
+locating a program:
+locate [filename]
+which [filename]
+whereis [filename]
+
+send a mail from the command line:
+echo "This is the body."| mailx -s "mailx Test1" jonathanbyrn@gmail.com
+
+attach files to mailx
+echo "test attachment" > /tmp/x | uuencode results.zip results.zip | cat /tmp/x - | mailx -s "test zip" jonathanbyrn@gmail.com
+
+uuencode requires the filename to be repeated or it dont be outputtin
+
+vnc from browser addressbar:
+vnc://santafe.local
+
+UCD software server:
+http://www.csi.ucd.ie/content/staff-postgrad-software
+
+Messing with crontab!
+crontab -l <- shows you all the cron jobs
+crontab -e <- edits the crontab file
+*     *   *    *     *      command to be executed
+min hour day month weekday
+0 19 * * * rm /tmp
+30 20 * * 1 /Users/jbyrne/ExperimentManager/scripts/sendReport.pl /Users/jbyrne/MutationTest
+
+File Location:
+Java classpath in Leopard: /System/Library/Java/Extensions
+apache: /private/etc/apache2
+apache logs: /var/log/apache2
+default profile programs: /usr/bin
+macports: /opt/local/bin
+fink: /sw/bin
+
+installing software from source:
+./configure
+make
+make install
+
+make all: <dependencies>
+	commands
+
+port commands:
+port selfupdate <-get latest version
+port search [filename] <- find download
+sudo port install [filename] <- download it
+
+shortcuts:
+cmd + shift+ {} <- move between tabs in terminal
+cmd + n <- new window
+cmd + tiald <- switch window
+cmd + tab <- switch programs
+cmd + q <- quit the program
+cmd + shift + a <- open applications window
+cmd + shift + h <- open home folder
+ctrl + arrow keys <- swap window
+alt + 3 <- creates # symbol
+
+outputting to a file:
+[command] > [filename]
+[command] >& [filename] <- include errors aswell
+[command] >> [filename] <- append to a file
+
+GIT commands:
+adding a given auth key for git:
+add key to knownhosts or:
+set permissions
+sudo chmod 600 keyfile
+specify the identity file in config
+
+setting up a github repository, if your key doesnt exist:
+cd ~/.ssh
+cp .ssh/id_rsa* ssh_key_backup
+rm .ssh/id_rsa*
+ssh-keygen -t rsa -C "blah@gmail.com"
+
+basic setup:
+create folder git init
+git remote add origin ssh://jonathanbyrn@server/git/reponame
+git pull origin master <- pull branch master from origin
+git push -u origin master <- add upstream tracking(connect local and remote)
+git checkout -b jonathanbyrn  <- create branch
+git push -u origin jonathanbyrn <- add upstream tracking for the branch
+
+#clone existing repository
+git clone ssh://git@galapagos.ucd.ie/Volumes/Users/git/ants.git
+
+pulling existing repo:
+git clone -v ssh://server:port/git/reponame
+set up your details:
+git config --global user.name "Jonathan"
+git config --global user.email jonathanbyrn@gmail.com
+if you had already committed:
+git commit --amend --reset-author
+show user settings:
+git config --get user.name
+
+git add <filename>
+git commit -am "message" <- commit all and specify message
+#first push you have to specify the repo and branch
+git push -u origin master
+then it is just git push
+
+forking a repo:
+git clone git://github.com/squeakus/PODI.git
+go into folder
+git remote add upstream https://github.com/jmmcd/PODI.git
+git fetch upstream <- pull but dont change files
+git merge upstream/master <- add new code to your code
+if you are accidentally pointing at wrong git url:
+git remote set-url origin https://github.com/squeakus/PODI.git
+
+
+#setting up github
+once that is done then build a repos, go into folder and:
+git init <- initialises the repos
+git add readme.txt
+http://ncra.ucd.ie:8080/sbm/geva/GEVA/tags/git
+commit readme.txt -m "blah"
+specify external repository and give it a name:
+git remote add origin git@github.com:squeakus/fungeble.git
+git push origin master <- push out your change
+man gittutorial <- a quick intro to git
+git commit -am "making a git commit" --dry-run <- a for all m for message
+
+backups on NCRA:
+must be logged in to automount the mount points
+netinfo <- tool to automatically mount the network mount points(should be fstab)
+backup.sh <- in root
+auto sort out webserver and svn by adding lines to /Library/LaunchDaemon
+
+using meld with svn diff, the script:
+#!/bin/bash
+left="$6"
+right="$7"
+meld "$left" "$right"
+add alias
+alias sd='svn diff --diff-cmd=/usr/local/bin/melddiff.sh'
+
+SVN commands:
+show a summary of all svn file changes:
+svn diff --summarize -c 1750
+
+replace all tabs with spaces:
+find . -name *.cpp -exec sed -i.orig 's/\t/    /g' {} +
+grep -PL "\t" -r . | grep -v ".svn" | xargs sed -i 's/\t/ /g'
+
+fix subversion 'out of date' error:
+svn update --force filename   <- if this doesnt work
+revert foldername
+
+handling tree conflict in svn(v1.6):
+svn resolve --accept working -R .
+
+rm -rf `find . -type d -name .svn` <- delete all version control info
+svn -q status <- only show changed files
+svn log --verbose -r 7400 <- show changes in a revision
+svn status [reposName] <-check if the repository has been modified locally
+svn list http://ncra.ucd.ie:8080/svn/pinkrobot <-see if the server is still up
+svn commit -m"Editing files" <- checking in files with a comment
+svn log -v -r1200:1215 list all the logs between two versions
+a sparse svn checkout:
+svn checkout <url_of_big_dir> <target> --depth empty
+cd <target>
+svn update <file_you_want> --depth empty  <- for a shallow copy
+svn update <file_you_want> <- for all the files
+
+
+when you get "incoming delete upon update":
+svn resolve --accept=working <foldername>
+svn revert <filename> <- undo delete before commit
+
+list all tags in a project
+svn ls http://ncra.ucd.ie:8080/svn/geva/GEVA/tags/
+svn cleanup <- if it doesn't work, go back a couple of folders
+reverse a revision:
+svn merge http://ncra.ucd.ie:8080/ContextFreeGrammar.java -r 1661:1660
+
+local edit incoming delete on update:
+touch file, svn revert file, delete it!
+
+check commits by username
+svn log | sed -n '/username/,/-----$/ p'
+
+generate visualisation of svn
+svn log --verbose --xml > svnproject.log
+python svn-gource.py --filter-dirs svnproject.log > project.log
+gource --log-format custom project.log -s 0.02 --stop-at-end --highlight-all-users
+
+plus video:
+gource --log-format custom project.log -s 0.02 --disable-progress -1280x720 -b C0C0C0 --bloom-intensity 0.25 --stop-at-end --highlight-all-users --output-ppm-stream - | ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i - -vcodec mpeg4 -b 10000K gource.mp4
+
+
+Graphviz:
+dot hello.dot -Tps -o hello.ps
+or for png:
+dot propergraph2.dot -Tpng -o propergraph2.png
+
+Setting up new accounts on galapagos:
+(1) ssh into the machine 192.168.2.1 <-galapagos
+(2) open up the creatingaccounts.txt and replace the existing name with the name you want to use for the account. ONLY USE THE SCRIPT IN THE ROOT FOLDER!!
+(3) Increment the GUID and UID by 1
+(4)replace the name (emacs: esc-shift-5)
+(4) make it exectuable with chmod
+(5) sh ./creatingaccounts.txt
+(6) change the account password with the password command.
+Floreana has not got the name server set up so its IP is 192.168.2.2
+
+There are two places for osx administration, sharing and serverAdmin, check both!!!
+
+changing a user password
+passwd [username]
+
+SSH hints and tips:
+to log in:
+ssh username@galapagos.ucd.ie
+you can even specify a port but you normally dont have to:
+ssh -p 8080 username@somerandomserver.ucd.ie
+logging on to a machine:
+ssh username@somerandomserver.ucd.ie
+To log into galapagos its @galapagos.ucd.ie
+or you can also use their IP adresses:
+ssh username@192.168.2.1  <- galapagos
+Because floreana is on a separate network, you must first log in to galapagos and then
+into floreana, also floreana's dns isnt set up correctly so you HAVE to use the IP
+ssh username@192.168.2.2  <- floreana
+copy files using scp:
+scp ExperimentManager.pm jonathanbyrne@galapagos.ucd.ie:/Users/jonathanbyrne
+copy a whole folder and subfolders using -r:
+scp -r ExperimentManager.pm jonathanbyrne@galapagos.ucd.ie:/Users/jonathanbyrne
+and back again
+scp jonathanbyrne@galapagos.ucd.ie:/Users/jonathanbyrne/exampleFile.txt .
+rsync is a faster but less secure way of doing this.
+
+cmd+q to quit sutff in mac
+VIRTUALBOX:
+mount shared folder in ubuntu guest:
+sudo mount.vboxsf shared_folder /mnt/shared
+
+RSYNC
+just like scp but use -r(ecurse)u(update)v(erbose) flags
+
+To mount the server, go to finder and cmd+k
+add the url and enter password
+It should now be visible in /volumes and in shared places
+
+SVN magic:
+log into ncra.ucd.ie as root (this is the webserver)
+The password is one of Andys friends
+places to know on the webserver:
+/usr/local/svn <- this is the main svn location, it has folders for all the
+repositories and the svn-access-file that specifies access for users
+/usr/local/bin/svn <- this is the exectuable for svn 1.3.1
+/opt/local/bin/svn <- this is the executable for svn 1.6.3 (macports)
+/library/webserver/documents/NCRA  <- location of the NCRA webpage
+/private/etc/httpd/ <- location of NCRA webserver
+/sw/etc/apache2/ the svnserver itself with authorise files
+/var/log/httpd/ <- the log files for apache webserver
+/sw/var/apache2/logs <- OLD log files for SVN
+/opt/local/apache2/logs <- new log files for SVN
+
+
+How to set someone up:
+(1)go to the webserver (/sw/etc/apache2) and type: htpasswd
+svn-auth-file username to add an encrypted user and password to that
+file. If the user already exists it resets their password
+(2)add them to the svn-access-file so that they can see the repostories
+(3) create a branch for them using: svnadmin create branchname
+(4) dont forget to recursively change the folder permissions so that they can make changes
+chmod -R 700 folderName
+Chown -R www folderName  <- this is because all access comes thru http
+sudo chown -R jonathan:www-data wordpress <- for ubuntu
+access key AD4ATXRUF <- for CEC
+ AP270301PNVMV65T <- for flight
+CC 3612
+EA 10959
+PN P01027258
+
+Sorting out the servers:
+Its best to set up galapagos first because NCRA has to mount the galapagos drives as backups
+Both computers have static IPs, sometimes other computers nick it after a power failure
+Best to try a reboot immediately
+IP for NCRA is 193.1.133.150 galapagos is 193.1.133.153
+user root to log in.
+
+If the scripts have not worked:
+check networks settings, personal web settings
+renew the DHCP
+check the activity monitor(utilities) or ps -A | grep httpd
+check the IP (ifconfig), if one is assigned but you cannot connect to the
+network then contact it support and ask for you IP back
+
+NCRA setup:
+Check the same as above, then start up the servers
+There is the webserver:
+/usr/sbin/apachectl   <-web server (Installed by default in OS X Tiger)
+/private/etc/httpd/httpd.conf
+
+and the svn server:
+/opt/local/bin <- current svn server installed by macports
+the old one is installed in /sw/etc/apache2
+
+Installer directories:
+/opt/local  <-macports
+/sw/local  <- fink
+
+script for backing up the repository:
+/var/root/svnCmds.sh
+
+go to these folders and start the server, apachectl start/restart
+check if the backups are mounted /Volumes/backup_on_galapagos (check netinfo (utilities) to see if all the stuff that should be set up automatically has been set up)
+
+check the dates to make sure its working, check again tomorrow
+
+Outstanding issues:
+get automatic scripts working, apache2 is installed but doesnt seem to work
+set up dns server for floreana
+
+NFS MOUNTS!
+on the server:
+go to Utilities-> NetInfo Manager, set up the folder, add clients with empty value
+then restart the mountd process: kill -1 `cat /var/run/mountd.pid`
+
+to manually mount the folders on the client:
+showmount -e galapagos.local
+mount -t nfs galapagos.local:/GEVA /GEVA
+To mount it permanently you can use utilities-> directory utility or maybe fstab??
+in snow leopard:
+now hidden in disk utility files: nfs://galapagos.ucd.ie/Volumes/userData/papers
+
+AWK and SED!
+ls -l | awk '{n+=$5}END{print n}'  <-add up all the file sizes
+cat *.dat | awk '{print$2}'  <-concatenate files and read the second column
+svn status | awk '{print $2}' | xargs svn add
+sed s/day/night/ < moo.txt > new.txt <- replace day with night, write to file
+sed -e 's/day/night/g' moo.txt > blah.txt <- s(ubsitiute) g(lobal) e(add script)
+sed -i 's/foo/bar/' * <- i(use same file)
+sed -i 's/foo/bar/g'  <- global, all matches in a line replaced
+replace and rename folders, check shellscripts
+
+Upgrading SVN versions:
+Install the latest version of SVN
+dump all the repositories somewhere for backup (svnCmds.sh)
+change the links in /usr/local/bin to point at new subversion
+use svn ls file:///usr/local/svn/Erik to make sure svn works
+see if it can be accessed online, if not new apache modules needed
+upgrade ONE of the repositories and see if you can access it
+check it online, if it doesnt work you need to change permissions
+
+XGRID!
+Is pretty much automatic on the server side. Just use Xgridadmin to see agents
+the database is in /var/xgrid/controller
+set the grid in your environment variables in .profile
+XGRID_CONTROLLER_HOSTNAME
+XGRID_CONTROLLER_PASSWORD
+find out what on the grid
+xgrid -h galapagos.ucd.ie -p **** -grid list
+Submit a job
+Xgrid -job submit /usr/bin/cal 05 2007
+get the results
+xgrid -job results -id 1480
+
+how to mount a server:
+Add the folder you want to shared to shared places.
+in finder select: go -> connect to server -> galapagos.ucd.ie
+once connected the folder should now be in /Volumes/
+
+PHPMYADMIN:
+sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-enabled/phpmyadmin.conf
+
+MYSQL
+/etc/mysql/my.conf            <- config file
+sudo netstat -tap | grep mysql  <- check server is running
+sudo /etc/init.d/mysql restart <- restart server
+
+mysql -username=root         <- open mysql
+mysql -u root -p             <- login with password
+show databases;              <- shows whats there
+
+create a new user for the database:
+CREATE USER 'wptest'@'localhost' IDENTIFIED BY 'mypass';
+allow the user to access a db:
+grant all privileges on wordpress1.* to wptest@localhost;
+
+show users on the system:
+select * from mysql.user;
+desc mysql.user;
+select host, user, password from mysql.user;
+
+create database <name>;      <- makes a new one
+use <name>                   <- stick into database
+mysql -u<name> -p<pass> fmcc <- open a database
+show tables;                 <- show the tables
+describe <tblName>           <- show layout
+
+find something in table:
+select * from wp_options where 'column' like 'ABSPATH';
+select option_value from wp_options where option_name="siteurl";
+change value:
+update <table> set <value>='http://inventedtest.local' where <name>='blah';
+
+
+LOAD DATA INSERT	     <- ways of inputting data to table
+select <field> from <tbl>    <- show stuff in a table
+mysql -u <database> < mytable.sql <- adds table to database
+delete from <tbl> where <cond> <- delete an entry from a table
+
+show array of sums;
+select sum(nodal), sum(structural) from answers;
+select * from <table> order by <col> <-sorted list
+delete a table;
+drop table if exists <name>  <-delete a table from a database
+
+wipe a table:
+TRUNCATE TABLE tablename;
+ALTER TABLE tableName AUTO_INCREMENT = 1;
+
+load in data:
+LOAD DATA LOCAL INFILE '/importfile.csv'
+INTO TABLE test_table
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+(field1, filed2, field3);
+load data local infile 'questions.csv' into table questions fields terminated by ',' lines terminated by '\n';
+
+add an entry;
+INSERT INTO answers (ID,NODAL) values (10,1)
+
+increment an entry;
+UPDATE tbl SET field =1 where ID =10;
+
+backing up a database:
+/usr/bin/mysqldump -u<name> -p<pass> fmcc > fmcc.latest.sql
+restoring the database:
+mysql -u [username] -p [password] [database_to_restore] < [backupfile]
+If it doesn't exist in the mySqlDaemon then you have to create the database first
+
+SQLITE!
+.open "test.db"
+.tables <-list tables
+PRAGMA table_info(jobs);  <- whats in the table
+SELECT * FROM grids <- show everything in the table
+.indices jobs   <-show the column/row names
+DELETE FROM jobs <- delete everything from the jobs table
+select * from fun where id = 100
+hexdump -C fun.sqlite show what is in the database
+
+Back to EMACS!
+C-x u      <- UNDO!!!
+C-/        <- also undo
+C-G C-/	   <- redo
+C-G C-G    <- kill the minibuffer (reset if you screw up a command)
+C-X 0 	   <- close this window
+C-X 1	   <- close all the other windows!
+C-X 2	   <- split window horizontally
+C-X 3      <- split window vertically
+C-X o      <- move to other window
+C-X C-B    <- list all the buffers
+C-X b	   <- select a different buffer
+M-x x-mode <- set a highlighting mode
+mark-whole-buffer <- highlight all
+
+C-X C-F    <- open existing/new file
+C-X C-F *.*<-  Open all files in a directory
+C-X ->     <- Move back and forwards through buffer
+C-X D      <- show contents of a directory
+M-/        <-autocomplete word
+M-g        <- goto line
+C-S        <-search forward
+M-SHIFT-5  <-replace forward
+C-s C-w    <-search forward for the word under cursor***
+M-backspace<-go back a whole word
+C-M-\      <- autoindent region
+C-c > 	   <-indent in python only
+C-x TAB    <- indent by one space
+M-\        <- remove all whitespace
+
+C-V        <- move forward a screen
+M-V        <- move back a screen
+M-backspace<- delete a word
+M-F	   <- move forward a word
+M-B	   <- and back a word
+M->	   <- move to end of file
+M-<	   <- move to start of file
+M-x occur <- grep inside a file
+M-x desktop-save <- save your buffer
+M-x desktop-read <- read your buffer
+M-x goto-line <-goes to specified line
+M-x comment-region <- adds comment to the highlighted region
+C-x ~	   <-move between highlighted errors
+M-x goto-next-error <- same as above
+M-x occur <- list all instances of a regexp
+M-x search-forward-regexp <-use regexp for searching
+C-M-s <- do search again
+\.[A-Z] <- find places where no space between fullstop
+\..  <search for everything after a full stop
+M-x highlight phrase <- color a particular word
+
+
+HELP on various commands!
+C-h a      <- apropos, if you cannot remember a command
+C-h f	   <- describe a function
+C-h v	   <- describe a variable
+C-h m      <- shows commands for the module your using
+
+LATEX!
+C-c C-f    <- tex your lay
+C-c C-c    <- view your changes
+
+MACROS!!
+C-x (      <- start macro
+C-u num + command <- run command num amount of times
+M-x name-last-kyb-macro <-add it to current instance
+M-x insert-last-macro <- writes it to file, add it to elisp
+
+eDiff malarky:
+M-x ediff  <-start it up
+|	   <- switch from vert to horizontal
+n/p        <- next previous change
+v/V	   <- scroll up and down
+a          <- copy FROM a TO b
+r          <-restore any changes
+
+Weird ones:
+check out the speedbar for IDE goodness
+C-h k      <- see what function a keypress calls
+M-x eval-buffer <- run the lisp interpreter
+
+copying to and from registers
+C-x-r-s 1 <- copy to register 1
+C-x-r-i 1 <- copy from register 1
+
+to fix the modifier key on the mac with carbonemacs
+setq mac-command-modifier 'meta'
+Specifying where to save backups
+setq backup-directory-alist `(("." . "~/.saves"))
+
+make an executable:
+#!/bin/bash
+
+my .bashrc
+alias galapagos="ssh jonathanbyrne@galapagos.ucd.ie"
+alias ls="ls -G"
+alias rootagos="ssh root@galapagos.ucd.ie"
+alias blend="cd ~/myblenderscripts/geva_blender/blender"
+alias print="open -a ~/Library/Printers/137.43.154.48.app"
+alias gg="cd /Users/jonathanbyrne/GEVA/GEVA/branches/GEVA_Experimental"
+alias hello='say -v whisper "I cannot let you do that dave"; cd'
+export PS1="\[\033[0;0m\u@\h:\w\n$ \[\033[0;0m\]"
+
+#fix python indent in vi
+syntax on
+filetype indent plugin on
+set tabstop=8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+filetype indent on
+set pastetoggle=<F2>
