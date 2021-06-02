@@ -57,12 +57,13 @@ def create_folder(foldername):
         os.makedirs(foldername)
 
 
-def find(regex, folder="./"):
-    found = []
-    for filename in glob.iglob(folder + "/**/" + regex, recursive=True):
-        found.append(filename)
-    return found
+def find(regex, folder="./", recurse=True):
+    if recurse:
+        filenames = glob.glob(folder + "/**/" + regex, recursive=True)
+    else:
+        filenames = glob.glob(folder + "/" + regex)
 
+    return filenames
 
 def ave(values):
     return float(sum(values)) / len(values)
