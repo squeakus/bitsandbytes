@@ -1,4 +1,7 @@
- mogrify --resize 1166x1166 *.jpg
+# Set a key on the keyring
+python -m keyring set iris iris_rw
+
+mogrify --resize 1166x1166 *.jpg
 rename 's/~$//' *.*
 
 recursively delete folder and its contents

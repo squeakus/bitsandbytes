@@ -3,7 +3,7 @@ import numpy as np
 
 
 def main():
-    image = cv2.imread("median.jpg")[700:, :]
+    image = cv2.imread("pins.jpg")[700:, :]
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
     lower = np.array([0, 0, 0], np.uint8)
