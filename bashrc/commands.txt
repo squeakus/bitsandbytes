@@ -1,3 +1,12 @@
+./psql.exe --host "postgres5060-lb-ir-in.dbaas.intel.com" --port "5433" --username "intelidays2_so" --dbname "intelidays2" < ~/Downloads/cleaned.dump
+
+#adding a user to the intel VM
+run the add-admin script
+make sure they are in:
+/etc/opt/quest/vas/users.allow
+/etc/sudoers
+
+
 # Set a key on the keyring
 python -m keyring set iris iris_rw
 
