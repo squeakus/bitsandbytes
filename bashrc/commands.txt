@@ -1,3 +1,6 @@
+ \connect root@localhost
+ grep -r ldap . --exclude-dir='node_modules'
+
 ./psql.exe --host "postgres5060-lb-ir-in.dbaas.intel.com" --port "5433" --username "intelidays2_so" --dbname "intelidays2" < ~/Downloads/cleaned.dump
 
 #adding a user to the intel VM
