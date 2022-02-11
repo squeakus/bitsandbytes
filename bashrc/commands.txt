@@ -1,4 +1,14 @@
- \connect root@localhost
+# git unstash
+git stash list to list your stashed changes.
+git stash show to see what n is in the below commands.
+git stash apply to apply the most recent stash.
+git stash apply stash@{n} to apply an older stash.
+# move someth:ing to a branch if you pushed it to master
+git checkout --patch master tests/test_bulb_checker.py
+
+pytest -v -o junit_family=xunit1 --cov=./ tests
+
+\connect root@localhost
  grep -r ldap . --exclude-dir='node_modules'
 
 ./psql.exe --host "postgres5060-lb-ir-in.dbaas.intel.com" --port "5433" --username "intelidays2_so" --dbname "intelidays2" < ~/Downloads/cleaned.dump
@@ -3349,7 +3359,8 @@ git remote add upstream https://github.com/jmmcd/PODI.git
 git fetch upstream <- pull but dont change files
 git merge upstream/master <- add new code to your code
 if you are accidentally pointing at wrong git url:
-git remote set-url origin https://github.com/squeakus/PODI.git
+git remote set-url origin https://
+github.com/squeakus/PODI.git
 
 
 #setting up github
