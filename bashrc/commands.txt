@@ -1,3 +1,6 @@
+#extract with datetime
+df = pd.read_csv("blah.csv", parse_dates=["DATE"], index_col="DATE")
+
 # git unstash
 git stash list to list your stashed changes.
 git stash show to see what n is in the below commands.
