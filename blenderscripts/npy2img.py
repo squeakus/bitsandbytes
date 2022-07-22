@@ -1,3 +1,6 @@
+
+
+
 """Read a numpy file and output an image."""
 import sys
 import numpy as np
