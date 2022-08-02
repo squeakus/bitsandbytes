@@ -512,7 +512,6 @@ docker
 docker container --help
 docker --version
 docker version
-docker info
 
 # push docker image to docker hub
 docker login
