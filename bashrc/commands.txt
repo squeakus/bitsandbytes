@@ -1,4 +1,17 @@
-#extract with datetime
+# git lfs
+git lfs install
+git lfs track "*.psd"
+git add .gitattributes
+git add file.psd
+git commit -m "Add design file"
+git push origin main
+git push origin --no-verify --all --force  <- this gets around verification errors
+git lfs status <- show all the files in git-lfs
+git lfs ls-files < show all lfs files
+git lfs logs last debug info
+GIT_TRACE=1 git lfs pull
+
+# extract with datetime
 df = pd.read_csv("blah.csv", parse_dates=["DATE"], index_col="DATE")
 
 # git unstash
@@ -16,7 +29,7 @@ pytest -v -o junit_family=xunit1 --cov=./ tests
 
 ./psql.exe --host "postgres5060-lb-ir-in.dbaas.intel.com" --port "5433" --username "intelidays2_so" --dbname "intelidays2" < ~/Downloads/cleaned.dump
 
-#adding a user to the intel VM
+# adding a user to the intel VM
 run the add-admin script
 make sure they are in:
 /etc/opt/quest/vas/users.allow
