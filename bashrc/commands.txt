@@ -10,6 +10,8 @@ git lfs status <- show all the files in git-lfs
 git lfs ls-files < show all lfs files
 git lfs logs last debug info
 GIT_TRACE=1 git lfs pull
+# mega trace
+GIT_TRACE=1 GIT_TRANSFER_TRACE=1 GIT_CURL_VERBOSE=1 git lfs pull
 
 # extract with datetime
 df = pd.read_csv("blah.csv", parse_dates=["DATE"], index_col="DATE")
