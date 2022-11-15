@@ -72,7 +72,17 @@ def ave(values):
 def std(values, ave):
     return math.sqrt(float(sum((value - ave) ** 2 for value in values)) / len(values))
 
+def delete_old_files(dir_to_clean: Path, days: int):
+    days_ago = datetime.now() - timedelta(days=days)
 
+    for image in dir_to_clean.rglob("*.jpg"):
+        print(image)
+        mod_time = datetime.fromtimestamp(image.stat().st_mtime)
+        if mod_time < days_ago:
+            print(f"OldFile :[{image}]")
+            # image.unlink()
+        if mod_time > days_ago:
+            print(f"newfile :[{image}]")
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         main(sys.argv[1])
