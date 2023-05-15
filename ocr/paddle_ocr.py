@@ -27,6 +27,9 @@ def main(img_path, font_path):
         txts = [line[1][0] for line in result]
         scores = [line[1][1] for line in result]
 
+        # Get rotation of text
+        rotation = result[0][1][2]
+        print(f"Text rotation: {rotation} degrees")
         # Draw OCR results on image
         im_show = draw_ocr(image, boxes, txts, scores, font_path=font_path)
         im_show = Image.fromarray(im_show)

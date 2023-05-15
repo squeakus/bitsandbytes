@@ -5,7 +5,9 @@
 #
 # 1/1/2018
 
-import logging
+"""
+This code is a demo of the Tello drone API. It uses the threading, socket, sys and time libraries. The code creates a UDP socket and binds it to the local address and port 9000. It then sends commands to the Tello drone via the socket and receives responses. The main function first checks the battery level and exits if it is below 40. It then sends takeoff, flip and movement commands to the drone and finally sends a land command to land the drone. The recv function is used to receive the response from the drone after sending a command. The command function sends the command to the drone and also waits for a specified delay before sending the next command.
+"""
 import socket
 import sys
 import threading
@@ -41,6 +43,10 @@ def main():
     ]
 
     command("command", 1)
+    batlevel = int(command("battery?", 1))
+    if batlevel < 40:
+        print("battery level too low")
+        exit()
     command("takeoff", 4)
     command("flip r", 3)
     command("flip f", 3)

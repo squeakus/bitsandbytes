@@ -1,5 +1,8 @@
 #!/bin/bash
 #DO NOT RUN WITH SUDO!!
+# if git bash is acting up with the browser install this:
+# https://github.com/romkatv/powerlevel10k#manual
+
 #You need to reboot to reload default terminal settings
 MYUSER=`whoami`
 sudo apt install -y zsh

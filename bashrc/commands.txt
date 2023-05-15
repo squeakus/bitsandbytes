@@ -1,3 +1,15 @@
+# setting up pre-commit
+pip install pre-commit
+pre-commit install
+
+# clear a python notebook:
+jupyter nbconvert --clear-output --inplace
+
+python -m build
+python -m setuptools_scm
+twine upload --repository testpypi dist/*
+https://test.pypi.org/project/widget/0.1.dev5/
+
 # check if netrc tokens are valid:
 curl -n https://api.github.com/user
 
@@ -541,8 +553,16 @@ if replacing something with a slash then you can use any delimiter:
 docker image prune
 docker system prune
 
+sudo docker login registry name
+
 ## build from Dockerfile
 docker build -t <imgname> .
+
+# generic terminal, ignoring any run commands
+sudo docker run -it --rm  <imagename> bash
+#
+sudo docker run --env-file env.list -p 9000:9000 <imagename>
+
 
 ## run interactive, remove when finished, mount folder, python command
 docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
