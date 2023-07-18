@@ -12,10 +12,6 @@ filler_words = ["um", "uh", "like", "you know", "ah"]
 input_file_path = "test_vid.vtt"
 output_file_path = "test_vid_clean.txt"
 
-# Open input file and read contents
-with open(input_file_path, "r") as input_file:
-    vtt_content = input_file.read()
-
 clean_list = []
 for caption in webvtt.read(input_file_path):
     clean_list.append(caption.text)

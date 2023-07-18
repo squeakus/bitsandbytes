@@ -563,7 +563,6 @@ sudo docker run -it --rm  <imagename> bash
 #
 sudo docker run --env-file env.list -p 9000:9000 <imagename>
 
-
 ## run interactive, remove when finished, mount folder, python command
 docker run -it --rm -v$PWD:/app movislam python /app/myfile.py
 exit to exit
@@ -587,6 +586,11 @@ docker system prune
 ##delete danglers:
 docker rmi $(docker images -f "dangling=true" -q)
 
+#if there is a weird stopped container error
+ sudo docker rmi $(sudo docker images -f "dangling=true" -q)
+ sudo docker rm $(sudo docker ps -a -f "status=exited" -q)
+
+
 ## Link to existing dockerfile
 FROM ubuntu:18.04
 
@@ -598,6 +602,9 @@ docker version
 
 # push docker image to docker hub
 docker login
+
+# for harbor
+sudo docker login ger-is-registry.caas.intel.com
 
 # optional add tag
 docker tag af299672bfd3 jonathanbyrn/<imgname>:<tag>
