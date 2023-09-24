@@ -15,7 +15,7 @@ def write_to_file(data):
 
 def read_barcode_scanner_input():
     barcode_data = ""
-
+    prev = ""
     while True:
         event = keyboard.read_event()
 
@@ -26,11 +26,14 @@ def read_barcode_scanner_input():
             elif event.name == "enter":
                 print(f"scan: {barcode_data}")
                 write_to_file(barcode_data)
-
                 barcode_data = ""
 
         else:
-            barcode_data += str(event.name)
+            if str(event.name) == "j" and prev == "ctrl":
+                pass
+            elif len(str(event.name)) == 1:
+                barcode_data += str(event.name).upper()
+            prev = event.name
 
 
 if __name__ == "__main__":
