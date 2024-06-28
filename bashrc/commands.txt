@@ -1,3 +1,29 @@
+# fix certificate issues
+pip install pip-system-certs
+
+git remote add github git@github.com:squeakus/intel-sandbox/mirror_test.git
+
+#setting up the github one:
+git remote set-url github https://github.com/intel-sandbox/mirror_test.git
+git push --mirror github
+
+git@IRPVIRIS01:~/openai_tools.git/hooks$ touch post-receive
+git@IRPVIRIS01:~/openai_tools.git/hooks$ chmod +x post-receive
+git@IRPVIRIS01:~/openai_tools.git/hooks$ vi post-receive
+#!/bin/sh
+git push --mirror github
+
+
+
+pypi-server run -p 8080 ~/packages
+pip install --trusted-host  irpviris01.ger.corp.intel.com --index http://irpviris01.ger.corp.intel.com:8080 <package>
+pip install --trusted-host  lbauto-163-33-184-24.cps.intel.com --index http://irpviris01.ger.corp.intel.com:80 <package>
+
+origin  https://github.com/intel-sandbox/openai_tools (fetch)
+origin  https://github.com/intel-sandbox/openai_tools (push)
+
+git remote set-url origin git@irpviris01.ger.corp.intel.com:/home/git/openai_tools.git
+
 # setting up pre-commit
 pip install pre-commit
 pre-commit install
