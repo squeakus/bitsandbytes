@@ -1,3 +1,7 @@
+# add azure user to system:
+sudo visudo and 
+vi /etc/opt/quest/vas/users.allow
+
 # fix certificate issues
 pip install pip-system-certs
 
