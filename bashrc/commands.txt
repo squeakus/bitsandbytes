@@ -1,3 +1,9 @@
+# list all containers (even stopped ones)
+docker ps -a
+
+# clean up unused docker containers
+docker container prune
+
 # add azure user to system:
 sudo visudo and 
 vi /etc/opt/quest/vas/users.allow
