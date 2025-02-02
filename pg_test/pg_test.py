@@ -22,10 +22,17 @@ def main():
     db_timezone = get_database_timezone()
     print(f"The database timezone is: {db_timezone}")
 
-    add_entry(
-        "timestring2023-09-24 14:30:00+00", "2023-09-24 14:30:00+00"
-    )  # Replace with the name and timestamp you want to add
+    add_entry("timestamp plain2", "2023-09-24 14:30:00")  # Replace with the name and timestamp you want to add
 
+    # add_entry(
+    #     "timestring2023-09-24 14:30:00+01", "2023-09-24 14:30:00+01"
+    # )  # Replace with the name and timestamp you want to add
+
+    df = retrieve_table_contents_raw()
+    for row in df:
+        print(row)
+
+    print("**********************************************************")
     df = retrieve_table_contents()
     for row in df.iterrows():
         print(row)
@@ -46,10 +53,10 @@ def create_db():
     # Define the SQL command to create the table
     create_table_sql = f"""
     CREATE TABLE IF NOT EXISTS {TABLENAME} (
+        id SERIAL PRIMARY KEY,
         username VARCHAR(255),
-        timestamp_tz TIMESTAMPTZ,
-        timestamp_utc TIMESTAMP
-
+        timestamp TIMESTAMP,
+        timestamp_tz TIMESTAMPTZ
     );
     """
 
@@ -90,6 +97,38 @@ def retrieve_table_contents():
         return None
 
 
+def retrieve_table_contents_raw():
+    try:
+        # Establish a connection to the PostgreSQL database
+        conn = psycopg2.connect(
+            host=HOST,
+            database=DATABASE,
+            user=USER,
+            password=PASSWORD,
+        )
+
+        # Create a cursor object to execute SQL commands
+        cur = conn.cursor()
+
+        # Define the SQL query to retrieve data from the table
+        select_query = f"SELECT * FROM {TABLENAME};"  # Replace with your table name
+
+        cur.execute(select_query)
+
+        # Fetch all rows from the result set
+        rows = cur.fetchall()
+
+        # Close the cursor and the database connection
+        cur.close()
+        conn.close()
+
+        return rows
+
+    except (Exception, psycopg2.Error) as error:
+        print(f"Error retrieving data: {error}")
+        return None
+
+
 def add_entry(name, timestamp):
     try:
         # Establish a connection to the PostgreSQL database
@@ -105,8 +144,8 @@ def add_entry(name, timestamp):
 
         # Define the SQL command to insert an entry into the table
         insert_entry_sql = f"""
-        INSERT INTO {TABLENAME} (username, timestamp_tz, timestamp_utc)
-        VALUES (%s, %s, %s);
+        INSERT INTO {TABLENAME} (username, timestamp, timestamp_tz)
+        VALUES (%s, %s, %s::timestamp AT TIME ZONE 'UTC');
         """
 
         # Execute the SQL command with the provided data
@@ -137,7 +176,9 @@ def get_database_timezone():
 
         # Create a cursor object to execute SQL commands
         cur = conn.cursor()
-        cur.execute("""SET TIME ZONE 'UTC';""")
+
+        # set the timezone
+        # cur.execute("""SET TIME ZONE 'UTC';""")
 
         # Define the SQL query to retrieve the database timezone
         timezone_query = "SHOW timezone;"
