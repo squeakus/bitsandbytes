@@ -1,3 +1,50 @@
+# pypiserver commands
+pip install --extra-index-url https://chipgpt-dev-imc.intel.com/pypi-server/packages/  loguru
+pip install --extra-index-url https://127.0.0.1/pypi-server/packages/  loguru
+
+# run a secure docker
+docker run -d \
+-v ollama:/root/.ollama \
+-p 11434:11434 \
+--security-opt=no-new-privileges \
+--cap-drop=ALL \
+--cap-add=SYS_NICE \
+--memory=8g \
+--memory-swap=8g \
+--cpus=4 \
+--read-only \
+--name ollama \
+ollama/ollama
+
+# without gpu and proxy:
+  docker run -d \
+-v ollama:/root/.ollama \
+-p 11434:11434 \
+--security-opt=no-new-privileges \
+--cap-drop=ALL \
+--cap-add=SYS_NICE \
+--memory=8g \
+--memory-swap=8g \
+--cpus=4 \
+--read-only \
+--name ollama \
+-e HTTP_PROXY=http://proxy-ir.intel.com:911 \
+-e HTTPS_PROXY=http://proxy-ir.intel.com:912 \
+ollama/ollama
+
+
+docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+docker exec -it ollama ollama run llama2
+docker exec -it ollama ollama pull bge-large
+ollama pull llama3.2
+# stop ollama service:
+sudo systemctl stop ollama
+# Disable the service to prevent it from starting at boot:
+sudo systemctl disable ollama
+# Remove the service file from the systemd directory:
+sudo rm /etc/systemd/system/ollama.service
+
+
 # list all containers (even stopped ones)
 docker ps -a
 
@@ -710,6 +757,9 @@ rpi_cam moot
 
 resize image with nearest neighbour:
 convert from.png -interpolate Nearest -filter point -resize
+
+#convert images to video
+ffmpeg -framerate 10 -pattern_type glob -i "*.jpg" -c:v libx264 -pix_fmt yuv420p output.mp4
 
 convert werbm to mp4
 ffmpeg -i video.webm -crf 26 video.mp4
