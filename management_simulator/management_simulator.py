@@ -1,7 +1,5 @@
-import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
-from mpl_toolkits.mplot3d import Axes3D
+import plotly.express as px
 
 
 # Base class for an employee
@@ -51,69 +49,74 @@ class CompanySimulator:
 
     def simulate_meetings(self):
         total_meeting_hours = 0
+        total_manager_hours = 0
+        manager_count = 0
         for employee in self.all_employees:
             if isinstance(employee, Manager):
                 team_meeting_duration = 0.5 + 0.1 * len(employee.team)
                 total_meeting_hours += team_meeting_duration
                 if employee.manager:
                     total_meeting_hours += 0.5
-        return total_meeting_hours
+                    team_meeting_duration += 0.5
+                total_manager_hours += team_meeting_duration
+                manager_count += 1
+        return total_meeting_hours, total_manager_hours, manager_count
 
 
-# Run simulations and generate both plots
+# Run experiments and plot both heatmaps
 def run_experiments():
     layers_range = range(1, 8)
     team_sizes = range(1, 10)
-    results = []
 
-    for layers in layers_range:
-        for team_size in team_sizes:
+    emp_ratio_matrix = np.zeros((len(layers_range), len(team_sizes)))
+    mgr_ratio_matrix = np.zeros((len(layers_range), len(team_sizes)))
+
+    for i, layers in enumerate(layers_range):
+        for j, team_size in enumerate(team_sizes):
             sim = CompanySimulator(num_layers=layers, team_size=team_size)
-            meetings = sim.simulate_meetings()
-            meeting_ratio = meetings / len(sim.all_employees)
-            results.append((layers, team_size, meeting_ratio))
+            total_hours, mgr_hours, mgr_count = sim.simulate_meetings()
+            emp_ratio = total_hours / len(sim.all_employees)
+            mgr_ratio = mgr_hours / mgr_count if mgr_count else 0
 
-    # Prepare data for plotting
-    xs = [r[0] for r in results]
-    ys = [r[1] for r in results]
-    zs = [r[2] for r in results]
+            emp_ratio_matrix[i, j] = emp_ratio
+            mgr_ratio_matrix[i, j] = mgr_ratio
 
-    # 1. 3D Scatter Plot
-    fig1 = plt.figure(figsize=(10, 6))
-    ax = fig1.add_subplot(111, projection="3d")
-    ax.scatter(xs, ys, zs, c=zs, cmap="viridis")
-    ax.set_xlabel("Management Layers")
-    ax.set_ylabel("Team Size")
-    ax.set_zlabel("Meeting Hours per Employee")
-    plt.title("3D View: Meeting Burden by Structure")
-    plt.tight_layout()
-
-    # 2. Heatmap Plot
-    heatmap_data = np.zeros((len(layers_range), len(team_sizes)))
-    for layer, team, ratio in results:
-        heatmap_data[layer - 1, team - 1] = ratio
-
-    fig2 = plt.figure(figsize=(10, 6))
-    sns.heatmap(
-        heatmap_data,
-        annot=True,
-        xticklabels=list(team_sizes),
-        yticklabels=list(layers_range),
-        cmap="YlGnBu",
+    # Heatmap 1: Per Employee
+    fig1 = px.imshow(
+        emp_ratio_matrix,
+        labels=dict(x="Team Size", y="Management Layers", color="Hours / Employee"),
+        x=list(team_sizes),
+        y=list(layers_range),
+        text_auto=".2f",
+        title="Meeting Hours per Employee",
+        aspect="auto",
+        color_continuous_scale="YlGnBu",
     )
-    plt.xlabel("Team Size")
-    plt.ylabel("Management Layers")
-    plt.title("Heatmap: Meeting Hours per Employee")
+    fig1.update_layout(margin=dict(t=40, l=0, r=0, b=0))
+    fig1.show()
 
-    plt.show()
+    # Heatmap 2: Per Manager
+    fig2 = px.imshow(
+        mgr_ratio_matrix,
+        labels=dict(x="Team Size", y="Management Layers", color="Hours / Manager"),
+        x=list(team_sizes),
+        y=list(layers_range),
+        text_auto=".2f",
+        title="Meeting Hours per Manager",
+        aspect="auto",
+        color_continuous_scale="OrRd",
+    )
+    fig2.update_layout(margin=dict(t=40, l=0, r=0, b=0))
+    fig2.show()
 
 
-# Main execution block
+# Main execution
 if __name__ == "__main__":
     sim = CompanySimulator(num_layers=5, team_size=5)
-    meetings = sim.simulate_meetings()
+    total, mgr_total, mgr_count = sim.simulate_meetings()
     print(f"Total Employees: {len(sim.all_employees)}")
-    print(f"Total Meeting Hours per Week: {meetings:.2f}")
-    print(f"Meeting ratio: {meetings / len(sim.all_employees):.2f}")
+    print(f"Total Meeting Hours: {total:.2f}")
+    print(f"Per Employee: {total / len(sim.all_employees):.2f}")
+    print(f"Per Manager: {mgr_total / mgr_count:.2f}")
 
     run_experiments()
