@@ -1,3 +1,6 @@
+# clear all notebooks
+nbstripout *.ipynb
+
 # pypiserver commands
 pip install --extra-index-url https://chipgpt-dev-imc.intel.com/pypi-server/packages/  loguru
 pip install --extra-index-url https://127.0.0.1/pypi-server/packages/  loguru
@@ -17,7 +20,7 @@ docker run -d \
 ollama/ollama
 
 # without gpu and proxy:
-  docker run -d \
+docker run -d \
 -v ollama:/root/.ollama \
 -p 11434:11434 \
 --security-opt=no-new-privileges \
