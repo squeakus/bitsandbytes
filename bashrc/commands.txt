@@ -1,3 +1,31 @@
+#speckit
+uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+specify init <PROJECT_NAME>
+specify check
+/constitution Create principles focused on code quality, testing standards, user experience consistency, and performance requirements
+/specify Build an application that can help me organize my photos in separate photo albums. Albums are grouped by date and can be re-organized by dragging and dropping on the main page. Albums are never in other nested albums. Within each album, photos are previewed in a tile-like interface.
+/tasks
+/implement
+
+https://github.com/github/spec-kit/blob/main/spec-driven.md
+
+
+#kubernetes setting up the ingress
+In networking add a cluster IP for each container with their port
+the name must be under 15 chars so use svc at the end
+In service_discovery services you should see them
+Then add them to the ingresses with the regex (/|$)(.*) at the end
+
+# rancher kubernetes
+timeout is in ingresses annotations:
+nginx.ingress.kubernetes.io/send-timeout
+nginx.ingress.kubernetes.io/proxy-send-timeout
+nginx.ingress.kubernetes.io/proxy-read-timeout
+nginx.ingress.kubernetes.io/proxy-connect-timeout
+
+sudo -l lsof -i :8002
+kill -9 <PID>
+
 # clear all notebooks
 nbstripout *.ipynb
 
